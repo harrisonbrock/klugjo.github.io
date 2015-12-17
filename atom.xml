@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Klughertz Jonathan]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://klugjo.github.io/"/>
+  <updated>2015-12-11T06:14:16.000Z</updated>
+  <id>http://klugjo.github.io/</id>
+  
+  <author>
+    <name><![CDATA[Klughertz Jonathan]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Requiring external libraries with Browserify]]></title>
+    <link href="http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/"/>
+    <id>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</id>
+    <published>2015-12-11T05:34:28.000Z</published>
+    <updated>2015-12-11T06:14:16.000Z</updated>
+    <content type="html"><![CDATA[<p>This post will show you how to easily download and include 3rd party libraries in your Browserify bundle.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_Project_Structure">1) Project Structure</h2><p>Let’s start by assuming the following project structure</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">|-- dist // Build will end up here</span></span><br><span class="line"><span class="string">|-- src </span></span><br><span class="line">    <span class="string">|-- js</span></span><br><span class="line">        <span class="string">|-- main.js // Our main JavaScript file</span></span><br><span class="line">        <span class="string">|-- module.js // Local module</span></span><br><span class="line"><span class="string">|-- package.json</span></span><br></pre></td></tr></table></figure>
+<p>We have our <code>main.js</code> file where will require our local module (<code>module.js</code>) and our jQuery library</p>
+<p><br></p>
+<h2 id="2)_Requiring_library">2) Requiring library</h2><h3 id="Installing_jQuery">Installing jQuery</h3><p>One of the advantages of using Browserify is that you don’t have to use bower or download your dependencies manually. You can just install everything with npm.</p>
+<p>To install jquery:</p>
+<p><code>npm install jquery</code></p>
+<h3 id="Requiring_jQuery">Requiring jQuery</h3><p>Since jQuery has been installed with npm, we can require it in our client code like we would do in Node: by simply using the name of the library.</p>
+<p><code>var $ = require(&#39;jquery&#39;);</code></p>
+<p>Browserify makes it easy to reuse server side libraries if you use node and to centralize all your JavaScript libraries in one place. Not to mention that npm is now a mature and solid packet manager.</p>
+<p><br></p>
+<h2 id="3)_Requiring_local_modules">3) Requiring local modules</h2><p>As a bonus here is the correct way to require local modules.</p>
+<p>When requiring a local module, the path should always start with:</p>
+<ul>
+<li><code>./</code> representing the current directory</li>
+<li><code>../</code> representing the parent directory</li>
+</ul>
+<p>In our project example, to require <code>module.js</code> in <code>main.js</code>, we have to use</p>
+<p><code>var module = require(&#39;./module&#39;);</code></p>
+<p>Happy bundling !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This post will show you how to easily download and include 3rd party libraries in your Browserify bundle.</p>]]>
+    
+    </summary>
+    
+      <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Build and package your client side code using npm]]></title>
+    <link href="http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/"/>
+    <id>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</id>
+    <published>2015-12-09T13:54:43.000Z</published>
+    <updated>2015-12-11T05:32:16.000Z</updated>
+    <content type="html"><![CDATA[<p>In this post we will see how it is possible to configure an entire build sequence <strong>using npm only</strong>.</p>
+<h3 id="What_we_want_to_achieve:">What we want to achieve:</h3><p>One command <code>npm run package</code> should:</p>
+<ul>
+<li>clean our build folder</li>
+<li>compile our css from stylus</li>
+<li>compile our html from jade</li>
+<li>bundle and minify our javascript</li>
+</ul>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_Minimal_project_structure">1) Minimal project structure</h2><p>Let’s assume our project is organized as follows:</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code <span class="keyword">is</span> <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- stylus </span><br><span class="line">        |-- site.styl // Our main stylus file</span><br><span class="line">    |-- index.jade // Our jade file</span><br><span class="line">    |-- js</span><br><span class="line">        |-- main.js // Our main JavaScript file</span><br><span class="line">        |-- jquery.js // jQuery library. Required in main.js</span><br><span class="line">|-- package.json // Where our build <span class="keyword">is</span> configured !</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="2)_Compile_our_CSS_and_HTML">2) Compile our CSS and HTML</h2><h3 id="Stylus_to_CSS">Stylus to CSS</h3><p>We can compile our <a href="https://github.com/stylus/stylus" target="_blank" rel="external">stylus</a> with the following <a href="https://github.com/stylus/stylus/blob/dev/docs/executable.md" target="_blank" rel="external">command</a>:</p>
+<p><code>stylus src/stylus/site.styl --out dist/</code></p>
+<p>Let’s set this up in the package.json: <a href="/2015/12/Run-scripts-with-npm/">Read this post</a> if you want to know the basics of setting up scripts in npm.</p>
+<h3 id="Jade_to_HTML">Jade to HTML</h3><p>In a similar fashion, we can compile our <a href="http://jade-lang.com/" target="_blank" rel="external">Jade templates</a> to HTML using the following <a href="http://jade-lang.com/command-line/" target="_blank" rel="external">command</a>:</p>
+<p><code>jade src --out dist/</code></p>
+<h3 id="Add_the_npm_tasks">Add the npm tasks</h3><p>In our package.json, we can now create the tow following scripts:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"package:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:jade"</span>: <span class="string">"jade src --out dist/"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="3)_Bundle_and_minify_the_JavaScript">3) Bundle and minify the JavaScript</h2><h3 id="Bundle_with_browserify">Bundle with browserify</h3><p>(Here is an <a href="/2015/11/Your-first-10-minutes-with-Browserify/">introduction to browserify</a> if needed)</p>
+<p>The command to bundle our JS into one file is <code>browserify ./src/js/main.js -o ./dist/bundle.js</code></p>
+<h3 id="Minify_with_uglify">Minify with uglify</h3><p>I am using <a href="https://github.com/mishoo/UglifyJS2" target="_blank" rel="external">uglifyJS2</a> for this task.</p>
+<p>The task to minify the bundle.js file is <code>uglifyjs -- compress ./dist/bundle.js -o ./dist/bundle.min.js</code></p>
+<h3 id="Piping_the_two">Piping the two</h3><p>Now what we want is to <strong>pipe the output of the browserify task into the uglify task</strong> so that we can combine both into one npm task</p>
+<p>To do this, we are going to use a <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-4.html" target="_blank" rel="external">unix pipe</a> <code>|</code> and connect the STDOUT of the first task with the STDIN of the second.</p>
+<p><code>browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js</code></p>
+<p>Let’s set it up as a npm task:</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attribute">...</span></span><br><span class="line">    <span class="string">"package:js"</span>: <span class="string">"browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="4)_Putting_everything_together">4) Putting everything together</h2><p>Now let’s combine all our tasks in one npm <code>package</code> task:</p>
+<p><code>&quot;package&quot;: &quot;npm run package:stylus &amp;&amp; npm run package:jade &amp;&amp; npm run package:js&quot;</code></p>
+<p>This will run our 3 package tasks in a sequence.</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"package:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:jade"</span>: <span class="string">"jade src --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:js"</span>: <span class="string">"browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js"</span>,</span><br><span class="line">    <span class="string">"package"</span>: <span class="string">"npm run package:stylus &amp;&amp; npm run package:jade &amp;&amp; npm run package:js"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>Run <code>npm run package</code> to test the full build sequence.</p>
+<p><br></p>
+<h2 id="5)_Cleaning_up_the_output_directory">5) Cleaning up the output directory</h2><p>Before running the build, we would like to clean the output directory.</p>
+<p>We will use <a href="https://github.com/isaacs/rimraf#cli" target="_blank" rel="external">rimraf’s CLI</a> like so: <code>rimraf dist/*</code>.</p>
+<p>Instead of creating another ‘package:clean’ task, we can use an <a href="http://www.marcusoft.net/2015/08/pre-and-post-hooks-for-npm-scripting.html" target="_blank" rel="external">npm script prehook</a>. By prefixing an existing task (even custom) with <em>pre</em> or <em>post</em>, it will be automatically executed before or after our main task.</p>
+<p>In our current project, if we create a task called <code>&lt;b&gt;pre&lt;/b&gt;package</code> it will be executed automatically before our <code>package</code> task. In a similar way, <code>&lt;b&gt;post&lt;/b&gt;package</code> would be executed after <code>package</code>.</p>
+<p>Our final task:</p>
+<p><code>&quot;prepackage&quot;: &quot;rimraf dist/*&quot;</code></p>
+<p>and here is the final scripts object in he package:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"package:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:jade"</span>: <span class="string">"jade src --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:js"</span>: <span class="string">"browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js"</span>,</span><br><span class="line">    <span class="string">"package"</span>: <span class="string">"npm run package:stylus &amp;&amp; npm run package:jade &amp;&amp; npm run package:js"</span>,</span><br><span class="line">    <span class="string">"prepackage"</span>: <span class="string">"rimraf dist/*"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this post we will see how it is possible to configure an entire build sequence <strong>using npm only</strong>.</p>
+<h3 id="What_we_want_to_achieve:">What we want to achieve:</h3><p>One command <code>npm run package</code> should:</p>
+<ul>
+<li>clean our build folder</li>
+<li>compile our css from stylus</li>
+<li>compile our html from jade</li>
+<li>bundle and minify our javascript</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
+    
+      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
+    
+      <category term="Jade" scheme="http://klugjo.github.io/tags/Jade/"/>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="Stylus" scheme="http://klugjo.github.io/tags/Stylus/"/>
+    
+      <category term="npm" scheme="http://klugjo.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Run scripts with npm]]></title>
+    <link href="http://klugjo.github.io/2015/12/Run-scripts-with-npm/"/>
+    <id>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</id>
+    <published>2015-12-09T08:34:19.000Z</published>
+    <updated>2015-12-09T13:08:25.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> is an awesome tool built directly inside of Node.js. You can use it to configure and run common scripts like running your unit tests or starting your webserver.</p>
+<p>npm has 4 default <a href="https://docs.npmjs.com/misc/scripts" target="_blank" rel="external">npm-scripts commands</a>:</p>
+<ul>
+<li>test</li>
+<li>start</li>
+<li>stop</li>
+<li>restart</li>
+</ul>
+<p>We will look into all these and see how to create custom commands.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_Getting_started:">1) Getting started:</h2><p>Let’s start with an empty project folder, cd into it and run <code>npm init</code>. Pick a name for your project and use the defaults for the remaining fields.</p>
+<p>Your <code>package.json</code> should look something like:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"npm-scripts"</span></span>,</span><br><span class="line">  "<span class="attribute">version</span>": <span class="value"><span class="string">"1.0.0"</span></span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">"index.js"</span></span>,</span><br><span class="line">  "<span class="attribute">scripts</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">test</span>": <span class="value"><span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">author</span>": <span class="value"><span class="string">"Klughertz Jonathan (http://klugjo.github.io/)"</span></span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"ISC"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="2)_npm_test:">2) npm test:</h2><p>The default <code>package.json</code> comes with a <code>scripts</code> object and a <code>test</code> command:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>Our <a href="https://docs.npmjs.com/cli/test" target="_blank" rel="external">npm-test</a> command is already good to go.</p>
+<p>To run an npm script:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="command">run</span>-<span class="keyword">script</span> &lt;command&gt; [<span class="comment">-- &lt;args&gt;...]</span></span><br><span class="line"></span><br><span class="line"><span class="type">alias</span>: npm <span class="command">run</span></span><br></pre></td></tr></table></figure>
+<p>Back to your terminal, type <code>npm run-script test</code> or <code>npm run test</code> to run the test command.</p>
+<p>At the moment it will return an error so remove the <code>exit 1</code> portion of the script to make it work:</p>
+<p><code>&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot;&quot;</code></p>
+<h3 id="Hint:">Hint:</h3><p>Typing <code>npm run-script test</code> is a bit lengthy. Fortunately, there are shortcuts built into NPM.</p>
+<p>You can use any of the following commands, they are all equivalent:</p>
+<ul>
+<li><code>npm run-script test</code></li>
+<li><code>npm run test</code></li>
+<li><code>npm test</code></li>
+<li><code>npm tst</code></li>
+<li><code>npm t</code></li>
+</ul>
+<p><br><br>In a real world project, you would use that command to run your unit test script command. By setting the test command to <code>mocha test</code> for example.</p>
+<p><br></p>
+<h2 id="3)_npm_start_and_stop:">3) npm start and stop:</h2><p>The <a href="https://docs.npmjs.com/cli/start" target="_blank" rel="external">npm-start</a> and <a href="https://docs.npmjs.com/cli/stop" target="_blank" rel="external">npm-stop</a> commands work the same way as the npm-test command. They are typically used to start and stop the application.</p>
+<p>Edit your package.json to include the start and stop commands:</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">""</span>,</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> start command specified\<span class="string">""</span>,</span><br><span class="line">    <span class="string">"stop"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> stop command specified\<span class="string">""</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>As before, you can use <code>npm run start</code> or the shorter versions:</p>
+<ul>
+<li><code>npm start</code></li>
+<li><code>npm stop</code></li>
+</ul>
+<p><br></p>
+<h2 id="4)_npm_restart:">4) npm restart:</h2><p>If no <code>restart command is specified</code>, <strong>the <a href="https://docs.npmjs.com/cli/restart" target="_blank" rel="external">npm-restart</a> runs a package’s “stop” and “start” consecutively.</strong></p>
+<p>At the moment if you run <code>npm restart</code>, you will get:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm scripts jonathan$ npm restart</span><br><span class="line"></span><br><span class="line">Error: no <span class="built_in">stop</span> <span class="command"><span class="keyword">command</span> <span class="title">specified</span></span></span><br><span class="line"></span><br><span class="line">Error: no <span class="built_in">start</span> <span class="command"><span class="keyword">command</span> <span class="title">specified</span></span></span><br></pre></td></tr></table></figure>
+<p>If you add the following <code>restart</code> command in your package: <code>&quot;restart&quot;: &quot;echo \&quot;Error: no restart command specified\&quot;&quot;</code> and run <code>npm restart</code>, you will get:</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> scripts jonathan$ <span class="built_in">npm</span> restart</span><br><span class="line"></span><br><span class="line"><span class="attribute">Error</span>: <span class="literal">no</span> restart command specified</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="5)_Custom_scripts">5) Custom scripts</h2><p>On top of these defaults, you can of course add your own commands.</p>
+<p>For example, add <code>&quot;custom&quot;: &quot;echo \&quot;Running custom command\&quot;&quot;</code> to your package.</p>
+<p>And run it using <code>npm run custom</code>.</p>
+<p>All custom commands have to be run using the <code>npm run-script &lt;command&gt;</code> syntax.</p>
+<p>Happy scripting !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://www.npmjs.com/">npm</a> is an awesome tool built directly inside of Node.js. You can use it to configure and run common scripts like running your unit tests or starting your webserver.</p>
+<p>npm has 4 default <a href="https://docs.npmjs.com/misc/scripts">npm-scripts commands</a>:</p>
+<ul>
+<li>test</li>
+<li>start</li>
+<li>stop</li>
+<li>restart</li>
+</ul>
+<p>We will look into all these and see how to create custom commands.</p>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="npm" scheme="http://klugjo.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Add Google Analytics to your hexo blog]]></title>
+    <link href="http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/"/>
+    <id>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</id>
+    <published>2015-12-06T00:51:43.000Z</published>
+    <updated>2015-12-06T01:09:22.000Z</updated>
+    <content type="html"><![CDATA[<p>This post will show you how to integrate <a href="https://www.google.com/analytics/" target="_blank" rel="external">Google Analytics</a> to your <a href="https://hexo.io/" target="_blank" rel="external">Hexo blog</a>.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_The_easy_way-_When_your_theme_already_supports_Google_Analytics-">1) The easy way. When your theme already supports Google Analytics.</h2><p>If you are lucky, your theme already support Google Analytics. This is the case for the <a href="https://github.com/tommy351/hexo-theme-landscape" target="_blank" rel="external">default theme</a> and <a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="external">Light</a>, the theme I started with.</p>
+<p>Grab your site’s Google Analytics tracking ID. It should look something like <strong>UA-83746351-2</strong></p>
+<p>Then go to your theme’s main <code>_config.yml</code> and look for a property called <code>google_analytics</code>. Fill in your tracking ID.</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">google_analytics</span>: <span class="string">UA-83746351-2</span></span><br></pre></td></tr></table></figure>
+<p>Google Analytics has been added to your site !</p>
+<p><br></p>
+<h2 id="2)_The_not_so_difficult_way-_When_you_have_to_implement_the_tracking_code_yourself-">2) The not so difficult way. When you have to implement the tracking code yourself.</h2><p>Following 1), prepare your Google Analytics tracking ID and add the following property to your theme’s <code>_config.yml</code>:</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">google_analytics</span>: <span class="string">UA-83746351-2</span></span><br></pre></td></tr></table></figure>
+<p>Once this is done, let’s add the Analytics code to each page. </p>
+<p>Create a new <code>google_analytics.ejs</code> file with the following code: (I am using EJS so adapt the code to the templating engine you are using)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">if</span> (theme.google_analytics)&#123; %&gt;</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="scheme"></span><br><span class="line">	<span class="list">(<span class="keyword">function</span><span class="list">(<span class="keyword">i</span>,s,o,g,r,a,m)</span>&#123;i<span class="list">[<span class="variable">'GoogleAnalyticsObject</span>']=r<span class="comment">;i[r]=i[r]||function()&#123;</span></span><br><span class="line">		<span class="list">(<span class="keyword">i</span><span class="list">[<span class="keyword">r</span>].q=i<span class="list">[<span class="keyword">r</span>].q||<span class="list">[]).push<span class="list">(<span class="keyword">arguments</span>)</span>&#125;,i<span class="list">[<span class="keyword">r</span>].l=1*new Date<span class="list">()</span><span class="comment">;a=s.createElement(o),</span></span><br><span class="line">			m=s.getElementsByTagName<span class="list">(<span class="keyword">o</span>)</span><span class="list">[<span class="keyword">0</span>]<span class="comment">;a.async=1;a.src=g;m.parentNode.insertBefore(a,m)</span></span><br><span class="line">	&#125;)<span class="list">(<span class="keyword">window</span>,document,<span class="variable">'script</span>',<span class="variable">'//www.google-analytics.com/analytics.js</span>',<span class="variable">'ga</span>')</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line">	ga<span class="list">(<span class="variable">'create</span>', <span class="variable">'&lt;%=</span> theme.google_analytics %&gt;', <span class="variable">'auto</span>')</span><span class="comment">;</span></span><br><span class="line">	ga<span class="list">(<span class="variable">'send</span>', <span class="variable">'pageview</span>')</span><span class="comment">;</span></span><br><span class="line"></span><br><span class="line"></span></span></span></span></span></span></span></span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">%</span> &#125; %&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>This code is the Universal Analytics tracking code with a parameterized tracking ID.</p>
+<p>Integrate this template to your theme so that it is included in the <code>&lt;head&gt;</code> tag of each page once the site is generated. Done !</p>
+<p>Happy analyzing !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This post will show you how to integrate <a href="https://www.google.com/analytics/">Google Analytics</a> to your <a href="https://hexo.io/">Hexo blog</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="Analytics" scheme="http://klugjo.github.io/tags/Analytics/"/>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Add Disqus comments in Hexo]]></title>
+    <link href="http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/"/>
+    <id>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</id>
+    <published>2015-12-05T11:49:06.000Z</published>
+    <updated>2015-12-06T01:08:29.000Z</updated>
+    <content type="html"><![CDATA[<p>This post will show you how to integrate <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> comments to your <a href="https://hexo.io/" target="_blank" rel="external">Hexo blog</a>.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_The_easy_way-_When_your_theme_already_supports_Disqus_comments-">1) The easy way. When your theme already supports Disqus comments.</h2><p>If you are lucky, your theme already support Disqus comments. This is the case for the <a href="https://github.com/tommy351/hexo-theme-landscape" target="_blank" rel="external">default theme</a> and <a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="external">Light</a>, the theme I started with.</p>
+<p>Grab your site’s Disqus unique identifier: for example here <strong>klugjoTest</strong>:<br><br></p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/add-disqus-comments-hexo-unique-name.jpg" alt="Disqus Site Unique Identifier" title="Disqus Site Unique Identifier"></p>
+<p>Then go to your site’s main <code>_config.yml</code> and add a <code>disqus_shortname</code> property with your Disqus ID.</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Disqus comments</span></span><br><span class="line"><span class="label">disqus_shortname:</span> klugjoTest</span><br></pre></td></tr></table></figure>
+<p>Your site will automatically display Disqus comments on each post !</p>
+<p>(Note: if want to test the modification on your local machine first, you will have to change the <code>url</code> property in your <code>_config.yml</code> to <code>http://localhost:4000</code> or whichever port you are using. Don’t forget to change it back before deployment)</p>
+<p><br></p>
+<h2 id="2)_The_not_so_difficult_way-_When_you_have_to_implement_the_comments_section_yourself-">2) The not so difficult way. When you have to implement the comments section yourself.</h2><p>Log in to your Disqus account and go to your site settings, then check the installation section.</p>
+<p>You will find a bunch of code that needs to be pasted in your site to display the comments.</p>
+<p>This code consists of: </p>
+<ul>
+<li>A <code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code>: place it where you want your comments to be displayed. </li>
+<li>A <code>&lt;script&gt;</code> tag that should be place before your <code>&lt;/body&gt;</code> closing tag.</li>
+</ul>
+<p>In the <code>&lt;script</code> tag, there are two variables that need to be set dynamically:</p>
+<ul>
+<li><code>url</code>: set this to your blog post URL accessible through <code>&lt;%= config.disqus_shortname %&gt;</code></li>
+<li><code>identifier</code>: set this to your unique Disqus ID accessible through <code>&lt;%= page.permalink %&gt;</code></li>
+</ul>
+<p>More info in the <a href="https://help.disqus.com/customer/en/portal/articles/2158629" target="_blank" rel="external">Disqus official documentation</a></p>
+<p>Check out an <a href="https://github.com/tommy351/hexo-theme-landscape/blob/master/layout/_partial/after-footer.ejs" target="_blank" rel="external">implementation example</a> in the landscape theme.</p>
+<p>Happy blogging !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This post will show you how to integrate <a href="https://disqus.com/">Disqus</a> comments to your <a href="https://hexo.io/">Hexo blog</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="Disqus" scheme="http://klugjo.github.io/tags/Disqus/"/>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Add an RSS feed to your hexo blog]]></title>
+    <link href="http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/"/>
+    <id>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</id>
+    <published>2015-12-01T12:18:26.000Z</published>
+    <updated>2015-12-09T13:08:29.000Z</updated>
+    <content type="html"><![CDATA[<p>Adding an RSS feed to your hexo blog is child’s play. Thanks to the <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a> plugin.</p>
+<h2 id="1)_Installation">1) Installation</h2><p><code>npm install hexo-generator-feed --save</code></p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="2)_Configuration">2) Configuration</h2><p>Open your hexo configuration file: <code>_config.yml</code></p>
+<p>and in the plugin section (just below your theme setting), add the following configuration</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">feed</span>:</span><br><span class="line">  <span class="attribute">type</span>: atom</span><br><span class="line">  <span class="attribute">path</span>: atom.xml</span><br><span class="line">  <span class="attribute">limit</span>: <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>type</code>: You can choose between <a href="https://en.wikipedia.org/wiki/Atom_(standard" target="_blank" rel="external">Atom</a>) and <a href="https://en.wikipedia.org/wiki/RSS" target="_blank" rel="external">RSS2</a></li>
+<li><code>path</code>: the path to the rss feed</li>
+<li><code>limit</code>: the maximum number of posts to show</li>
+</ul>
+<p>Pretty simple isn’t it ?</p>
+<p>If you want to learn more about RSS feeds, check this <a href="http://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared" target="_blank" rel="external">comparison between Atom and RSS2</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Adding an RSS feed to your hexo blog is child’s play. Thanks to the <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> plugin.</p>
+<h2 id="1)_Installation">1) Installation</h2><p><code>npm install hexo-generator-feed --save</code></p>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="RSS" scheme="http://klugjo.github.io/tags/RSS/"/>
+    
+      <category term="npm" scheme="http://klugjo.github.io/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Your first 10 minutes with Browserify]]></title>
+    <link href="http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/"/>
+    <id>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</id>
+    <published>2015-11-27T07:13:16.000Z</published>
+    <updated>2015-12-06T01:16:07.000Z</updated>
+    <content type="html"><![CDATA[<p>Follow these instructions and in less than 10 minutes you will have <a href="http://browserify.org/index.html" target="_blank" rel="external">Browserify</a> installed and ready to go.</p>
+<p><br></p>
+<h2 id="1)_Install_Browserify_globally">1) Install Browserify globally</h2><p><code>npm install -g browserify</code></p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="2)_Create_a_main-js_file_and_start_writing_your_code">2) Create a main.js file and start writing your code</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chunked = _.chunk([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>], <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(chunked); <span class="comment">// → [['a', 'b'], ['c', 'd']]</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="3)_Use_npm_to_install_your_dependencies">3) Use npm to install your dependencies</h2><p><code>npm install --save lodash</code></p>
+<p><br></p>
+<h2 id="4)_Use_browserify_to_package_your_code">4) Use browserify to package your code</h2><p><code>browserify main.js -o bundle.js</code></p>
+<p><br></p>
+<h2 id="5)_Drop_bundle-js_in_your_html_code_and_you_are_ready_to_go_!">5) Drop bundle.js in your html code and you are ready to go !</h2><p>Browserify automatically found and included all the required dependencies in bundle.js.</p>
+<p><br></p>
+<h2 id="6)_Advantages">6) Advantages</h2><ul>
+<li>You only need to require one JavaScript file in your code</li>
+<li>You can manage your client side dependencies with npm</li>
+<li>You can manage your dependencies easily like you would in Node.<br><br></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Follow these instructions and in less than 10 minutes you will have <a href="http://browserify.org/index.html">Browserify</a> installed and ready to go.</p>
+<p><br /></p>
+<h2 id="1)_Install_Browserify_globally">1) Install Browserify globally</h2><p><code>npm install -g browserify</code></p>]]>
+    
+    </summary>
+    
+      <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Refresh webpages automatically during development using Gulp]]></title>
+    <link href="http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/"/>
+    <id>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</id>
+    <published>2015-11-25T03:39:43.000Z</published>
+    <updated>2015-12-06T01:14:07.000Z</updated>
+    <content type="html"><![CDATA[<p>This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.</p>
+<p>We will learn how to install and configure the following tools:</p>
+<ul>
+<li><a href="https://github.com/avevlad/gulp-connect" target="_blank" rel="external">gulp-connect</a>: to start a webserver from our Gulp build script</li>
+<li><a href="https://www.npmjs.com/package/gulp-open" target="_blank" rel="external">gulp-open</a>: to open an URL in our web browser</li>
+</ul>
+<p>To get started we will need a basic website project with a <code>gulpfile.js</code> that can generate our website. Check out my <a href="/2015/11/24/Getting-started-with-Gulp-and-static-websites/">Getting started with Gulp</a> and or <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22" target="_blank" rel="external">this gulpfile example</a></p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_Starting_a_webserver_with_gulp-connect">1) Starting a webserver with gulp-connect</h2><p>First install <a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">gulp-connect</a> locally with <code>npm install --save-dev gulp-connect</code>,</p>
+<p>and add the dependency to the gulpfile.js with <code>var connect = require(&#39;gulp-connect&#39;);</code></p>
+<p>We are now ready to declare our connect task. (Check out <a href="/2015/11/24/Getting-started-with-Gulp-and-static-websites/">this tutorial</a> if you don’t know what a gulp task is)</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gulp</span><span class="class">.task</span>(<span class="string">'connect'</span>, function () &#123;</span><br><span class="line">    <span class="tag">connect</span><span class="class">.server</span>(&#123;</span><br><span class="line">        <span class="attribute">root</span>: <span class="string">'dist'</span>,</span><br><span class="line">        <span class="attribute">port</span>: <span class="number">8001</span>,</span><br><span class="line">        <span class="attribute">livereload</span>: true</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>This will create a webserver running on <a href="http://localhost:8001" target="_blank" rel="external">http://localhost:8001</a> which uses our dist directory as the website root. For more configuration options, check out the <a href="https://github.com/avevlad/gulp-connect#api" target="_blank" rel="external">documentation</a>.</p>
+<p>Add the connect task to the default task: </p>
+<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;]);</code></p>
+<p> and run your gulp build to test it out.</p>
+<p><br></p>
+<h2 id="2)_Opening_a_web_browser_with_gulp-open">2) Opening a web browser with gulp-open</h2><p>Install <a href="https://github.com/stevelacy/gulp-open" target="_blank" rel="external">gulp-open</a> locally with <code>npm install --save-dev gulp-open</code> </p>
+<p>and add the dependency to the gulpfile.js with <code>var open = require(&#39;gulp-open&#39;);</code></p>
+<p>Declare the ‘open’ task:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gulp</span><span class="class">.task</span>(<span class="string">'open'</span>, <span class="function">function</span>()&#123;</span><br><span class="line">    <span class="tag">gulp</span><span class="class">.src</span>(<span class="string">'dist/index.html'</span>)</span><br><span class="line">        <span class="class">.pipe</span>(<span class="function">open</span>(&#123;<span class="attribute">uri</span>: <span class="string">'http://localhost:8001/'</span>&#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>and add it to the default task</p>
+<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;, &#39;open&#39;]);</code></p>
+<p>run your gulp and your browser will open automatically, pointing to your local webserver URL.</p>
+<p><br></p>
+<h2 id="3)_Refreshing_the_page_automatically_when_a_code_change_is_detected">3) Refreshing the page automatically when a code change is detected</h2><p>Wrapping up, we are going to configure gulp to automatically refresh the website every time a change is made to the code. That way, we won’t have to start our gulp build and hit the refresh button manually each time.</p>
+<h3 id="a)_Watch_task">a) Watch task</h3><p>First of all, we need a watch task that will watch the filesystem and rebuild the project when a change is detected.</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'./src/*.html'</span>, [<span class="string">'html'</span>]);</span><br><span class="line">    gulp.watch(<span class="string">'./src/**/*.css'</span>, [<span class="string">'css'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>This task will start two <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb" target="_blank" rel="external">gulp file watchers</a> which will execute the ‘html’ and ‘css’ tasks whenever a change is detected.</p>
+<h3 id="b)_Build_task_modification">b) Build task modification</h3><p>Since we want our webpage to be refreshed automatically, we need to ask gulp-connect to reload the site whenever a new build is ready. This means adding a new piped instruction to both our ‘html’ and ‘css’ tasks that will reload the site.</p>
+<p>Our ‘html’ task:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>becomes:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>))</span><br><span class="line">        .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>A piped <code>connect.reload()</code> should also be added to the ‘css’ task and any other build task that is present in your project.</p>
+<h3 id="c)_Default_task_modification">c) Default task modification</h3><p>Don’t forget to modify the default gulp task to start the file watchers:</p>
+<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;, &#39;open&#39;, &#39;watch&#39;]);</code></p>
+<p>Now start your gulp and that’s it, if you modify (and save) one of your html or css file, the website will be automatically updated. Happy coding!</p>
+<p>You can check an example of a refactored gulpfile.js for this project <a href="https://gist.github.com/klugjo/739ba11d15191f3162b9" target="_blank" rel="external">here</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.</p>
+<p>We will learn how to install and configure the following tools:</p>
+<ul>
+<li><a href="https://github.com/avevlad/gulp-connect">gulp-connect</a>: to start a webserver from our Gulp build script</li>
+<li><a href="https://www.npmjs.com/package/gulp-open">gulp-open</a>: to open an URL in our web browser</li>
+</ul>
+<p>To get started we will need a basic website project with a <code>gulpfile.js</code> that can generate our website. Check out my <a href="/2015/11/24/Getting-started-with-Gulp-and-static-websites/">Getting started with Gulp</a> and or <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22">this gulpfile example</a></p>]]>
+    
+    </summary>
+    
+      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
+    
+      <category term="Gulp" scheme="http://klugjo.github.io/tags/Gulp/"/>
+    
+      <category term="LiveReload" scheme="http://klugjo.github.io/tags/LiveReload/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Getting started with Gulp and static websites]]></title>
+    <link href="http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/"/>
+    <id>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</id>
+    <published>2015-11-24T03:21:06.000Z</published>
+    <updated>2015-12-06T01:14:19.000Z</updated>
+    <content type="html"><![CDATA[<p>This quick tutorial will show you how to get started with <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a> and how to create a build script for your static website:</p>
+<ul>
+<li>Gulp installation with NPM</li>
+<li>Project setup</li>
+<li>Copy our HTML files to the output folder</li>
+<li>Concatenate our CSS files</li>
+</ul>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_Install_Gulp_with_NPM">1) Install Gulp with NPM</h2><p>First of all and if you haven’t already done so, you need to install gulp globally:</p>
+<p><code>npm install -g gulp</code></p>
+<p>Then install gulp locally: <code>npm install --save-dev gulp</code></p>
+<p>At the root of your project, create a file called <code>gulpfile.js</code>. This is our gulp configuration file; in this file, we will declare all our gulp tasks.</p>
+<p><br></p>
+<h2 id="2)_Project_Structure">2) Project Structure</h2><p>Before we configure our build, we need to agree on a basic project structure. I chose to follow the conventions used by the <a href="https://html5boilerplate.com" target="_blank" rel="external">HTML5 Boilerplate</a> project.</p>
+<p>We will have a <code>src</code> folder that contains all our source files and a <code>dist</code> folder that contains our final build.</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code should be <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- css </span><br><span class="line">        |-- main.css // Our css file(s)</span><br><span class="line">        |-- ...</span><br><span class="line">    |-- index.html // Our html file(s)</span><br><span class="line">    |-- ...</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="3)_Gulp_initialization_and_copy_HTML_to_dist_folder">3) Gulp initialization and copy HTML to <code>dist</code> folder</h2><p>The only thing needed to initialize gulp is to require the gulp node module in the <code>gulpfile.js</code></p>
+<p><code>var gulp = require(&#39;gulp&#39;);</code></p>
+<p>Once this is done, let’s add our first task.</p>
+<p>To define a gulp task, use the following format:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'name of your task'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123; </span><br><span class="line">    <span class="comment">// actions to be executed by this task </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>There are many plugins available on npm compatible with the Gulp task runner, but for our first task (copy HTML files to the output directory), the <code>gulp</code> module is sufficient:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gulp.<span class="function"><span class="title">src</span><span class="params">(<span class="string">'path of src files'</span>)</span></span></span><br><span class="line">    .<span class="function"><span class="title">pipe</span><span class="params">(gulp.dest(<span class="string">'path to output directory'</span>)</span></span>)</span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpsrcglobs-options" target="_blank" rel="external">gulp.src</a> returns a stream of <a href="https://github.com/gulpjs/vinyl-fs" target="_blank" rel="external">Vynil files</a> matching the path; then pipe them to gulp plugins or actions.</p>
+<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpdestpath-options" target="_blank" rel="external">gulp.dest</a> writes all piped files to the folder passed as argument.</p>
+<p>The complete code for our task will then look like:</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>(At this point, I suggest you refactor a bit and use a configuration object to store the strings in a reusable manner.)</p>
+<p><br></p>
+<h2 id="4)_Gulp’s_default_command_line_task">4) Gulp’s default command line task</h2><p>What we want here is to simply type <code>gulp</code> in our command line and have all our gulp tasks executed.</p>
+<p>To do this simply add the following line to your gulpfile.js:</p>
+<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;]);</code></p>
+<p>What this does is associate an array of gulp tasks (in this example our ‘html’ task) with the default <code>gulp</code> command. You can add more tasks to that array as we will see next.</p>
+<p>But first, save your <code>gulpfile.js</code> and type <code>gulp</code> in the command line to check that your html files are copied to the dist directory.</p>
+<p><br></p>
+<h2 id="5)_CSS_concatenation">5) CSS concatenation</h2><p>Now that we have our HTML files in the output folder, let’s finish by concatenating all our CSS files into one.</p>
+<p>For this, we will need to install a gulp plugin called gulp-concat</p>
+<p><code>npm install --save gulp-concat</code></p>
+<p>Let’s add that plugin to our <code>gulpfile.js</code> with the rest of our dependencies:</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="keyword">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">    <span class="keyword">concat</span> = <span class="keyword">require</span>(<span class="string">'gulp-concat'</span>);</span><br></pre></td></tr></table></figure>
+<p>We are now ready to declare our css task. Let’s imagine we want to combine our bootstrap css with our main css file into a file called site.css</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'css'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">   gulp.src([<span class="string">'./src/css/bootstrap.min.css'</span>, <span class="string">'./src/css/main.css'</span>])</span><br><span class="line">       .pipe(concat(<span class="string">'site.css'</span>))</span><br><span class="line">       .pipe(gulp.dest(<span class="string">'./dist/css'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>What we do here is set our source files as an array of css files, concatenating them and saving the result in a css folder in our dist directory. It is of course possible to add more css files in the src array.<br><br>The last step before we can test our build script, consists of adding the css task to our default gulp command:</p>
+<p>Modify the last line of your gulpfile.js to be <code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;]);</code></p>
+<p>Run gulp from the command line and voila !</p>
+<p>You can check an example of a refactored gulpfile.js for this project <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22" target="_blank" rel="external">here</a>.</p>
+<p>Thanks !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This quick tutorial will show you how to get started with <a href="http://gulpjs.com/">Gulp</a> and how to create a build script for your static website:</p>
+<ul>
+<li>Gulp installation with NPM</li>
+<li>Project setup</li>
+<li>Copy our HTML files to the output folder</li>
+<li>Concatenate our CSS files</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
+    
+      <category term="Gulp" scheme="http://klugjo.github.io/tags/Gulp/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Capture command line arguments in node]]></title>
+    <link href="http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/"/>
+    <id>http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/</id>
+    <published>2015-08-16T02:37:16.000Z</published>
+    <updated>2015-12-06T01:14:40.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="Retrieve_command-line_arguments">Retrieve command-line arguments</h2><p>If you run <code>node index.js arg1 arg2</code>, you can retrieve these incoming command line arguments using</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arg1 = process.argv[<span class="number">2</span>],</span><br><span class="line">    arg2 = process.argv[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
+<a id="more"></a> 
+<p>The list of commands executed is accessible from the <a href="https://nodejs.org/api/process.html#process_process" target="_blank" rel="external">process global object</a>.</p>
+<p><code>argv</code> stands for arguments vector and is an array. It contains <code>node</code> and <code>index.js</code> (or your entry file path equivalent) as its first two values.</p>
+<h2 id="Retrieve_node-specific_command_line_options">Retrieve node-specific command line options</h2><p>If you run <code>node --harmony index.js arg1</code>, the <code>--harmony</code> flag will no be included in <code>process.argv</code></p>
+<p>If you wish to retrieve it, use <code>process.execArgv</code>. The <a href="https://nodejs.org/api/process.html#process_process_execargv" target="_blank" rel="external">execArgv</a> array will not include the values already included in <code>process.argv</code>.</p>
+<p>So based on the above command:</p>
+<p><strong>process.execArgv</strong> will be equal to</p>
+<p><code>[&#39;--harmony&#39;]</code></p>
+<p>and <strong>process.argv</strong> will be equal to</p>
+<p><code>[&#39;node&#39;, &#39;/Users/username/test.js&#39;, &#39;arg1&#39;]</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="Retrieve_command-line_arguments">Retrieve command-line arguments</h2><p>If you run <code>node index.js arg1 arg2</code>, you can retrieve these incoming command line arguments using</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arg1 = process.argv[<span class="number">2</span>],</span><br><span class="line">    arg2 = process.argv[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+</feed>
