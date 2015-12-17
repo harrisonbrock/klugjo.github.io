@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2015-12-14T08:02:13.000Z</updated>
+  <updated>2015-12-17T09:10:32.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexo deploy your blog to github pages in one command]]></title>
+    <link href="http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/"/>
+    <id>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</id>
+    <published>2015-12-17T08:12:33.000Z</published>
+    <updated>2015-12-17T09:10:32.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexo allows you to deploy your blog to github pages or any other git repository pretty much out of the box.</p>
+<p>Your hexo can be hosted for free on <a href="https://pages.github.com/" target="_blank" rel="external">github pages</a> but this tutorial would also work for any other git hosting site.</p>
+<a id="more"></a> 
+<h2 id="Hexo-deployer-git">Hexo-deployer-git</h2><p>There is a <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">plugin developed by the hexo team</a> that will help do just that, deploy to git in one command.</p>
+<h3 id="Installation">Installation</h3><p>While at the root of your hexo project:</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+<h3 id="Configuration">Configuration</h3><p>Open your <code>_config.yml</code> and edit the Deployment section:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br></pre></td></tr></table></figure>
+<p>Use your blog github repo URL in the repo property</p>
+<h3 id="Deploy_!">Deploy !</h3><p>Run <code>hexo deploy</code> and your blog is online. Easy, wasn’t it ?</p>
+<h2 id="Remarks">Remarks</h2><h3 id="-_You_need_to_generate_your_site_first">- You need to generate your site first</h3><p><code>hexo deploy</code> will not generate your pages, you need to launch <code>hexo generate</code> first.</p>
+<p>If you want an easy way to do both at the same time, you could <a href="/2015/12/Run-scripts-with-npm/">create an npm script</a> to do this:</p>
+<p>In your package.json add</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"deploy"</span>: <span class="string">"hexo generate &amp;&amp; hexo deploy"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>and run <code>npm run deploy</code> instead of <code>hexo deploy</code></p>
+<h3 id="-_You_can_add_several_repos_if_you_want_to_push_your_blog_to_several_places">- You can add several repos if you want to push your blog to several places</h3><p>Just duplicated the <code>repo:</code> line:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-second-blog-url.github.io</span></span><br></pre></td></tr></table></figure>
+<h3 id="-_You_can_personalize_the_git_commit_message">- You can personalize the git commit message</h3><p>By default the message will be: Site updated: &lbrace;&lbrace; now(“YYYY-MM-DD HH:mm:ss”) &lbrace;&lbrace;</p>
+<p>You can add a message property if you want to use your own:</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br><span class="line">  <span class="attribute">message</span>: New post added</span><br></pre></td></tr></table></figure>
+<p>You can use <a href="http://paularmstrong.github.io/swig/" target="_blank" rel="external">SWIG</a> templates in the message although I am not sure how that would help. The <code>now</code> method in the default message is a custom swig helper as you can see in the <a href="https://github.com/hexojs/hexo-deployer-git/blob/master/lib/deployer.js#L10-L14" target="_blank" rel="external">source</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexo allows you to deploy your blog to github pages or any other git repository pretty much out of the box.</p>
+<p>Your hexo can be hosted for free on <a href="https://pages.github.com/">github pages</a> but this tutorial would also work for any other git hosting site.</p>]]>
+    
+    </summary>
+    
+      <category term="GitHub" scheme="http://klugjo.github.io/tags/GitHub/"/>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Read-Only properties in JavaScript]]></title>
@@ -177,7 +219,7 @@
     <link href="http://klugjo.github.io/2015/12/Run-scripts-with-npm/"/>
     <id>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</id>
     <published>2015-12-09T08:34:19.000Z</published>
-    <updated>2015-12-09T13:08:25.000Z</updated>
+    <updated>2015-12-17T08:47:52.000Z</updated>
     <content type="html"><![CDATA[<p><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> is an awesome tool built directly inside of Node.js. You can use it to configure and run common scripts like running your unit tests or starting your webserver.</p>
 <p>npm has 4 default <a href="https://docs.npmjs.com/misc/scripts" target="_blank" rel="external">npm-scripts commands</a>:</p>
 <ul>
@@ -230,7 +272,7 @@
 <h2 id="5)_Custom_scripts">5) Custom scripts</h2><p>On top of these defaults, you can of course add your own commands.</p>
 <p>For example, add <code>&quot;custom&quot;: &quot;echo \&quot;Running custom command\&quot;&quot;</code> to your package.</p>
 <p>And run it using <code>npm run custom</code>.</p>
-<p>All custom commands have to be run using the <code>npm run-script &lt;command&gt;</code> syntax.</p>
+<p>All custom commands have to be run using the <code>npm run &lt;command&gt;</code> or <code>npm run-script &lt;command&gt;</code> syntax.</p>
 <p>Happy scripting !</p>
 ]]></content>
     <summary type="html">
@@ -473,81 +515,6 @@
       <category term="Gulp" scheme="http://klugjo.github.io/tags/Gulp/"/>
     
       <category term="LiveReload" scheme="http://klugjo.github.io/tags/LiveReload/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Getting started with Gulp and static websites]]></title>
-    <link href="http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/"/>
-    <id>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</id>
-    <published>2015-11-24T03:21:06.000Z</published>
-    <updated>2015-12-06T01:14:19.000Z</updated>
-    <content type="html"><![CDATA[<p>This quick tutorial will show you how to get started with <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a> and how to create a build script for your static website:</p>
-<ul>
-<li>Gulp installation with NPM</li>
-<li>Project setup</li>
-<li>Copy our HTML files to the output folder</li>
-<li>Concatenate our CSS files</li>
-</ul>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="1)_Install_Gulp_with_NPM">1) Install Gulp with NPM</h2><p>First of all and if you haven’t already done so, you need to install gulp globally:</p>
-<p><code>npm install -g gulp</code></p>
-<p>Then install gulp locally: <code>npm install --save-dev gulp</code></p>
-<p>At the root of your project, create a file called <code>gulpfile.js</code>. This is our gulp configuration file; in this file, we will declare all our gulp tasks.</p>
-<p><br></p>
-<h2 id="2)_Project_Structure">2) Project Structure</h2><p>Before we configure our build, we need to agree on a basic project structure. I chose to follow the conventions used by the <a href="https://html5boilerplate.com" target="_blank" rel="external">HTML5 Boilerplate</a> project.</p>
-<p>We will have a <code>src</code> folder that contains all our source files and a <code>dist</code> folder that contains our final build.</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code should be <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- css </span><br><span class="line">        |-- main.css // Our css file(s)</span><br><span class="line">        |-- ...</span><br><span class="line">    |-- index.html // Our html file(s)</span><br><span class="line">    |-- ...</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="3)_Gulp_initialization_and_copy_HTML_to_dist_folder">3) Gulp initialization and copy HTML to <code>dist</code> folder</h2><p>The only thing needed to initialize gulp is to require the gulp node module in the <code>gulpfile.js</code></p>
-<p><code>var gulp = require(&#39;gulp&#39;);</code></p>
-<p>Once this is done, let’s add our first task.</p>
-<p>To define a gulp task, use the following format:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'name of your task'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123; </span><br><span class="line">    <span class="comment">// actions to be executed by this task </span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>There are many plugins available on npm compatible with the Gulp task runner, but for our first task (copy HTML files to the output directory), the <code>gulp</code> module is sufficient:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gulp.<span class="function"><span class="title">src</span><span class="params">(<span class="string">'path of src files'</span>)</span></span></span><br><span class="line">    .<span class="function"><span class="title">pipe</span><span class="params">(gulp.dest(<span class="string">'path to output directory'</span>)</span></span>)</span><br></pre></td></tr></table></figure>
-<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpsrcglobs-options" target="_blank" rel="external">gulp.src</a> returns a stream of <a href="https://github.com/gulpjs/vinyl-fs" target="_blank" rel="external">Vynil files</a> matching the path; then pipe them to gulp plugins or actions.</p>
-<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpdestpath-options" target="_blank" rel="external">gulp.dest</a> writes all piped files to the folder passed as argument.</p>
-<p>The complete code for our task will then look like:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>(At this point, I suggest you refactor a bit and use a configuration object to store the strings in a reusable manner.)</p>
-<p><br></p>
-<h2 id="4)_Gulp’s_default_command_line_task">4) Gulp’s default command line task</h2><p>What we want here is to simply type <code>gulp</code> in our command line and have all our gulp tasks executed.</p>
-<p>To do this simply add the following line to your gulpfile.js:</p>
-<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;]);</code></p>
-<p>What this does is associate an array of gulp tasks (in this example our ‘html’ task) with the default <code>gulp</code> command. You can add more tasks to that array as we will see next.</p>
-<p>But first, save your <code>gulpfile.js</code> and type <code>gulp</code> in the command line to check that your html files are copied to the dist directory.</p>
-<p><br></p>
-<h2 id="5)_CSS_concatenation">5) CSS concatenation</h2><p>Now that we have our HTML files in the output folder, let’s finish by concatenating all our CSS files into one.</p>
-<p>For this, we will need to install a gulp plugin called gulp-concat</p>
-<p><code>npm install --save gulp-concat</code></p>
-<p>Let’s add that plugin to our <code>gulpfile.js</code> with the rest of our dependencies:</p>
-<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="keyword">require</span>(<span class="string">'gulp'</span>),</span><br><span class="line">    <span class="keyword">concat</span> = <span class="keyword">require</span>(<span class="string">'gulp-concat'</span>);</span><br></pre></td></tr></table></figure>
-<p>We are now ready to declare our css task. Let’s imagine we want to combine our bootstrap css with our main css file into a file called site.css</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'css'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">   gulp.src([<span class="string">'./src/css/bootstrap.min.css'</span>, <span class="string">'./src/css/main.css'</span>])</span><br><span class="line">       .pipe(concat(<span class="string">'site.css'</span>))</span><br><span class="line">       .pipe(gulp.dest(<span class="string">'./dist/css'</span>))</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>What we do here is set our source files as an array of css files, concatenating them and saving the result in a css folder in our dist directory. It is of course possible to add more css files in the src array.<br><br>The last step before we can test our build script, consists of adding the css task to our default gulp command:</p>
-<p>Modify the last line of your gulpfile.js to be <code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;]);</code></p>
-<p>Run gulp from the command line and voila !</p>
-<p>You can check an example of a refactored gulpfile.js for this project <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22" target="_blank" rel="external">here</a>.</p>
-<p>Thanks !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This quick tutorial will show you how to get started with <a href="http://gulpjs.com/">Gulp</a> and how to create a build script for your static website:</p>
-<ul>
-<li>Gulp installation with NPM</li>
-<li>Project setup</li>
-<li>Copy our HTML files to the output folder</li>
-<li>Concatenate our CSS files</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
-    
-      <category term="Gulp" scheme="http://klugjo.github.io/tags/Gulp/"/>
     
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
