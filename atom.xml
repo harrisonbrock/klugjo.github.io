@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2015-12-17T09:19:40.000Z</updated>
+  <updated>2015-12-18T04:06:35.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Bundle jade templates with browserify transform]]></title>
+    <link href="http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/"/>
+    <id>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</id>
+    <published>2015-12-18T02:03:38.000Z</published>
+    <updated>2015-12-18T04:06:35.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms" target="_blank" rel="external">Browserify transforms</a> can be used to load non Javascript files using the <a href="http://requirejs.org/docs/commonjs.html" target="_blank" rel="external">Common JS</a> syntax. You could for example load <a href="https://github.com/jnordberg/coffeeify" target="_blank" rel="external">CoffeeScript</a>, <a href="https://github.com/guzart/browserify-typescriptifier" target="_blank" rel="external">TypeScript</a> or <a href="https://github.com/babel/babelify" target="_blank" rel="external">compile ES6 to ES5</a> when packaging your JavaScript.</p>
+<p>In this example we will look at how to require a jade template directly inside our JS code and have browserify bundle everything up nicely.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="1)_Project_setup">1) Project setup</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code <span class="keyword">is</span> <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- templates</span><br><span class="line">        |-- quote.jade // Our jade template</span><br><span class="line">    |-- js</span><br><span class="line">        |-- index.js // Our main JavaScript file</span><br><span class="line">|-- package.json</span><br></pre></td></tr></table></figure>
+<p>We have an <code>index.js</code> file in which we will require and render our jade template.</p>
+<p><br></p>
+<h2 id="2)_Jade_template">2) Jade template</h2><p>Let’s start by setting up a simple <code>quote.jade</code> <a href="http://jade-lang.com/" target="_blank" rel="external">Jade template</a>.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h3 #&#123;quote&#125;&#10;span - #&#123;author&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="3)_Javascript">3) Javascript</h2><p>We are now ready to include our template in our Javascript. Require your jade template the same way as you would for a JS file but <strong>add the file extension</strong>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Require our jade template as we would require a Js file</span></span><br><span class="line"><span class="keyword">var</span> quoteTemplate = <span class="built_in">require</span>(<span class="string">'../templates/quote.jade'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Render the template</span></span><br><span class="line"><span class="keyword">var</span> output = quoteTemplate(&#123;</span><br><span class="line">    quote: <span class="string">"Be yourself; everyone else is already taken."</span>,</span><br><span class="line">    author: <span class="string">"Oscar Wilde"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="4)_Bundle_up">4) Bundle up</h2><h3 id="Let’s_start_by_installing_everything_we_need:">Let’s start by installing everything we need:</h3><ul>
+<li><p><a href="/2015/11/Your-first-10-minutes-with-Browserify/" target="_blank">Install browserify globally</a></p>
+</li>
+<li><p>Install <a href="https://github.com/domenic/jadeify" target="_blank" rel="external">jadeify</a>, our jade browserify transform: </p>
+</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> jadeify <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>You will also need to install jade locally even if you already have it installed globally. This is because browserify needs to access some of the jade code to include it in the output file.</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> jade <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="We_are_now_ready_to_create_our_package:">We are now ready to create our package:</h3><p>To specify a transform when launching browserify, use <code>-transform</code> or <code>-t</code> followed by the plugin name.</p>
+<p>So in our case:</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">browserify </span>-t jadeify <span class="string">"src/js/index.js"</span> -o <span class="string">"dist/bundle.js"</span></span><br></pre></td></tr></table></figure>
+<p>Your code is all packaged in one Js file. Include the bundle.js file in a simple HTML page and check the console. You should see:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h3</span>&gt;</span> Be yourself; everyone else is already taken.<span class="tag">&lt;/<span class="title">h3</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>- Oscar Wilde<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Have fun with browserify transforms !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms">Browserify transforms</a> can be used to load non Javascript files using the <a href="http://requirejs.org/docs/commonjs.html">Common JS</a> syntax. You could for example load <a href="https://github.com/jnordberg/coffeeify">CoffeeScript</a>, <a href="https://github.com/guzart/browserify-typescriptifier">TypeScript</a> or <a href="https://github.com/babel/babelify">compile ES6 to ES5</a> when packaging your JavaScript.</p>
+<p>In this example we will look at how to require a jade template directly inside our JS code and have browserify bundle everything up nicely.</p>]]>
+    
+    </summary>
+    
+      <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
+    
+      <category term="Jade" scheme="http://klugjo.github.io/tags/Jade/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexo deploy your blog to github pages in one command]]></title>
@@ -455,74 +506,6 @@
     </summary>
     
       <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Refresh webpages automatically during development using Gulp]]></title>
-    <link href="http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/"/>
-    <id>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</id>
-    <published>2015-11-25T03:39:43.000Z</published>
-    <updated>2015-12-06T01:14:07.000Z</updated>
-    <content type="html"><![CDATA[<p>This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.</p>
-<p>We will learn how to install and configure the following tools:</p>
-<ul>
-<li><a href="https://github.com/avevlad/gulp-connect" target="_blank" rel="external">gulp-connect</a>: to start a webserver from our Gulp build script</li>
-<li><a href="https://www.npmjs.com/package/gulp-open" target="_blank" rel="external">gulp-open</a>: to open an URL in our web browser</li>
-</ul>
-<p>To get started we will need a basic website project with a <code>gulpfile.js</code> that can generate our website. Check out my <a href="/2015/11/24/Getting-started-with-Gulp-and-static-websites/">Getting started with Gulp</a> and or <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22" target="_blank" rel="external">this gulpfile example</a></p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="1)_Starting_a_webserver_with_gulp-connect">1) Starting a webserver with gulp-connect</h2><p>First install <a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">gulp-connect</a> locally with <code>npm install --save-dev gulp-connect</code>,</p>
-<p>and add the dependency to the gulpfile.js with <code>var connect = require(&#39;gulp-connect&#39;);</code></p>
-<p>We are now ready to declare our connect task. (Check out <a href="/2015/11/24/Getting-started-with-Gulp-and-static-websites/">this tutorial</a> if you don’t know what a gulp task is)</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gulp</span><span class="class">.task</span>(<span class="string">'connect'</span>, function () &#123;</span><br><span class="line">    <span class="tag">connect</span><span class="class">.server</span>(&#123;</span><br><span class="line">        <span class="attribute">root</span>: <span class="string">'dist'</span>,</span><br><span class="line">        <span class="attribute">port</span>: <span class="number">8001</span>,</span><br><span class="line">        <span class="attribute">livereload</span>: true</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>This will create a webserver running on <a href="http://localhost:8001" target="_blank" rel="external">http://localhost:8001</a> which uses our dist directory as the website root. For more configuration options, check out the <a href="https://github.com/avevlad/gulp-connect#api" target="_blank" rel="external">documentation</a>.</p>
-<p>Add the connect task to the default task: </p>
-<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;]);</code></p>
-<p> and run your gulp build to test it out.</p>
-<p><br></p>
-<h2 id="2)_Opening_a_web_browser_with_gulp-open">2) Opening a web browser with gulp-open</h2><p>Install <a href="https://github.com/stevelacy/gulp-open" target="_blank" rel="external">gulp-open</a> locally with <code>npm install --save-dev gulp-open</code> </p>
-<p>and add the dependency to the gulpfile.js with <code>var open = require(&#39;gulp-open&#39;);</code></p>
-<p>Declare the ‘open’ task:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gulp</span><span class="class">.task</span>(<span class="string">'open'</span>, <span class="function">function</span>()&#123;</span><br><span class="line">    <span class="tag">gulp</span><span class="class">.src</span>(<span class="string">'dist/index.html'</span>)</span><br><span class="line">        <span class="class">.pipe</span>(<span class="function">open</span>(&#123;<span class="attribute">uri</span>: <span class="string">'http://localhost:8001/'</span>&#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>and add it to the default task</p>
-<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;, &#39;open&#39;]);</code></p>
-<p>run your gulp and your browser will open automatically, pointing to your local webserver URL.</p>
-<p><br></p>
-<h2 id="3)_Refreshing_the_page_automatically_when_a_code_change_is_detected">3) Refreshing the page automatically when a code change is detected</h2><p>Wrapping up, we are going to configure gulp to automatically refresh the website every time a change is made to the code. That way, we won’t have to start our gulp build and hit the refresh button manually each time.</p>
-<h3 id="a)_Watch_task">a) Watch task</h3><p>First of all, we need a watch task that will watch the filesystem and rebuild the project when a change is detected.</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'./src/*.html'</span>, [<span class="string">'html'</span>]);</span><br><span class="line">    gulp.watch(<span class="string">'./src/**/*.css'</span>, [<span class="string">'css'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>This task will start two <a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md#gulpwatchglob--opts-tasks-or-gulpwatchglob--opts-cb" target="_blank" rel="external">gulp file watchers</a> which will execute the ‘html’ and ‘css’ tasks whenever a change is detected.</p>
-<h3 id="b)_Build_task_modification">b) Build task modification</h3><p>Since we want our webpage to be refreshed automatically, we need to ask gulp-connect to reload the site whenever a new build is ready. This means adding a new piped instruction to both our ‘html’ and ‘css’ tasks that will reload the site.</p>
-<p>Our ‘html’ task:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>becomes:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>))</span><br><span class="line">        .pipe(connect.reload());</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>A piped <code>connect.reload()</code> should also be added to the ‘css’ task and any other build task that is present in your project.</p>
-<h3 id="c)_Default_task_modification">c) Default task modification</h3><p>Don’t forget to modify the default gulp task to start the file watchers:</p>
-<p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;, &#39;open&#39;, &#39;watch&#39;]);</code></p>
-<p>Now start your gulp and that’s it, if you modify (and save) one of your html or css file, the website will be automatically updated. Happy coding!</p>
-<p>You can check an example of a refactored gulpfile.js for this project <a href="https://gist.github.com/klugjo/739ba11d15191f3162b9" target="_blank" rel="external">here</a>.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.</p>
-<p>We will learn how to install and configure the following tools:</p>
-<ul>
-<li><a href="https://github.com/avevlad/gulp-connect">gulp-connect</a>: to start a webserver from our Gulp build script</li>
-<li><a href="https://www.npmjs.com/package/gulp-open">gulp-open</a>: to open an URL in our web browser</li>
-</ul>
-<p>To get started we will need a basic website project with a <code>gulpfile.js</code> that can generate our website. Check out my <a href="/2015/11/24/Getting-started-with-Gulp-and-static-websites/">Getting started with Gulp</a> and or <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22">this gulpfile example</a></p>]]>
-    
-    </summary>
-    
-      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
-    
-      <category term="Gulp" scheme="http://klugjo.github.io/tags/Gulp/"/>
-    
-      <category term="LiveReload" scheme="http://klugjo.github.io/tags/LiveReload/"/>
     
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
