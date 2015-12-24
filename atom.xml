@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2015-12-23T08:41:46.000Z</updated>
+  <updated>2015-12-24T02:13:32.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Passing arguments to the underlying command in npm scripts]]></title>
+    <link href="http://klugjo.github.io/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/"/>
+    <id>http://klugjo.github.io/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</id>
+    <published>2015-12-24T01:26:41.000Z</published>
+    <updated>2015-12-24T02:13:32.000Z</updated>
+    <content type="html"><![CDATA[<p>In this tutorial we will see how to pass arguments to a command when combining <a href="/2015/12/Run-scripts-with-npm/" target="_blank">npm scripts</a>.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="Project_setup">Project setup</h2><p>Let’s assume we have the current script defined in our npm scripts:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="Watching_for_changes">Watching for changes</h2><p>Now let’s say we want to create a new task that will not only compile our stylus files to css but also watch for changes and recompile when necessary.</p>
+<p>Using the command line this can be done with the <code>-w</code> flag:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stylus src/stylus/site<span class="class">.styl</span> -w</span><br></pre></td></tr></table></figure>
+<p>We now want to create a new script that watches for stylus changes. We can do:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"watch:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/ -w"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>See anything ugly ?</p>
+<p><br></p>
+<h2 id="Reusing_existing_code">Reusing existing code</h2><p>In order to avoid duplicated code, we want to reuse our first command and add the <code>-w</code> flag.</p>
+<p>The general syntax is</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="command">run</span> [command] [<span class="comment">-- &lt;args&gt;]</span></span><br></pre></td></tr></table></figure>
+<p>With our example it would be:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"watch:stylus"</span>: <span class="string">"npm run stylus -- -w"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<p>Note the <code>--</code> in between the initial command and the additional arguments.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this tutorial we will see how to pass arguments to a command when combining <a href="/2015/12/Run-scripts-with-npm/" target="_blank">npm scripts</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="npm" scheme="http://klugjo.github.io/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Build your first React application]]></title>
@@ -503,43 +540,6 @@
       <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
     
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Add an RSS feed to your hexo blog]]></title>
-    <link href="http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/"/>
-    <id>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</id>
-    <published>2015-12-01T12:18:26.000Z</published>
-    <updated>2015-12-09T13:08:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Adding an RSS feed to your hexo blog is child’s play. Thanks to the <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="external">hexo-generator-feed</a> plugin.</p>
-<h2 id="1)_Installation">1) Installation</h2><p><code>npm install hexo-generator-feed --save</code></p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="2)_Configuration">2) Configuration</h2><p>Open your hexo configuration file: <code>_config.yml</code></p>
-<p>and in the plugin section (just below your theme setting), add the following configuration</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">feed</span>:</span><br><span class="line">  <span class="attribute">type</span>: atom</span><br><span class="line">  <span class="attribute">path</span>: atom.xml</span><br><span class="line">  <span class="attribute">limit</span>: <span class="number">10</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>type</code>: You can choose between <a href="https://en.wikipedia.org/wiki/Atom_(standard" target="_blank" rel="external">Atom</a>) and <a href="https://en.wikipedia.org/wiki/RSS" target="_blank" rel="external">RSS2</a></li>
-<li><code>path</code>: the path to the rss feed</li>
-<li><code>limit</code>: the maximum number of posts to show</li>
-</ul>
-<p>Pretty simple isn’t it ?</p>
-<p>If you want to learn more about RSS feeds, check this <a href="http://www.intertwingly.net/wiki/pie/Rss20AndAtom10Compared" target="_blank" rel="external">comparison between Atom and RSS2</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Adding an RSS feed to your hexo blog is child’s play. Thanks to the <a href="https://github.com/hexojs/hexo-generator-feed">hexo-generator-feed</a> plugin.</p>
-<h2 id="1)_Installation">1) Installation</h2><p><code>npm install hexo-generator-feed --save</code></p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-      <category term="RSS" scheme="http://klugjo.github.io/tags/RSS/"/>
-    
-      <category term="npm" scheme="http://klugjo.github.io/tags/npm/"/>
     
   </entry>
   
