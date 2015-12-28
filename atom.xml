@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2015-12-24T02:13:32.000Z</updated>
+  <updated>2015-12-28T09:23:32.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Easy dynamic classes with React]]></title>
+    <link href="http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/"/>
+    <id>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</id>
+    <published>2015-12-28T07:16:03.000Z</published>
+    <updated>2015-12-28T09:23:32.000Z</updated>
+    <content type="html"><![CDATA[<p>In this article we will see how to generate dynamic classes for React without resorting to obnoxious string manipulations.</p>
+<p>We will build a simple app that changes the <code>color</code> and <code>font-style</code> of a div based on a textbox value.</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="The_rules">The rules</h2><h3 id="The_text_in_our_div_should_be:">The text in our div should be:</h3><ul>
+<li><span style="color: red;">Red</span> when the value is negative</li>
+<li><span style="color: blue;">Blue</span> when the value is positive</li>
+<li><span style="font-style: italic;">Italic</span> when the value is even</li>
+<li><span style="font-style: normal;">Normal</span> when the value is odd</li>
+</ul>
+<h3 id="Corresponding_css_classes:">Corresponding css classes:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.blue</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.red</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.italic</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">font-style</span>:<span class="value"> italic</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.normal</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">font-style</span>:<span class="value"> normal</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="The_magic">The magic</h2><p>React now uses the <a href="https://github.com/JedWatson/classnames" target="_blank" rel="external">classNames</a> library to join and manage class names.</p>
+<p>You can <a href="https://github.com/JedWatson/classnames#classnames" target="_blank" rel="external">install it with npm or bower</a>.</p>
+<p>The <code>classNames</code> library allows you to <strong>declare your classes as a string, an array or an object</strong>. The 3 following declarations are equivalent:</p>
+<h3 id="String">String</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elementClass = className(<span class="string">'red italic'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Array">Array</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elementClass = className([<span class="string">'red'</span>, <span class="string">'italic'</span>]);</span><br></pre></td></tr></table></figure>
+<h3 id="Object">Object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elementClass = className(&#123;</span><br><span class="line">    red: <span class="literal">true</span>, <span class="comment">// use true or any truthy value / expression</span></span><br><span class="line">    italic: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Note:"><u>Note:</u></h3><p>You can even use a <a href="https://github.com/JedWatson/classnames#usage-with-reactjs" target="_blank" rel="external">mix of all three</a> as separate parameters:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elementClass = className(<span class="string">"class1 class2"</span>, <span class="comment">// String</span></span><br><span class="line">  [<span class="string">'class3'</span>, <span class="string">'class4'</span>], <span class="comment">// Array</span></span><br><span class="line">  &#123;class5: <span class="literal">true</span>&#125;); <span class="comment">// Object</span></span><br></pre></td></tr></table></figure>
+<p>It will <strong>add all 5 classes</strong> to the element.</p>
+<p><br></p>
+<h2 id="The_example">The example</h2><h3 id="Rendering_the_elements">Rendering the elements</h3><p>Let’s start with the render function. We will need a div with some text and a text input:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">&#123;this.state.textClass&#125;</span>&gt;</span>RESULT<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Hello!"</span> <span class="attribute">value</span>=<span class="value">&#123;this.state.value&#125;</span> <span class="attribute">onChange</span>=<span class="value">&#123;this.handleChange&#125;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  )</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>this.state.value</code>: will hold the number we are going to check</li>
+<li><code>this.state.textClass</code>: will hold our classes generated with <strong>className</strong></li>
+<li><code>this.handleChange</code>: will regenerate the classes when the textbox value changes</li>
+</ul>
+<h3 id="Generating_our_css_classes">Generating our css classes</h3><p>We can now create our class generation function based on the example defined above:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">computeClass: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> classNames(&#123;</span><br><span class="line">    blue: val &gt; <span class="number">0</span>, <span class="comment">// positive -&gt; blue</span></span><br><span class="line">    red: val &lt; <span class="number">0</span>, <span class="comment">// negative -&gt; red</span></span><br><span class="line">    italic: val % <span class="number">2</span> === <span class="number">0</span>, <span class="comment">// even -&gt; italic</span></span><br><span class="line">    normal: <span class="built_in">Math</span>.abs(val % <span class="number">2</span>) === <span class="number">1</span> <span class="comment">// odd -&gt; normal</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Consider always using this method in your applications. Conditional blocks used to generate strings are a hell to read and maintain ;)</p>
+<h3 id="Full_React_code">Full React code</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Main = React.createClass(&#123;</span><br><span class="line">  getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        value: <span class="number">0</span>,</span><br><span class="line">        textClass: <span class="keyword">this</span>.computeClass(<span class="number">0</span>)</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  computeClass: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> classNames(&#123;</span><br><span class="line">      blue: val &gt; <span class="number">0</span>,</span><br><span class="line">      red: val &lt; <span class="number">0</span>,</span><br><span class="line">      italic: val % <span class="number">2</span> === <span class="number">0</span>,</span><br><span class="line">      normal: <span class="built_in">Math</span>.abs(val % <span class="number">2</span>) === <span class="number">1</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  handleChange: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> val = <span class="built_in">isNaN</span>(event.target.value) ? <span class="number">0</span> : event.target.value,</span><br><span class="line">      textClass = <span class="keyword">this</span>.computeClass(val);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;value: val, textClass: textClass&#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">&#123;this.state.textClass&#125;</span>&gt;</span>RESULT<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Hello!"</span> <span class="attribute">value</span>=<span class="value">&#123;this.state.value&#125;</span> <span class="attribute">onChange</span>=<span class="value">&#123;this.handleChange&#125;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="title">Main</span> /&gt;</span>, document.getElementById("main"));</span></span><br></pre></td></tr></table></figure>
+<p>Or check it live here: <a href="https://jsbin.com/kijica/edit?html,output" target="_blank" rel="external">https://jsbin.com/kijica/edit?html,output</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this article we will see how to generate dynamic classes for React without resorting to obnoxious string manipulations.</p>
+<p>We will build a simple app that changes the <code>color</code> and <code>font-style</code> of a div based on a textbox value.</p>]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://klugjo.github.io/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Passing arguments to the underlying command in npm scripts]]></title>
@@ -490,52 +543,6 @@
     </summary>
     
       <category term="Analytics" scheme="http://klugjo.github.io/tags/Analytics/"/>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Add Disqus comments in Hexo]]></title>
-    <link href="http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/"/>
-    <id>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</id>
-    <published>2015-12-05T11:49:06.000Z</published>
-    <updated>2015-12-06T01:08:29.000Z</updated>
-    <content type="html"><![CDATA[<p>This post will show you how to integrate <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a> comments to your <a href="https://hexo.io/" target="_blank" rel="external">Hexo blog</a>.</p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="1)_The_easy_way-_When_your_theme_already_supports_Disqus_comments-">1) The easy way. When your theme already supports Disqus comments.</h2><p>If you are lucky, your theme already support Disqus comments. This is the case for the <a href="https://github.com/tommy351/hexo-theme-landscape" target="_blank" rel="external">default theme</a> and <a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="external">Light</a>, the theme I started with.</p>
-<p>Grab your site’s Disqus unique identifier: for example here <strong>klugjoTest</strong>:<br><br></p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/add-disqus-comments-hexo-unique-name.jpg" alt="Disqus Site Unique Identifier" title="Disqus Site Unique Identifier"></p>
-<p>Then go to your site’s main <code>_config.yml</code> and add a <code>disqus_shortname</code> property with your Disqus ID.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Disqus comments</span></span><br><span class="line"><span class="label">disqus_shortname:</span> klugjoTest</span><br></pre></td></tr></table></figure>
-<p>Your site will automatically display Disqus comments on each post !</p>
-<p>(Note: if want to test the modification on your local machine first, you will have to change the <code>url</code> property in your <code>_config.yml</code> to <code>http://localhost:4000</code> or whichever port you are using. Don’t forget to change it back before deployment)</p>
-<p><br></p>
-<h2 id="2)_The_not_so_difficult_way-_When_you_have_to_implement_the_comments_section_yourself-">2) The not so difficult way. When you have to implement the comments section yourself.</h2><p>Log in to your Disqus account and go to your site settings, then check the installation section.</p>
-<p>You will find a bunch of code that needs to be pasted in your site to display the comments.</p>
-<p>This code consists of: </p>
-<ul>
-<li>A <code>&lt;div id=&quot;disqus_thread&quot;&gt;&lt;/div&gt;</code>: place it where you want your comments to be displayed. </li>
-<li>A <code>&lt;script&gt;</code> tag that should be place before your <code>&lt;/body&gt;</code> closing tag.</li>
-</ul>
-<p>In the <code>&lt;script</code> tag, there are two variables that need to be set dynamically:</p>
-<ul>
-<li><code>url</code>: set this to your blog post URL accessible through <code>&lt;%= config.disqus_shortname %&gt;</code></li>
-<li><code>identifier</code>: set this to your unique Disqus ID accessible through <code>&lt;%= page.permalink %&gt;</code></li>
-</ul>
-<p>More info in the <a href="https://help.disqus.com/customer/en/portal/articles/2158629" target="_blank" rel="external">Disqus official documentation</a></p>
-<p>Check out an <a href="https://github.com/tommy351/hexo-theme-landscape/blob/master/layout/_partial/after-footer.ejs" target="_blank" rel="external">implementation example</a> in the landscape theme.</p>
-<p>Happy blogging !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This post will show you how to integrate <a href="https://disqus.com/">Disqus</a> comments to your <a href="https://hexo.io/">Hexo blog</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="Disqus" scheme="http://klugjo.github.io/tags/Disqus/"/>
     
       <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
     
