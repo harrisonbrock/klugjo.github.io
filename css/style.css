@@ -83,6 +83,13 @@ a:hover {
   max-width: 900px;
   margin: 0 auto;
 }
+.ic {
+  font-style: normal;
+}
+.ic.external-link:before {
+  font-family: FontAwesome;
+  content: '\f08e';
+}
 #header {
   text-shadow: 0 0 1px #fff;
   margin: 50px auto;
