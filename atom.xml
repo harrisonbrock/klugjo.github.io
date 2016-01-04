@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2015-12-31T10:06:23.000Z</updated>
+  <updated>2016-01-04T10:15:26.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Sorting files using the ls command]]></title>
+    <link href="http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/"/>
+    <id>http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/</id>
+    <published>2016-01-04T09:24:40.000Z</published>
+    <updated>2016-01-04T10:15:26.000Z</updated>
+    <content type="html"><![CDATA[<p>In the article we will look at different ways of sorting results of the ls (— list directory content) command.</p>
+<a id="more"></a> 
+<p>In all example, use the <code>-l</code> flag in addition to the sort flag to retrieve a long description of files and verify your results.</p>
+<p><br></p>
+<h2 id="Sort_by_name">Sort by name</h2><p>This is the default:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Jonathans-MBP:_posts klugjo$ ls <span class="operator">-l</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">08</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">09</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff   <span class="number">952</span> Dec  <span class="number">9</span> <span class="number">21</span>:<span class="number">08</span> Add-an-RSS-feed-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4597</span> Dec <span class="number">11</span> <span class="number">13</span>:<span class="number">32</span> Build-and-package-your-client-side-code-using-npm.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="Sort_by_file_size">Sort by file size</h2><p>To sort by file size, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-S      Sort files by size</span><br></pre></td></tr></table></figure>
+<h3 id="Example">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Jonathans-MBP:_posts klugjo$ ls -Sl</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">8337</span> Dec <span class="number">23</span> <span class="number">16</span>:<span class="number">41</span> Build-your-first-React-application.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4597</span> Dec <span class="number">11</span> <span class="number">13</span>:<span class="number">32</span> Build-and-package-your-client-side-code-using-npm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4506</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Getting-started-with-Gulp-and-static-websites.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4317</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Refresh-webpages-automatically-during-development-using-Gulp.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="Sort_by_modification_date">Sort by modification date</h2><p>To sort by modification date, use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-t      Sort by time modified (most recently modified first) </span><br><span class="line">        before sorting the operands by lexicographical order.</span><br></pre></td></tr></table></figure>
+<h3 id="Example-1">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Jonathans-MBP:_posts klugjo$ ls -tl</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1634</span> Jan  <span class="number">4</span> <span class="number">17</span>:<span class="number">55</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2519</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">06</span> Code-snippets-in-Webstorm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4083</span> Dec <span class="number">29</span> <span class="number">12</span>:<span class="number">32</span> Loops-and-callbacks-in-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3957</span> Dec <span class="number">28</span> <span class="number">17</span>:<span class="number">23</span> Easy-dynamic-classes-with-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1418</span> Dec <span class="number">24</span> <span class="number">10</span>:<span class="number">13</span> Passing-arguments-to-the-underlying-command-in-npm-scripts.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="Sort_by_last_time_of_access">Sort by last time of access</h2><p>To sort by last time of access, use <code>-u</code> combined with the <code>-t</code> flag (to sort by date):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-u      Use time of last access, instead of last modification </span><br><span class="line">        of the file <span class="keyword">for</span> sorting (-t) or long printing (<span class="operator">-l</span>).</span><br></pre></td></tr></table></figure>
+<h3 id="Example-2">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Jonathans-MBP:_posts klugjo$ ls -tlu</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2188</span> Jan  <span class="number">4</span> <span class="number">17</span>:<span class="number">58</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff   <span class="number">952</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-an-RSS-feed-to-your-hexo-blog.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="Sort_by_creation_date">Sort by creation date</h2><p>To sort by creation date, use <code>-U</code> combined with the <code>-t</code> flag (to sort by date):</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-U      Use time of file creation, instead of last modification </span><br><span class="line">        <span class="keyword">for</span> sorting (-t) or long output (<span class="operator">-l</span>).</span><br></pre></td></tr></table></figure>
+<h3 id="Example-3">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Jonathans-MBP:_posts klugjo$ ls -tlU</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3032</span> Jan  <span class="number">4</span> <span class="number">18</span>:<span class="number">04</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2519</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">06</span> Code-snippets-in-Webstorm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4083</span> Dec <span class="number">29</span> <span class="number">12</span>:<span class="number">32</span> Loops-and-callbacks-in-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3957</span> Dec <span class="number">28</span> <span class="number">17</span>:<span class="number">23</span> Easy-dynamic-classes-with-React.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="Reverse_order">Reverse order</h2><p>To reverse the order of any of the sort above, add the <code>-r</code> flag:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-r      Reverse the order of the sort to get reverse lexicographical </span><br><span class="line">        order or the oldest entries first (or largest files last, <span class="keyword">if</span> combined with sort by size</span><br></pre></td></tr></table></figure>
+<h3 id="Example_(sort_by_creation_date_starting_with_the_oldest_first)">Example (sort by creation date starting with the oldest first)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Jonathans-MBP:_posts klugjo$ ls -tlrU</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">08</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">09</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1428</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">13</span> round-images-in-css.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4317</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Refresh-webpages-automatically-during-development-using-Gulp.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<p>Happy sorting !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In the article we will look at different ways of sorting results of the ls (— list directory content) command.</p>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Code snippets in Webstorm]]></title>
@@ -451,84 +494,6 @@
       <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
     
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Build and package your client side code using npm]]></title>
-    <link href="http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/"/>
-    <id>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</id>
-    <published>2015-12-09T13:54:43.000Z</published>
-    <updated>2015-12-11T05:32:16.000Z</updated>
-    <content type="html"><![CDATA[<p>In this post we will see how it is possible to configure an entire build sequence <strong>using npm only</strong>.</p>
-<h3 id="What_we_want_to_achieve:">What we want to achieve:</h3><p>One command <code>npm run package</code> should:</p>
-<ul>
-<li>clean our build folder</li>
-<li>compile our css from stylus</li>
-<li>compile our html from jade</li>
-<li>bundle and minify our javascript</li>
-</ul>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="1)_Minimal_project_structure">1) Minimal project structure</h2><p>Let’s assume our project is organized as follows:</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code <span class="keyword">is</span> <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- stylus </span><br><span class="line">        |-- site.styl // Our main stylus file</span><br><span class="line">    |-- index.jade // Our jade file</span><br><span class="line">    |-- js</span><br><span class="line">        |-- main.js // Our main JavaScript file</span><br><span class="line">        |-- jquery.js // jQuery library. Required in main.js</span><br><span class="line">|-- package.json // Where our build <span class="keyword">is</span> configured !</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="2)_Compile_our_CSS_and_HTML">2) Compile our CSS and HTML</h2><h3 id="Stylus_to_CSS">Stylus to CSS</h3><p>We can compile our <a href="https://github.com/stylus/stylus" target="_blank" rel="external">stylus</a> with the following <a href="https://github.com/stylus/stylus/blob/dev/docs/executable.md" target="_blank" rel="external">command</a>:</p>
-<p><code>stylus src/stylus/site.styl --out dist/</code></p>
-<p>Let’s set this up in the package.json: <a href="/2015/12/Run-scripts-with-npm/">Read this post</a> if you want to know the basics of setting up scripts in npm.</p>
-<h3 id="Jade_to_HTML">Jade to HTML</h3><p>In a similar fashion, we can compile our <a href="http://jade-lang.com/" target="_blank" rel="external">Jade templates</a> to HTML using the following <a href="http://jade-lang.com/command-line/" target="_blank" rel="external">command</a>:</p>
-<p><code>jade src --out dist/</code></p>
-<h3 id="Add_the_npm_tasks">Add the npm tasks</h3><p>In our package.json, we can now create the tow following scripts:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"package:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:jade"</span>: <span class="string">"jade src --out dist/"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="3)_Bundle_and_minify_the_JavaScript">3) Bundle and minify the JavaScript</h2><h3 id="Bundle_with_browserify">Bundle with browserify</h3><p>(Here is an <a href="/2015/11/Your-first-10-minutes-with-Browserify/">introduction to browserify</a> if needed)</p>
-<p>The command to bundle our JS into one file is <code>browserify ./src/js/main.js -o ./dist/bundle.js</code></p>
-<h3 id="Minify_with_uglify">Minify with uglify</h3><p>I am using <a href="https://github.com/mishoo/UglifyJS2" target="_blank" rel="external">uglifyJS2</a> for this task.</p>
-<p>The task to minify the bundle.js file is <code>uglifyjs -- compress ./dist/bundle.js -o ./dist/bundle.min.js</code></p>
-<h3 id="Piping_the_two">Piping the two</h3><p>Now what we want is to <strong>pipe the output of the browserify task into the uglify task</strong> so that we can combine both into one npm task</p>
-<p>To do this, we are going to use a <a href="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-4.html" target="_blank" rel="external">unix pipe</a> <code>|</code> and connect the STDOUT of the first task with the STDIN of the second.</p>
-<p><code>browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js</code></p>
-<p>Let’s set it up as a npm task:</p>
-<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attribute">...</span></span><br><span class="line">    <span class="string">"package:js"</span>: <span class="string">"browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="4)_Putting_everything_together">4) Putting everything together</h2><p>Now let’s combine all our tasks in one npm <code>package</code> task:</p>
-<p><code>&quot;package&quot;: &quot;npm run package:stylus &amp;&amp; npm run package:jade &amp;&amp; npm run package:js&quot;</code></p>
-<p>This will run our 3 package tasks in a sequence.</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"package:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:jade"</span>: <span class="string">"jade src --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:js"</span>: <span class="string">"browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js"</span>,</span><br><span class="line">    <span class="string">"package"</span>: <span class="string">"npm run package:stylus &amp;&amp; npm run package:jade &amp;&amp; npm run package:js"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-<p>Run <code>npm run package</code> to test the full build sequence.</p>
-<p><br></p>
-<h2 id="5)_Cleaning_up_the_output_directory">5) Cleaning up the output directory</h2><p>Before running the build, we would like to clean the output directory.</p>
-<p>We will use <a href="https://github.com/isaacs/rimraf#cli" target="_blank" rel="external">rimraf’s CLI</a> like so: <code>rimraf dist/*</code>.</p>
-<p>Instead of creating another ‘package:clean’ task, we can use an <a href="http://www.marcusoft.net/2015/08/pre-and-post-hooks-for-npm-scripting.html" target="_blank" rel="external">npm script prehook</a>. By prefixing an existing task (even custom) with <em>pre</em> or <em>post</em>, it will be automatically executed before or after our main task.</p>
-<p>In our current project, if we create a task called <code>&lt;b&gt;pre&lt;/b&gt;package</code> it will be executed automatically before our <code>package</code> task. In a similar way, <code>&lt;b&gt;post&lt;/b&gt;package</code> would be executed after <code>package</code>.</p>
-<p>Our final task:</p>
-<p><code>&quot;prepackage&quot;: &quot;rimraf dist/*&quot;</code></p>
-<p>and here is the final scripts object in he package:</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"package:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:jade"</span>: <span class="string">"jade src --out dist/"</span>,</span><br><span class="line">    <span class="string">"package:js"</span>: <span class="string">"browserify ./src/js/main.js | uglifyjs --compress &gt; ./dist/bundle.min.js"</span>,</span><br><span class="line">    <span class="string">"package"</span>: <span class="string">"npm run package:stylus &amp;&amp; npm run package:jade &amp;&amp; npm run package:js"</span>,</span><br><span class="line">    <span class="string">"prepackage"</span>: <span class="string">"rimraf dist/*"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In this post we will see how it is possible to configure an entire build sequence <strong>using npm only</strong>.</p>
-<h3 id="What_we_want_to_achieve:">What we want to achieve:</h3><p>One command <code>npm run package</code> should:</p>
-<ul>
-<li>clean our build folder</li>
-<li>compile our css from stylus</li>
-<li>compile our html from jade</li>
-<li>bundle and minify our javascript</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
-    
-      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
-    
-      <category term="Jade" scheme="http://klugjo.github.io/tags/Jade/"/>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Stylus" scheme="http://klugjo.github.io/tags/Stylus/"/>
-    
-      <category term="npm" scheme="http://klugjo.github.io/tags/npm/"/>
     
   </entry>
   
