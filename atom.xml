@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-01-04T15:42:46.000Z</updated>
+  <updated>2016-01-05T07:55:00.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,159 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Wildcards in Bash]]></title>
+    <link href="http://klugjo.github.io/2016/01/Wildcards-in-bash/"/>
+    <id>http://klugjo.github.io/2016/01/Wildcards-in-bash/</id>
+    <published>2016-01-05T06:31:40.000Z</published>
+    <updated>2016-01-05T07:55:00.000Z</updated>
+    <content type="html"><![CDATA[<p>This article will walk you through some of the main wildcards available in Bash:</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="Match_any_string_with_*">Match any string with *</h2><p>The <code>*</code> wildcard will match any number of characters including no characters.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls *.jpg</code></td>
+<td>lists all files ending with <strong>.jpg</strong></td>
+</tr>
+<tr>
+<td><code>ls pic*</code></td>
+<td>lists all files starting with <strong>pic</strong></td>
+</tr>
+<tr>
+<td><code>ls *abc*</code></td>
+<td>lists all files containing <strong>abc</strong> (including starting with and ending with <strong>abc</strong>)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="Match_a_single_character_with_?">Match a single character with ?</h2><p>The <code>?</code> wildcard will match a single character. That single character can be anything but can not be empty.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls pic?.jpg</code></td>
+<td>lists all files like <strong>pic1.jpg</strong>, <strong>picA.jpg</strong> or <strong>picz.jpg</strong>. It will <u>not match</u> <strong>pic.jpg</strong></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="Match_a_set_of_characters_with_[xyz]">Match a set of characters with [xyz]</h2><p>Use <code>[ ]</code> to have one single character match a defined set of characters.<br>[123abc] means will match 1, 2, 3, a, b or c.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pic[123].jpg</code></td>
+<td>Will <u>only</u> match <strong>pic1.jpg</strong>, <strong>pic2.jpg</strong> and <strong>pic3.jpg</strong></td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="Match_a_range_of_characters_with_[a-z]">Match a range of characters with [a-z]</h2><p>Use <code>[-]</code> to have one character be within certain range.</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[a-e]</code></td>
+<td>Will match a, b, c, d or e</td>
+</tr>
+<tr>
+<td><code>[a-z]</code></td>
+<td>Will match any lowercase letter</td>
+</tr>
+<tr>
+<td><code>[0-9]</code></td>
+<td>Will match any digit</td>
+</tr>
+<tr>
+<td><code>[A-Za-z]</code></td>
+<td>Will match any letter</td>
+</tr>
+<tr>
+<td><code>[a-e1-5]</code></td>
+<td>Will match any lowercase letter between a and e or any digit between 1 and 5</td>
+</tr>
+<tr>
+<td><code>[a-e123]</code></td>
+<td>Will match any lowercase letter between a and e or any digit equal to 1, 2 or 3</td>
+</tr>
+<tr>
+<td><code>[0-10]</code></td>
+<td>Will match 0 or 1 (0 to 1 range or 0)</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="Invert_a_selection_with_^">Invert a selection with ^</h2><p>Use <code>^</code> to invert a selection</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[^78]</code></td>
+<td>Will match any character (including letters) different than 7 and 8</td>
+</tr>
+<tr>
+<td><code>[^a-z]</code></td>
+<td>Will match any character that is not a lowercase letter</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<h2 id="Match_several_expressions_with_{abc,xyz}">Match several expressions with {abc,xyz}</h2><p>Use <code>{expr1,expr2}</code> to match expr1 and expr2</p>
+<table>
+<thead>
+<tr>
+<th>Expression</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ls {*.jpg,*.gif}</code></td>
+<td>Will list any file with the jpg or gif extension</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article will walk you through some of the main wildcards available in Bash:</p>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[open the current terminal directory in Finder (OS X)]]></title>
@@ -448,45 +601,6 @@
       <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
     
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Read-Only properties in JavaScript]]></title>
-    <link href="http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/"/>
-    <id>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</id>
-    <published>2015-12-14T03:19:31.000Z</published>
-    <updated>2015-12-14T08:02:13.000Z</updated>
-    <content type="html"><![CDATA[<p>Let’s look at how we can make a JavaScript object property read-only using little-known built in functions.</p>
-<p>JavaScript Object Literals are by dynamic by default. Given the following object:</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> movieTicket</span> = &#123;</span><br><span class="line">  movie: <span class="string">"Mad Max"</span>,</span><br><span class="line">  hall: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<p>It is possible to add, delete and modify properties after object creation:</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">movieTicket.price = <span class="string">'$10.00'</span>;</span><br><span class="line"><span class="keyword">delete</span> movieTicket.hall;</span><br><span class="line">movieTicket.movie = <span class="string">'The Rise And Rise Of Bitcoin'</span>;</span><br></pre></td></tr></table></figure>
-<p>The <code>movieTicket</code> will then look like:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attribute">movie</span>: <span class="string">'The Rise And Rise Of Bitcoin'</span>,</span><br><span class="line">  <span class="attribute">price</span>: <span class="string">'$10.00'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Make_a_property_read-only">Make a property read-only</h2><p>You can make a property read-only by using the <code>Object.defineProperty(obj, prop, descriptor)</code> static function. </p>
-<p>Example:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> movieTicket = &#123;</span><br><span class="line">  movie: <span class="string">'Mad Max'</span>,</span><br><span class="line">  hall: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(movieTicket, <span class="string">'movie'</span>, &#123;</span><br><span class="line">  value: <span class="string">'Mad Max'</span>,</span><br><span class="line">  writable: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">movieTicket.movie = <span class="string">'Star Wars'</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(movieTicket);</span><br></pre></td></tr></table></figure>
-<p>will log <code>Object {movie: &quot;Mad Max&quot;, hall: 1}</code></p>
-<h2 id="Notes:">Notes:</h2><h3 id="No_error_thrown_when_accessing_a_read-only_property">No error thrown when accessing a read-only property</h3><p>After using the Object.defineProperty method on the movie property, the movie property can not be changed. But <u>the system will not throw any error if you try to change its value</u>. This can be an issue as, in a larger system, if you forget that a property is read-only, this might create nearly impossible to find bugs.</p>
-<p>One workaround for this issue is to use <code>&#39;use strict&#39;;</code>. If you do and try to modify a read-only property, the code will thrown an error:</p>
-<p><code>Uncaught TypeError: Cannot assign to read only property &#39;movie&#39; of #&lt;Object&gt;</code></p>
-<h3 id="The_property_can_still_be_deleted">The property can still be deleted</h3><p>If you make a property read-only using that method, you can still delete it using <code>delete movieTicket.movie</code>. If you re-add that property after that, the newly added property will <strong>not</strong> be read-only.</p>
-<h3 id="Sub_properties_are_still_modifiable">Sub properties are still modifiable</h3><p>If your property points to an object, properties of that object are <strong>not</strong> read-only</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var movieTicket = &#123;</span><br><span class="line">  movie: &#123;</span><br><span class="line">    title: <span class="string">'Mad Max'</span>,</span><br><span class="line">    <span class="built_in">year</span>: <span class="number">2015</span></span><br><span class="line">  &#125;,</span><br><span class="line">  hall: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Object</span>.defineProperty(movieTicket, <span class="string">'movie'</span>, &#123;</span><br><span class="line">  value: &#123;</span><br><span class="line">    title: <span class="string">'Mad Max'</span>,</span><br><span class="line">    <span class="built_in">year</span>: <span class="number">2015</span></span><br><span class="line">  &#125;,</span><br><span class="line">  writable: <span class="keyword">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">movieTicket.movie.title = <span class="string">'Sicario'</span>;</span><br><span class="line"></span><br><span class="line">console.<span class="built_in">log</span>(movieTicket.movie.title); <span class="comment">// Returns: 'Sicario'</span></span><br></pre></td></tr></table></figure>
-<p>In that example, only the pointer to the movie child object is made read-only.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Let’s look at how we can make a JavaScript object property read-only using little-known built in functions.</p>
-<p>JavaScript Object Literals are by dynamic by default. Given the following object:</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> movieTicket</span> = &#123;</span><br><span class="line">  movie: <span class="string">"Mad Max"</span>,</span><br><span class="line">  hall: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="OOP" scheme="http://klugjo.github.io/tags/OOP/"/>
     
   </entry>
   
