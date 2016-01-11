@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-01-05T07:55:00.000Z</updated>
+  <updated>2016-01-11T09:36:14.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,120 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Code Bloat Commandos - Do not let your functions do more than one thing]]></title>
+    <link href="http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/"/>
+    <id>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</id>
+    <published>2016-01-11T07:02:12.000Z</published>
+    <updated>2016-01-11T09:36:14.000Z</updated>
+    <content type="html"><![CDATA[<p><strong>Code Bloat Commandos</strong> looks at why software code deteriorates over time; and how to fight back.</p>
+<p>In this episode, we will look at how a nice and clean method grows into a dumping ground function. We will see when it happens, how to spot it and how to fix it.</p>
+<a id="more"></a>
+<blockquote><p>FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.</p>
+<footer><strong>Uncle Bob</strong><cite><a href="https://books.google.com.sg/books/about/Clean_Code.html?id=dwSfGQAACAAJ" target="_blank" rel="external">Clean Code</a></cite></footer></blockquote>
+<p><br></p>
+<h2 id="The_humble_beginnings">The humble beginnings</h2><h3 id="Project_specification:">Project specification:</h3><ul>
+<li>We have a live video player and an event function called <code>onProgress</code> that is executed every second.</li>
+<li>We can use that function to monitor playback progress and hook up various actions.</li>
+<li>Our job is to implement a function that will track video engagement by sending an analytics ping every 30 seconds.</li>
+</ul>
+<h3 id="This_is_our_code_(JavaScript):">This is our code (JavaScript):</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main entry point. This function will be called every second by the player</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Our function</span></span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do more things here like update the icons in the footer</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">var</span> analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This is our first version of the <code>_sendVideoEngagementAnalytics</code> function. It is still reasonably simple and compact. It checks if more than 30 seconds have elapsed. If it did, it sends an analytics ping using an analytics manager object.</p>
+<p><br></p>
+<h2 id="A_few_weeks_later">A few weeks later</h2><p>Our first version of the app is working and a few weeks later we need to also check if the current content playing is an Advertisement; and if that is the case send an Advertisement Start and End pings.<br>We can check if the current content playing is an Ad by calling <code>isAdPlaying(currentTime)</code>.</p>
+<p>Easy enough, let’s get coding.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main entry point. This function will be called every second by the player</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Do more things here like update the footer controls</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData,</span><br><span class="line">        adPlaying = isAdPlaying(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Checks if more that 30 seconds have passed</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Checks if an Ad just started playing</span></span><br><span class="line">    <span class="keyword">if</span>(__analyticsState.adPlaying !== adPlaying) &#123;</span><br><span class="line">        </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: adPlaying ? <span class="string">"AD_BEGIN"</span> : <span class="string">"AD_COMPLETE"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.adPlaying = adPlaying;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Done. <code>git commit -m &quot;Added Ad tracking analytics to player&quot;</code>. Jump on Skype and ask who is ready for lunch.</p>
+<p>This is (almost) what happened to me today.</p>
+<p><br></p>
+<h2 id="The_bloat">The bloat</h2><h3 id="The_code_is_not_that_bad,_we_have:">The code is not that bad, we have:</h3><ul>
+<li>refactored <code>analyticsData</code> out of the initial if block because of <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var#var_hoisting" target="_blank" rel="external">variable hoisting and scoping in JavaScript</a>.</li>
+<li>created a local variable <code>adPlaying</code> to avoid multiple calls to <code>isAdPlaying(currentTime)</code>.</li>
+</ul>
+<p><br></p>
+<h3 id="These_are_great,_but_we_have_committed_an_even_bigger_mistake_here:">These are great, but we have committed an even bigger mistake here:</h3><p><strong>The <code>_sendVideoEngagementAnalytics</code> is now doing 2 things</strong>; which is pretty bad in and of itself but also has the following scary consequences:</p>
+<ul>
+<li><strong>The name <code>_sendVideoEngagementAnalytics</code> is now incorrect</strong> (we are not only monitoring video engagement but ad playback as well). Someone reading <code>_sendVideoEngagementAnalytics(currentTime);</code> in the calling function might not suspect that it also sends Ad related analytics.</li>
+<li><strong>The function is getting longer.</strong> And we are setting the stage for it to become even longer by starting off a series of if blocks that check playback position related stuff.</li>
+<li>We suddenly feel like <strong>we need comments in our code to explain what it does</strong> and ‘structure’ the two parts of our function. Burp.</li>
+</ul>
+<p><br></p>
+<h2 id="Pain_Relief">Pain Relief</h2><h3 id="Recognising_the_problem">Recognising the problem</h3><ul>
+<li><p>It clicked for me when I realised <strong>the function’s name didn’t correspond to what the function actually does.</strong></p>
+</li>
+<li><p>Another hint could have been the fact that the function now has <strong>two sections of code that handles different business requirements.</strong></p>
+</li>
+<li><p>A function that is <strong>30 lines long and needs comments for ‘if conditions’</strong> that are pretty readable is not a good sign either.</p>
+</li>
+<li><p>But really, simply observing that the function I have modified suddenly <strong>does not respect the <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank" rel="external">Single Responsibility Principle</a></strong> should have been enough.</p>
+</li>
+</ul>
+<p><br></p>
+<h3 id="Administering_the_cure">Administering the cure</h3><p>At this point, the solution is pretty clear. Separating the ravioli.</p>
+<p>Let’s go ahead and split our function into two functions:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    _sendAdContentAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Do more things here like update the footer controls</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendAdContentAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData,</span><br><span class="line">        adPlaying = isAdPlaying(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(__analyticsState.adPlaying !== adPlaying) &#123;</span><br><span class="line">        </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: adPlaying ? <span class="string">"AD_BEGIN"</span> : <span class="string">"AD_COMPLETE"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.adPlaying = adPlaying;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="Following_up_after_treatment">Following up after treatment</h3><ul>
+<li>When reading<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_sendVideoEngagementAnalytics<span class="list">(<span class="keyword">currentTime</span>)</span><span class="comment">;</span></span><br><span class="line">_sendAdContentAnalytics<span class="list">(<span class="keyword">currentTime</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>we know exactly what is going on. No extra ‘hidden’ functionality.</p>
+<ul>
+<li><p>No more ugly comments</p>
+</li>
+<li><p>Shorter functions</p>
+</li>
+<li><p>If someone wants to add more analytics logic, they won’t be tempted to add to that function and worsen the problem. They will do the right thing right away by adding a new function.<br><br></p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><strong>Code Bloat Commandos</strong> looks at why software code deteriorates over time; and how to fight back.</p>
+<p>In this episode, we will look at how a nice and clean method grows into a dumping ground function. We will see when it happens, how to spot it and how to fix it.</p>]]>
+    
+    </summary>
+    
+      <category term="Single Responsibility Principle" scheme="http://klugjo.github.io/tags/Single-Responsibility-Principle/"/>
+    
+      <category term="Software Practices" scheme="http://klugjo.github.io/tags/Software-Practices/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Method context in JavaScript]]></title>
+    <link href="http://klugjo.github.io/2016/01/Method-context-in-JavaScript/"/>
+    <id>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</id>
+    <published>2016-01-06T07:51:11.000Z</published>
+    <updated>2016-01-06T09:01:38.000Z</updated>
+    <content type="html"><![CDATA[<p>This article takes a closer look at what is called <strong>method context</strong> in JavaScript.</p>
+<p>Method context refers to the way the <code>this</code> keyword behaves inside a function. It is different in JavaScript than in other languages. As we are going to demonstrate here, <strong>the value of <code>this</code> is determined by how and where a function is called.</strong></p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="Function_defined_and_called_as_an_object_method">Function defined and called as an object method</h2><p>The simplest scenario is a <strong>function defined and called as an object method</strong>. In that case, <code>this</code> is set to the object the method is called on.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> defaultLogger = &#123;</span><br><span class="line">  loggerName: <span class="string">"Default"</span>,</span><br><span class="line">  log: <span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"["</span> + <span class="keyword">this</span>.loggerName + <span class="string">"] "</span> + message);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">defaultLogger.log(<span class="string">"example 1"</span>); <span class="comment">// logs "[Default] example 1"</span></span><br></pre></td></tr></table></figure>
+<p>In the <code>log</code> function here, <code>this</code> corresponds to <code>defaultLogger</code>.</p>
+<p><br></p>
+<h2 id="Function_defined_in_the_global_scope">Function defined in the global scope</h2><p>By extension, if a function is defined in the global scope. <code>this</code> will be set to <code>window</code> (global object) when the code is executed in the browser.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Log function defined in the global scope</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"this "</span> + <span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">var</span> loggerName = <span class="keyword">this</span>.loggerName || <span class="string">"Default"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"["</span> + loggerName + <span class="string">"] "</span> + message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">"example 2"</span>); <span class="comment">// Logs "this: [object Window]" then "[Default] example 2"</span></span><br></pre></td></tr></table></figure>
+<p>Because the function is defined and executed in the global scope, in the <code>log</code> function here, <code>this</code> points to the global <code>window</code> object.</p>
+<p><code>this.loggerName</code> is then undefined and the <code>&quot;Default&quot;</code> logger name is used instead.</p>
+<p><br></p>
+<h2 id="Function_defined_in_the_global_scope_and_used_as_an_object_method">Function defined in the global scope and used as an object method</h2><p>We can reuse the function defined above and use it in the context of an object. In that case, <code>this</code> will point to that object.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Log function defined externally</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"this: "</span> + <span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">var</span> loggerName = <span class="keyword">this</span>.loggerName || <span class="string">"Default"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"["</span> + loggerName + <span class="string">"] "</span> + message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Using the log function in the context of an object</span></span><br><span class="line"><span class="keyword">var</span> databaseLogger = &#123;</span><br><span class="line">  loggerName: <span class="string">"Database"</span>,</span><br><span class="line">  log: log</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">databaseLogger.log(<span class="string">"example 3"</span>); <span class="comment">// Logs "this: [object Object]" then "[Database] example 3"</span></span><br></pre></td></tr></table></figure>
+<p>Because we are calling the <code>log</code> function with the dot notation (<code>databaseLogger.log()</code>), the context is set to the object.</p>
+<p>In conclusion, <strong>it does not matter where the function is defined; the context depends on which object the function is invoked from.</strong></p>
+<p>Check out the code here: <a href="https://jsbin.com/ciqolu/edit?js,console" target="_blank" rel="external">https://jsbin.com/ciqolu/edit?js,console</a><br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article takes a closer look at what is called <strong>method context</strong> in JavaScript.</p>
+<p>Method context refers to the way the <code>this</code> keyword behaves inside a function. It is different in JavaScript than in other languages. As we are going to demonstrate here, <strong>the value of <code>this</code> is determined by how and where a function is called.</strong></p>]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Wildcards in Bash]]></title>
@@ -500,107 +614,6 @@
       <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
       <category term="React" scheme="http://klugjo.github.io/tags/React/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Bundle jade templates with browserify transform]]></title>
-    <link href="http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/"/>
-    <id>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</id>
-    <published>2015-12-18T02:03:38.000Z</published>
-    <updated>2015-12-18T04:06:35.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms" target="_blank" rel="external">Browserify transforms</a> can be used to load non Javascript files using the <a href="http://requirejs.org/docs/commonjs.html" target="_blank" rel="external">Common JS</a> syntax. You could for example load <a href="https://github.com/jnordberg/coffeeify" target="_blank" rel="external">CoffeeScript</a>, <a href="https://github.com/guzart/browserify-typescriptifier" target="_blank" rel="external">TypeScript</a> or <a href="https://github.com/babel/babelify" target="_blank" rel="external">compile ES6 to ES5</a> when packaging your JavaScript.</p>
-<p>In this example we will look at how to require a jade template directly inside our JS code and have browserify bundle everything up nicely.</p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="1)_Project_setup">1) Project setup</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code <span class="keyword">is</span> <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- templates</span><br><span class="line">        |-- quote.jade // Our jade template</span><br><span class="line">    |-- js</span><br><span class="line">        |-- index.js // Our main JavaScript file</span><br><span class="line">|-- package.json</span><br></pre></td></tr></table></figure>
-<p>We have an <code>index.js</code> file in which we will require and render our jade template.</p>
-<p><br></p>
-<h2 id="2)_Jade_template">2) Jade template</h2><p>Let’s start by setting up a simple <code>quote.jade</code> <a href="http://jade-lang.com/" target="_blank" rel="external">Jade template</a>.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h3 #&#123;quote&#125;&#10;span - #&#123;author&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="3)_Javascript">3) Javascript</h2><p>We are now ready to include our template in our Javascript. Require your jade template the same way as you would for a JS file but <strong>add the file extension</strong>.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Require our jade template as we would require a Js file</span></span><br><span class="line"><span class="keyword">var</span> quoteTemplate = <span class="built_in">require</span>(<span class="string">'../templates/quote.jade'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Render the template</span></span><br><span class="line"><span class="keyword">var</span> output = quoteTemplate(&#123;</span><br><span class="line">    quote: <span class="string">"Be yourself; everyone else is already taken."</span>,</span><br><span class="line">    author: <span class="string">"Oscar Wilde"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="4)_Bundle_up">4) Bundle up</h2><h3 id="Let’s_start_by_installing_everything_we_need:">Let’s start by installing everything we need:</h3><ul>
-<li><p><a href="/2015/11/Your-first-10-minutes-with-Browserify/" target="_blank">Install browserify globally</a></p>
-</li>
-<li><p>Install <a href="https://github.com/domenic/jadeify" target="_blank" rel="external">jadeify</a>, our jade browserify transform: </p>
-</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> jadeify <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>You will also need to install jade locally even if you already have it installed globally. This is because browserify needs to access some of the jade code to include it in the output file.</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> jade <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="We_are_now_ready_to_create_our_package:">We are now ready to create our package:</h3><p>To specify a transform when launching browserify, use <code>-transform</code> or <code>-t</code> followed by the plugin name.</p>
-<p>So in our case:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">browserify </span>-t jadeify <span class="string">"src/js/index.js"</span> -o <span class="string">"dist/bundle.js"</span></span><br></pre></td></tr></table></figure>
-<p>Your code is all packaged in one Js file. Include the bundle.js file in a simple HTML page and check the console. You should see:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h3</span>&gt;</span> Be yourself; everyone else is already taken.<span class="tag">&lt;/<span class="title">h3</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>- Oscar Wilde<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Have fun with browserify transforms !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms">Browserify transforms</a> can be used to load non Javascript files using the <a href="http://requirejs.org/docs/commonjs.html">Common JS</a> syntax. You could for example load <a href="https://github.com/jnordberg/coffeeify">CoffeeScript</a>, <a href="https://github.com/guzart/browserify-typescriptifier">TypeScript</a> or <a href="https://github.com/babel/babelify">compile ES6 to ES5</a> when packaging your JavaScript.</p>
-<p>In this example we will look at how to require a jade template directly inside our JS code and have browserify bundle everything up nicely.</p>]]>
-    
-    </summary>
-    
-      <category term="Browserify" scheme="http://klugjo.github.io/tags/Browserify/"/>
-    
-      <category term="Jade" scheme="http://klugjo.github.io/tags/Jade/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo deploy your blog to github pages in one command]]></title>
-    <link href="http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/"/>
-    <id>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</id>
-    <published>2015-12-17T08:12:33.000Z</published>
-    <updated>2015-12-17T09:19:40.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexo allows you to deploy your blog to github pages or any other git repository pretty much out of the box.</p>
-<p>Your hexo can be hosted for free on <a href="https://pages.github.com/" target="_blank" rel="external">github pages</a> but this tutorial would also work for any other git hosting site.</p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="Hexo-deployer-git">Hexo-deployer-git</h2><p>There is a <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="external">plugin developed by the hexo team</a> that will help do just that, deploy to git in one command.</p>
-<p><br></p>
-<h3 id="1)_Installation">1) Installation</h3><p>While at the root of your hexo project:</p>
-<p><code>npm install hexo-deployer-git --save</code></p>
-<p><br></p>
-<h3 id="2)_Configuration">2) Configuration</h3><p>Open your <code>_config.yml</code> and edit the Deployment section:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br></pre></td></tr></table></figure>
-<p>Use your blog github repo URL in the repo property</p>
-<p><br></p>
-<h3 id="3)_Deploy_!">3) Deploy !</h3><p>Run <code>hexo deploy</code> and your blog is online. Easy, wasn’t it ?</p>
-<p><br></p>
-<h2 id="Remarks">Remarks</h2><p><br></p>
-<h3 id="You_need_to_generate_your_site_first">You need to generate your site first</h3><p><code>hexo deploy</code> will not generate your pages, you need to launch <code>hexo generate</code> first.</p>
-<p>If you want an easy way to do both at the same time, you could <a href="/2015/12/Run-scripts-with-npm/" target="_blank">create an npm script</a> to do this:</p>
-<p>In your package.json add</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"deploy"</span>: <span class="string">"hexo generate &amp;&amp; hexo deploy"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<p>then run <code>npm run deploy</code> to first generate and then deploy your blog.</p>
-<p><br></p>
-<h3 id="You_can_add_several_repos_if_you_want_to_push_your_blog_to_several_places">You can add several repos if you want to push your blog to several places</h3><p>Just duplicated the <code>repo:</code> line:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-second-blog-url.github.io</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="You_can_personalize_the_git_commit_message">You can personalize the git commit message</h3><p>By default the message will be: Site updated: &lbrace;&lbrace; now(“YYYY-MM-DD HH:mm:ss”) &lbrace;&lbrace;</p>
-<p>You can add a message property if you want to use your own:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br><span class="line">  <span class="attribute">message</span>: New post added</span><br></pre></td></tr></table></figure>
-<p>You can use <a href="http://paularmstrong.github.io/swig/" target="_blank" rel="external">SWIG</a> templates in the message although I am not sure how that would help. The <code>now</code> method in the default message is a custom swig helper as you can see in the <a href="https://github.com/hexojs/hexo-deployer-git/blob/master/lib/deployer.js#L10-L14" target="_blank" rel="external">source</a>.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexo allows you to deploy your blog to github pages or any other git repository pretty much out of the box.</p>
-<p>Your hexo can be hosted for free on <a href="https://pages.github.com/">github pages</a> but this tutorial would also work for any other git hosting site.</p>]]>
-    
-    </summary>
-    
-      <category term="GitHub" scheme="http://klugjo.github.io/tags/GitHub/"/>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
   </entry>
   
