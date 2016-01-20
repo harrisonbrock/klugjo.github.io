@@ -2,6 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
+    <lastmod>2016-01-20T01:06:15.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+    <lastmod>2016-01-19T01:01:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+    <lastmod>2016-01-18T12:01:49.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+    <lastmod>2016-01-15T08:13:44.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</loc>
+    <lastmod>2016-01-12T09:13:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
     <lastmod>2016-01-11T09:36:14.000Z</lastmod>
   </url>
@@ -79,11 +104,6 @@
   <url>
     <loc>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
     <lastmod>2015-12-11T05:32:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-    <lastmod>2015-12-09T13:08:29.000Z</lastmod>
   </url>
   
   <url>
