@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <lastmod>2016-01-20T01:16:33.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
     <lastmod>2016-01-20T01:06:15.000Z</lastmod>
   </url>
@@ -124,11 +129,6 @@
   <url>
     <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
     <lastmod>2015-12-06T01:14:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
-    <lastmod>2015-12-06T01:14:07.000Z</lastmod>
   </url>
   
   <url>
