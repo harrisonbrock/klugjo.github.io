@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-01-20T09:07:11.000Z</updated>
+  <updated>2016-01-22T09:52:55.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Notes on Zero to One by Peter Thiel]]></title>
+    <link href="http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/"/>
+    <id>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</id>
+    <published>2016-01-22T08:31:58.000Z</published>
+    <updated>2016-01-22T09:52:55.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br><a id="more"></a> </p>
+<p>It is a pretty recent book (2014) and a very insightful read for anyone who wishes to create something new. Although the book may read like it has been written for american unicorn startup entrepreneurs, I would recommend it to anyone who wishes to create something radically new, be it a company, NGO, scientific breakthrough or revolutionise art.</p>
+<p>The book felt like a motivational piece to me. There were few practical advices (read <a href="http://theleanstartup.com/" target="_blank" rel="external">The Lean Startup</a> or <a href="http://www.goodreads.com/book/show/762542.The_Four_Steps_to_the_Epiphany" target="_blank" rel="external">The Four Steps to the Epiphany</a> if that is what you are looking for), <em>Zero to One</em> is a collection of lessons learnt, advices and theories by the co-founder of Paypal and first investor in Facebook.</p>
+<p><br></p>
+<h2 id="Notes_and_Takeaways">Notes and Takeaways</h2><h3 id="Go_Big_or_go_Home">Go Big or go Home</h3><p>The book is not called 0 to 0.25, nor is it called 1 to 2. Successful billion dollars create a completely new ecosystem and evolve in a world of their own. They don’t simply improve on an existing solution. They discover ‘secrets’ and build a company based on that secret. </p>
+<p>For Paypal it meant creating a way of replacing the US Dollar with a different currency, for Uber it meant having anyone driving anyone else anywhere, for Facebook it meant allowing everyone to connect and share information with each others. Although these companies have evolved a lot since their creation, at the beginning there was someone who discovered a ‘secret’, something that nobody saw but now seems obvious to 90% of the planet.</p>
+<p>The author summarises this as</p>
+<blockquote><p>What valuable company is nobody building?</p>
+<footer><strong>Peter Thiel</strong><cite><a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Zero to One</a></cite></footer></blockquote>
+<h3 id="Engineering_Superiority">Engineering Superiority</h3><p>When founding a startup, you want to own a breakthrough technology. Be it a cure for cancer or a super efficient clean energy, you need something an order of magniture better than what it currently available. But technology only is not sufficient. Cf Guy Kawasaki’s <a href="https://startupblog.wordpress.com/2013/07/08/the-story-of-ice/" target="_blank" rel="external">Ice Factory to Fridge Story</a></p>
+<h3 id="Timing_and_Monopoly">Timing and Monopoly</h3><p>One of the deciding factors for startup success is timing. Facebook would not have know the exponential growth it did, had it started in 1995. Timing is key and you want to be the last mover in order to expand by dominating one niche at a time. Cf this talk by Peter Thiel on <a href="https://www.youtube.com/watch?v=5_0dVHMpJlo" target="_blank" rel="external">the importance of achieving monopoly</a>. Also this ted talk which explain that <a href="https://www.ted.com/talks/bill_gross_the_single_biggest_reason_why_startups_succeed?language=en" target="_blank" rel="external">timing is the most deciding factor in startup success</a></p>
+<h3 id="Team">Team</h3><p>More important that a good distribution of skills, all the founding members need to be on the same wavelength. From outside a startup should look like a cult, except that the ideas everyone believe in are good ones. Most startup fail because of internal dysfunctions and not because they got crushed by competition.</p>
+<h3 id="Sales_/_Distribution">Sales / Distribution</h3><p>It is a common mistake to think that the product will sell itself if good enough. This is a deadly mistake. A grandmaster salesman selling a crappy products might succeed. A perfect product with a crappy sales team has zero chance of succeeding. This is non negotiable.</p>
+<h3 id="Think_far_ahead">Think far ahead</h3><p>When preparing a business idea, have the end game in mind. End game meaning 20 years from now. Build a company that will last for decades. Build a company that will only start making money in a decade.</p>
+<h3 id="Don’t_leave_anything_to_chance">Don’t leave anything to chance</h3><p>A lot of books and people will have you believe that success is pure luck. It is not. You need to have a clear idea of what the future will be and reach that place. The western world seems to live in uncertainty and this needs to change. A startup company is the best way to do that.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br>]]>
+    
+    </summary>
+    
+      <category term="Books" scheme="http://klugjo.github.io/tags/Books/"/>
+    
+      <category term="Startups" scheme="http://klugjo.github.io/tags/Startups/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Untrack files already added to git repository based on .gitignore]]></title>
@@ -504,49 +537,6 @@
       <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
       <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Sorting files using the ls command]]></title>
-    <link href="http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/"/>
-    <id>http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/</id>
-    <published>2016-01-04T09:24:40.000Z</published>
-    <updated>2016-01-04T15:32:10.000Z</updated>
-    <content type="html"><![CDATA[<p>In the article we will look at different ways of sorting results of the ls (— list directory content) command.</p>
-<a id="more"></a> 
-<p>In all example, use the <code>-l</code> flag in addition to the sort flag to retrieve a long description of files and verify your results.</p>
-<p><br></p>
-<h2 id="Sort_by_name">Sort by name</h2><p>This is the default:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls <span class="operator">-l</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">08</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">09</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff   <span class="number">952</span> Dec  <span class="number">9</span> <span class="number">21</span>:<span class="number">08</span> Add-an-RSS-feed-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4597</span> Dec <span class="number">11</span> <span class="number">13</span>:<span class="number">32</span> Build-and-package-your-client-side-code-using-npm.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Sort_by_file_size">Sort by file size</h2><p>To sort by file size, use</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-S      Sort files by size</span><br></pre></td></tr></table></figure>
-<h3 id="Example">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -Sl</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">8337</span> Dec <span class="number">23</span> <span class="number">16</span>:<span class="number">41</span> Build-your-first-React-application.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4597</span> Dec <span class="number">11</span> <span class="number">13</span>:<span class="number">32</span> Build-and-package-your-client-side-code-using-npm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4506</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Getting-started-with-Gulp-and-static-websites.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4317</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Refresh-webpages-automatically-during-development-using-Gulp.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Sort_by_modification_date">Sort by modification date</h2><p>To sort by modification date, use</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-t      Sort by time modified (most recently modified first) </span><br><span class="line">        before sorting the operands by lexicographical order.</span><br></pre></td></tr></table></figure>
-<h3 id="Example-1">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tl</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1634</span> Jan  <span class="number">4</span> <span class="number">17</span>:<span class="number">55</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2519</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">06</span> Code-snippets-in-Webstorm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4083</span> Dec <span class="number">29</span> <span class="number">12</span>:<span class="number">32</span> Loops-and-callbacks-in-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3957</span> Dec <span class="number">28</span> <span class="number">17</span>:<span class="number">23</span> Easy-dynamic-classes-with-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1418</span> Dec <span class="number">24</span> <span class="number">10</span>:<span class="number">13</span> Passing-arguments-to-the-underlying-command-in-npm-scripts.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Sort_by_last_time_of_access">Sort by last time of access</h2><p>To sort by last time of access, use <code>-u</code> combined with the <code>-t</code> flag (to sort by date):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-u      Use time of last access, instead of last modification </span><br><span class="line">        of the file <span class="keyword">for</span> sorting (-t) or long printing (<span class="operator">-l</span>).</span><br></pre></td></tr></table></figure>
-<h3 id="Example-2">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tlu</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2188</span> Jan  <span class="number">4</span> <span class="number">17</span>:<span class="number">58</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff   <span class="number">952</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-an-RSS-feed-to-your-hexo-blog.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Sort_by_creation_date">Sort by creation date</h2><p>To sort by creation date, use <code>-U</code> combined with the <code>-t</code> flag (to sort by date):</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-U      Use time of file creation, instead of last modification </span><br><span class="line">        <span class="keyword">for</span> sorting (-t) or long output (<span class="operator">-l</span>).</span><br></pre></td></tr></table></figure>
-<h3 id="Example-3">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tlU</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3032</span> Jan  <span class="number">4</span> <span class="number">18</span>:<span class="number">04</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2519</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">06</span> Code-snippets-in-Webstorm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4083</span> Dec <span class="number">29</span> <span class="number">12</span>:<span class="number">32</span> Loops-and-callbacks-in-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3957</span> Dec <span class="number">28</span> <span class="number">17</span>:<span class="number">23</span> Easy-dynamic-classes-with-React.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Reverse_order">Reverse order</h2><p>To reverse the order of any of the sort above, add the <code>-r</code> flag:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-r      Reverse the order of the sort to get reverse lexicographical </span><br><span class="line">        order or the oldest entries first (or largest files last, <span class="keyword">if</span> combined with sort by size</span><br></pre></td></tr></table></figure>
-<h3 id="Example_(sort_by_creation_date_starting_with_the_oldest_first)">Example (sort by creation date starting with the oldest first)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tlrU</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">08</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">09</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1428</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">13</span> round-images-in-css.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4317</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Refresh-webpages-automatically-during-development-using-Gulp.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p>Happy sorting !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In the article we will look at different ways of sorting results of the ls (— list directory content) command.</p>]]>
-    
-    </summary>
-    
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
   </entry>
   
