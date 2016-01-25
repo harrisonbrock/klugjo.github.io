@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-01-22T09:52:55.000Z</updated>
+  <updated>2016-01-25T08:43:31.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[HTTPie, a good replacement for cURL]]></title>
+    <link href="http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/"/>
+    <id>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</id>
+    <published>2016-01-25T07:47:17.000Z</published>
+    <updated>2016-01-25T08:43:31.000Z</updated>
+    <content type="html"><![CDATA[<p>If you find <a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">cURL’s syntax</a> a bit too dry for your liking, you could give <a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external">HTTPie</a> a try. In this article I will go through the basics of making HTTP requests to a REST API using HTTPie.<br><a id="more"></a><br><br></p>
+<h2 id="Install_HTTPie">Install HTTPie</h2><p>I am on OSX and with brew, installation is a breeze.</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span>install httpie</span><br></pre></td></tr></table></figure>
+<p>If you are on a different system, check out the <a href="https://github.com/jkbrzt/httpie#installation" target="_blank" rel="external">installation options</a></p>
+<p><br></p>
+<h2 id="Talk_to_a_REST_API">Talk to a REST API</h2><p>For these examples, I will use the test API @ <a href="http://jsonplaceholder.typicode.com/" target="_blank" rel="external">http://jsonplaceholder.typicode.com/</a></p>
+<p><br></p>
+<h3 id="GET_Request">GET Request</h3><p>Use <code>http [url]</code> for a basic GET request </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http jsonplaceholder<span class="class">.typicode</span><span class="class">.com</span>/posts/<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>A nice feature of HTTPie is the possibility to use a <code>name==value</code> syntax for your <strong>querystring parameters</strong>.</p>
+<p>Instead of the less readable:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>http jsonplaceholder.typicode.com/comments?postId=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p>Use the cleaner:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http jsonplaceholder<span class="class">.typicode</span><span class="class">.com</span>/comments postId==<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h3 id="POST_Request">POST Request</h3><p>For other verbs than the default GET, use <code>http [verb] [url] [data]</code>.</p>
+<p>The <code>[data]</code> part of the command uses a white space separated list of key value pairs as defined below:</p>
+<ul>
+<li><code>name=value</code> for strings or text.</li>
+<li><code>name:=value</code> for raw JSON.</li>
+<li><code>name=@file.txt</code> to include the content of a text files sent as a string.</li>
+<li><code>name:=@data.json</code> to include a JSON file used as raw JSON.</li>
+</ul>
+<p><strong>Note on raw JSON:</strong></p>
+<p>You need to use the raw JSON <code>name:=value</code> notation for booleans and numbers for example. Otherwise <code>bool=false</code> will be interpreted as <code>{bool: &#39;false&#39;}</code> instead of <code>{bool: false}</code>. Similarly, <code>id=10</code> would be interpreted as <code>{id: &#39;10&#39;}</code> instead of <code>{id: 10}</code>.</p>
+<p><strong>Example</strong></p>
+<p>With our test API, to create a new post, we need to send a POST request to <a href="http://jsonplaceholder.typicode.com/posts" target="_blank" rel="external">http://jsonplaceholder.typicode.com/posts</a>, with the following JSON data:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    title: <span class="string">'foo'</span>,</span><br><span class="line">    body: <span class="string">'bar'</span>,</span><br><span class="line">    userId: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The HTTPie request will be<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http POST jsonplaceholder<span class="class">.typicode</span><span class="class">.com</span>/posts title=foo body=bar userId:=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
+<p><br></p>
+<h3 id="PUT_Request">PUT Request</h3><p>PUT Requests work the same way as POST Request:</p>
+<p>A PUT Request to <a href="http://jsonplaceholder.typicode.com/posts/1" target="_blank" rel="external">http://jsonplaceholder.typicode.com/posts/1</a></p>
+<p>With the data</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">id</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="attribute">title</span>: <span class="string">'foo'</span>,</span><br><span class="line">    <span class="attribute">body</span>: <span class="string">'bar'</span>,</span><br><span class="line">    <span class="attribute">userId</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>becomes</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http PUT jsonplaceholder.typicode.com<span class="regexp">/posts/</span><span class="number">1</span> <span class="string">id:</span>=<span class="number">1</span> title=foo body=bar <span class="string">userId:</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="DELETE_Request">DELETE Request</h3><p>Our DELETE Request does not have any data sent:</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http DELETE jsonplaceholder<span class="class">.typicode</span><span class="class">.com</span>/posts/<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p><br><br>Check out the <a href="https://github.com/jkbrzt/httpie#examples" target="_blank" rel="external">excellent documentation for more HTTPie examples</a>.<br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>If you find <a href="http://curl.haxx.se/docs/manpage.html">cURL’s syntax</a> a bit too dry for your liking, you could give <a href="https://github.com/jkbrzt/httpie">HTTPie</a> a try. In this article I will go through the basics of making HTTP requests to a REST API using HTTPie.<br>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="REST" scheme="http://klugjo.github.io/tags/REST/"/>
+    
+      <category term="cURL" scheme="http://klugjo.github.io/tags/cURL/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Notes on Zero to One by Peter Thiel]]></title>
@@ -497,40 +555,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>This article will walk you through some of the main wildcards available in Bash:</p>]]>
-    
-    </summary>
-    
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
-      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[open the current terminal directory in Finder (OS X)]]></title>
-    <link href="http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/"/>
-    <id>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</id>
-    <published>2016-01-04T15:29:11.000Z</published>
-    <updated>2016-01-04T15:42:46.000Z</updated>
-    <content type="html"><![CDATA[<p>You can open the current terminal working directory and display it in the Finder using:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open .</span><br></pre></td></tr></table></figure>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="You_might_also_be_interested_in_knowing_how_to:">You might also be interested in knowing how to:</h2><p><br></p>
-<h3 id="Open_the_current_parent_directory_in_Finder">Open the current parent directory in Finder</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open ..</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="Open_a_specific_directory_in_Finder">Open a specific directory in Finder</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open dir1/dir2</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="Open_a_file_with_the_default_application">Open a file with the default application</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open file.txt</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="Open_multiple_files:">Open multiple files:</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open file1.txt file2.txt file3.txt</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="Open_a_file_while_specifying_the_application">Open a file while specifying the application</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open <span class="operator">-a</span> preview pic1.jpg</span><br></pre></td></tr></table></figure>
-<p><br></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>You can open the current terminal working directory and display it in the Finder using:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">open .</span><br></pre></td></tr></table></figure>]]>
     
     </summary>
     
