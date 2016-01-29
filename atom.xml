@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-01-26T07:40:54.000Z</updated>
+  <updated>2016-01-29T07:05:08.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Search through history in OSX terminal]]></title>
+    <link href="http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/"/>
+    <id>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</id>
+    <published>2016-01-29T06:36:50.000Z</published>
+    <updated>2016-01-29T07:05:08.000Z</updated>
+    <content type="html"><![CDATA[<p>Quick article on how to search the OSX terminal history</p>
+<a id="more"></a> 
+<p><br></p>
+<h2 id="Interactive_Search">Interactive Search</h2><h3 id="Start_search">Start search</h3><p>Use <code>ctrl</code>+<code>r</code> to start the history search and start typing your search term (in my example <code>git</code>)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(reverse-i-search)`git<span class="string">': git push origin develop</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>(reverse-i-search)</code> indicates that the search mode is activated</li>
+<li><code>git</code> is the search term</li>
+<li><code>git push origin develop</code> is the result<br><br></li>
+</ul>
+<h3 id="Circle_through_results">Circle through results</h3><p>If the first result is not the one you are looking for, continuously press <code>ctrl</code>+<code>r</code><br><br></p>
+<h3 id="Execute_the_command">Execute the command</h3><p>Press <code>Enter</code> to execute the command</p>
+<p>or</p>
+<p>Press <code>right arrow</code> to insert the command in the current line</p>
+<p><br></p>
+<h2 id="Display_search_history">Display search history</h2><p>In some cases, you might want to display an history of commands containing your search term</p>
+<p>You can do this with the following command</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">history</span> | <span class="keyword">grep</span> <span class="string">'git'</span></span><br></pre></td></tr></table></figure>
+<p>Will display of all the previous commands that contain <code>git</code>.</p>
+<p><strong>Note:</strong></p>
+<p>The <code>history</code> command displays the full history of executed commands. In this example, we are piping the result into a grep command in order to filter the results we want.<br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Quick article on how to search the OSX terminal history</p>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="OSX" scheme="http://klugjo.github.io/tags/OSX/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Create a Bash Shell script to download a site's favicon with HTTPie]]></title>
     <link href="http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/"/>
     <id>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</id>
     <published>2016-01-26T03:48:08.000Z</published>
-    <updated>2016-01-26T07:40:54.000Z</updated>
+    <updated>2016-01-29T06:36:05.000Z</updated>
     <content type="html"><![CDATA[<p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -430,41 +469,6 @@
       <category term="Single Responsibility Principle" scheme="http://klugjo.github.io/tags/Single-Responsibility-Principle/"/>
     
       <category term="Software Practices" scheme="http://klugjo.github.io/tags/Software-Practices/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Method context in JavaScript]]></title>
-    <link href="http://klugjo.github.io/2016/01/Method-context-in-JavaScript/"/>
-    <id>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</id>
-    <published>2016-01-06T07:51:11.000Z</published>
-    <updated>2016-01-06T09:01:38.000Z</updated>
-    <content type="html"><![CDATA[<p>This article takes a closer look at what is called <strong>method context</strong> in JavaScript.</p>
-<p>Method context refers to the way the <code>this</code> keyword behaves inside a function. It is different in JavaScript than in other languages. As we are going to demonstrate here, <strong>the value of <code>this</code> is determined by how and where a function is called.</strong></p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="Function_defined_and_called_as_an_object_method">Function defined and called as an object method</h2><p>The simplest scenario is a <strong>function defined and called as an object method</strong>. In that case, <code>this</code> is set to the object the method is called on.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> defaultLogger = &#123;</span><br><span class="line">  loggerName: <span class="string">"Default"</span>,</span><br><span class="line">  log: <span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"["</span> + <span class="keyword">this</span>.loggerName + <span class="string">"] "</span> + message);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">defaultLogger.log(<span class="string">"example 1"</span>); <span class="comment">// logs "[Default] example 1"</span></span><br></pre></td></tr></table></figure>
-<p>In the <code>log</code> function here, <code>this</code> corresponds to <code>defaultLogger</code>.</p>
-<p><br></p>
-<h2 id="Function_defined_in_the_global_scope">Function defined in the global scope</h2><p>By extension, if a function is defined in the global scope. <code>this</code> will be set to <code>window</code> (global object) when the code is executed in the browser.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Log function defined in the global scope</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"this "</span> + <span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">var</span> loggerName = <span class="keyword">this</span>.loggerName || <span class="string">"Default"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"["</span> + loggerName + <span class="string">"] "</span> + message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">log(<span class="string">"example 2"</span>); <span class="comment">// Logs "this: [object Window]" then "[Default] example 2"</span></span><br></pre></td></tr></table></figure>
-<p>Because the function is defined and executed in the global scope, in the <code>log</code> function here, <code>this</code> points to the global <code>window</code> object.</p>
-<p><code>this.loggerName</code> is then undefined and the <code>&quot;Default&quot;</code> logger name is used instead.</p>
-<p><br></p>
-<h2 id="Function_defined_in_the_global_scope_and_used_as_an_object_method">Function defined in the global scope and used as an object method</h2><p>We can reuse the function defined above and use it in the context of an object. In that case, <code>this</code> will point to that object.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Log function defined externally</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"this: "</span> + <span class="keyword">this</span>);</span><br><span class="line">  <span class="keyword">var</span> loggerName = <span class="keyword">this</span>.loggerName || <span class="string">"Default"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"["</span> + loggerName + <span class="string">"] "</span> + message);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Using the log function in the context of an object</span></span><br><span class="line"><span class="keyword">var</span> databaseLogger = &#123;</span><br><span class="line">  loggerName: <span class="string">"Database"</span>,</span><br><span class="line">  log: log</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">databaseLogger.log(<span class="string">"example 3"</span>); <span class="comment">// Logs "this: [object Object]" then "[Database] example 3"</span></span><br></pre></td></tr></table></figure>
-<p>Because we are calling the <code>log</code> function with the dot notation (<code>databaseLogger.log()</code>), the context is set to the object.</p>
-<p>In conclusion, <strong>it does not matter where the function is defined; the context depends on which object the function is invoked from.</strong></p>
-<p>Check out the code here: <a href="https://jsbin.com/ciqolu/edit?js,console" target="_blank" rel="external">https://jsbin.com/ciqolu/edit?js,console</a><br><br></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article takes a closer look at what is called <strong>method context</strong> in JavaScript.</p>
-<p>Method context refers to the way the <code>this</code> keyword behaves inside a function. It is different in JavaScript than in other languages. As we are going to demonstrate here, <strong>the value of <code>this</code> is determined by how and where a function is called.</strong></p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
   </entry>
   
