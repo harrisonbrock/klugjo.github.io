@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-01-29T07:05:08.000Z</updated>
+  <updated>2016-02-01T09:23:34.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,56 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Display an animated counter on your webpage]]></title>
+    <link href="http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/"/>
+    <id>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</id>
+    <published>2016-02-01T06:50:35.000Z</published>
+    <updated>2016-02-01T09:23:34.000Z</updated>
+    <content type="html"><![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/" target="_blank" rel="external">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/" target="_blank" rel="external">css themes</a>.</p>
+<a id="more"></a> 
+<h2 id="Example">Example</h2><p><br></p>
+<script type="application/javascript">
+
+    function updateNumbers() {
+        setInterval(function(){
+            var val = Math.floor(Math.random()*1000);
+            val = val < 100 ? (val + 100) : val;
+            document.getElementById('odometer').innerHTML = val;
+        }, 4000);
+    }
+
+    updateNumbers();
+</script>
+
+<p><div id="odometer" class="odometer" style="font-size: 25px">321</div><br><br></p>
+<h2 id="Usage">Usage</h2><h3 id="Install">Install</h3><p>Go to the <a href="http://github.hubspot.com/odometer/" target="_blank" rel="external">library’s page</a> and download a zip file with the library or fire up bower:</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">bower </span>install odometer</span><br></pre></td></tr></table></figure>
+<p>Include the js library, for example <code>odometer.min.js</code> .<br>Include the css for the theme of your choice, for example <code>odometer-theme-car.css</code>.</p>
+<p><br></p>
+<h3 id="Initialisation">Initialisation</h3><p>Create an element with the CSS class <code>.odometer</code> and the library will initialise automatically.</p>
+<p>Check out <a href="http://github.hubspot.com/odometer/" target="_blank" rel="external">the documentation</a> if you need more configuration options.</p>
+<p><br></p>
+<h3 id="Update_the_value">Update the value</h3><p>You can update the value by setting the element’s <code>innerHTML</code>, <code>innerText</code>, or by using jQuery’s <code>.text()</code> or <code>.html()</code>.<br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/">css themes</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://klugjo.github.io/tags/CSS/"/>
+    
+      <category term="HTML" scheme="http://klugjo.github.io/tags/HTML/"/>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Search through history in OSX terminal]]></title>
     <link href="http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/"/>
     <id>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</id>
     <published>2016-01-29T06:36:50.000Z</published>
-    <updated>2016-01-29T07:05:08.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article on how to search the OSX terminal history</p>
 <a id="more"></a> 
 <p><br></p>
@@ -58,7 +103,7 @@
     <link href="http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/"/>
     <id>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</id>
     <published>2016-01-26T03:48:08.000Z</published>
-    <updated>2016-01-29T06:36:05.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -113,7 +158,7 @@
     <link href="http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/"/>
     <id>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</id>
     <published>2016-01-25T07:47:17.000Z</published>
-    <updated>2016-01-26T03:48:44.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>If you find <a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">cURL’s syntax</a> a bit too dry for your liking, you could give <a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external">HTTPie</a> a try. In this article I will go through the basics of making HTTP requests to a REST API using HTTPie.<br><a id="more"></a><br><br></p>
 <h2 id="Install_HTTPie">Install HTTPie</h2><p>I am on OSX and with brew, installation is a breeze.</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span>install httpie</span><br></pre></td></tr></table></figure>
@@ -173,7 +218,7 @@
     <link href="http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/"/>
     <id>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</id>
     <published>2016-01-22T08:31:58.000Z</published>
-    <updated>2016-01-22T09:52:55.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br><a id="more"></a> </p>
 <p>It is a pretty recent book (2014) and a very insightful read for anyone who wishes to create something new. Although the book may read like it has been written for american unicorn startup entrepreneurs, I would recommend it to anyone who wishes to create something radically new, be it a company, NGO, scientific breakthrough or revolutionise art.</p>
 <p>The book felt like a motivational piece to me. There were few practical advices (read <a href="http://theleanstartup.com/" target="_blank" rel="external">The Lean Startup</a> or <a href="http://www.goodreads.com/book/show/762542.The_Four_Steps_to_the_Epiphany" target="_blank" rel="external">The Four Steps to the Epiphany</a> if that is what you are looking for), <em>Zero to One</em> is a collection of lessons learnt, advices and theories by the co-founder of Paypal and first investor in Facebook.</p>
@@ -206,7 +251,7 @@
     <link href="http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"/>
     <id>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</id>
     <published>2016-01-20T08:16:34.000Z</published>
-    <updated>2016-01-20T09:07:11.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -243,7 +288,7 @@
     <link href="http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/"/>
     <id>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</id>
     <published>2016-01-18T08:59:18.000Z</published>
-    <updated>2016-01-20T01:06:15.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>Promises are usually used as an elegant way to handle asynchronous operations. In this article, we will look at how to create promises from fixed values and non asynchronous operations. For example you have a function that returns a value and you need to <em>promisify</em> it.</p>
 <a id="more"></a>
 <p><br></p>
@@ -274,7 +319,7 @@
     <link href="http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/"/>
     <id>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</id>
     <published>2016-01-18T07:41:29.000Z</published>
-    <updated>2016-01-19T01:01:54.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article to see how you can (and you should) add a <a href="https://en.wikipedia.org/wiki/Sitemaps" target="_blank" rel="external">google sitemap</a> to your hexo blog.<br><a id="more"></a><br><br></p>
 <h3 id="There_is_a_plugin_for_it_that_will_do_all_the_hard_work_for_you-">There is a plugin for it that will do all the hard work for you.</h3><p>Go ahead and install <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a> with:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
@@ -300,7 +345,7 @@
     <link href="http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/"/>
     <id>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</id>
     <published>2016-01-14T09:17:00.000Z</published>
-    <updated>2016-01-15T08:13:44.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>In OS X, you can use search for files in the command line using <code>mdfind</code>.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -340,7 +385,7 @@
     <link href="http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/"/>
     <id>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</id>
     <published>2016-01-12T03:32:24.000Z</published>
-    <updated>2016-01-12T09:13:34.000Z</updated>
+    <updated>2016-02-01T06:49:54.000Z</updated>
     <content type="html"><![CDATA[<p>The <code>let</code> keyword in JavaScript is like the old <code>var</code> keyword in JavaScript except that it respects block scope. Before ES6, JavaScript only had function scope. Although there is nothing fundamentally wrong with function scope, it confuses a lot of people coming from C based languages which have block scope.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -390,85 +435,6 @@
       <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
     
       <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Code Bloat Commandos - Do not let your functions do more than one thing]]></title>
-    <link href="http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/"/>
-    <id>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</id>
-    <published>2016-01-11T07:02:12.000Z</published>
-    <updated>2016-01-11T09:36:14.000Z</updated>
-    <content type="html"><![CDATA[<p><strong>Code Bloat Commandos</strong> looks at why software code deteriorates over time; and how to fight back.</p>
-<p>In this episode, we will look at how a nice and clean method grows into a dumping ground function. We will see when it happens, how to spot it and how to fix it.</p>
-<a id="more"></a>
-<blockquote><p>FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.</p>
-<footer><strong>Uncle Bob</strong><cite><a href="https://books.google.com.sg/books/about/Clean_Code.html?id=dwSfGQAACAAJ" target="_blank" rel="external">Clean Code</a></cite></footer></blockquote>
-<p><br></p>
-<h2 id="The_humble_beginnings">The humble beginnings</h2><h3 id="Project_specification:">Project specification:</h3><ul>
-<li>We have a live video player and an event function called <code>onProgress</code> that is executed every second.</li>
-<li>We can use that function to monitor playback progress and hook up various actions.</li>
-<li>Our job is to implement a function that will track video engagement by sending an analytics ping every 30 seconds.</li>
-</ul>
-<h3 id="This_is_our_code_(JavaScript):">This is our code (JavaScript):</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main entry point. This function will be called every second by the player</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Our function</span></span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do more things here like update the icons in the footer</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">var</span> analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This is our first version of the <code>_sendVideoEngagementAnalytics</code> function. It is still reasonably simple and compact. It checks if more than 30 seconds have elapsed. If it did, it sends an analytics ping using an analytics manager object.</p>
-<p><br></p>
-<h2 id="A_few_weeks_later">A few weeks later</h2><p>Our first version of the app is working and a few weeks later we need to also check if the current content playing is an Advertisement; and if that is the case send an Advertisement Start and End pings.<br>We can check if the current content playing is an Ad by calling <code>isAdPlaying(currentTime)</code>.</p>
-<p>Easy enough, let’s get coding.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main entry point. This function will be called every second by the player</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Do more things here like update the footer controls</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData,</span><br><span class="line">        adPlaying = isAdPlaying(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Checks if more that 30 seconds have passed</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Checks if an Ad just started playing</span></span><br><span class="line">    <span class="keyword">if</span>(__analyticsState.adPlaying !== adPlaying) &#123;</span><br><span class="line">        </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: adPlaying ? <span class="string">"AD_BEGIN"</span> : <span class="string">"AD_COMPLETE"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.adPlaying = adPlaying;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Done. <code>git commit -m &quot;Added Ad tracking analytics to player&quot;</code>. Jump on Skype and ask who is ready for lunch.</p>
-<p>This is (almost) what happened to me today.</p>
-<p><br></p>
-<h2 id="The_bloat">The bloat</h2><h3 id="The_code_is_not_that_bad,_we_have:">The code is not that bad, we have:</h3><ul>
-<li>refactored <code>analyticsData</code> out of the initial if block because of <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var#var_hoisting" target="_blank" rel="external">variable hoisting and scoping in JavaScript</a>.</li>
-<li>created a local variable <code>adPlaying</code> to avoid multiple calls to <code>isAdPlaying(currentTime)</code>.</li>
-</ul>
-<p><br></p>
-<h3 id="These_are_great,_but_we_have_committed_an_even_bigger_mistake_here:">These are great, but we have committed an even bigger mistake here:</h3><p><strong>The <code>_sendVideoEngagementAnalytics</code> is now doing 2 things</strong>; which is pretty bad in and of itself but also has the following scary consequences:</p>
-<ul>
-<li><strong>The name <code>_sendVideoEngagementAnalytics</code> is now incorrect</strong> (we are not only monitoring video engagement but ad playback as well). Someone reading <code>_sendVideoEngagementAnalytics(currentTime);</code> in the calling function might not suspect that it also sends Ad related analytics.</li>
-<li><strong>The function is getting longer.</strong> And we are setting the stage for it to become even longer by starting off a series of if blocks that check playback position related stuff.</li>
-<li>We suddenly feel like <strong>we need comments in our code to explain what it does</strong> and ‘structure’ the two parts of our function. Burp.</li>
-</ul>
-<p><br></p>
-<h2 id="Pain_Relief">Pain Relief</h2><h3 id="Recognising_the_problem">Recognising the problem</h3><ul>
-<li><p>It clicked for me when I realised <strong>the function’s name didn’t correspond to what the function actually does.</strong></p>
-</li>
-<li><p>Another hint could have been the fact that the function now has <strong>two sections of code that handles different business requirements.</strong></p>
-</li>
-<li><p>A function that is <strong>30 lines long and needs comments for ‘if conditions’</strong> that are pretty readable is not a good sign either.</p>
-</li>
-<li><p>But really, simply observing that the function I have modified suddenly <strong>does not respect the <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank" rel="external">Single Responsibility Principle</a></strong> should have been enough.</p>
-</li>
-</ul>
-<p><br></p>
-<h3 id="Administering_the_cure">Administering the cure</h3><p>At this point, the solution is pretty clear. Separating the ravioli.</p>
-<p>Let’s go ahead and split our function into two functions:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    _sendAdContentAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Do more things here like update the footer controls</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendAdContentAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData,</span><br><span class="line">        adPlaying = isAdPlaying(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(__analyticsState.adPlaying !== adPlaying) &#123;</span><br><span class="line">        </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: adPlaying ? <span class="string">"AD_BEGIN"</span> : <span class="string">"AD_COMPLETE"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.adPlaying = adPlaying;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="Following_up_after_treatment">Following up after treatment</h3><ul>
-<li>When reading<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_sendVideoEngagementAnalytics<span class="list">(<span class="keyword">currentTime</span>)</span><span class="comment">;</span></span><br><span class="line">_sendAdContentAnalytics<span class="list">(<span class="keyword">currentTime</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>we know exactly what is going on. No extra ‘hidden’ functionality.</p>
-<ul>
-<li><p>No more ugly comments</p>
-</li>
-<li><p>Shorter functions</p>
-</li>
-<li><p>If someone wants to add more analytics logic, they won’t be tempted to add to that function and worsen the problem. They will do the right thing right away by adding a new function.<br><br></p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><strong>Code Bloat Commandos</strong> looks at why software code deteriorates over time; and how to fight back.</p>
-<p>In this episode, we will look at how a nice and clean method grows into a dumping ground function. We will see when it happens, how to spot it and how to fix it.</p>]]>
-    
-    </summary>
-    
-      <category term="Single Responsibility Principle" scheme="http://klugjo.github.io/tags/Single-Responsibility-Principle/"/>
-    
-      <category term="Software Practices" scheme="http://klugjo.github.io/tags/Software-Practices/"/>
     
   </entry>
   

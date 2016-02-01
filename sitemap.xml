@@ -2,173 +2,178 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
-    <lastmod>2016-01-29T07:05:08.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
-    <lastmod>2016-01-29T06:36:05.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
-    <lastmod>2016-01-26T03:48:44.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
-    <lastmod>2016-01-22T09:52:55.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
-    <lastmod>2016-01-20T09:07:11.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
-    <lastmod>2016-01-20T01:19:05.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
-    <lastmod>2016-01-20T01:06:15.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
-    <lastmod>2016-01-19T01:01:54.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-    <lastmod>2016-01-18T12:01:49.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
-    <lastmod>2016-01-15T08:13:44.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</loc>
-    <lastmod>2016-01-12T09:13:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
-    <lastmod>2016-01-11T09:36:14.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
-    <lastmod>2016-01-06T09:01:38.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
-    <lastmod>2016-01-05T07:55:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
-    <lastmod>2016-01-04T15:42:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/</loc>
-    <lastmod>2016-01-04T15:32:10.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
-    <lastmod>2015-12-31T10:06:23.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Loops-and-callbacks-in-React/</loc>
-    <lastmod>2015-12-29T04:32:17.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
-    <lastmod>2015-12-28T09:23:32.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
-    <lastmod>2015-12-24T02:13:32.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Build-your-first-React-application/</loc>
-    <lastmod>2015-12-23T08:41:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</loc>
-    <lastmod>2015-12-18T04:06:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
-    <lastmod>2015-12-17T09:19:40.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
-    <lastmod>2015-12-17T08:47:52.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</loc>
-    <lastmod>2015-12-14T08:02:13.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</loc>
-    <lastmod>2015-12-11T16:50:04.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    <lastmod>2015-12-11T05:32:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
-    <lastmod>2015-12-06T01:16:07.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/</loc>
-    <lastmod>2015-12-06T01:14:40.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/08/Debug-Mocha-Unit-Tests-in-Webstorm/</loc>
-    <lastmod>2015-12-06T01:14:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
-    <lastmod>2015-12-06T01:14:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
-    <lastmod>2015-12-06T01:13:51.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
-    <lastmod>2015-12-06T01:09:22.000Z</lastmod>
+    <loc>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</loc>
+    <lastmod>2016-02-01T09:23:34.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
-    <lastmod>2015-12-06T01:08:29.000Z</lastmod>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Loops-and-callbacks-in-React/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/08/Debug-Mocha-Unit-Tests-in-Webstorm/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Build-your-first-React-application/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
+    <lastmod>2016-02-01T06:49:54.000Z</lastmod>
   </url>
   
 </urlset>
