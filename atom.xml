@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-01T11:52:51.000Z</updated>
+  <updated>2016-02-02T07:23:51.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,79 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Debug hexo blog generation in webstorm]]></title>
+    <link href="http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/"/>
+    <id>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</id>
+    <published>2016-02-02T06:44:51.000Z</published>
+    <updated>2016-02-02T07:23:51.000Z</updated>
+    <content type="html"><![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a><br><br></p>
+<h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
+<p><br></p>
+<h2 id="The_trick">The trick</h2><p>The trick here is to specify the path to the hexo executable located in <code>node_modules/.bin/hexo</code>.</p>
+<p>When adding your configuration, use the following:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+<th>Example </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Node Interpreter</td>
+<td>Path to Node</td>
+<td>/usr/local/bin/node (on OSX)</td>
+</tr>
+<tr>
+<td>Node Parameters</td>
+<td>Node args to specify debug mode</td>
+<td>--debug-brk</td>
+</tr>
+<tr>
+<td>Working Directory</td>
+<td>Project Directory</td>
+<td>path/to/project</td>
+</tr>
+<tr>
+<td>JavaScript File</td>
+<td>Path to hexo executable</td>
+<td>node_modules/.bin/hexo</td>
+</tr>
+<tr>
+<td>Application Parameters</td>
+<td>CLI command args</td>
+<td>generate</td>
+</tr>
+<tr>
+<td>Environment Variables</td>
+<td>process.env.ENV_VARIABLE</td>
+<td><em>empty</em></td>
+</tr>
+</tbody>
+</table>
+<p>Once you are done, set up a breakpoint somewhere and hit the debug button.</p>
+<p>Thanks to this <a href="http://stackoverflow.com/questions/30942953/how-can-i-debug-a-node-app-that-is-started-via-the-command-line-cli-like-forev" target="_blank" rel="external">Stack Overflow Post</a> for pointing me in the right direction.<br>You can refer to it if you wish to use <code>node-inspector</code> instead of Webstorm to do your debugging.<br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br>]]>
+    
+    </summary>
+    
+      <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Display an animated counter on your webpage]]></title>
     <link href="http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/"/>
     <id>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</id>
     <published>2016-02-01T06:50:35.000Z</published>
-    <updated>2016-02-01T11:52:51.000Z</updated>
+    <updated>2016-02-01T15:25:14.000Z</updated>
     <content type="html"><![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/" target="_blank" rel="external">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/" target="_blank" rel="external">css themes</a>.</p>
 <a id="more"></a> 
 <h2 id="Example">Example</h2><p><br></p>
@@ -377,64 +445,6 @@
       <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
       <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[The let keyword in ES6 JavaScript]]></title>
-    <link href="http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/"/>
-    <id>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</id>
-    <published>2016-01-12T03:32:24.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
-    <content type="html"><![CDATA[<p>The <code>let</code> keyword in JavaScript is like the old <code>var</code> keyword in JavaScript except that it respects block scope. Before ES6, JavaScript only had function scope. Although there is nothing fundamentally wrong with function scope, it confuses a lot of people coming from C based languages which have block scope.</p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="1)_Block_scope_vs_Function_scope">1) Block scope vs Function scope</h2><p>Scope refers to some portion of the code where a variable exists. Outside of that scope the variable will be not be accessible or will be another variable with the same name.<br><br></p>
-<h3 id="a)_Function_scope">a) Function scope</h3><p>Function scope means that any variable defined anywhere inside a function, will be accessible anywhere in that function and will not exist outside of it.<br><br></p>
-<h3 id="b)_Block_scope">b) Block scope</h3><p>Block scope means that any variable defined anywhere inside any block (for example <code>if</code> and <code>for</code> blocks), will be accessible anywhere inside that block and will not exist outside of it.</p>
-<p><br></p>
-<h2 id="2)_JavaScript_var_and_let">2) JavaScript <code>var</code> and <code>let</code></h2><p>In JavaScript, the <code>var</code> keyword is function scoped. The <code>let</code> keyword is block scoped.<br><br></p>
-<h3 id="a)_Example">a) Example</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'function-a'</span>;</span><br><span class="line">    <span class="keyword">var</span> b = <span class="string">'function-b'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// 'function-a'</span></span><br><span class="line">    <span class="built_in">console</span>.log(b); <span class="comment">// 'function-b'</span></span><br><span class="line">    <span class="built_in">console</span>.log(c); <span class="comment">// ReferenceError Exception: c is not defined</span></span><br><span class="line">    <span class="built_in">console</span>.log(d === <span class="literal">undefined</span>); <span class="comment">// true</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(a !== b) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">let</span> a = <span class="string">'block-a'</span>; <span class="comment">// Sets the value of a but only in the if block</span></span><br><span class="line">        <span class="keyword">var</span> b = <span class="string">'block-b'</span>; <span class="comment">// Sets the value of b in the entire main() function</span></span><br><span class="line">        <span class="keyword">let</span> c = <span class="string">'block-c'</span>; <span class="comment">// Defined only in the if block</span></span><br><span class="line">        <span class="keyword">var</span> d = <span class="string">'block-d'</span>; <span class="comment">// Defined in the entire main() function</span></span><br><span class="line">        </span><br><span class="line">        <span class="built_in">console</span>.log(a); <span class="comment">// 'block-a'</span></span><br><span class="line">        <span class="built_in">console</span>.log(b); <span class="comment">// 'block-b'</span></span><br><span class="line">        <span class="built_in">console</span>.log(c); <span class="comment">// 'block-c'</span></span><br><span class="line">        <span class="built_in">console</span>.log(d); <span class="comment">// 'block-d'</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// 'function-a'</span></span><br><span class="line">    <span class="built_in">console</span>.log(b); <span class="comment">// 'block-b'</span></span><br><span class="line">    <span class="built_in">console</span>.log(c); <span class="comment">// ReferenceError Exception: c is not defined</span></span><br><span class="line">    <span class="built_in">console</span>.log(d); <span class="comment">// 'block-d'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="b)_Notes">b) Notes</h3><ul>
-<li>Variables defined with <code>var</code> inside an <code>if</code> block will exist inside the entire function they are defined in – ignoring the <code>if</code> block. </li>
-<li>Variables defined with <code>var</code> will exist and have a value of undefined in the section of the code before the initialisation. Check out variable <code>d</code> in the example. The variable is created at the beginning of the function, this is called <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var" target="_blank" rel="external">variable hoisting</a>.</li>
-<li>Variables defined with <code>let</code> will only exist within the block they are defined in. Trying to access the variable outside of the block will throw an Error. This is the case for <code>c</code> in the example.</li>
-<li>Use <code>let</code> to override the value of a function scoped variable inside a block only. Example: <code>a</code>.</li>
-</ul>
-<p><br></p>
-<h2 id="3)_When_to_use_let">3) When to use <code>let</code></h2><p><br></p>
-<h3 id="a)_In_for_loops">a) In <code>for</code> loops</h3><p>Do</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i; i &lt; n; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    [...]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>instead of</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i; <span class="comment">// Will be function scoped and can cause interferences</span></span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    [...]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="b)_In_closures_that_need_to_retain_creation_time_values">b) In closures that need to retain creation time values</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; <span class="number">4</span>; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> j = i;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i); <span class="comment">// Will always print out 4</span></span><br><span class="line">        <span class="built_in">console</span>.log(j); <span class="comment">// Will print out 1, 2 and 3 as expected</span></span><br><span class="line">    &#125;, <span class="number">500</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Useful to create multiple instances of a variable inside a block.<br><br></p>
-<h3 id="c)_For_temporary_variables_inside_blocks">c) For temporary variables inside blocks</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i &lt; <span class="number">75</span>) &#123;</span><br><span class="line">  <span class="keyword">let</span> random = <span class="built_in">Math</span>.random();</span><br><span class="line">  i = random * <span class="number">100</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="4)_let_caveats_and_warnings">4) <code>let</code> caveats and warnings</h2><p><br></p>
-<h3 id="a)_No_access_to_the_variable_before_declaration">a) No access to the variable before declaration</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(foo); <span class="comment">// Will throw an error</span></span><br><span class="line">    <span class="built_in">console</span>.log(bar); <span class="comment">// Prints nothing as bar is undefined but will not throw an error</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> foo = <span class="string">'foo'</span>;</span><br><span class="line">    <span class="keyword">var</span> bar = <span class="string">'bar'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>At first glance, the <code>let</code> keyword does behave the same as <code>var</code> when used in a function block. But if you try to access the variable before declaration you will get an error instead of an <code>undefined</code> variable as you would with <code>var</code>.<br><br></p>
-<h3 id="b)_Double_declarations_are_forbidden">b) Double declarations are forbidden</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(condition) &#123;</span><br><span class="line">    <span class="keyword">let</span> amount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> amount = <span class="number">1</span>; <span class="comment">// will throw an Error</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h3 id="c)_Be_careful_when_you_feel_like_replacing_a_var_with_let">c) Be careful when you feel like replacing a <code>var</code> with <code>let</code></h3><p>Be careful when you feel like changing <code>var</code> with <code>let</code>. Usually that happens when a function should be split into several parts.</p>
-<p>If your initial function looks like</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">'foo'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(dayOfTheWeek = <span class="string">'Monday'</span>) &#123;</span><br><span class="line">        callback(result);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>then suddenly looks like</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(dayOfTheWeek = <span class="string">'Monday'</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> result = <span class="string">'foo'</span>;</span><br><span class="line">        callback(result);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(isRaining) &#123;</span><br><span class="line">        <span class="keyword">let</span> result = <span class="string">'bar'</span>;</span><br><span class="line">        callback(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>You should seriously consider rewriting your function as two functions:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process1</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">'foo'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(dayOfTheWeek = <span class="string">'Monday'</span>) &#123;</span><br><span class="line">        callback(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">process2</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> result = <span class="string">'bar'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(isRaining) &#123;</span><br><span class="line">        callback(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Read more about why <a href="/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/" target="_blank">functions should only do one thing<a></a></a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>The <code>let</code> keyword in JavaScript is like the old <code>var</code> keyword in JavaScript except that it respects block scope. Before ES6, JavaScript only had function scope. Although there is nothing fundamentally wrong with function scope, it confuses a lot of people coming from C based languages which have block scope.</p>]]>
-    
-    </summary>
-    
-      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
   </entry>
   
