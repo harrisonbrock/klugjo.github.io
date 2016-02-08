@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-02T07:23:51.000Z</updated>
+  <updated>2016-02-08T06:52:53.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Node Auto Completion in WebStorm on OSX]]></title>
+    <link href="http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/"/>
+    <id>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</id>
+    <published>2016-02-03T01:25:55.000Z</published>
+    <updated>2016-02-08T06:52:53.000Z</updated>
+    <content type="html"><![CDATA[<p>Quick article on how to add auto completion in Webstorm 11 for all the core Node libraries.<br><a id="more"></a> <br></p>
+<h2 id="The_problem">The problem</h2><p>Without Node coding assistance, you will get warnings on all the Node.js core functions like <code>require</code> or <code>__dirname</code>.</p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/node-code-completion-missing-webstorm.png" alt="Node Code Completion missing example" title="node code completion missing in webstorm"></p>
+<p><br></p>
+<h2 id="The_solution">The solution</h2><p>In webstorm 11 you need to enable the Node.js assistance:</p>
+<p>Got to <strong>Preferences &gt; Languages &amp; Frameworks &gt; Node.js and npm</strong> and click <strong>Enable</strong> under Code Assistance.</p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/enable-core-node-js-code-assistance-webstorm.png" alt="Enable Node.js code assistance" title="enable the Node.js assistance"></p>
+<p>Go back to your code and the errors will be gone !<br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Quick article on how to add auto completion in Webstorm 11 for all the core Node libraries.<br>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
+    
+      <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Debug hexo blog generation in webstorm]]></title>
     <link href="http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/"/>
     <id>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</id>
     <published>2016-02-02T06:44:51.000Z</published>
-    <updated>2016-02-02T07:23:51.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a><br><br></p>
 <h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
 <p><br></p>
@@ -87,7 +115,7 @@
     <link href="http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/"/>
     <id>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</id>
     <published>2016-02-01T06:50:35.000Z</published>
-    <updated>2016-02-01T15:25:14.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/" target="_blank" rel="external">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/" target="_blank" rel="external">css themes</a>.</p>
 <a id="more"></a> 
 <h2 id="Example">Example</h2><p><br></p>
@@ -132,7 +160,7 @@
     <link href="http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/"/>
     <id>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</id>
     <published>2016-01-29T06:36:50.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article on how to search the OSX terminal history</p>
 <a id="more"></a> 
 <p><br></p>
@@ -171,7 +199,7 @@
     <link href="http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/"/>
     <id>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</id>
     <published>2016-01-26T03:48:08.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -226,7 +254,7 @@
     <link href="http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/"/>
     <id>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</id>
     <published>2016-01-25T07:47:17.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>If you find <a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">cURL’s syntax</a> a bit too dry for your liking, you could give <a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external">HTTPie</a> a try. In this article I will go through the basics of making HTTP requests to a REST API using HTTPie.<br><a id="more"></a><br><br></p>
 <h2 id="Install_HTTPie">Install HTTPie</h2><p>I am on OSX and with brew, installation is a breeze.</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span>install httpie</span><br></pre></td></tr></table></figure>
@@ -286,7 +314,7 @@
     <link href="http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/"/>
     <id>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</id>
     <published>2016-01-22T08:31:58.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br><a id="more"></a> </p>
 <p>It is a pretty recent book (2014) and a very insightful read for anyone who wishes to create something new. Although the book may read like it has been written for american unicorn startup entrepreneurs, I would recommend it to anyone who wishes to create something radically new, be it a company, NGO, scientific breakthrough or revolutionise art.</p>
 <p>The book felt like a motivational piece to me. There were few practical advices (read <a href="http://theleanstartup.com/" target="_blank" rel="external">The Lean Startup</a> or <a href="http://www.goodreads.com/book/show/762542.The_Four_Steps_to_the_Epiphany" target="_blank" rel="external">The Four Steps to the Epiphany</a> if that is what you are looking for), <em>Zero to One</em> is a collection of lessons learnt, advices and theories by the co-founder of Paypal and first investor in Facebook.</p>
@@ -319,7 +347,7 @@
     <link href="http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"/>
     <id>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</id>
     <published>2016-01-20T08:16:34.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -356,7 +384,7 @@
     <link href="http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/"/>
     <id>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</id>
     <published>2016-01-18T08:59:18.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>Promises are usually used as an elegant way to handle asynchronous operations. In this article, we will look at how to create promises from fixed values and non asynchronous operations. For example you have a function that returns a value and you need to <em>promisify</em> it.</p>
 <a id="more"></a>
 <p><br></p>
@@ -387,7 +415,7 @@
     <link href="http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/"/>
     <id>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</id>
     <published>2016-01-18T07:41:29.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
+    <updated>2016-02-08T06:52:53.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article to see how you can (and you should) add a <a href="https://en.wikipedia.org/wiki/Sitemaps" target="_blank" rel="external">google sitemap</a> to your hexo blog.<br><a id="more"></a><br><br></p>
 <h3 id="There_is_a_plugin_for_it_that_will_do_all_the_hard_work_for_you-">There is a plugin for it that will do all the hard work for you.</h3><p>Go ahead and install <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a> with:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
@@ -405,46 +433,6 @@
       <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
       <category term="Sitemap" scheme="http://klugjo.github.io/tags/Sitemap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[OSX: Use Spotlight with the Command Line]]></title>
-    <link href="http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/"/>
-    <id>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</id>
-    <published>2016-01-14T09:17:00.000Z</published>
-    <updated>2016-02-01T06:49:54.000Z</updated>
-    <content type="html"><![CDATA[<p>In OS X, you can use search for files in the command line using <code>mdfind</code>.</p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="Basic_usage">Basic usage</h2><p>Use <code>mdfind</code> to search for anything like you would in spotlight:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mdfind</span> searchTerm</span><br></pre></td></tr></table></figure></p>
-<p>For example <code>mdfind robocop</code> will search for any file which contains the term <em>robocop</em> and return a list of paths. Just like spotlight, it will also search inside text documents, pdf documents, emails and so on.</p>
-<h3 id="Additional_parameters">Additional parameters</h3><ul>
-<li>use <code>-count</code> to return the number of results instead of a list of files: <code>mdfind robocop -count</code></li>
-<li>use <code>-live</code> to watch an live-update the list of results: <code>mdfind robocop -live</code></li>
-<li>use <code>-onlyin &lt;directory&gt;</code> to search in a specific path: <code>mdfind robocop -onlyin ~/Music</code></li>
-<li>use <code>-name &lt;name&gt;</code> to limit the search to filenames (won’t search inside files for example): <code>mdfind -name robocop</code></li>
-</ul>
-<h2 id="Advanced_search_queries_using_OS_X_Files_Metadata">Advanced search queries using OS X Files Metadata</h2><h3 id="Check_files_metadata">Check files metadata</h3><p>You can read a file’s metadata using the <code>mdls</code> command.</p>
-<p>For example: </p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdls  ~<span class="regexp">/Pictures/</span><span class="constant">Birthday.</span>jpg</span><br></pre></td></tr></table></figure>
-<p>Will print out a list of attributes and their values, something like:</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">_kMDItemOwnerUserID            = <span class="value"><span class="number">501</span></span></span></span><br><span class="line"><span class="setting">kMDItemContentCreationDate     = <span class="value"><span class="number">2015</span>-<span class="number">12</span>-<span class="number">17</span> <span class="number">05</span>:<span class="number">32</span>:<span class="number">42</span> +<span class="number">0000</span></span></span></span><br><span class="line"><span class="setting">kMDItemContentModificationDate = <span class="value"><span class="number">2015</span>-<span class="number">12</span>-<span class="number">17</span> <span class="number">05</span>:<span class="number">32</span>:<span class="number">42</span> +<span class="number">0000</span></span></span></span><br><span class="line"><span class="setting">kMDItemContentType             = <span class="value"><span class="string">"dyn.ah62d4rv4ge80w6dp"</span></span></span></span><br><span class="line"><span class="title">[...]</span></span><br></pre></td></tr></table></figure>
-<h3 id="Search_files_by_metadata_attributes">Search files by metadata attributes</h3><p>You can build more advanced queries and perform complex searches by using these metadata attributes using</p>
-<figure class="highlight erlang"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mdfind <span class="keyword">query</span></span><br></pre></td></tr></table></figure>
-<p>For example:</p>
-<p><strong>Search for files whose type contains</strong> <code>MPEG</code>:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mdfind</span> <span class="string">"kMDItemKind == '*MPEG*'"</span></span><br></pre></td></tr></table></figure></p>
-<p><strong> Search for image files with a width &gt; 3000 pixels</strong>:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mdfind</span> <span class="string">"kMDItemPixelWidth &gt; 3000"</span></span><br></pre></td></tr></table></figure></p>
-<p><strong> Search for audio and movie files with a duration &lt; 2 minutes</strong>:<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">mdfind</span> <span class="string">"kMDItemDurationSeconds &lt; 120"</span></span><br></pre></td></tr></table></figure></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In OS X, you can use search for files in the command line using <code>mdfind</code>.</p>]]>
-    
-    </summary>
-    
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
-      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
     
   </entry>
   
