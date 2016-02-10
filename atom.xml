@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-08T06:52:53.000Z</updated>
+  <updated>2016-02-09T09:06:46.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,132 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Git add]]></title>
+    <link href="http://klugjo.github.io/2016/02/git-add/"/>
+    <id>http://klugjo.github.io/2016/02/git-add/</id>
+    <published>2016-02-09T07:48:25.000Z</published>
+    <updated>2016-02-09T09:06:46.000Z</updated>
+    <content type="html"><![CDATA[<p>This article is a description of all the basic git add commands.</p>
+<a id="more"></a> 
+<h2 id="Understanding">Understanding</h2><p>Git uses a notion of changes staged for the next commit where you set which change you wish to include in the next <code>git commit</code> command. This includes new files, deleted files and modifications.</p>
+<p>For those in a hurry, here is the conclusion of this article:</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th style="text-align:center">New Files</th>
+<th style="text-align:center">Modified Files</th>
+<th style="text-align:center">Deleted Files </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git add -A</code></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td><code>git add -u</code></td>
+<td style="text-align:center"><span style="color: red;">X</span></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td><code>git add --ignore-removal</code></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center"><span style="color: red;">X</span></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s start by initializing a new git repository:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"><span class="comment"># Initialized empty Git repository in /.git/</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file-delete.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file-modify.txt</span><br></pre></td></tr></table></figure>
+<h2 id="Add_by_filename">Add by filename</h2><p>Use <code>git add [&lt;pathspec&gt;…​]</code> to add file by their name.</p>
+<p>If we want to add our two files created above:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add file1.txt file2.txt</span><br></pre></td></tr></table></figure>
+<p>It is also possible to use wildcards</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.txt</span><br></pre></td></tr></table></figure>
+<p>After any of these two commands, both our files will be staged for the next commit. Let’s do our first commit before we continue.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"Initial commit"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Stage_all_changes">Stage all changes</h2><p>If you wish to add deletions, updates and file creations, you can use any of these 3 commands:</p>
+<ul>
+<li><code>git add -A</code></li>
+<li><code>git add .</code></li>
+<li><code>git add --all</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> change &gt; file-modify.txt <span class="comment"># modifiy a file</span></span><br><span class="line">$ rm file-delete.txt <span class="comment"># delete a file</span></span><br><span class="line">$ <span class="built_in">echo</span> new &gt; file-new.txt <span class="comment"># create a new file</span></span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># untracked:  file-new.txt</span></span><br></pre></td></tr></table></figure>
+<p>At this point, any of the command above will stage all these files:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A <span class="comment"># add all files to the next commit</span></span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># new file:   file-new.txt</span></span><br></pre></td></tr></table></figure>
+<p>At this point, let’s do a <code>git reset</code> to revert the staged changes and demonstrate the other commands.</p>
+<h2 id="Stage_modified_and_deleted_files_only">Stage modified and deleted files only</h2><p>If you don’t want to add the newly created files, but only the modifications and deletions, use any of the following:</p>
+<ul>
+<li><code>git add -u</code></li>
+<li><code>git add -update</code></li>
+</ul>
+<p>Example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git add -u</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># untracked files:</span></span><br><span class="line"><span class="comment"># file-new.txt</span></span><br></pre></td></tr></table></figure>
+<p>Once again, a quick <code>git reset</code> will reset staged changes and allow us to look at the last option</p>
+<h2 id="Stage_modified_and_new_files_only">Stage modified and new files only</h2><p>If you want to stage everything except the files that have been deleted, use:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">add</span> <span class="comment">--ignore-removal</span></span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git add --ignore-removal</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># new file:   file-new.txt </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Changed but not updated:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br></pre></td></tr></table></figure>
+<h2 id="Try_it_yourself">Try it yourself</h2><p>Here is the full script if you want to see it with your own eyes :)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file-delete.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file-modify.txt</span><br><span class="line">git add *.txt</span><br><span class="line">git commit -m <span class="string">"Initial commit"</span></span><br><span class="line"><span class="built_in">echo</span> change &gt; file-modify.txt </span><br><span class="line">rm file-delete.txt</span><br><span class="line"><span class="built_in">echo</span> new &gt; file-new.txt</span><br><span class="line">git add -A</span><br><span class="line">git status</span><br><span class="line">git reset</span><br><span class="line">git add -u</span><br><span class="line">git status</span><br><span class="line">git reset</span><br><span class="line">git add --ignore-removal</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>Hope this gives you a clearer view of what is going on !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article is a description of all the basic git add commands.</p>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Notes on Never Eat Alone by Keith Ferrazzi]]></title>
+    <link href="http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/"/>
+    <id>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</id>
+    <published>2016-02-09T07:26:18.000Z</published>
+    <updated>2016-02-09T09:11:26.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have just finished <a href="http://keithferrazzi.com/products/never-eat-alone" target="_blank" rel="external">Never Eat Alone</a>. It is a book about building a supportive network of business connections that will propel you to the highest spheres of the business world.<br><a id="more"></a> </p>
+<p>The author goes through the story of his life and how he networked his way to the top. From his humble lower class beginnings, through golf sessions, wine dinners and republican rallies to being a top consultant and CEO. </p>
+<p>I have gone through the entire book and it is packed with excellent advices, some of which I have detailed below. It is hard not to appreciate the honesty, authenticity and candor of the author. It is an excellent reminder that in life or business you can’t make it alone. As a software developer, it is often too easy to think that your skills are enough to get ahead and this book serves as a powerful reminder that this is certainly not the case.</p>
+<p>I had one minor problem with the book though, it assumes that you are an extrovert looking to smooth talk your way up the American Dream. Probably Appealing to some, I often had difficulties identifying to the author’s behavior and real life situations.</p>
+<h2 id="Notes_and_Takeaways">Notes and Takeaways</h2><ul>
+<li>You can’t make it alone. People will always be the foundation of any human enterprise. Lone wolfs will inevitably crumble under their own weight.</li>
+<li>Fearing rejection is normal, just ignore it and power through.</li>
+<li>Not everyone is born with excellent communication skills but these can be learnt like any other skill.</li>
+<li>Always be generous and loyal. When meeting someone, think: how can I help and not how can this person help me.</li>
+<li>Be patient and meet as many people as you can. Build your network way before you need it.</li>
+<li>Ping people constantly to keep all your hard earned relatioship alive. But once again remain interesting and authentic.</li>
+<li>Set your goals straight and have a clear message, this will make people want to have you in their network and will help you hold intelligent conversations. Be your own brand and market yourself effectively.</li>
+<li>The pillars of your network should be super connectors, mentors and mentees.</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have just finished <a href="http://keithferrazzi.com/products/never-eat-alone">Never Eat Alone</a>. It is a book about building a supportive network of business connections that will propel you to the highest spheres of the business world.<br>]]>
+    
+    </summary>
+    
+      <category term="Books" scheme="http://klugjo.github.io/tags/Books/"/>
+    
+      <category term="General Business" scheme="http://klugjo.github.io/tags/General-Business/"/>
+    
+      <category term="Networking" scheme="http://klugjo.github.io/tags/Networking/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Node Auto Completion in WebStorm on OSX]]></title>
@@ -376,63 +502,6 @@
       <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
     
       <category term="gitignore" scheme="http://klugjo.github.io/tags/gitignore/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Use Q to create a promise from a value]]></title>
-    <link href="http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/"/>
-    <id>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</id>
-    <published>2016-01-18T08:59:18.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Promises are usually used as an elegant way to handle asynchronous operations. In this article, we will look at how to create promises from fixed values and non asynchronous operations. For example you have a function that returns a value and you need to <em>promisify</em> it.</p>
-<a id="more"></a>
-<p><br></p>
-<p>I will be using node and the <a href="https://github.com/kriskowal/q" target="_blank" rel="external">Q library</a> for these examples.</p>
-<h2 id="Using_Q-fcall">Using Q.fcall</h2><p>The simplest and most straight forward way to go is to use <a href="https://github.com/kriskowal/q#using-qfcall" target="_blank" rel="external">Q.fcall</a> to generate a promise from a function that returns a fixed value.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Q = <span class="built_in">require</span>(<span class="string">'q'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> promise = Q.fcall(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"Fixed value"</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(val);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Using_a_deferred_object">Using a deferred object</h2><p>You can also use the traditional <a href="https://github.com/kriskowal/q#using-deferreds" target="_blank" rel="external">deferred object</a> and resolve it immediately.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> deferred = Q.defer(); <span class="comment">// Create a deferred object</span></span><br><span class="line"></span><br><span class="line">    deferred.resolve(<span class="string">"Fixed Value"</span>); <span class="comment">// Resolve it</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> deferred.promise; <span class="comment">// Return a promise</span></span><br><span class="line">&#125;(); <span class="comment">// function is self invoking</span></span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Using_Q-Promise">Using Q.Promise</h2><p>Finally you can also use <a href="https://github.com/kriskowal/q#using-qpromise" target="_blank" rel="external">Q.Promise</a> which is a different take on the deferred: different syntax but same level of control.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = Q.promise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> resolve(<span class="string">"Fixed Value"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><br></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Promises are usually used as an elegant way to handle asynchronous operations. In this article, we will look at how to create promises from fixed values and non asynchronous operations. For example you have a function that returns a value and you need to <em>promisify</em> it.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Promise" scheme="http://klugjo.github.io/tags/Promise/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Add a sitemap to your hexo blog]]></title>
-    <link href="http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/"/>
-    <id>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</id>
-    <published>2016-01-18T07:41:29.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Quick article to see how you can (and you should) add a <a href="https://en.wikipedia.org/wiki/Sitemaps" target="_blank" rel="external">google sitemap</a> to your hexo blog.<br><a id="more"></a><br><br></p>
-<h3 id="There_is_a_plugin_for_it_that_will_do_all_the_hard_work_for_you-">There is a plugin for it that will do all the hard work for you.</h3><p>Go ahead and install <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a> with:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
-<p><br><br>Then add the path to your <code>sitemap.xml</code> in the <code>_config.yml</code>:</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Sitemap</span></span><br><span class="line"><span class="label">sitemap:</span></span><br><span class="line">  path: sitemap.xml</span><br></pre></td></tr></table></figure>
-<p>Regenerate your blog and check that a sitemap.xml file has been created at the root of your blog.<br><br></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Quick article to see how you can (and you should) add a <a href="https://en.wikipedia.org/wiki/Sitemaps">google sitemap</a> to your hexo blog.<br>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Sitemap" scheme="http://klugjo.github.io/tags/Sitemap/"/>
     
   </entry>
   

@@ -2,17 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
+    <loc>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</loc>
+    <lastmod>2016-02-09T09:11:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/git-add/</loc>
+    <lastmod>2016-02-09T09:06:46.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
     <lastmod>2016-02-08T06:52:53.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     <lastmod>2016-02-08T06:52:53.000Z</lastmod>
   </url>
   
@@ -87,12 +92,17 @@
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
+    <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     <lastmod>2016-02-08T06:52:53.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
+    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
     <lastmod>2016-02-08T06:52:53.000Z</lastmod>
   </url>
   

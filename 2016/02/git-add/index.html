@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git add | Klughertz Jonathan</title>
+  <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="This article is a description of all the basic git add commands.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Git add"/>
+  <meta property="og:site_name" content="Klughertz Jonathan"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-71082014-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Klughertz Jonathan</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
+    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" ><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-02-09T07:48:25.000Z"><a href="/2016/02/git-add/">2016-02-09</a></time>
+      
+      
+  
+    <h1 class="title">Git add</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>This article is a description of all the basic git add commands.</p>
+<a id="more"></a> 
+<h2 id="Understanding">Understanding</h2><p>Git uses a notion of changes staged for the next commit where you set which change you wish to include in the next <code>git commit</code> command. This includes new files, deleted files and modifications.</p>
+<p>For those in a hurry, here is the conclusion of this article:</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th style="text-align:center">New Files</th>
+<th style="text-align:center">Modified Files</th>
+<th style="text-align:center">Deleted Files </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>git add -A</code></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td><code>git add .</code></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td><code>git add -u</code></td>
+<td style="text-align:center"><span style="color: red;">X</span></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td><code>git add --ignore-removal</code></td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center"><span style="color: red;">X</span></td>
+</tr>
+</tbody>
+</table>
+<p>Let’s start by initializing a new git repository:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"><span class="comment"># Initialized empty Git repository in /.git/</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file-delete.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file-modify.txt</span><br></pre></td></tr></table></figure>
+<h2 id="Add_by_filename">Add by filename</h2><p>Use <code>git add [&lt;pathspec&gt;…​]</code> to add file by their name.</p>
+<p>If we want to add our two files created above:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add file1.txt file2.txt</span><br></pre></td></tr></table></figure>
+<p>It is also possible to use wildcards</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.txt</span><br></pre></td></tr></table></figure>
+<p>After any of these two commands, both our files will be staged for the next commit. Let’s do our first commit before we continue.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"Initial commit"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Stage_all_changes">Stage all changes</h2><p>If you wish to add deletions, updates and file creations, you can use any of these 3 commands:</p>
+<ul>
+<li><code>git add -A</code></li>
+<li><code>git add .</code></li>
+<li><code>git add --all</code></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> change &gt; file-modify.txt <span class="comment"># modifiy a file</span></span><br><span class="line">$ rm file-delete.txt <span class="comment"># delete a file</span></span><br><span class="line">$ <span class="built_in">echo</span> new &gt; file-new.txt <span class="comment"># create a new file</span></span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># untracked:  file-new.txt</span></span><br></pre></td></tr></table></figure>
+<p>At this point, any of the command above will stage all these files:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A <span class="comment"># add all files to the next commit</span></span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># new file:   file-new.txt</span></span><br></pre></td></tr></table></figure>
+<p>At this point, let’s do a <code>git reset</code> to revert the staged changes and demonstrate the other commands.</p>
+<h2 id="Stage_modified_and_deleted_files_only">Stage modified and deleted files only</h2><p>If you don’t want to add the newly created files, but only the modifications and deletions, use any of the following:</p>
+<ul>
+<li><code>git add -u</code></li>
+<li><code>git add -update</code></li>
+</ul>
+<p>Example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git add -u</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># untracked files:</span></span><br><span class="line"><span class="comment"># file-new.txt</span></span><br></pre></td></tr></table></figure>
+<p>Once again, a quick <code>git reset</code> will reset staged changes and allow us to look at the last option</p>
+<h2 id="Stage_modified_and_new_files_only">Stage modified and new files only</h2><p>If you want to stage everything except the files that have been deleted, use:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">add</span> <span class="comment">--ignore-removal</span></span><br></pre></td></tr></table></figure>
+<p>Example:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git add --ignore-removal</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># new file:   file-new.txt </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Changed but not updated:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br></pre></td></tr></table></figure>
+<h2 id="Try_it_yourself">Try it yourself</h2><p>Here is the full script if you want to see it with your own eyes :)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file-delete.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file-modify.txt</span><br><span class="line">git add *.txt</span><br><span class="line">git commit -m <span class="string">"Initial commit"</span></span><br><span class="line"><span class="built_in">echo</span> change &gt; file-modify.txt </span><br><span class="line">rm file-delete.txt</span><br><span class="line"><span class="built_in">echo</span> new &gt; file-new.txt</span><br><span class="line">git add -A</span><br><span class="line">git status</span><br><span class="line">git reset</span><br><span class="line">git add -u</span><br><span class="line">git status</span><br><span class="line">git reset</span><br><span class="line">git add --ignore-removal</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p>Hope this gives you a clearer view of what is going on !</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Bash/">Bash</a>, <a href="/tags/Git/">Git</a>
+  </div>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Klughertz Jonathan
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'klugjo';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
