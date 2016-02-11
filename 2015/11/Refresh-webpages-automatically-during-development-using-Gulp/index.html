@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Refresh webpages automatically during development using Gulp | Klughertz Jonathan</title>
+  <title>Refresh webpages automatically during development using Gulp | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.
@@ -18,16 +18,24 @@ To get started we will need a basic website project with a gulpfile.js that can 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Refresh webpages automatically during development using Gulp"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -49,42 +57,49 @@ To get started we will need a basic website project with a gulpfile.js that can 
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg6">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-25T03:39:43.000Z"><a href="/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/">2015-11-25</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Refresh webpages automatically during development using Gulp</h1>
   
 
+        <div class="subtitle" datetime="2015-11-25T03:39:43.000Z">
+          2015-11-25
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-gulp"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.</p>
+        <div class="entry">
+          <p>This tutorial will show you how to automatically refresh your webpage whenever a modification is made to your source code.</p>
 <p>We will learn how to install and configure the following tools:</p>
 <ul>
 <li><a href="https://github.com/avevlad/gulp-connect" target="_blank" rel="external">gulp-connect</a>: to start a webserver from our Gulp build script</li>
@@ -92,7 +107,6 @@ To get started we will need a basic website project with a gulpfile.js that can 
 </ul>
 <p>To get started we will need a basic website project with a <code>gulpfile.js</code> that can generate our website. Check out my <a href="/2015/11/Getting-started-with-Gulp-and-static-websites/">Getting started with Gulp</a> and or <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22" target="_blank" rel="external">this gulpfile example</a></p>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="1)_Starting_a_webserver_with_gulp-connect">1) Starting a webserver with gulp-connect</h2><p>First install <a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">gulp-connect</a> locally with <code>npm install --save-dev gulp-connect</code>,</p>
 <p>and add the dependency to the gulpfile.js with <code>var connect = require(&#39;gulp-connect&#39;);</code></p>
 <p>We are now ready to declare our connect task. (Check out <a href="/2015/11/Getting-started-with-Gulp-and-static-websites/">this tutorial</a> if you don’t know what a gulp task is)</p>
@@ -101,7 +115,6 @@ To get started we will need a basic website project with a gulpfile.js that can 
 <p>Add the connect task to the default task: </p>
 <p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;]);</code></p>
 <p> and run your gulp build to test it out.</p>
-<p><br></p>
 <h2 id="2)_Opening_a_web_browser_with_gulp-open">2) Opening a web browser with gulp-open</h2><p>Install <a href="https://github.com/stevelacy/gulp-open" target="_blank" rel="external">gulp-open</a> locally with <code>npm install --save-dev gulp-open</code> </p>
 <p>and add the dependency to the gulpfile.js with <code>var open = require(&#39;gulp-open&#39;);</code></p>
 <p>Declare the ‘open’ task:</p>
@@ -109,7 +122,6 @@ To get started we will need a basic website project with a gulpfile.js that can 
 <p>and add it to the default task</p>
 <p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;, &#39;open&#39;]);</code></p>
 <p>run your gulp and your browser will open automatically, pointing to your local webserver URL.</p>
-<p><br></p>
 <h2 id="3)_Refreshing_the_page_automatically_when_a_code_change_is_detected">3) Refreshing the page automatically when a code change is detected</h2><p>Wrapping up, we are going to configure gulp to automatically refresh the website every time a change is made to the code. That way, we won’t have to start our gulp build and hit the refresh button manually each time.</p>
 <h3 id="a)_Watch_task">a) Watch task</h3><p>First of all, we need a watch task that will watch the filesystem and rebuild the project when a change is detected.</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.watch(<span class="string">'./src/*.html'</span>, [<span class="string">'html'</span>]);</span><br><span class="line">    gulp.watch(<span class="string">'./src/**/*.css'</span>, [<span class="string">'css'</span>]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -125,20 +137,22 @@ To get started we will need a basic website project with a gulpfile.js that can 
 <p>Now start your gulp and that’s it, if you modify (and save) one of your html or css file, the website will be automatically updated. Happy coding!</p>
 <p>You can check an example of a refactored gulpfile.js for this project <a href="https://gist.github.com/klugjo/739ba11d15191f3162b9" target="_blank" rel="external">here</a>.</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Build/">Build</a>, <a href="/tags/Gulp/">Gulp</a>, <a href="/tags/LiveReload/">LiveReload</a>, <a href="/tags/Node/">Node</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -156,12 +170,14 @@ To get started we will need a basic website project with a gulpfile.js that can 
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Sorting files using the ls command | Klughertz Jonathan</title>
+  <title>Sorting files using the ls command | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="In the article we will look at different ways of sorting results of the ls (— list directory content) command.">
@@ -12,16 +12,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Sorting files using the ls command"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -43,83 +51,86 @@
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg1">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-01-04T09:24:40.000Z"><a href="/2016/01/Sorting-files-using-the-ls-command/">2016-01-04</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Sorting files using the ls command</h1>
   
 
+        <div class="subtitle" datetime="2016-01-04T09:24:40.000Z">
+          2016-01-04
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-terminal"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>In the article we will look at different ways of sorting results of the ls (— list directory content) command.</p>
+        <div class="entry">
+          <p>In the article we will look at different ways of sorting results of the ls (— list directory content) command.</p>
 <a id="more"></a> 
 <p>In all example, use the <code>-l</code> flag in addition to the sort flag to retrieve a long description of files and verify your results.</p>
-<p><br></p>
 <h2 id="Sort_by_name">Sort by name</h2><p>This is the default:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls <span class="operator">-l</span></span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">08</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">09</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff   <span class="number">952</span> Dec  <span class="number">9</span> <span class="number">21</span>:<span class="number">08</span> Add-an-RSS-feed-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4597</span> Dec <span class="number">11</span> <span class="number">13</span>:<span class="number">32</span> Build-and-package-your-client-side-code-using-npm.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="Sort_by_file_size">Sort by file size</h2><p>To sort by file size, use</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-S      Sort files by size</span><br></pre></td></tr></table></figure>
 <h3 id="Example">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -Sl</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">8337</span> Dec <span class="number">23</span> <span class="number">16</span>:<span class="number">41</span> Build-your-first-React-application.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4597</span> Dec <span class="number">11</span> <span class="number">13</span>:<span class="number">32</span> Build-and-package-your-client-side-code-using-npm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4506</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Getting-started-with-Gulp-and-static-websites.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4317</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Refresh-webpages-automatically-during-development-using-Gulp.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="Sort_by_modification_date">Sort by modification date</h2><p>To sort by modification date, use</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-t      Sort by time modified (most recently modified first) </span><br><span class="line">        before sorting the operands by lexicographical order.</span><br></pre></td></tr></table></figure>
 <h3 id="Example-1">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tl</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1634</span> Jan  <span class="number">4</span> <span class="number">17</span>:<span class="number">55</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2519</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">06</span> Code-snippets-in-Webstorm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4083</span> Dec <span class="number">29</span> <span class="number">12</span>:<span class="number">32</span> Loops-and-callbacks-in-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3957</span> Dec <span class="number">28</span> <span class="number">17</span>:<span class="number">23</span> Easy-dynamic-classes-with-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1418</span> Dec <span class="number">24</span> <span class="number">10</span>:<span class="number">13</span> Passing-arguments-to-the-underlying-command-in-npm-scripts.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="Sort_by_last_time_of_access">Sort by last time of access</h2><p>To sort by last time of access, use <code>-u</code> combined with the <code>-t</code> flag (to sort by date):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-u      Use time of last access, instead of last modification </span><br><span class="line">        of the file <span class="keyword">for</span> sorting (-t) or long printing (<span class="operator">-l</span>).</span><br></pre></td></tr></table></figure>
 <h3 id="Example-2">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tlu</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2188</span> Jan  <span class="number">4</span> <span class="number">17</span>:<span class="number">58</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff   <span class="number">952</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">07</span> Add-an-RSS-feed-to-your-hexo-blog.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="Sort_by_creation_date">Sort by creation date</h2><p>To sort by creation date, use <code>-U</code> combined with the <code>-t</code> flag (to sort by date):</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-U      Use time of file creation, instead of last modification </span><br><span class="line">        <span class="keyword">for</span> sorting (-t) or long output (<span class="operator">-l</span>).</span><br></pre></td></tr></table></figure>
 <h3 id="Example-3">Example</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tlU</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3032</span> Jan  <span class="number">4</span> <span class="number">18</span>:<span class="number">04</span> Sorting-files-using-the-ls-command.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2519</span> Dec <span class="number">31</span> <span class="number">18</span>:<span class="number">06</span> Code-snippets-in-Webstorm.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4083</span> Dec <span class="number">29</span> <span class="number">12</span>:<span class="number">32</span> Loops-and-callbacks-in-React.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">3957</span> Dec <span class="number">28</span> <span class="number">17</span>:<span class="number">23</span> Easy-dynamic-classes-with-React.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="Reverse_order">Reverse order</h2><p>To reverse the order of any of the sort above, add the <code>-r</code> flag:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-r      Reverse the order of the sort to get reverse lexicographical </span><br><span class="line">        order or the oldest entries first (or largest files last, <span class="keyword">if</span> combined with sort by size</span><br></pre></td></tr></table></figure>
 <h3 id="Example_(sort_by_creation_date_starting_with_the_oldest_first)">Example (sort by creation date starting with the oldest first)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Mac-Book-Pro:_posts username$ ls -tlrU</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2290</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">08</span> Add-Disqus-comments-in-Hexo.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">2066</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">09</span> Add-Google-Analytics-to-your-hexo-blog.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">1428</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">13</span> round-images-in-css.md</span><br><span class="line">-rw-r--r--  <span class="number">1</span> klugjo  staff  <span class="number">4317</span> Dec  <span class="number">6</span> <span class="number">09</span>:<span class="number">14</span> Refresh-webpages-automatically-during-development-using-Gulp.md</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
 <p>Happy sorting !</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Bash/">Bash</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -137,12 +148,14 @@
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

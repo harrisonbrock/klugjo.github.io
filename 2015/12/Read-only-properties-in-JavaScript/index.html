@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Read-Only properties in JavaScript | Klughertz Jonathan</title>
+  <title>Read-Only properties in JavaScript | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="Let’s look at how we can make a JavaScript object property read-only using little-known built in functions.
@@ -14,16 +14,24 @@ JavaScript Object Literals are by dynamic by default. Given the following object
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Read-Only properties in JavaScript"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -45,42 +53,49 @@ JavaScript Object Literals are by dynamic by default. Given the following object
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg2">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-12-14T03:19:31.000Z"><a href="/2015/12/Read-only-properties-in-JavaScript/">2015-12-14</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Read-Only properties in JavaScript</h1>
   
 
+        <div class="subtitle" datetime="2015-12-14T03:19:31.000Z">
+          2015-12-14
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-javascript_badge"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>Let’s look at how we can make a JavaScript object property read-only using little-known built in functions.</p>
+        <div class="entry">
+          <p>Let’s look at how we can make a JavaScript object property read-only using little-known built in functions.</p>
 <p>JavaScript Object Literals are by dynamic by default. Given the following object:</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable"><span class="keyword">var</span> movieTicket</span> = &#123;</span><br><span class="line">  movie: <span class="string">"Mad Max"</span>,</span><br><span class="line">  hall: <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <a id="more"></a> 
@@ -100,20 +115,22 @@ JavaScript Object Literals are by dynamic by default. Given the following object
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var movieTicket = &#123;</span><br><span class="line">  movie: &#123;</span><br><span class="line">    title: <span class="string">'Mad Max'</span>,</span><br><span class="line">    <span class="built_in">year</span>: <span class="number">2015</span></span><br><span class="line">  &#125;,</span><br><span class="line">  hall: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">Object</span>.defineProperty(movieTicket, <span class="string">'movie'</span>, &#123;</span><br><span class="line">  value: &#123;</span><br><span class="line">    title: <span class="string">'Mad Max'</span>,</span><br><span class="line">    <span class="built_in">year</span>: <span class="number">2015</span></span><br><span class="line">  &#125;,</span><br><span class="line">  writable: <span class="keyword">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">movieTicket.movie.title = <span class="string">'Sicario'</span>;</span><br><span class="line"></span><br><span class="line">console.<span class="built_in">log</span>(movieTicket.movie.title); <span class="comment">// Returns: 'Sicario'</span></span><br></pre></td></tr></table></figure>
 <p>In that example, only the pointer to the movie child object is made read-only.</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/OOP/">OOP</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -131,12 +148,14 @@ JavaScript Object Literals are by dynamic by default. Given the following object
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

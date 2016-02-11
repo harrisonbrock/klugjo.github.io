@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Debug hexo blog generation in webstorm | Klughertz Jonathan</title>
+  <title>Debug hexo blog generation in webstorm | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (hexo generate) instead of the more standard node index.js.">
@@ -12,16 +12,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Debug hexo blog generation in webstorm"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -43,44 +51,50 @@
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg0">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-02-02T06:44:51.000Z"><a href="/2016/02/Debug-hexo-blog-generation-in-webstorm/">2016-02-02</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Debug hexo blog generation in webstorm</h1>
   
 
+        <div class="subtitle" datetime="2016-02-02T06:44:51.000Z">
+          2016-02-02
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-library_books"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a><br><br></p>
+        <div class="entry">
+          <p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a> </p>
 <h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
-<p><br></p>
 <h2 id="The_trick">The trick</h2><p>The trick here is to specify the path to the hexo executable located in <code>node_modules/.bin/hexo</code>.</p>
 <p>When adding your configuration, use the following:</p>
 <table>
@@ -125,22 +139,24 @@
 </tbody>
 </table>
 <p>Once you are done, set up a breakpoint somewhere and hit the debug button.</p>
-<p>Thanks to this <a href="http://stackoverflow.com/questions/30942953/how-can-i-debug-a-node-app-that-is-started-via-the-command-line-cli-like-forev" target="_blank" rel="external">Stack Overflow Post</a> for pointing me in the right direction.<br>You can refer to it if you wish to use <code>node-inspector</code> instead of Webstorm to do your debugging.<br><br></p>
+<p>Thanks to this <a href="http://stackoverflow.com/questions/30942953/how-can-i-debug-a-node-app-that-is-started-via-the-command-line-cli-like-forev" target="_blank" rel="external">Stack Overflow Post</a> for pointing me in the right direction.<br>You can refer to it if you wish to use <code>node-inspector</code> instead of Webstorm to do your debugging.</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Debugging/">Debugging</a>, <a href="/tags/Hexo/">Hexo</a>, <a href="/tags/WebStorm/">WebStorm</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -158,12 +174,14 @@
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

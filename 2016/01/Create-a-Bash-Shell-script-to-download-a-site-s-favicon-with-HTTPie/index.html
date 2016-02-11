@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Create a Bash Shell script to download a site&#39;s favicon with HTTPie | Klughertz Jonathan</title>
+  <title>Create a Bash Shell script to download a site&#39;s favicon with HTTPie | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="In this quick tutorial, we will build a Bash command that downloads a site’s favicon using the HTTPie library.">
@@ -12,16 +12,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Create a Bash Shell script to download a site&#39;s favicon with HTTPie"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -43,69 +51,70 @@
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg7">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-01-26T03:48:08.000Z"><a href="/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/">2016-01-26</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Create a Bash Shell script to download a site&#39;s favicon with HTTPie</h1>
   
 
+        <div class="subtitle" datetime="2016-01-26T03:48:08.000Z">
+          2016-01-26
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-terminal"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
+        <div class="entry">
+          <p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="1_-_Download_a_page’s_HTML_Content">1 - Download a page’s HTML Content</h2><p>For this tutorial, I will use <a href="http://www.fipradio.fr/player" target="_blank" rel="external">http://www.fipradio.fr/player</a> as our test website – as it turns out, it is also my favorite radio.</p>
 <p>If you have never looked at HTTPie, have a quick look at my <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">introduction to the library</a>.</p>
 <p>Downloading the HTML is the easiest part of this tutorial, using HTTPie:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player</span><br></pre></td></tr></table></figure>
 <p>The full HTML will be printed out to the console.</p>
-<p><br></p>
 <h2 id="2_-_Extract_the_favicon’s_URL">2 - Extract the favicon’s URL</h2><p>I am by no means an expert in bash and regexp but here is a solution that does the job. Inspired by <a href="http://www.unix.com/shell-programming-and-scripting/124833-extract-urls-html-code-using-sed.html" target="_blank" rel="external">this post</a> and <a href="http://stackoverflow.com/questions/9899760/use-sed-and-wget-to-retrieve-links-only" target="_blank" rel="external">this one</a>.</p>
-<p><br></p>
 <h3 id="Grep_the_favicon’s_tag">Grep the favicon’s tag</h3><p>Here is the code:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep -o <span class="string">'href="http[^"]*ico"'</span></span><br></pre></td></tr></table></figure>
 <p><code>-o</code> will retain only the matching part of the line instead of the whole line<br><code>&#39;href=&quot;http[^&quot;]*ico&quot;&#39;</code> will match strings like <em>href=”http:[..]ico”</em><br><br><br><u>Let’s pipe the HTML to the grep expression:</u></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">href=<span class="string">"http://www.fipradio.fr/sites/all/themes/custom/fip/favicon.ico"</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h3 id="Sed_the_URL">Sed the URL</h3><p>Use the following Sed function to extract the URL of the favicon:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">'s/href="\(.*\)"/\1/'</span></span><br></pre></td></tr></table></figure>
 <p><code>s/</code> means we want to save only what we match<br><code>href=&quot;\(.*\)&quot;</code> is what we want to match<br><code>/\1/</code> refers to the characters captured by the escaped parentheses.<br><br><br><u>After piping it up:</u></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span> | sed <span class="string">'s/href="\(.*\)"/\1/'</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.fipradio.fr/sites/all/themes/custom/fip/favicon.ico</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h3 id="Notes">Notes</h3><ul>
 <li>There will be quite a few cases where this script won’t work. For example for websites served over https or when there is querystring after the .ico to avoid caching issues.</li>
 <li>I wouldn’t have been able to come up with the regex out of the blue. I used quite a few google searches before finding a solution that I liked. This tutorial is not meant to be a detailed explanation about grep, sed or regex.</li>
 </ul>
-<p><br></p>
 <h2 id="3_-_Download_the_icons">3 - Download the icons</h2><p>To <a href="https://github.com/jkbrzt/httpie#download-mode" target="_blank" rel="external">download a file with HTTPie</a>, use:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http <span class="operator">-d</span> url</span><br></pre></td></tr></table></figure>
 <p>We will use a while loop with read to iterate through the list of favicon URLs:</p>
@@ -114,20 +123,22 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span> | sed <span class="string">'s/href="\(.*\)"/\1/'</span> | &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="operator">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
 <p>Press enter and you will see a progress bar for the favicon.ico download.</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Bash/">Bash</a>, <a href="/tags/Favicon/">Favicon</a>, <a href="/tags/HTTPie/">HTTPie</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -145,12 +156,14 @@
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Easy dynamic classes with React | Klughertz Jonathan</title>
+  <title>Easy dynamic classes with React | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="In this article we will see how to generate dynamic classes for React without resorting to obnoxious string manipulations.
@@ -13,16 +13,24 @@ We will build a simple app that changes the color and font-style of a div based 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Easy dynamic classes with React"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -44,45 +52,51 @@ We will build a simple app that changes the color and font-style of a div based 
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg8">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-12-28T07:16:03.000Z"><a href="/2015/12/Easy-dynamic-classes-with-React/">2015-12-28</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Easy dynamic classes with React</h1>
   
 
+        <div class="subtitle" datetime="2015-12-28T07:16:03.000Z">
+          2015-12-28
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-javascript_badge"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>In this article we will see how to generate dynamic classes for React without resorting to obnoxious string manipulations.</p>
+        <div class="entry">
+          <p>In this article we will see how to generate dynamic classes for React without resorting to obnoxious string manipulations.</p>
 <p>We will build a simple app that changes the <code>color</code> and <code>font-style</code> of a div based on a textbox value.</p>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="The_rules">The rules</h2><h3 id="The_text_in_our_div_should_be:">The text in our div should be:</h3><ul>
 <li><span style="color: red;">Red</span> when the value is negative</li>
 <li><span style="color: blue;">Blue</span> when the value is positive</li>
@@ -90,7 +104,6 @@ We will build a simple app that changes the color and font-style of a div based 
 <li><span style="font-style: normal;">Normal</span> when the value is odd</li>
 </ul>
 <h3 id="Corresponding_css_classes:">Corresponding css classes:</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.blue</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> blue</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.red</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">color</span>:<span class="value"> red</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.italic</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">font-style</span>:<span class="value"> italic</span></span>;</span><br><span class="line">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="class">.normal</span> <span class="rules">&#123;</span><br><span class="line">    <span class="rule"><span class="attribute">font-style</span>:<span class="value"> normal</span></span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="The_magic">The magic</h2><p>React now uses the <a href="https://github.com/JedWatson/classnames" target="_blank" rel="external">classNames</a> library to join and manage class names.</p>
 <p>You can <a href="https://github.com/JedWatson/classnames#classnames" target="_blank" rel="external">install it with npm or bower</a>.</p>
 <p>The <code>classNames</code> library allows you to <strong>declare your classes as a string, an array or an object</strong>. The 3 following declarations are equivalent:</p>
@@ -100,7 +113,6 @@ We will build a simple app that changes the color and font-style of a div based 
 <h3 id="Note:"><u>Note:</u></h3><p>You can even use a <a href="https://github.com/JedWatson/classnames#usage-with-reactjs" target="_blank" rel="external">mix of all three</a> as separate parameters:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> elementClass = className(<span class="string">"class1 class2"</span>, <span class="comment">// String</span></span><br><span class="line">  [<span class="string">'class3'</span>, <span class="string">'class4'</span>], <span class="comment">// Array</span></span><br><span class="line">  &#123;class5: <span class="literal">true</span>&#125;); <span class="comment">// Object</span></span><br></pre></td></tr></table></figure>
 <p>It will <strong>add all 5 classes</strong> to the element.</p>
-<p><br></p>
 <h2 id="The_example">The example</h2><h3 id="Rendering_the_elements">Rendering the elements</h3><p>Let’s start with the render function. We will need a div with some text and a text input:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">&#123;this.state.textClass&#125;</span>&gt;</span>RESULT<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Hello!"</span> <span class="attribute">value</span>=<span class="value">&#123;this.state.value&#125;</span> <span class="attribute">onChange</span>=<span class="value">&#123;this.handleChange&#125;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  )</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -114,20 +126,22 @@ We will build a simple app that changes the color and font-style of a div based 
 <h3 id="Full_React_code">Full React code</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Main = React.createClass(&#123;</span><br><span class="line">  getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        value: <span class="number">0</span>,</span><br><span class="line">        textClass: <span class="keyword">this</span>.computeClass(<span class="number">0</span>)</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  computeClass: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> classNames(&#123;</span><br><span class="line">      blue: val &gt; <span class="number">0</span>,</span><br><span class="line">      red: val &lt; <span class="number">0</span>,</span><br><span class="line">      italic: val % <span class="number">2</span> === <span class="number">0</span>,</span><br><span class="line">      normal: <span class="built_in">Math</span>.abs(val % <span class="number">2</span>) === <span class="number">1</span></span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  handleChange: <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> val = <span class="built_in">isNaN</span>(event.target.value) ? <span class="number">0</span> : event.target.value,</span><br><span class="line">      textClass = <span class="keyword">this</span>.computeClass(val);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.setState(&#123;value: val, textClass: textClass&#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">  render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">className</span>=<span class="value">&#123;this.state.textClass&#125;</span>&gt;</span>RESULT<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">value</span>=<span class="value">"Hello!"</span> <span class="attribute">value</span>=<span class="value">&#123;this.state.value&#125;</span> <span class="attribute">onChange</span>=<span class="value">&#123;this.handleChange&#125;</span> /&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    )</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">ReactDOM.render(<span class="xml"><span class="tag">&lt;<span class="title">Main</span> /&gt;</span>, document.getElementById("main"));</span></span><br></pre></td></tr></table></figure>
 <p>Or check it live here: <a href="https://jsbin.com/kijica/edit?html,output" target="_blank" rel="external">https://jsbin.com/kijica/edit?html,output</a></p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/React/">React</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -145,12 +159,14 @@ We will build a simple app that changes the color and font-style of a div based 
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Getting started with Gulp and static websites | Klughertz Jonathan</title>
+  <title>Getting started with Gulp and static websites | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="This quick tutorial will show you how to get started with Gulp and how to create a build script for your static website:
@@ -17,16 +17,24 @@ Concatenate our CSS files">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Getting started with Gulp and static websites"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -48,42 +56,49 @@ Concatenate our CSS files">
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg0">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-24T03:21:06.000Z"><a href="/2015/11/Getting-started-with-Gulp-and-static-websites/">2015-11-24</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Getting started with Gulp and static websites</h1>
   
 
+        <div class="subtitle" datetime="2015-11-24T03:21:06.000Z">
+          2015-11-24
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-gulp"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>This quick tutorial will show you how to get started with <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a> and how to create a build script for your static website:</p>
+        <div class="entry">
+          <p>This quick tutorial will show you how to get started with <a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a> and how to create a build script for your static website:</p>
 <ul>
 <li>Gulp installation with NPM</li>
 <li>Project setup</li>
@@ -91,16 +106,13 @@ Concatenate our CSS files">
 <li>Concatenate our CSS files</li>
 </ul>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="1)_Install_Gulp_with_NPM">1) Install Gulp with NPM</h2><p>First of all and if you haven’t already done so, you need to install gulp globally:</p>
 <p><code>npm install -g gulp</code></p>
 <p>Then install gulp locally: <code>npm install --save-dev gulp</code></p>
 <p>At the root of your project, create a file called <code>gulpfile.js</code>. This is our gulp configuration file; in this file, we will declare all our gulp tasks.</p>
-<p><br></p>
 <h2 id="2)_Project_Structure">2) Project Structure</h2><p>Before we configure our build, we need to agree on a basic project structure. I chose to follow the conventions used by the <a href="https://html5boilerplate.com" target="_blank" rel="external">HTML5 Boilerplate</a> project.</p>
 <p>We will have a <code>src</code> folder that contains all our source files and a <code>dist</code> folder that contains our final build.</p>
 <figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code should be <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- css </span><br><span class="line">        |-- main.css // Our css file(s)</span><br><span class="line">        |-- ...</span><br><span class="line">    |-- index.html // Our html file(s)</span><br><span class="line">    |-- ...</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="3)_Gulp_initialization_and_copy_HTML_to_dist_folder">3) Gulp initialization and copy HTML to <code>dist</code> folder</h2><p>The only thing needed to initialize gulp is to require the gulp node module in the <code>gulpfile.js</code></p>
 <p><code>var gulp = require(&#39;gulp&#39;);</code></p>
 <p>Once this is done, let’s add our first task.</p>
@@ -113,13 +125,11 @@ Concatenate our CSS files">
 <p>The complete code for our task will then look like:</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'./src/*.html'</span>)</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'./dist'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>(At this point, I suggest you refactor a bit and use a configuration object to store the strings in a reusable manner.)</p>
-<p><br></p>
 <h2 id="4)_Gulp’s_default_command_line_task">4) Gulp’s default command line task</h2><p>What we want here is to simply type <code>gulp</code> in our command line and have all our gulp tasks executed.</p>
 <p>To do this simply add the following line to your gulpfile.js:</p>
 <p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;]);</code></p>
 <p>What this does is associate an array of gulp tasks (in this example our ‘html’ task) with the default <code>gulp</code> command. You can add more tasks to that array as we will see next.</p>
 <p>But first, save your <code>gulpfile.js</code> and type <code>gulp</code> in the command line to check that your html files are copied to the dist directory.</p>
-<p><br></p>
 <h2 id="5)_CSS_concatenation">5) CSS concatenation</h2><p>Now that we have our HTML files in the output folder, let’s finish by concatenating all our CSS files into one.</p>
 <p>For this, we will need to install a gulp plugin called gulp-concat</p>
 <p><code>npm install --save gulp-concat</code></p>
@@ -133,20 +143,22 @@ Concatenate our CSS files">
 <p>You can check an example of a refactored gulpfile.js for this project <a href="https://gist.github.com/klugjo/f4f2ee250d32103e9e22" target="_blank" rel="external">here</a>.</p>
 <p>Thanks !</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Build/">Build</a>, <a href="/tags/Gulp/">Gulp</a>, <a href="/tags/Node/">Node</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -164,12 +176,14 @@ Concatenate our CSS files">
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

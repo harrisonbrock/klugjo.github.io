@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Run scripts with npm | Klughertz Jonathan</title>
+  <title>Run scripts with npm | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="npm is an awesome tool built directly inside of Node.js. You can use it to configure and run common scripts like running your unit tests or starting your webserver.
@@ -20,16 +20,24 @@ We will look into all these and see how to create custom commands.">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Run scripts with npm"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -51,42 +59,49 @@ We will look into all these and see how to create custom commands.">
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg4">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-12-09T08:34:19.000Z"><a href="/2015/12/Run-scripts-with-npm/">2015-12-09</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Run scripts with npm</h1>
   
 
+        <div class="subtitle" datetime="2015-12-09T08:34:19.000Z">
+          2015-12-09
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-npm"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> is an awesome tool built directly inside of Node.js. You can use it to configure and run common scripts like running your unit tests or starting your webserver.</p>
+        <div class="entry">
+          <p><a href="https://www.npmjs.com/" target="_blank" rel="external">npm</a> is an awesome tool built directly inside of Node.js. You can use it to configure and run common scripts like running your unit tests or starting your webserver.</p>
 <p>npm has 4 default <a href="https://docs.npmjs.com/misc/scripts" target="_blank" rel="external">npm-scripts commands</a>:</p>
 <ul>
 <li>test</li>
@@ -96,11 +111,9 @@ We will look into all these and see how to create custom commands.">
 </ul>
 <p>We will look into all these and see how to create custom commands.</p>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="1)_Getting_started:">1) Getting started:</h2><p>Let’s start with an empty project folder, cd into it and run <code>npm init</code>. Pick a name for your project and use the defaults for the remaining fields.</p>
 <p>Your <code>package.json</code> should look something like:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"npm-scripts"</span></span>,</span><br><span class="line">  "<span class="attribute">version</span>": <span class="value"><span class="string">"1.0.0"</span></span>,</span><br><span class="line">  "<span class="attribute">description</span>": <span class="value"><span class="string">""</span></span>,</span><br><span class="line">  "<span class="attribute">main</span>": <span class="value"><span class="string">"index.js"</span></span>,</span><br><span class="line">  "<span class="attribute">scripts</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">test</span>": <span class="value"><span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">author</span>": <span class="value"><span class="string">"Klughertz Jonathan (http://klugjo.github.io/)"</span></span>,</span><br><span class="line">  "<span class="attribute">license</span>": <span class="value"><span class="string">"ISC"</span></span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="2)_npm_test:">2) npm test:</h2><p>The default <code>package.json</code> comes with a <code>scripts</code> object and a <code>test</code> command:</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
 <p>Our <a href="https://docs.npmjs.com/cli/test" target="_blank" rel="external">npm-test</a> command is already good to go.</p>
@@ -118,8 +131,7 @@ We will look into all these and see how to create custom commands.">
 <li><code>npm tst</code></li>
 <li><code>npm t</code></li>
 </ul>
-<p><br><br>In a real world project, you would use that command to run your unit test script command. By setting the test command to <code>mocha test</code> for example.</p>
-<p><br></p>
+<p>In a real world project, you would use that command to run your unit test script command. By setting the test command to <code>mocha test</code> for example.</p>
 <h2 id="3)_npm_start_and_stop:">3) npm start and stop:</h2><p>The <a href="https://docs.npmjs.com/cli/start" target="_blank" rel="external">npm-start</a> and <a href="https://docs.npmjs.com/cli/stop" target="_blank" rel="external">npm-stop</a> commands work the same way as the npm-test command. They are typically used to start and stop the application.</p>
 <p>Edit your package.json to include the start and stop commands:</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">""</span>,</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> start command specified\<span class="string">""</span>,</span><br><span class="line">    <span class="string">"stop"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> stop command specified\<span class="string">""</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
@@ -128,33 +140,33 @@ We will look into all these and see how to create custom commands.">
 <li><code>npm start</code></li>
 <li><code>npm stop</code></li>
 </ul>
-<p><br></p>
 <h2 id="4)_npm_restart:">4) npm restart:</h2><p>If no <code>restart command is specified</code>, <strong>the <a href="https://docs.npmjs.com/cli/restart" target="_blank" rel="external">npm-restart</a> runs a package’s “stop” and “start” consecutively.</strong></p>
 <p>At the moment if you run <code>npm restart</code>, you will get:</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm scripts jonathan$ npm restart</span><br><span class="line"></span><br><span class="line">Error: no <span class="built_in">stop</span> <span class="command"><span class="keyword">command</span> <span class="title">specified</span></span></span><br><span class="line"></span><br><span class="line">Error: no <span class="built_in">start</span> <span class="command"><span class="keyword">command</span> <span class="title">specified</span></span></span><br></pre></td></tr></table></figure>
 <p>If you add the following <code>restart</code> command in your package: <code>&quot;restart&quot;: &quot;echo \&quot;Error: no restart command specified\&quot;&quot;</code> and run <code>npm restart</code>, you will get:</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> scripts jonathan$ <span class="built_in">npm</span> restart</span><br><span class="line"></span><br><span class="line"><span class="attribute">Error</span>: <span class="literal">no</span> restart command specified</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="5)_Custom_scripts">5) Custom scripts</h2><p>On top of these defaults, you can of course add your own commands.</p>
 <p>For example, add <code>&quot;custom&quot;: &quot;echo \&quot;Running custom command\&quot;&quot;</code> to your package.</p>
 <p>And run it using <code>npm run custom</code>.</p>
 <p>All custom commands have to be run using the <code>npm run &lt;command&gt;</code> or <code>npm run-script &lt;command&gt;</code> syntax.</p>
 <p>Happy scripting !</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Node/">Node</a>, <a href="/tags/npm/">npm</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -172,12 +184,14 @@ We will look into all these and see how to create custom commands.">
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

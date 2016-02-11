@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Loops and callbacks in React | Klughertz Jonathan</title>
+  <title>Loops and callbacks in React | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="In this article we will see how to iterate through a collection to render a list of elements in React. We will also have a look at how to fire callback from the children elements.">
@@ -12,16 +12,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Loops and callbacks in React"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -43,56 +51,59 @@
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg8">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-12-29T02:02:29.000Z"><a href="/2015/12/Loops-and-callbacks-in-React/">2015-12-29</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Loops and callbacks in React</h1>
   
 
+        <div class="subtitle" datetime="2015-12-29T02:02:29.000Z">
+          2015-12-29
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-javascript_badge"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>In this article we will see how to iterate through a collection to render a list of elements in React. We will also have a look at how to fire callback from the children elements.</p>
+        <div class="entry">
+          <p>In this article we will see how to iterate through a collection to render a list of elements in React. We will also have a look at how to fire callback from the children elements.</p>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="The_Example">The Example</h2><p>We will build a dynamic list of buttons with an ‘Add’ button to add a button to the list. A click on any of these buttons will log the position of the button in the list. <a href="https://output.jsbin.com/rakuya" target="_blank" rel="external">Demo Here <i class="ic external-link"></i></a>. </p>
-<p><br></p>
 <h2 id="Rendering_the_List_of_Buttons">Rendering the List of Buttons</h2><p>To create a list of elements using a for loop in React, create an empty array and push React elements directly into it. Then Render it like any other element:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">render: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> buttonListElements = [], <span class="comment">// Empty Array</span></span><br><span class="line">    n = <span class="number">5</span>,</span><br><span class="line">    i;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; n; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// For each element, push a React element into the array</span></span><br><span class="line">    buttonListElements.push(</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">li</span> <span class="attribute">key</span>=<span class="value">&#123;i&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">button</span>&gt;</span>&#123;i&#125;<span class="tag">&lt;/<span class="title">button</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">    )</span>;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  <span class="comment">// Then render the array using curly braces</span></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="title">ul</span>&gt;</span></span><br><span class="line">       &#123;buttonListElements&#125;</span><br><span class="line">      <span class="tag">&lt;/<span class="title">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">  )</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Although it won’t be of any use in our app, React requires you to render a <code>key</code> attribute with unique values. If you don’t do so, you will receive warnings in the JS console.</p>
-<p><br></p>
 <h2 id="Adding_an_onclick_callback_for_each_button">Adding an <em>onclick</em> callback for each button</h2><p>Let’s start with the function that will log the button index:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">onChildButtonClick: <span class="function"><span class="keyword">function</span>(<span class="params">val</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Then add the callback to each child button element by modifying the <code>render</code> function above:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.state.buttonNumber; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">  buttonListElements.push(</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="title">li</span> <span class="attribute">key</span>=<span class="value">&#123;i&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">button</span> <span class="attribute">onClick</span>=<span class="value">&#123;this.onChildButtonClick.bind(null,</span> <span class="attribute">i</span>)&#125;&gt;</span>&#123;i&#125;<span class="tag">&lt;/<span class="title">button</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  )</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>To pass our current <code>i</code> value to each callback, use <code>.bind(null, i)</code>. The <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind" target="_blank" rel="external">function.prototype.bind()</a> function will create a new function with a global context (<em>null</em> used as context) and the current value of <code>i</code> as the first argument (our <code>val</code> parameter in the <code>onChildButtonClick</code> function).</p>
-<p><br></p>
 <h2 id="Dynamically_add_elements_to_the_list">Dynamically add elements to the list</h2><p>Let’s start by abstracting the number of elements value in the state:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">getInitialState: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;buttonNumber: <span class="number">5</span>&#125;;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>Follows the ‘Add’ button click callback:</p>
@@ -102,7 +113,6 @@
 <p>And replace the <code>n</code> with <code>this.state.buttonNumber</code> in the for loop:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.state.buttonNumber; i = i + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <p>This is it. Check out the demo here: <a href="https://jsbin.com/rakuya/edit?html,output" target="_blank" rel="external">https://jsbin.com/rakuya/edit?html,output</a></p>
-<p><br></p>
 <h2 id="A_cleaner_way_of_handling_loops">A cleaner way of handling loops</h2><p>The example above is for explanation purposes. In production code, I would recommend the use of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank" rel="external">Array.prototype.map()</a>.</p>
 <p>Like so:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> buttonListElements = [],</span><br><span class="line">  data = [&#123;index: <span class="number">0</span>, text: <span class="string">'Jane'</span>&#125;, &#123;index: <span class="number">1</span>, text: <span class="string">'John'</span>&#125;, &#123;index: <span class="number">2</span>, text: <span class="string">'Marcy'</span>&#125;,];</span><br><span class="line"></span><br><span class="line">data.map(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</span><br><span class="line">  buttonListElements.push(</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="title">li</span> <span class="attribute">key</span>=<span class="value">&#123;item.index&#125;</span>&gt;</span><span class="tag">&lt;<span class="title">button</span> <span class="attribute">onClick</span>=<span class="value">&#123;this.onChildButtonClick.bind(null,</span> <span class="attribute">item.index</span>)&#125;&gt;</span>&#123;item.text&#125;<span class="tag">&lt;/<span class="title">button</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span></span><br><span class="line">  )</span>;</span><br><span class="line">&#125;, <span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
@@ -112,20 +122,22 @@
 </ul>
 <p>Thanks for reading !</p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/React/">React</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -143,12 +155,14 @@
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Debug Mocha Unit Tests in Webstorm | Klughertz Jonathan</title>
+  <title>Debug Mocha Unit Tests in Webstorm | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="WebStorm is my IDE of choice when it comes to debugging Node apps. Read on if you haven’t configured Mocha Tests debugging yet.
-
 1) Prerequisites:
 Application with Mocha Unit Tests
 WebStorm with Node plugin enabled">
@@ -16,16 +15,24 @@ WebStorm with Node plugin enabled">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Debug Mocha Unit Tests in Webstorm"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -47,50 +54,54 @@ WebStorm with Node plugin enabled">
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg0">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-08-03T04:46:50.000Z"><a href="/2015/08/Debug-Mocha-Unit-Tests-in-Webstorm/">2015-08-03</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Debug Mocha Unit Tests in Webstorm</h1>
   
 
+        <div class="subtitle" datetime="2015-08-03T04:46:50.000Z">
+          2015-08-03
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-code_badge"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p><br></p>
-<p>WebStorm is my IDE of choice when it comes to debugging Node apps. Read on if you haven’t configured Mocha Tests debugging yet.</p>
-<p><br></p>
+        <div class="entry">
+          <p>WebStorm is my IDE of choice when it comes to debugging Node apps. Read on if you haven’t configured Mocha Tests debugging yet.</p>
 <h2 id="1)_Prerequisites:">1) Prerequisites:</h2><ul>
 <li>Application with Mocha Unit Tests</li>
 <li>WebStorm with <a href="https://www.jetbrains.com/webstorm/help/enabling-and-disabling-plugins.html" target="_blank" rel="external">Node plugin enabled</a><a id="more"></a> 
 </li>
 </ul>
-<p><br></p>
 <h2 id="2)_Add_Mocha_to_your_Run/Debug_Configurations">2) Add Mocha to your <a href="https://www.jetbrains.com/webstorm/help/run-debug-configurations.html" target="_blank" rel="external">Run/Debug Configurations</a></h2><p>Open the Edit Run/Debug Configurations Dialog:</p>
 <p><img src="https://s3.amazonaws.com/klugjo.github.io/run-debug-configurations-webstorm.jpg" alt="Run/Debug Configurations Dialog" title="Open the Run Debug Configurations Dialog"></p>
 <p>Or go to <code>Run | Edit Configurations ...</code></p>
@@ -106,25 +117,26 @@ WebStorm with Node plugin enabled">
 <li><code>Test Directory</code> path to your test folder.</li>
 </ul>
 <p>Press <code>OK</code>.</p>
-<p><br></p>
 <h2 id="3)_Run_or_Debug_your_tests">3) Run or Debug your tests</h2><p>Make sure your have your unit test config selected in the Run/Debug Configuration</p>
 <h3 id="Press_the_Run_button_or_^R_to_run_your_tests:">Press the Run button or <code>^R</code> to run your tests:</h3><p><img src="https://s3.amazonaws.com/klugjo.github.io/mocha-WebStorm-test-passed.jpg" alt="Mocha WebStorm Tests Passed" title="Mocha WebStorm Tests Passed"></p>
 <h3 id="Press_the_Debug_button_or_^D_to_debug_your_tests">Press the Debug button or <code>^D</code> to debug your tests</h3><p><img src="https://s3.amazonaws.com/klugjo.github.io/mocha-WebStorm-Debug-Unit-Tests.jpg" alt="Mocha WebStorm Debug Unit Tests" title="Mocha WebStorm Debug Unit Tests"></p>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Mocha/">Mocha</a>, <a href="/tags/Node/">Node</a>, <a href="/tags/TDD/">TDD</a>, <a href="/tags/WebStorm/">WebStorm</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -142,12 +154,14 @@ WebStorm with Node plugin enabled">
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

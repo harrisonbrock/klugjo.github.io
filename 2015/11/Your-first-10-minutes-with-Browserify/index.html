@@ -3,27 +3,34 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Your first 10 minutes with Browserify | Klughertz Jonathan</title>
+  <title>Your first 10 minutes with Browserify | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="Follow these instructions and in less than 10 minutes you will have Browserify installed and ready to go.
-
 1) Install Browserify globallynpm install -g browserify">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Your first 10 minutes with Browserify"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -45,74 +52,77 @@
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg6">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-11-27T07:13:16.000Z"><a href="/2015/11/Your-first-10-minutes-with-Browserify/">2015-11-27</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Your first 10 minutes with Browserify</h1>
   
 
+        <div class="subtitle" datetime="2015-11-27T07:13:16.000Z">
+          2015-11-27
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-nodejs"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p>Follow these instructions and in less than 10 minutes you will have <a href="http://browserify.org/index.html" target="_blank" rel="external">Browserify</a> installed and ready to go.</p>
-<p><br></p>
+        <div class="entry">
+          <p>Follow these instructions and in less than 10 minutes you will have <a href="http://browserify.org/index.html" target="_blank" rel="external">Browserify</a> installed and ready to go.</p>
 <h2 id="1)_Install_Browserify_globally">1) Install Browserify globally</h2><p><code>npm install -g browserify</code></p>
 <a id="more"></a> 
-<p><br></p>
 <h2 id="2)_Create_a_main-js_file_and_start_writing_your_code">2) Create a main.js file and start writing your code</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chunked = _.chunk([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>], <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(chunked); <span class="comment">// → [['a', 'b'], ['c', 'd']]</span></span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h2 id="3)_Use_npm_to_install_your_dependencies">3) Use npm to install your dependencies</h2><p><code>npm install --save lodash</code></p>
-<p><br></p>
 <h2 id="4)_Use_browserify_to_package_your_code">4) Use browserify to package your code</h2><p><code>browserify main.js -o bundle.js</code></p>
-<p><br></p>
 <h2 id="5)_Drop_bundle-js_in_your_html_code_and_you_are_ready_to_go_!">5) Drop bundle.js in your html code and you are ready to go !</h2><p>Browserify automatically found and included all the required dependencies in bundle.js.</p>
-<p><br></p>
 <h2 id="6)_Advantages">6) Advantages</h2><ul>
 <li>You only need to require one JavaScript file in your code</li>
 <li>You can manage your client side dependencies with npm</li>
-<li>You can manage your dependencies easily like you would in Node.<br><br></li>
+<li>You can manage your dependencies easily like you would in Node.</li>
 </ul>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Browserify/">Browserify</a>, <a href="/tags/Node/">Node</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -130,12 +140,14 @@
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>

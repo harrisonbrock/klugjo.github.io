@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Code Bloat Commandos - Do not let your functions do more than one thing | Klughertz Jonathan</title>
+  <title>Code Bloat Commandos - Do not let your functions do more than one thing | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
   <meta name="description" content="Code Bloat Commandos looks at why software code deteriorates over time; and how to fight back.
@@ -13,16 +13,24 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <meta property="og:title" content="Code Bloat Commandos - Do not let your functions do more than one thing"/>
-  <meta property="og:site_name" content="Klughertz Jonathan"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
 
   
     <meta property="og:image" content="undefined"/>
   
 
   <link href="/favicon.png" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
   
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -44,47 +52,53 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
 </head>
 
 
-<body>
-  <header id="header" class="inner"><div class="alignleft">
-  <h1><a href="/">Klughertz Jonathan</a></h1>
-  <h2><a href="/"></a></h2>
-</div>
-<nav id="main-nav" class="alignright">
-  <ul>
-    
-      <li><a href="/">Home</a></li>
-    
-      <li><a href="/archives">Archives</a></li>
-    
-    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
-    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
-  </ul>
+
+
+<body class="bg0">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
   <div class="clearfix"></div>
-</nav>
-<div class="clearfix"></div></header>
+</div></header>
   <div id="content" class="inner">
-    <div id="main-col" ><div id="wrapper"><article class="post">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
   
   <div class="post-content">
     <header>
-      
-        <div class="icon"></div>
-        <time datetime="2016-01-11T07:02:12.000Z"><a href="/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/">2016-01-11</a></time>
-      
-      
+      <div class="content-container">
+        
   
     <h1 class="title">Code Bloat Commandos - Do not let your functions do more than one thing</h1>
   
 
+        <div class="subtitle" datetime="2016-01-11T07:02:12.000Z">
+          2016-01-11
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-cubes"></span>
+      </div>
     </header>
-    <div class="entry">
+
       
-        <p><strong>Code Bloat Commandos</strong> looks at why software code deteriorates over time; and how to fight back.</p>
+        <div class="entry">
+          <p><strong>Code Bloat Commandos</strong> looks at why software code deteriorates over time; and how to fight back.</p>
 <p>In this episode, we will look at how a nice and clean method grows into a dumping ground function. We will see when it happens, how to spot it and how to fix it.</p>
 <a id="more"></a>
 <blockquote><p>FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY.</p>
 <footer><strong>Uncle Bob</strong><cite><a href="https://books.google.com.sg/books/about/Clean_Code.html?id=dwSfGQAACAAJ" target="_blank" rel="external">Clean Code</a></cite></footer></blockquote>
-<p><br></p>
 <h2 id="The_humble_beginnings">The humble beginnings</h2><h3 id="Project_specification:">Project specification:</h3><ul>
 <li>We have a live video player and an event function called <code>onProgress</code> that is executed every second.</li>
 <li>We can use that function to monitor playback progress and hook up various actions.</li>
@@ -92,13 +106,11 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
 </ul>
 <h3 id="This_is_our_code_(JavaScript):">This is our code (JavaScript):</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main entry point. This function will be called every second by the player</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Our function</span></span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do more things here like update the icons in the footer</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">var</span> analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>This is our first version of the <code>_sendVideoEngagementAnalytics</code> function. It is still reasonably simple and compact. It checks if more than 30 seconds have elapsed. If it did, it sends an analytics ping using an analytics manager object.</p>
-<p><br></p>
 <h2 id="A_few_weeks_later">A few weeks later</h2><p>Our first version of the app is working and a few weeks later we need to also check if the current content playing is an Advertisement; and if that is the case send an Advertisement Start and End pings.<br>We can check if the current content playing is an Ad by calling <code>isAdPlaying(currentTime)</code>.</p>
 <p>Easy enough, let’s get coding.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Main entry point. This function will be called every second by the player</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Do more things here like update the footer controls</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData,</span><br><span class="line">        adPlaying = isAdPlaying(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Checks if more that 30 seconds have passed</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Checks if an Ad just started playing</span></span><br><span class="line">    <span class="keyword">if</span>(__analyticsState.adPlaying !== adPlaying) &#123;</span><br><span class="line">        </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: adPlaying ? <span class="string">"AD_BEGIN"</span> : <span class="string">"AD_COMPLETE"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.adPlaying = adPlaying;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Done. <code>git commit -m &quot;Added Ad tracking analytics to player&quot;</code>. Jump on Skype and ask who is ready for lunch.</p>
 <p>This is (almost) what happened to me today.</p>
-<p><br></p>
 <h2 id="The_bloat">The bloat</h2><h3 id="The_code_is_not_that_bad,_we_have:">The code is not that bad, we have:</h3><ul>
 <li>refactored <code>analyticsData</code> out of the initial if block because of <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Statements/var#var_hoisting" target="_blank" rel="external">variable hoisting and scoping in JavaScript</a>.</li>
 <li>created a local variable <code>adPlaying</code> to avoid multiple calls to <code>isAdPlaying(currentTime)</code>.</li>
@@ -110,7 +122,6 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
 <li><strong>The function is getting longer.</strong> And we are setting the stage for it to become even longer by starting off a series of if blocks that check playback position related stuff.</li>
 <li>We suddenly feel like <strong>we need comments in our code to explain what it does</strong> and ‘structure’ the two parts of our function. Burp.</li>
 </ul>
-<p><br></p>
 <h2 id="Pain_Relief">Pain Relief</h2><h3 id="Recognising_the_problem">Recognising the problem</h3><ul>
 <li><p>It clicked for me when I realised <strong>the function’s name didn’t correspond to what the function actually does.</strong></p>
 </li>
@@ -121,11 +132,9 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
 <li><p>But really, simply observing that the function I have modified suddenly <strong>does not respect the <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank" rel="external">Single Responsibility Principle</a></strong> should have been enough.</p>
 </li>
 </ul>
-<p><br></p>
 <h3 id="Administering_the_cure">Administering the cure</h3><p>At this point, the solution is pretty clear. Separating the ravioli.</p>
 <p>Let’s go ahead and split our function into two functions:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">onProgress</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// [...] Do UI stuff here like update progress bar and set Time</span></span><br><span class="line">    </span><br><span class="line">    _sendVideoEngagementAnalytics(currentTime);</span><br><span class="line">    _sendAdContentAnalytics(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Do more things here like update the footer controls</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendVideoEngagementAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">Math</span>.abs(currentTime - __analyticsState.fromPosition) &gt; <span class="number">30</span>) &#123;</span><br><span class="line">    </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: <span class="string">"VIDEO_PROGRESS"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.fromPosition = currentTime;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_sendAdContentAnalytics</span>(<span class="params">currentTime</span>) </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> analyticsData,</span><br><span class="line">        adPlaying = isAdPlaying(currentTime);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(__analyticsState.adPlaying !== adPlaying) &#123;</span><br><span class="line">        </span><br><span class="line">        analyticsData = &#123;</span><br><span class="line">            event: adPlaying ? <span class="string">"AD_BEGIN"</span> : <span class="string">"AD_COMPLETE"</span></span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        analyticsManager.send(analyticsData);   </span><br><span class="line">        </span><br><span class="line">        __analyticsState.adPlaying = adPlaying;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><br></p>
 <h3 id="Following_up_after_treatment">Following up after treatment</h3><ul>
 <li>When reading<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_sendVideoEngagementAnalytics<span class="list">(<span class="keyword">currentTime</span>)</span><span class="comment">;</span></span><br><span class="line">_sendAdContentAnalytics<span class="list">(<span class="keyword">currentTime</span>)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
 </li>
@@ -140,20 +149,22 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
 </li>
 </ul>
 
+        </div>
       
-    </div>
-    <footer>
-      
+    
+      <footer>
         
-        
+          
+          
   
   <div class="tags">
     <a href="/tags/Single-Responsibility-Principle/">Single Responsibility Principle</a>, <a href="/tags/Software-Practices/">Software Practices</a>
   </div>
 
-      
-      <div class="clearfix"></div>
-    </footer>
+        
+        <div class="clearfix"></div>
+      </footer>
+    
   </div>
 </article>
 
@@ -171,12 +182,14 @@ In this episode, we will look at how a nice and clean method grows into a dumpin
 </div></div>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><div class="alignleft">
-  
-  &copy; 2016 Klughertz Jonathan
-  
-</div>
-<div class="clearfix"></div></footer>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 <script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
