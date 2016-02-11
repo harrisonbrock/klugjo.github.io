@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-11T12:06:48.000Z</updated>
+  <updated>2016-02-11T12:36:58.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Stash your changes before switching branch]]></title>
+    <title><![CDATA[Stash your changes before switching branch with Git]]></title>
     <link href="http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/"/>
     <id>http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/</id>
     <published>2016-02-10T07:45:39.000Z</published>
-    <updated>2016-02-11T12:06:48.000Z</updated>
+    <updated>2016-02-11T12:36:58.000Z</updated>
     <content type="html"><![CDATA[<p>Common everyday scenario: you are working on your feature branch fixing a bug and your boss asks you for a build. You need to switch back to your main dev branch. Before that happens, you have to take care of all your current changes. You can either commit if you are ready for it, or maybe you have only modified a few lines and can simply revert your changes. </p>
 <p>Well there is a better solution: git stash.<br><a id="more"></a> </p>
 <h2 id="Setting_up_the_stage">Setting up the stage</h2><p>We have 2 files: <code>file1.txt</code> and <code>file2.txt</code> and 2 branches, <code>master</code> and <code>new-branch</code>.</p>
@@ -66,7 +66,7 @@
     <link href="http://klugjo.github.io/2016/02/git-add/"/>
     <id>http://klugjo.github.io/2016/02/git-add/</id>
     <published>2016-02-09T07:48:25.000Z</published>
-    <updated>2016-02-11T12:06:48.000Z</updated>
+    <updated>2016-02-11T12:36:48.000Z</updated>
     <content type="html"><![CDATA[<p>This article is a description of all the basic git add commands.</p>
 <a id="more"></a> 
 <h2 id="Understanding">Understanding</h2><p>Git uses a notion of changes staged for the next commit where you set which change you wish to include in the next <code>git commit</code> command. This includes new files, deleted files and modifications.</p>
@@ -74,7 +74,7 @@
 <table>
 <thead>
 <tr>
-<th>command</th>
+<th>Command</th>
 <th style="text-align:center">New Files</th>
 <th style="text-align:center">Modified Files</th>
 <th style="text-align:center">Deleted Files </th>
@@ -158,7 +158,7 @@
     <link href="http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/"/>
     <id>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</id>
     <published>2016-02-09T07:26:18.000Z</published>
-    <updated>2016-02-11T12:06:48.000Z</updated>
+    <updated>2016-02-11T12:50:58.000Z</updated>
     <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have just finished <a href="http://keithferrazzi.com/products/never-eat-alone" target="_blank" rel="external">Never Eat Alone</a>. It is a book about building a supportive network of business connections that will propel you to the highest spheres of the business world.<br><a id="more"></a> </p>
 <p>The author goes through the story of his life and how he networked his way to the top. From his humble lower class beginnings, through golf sessions, wine dinners and republican rallies to being a top consultant and CEO. </p>
 <p>I have gone through the entire book and it is packed with excellent advices, some of which I have detailed below. It is hard not to appreciate the honesty, authenticity and candor of the author. It is an excellent reminder that in life or business you can’t make it alone. As a software developer, it is often too easy to think that your skills are enough to get ahead and this book serves as a powerful reminder that this is certainly not the case.</p>
@@ -192,7 +192,7 @@
     <link href="http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/"/>
     <id>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</id>
     <published>2016-02-03T01:25:55.000Z</published>
-    <updated>2016-02-11T12:04:32.000Z</updated>
+    <updated>2016-02-11T12:50:44.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article on how to add auto completion in Webstorm 11 for all the core Node libraries.<br><a id="more"></a></p>
 <h2 id="The_problem">The problem</h2><p>Without Node coding assistance, you will get warnings on all the Node.js core functions like <code>require</code> or <code>__dirname</code>.</p>
 <p><img src="https://s3.amazonaws.com/klugjo.github.io/node-code-completion-missing-webstorm.png" alt="Node Code Completion missing example" title="node code completion missing in webstorm"></p>
@@ -219,7 +219,7 @@
     <link href="http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/"/>
     <id>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</id>
     <published>2016-02-02T06:44:51.000Z</published>
-    <updated>2016-02-11T12:04:32.000Z</updated>
+    <updated>2016-02-11T12:50:28.000Z</updated>
     <content type="html"><![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a> </p>
 <h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
 <h2 id="The_trick">The trick</h2><p>The trick here is to specify the path to the hexo executable located in <code>node_modules/.bin/hexo</code>.</p>
@@ -286,7 +286,7 @@
     <link href="http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/"/>
     <id>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</id>
     <published>2016-02-01T06:50:35.000Z</published>
-    <updated>2016-02-11T12:04:32.000Z</updated>
+    <updated>2016-02-11T12:37:43.000Z</updated>
     <content type="html"><![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/" target="_blank" rel="external">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/" target="_blank" rel="external">css themes</a>.</p>
 <a id="more"></a> 
 <h2 id="Example">Example</h2><p><br></p>

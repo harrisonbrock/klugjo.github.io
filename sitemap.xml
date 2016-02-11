@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://klugjo.github.io/2016/02/git-add/</loc>
-    <lastmod>2016-02-11T12:06:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/</loc>
-    <lastmod>2016-02-11T12:06:48.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</loc>
-    <lastmod>2016-02-11T12:06:48.000Z</lastmod>
+    <lastmod>2016-02-11T12:50:58.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    <lastmod>2016-02-11T12:50:44.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    <loc>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</loc>
+    <lastmod>2016-02-11T12:50:28.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    <loc>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</loc>
+    <lastmod>2016-02-11T12:37:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/</loc>
+    <lastmod>2016-02-11T12:36:58.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/git-add/</loc>
+    <lastmod>2016-02-11T12:36:48.000Z</lastmod>
   </url>
   
   <url>
@@ -137,12 +137,12 @@
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</loc>
+    <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</loc>
+    <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
   </url>
   
