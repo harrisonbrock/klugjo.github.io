@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Stash your changes before switching branch | Klughertz Jonathan</title>
+  <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="Common everyday scenario: you are working on your feature branch fixing a bug and your boss asks you for a build. You need to switch back to your main dev branch. Before that happens, you have to take care of all your current changes. You can either commit if you are ready for it, or maybe you have only modified a few lines and can simply revert your changes. 
+Well there is a better solution: git stash.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Stash your changes before switching branch"/>
+  <meta property="og:site_name" content="Klughertz Jonathan"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Klughertz Jonathan" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-71082014-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">Klughertz Jonathan</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+    <li><a target="_blank" href="https://github.com/klugjo"><i class="github-icon"></i></a></li>
+    <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><i class="linkedin-icon"></i></a></li>
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" ><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-02-10T07:45:39.000Z"><a href="/2016/02/Stash-your-changes-before-switching-branch/">2016-02-10</a></time>
+      
+      
+  
+    <h1 class="title">Stash your changes before switching branch</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Common everyday scenario: you are working on your feature branch fixing a bug and your boss asks you for a build. You need to switch back to your main dev branch. Before that happens, you have to take care of all your current changes. You can either commit if you are ready for it, or maybe you have only modified a few lines and can simply revert your changes. </p>
+<p>Well there is a better solution: git stash.<br><a id="more"></a> </p>
+<h2 id="Setting_up_the_stage">Setting up the stage</h2><p>We have 2 files: <code>file1.txt</code> and <code>file2.txt</code> and 2 branches, <code>master</code> and <code>new-branch</code>.</p>
+<p>If you want to follow along here is the script</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir testgitstash <span class="comment"># create directory</span></span><br><span class="line"><span class="built_in">cd</span> testgitstash <span class="comment"># change to that directory</span></span><br><span class="line">git init <span class="comment"># init git repo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file1.txt <span class="comment"># create 2 files</span></span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file2.txt</span><br><span class="line">git add . <span class="comment"># add both files</span></span><br><span class="line">git commit -m <span class="string">"Initial commit"</span> <span class="comment"># commit both files</span></span><br><span class="line">git checkout -b new-branch <span class="comment"># create a new branch and switch to that branch</span></span><br></pre></td></tr></table></figure>
+<p>On top of that you have some pending changes on new-branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> change &gt; file1.txt <span class="comment"># change file1</span></span><br><span class="line">git commit -am <span class="string">"update"</span> <span class="comment"># commit change</span></span><br><span class="line"><span class="built_in">echo</span> change2 &gt; file1.txt <span class="comment"># change file1 again</span></span><br></pre></td></tr></table></figure>
+<h2 id="The_problem">The problem</h2><p>If you want to switch back to <code>master</code>, you will get an error message:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">error: Your <span class="built_in">local</span> changes to the following files would be overwritten by checkout: </span><br><span class="line">    file1.txt</span><br><span class="line">Please, commit your changes or stash them before you can switch branches.</span><br><span class="line"></span><br><span class="line">Aborting</span><br></pre></td></tr></table></figure>
+<p>Git does not allow you to switch back to <code>master</code> because you have changes on <code>new-branch</code>.</p>
+<h2 id="One_solution:_git_stash">One solution: <code>git stash</code></h2><h3 id="Stash_the_changes">Stash the changes</h3><p>Instead of committing your changes or reverting, you can stash them with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash save <span class="string">"changes on new-branch"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Switch_branch">Switch branch</h3><p>You can now switch back to <code>master</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br></pre></td></tr></table></figure>
+<p>Do whatever changes you want on master, and when ready, go back to <code>new-branch</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout new-branch</span><br></pre></td></tr></table></figure>
+<h3 id="Unstash_the_changes">Unstash the changes</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<p>Your changes will be put back and you can continue what you were doing initially.</p>
+<h2 id="Notes">Notes</h2><h3 id="-_Your_changes_are_stashed_on_a_stack">- Your changes are stashed on a stack</h3><p>You can stack several changes and check the current stash stack using:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br></pre></td></tr></table></figure>
+<p>You can also unstash a specific stash by using</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop <span class="string">"stash@&#123;1&#125;"</span></span><br></pre></td></tr></table></figure>
+<h3 id="-_Git_stash_pop_can_be_split_in_two">- Git stash pop can be split in two</h3><p>Git stash pop is the combination of two other commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash apply</span><br></pre></td></tr></table></figure>
+<p>which applies the last stash and:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash drop</span><br></pre></td></tr></table></figure>
+<p>which destroys the last stash</p>
+<p><br><br>Hope this helped, there would be much more to say on this suject but I hope this will give you a place to start :)</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+  
+  <div class="tags">
+    <a href="/tags/Bash/">Bash</a>, <a href="/tags/Git/">Git</a>
+  </div>
+
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2016 Klughertz Jonathan
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'klugjo';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

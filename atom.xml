@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-09T09:06:46.000Z</updated>
+  <updated>2016-02-11T06:38:26.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,58 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Stash your changes before switching branch]]></title>
+    <link href="http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/"/>
+    <id>http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/</id>
+    <published>2016-02-10T07:45:39.000Z</published>
+    <updated>2016-02-11T06:38:26.000Z</updated>
+    <content type="html"><![CDATA[<p>Common everyday scenario: you are working on your feature branch fixing a bug and your boss asks you for a build. You need to switch back to your main dev branch. Before that happens, you have to take care of all your current changes. You can either commit if you are ready for it, or maybe you have only modified a few lines and can simply revert your changes. </p>
+<p>Well there is a better solution: git stash.<br><a id="more"></a> </p>
+<h2 id="Setting_up_the_stage">Setting up the stage</h2><p>We have 2 files: <code>file1.txt</code> and <code>file2.txt</code> and 2 branches, <code>master</code> and <code>new-branch</code>.</p>
+<p>If you want to follow along here is the script</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir testgitstash <span class="comment"># create directory</span></span><br><span class="line"><span class="built_in">cd</span> testgitstash <span class="comment"># change to that directory</span></span><br><span class="line">git init <span class="comment"># init git repo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file1.txt <span class="comment"># create 2 files</span></span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file2.txt</span><br><span class="line">git add . <span class="comment"># add both files</span></span><br><span class="line">git commit -m <span class="string">"Initial commit"</span> <span class="comment"># commit both files</span></span><br><span class="line">git checkout -b new-branch <span class="comment"># create a new branch and switch to that branch</span></span><br></pre></td></tr></table></figure>
+<p>On top of that you have some pending changes on new-branch</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> change &gt; file1.txt <span class="comment"># change file1</span></span><br><span class="line">git commit -am <span class="string">"update"</span> <span class="comment"># commit change</span></span><br><span class="line"><span class="built_in">echo</span> change2 &gt; file1.txt <span class="comment"># change file1 again</span></span><br></pre></td></tr></table></figure>
+<h2 id="The_problem">The problem</h2><p>If you want to switch back to <code>master</code>, you will get an error message:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">error: Your <span class="built_in">local</span> changes to the following files would be overwritten by checkout: </span><br><span class="line">    file1.txt</span><br><span class="line">Please, commit your changes or stash them before you can switch branches.</span><br><span class="line"></span><br><span class="line">Aborting</span><br></pre></td></tr></table></figure>
+<p>Git does not allow you to switch back to <code>master</code> because you have changes on <code>new-branch</code>.</p>
+<h2 id="One_solution:_git_stash">One solution: <code>git stash</code></h2><h3 id="Stash_the_changes">Stash the changes</h3><p>Instead of committing your changes or reverting, you can stash them with:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash save <span class="string">"changes on new-branch"</span></span><br></pre></td></tr></table></figure>
+<h3 id="Switch_branch">Switch branch</h3><p>You can now switch back to <code>master</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br></pre></td></tr></table></figure>
+<p>Do whatever changes you want on master, and when ready, go back to <code>new-branch</code>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout new-branch</span><br></pre></td></tr></table></figure>
+<h3 id="Unstash_the_changes">Unstash the changes</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop</span><br></pre></td></tr></table></figure>
+<p>Your changes will be put back and you can continue what you were doing initially.</p>
+<h2 id="Notes">Notes</h2><h3 id="-_Your_changes_are_stashed_on_a_stack">- Your changes are stashed on a stack</h3><p>You can stack several changes and check the current stash stack using:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash list</span><br></pre></td></tr></table></figure>
+<p>You can also unstash a specific stash by using</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash pop <span class="string">"stash@&#123;1&#125;"</span></span><br></pre></td></tr></table></figure>
+<h3 id="-_Git_stash_pop_can_be_split_in_two">- Git stash pop can be split in two</h3><p>Git stash pop is the combination of two other commands:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git stash apply</span><br></pre></td></tr></table></figure>
+<p>which applies the last stash and:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git stash drop</span><br></pre></td></tr></table></figure>
+<p>which destroys the last stash</p>
+<p><br><br>Hope this helped, there would be much more to say on this suject but I hope this will give you a place to start :)</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Common everyday scenario: you are working on your feature branch fixing a bug and your boss asks you for a build. You need to switch back to your main dev branch. Before that happens, you have to take care of all your current changes. You can either commit if you are ready for it, or maybe you have only modified a few lines and can simply revert your changes. </p>
+<p>Well there is a better solution: git stash.<br>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Git add]]></title>
     <link href="http://klugjo.github.io/2016/02/git-add/"/>
     <id>http://klugjo.github.io/2016/02/git-add/</id>
     <published>2016-02-09T07:48:25.000Z</published>
-    <updated>2016-02-09T09:06:46.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>This article is a description of all the basic git add commands.</p>
 <a id="more"></a> 
 <h2 id="Understanding">Understanding</h2><p>Git uses a notion of changes staged for the next commit where you set which change you wish to include in the next <code>git commit</code> command. This includes new files, deleted files and modifications.</p>
@@ -111,7 +158,7 @@
     <link href="http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/"/>
     <id>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</id>
     <published>2016-02-09T07:26:18.000Z</published>
-    <updated>2016-02-09T09:11:26.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have just finished <a href="http://keithferrazzi.com/products/never-eat-alone" target="_blank" rel="external">Never Eat Alone</a>. It is a book about building a supportive network of business connections that will propel you to the highest spheres of the business world.<br><a id="more"></a> </p>
 <p>The author goes through the story of his life and how he networked his way to the top. From his humble lower class beginnings, through golf sessions, wine dinners and republican rallies to being a top consultant and CEO. </p>
 <p>I have gone through the entire book and it is packed with excellent advices, some of which I have detailed below. It is hard not to appreciate the honesty, authenticity and candor of the author. It is an excellent reminder that in life or business you can’t make it alone. As a software developer, it is often too easy to think that your skills are enough to get ahead and this book serves as a powerful reminder that this is certainly not the case.</p>
@@ -145,7 +192,7 @@
     <link href="http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/"/>
     <id>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</id>
     <published>2016-02-03T01:25:55.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article on how to add auto completion in Webstorm 11 for all the core Node libraries.<br><a id="more"></a> <br></p>
 <h2 id="The_problem">The problem</h2><p>Without Node coding assistance, you will get warnings on all the Node.js core functions like <code>require</code> or <code>__dirname</code>.</p>
 <p><img src="https://s3.amazonaws.com/klugjo.github.io/node-code-completion-missing-webstorm.png" alt="Node Code Completion missing example" title="node code completion missing in webstorm"></p>
@@ -173,7 +220,7 @@
     <link href="http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/"/>
     <id>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</id>
     <published>2016-02-02T06:44:51.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a><br><br></p>
 <h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
 <p><br></p>
@@ -241,7 +288,7 @@
     <link href="http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/"/>
     <id>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</id>
     <published>2016-02-01T06:50:35.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/" target="_blank" rel="external">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/" target="_blank" rel="external">css themes</a>.</p>
 <a id="more"></a> 
 <h2 id="Example">Example</h2><p><br></p>
@@ -286,7 +333,7 @@
     <link href="http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/"/>
     <id>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</id>
     <published>2016-01-29T06:36:50.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>Quick article on how to search the OSX terminal history</p>
 <a id="more"></a> 
 <p><br></p>
@@ -325,7 +372,7 @@
     <link href="http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/"/>
     <id>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</id>
     <published>2016-01-26T03:48:08.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
 <a id="more"></a> 
 <p><br></p>
@@ -380,7 +427,7 @@
     <link href="http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/"/>
     <id>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</id>
     <published>2016-01-25T07:47:17.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<p>If you find <a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">cURL’s syntax</a> a bit too dry for your liking, you could give <a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external">HTTPie</a> a try. In this article I will go through the basics of making HTTP requests to a REST API using HTTPie.<br><a id="more"></a><br><br></p>
 <h2 id="Install_HTTPie">Install HTTPie</h2><p>I am on OSX and with brew, installation is a breeze.</p>
 <figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span>install httpie</span><br></pre></td></tr></table></figure>
@@ -440,7 +487,7 @@
     <link href="http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/"/>
     <id>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</id>
     <published>2016-01-22T08:31:58.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
+    <updated>2016-02-11T06:38:26.000Z</updated>
     <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br><a id="more"></a> </p>
 <p>It is a pretty recent book (2014) and a very insightful read for anyone who wishes to create something new. Although the book may read like it has been written for american unicorn startup entrepreneurs, I would recommend it to anyone who wishes to create something radically new, be it a company, NGO, scientific breakthrough or revolutionise art.</p>
 <p>The book felt like a motivational piece to me. There were few practical advices (read <a href="http://theleanstartup.com/" target="_blank" rel="external">The Lean Startup</a> or <a href="http://www.goodreads.com/book/show/762542.The_Four_Steps_to_the_Epiphany" target="_blank" rel="external">The Four Steps to the Epiphany</a> if that is what you are looking for), <em>Zero to One</em> is a collection of lessons learnt, advices and theories by the co-founder of Paypal and first investor in Facebook.</p>
@@ -465,43 +512,6 @@
       <category term="Books" scheme="http://klugjo.github.io/tags/Books/"/>
     
       <category term="Startups" scheme="http://klugjo.github.io/tags/Startups/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Untrack files already added to git repository based on .gitignore]]></title>
-    <link href="http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/"/>
-    <id>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</id>
-    <published>2016-01-20T08:16:34.000Z</published>
-    <updated>2016-02-08T06:52:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.</p>
-<a id="more"></a> 
-<p><br></p>
-<h2 id="Step_1:_Commit_all_your_changes">Step 1: Commit all your changes</h2><p>Before proceeding, make sure all your changes are committed, including your .gitignore file.</p>
-<p><br></p>
-<h2 id="Step_2:_Remove_everything_from_the_repository">Step 2: Remove everything from the repository</h2><p>To clear your repo, use:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r <span class="comment">--cached .</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="https://git-scm.com/docs/git-rm" target="_blank" rel="external">rm</a> is the remove command</li>
-<li><strong>-r</strong> will allow recursive removal</li>
-<li><strong>—cached</strong> will only remove files from the index. Your files will still be there.</li>
-</ul>
-<p>The <code>rm</code> command can be unforgiving. If you wish to try what it does beforehand, add the <code>-n</code> or <code>--dry-run</code> flag to test things out.</p>
-<p><br></p>
-<h2 id="Step_3:_Re_add_everything">Step 3: Re add everything</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">git</span> <span class="keyword">add </span>.</span><br></pre></td></tr></table></figure>
-<p><br></p>
-<h2 id="Step_4:_Commit">Step 4: Commit</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">git</span> commit -m <span class="string">".gitignore fix"</span></span><br></pre></td></tr></table></figure>
-<p>Your repository is clean :)</p>
-<p>Push the changes to your remote to see the changes effective there as well.<br><br></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.</p>]]>
-    
-    </summary>
-    
-      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
-    
-      <category term="gitignore" scheme="http://klugjo.github.io/tags/gitignore/"/>
     
   </entry>
   

@@ -2,198 +2,203 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</loc>
-    <lastmod>2016-02-09T09:11:26.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/02/git-add/</loc>
-    <lastmod>2016-02-09T09:06:46.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <loc>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Sorting-files-using-the-ls-command/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Loops-and-callbacks-in-React/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/08/Debug-Mocha-Unit-Tests-in-Webstorm/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Build-your-first-React-application/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
-    <lastmod>2016-02-08T06:52:53.000Z</lastmod>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/git-add/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/02/Stash-your-changes-before-switching-branch/</loc>
+    <lastmod>2016-02-11T06:38:26.000Z</lastmod>
   </url>
   
 </urlset>
