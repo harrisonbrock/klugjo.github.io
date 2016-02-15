@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-15T07:53:15.000Z</updated>
+  <updated>2016-02-15T08:21:53.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -19,17 +19,17 @@
     <link href="http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/"/>
     <id>http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/</id>
     <published>2016-02-15T06:44:48.000Z</published>
-    <updated>2016-02-15T07:53:15.000Z</updated>
-    <content type="html"><![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso" target="_blank" rel="external">CSSO – CSS Optimizer</a> and I though I would check out how it compares to other css minification tools like <a href="https://github.com/jbleuzen/node-cssmin" target="_blank" rel="external">cssmin</a> which is based on YUI.</p>
-<h2 id="Installation">Installation</h2><p>Its a node package, installation is a straight forward as:</p>
+    <updated>2016-02-15T08:21:53.000Z</updated>
+    <content type="html"><![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso" target="_blank" rel="external">CSSO – CSS Optimizer</a> and I thought I would check out how it compares to other css minification tools like <a href="https://github.com/jbleuzen/node-cssmin" target="_blank" rel="external">cssmin</a> which is based on YUI compressor.</p>
+<a id="more"></a> 
+<h2 id="Installation">Installation</h2><p>Its a node package, installation is as straight forward as:</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> -g csso</span><br></pre></td></tr></table></figure>
 <h2 id="Usage">Usage</h2><p>You can minify your CSS by using <code>csso.minify(yourCss)</code>.</p>
 <p>Example:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> csso = <span class="built_in">require</span>(<span class="string">'csso'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> compressed = csso.minify(<span class="string">'.test &#123; color: #000000; &#125;'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(compressed); <span class="comment">// .test&#123;color:black&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="Basic_comparison_with_cssmin">Basic comparison with cssmin</h2><p>CSSO does more than just <a href="http://yui.github.io/yuicompressor/css.html" target="_blank" rel="external">remove whitespaces and line breaks</a> which is what cssmin based on YUI compressor does. In my opinion that’s already good enough of a reason to use it. </p>
 <p>Let’s look at how good of a job it does.</p>
-<p>For my quick test, I have used 2 css files.</p>
-<ul>
+<h3 id="For_my_quick_test,_I_have_used_2_css_files-">For my quick test, I have used 2 css files.</h3><ul>
 <li>Simple CSS File: My blog’s CSS at time of writing is a pretty simple 900 lines css file.</li>
 <li>Complex CSS File: <a href="https://github.com/Dogfalo/materialize" target="_blank" rel="external">Materialize</a> main CSS which is a fairly complex 11256 lines stylesheet.</li>
 </ul>
@@ -77,7 +77,8 @@
 <p>CSSO does a bit better than cssmin but the difference is negligible. I certainly wouldn’t go ahead and change my current projects over to CSSO but I will give CSSO a try for my next project.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso" target="_blank" rel="external">CSSO – CSS Optimizer</a> and I though I ]]>
+    <![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso">CSSO – CSS Optimizer</a> and I thought I would check out how it compares to other css minification tools like <a href="https://github.com/jbleuzen/node-cssmin">cssmin</a> which is based on YUI compressor.</p>]]>
+    
     </summary>
     
       <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
