@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-11T12:36:58.000Z</updated>
+  <updated>2016-02-15T07:53:15.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Further minify your CSS with CSSO]]></title>
+    <link href="http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/"/>
+    <id>http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/</id>
+    <published>2016-02-15T06:44:48.000Z</published>
+    <updated>2016-02-15T07:53:15.000Z</updated>
+    <content type="html"><![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso" target="_blank" rel="external">CSSO – CSS Optimizer</a> and I though I would check out how it compares to other css minification tools like <a href="https://github.com/jbleuzen/node-cssmin" target="_blank" rel="external">cssmin</a> which is based on YUI.</p>
+<h2 id="Installation">Installation</h2><p>Its a node package, installation is a straight forward as:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> -g csso</span><br></pre></td></tr></table></figure>
+<h2 id="Usage">Usage</h2><p>You can minify your CSS by using <code>csso.minify(yourCss)</code>.</p>
+<p>Example:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> csso = <span class="built_in">require</span>(<span class="string">'csso'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> compressed = csso.minify(<span class="string">'.test &#123; color: #000000; &#125;'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(compressed); <span class="comment">// .test&#123;color:black&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Basic_comparison_with_cssmin">Basic comparison with cssmin</h2><p>CSSO does more than just <a href="http://yui.github.io/yuicompressor/css.html" target="_blank" rel="external">remove whitespaces and line breaks</a> which is what cssmin based on YUI compressor does. In my opinion that’s already good enough of a reason to use it. </p>
+<p>Let’s look at how good of a job it does.</p>
+<p>For my quick test, I have used 2 css files.</p>
+<ul>
+<li>Simple CSS File: My blog’s CSS at time of writing is a pretty simple 900 lines css file.</li>
+<li>Complex CSS File: <a href="https://github.com/Dogfalo/materialize" target="_blank" rel="external">Materialize</a> main CSS which is a fairly complex 11256 lines stylesheet.</li>
+</ul>
+<h3 id="Here_are_the_results:">Here are the results:</h3><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th style="text-align:center">Simple CSS File</th>
+<th style="text-align:center">Complex CSS File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lines</td>
+<td style="text-align:center">842</td>
+<td style="text-align:center">11256</td>
+</tr>
+<tr>
+<td>Length</td>
+<td style="text-align:center">19133</td>
+<td style="text-align:center">201025</td>
+</tr>
+<tr>
+<td>cssmin length (characters)</td>
+<td style="text-align:center">15431</td>
+<td style="text-align:center">147778</td>
+</tr>
+<tr>
+<td>csso length (characters)</td>
+<td style="text-align:center">15405</td>
+<td style="text-align:center">145423</td>
+</tr>
+<tr>
+<td>cssmin compression (%)</td>
+<td style="text-align:center">19.3%</td>
+<td style="text-align:center">26.5%</td>
+</tr>
+<tr>
+<td>csso compression (%)</td>
+<td style="text-align:center">19.5%</td>
+<td style="text-align:center">27.7%</td>
+</tr>
+</tbody>
+</table>
+<p>CSSO does a bit better than cssmin but the difference is negligible. I certainly wouldn’t go ahead and change my current projects over to CSSO but I will give CSSO a try for my next project.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso" target="_blank" rel="external">CSSO – CSS Optimizer</a> and I though I ]]>
+    </summary>
+    
+      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
+    
+      <category term="CSS" scheme="http://klugjo.github.io/tags/CSS/"/>
+    
+      <category term="CSSO" scheme="http://klugjo.github.io/tags/CSSO/"/>
+    
+      <category term="CssMin" scheme="http://klugjo.github.io/tags/CssMin/"/>
+    
+      <category term="node" scheme="http://klugjo.github.io/tags/node/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Stash your changes before switching branch with Git]]></title>
@@ -462,38 +540,6 @@
       <category term="REST" scheme="http://klugjo.github.io/tags/REST/"/>
     
       <category term="cURL" scheme="http://klugjo.github.io/tags/cURL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Notes on Zero to One by Peter Thiel]]></title>
-    <link href="http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/"/>
-    <id>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</id>
-    <published>2016-01-22T08:31:58.000Z</published>
-    <updated>2016-02-11T12:04:32.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br><a id="more"></a> </p>
-<p>It is a pretty recent book (2014) and a very insightful read for anyone who wishes to create something new. Although the book may read like it has been written for american unicorn startup entrepreneurs, I would recommend it to anyone who wishes to create something radically new, be it a company, NGO, scientific breakthrough or revolutionise art.</p>
-<p>The book felt like a motivational piece to me. There were few practical advices (read <a href="http://theleanstartup.com/" target="_blank" rel="external">The Lean Startup</a> or <a href="http://www.goodreads.com/book/show/762542.The_Four_Steps_to_the_Epiphany" target="_blank" rel="external">The Four Steps to the Epiphany</a> if that is what you are looking for), <em>Zero to One</em> is a collection of lessons learnt, advices and theories by the co-founder of Paypal and first investor in Facebook.</p>
-<h2 id="Notes_and_Takeaways">Notes and Takeaways</h2><h3 id="Go_Big_or_go_Home">Go Big or go Home</h3><p>The book is not called 0 to 0.25, nor is it called 1 to 2. Successful billion dollars create a completely new ecosystem and evolve in a world of their own. They don’t simply improve on an existing solution. They discover ‘secrets’ and build a company based on that secret. </p>
-<p>For Paypal it meant creating a way of replacing the US Dollar with a different currency, for Uber it meant having anyone driving anyone else anywhere, for Facebook it meant allowing everyone to connect and share information with each others. Although these companies have evolved a lot since their creation, at the beginning there was someone who discovered a ‘secret’, something that nobody saw but now seems obvious to 90% of the planet.</p>
-<p>The author summarises this as</p>
-<blockquote><p>What valuable company is nobody building?</p>
-<footer><strong>Peter Thiel</strong><cite><a href="https://en.wikipedia.org/wiki/Zero_to_One" target="_blank" rel="external">Zero to One</a></cite></footer></blockquote>
-<h3 id="Engineering_Superiority">Engineering Superiority</h3><p>When founding a startup, you want to own a breakthrough technology. Be it a cure for cancer or a super efficient clean energy, you need something an order of magniture better than what it currently available. But technology only is not sufficient. Cf Guy Kawasaki’s <a href="https://startupblog.wordpress.com/2013/07/08/the-story-of-ice/" target="_blank" rel="external">Ice Factory to Fridge Story</a></p>
-<h3 id="Timing_and_Monopoly">Timing and Monopoly</h3><p>One of the deciding factors for startup success is timing. Facebook would not have know the exponential growth it did, had it started in 1995. Timing is key and you want to be the last mover in order to expand by dominating one niche at a time. Cf this talk by Peter Thiel on <a href="https://www.youtube.com/watch?v=5_0dVHMpJlo" target="_blank" rel="external">the importance of achieving monopoly</a>. Also this ted talk which explain that <a href="https://www.ted.com/talks/bill_gross_the_single_biggest_reason_why_startups_succeed?language=en" target="_blank" rel="external">timing is the most deciding factor in startup success</a></p>
-<h3 id="Team">Team</h3><p>More important that a good distribution of skills, all the founding members need to be on the same wavelength. From outside a startup should look like a cult, except that the ideas everyone believe in are good ones. Most startup fail because of internal dysfunctions and not because they got crushed by competition.</p>
-<h3 id="Sales_/_Distribution">Sales / Distribution</h3><p>It is a common mistake to think that the product will sell itself if good enough. This is a deadly mistake. A grandmaster salesman selling a crappy products might succeed. A perfect product with a crappy sales team has zero chance of succeeding. This is non negotiable.</p>
-<h3 id="Think_far_ahead">Think far ahead</h3><p>When preparing a business idea, have the end game in mind. End game meaning 20 years from now. Build a company that will last for decades. Build a company that will only start making money in a decade.</p>
-<h3 id="Don’t_leave_anything_to_chance">Don’t leave anything to chance</h3><p>A lot of books and people will have you believe that success is pure luck. It is not. You need to have a clear idea of what the future will be and reach that place. The western world seems to live in uncertainty and this needs to change. A startup company is the best way to do that.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="First_impressions">First impressions</h2><p>I have read my fair share of startup books and I just finished one more. <a href="https://en.wikipedia.org/wiki/Zero_to_One">Peter Thiel’s “Zero to One: Notes on Startups, or How to Build the Future”</a> was a very quick and enjoyable read (I finished it in two and a half working days).<br>]]>
-    
-    </summary>
-    
-      <category term="Books" scheme="http://klugjo.github.io/tags/Books/"/>
-    
-      <category term="Startups" scheme="http://klugjo.github.io/tags/Startups/"/>
     
   </entry>
   

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/</loc>
+    <lastmod>2016-02-15T07:53:15.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</loc>
     <lastmod>2016-02-11T12:50:58.000Z</lastmod>
   </url>
@@ -29,11 +34,6 @@
   <url>
     <loc>http://klugjo.github.io/2016/02/git-add/</loc>
     <lastmod>2016-02-11T12:36:48.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
   </url>
   
   <url>
@@ -132,17 +132,22 @@
   </url>
   
   <url>
-    <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
   </url>
   
   <url>
+    <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
   </url>
   
