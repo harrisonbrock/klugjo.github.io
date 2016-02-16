@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-16T12:46:30.000Z</updated>
+  <updated>2016-02-16T12:50:16.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -19,26 +19,26 @@
     <link href="http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/"/>
     <id>http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/</id>
     <published>2016-02-16T11:58:08.000Z</published>
-    <updated>2016-02-16T12:46:30.000Z</updated>
-    <content type="html"><![CDATA[<p>This article gives you a basic way to setup your environment if you want to use ES2015 with Node (using v4.3.0).<br><a id="more"></a> </p>
+    <updated>2016-02-16T12:50:16.000Z</updated>
+    <content type="html"><![CDATA[<p>This article gives you a basic way of setting up your environment if you want to use ES2015 with Node (using v4.3.0 in this tutorial).<br><a id="more"></a> </p>
 <h2 id="Babel_libraries">Babel libraries</h2><p>You will first need:</p>
 <ul>
 <li><a href="https://babeljs.io/docs/usage/cli/" target="_blank" rel="external">babel-cli</a>: Used to compile files from the command line</li>
 <li><a href="http://babeljs.io/docs/usage/api/" target="_blank" rel="external">babel-core</a>: Core API</li>
 <li><a href="https://babeljs.io/docs/plugins/preset-es2015/" target="_blank" rel="external">babel-preset-es2015</a>: Collection of all the plugins needed to write ES2015 JavaScript.</li>
 </ul>
-<p>Babel in itself does not do anything and it is the plugins that will define what it does.</p>
+<p>(Babel in itself does not do anything and it is the plugins that will define what it does.)</p>
 <h3 id="Installation">Installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli babel-core babel-preset-es2015</span><br></pre></td></tr></table></figure>
-<h2 id="Babel_configuration">Babel configuration</h2><p>The standard way of configuring Babel is to use a <a href="https://babeljs.io/docs/usage/babelrc/" target="_blank" rel="external">.babelrc</a></p>
-<p>Put a <code>.babelrc</code> file to put your configuration. I don’t like to have too much stuff there and <a href="http://babeljs.io/docs/usage/babelrc/" target="_blank" rel="external">thankfully you can also put your config in <code>package.json</code></a>.</p>
-<p>Inside your configuration put:</p>
+<h2 id="Babel_configuration">Babel configuration</h2><p>The standard way of configuring Babel is to use a <a href="https://babeljs.io/docs/usage/babelrc/" target="_blank" rel="external">.babelrc</a> file:</p>
+<p>Put a <code>.babelrc</code> configuration file at the root of your project. I don’t like to have too much stuff in there and <a href="http://babeljs.io/docs/usage/babelrc/" target="_blank" rel="external">thankfully you can also put your config in <code>package.json</code></a>.</p>
+<p>Whichever way you choose, inside your configuration put:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [<span class="string">"es2015"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Testing">Testing</h2><p>Create an <code>index.js</code> file with the following ES2015 code:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> doubles = numbers.map(num =&gt; num * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(doubles); <span class="comment">//  [2, 8, 18 ]</span></span><br></pre></td></tr></table></figure>
 <p>Run it with <code>node index.js</code> and check that everything is working.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>This article gives you a basic way to setup your environment if you want to use ES2015 with Node (using v4.3.0).<br>]]>
+    <![CDATA[<p>This article gives you a basic way of setting up your environment if you want to use ES2015 with Node (using v4.3.0 in this tutorial).<br>]]>
     
     </summary>
     

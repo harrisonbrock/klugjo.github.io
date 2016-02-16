@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Browserify/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Promise/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -157,13 +150,6 @@
 
     <url>
         <loc>http://klugjo.github.io/tags/Single-Responsibility-Principle/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Jade/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -310,15 +296,29 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Node/</loc>
-        <lastmod>2016-02-16T12:46:30.000Z</lastmod>
+        <loc>http://klugjo.github.io/tags/Babel/</loc>
+        <lastmod>2016-02-16T12:50:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Babel/</loc>
-        <lastmod>2016-02-16T12:46:30.000Z</lastmod>
+        <loc>http://klugjo.github.io/tags/Jade/</loc>
+        <lastmod>2016-02-16T12:51:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Browserify/</loc>
+        <lastmod>2016-02-16T12:51:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Node/</loc>
+        <lastmod>2016-02-16T12:51:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

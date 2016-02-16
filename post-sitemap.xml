@@ -7,8 +7,40 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/</loc>
+        <lastmod>2016-02-16T12:51:58.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
+        <lastmod>2016-02-16T12:51:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</loc>
+        <lastmod>2016-02-16T12:51:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</loc>
+        <lastmod>2016-02-16T12:51:10.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/</loc>
-        <lastmod>2016-02-16T12:46:30.000Z</lastmod>
+        <lastmod>2016-02-16T12:50:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -95,14 +127,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Your-first-10-minutes-with-Browserify/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -152,14 +176,6 @@
 
     <url>
         <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2015/12/Requiring-external-libraries-with-Browserify/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -280,22 +296,6 @@
 
     <url>
         <loc>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2015/08/Capture-Command-Line-Arguments-in-Node/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2015/12/Bundle-jade-templates-with-browserify-transform/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
