@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-16T12:50:16.000Z</updated>
+  <updated>2016-02-20T03:02:45.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Babel and Node Module Loader]]></title>
+    <link href="http://klugjo.github.io/2016/02/Babel-and-Node-Module-Loader/"/>
+    <id>http://klugjo.github.io/2016/02/Babel-and-Node-Module-Loader/</id>
+    <published>2016-02-20T01:26:03.000Z</published>
+    <updated>2016-02-20T03:02:45.000Z</updated>
+    <content type="html"><![CDATA[<p>This article will show you how to get started with ES6 modules in node with Babel.<br><a id="more"></a><br>If you need to setup your environment, check out <a href="/2016/02/How-to-setup-Babel6-for-NodeJs/">this article</a>.</p>
+<h2 id="Exports">Exports</h2><p>In your library, export functions and classes this way:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------</span></span><br><span class="line"><span class="comment">// module1.js</span></span><br><span class="line"><span class="comment">// ----------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> life = <span class="string">"42"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    constructor(color) &#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCarColor() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Imports">Imports</h2><h3 id="Import_specific">Import specific</h3><p>You can specify which value you wish to import using the following syntax:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;life, add <span class="keyword">as</span> addition&#125; <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line">console.log(life); <span class="comment">// 42</span></span><br><span class="line"><span class="built_in">console</span>.log(addition(<span class="number">1</span>,<span class="number">1</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>Note how you can use <code>as</code> to change the name of some of the values.</p>
+<h3 id="Import_all">Import all</h3><p>You can use <code>*</code> to import all the values</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> myModule <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line">var car = new myModule.Car(<span class="string">"blue"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(car.getCarColor()); <span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
+<h2 id="Default_export">Default export</h2><p>If your module only has one value to export, use <code>default</code> when exporting that value.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Export - myModule.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import</span></span><br><span class="line"><span class="keyword">import</span> myFunc <span class="keyword">from</span> <span class="string">'./myModule'</span>;</span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
+<p>This information should be enough for you to get started with ES6/ES2015 modules. If you need to know more, I would recommend <a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="external">this article</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article will show you how to get started with ES6 modules in node with Babel.<br>]]>
+    
+    </summary>
+    
+      <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
+    
+      <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
+    
+      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[How to setup Babel6 for NodeJs]]></title>
     <link href="http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/"/>
     <id>http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/</id>
     <published>2016-02-16T11:58:08.000Z</published>
-    <updated>2016-02-16T12:50:16.000Z</updated>
+    <updated>2016-02-20T03:06:48.000Z</updated>
     <content type="html"><![CDATA[<p>This article gives you a basic way of setting up your environment if you want to use ES2015 with Node (using v4.3.0 in this tutorial).<br><a id="more"></a> </p>
 <h2 id="Babel_libraries">Babel libraries</h2><p>You will first need:</p>
 <ul>
@@ -36,6 +69,13 @@
 <h2 id="Testing">Testing</h2><p>Create an <code>index.js</code> file with the following ES2015 code:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> doubles = numbers.map(num =&gt; num * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(doubles); <span class="comment">//  [2, 8, 18 ]</span></span><br></pre></td></tr></table></figure>
 <p>Run it with <code>node index.js</code> and check that everything is working.</p>
+<h2 id="Create_a_launcher">Create a launcher</h2><p>When using certain features of ES6, you might encounter an error of type:</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">SyntaxError</span>: <span class="string">Unexpected token</span></span><br></pre></td></tr></table></figure>
+<p>This means you will need to create a launcher for your app that loads <code>&#39;babel-core/register&#39;</code> ahead of your code.</p>
+<p>Assuming your entry point is <code>index.js</code>, create the following launcher:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="comment">// launcher.js</span></span><br><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'babel-core/register'</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./index'</span>);</span><br></pre></td></tr></table></figure>
+<p>Start your app with <code>node launcher.js</code></p>
+<p>This will clear the errors.</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>This article gives you a basic way of setting up your environment if you want to use ES2015 with Node (using v4.3.0 in this tutorial).<br>]]>
@@ -43,6 +83,10 @@
     </summary>
     
       <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
+    
+      <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
+    
+      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
     
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
@@ -471,55 +515,6 @@
       <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
       <category term="OSX" scheme="http://klugjo.github.io/tags/OSX/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Create a Bash Shell script to download a site's favicon with HTTPie]]></title>
-    <link href="http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/"/>
-    <id>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</id>
-    <published>2016-01-26T03:48:08.000Z</published>
-    <updated>2016-02-11T12:04:32.000Z</updated>
-    <content type="html"><![CDATA[<p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>
-<a id="more"></a> 
-<h2 id="1_-_Download_a_page’s_HTML_Content">1 - Download a page’s HTML Content</h2><p>For this tutorial, I will use <a href="http://www.fipradio.fr/player" target="_blank" rel="external">http://www.fipradio.fr/player</a> as our test website – as it turns out, it is also my favorite radio.</p>
-<p>If you have never looked at HTTPie, have a quick look at my <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">introduction to the library</a>.</p>
-<p>Downloading the HTML is the easiest part of this tutorial, using HTTPie:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player</span><br></pre></td></tr></table></figure>
-<p>The full HTML will be printed out to the console.</p>
-<h2 id="2_-_Extract_the_favicon’s_URL">2 - Extract the favicon’s URL</h2><p>I am by no means an expert in bash and regexp but here is a solution that does the job. Inspired by <a href="http://www.unix.com/shell-programming-and-scripting/124833-extract-urls-html-code-using-sed.html" target="_blank" rel="external">this post</a> and <a href="http://stackoverflow.com/questions/9899760/use-sed-and-wget-to-retrieve-links-only" target="_blank" rel="external">this one</a>.</p>
-<h3 id="Grep_the_favicon’s_tag">Grep the favicon’s tag</h3><p>Here is the code:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ grep -o <span class="string">'href="http[^"]*ico"'</span></span><br></pre></td></tr></table></figure>
-<p><code>-o</code> will retain only the matching part of the line instead of the whole line<br><code>&#39;href=&quot;http[^&quot;]*ico&quot;&#39;</code> will match strings like <em>href=”http:[..]ico”</em><br><br><br><u>Let’s pipe the HTML to the grep expression:</u></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">href=<span class="string">"http://www.fipradio.fr/sites/all/themes/custom/fip/favicon.ico"</span></span><br></pre></td></tr></table></figure>
-<h3 id="Sed_the_URL">Sed the URL</h3><p>Use the following Sed function to extract the URL of the favicon:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sed <span class="string">'s/href="\(.*\)"/\1/'</span></span><br></pre></td></tr></table></figure>
-<p><code>s/</code> means we want to save only what we match<br><code>href=&quot;\(.*\)&quot;</code> is what we want to match<br><code>/\1/</code> refers to the characters captured by the escaped parentheses.<br><br><br><u>After piping it up:</u></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span> | sed <span class="string">'s/href="\(.*\)"/\1/'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.fipradio.fr/sites/all/themes/custom/fip/favicon.ico</span><br></pre></td></tr></table></figure>
-<h3 id="Notes">Notes</h3><ul>
-<li>There will be quite a few cases where this script won’t work. For example for websites served over https or when there is querystring after the .ico to avoid caching issues.</li>
-<li>I wouldn’t have been able to come up with the regex out of the blue. I used quite a few google searches before finding a solution that I liked. This tutorial is not meant to be a detailed explanation about grep, sed or regex.</li>
-</ul>
-<h2 id="3_-_Download_the_icons">3 - Download the icons</h2><p>To <a href="https://github.com/jkbrzt/httpie#download-mode" target="_blank" rel="external">download a file with HTTPie</a>, use:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http <span class="operator">-d</span> url</span><br></pre></td></tr></table></figure>
-<p>We will use a while loop with read to iterate through the list of favicon URLs:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="operator">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
-<p>And here is the final command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span> | sed <span class="string">'s/href="\(.*\)"/\1/'</span> | &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="operator">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
-<p>Press enter and you will see a progress bar for the favicon.ico download.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In this quick tutorial, we will build a <a target="_blank" href="/tags/Bash/">Bash</a> command that downloads a site’s favicon using the <a target="_blank" href="/2016/01/HTTPie-a-good-replacement-for-cURL/">HTTPie library</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
-      <category term="Favicon" scheme="http://klugjo.github.io/tags/Favicon/"/>
-    
-      <category term="HTTPie" scheme="http://klugjo.github.io/tags/HTTPie/"/>
     
   </entry>
   
