@@ -3,18 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Debug Mocha Unit Tests in Webstorm | CodeBlocQ</title>
+  <title>How to use a custom domain with your github pages site | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
-  <meta name="description" content="WebStorm is my IDE of choice when it comes to debugging Node apps. Read on if you haven’t configured Mocha Tests debugging yet.
-1) Prerequisites:
-Application with Mocha Unit Tests
-WebStorm with Node plugin enabled">
+  <meta name="description" content="This article goes through the process of setting up a custom domain for a github pages website.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Debug Mocha Unit Tests in Webstorm"/>
+  <meta property="og:title" content="How to use a custom domain with your github pages site"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -78,7 +75,7 @@ WebStorm with Node plugin enabled">
 
 
 
-<body class="bg4">
+<body class="bg0">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -103,45 +100,43 @@ WebStorm with Node plugin enabled">
       <div class="content-container">
         
   
-    <h1 class="title">Debug Mocha Unit Tests in Webstorm</h1>
+    <h1 class="title">How to use a custom domain with your github pages site</h1>
   
 
-        <div class="subtitle" datetime="2015-08-03T04:46:50.000Z">
-          2015-08-03
+        <div class="subtitle" datetime="2016-02-22T10:39:16.000Z">
+          2016-02-22
           
         </div>
       </div>
       <div class="icon-container">
-        <span class="icon devicons-code_badge"></span>
+        <span class="icon devicons-library_books"></span>
       </div>
     </header>
 
       
         <div class="entry">
-          <p>WebStorm is my IDE of choice when it comes to debugging Node apps. Read on if you haven’t configured Mocha Tests debugging yet.</p>
-<h2 id="1)_Prerequisites:">1) Prerequisites:</h2><ul>
-<li>Application with Mocha Unit Tests</li>
-<li>WebStorm with <a href="https://www.jetbrains.com/webstorm/help/enabling-and-disabling-plugins.html" target="_blank" rel="external">Node plugin enabled</a><a id="more"></a> 
-</li>
-</ul>
-<h2 id="2)_Add_Mocha_to_your_Run/Debug_Configurations">2) Add Mocha to your <a href="https://www.jetbrains.com/webstorm/help/run-debug-configurations.html" target="_blank" rel="external">Run/Debug Configurations</a></h2><p>Open the Edit Run/Debug Configurations Dialog:</p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/run-debug-configurations-webstorm.jpg" alt="Run/Debug Configurations Dialog" title="Open the Run Debug Configurations Dialog"></p>
-<p>Or go to <code>Run | Edit Configurations ...</code></p>
-<p>Then Add a new Mocha Configuration:</p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/mocha-webstorm-run-debug-configuration.jpg" alt="Mocha Run/Debug Configuration" title="Mocha WebStorm Run Debug Configuration"></p>
-<p>If node is configured properly in WebStorm, you should only have to edit the <code>Name</code> and <code>Test directory</code> which is the path to your tests folder.</p>
-<p>The following fields are mandatory:</p>
+          <p>This article goes through the process of setting up a custom domain for a github pages website.</p>
+<a id="more"></a>
+<h2 id="Pre_requisites">Pre requisites</h2><p>This article assumes that you already have a github pages website up and running. Mine is <a href="https://github.com/klugjo/klugjo.github.io" target="_blank" rel="external">klugjo.github.io</a>.</p>
+<h2 id="Create_the_github_CNAME_file">Create the github CNAME file</h2><p>In order to use a custom domain, you need to let Github know about it with the help of a CNAME file:</p>
 <ul>
-<li><code>Node Interpreter</code> path to Node on your machine. </li>
-<li><code>Working Directory</code> path to your project directory.</li>
-<li><code>Mocha Package</code> path to Mocha installation home. If you installed Mocha through npm, WebStorm will detect it automatically.</li>
-<li><code>User Interface</code> select the <a href="http://mochajs.org/#interfaces" target="_blank" rel="external">Mocha Interface</a> that corresponds to the way your wrote your tests.</li>
-<li><code>Test Directory</code> path to your test folder.</li>
+<li>Create a file names <code>CNAME</code> at the root of your website. The file name has to be all Caps.</li>
+<li>Inside that file, input your custom domain name <u>without</u> <code>http(s)://</code>.<br><a href="https://github.com/klugjo/klugjo.github.io/blob/master/CNAME" target="_blank" rel="external">My CNAME file</a> contains: </li>
 </ul>
-<p>Press <code>OK</code>.</p>
-<h2 id="3)_Run_or_Debug_your_tests">3) Run or Debug your tests</h2><p>Make sure your have your unit test config selected in the Run/Debug Configuration</p>
-<h3 id="Press_the_Run_button_or_^R_to_run_your_tests:">Press the Run button or <code>^R</code> to run your tests:</h3><p><img src="https://s3.amazonaws.com/klugjo.github.io/mocha-WebStorm-test-passed.jpg" alt="Mocha WebStorm Tests Passed" title="Mocha WebStorm Tests Passed"></p>
-<h3 id="Press_the_Debug_button_or_^D_to_debug_your_tests">Press the Debug button or <code>^D</code> to debug your tests</h3><p><img src="https://s3.amazonaws.com/klugjo.github.io/mocha-WebStorm-Debug-Unit-Tests.jpg" alt="Mocha WebStorm Debug Unit Tests" title="Mocha WebStorm Debug Unit Tests"></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www<span class="class">.codeblocq</span><span class="class">.com</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Commit and push your changes</li>
+</ul>
+<p>That is it for the configuration on the github side.</p>
+<h2 id="Setup_the_DNS_provider">Setup the DNS provider</h2><p>You can contact your DNS provider for help on how to configure an A record but this is how I configured mine:</p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/github-pages-custom-domain.png" alt="DNS provider configuration github pages custom domain"></p>
+<p>The <code>CNAME</code> record for www is set to <strong>klugjo.github.io</strong>. The role of a CNAME record is to map a name to another name. Useful when the IP address of the host is not know or not stable.</p>
+<p>The URL record is set to <a href="http://www.codeblocq.com" target="_blank" rel="external">http://www.codeblocq.com</a> in order to redirect all traffic to the www site.</p>
+<h2 id="Notes">Notes</h2><ul>
+<li>You can only setup one custom domain in the CNAME file on github. <a href="https://help.github.com/articles/about-supported-custom-domains/" target="_blank" rel="external">See what are the supported custom domains</a>.</li>
+<li>Read <a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="external">this article</a> if you need to configure an A record with your DNS provider.</li>
+<li>If you still can’t get it right, check out <a href="https://help.github.com/articles/troubleshooting-custom-domains/" target="_blank" rel="external">this troubleshooting guide</a>.</li>
+</ul>
 
         </div>
       
@@ -152,7 +147,7 @@ WebStorm with Node plugin enabled">
           
   
   <div class="tags">
-    <a href="/tags/Mocha/">Mocha</a>, <a href="/tags/Node/">Node</a>, <a href="/tags/TDD/">TDD</a>, <a href="/tags/WebStorm/">WebStorm</a>
+    <a href="/tags/Custom-Domain/">Custom Domain</a>, <a href="/tags/DNS-Provider/">DNS Provider</a>, <a href="/tags/Github/">Github</a>
   </div>
 
         
