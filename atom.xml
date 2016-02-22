@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-22T11:26:59.000Z</updated>
+  <updated>2016-02-22T11:29:30.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/"/>
     <id>http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</id>
     <published>2016-02-22T10:39:16.000Z</published>
-    <updated>2016-02-22T11:26:59.000Z</updated>
+    <updated>2016-02-22T11:29:30.000Z</updated>
     <content type="html"><![CDATA[<p>This article goes through the process of setting up a custom domain for a github pages website.</p>
 <a id="more"></a>
 <h2 id="Pre_requisites">Pre requisites</h2><p>This article assumes that you already have a github pages website up and running. Mine is <a href="https://github.com/klugjo/klugjo.github.io" target="_blank" rel="external">klugjo.github.io</a>.</p>
