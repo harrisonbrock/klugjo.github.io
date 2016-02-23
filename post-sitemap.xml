@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/02/Basic-git-log-commands/</loc>
+        <lastmod>2016-02-23T13:58:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
         <lastmod>2016-02-22T11:29:30.000Z</lastmod>
         <changefreq>weekly</changefreq>

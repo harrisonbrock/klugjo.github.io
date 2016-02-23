@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/7 | CodeBlocQ</title>
+  <title>Basic git log commands | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="In this article you will learn a few useful commands to check the activity on your repo.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Basic git log commands"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -73,7 +75,7 @@
 
 
 
-<body class="bg1">
+<body class="bg2">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -91,35 +93,72 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<div class="archive-title">2015/7</div>
-
-<div class="archive">
+<article class="post detail-view" >
   
-    <article class="post list-view" onclick="window.location.href = '/2015/07/round-images-in-css/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
   
-    <h1 class="title"><a href="/2015/07/round-images-in-css/">Round Images in CSS</a></h1>
+    <h1 class="title">Basic git log commands</h1>
   
 
-            <div class="subtitle" datetime="2015-07-27T04:46:50.000Z">
-              2015-07-27
-              
-  
-  <a class="tag-title" href="/tags/CSS3/">#CSS3</a> <a class="tag-title" href="/tags/HTML5/">#HTML5</a>
-
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-html5"></span>
-          </div>
-        </header>
+        <div class="subtitle" datetime="2016-02-23T13:56:49.000Z">
+          2016-02-23
+          
+        </div>
       </div>
-    </article>
+      <div class="icon-container">
+        <span class="icon devicons-git"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>In this article you will learn a few useful commands to check the activity on your repo.</p>
+<a id="more"></a>
+<h2 id="git_log">git log</h2><p>Get your repo history by using </p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="command">log</span></span><br></pre></td></tr></table></figure>
+<h2 id="Get_more_commit_details">Get more commit details</h2><p>In certain circumstances, you might want to get more detail on some commits.</p>
+<p>Use the <code>-p</code> flag to see all the differences introduced in each commit</p>
+<p>Use the <code>-2</code> to see the last 2 commits only</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log -<span class="tag">p</span> -<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Get_less_commit_details">Get less commit details</h2><p>In other situations, you want to have less commit details and more of an overview of what is going on in your repo.</p>
+<p>The <code>--oneline</code> flag will help you get a list of commits on one line</p>
+<p>The <code>--graph</code> flag will display a graph that shows to which branches the commits were made</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="command">log</span> <span class="comment">--oneline --graph</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
   
-</div></div></div>
+  <div class="tags">
+    <a href="/tags/Bash/">Bash</a>, <a href="/tags/Git/">Git</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -142,7 +181,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

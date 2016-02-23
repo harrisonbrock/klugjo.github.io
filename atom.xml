@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-22T11:29:30.000Z</updated>
+  <updated>2016-02-23T13:58:31.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Basic git log commands]]></title>
+    <link href="http://klugjo.github.io/2016/02/Basic-git-log-commands/"/>
+    <id>http://klugjo.github.io/2016/02/Basic-git-log-commands/</id>
+    <published>2016-02-23T13:56:49.000Z</published>
+    <updated>2016-02-23T13:58:31.000Z</updated>
+    <content type="html"><![CDATA[<p>In this article you will learn a few useful commands to check the activity on your repo.</p>
+<a id="more"></a>
+<h2 id="git_log">git log</h2><p>Get your repo history by using </p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="command">log</span></span><br></pre></td></tr></table></figure>
+<h2 id="Get_more_commit_details">Get more commit details</h2><p>In certain circumstances, you might want to get more detail on some commits.</p>
+<p>Use the <code>-p</code> flag to see all the differences introduced in each commit</p>
+<p>Use the <code>-2</code> to see the last 2 commits only</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log -<span class="tag">p</span> -<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<h2 id="Get_less_commit_details">Get less commit details</h2><p>In other situations, you want to have less commit details and more of an overview of what is going on in your repo.</p>
+<p>The <code>--oneline</code> flag will help you get a list of commits on one line</p>
+<p>The <code>--graph</code> flag will display a graph that shows to which branches the commits were made</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="command">log</span> <span class="comment">--oneline --graph</span></span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this article you will learn a few useful commands to check the activity on your repo.</p>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[How to use a custom domain with your github pages site]]></title>
@@ -477,49 +507,6 @@
       <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
     
       <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Display an animated counter on your webpage]]></title>
-    <link href="http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/"/>
-    <id>http://klugjo.github.io/2016/02/Display-an-animated-counter-on-your-webpage/</id>
-    <published>2016-02-01T06:50:35.000Z</published>
-    <updated>2016-02-11T12:37:43.000Z</updated>
-    <content type="html"><![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/" target="_blank" rel="external">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/" target="_blank" rel="external">css themes</a>.</p>
-<a id="more"></a> 
-<h2 id="Example">Example</h2><p><br></p>
-<script type="application/javascript">
-
-    function updateNumbers() {
-        setInterval(function(){
-            var val = Math.floor(Math.random()*1000);
-            val = val < 100 ? (val + 100) : val;
-            document.getElementById('odometer').innerHTML = val;
-        }, 4000);
-    }
-
-    updateNumbers();
-</script>
-
-<p><div id="odometer" class="odometer" style="font-size: 25px">321</div></p>
-<h2 id="Usage">Usage</h2><h3 id="Install">Install</h3><p>Go to the <a href="http://github.hubspot.com/odometer/" target="_blank" rel="external">library’s page</a> and download a zip file with the library or fire up bower:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">bower </span>install odometer</span><br></pre></td></tr></table></figure>
-<p>Include the js library, for example <code>odometer.min.js</code> .<br>Include the css for the theme of your choice, for example <code>odometer-theme-car.css</code>.</p>
-<h3 id="Initialisation">Initialisation</h3><p>Create an element with the CSS class <code>.odometer</code> and the library will initialise automatically.</p>
-<p>Check out <a href="http://github.hubspot.com/odometer/" target="_blank" rel="external">the documentation</a> if you need more configuration options.</p>
-<h3 id="Update_the_value">Update the value</h3><p>You can update the value by setting the element’s <code>innerHTML</code>, <code>innerText</code>, or by using jQuery’s <code>.text()</code> or <code>.html()</code>.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I just discovered <a href="http://github.hubspot.com/odometer/docs/welcome/">Odometer</a> which is a cool open source library to transition numbers. It comes with a set of <a href="http://github.hubspot.com/odometer/api/themes/">css themes</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="CSS" scheme="http://klugjo.github.io/tags/CSS/"/>
-    
-      <category term="HTML" scheme="http://klugjo.github.io/tags/HTML/"/>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
   </entry>
   
