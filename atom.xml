@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-23T13:58:31.000Z</updated>
+  <updated>2016-02-26T00:58:11.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Copy an Array into itself in JavaScript ES6/2015]]></title>
+    <link href="http://klugjo.github.io/2016/02/Copy-an-Array-into-itself-in-JavaScript-ES6-2015/"/>
+    <id>http://klugjo.github.io/2016/02/Copy-an-Array-into-itself-in-JavaScript-ES6-2015/</id>
+    <published>2016-02-24T09:42:32.000Z</published>
+    <updated>2016-02-26T00:58:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Part of the additions to ES6 is an array method called <code>copyWithin</code>:<br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.copyWithin(target, start[, end = <span class="keyword">this</span>.length])</span><br></pre></td></tr></table></figure>
+<p>The function takes a section of the array and copies it to another place within the array.</p>
+<ul>
+<li><code>target</code>: index where to copy the elements</li>
+<li><code>start</code>: beginning of section to copy</li>
+<li><code>end</code>: end of section to copy. Optional, if not specified the section will go to the end of the array</li>
+</ul>
+<h3 id="Example">Example</h3><p>m<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// Result: [0, 1, 2, 3, 1, 2]</span></span><br></pre></td></tr></table></figure></p>
+<p>Here is a visual representation of what happens:</p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/array-copywithin-es6-explanation.png" alt="Array copyWithin visual explanation"></p>
+<h3 id="Remarks">Remarks</h3><ul>
+<li>As expected parameters are 0 based indexes.</li>
+<li>The <code>copyWithin</code> modifies the array itself, it does not return a copy of it.</li>
+<li>The array size if not modified, <code>copyWithin</code> only copies what fits.</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Part of the additions to ES6 is an array method called <code>copyWithin</code>:<br>]]>
+    
+    </summary>
+    
+      <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
+    
+      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Basic git log commands]]></title>
@@ -438,73 +474,6 @@
       <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
       <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
-    
-      <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Debug hexo blog generation in webstorm]]></title>
-    <link href="http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/"/>
-    <id>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</id>
-    <published>2016-02-02T06:44:51.000Z</published>
-    <updated>2016-02-11T12:50:28.000Z</updated>
-    <content type="html"><![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a> </p>
-<h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
-<h2 id="The_trick">The trick</h2><p>The trick here is to specify the path to the hexo executable located in <code>node_modules/.bin/hexo</code>.</p>
-<p>When adding your configuration, use the following:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Value</th>
-<th>Example </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Node Interpreter</td>
-<td>Path to Node</td>
-<td>/usr/local/bin/node (on OSX)</td>
-</tr>
-<tr>
-<td>Node Parameters</td>
-<td>Node args to specify debug mode</td>
-<td>--debug-brk</td>
-</tr>
-<tr>
-<td>Working Directory</td>
-<td>Project Directory</td>
-<td>path/to/project</td>
-</tr>
-<tr>
-<td>JavaScript File</td>
-<td>Path to hexo executable</td>
-<td>node_modules/.bin/hexo</td>
-</tr>
-<tr>
-<td>Application Parameters</td>
-<td>CLI command args</td>
-<td>generate</td>
-</tr>
-<tr>
-<td>Environment Variables</td>
-<td>process.env.ENV_VARIABLE</td>
-<td><em>empty</em></td>
-</tr>
-</tbody>
-</table>
-<p>Once you are done, set up a breakpoint somewhere and hit the debug button.</p>
-<p>Thanks to this <a href="http://stackoverflow.com/questions/30942953/how-can-i-debug-a-node-app-that-is-started-via-the-command-line-cli-like-forev" target="_blank" rel="external">Stack Overflow Post</a> for pointing me in the right direction.<br>You can refer to it if you wish to use <code>node-inspector</code> instead of Webstorm to do your debugging.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br>]]>
-    
-    </summary>
-    
-      <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
     
       <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
     

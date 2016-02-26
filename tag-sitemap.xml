@@ -177,13 +177,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-02-11T12:37:43.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/HTML/</loc>
         <lastmod>2016-02-11T12:37:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -296,21 +289,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/ES6/</loc>
-        <lastmod>2016-02-20T03:06:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Babel/</loc>
-        <lastmod>2016-02-20T03:06:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/ES2015/</loc>
         <lastmod>2016-02-20T03:06:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -347,6 +326,27 @@
     <url>
         <loc>http://klugjo.github.io/tags/Git/</loc>
         <lastmod>2016-02-23T13:58:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ES6/</loc>
+        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ES2015/</loc>
+        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

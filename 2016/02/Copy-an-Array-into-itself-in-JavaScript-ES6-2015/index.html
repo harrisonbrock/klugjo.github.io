@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Sitemap | CodeBlocQ</title>
+  <title>Copy an Array into itself in JavaScript ES6/2015 | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="Part of the additions to ES6 is an array method called copyWithin:">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Copy an Array into itself in JavaScript ES6/2015"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -73,7 +75,7 @@
 
 
 
-<body class="bg2">
+<body class="bg1">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -91,35 +93,76 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<div class="archive-title tag">Sitemap</div>
-
-<div class="archive">
+<article class="post detail-view" >
   
-    <article class="post list-view" onclick="window.location.href = '/2016/01/Add-a-sitemap-to-your-hexo-blog/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
   
-    <h1 class="title"><a href="/2016/01/Add-a-sitemap-to-your-hexo-blog/">Add a sitemap to your hexo blog</a></h1>
+    <h1 class="title">Copy an Array into itself in JavaScript ES6/2015</h1>
   
 
-            <div class="subtitle" datetime="2016-01-18T07:41:29.000Z">
-              2016-01-18
-              
-  
-  <a class="tag-title" href="/tags/Hexo/">#Hexo</a> <a class="tag-title" href="/tags/JavaScript/">#JavaScript</a> <a class="tag-title" href="/tags/Sitemap/">#Sitemap</a>
-
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-code_badge"></span>
-          </div>
-        </header>
+        <div class="subtitle" datetime="2016-02-24T09:42:32.000Z">
+          2016-02-24
+          
+        </div>
       </div>
-    </article>
+      <div class="icon-container">
+        <span class="icon devicons-javascript_badge"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>Part of the additions to ES6 is an array method called <code>copyWithin</code>:<br><a id="more"></a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.copyWithin(target, start[, end = <span class="keyword">this</span>.length])</span><br></pre></td></tr></table></figure>
+<p>The function takes a section of the array and copies it to another place within the array.</p>
+<ul>
+<li><code>target</code>: index where to copy the elements</li>
+<li><code>start</code>: beginning of section to copy</li>
+<li><code>end</code>: end of section to copy. Optional, if not specified the section will go to the end of the array</li>
+</ul>
+<h3 id="Example">Example</h3><p>m<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// Result: [0, 1, 2, 3, 1, 2]</span></span><br></pre></td></tr></table></figure></p>
+<p>Here is a visual representation of what happens:</p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/array-copywithin-es6-explanation.png" alt="Array copyWithin visual explanation"></p>
+<h3 id="Remarks">Remarks</h3><ul>
+<li>As expected parameters are 0 based indexes.</li>
+<li>The <code>copyWithin</code> modifies the array itself, it does not return a copy of it.</li>
+<li>The array size if not modified, <code>copyWithin</code> only copies what fits.</li>
+</ul>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
   
-</div></div></div>
+  <div class="tags">
+    <a href="/tags/ES2015/">ES2015</a>, <a href="/tags/ES6/">ES6</a>, <a href="/tags/JavaScript/">JavaScript</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -142,7 +185,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
