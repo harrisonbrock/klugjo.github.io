@@ -75,7 +75,7 @@
 
 
 
-<body class="bg3">
+<body class="bg6">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -138,11 +138,11 @@
 <li>I wouldn’t have been able to come up with the regex out of the blue. I used quite a few google searches before finding a solution that I liked. This tutorial is not meant to be a detailed explanation about grep, sed or regex.</li>
 </ul>
 <h2 id="3_-_Download_the_icons">3 - Download the icons</h2><p>To <a href="https://github.com/jkbrzt/httpie#download-mode" target="_blank" rel="external">download a file with HTTPie</a>, use:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http <span class="operator">-d</span> url</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http <span class="_">-d</span> url</span><br></pre></td></tr></table></figure>
 <p>We will use a while loop with read to iterate through the list of favicon URLs:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="operator">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="_">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
 <p>And here is the final command:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span> | sed <span class="string">'s/href="\(.*\)"/\1/'</span> | &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="operator">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http http://www.fipradio.fr/player | grep -o <span class="string">'href="http[^"]*ico"'</span> | sed <span class="string">'s/href="\(.*\)"/\1/'</span> | &#123; <span class="keyword">while</span> <span class="built_in">read</span> url ; <span class="keyword">do</span> http <span class="_">-d</span> <span class="variable">$url</span> ; <span class="keyword">done</span> ; &#125;</span><br></pre></td></tr></table></figure>
 <p>Press enter and you will see a progress bar for the favicon.ico download.</p>
 
         </div>

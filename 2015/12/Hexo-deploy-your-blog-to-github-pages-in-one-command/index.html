@@ -76,7 +76,7 @@ Your hexo can be hosted for free on github pages but this tutorial would also wo
 
 
 
-<body class="bg2">
+<body class="bg7">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -129,7 +129,7 @@ Your hexo can be hosted for free on github pages but this tutorial would also wo
 <h2 id="Remarks">Remarks</h2><h3 id="You_need_to_generate_your_site_first">You need to generate your site first</h3><p><code>hexo deploy</code> will not generate your pages, you need to launch <code>hexo generate</code> first.</p>
 <p>If you want an easy way to do both at the same time, you could <a href="/2015/12/Run-scripts-with-npm/" target="_blank">create an npm script</a> to do this:</p>
 <p>In your package.json add</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"deploy"</span>: <span class="string">"hexo generate &amp;&amp; hexo deploy"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">  <span class="string">"deploy"</span>: <span class="string">"hexo generate &amp;&amp; hexo deploy"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>then run <code>npm run deploy</code> to first generate and then deploy your blog.</p>
 <h3 id="You_can_add_several_repos_if_you_want_to_push_your_blog_to_several_places">You can add several repos if you want to push your blog to several places</h3><p>Just duplicated the <code>repo:</code> line:</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-blog-url.github.io</span></span><br><span class="line">  <span class="attribute">repo</span>: <span class="attribute">https</span>:<span class="comment">//github.com/username/your-second-blog-url.github.io</span></span><br></pre></td></tr></table></figure>
@@ -147,7 +147,7 @@ Your hexo can be hosted for free on github pages but this tutorial would also wo
           
   
   <div class="tags">
-    <a href="/tags/GitHub/">GitHub</a>, <a href="/tags/Hexo/">Hexo</a>, <a href="/tags/Node/">Node</a>
+    <a href="/tags/Hexo/">Hexo</a>, <a href="/tags/Node/">Node</a>, <a href="/tags/GitHub/">GitHub</a>
   </div>
 
         

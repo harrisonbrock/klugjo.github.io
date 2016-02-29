@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-26T00:58:11.000Z</updated>
+  <updated>2016-02-29T09:53:16.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Best git log aliases]]></title>
+    <link href="http://klugjo.github.io/2016/02/Best-git-log-aliases/"/>
+    <id>http://klugjo.github.io/2016/02/Best-git-log-aliases/</id>
+    <published>2016-02-29T08:38:44.000Z</published>
+    <updated>2016-02-29T09:53:16.000Z</updated>
+    <content type="html"><![CDATA[<p>This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.</p>
+<p>Please feel free to submit your own in the comments below.<br><a id="more"></a></p>
+<h2 id="Add_an_alias">Add an alias</h2><p>To add aliases, open your <code>.gitconfig</code> file and you will see an alias section:</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">alias</span>]</span><br><span class="line">	ac = !git <span class="keyword">add </span>. &amp;&amp; git commit -am</span><br></pre></td></tr></table></figure>
+<p>If you are on OSX, open a new command prompt and type:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span> .gitconfig</span><br></pre></td></tr></table></figure>
+<p>To use the alias, simply type:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> aliasname</span><br></pre></td></tr></table></figure>
+<h2 id="Log_aliases">Log aliases</h2><p>In no particular order:</p>
+<h3 id="1_-_One_liner_with_colors">1 - One liner with colors</h3><p>Will log a list of commits, all on one line with customisable colours. Useful to know who has changed what on the repo recently.</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l1 = <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"</span> --decorate --date=short</span><br></pre></td></tr></table></figure>
+<p><a href="https://gist.github.com/mwhite/6887990" target="_blank" rel="external">Source</a></p>
+<h3 id="2_-_Graph_one_liner">2 - Graph one liner</h3><p>Will log a list of commits with only the commit name and SHA. Useful to have a quick overview of the branches on the repo. I usually use the web UI for this, but this can be quicker if all you need is to refresh your memory.</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">l2</span> <span class="comment">=</span> <span class="comment">log</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">graph</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">oneline</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">decorate</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">all</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/" target="_blank" rel="external">Source</a> (first comment)</p>
+<h3 id="3_-_Search_commit_name_history">3 - Search commit name history</h3><p>Will search previous commits for a specific term. Useful if you want to find a specific comment based on the comment.</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">l3</span> = !git log --<span class="literal">on</span>eline | grep</span><br></pre></td></tr></table></figure>
+<p>Use it like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> l3 JIRA <span class="comment"># Will display all commits with 'JIRA' in the description</span></span><br></pre></td></tr></table></figure>
+<h3 id="4_-_Details_about_the_last_commit">4 - Details about the last commit</h3><p>Will show all the differences introduced in the last commit.</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">l4</span> = log -p -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="5_-_Get_commits_for_n_days_before_today">5 - Get commits for n days before today</h3><p>Another one by myself. It makes use of functions and displays the list of commits made before X days ago.</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l5 = <span class="string">"!f() &#123; \</span><br><span class="line">        git log --after=\"</span>$(date -j -v-$1d +<span class="meta">%Y</span>-<span class="meta">%m</span>-<span class="meta">%d</span>)\<span class="string">" --oneline; \</span><br><span class="line">    &#125;; f"</span></span><br></pre></td></tr></table></figure>
+<p>Use it like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git l5 15 <span class="comment"># Get the commits made in the last 15 days</span></span><br></pre></td></tr></table></figure>
+<h2 id="Summary">Summary</h2><p>I hope you found these useful, I will add more as I go.</p>
+<p>Here is the list so far:</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">l1 = <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"</span> --decorate --date=short</span><br><span class="line">l2 = <span class="keyword">log</span> --graph --oneline --decorate --all</span><br><span class="line">l3 = !git <span class="keyword">log</span> --oneline | <span class="keyword">grep</span></span><br><span class="line">l4 = <span class="keyword">log</span> -p -<span class="number">1</span></span><br><span class="line">l5 = <span class="string">"!f() &#123; \</span><br><span class="line">        git log --after=\"$(date -j -v-$1d +%Y-%m-%d)\" --oneline; \</span><br><span class="line">    &#125;; f"</span></span><br></pre></td></tr></table></figure>
+<p>Thanks for reading !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.</p>
+<p>Please feel free to submit your own in the comments below.<br>]]>
+    
+    </summary>
+    
+      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+      <category term="Log" scheme="http://klugjo.github.io/tags/Log/"/>
+    
+      <category term="Alias" scheme="http://klugjo.github.io/tags/Alias/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Copy an Array into itself in JavaScript ES6/2015]]></title>
@@ -42,11 +92,11 @@
     
     </summary>
     
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
       <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
     
       <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -59,24 +109,24 @@
     <content type="html"><![CDATA[<p>In this article you will learn a few useful commands to check the activity on your repo.</p>
 <a id="more"></a>
 <h2 id="git_log">git log</h2><p>Get your repo history by using </p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="command">log</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <h2 id="Get_more_commit_details">Get more commit details</h2><p>In certain circumstances, you might want to get more detail on some commits.</p>
 <p>Use the <code>-p</code> flag to see all the differences introduced in each commit</p>
 <p>Use the <code>-2</code> to see the last 2 commits only</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log -<span class="tag">p</span> -<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log -<span class="selector-tag">p</span> -<span class="number">2</span></span><br></pre></td></tr></table></figure>
 <h2 id="Get_less_commit_details">Get less commit details</h2><p>In other situations, you want to have less commit details and more of an overview of what is going on in your repo.</p>
 <p>The <code>--oneline</code> flag will help you get a list of commits on one line</p>
 <p>The <code>--graph</code> flag will display a graph that shows to which branches the commits were made</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="command">log</span> <span class="comment">--oneline --graph</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment">--oneline --graph</span></span><br></pre></td></tr></table></figure>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>In this article you will learn a few useful commands to check the activity on your repo.</p>]]>
     
     </summary>
     
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
       <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
   </entry>
   
@@ -94,7 +144,7 @@
 <li>Create a file names <code>CNAME</code> at the root of your website. The file name has to be all Caps.</li>
 <li>Inside that file, input your custom domain name <u>without</u> <code>http(s)://</code>.<br><a href="https://github.com/klugjo/klugjo.github.io/blob/master/CNAME" target="_blank" rel="external">My CNAME file</a> contains: </li>
 </ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www<span class="class">.codeblocq</span><span class="class">.com</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>Commit and push your changes</li>
 </ul>
@@ -114,11 +164,11 @@
     
     </summary>
     
+      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
+    
       <category term="Custom Domain" scheme="http://klugjo.github.io/tags/Custom-Domain/"/>
     
       <category term="DNS Provider" scheme="http://klugjo.github.io/tags/DNS-Provider/"/>
-    
-      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
     
   </entry>
   
@@ -130,12 +180,12 @@
     <updated>2016-02-20T03:02:45.000Z</updated>
     <content type="html"><![CDATA[<p>This article will show you how to get started with ES6 modules in node with Babel.<br><a id="more"></a><br>If you need to setup your environment, check out <a href="/2016/02/How-to-setup-Babel6-for-NodeJs/">this article</a>.</p>
 <h2 id="Exports">Exports</h2><p>In your library, export functions and classes this way:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------</span></span><br><span class="line"><span class="comment">// module1.js</span></span><br><span class="line"><span class="comment">// ----------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> life = <span class="string">"42"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    constructor(color) &#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCarColor() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------</span></span><br><span class="line"><span class="comment">// module1.js</span></span><br><span class="line"><span class="comment">// ----------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> life = <span class="string">"42"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(color) &#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCarColor() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Imports">Imports</h2><h3 id="Import_specific">Import specific</h3><p>You can specify which value you wish to import using the following syntax:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;life, add <span class="keyword">as</span> addition&#125; <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line">console.log(life); <span class="comment">// 42</span></span><br><span class="line"><span class="built_in">console</span>.log(addition(<span class="number">1</span>,<span class="number">1</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;life, add <span class="keyword">as</span> addition&#125; <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(life); <span class="comment">// 42</span></span><br><span class="line"><span class="built_in">console</span>.log(addition(<span class="number">1</span>,<span class="number">1</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 <p>Note how you can use <code>as</code> to change the name of some of the values.</p>
 <h3 id="Import_all">Import all</h3><p>You can use <code>*</code> to import all the values</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> myModule <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line">var car = new myModule.Car(<span class="string">"blue"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(car.getCarColor()); <span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> myModule <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> car = <span class="keyword">new</span> myModule.Car(<span class="string">"blue"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(car.getCarColor()); <span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
 <h2 id="Default_export">Default export</h2><p>If your module only has one value to export, use <code>default</code> when exporting that value.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Export - myModule.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import</span></span><br><span class="line"><span class="keyword">import</span> myFunc <span class="keyword">from</span> <span class="string">'./myModule'</span>;</span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
 <p>This information should be enough for you to get started with ES6/ES2015 modules. If you need to know more, I would recommend <a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="external">this article</a>.</p>
@@ -145,13 +195,13 @@
     
     </summary>
     
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
       <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
     
       <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
     
       <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
   </entry>
   
@@ -178,7 +228,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> doubles = numbers.map(num =&gt; num * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(doubles); <span class="comment">//  [2, 8, 18 ]</span></span><br></pre></td></tr></table></figure>
 <p>Run it with <code>node index.js</code> and check that everything is working.</p>
 <h2 id="Create_a_launcher">Create a launcher</h2><p>When using certain features of ES6, you might encounter an error of type:</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">SyntaxError</span>: <span class="string">Unexpected token</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">SyntaxError:</span> Unexpected token</span><br></pre></td></tr></table></figure>
 <p>This means you will need to create a launcher for your app that loads <code>&#39;babel-core/register&#39;</code> ahead of your code.</p>
 <p>Assuming your entry point is <code>index.js</code>, create the following launcher:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="comment">// launcher.js</span></span><br><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'babel-core/register'</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./index'</span>);</span><br></pre></td></tr></table></figure>
@@ -190,13 +240,13 @@
     
     </summary>
     
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
       <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
     
       <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
     
       <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
     
   </entry>
   
@@ -271,11 +321,11 @@
     
       <category term="CSS" scheme="http://klugjo.github.io/tags/CSS/"/>
     
-      <category term="CSSO" scheme="http://klugjo.github.io/tags/CSSO/"/>
+      <category term="node" scheme="http://klugjo.github.io/tags/node/"/>
     
       <category term="CssMin" scheme="http://klugjo.github.io/tags/CssMin/"/>
     
-      <category term="node" scheme="http://klugjo.github.io/tags/node/"/>
+      <category term="CSSO" scheme="http://klugjo.github.io/tags/CSSO/"/>
     
   </entry>
   
@@ -320,9 +370,9 @@
     
     </summary>
     
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
       <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
   </entry>
   
@@ -412,9 +462,9 @@
     
     </summary>
     
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
       <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
     
   </entry>
   
@@ -446,36 +496,9 @@
     
       <category term="Books" scheme="http://klugjo.github.io/tags/Books/"/>
     
-      <category term="General Business" scheme="http://klugjo.github.io/tags/General-Business/"/>
-    
       <category term="Networking" scheme="http://klugjo.github.io/tags/Networking/"/>
     
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Node Auto Completion in WebStorm on OSX]]></title>
-    <link href="http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/"/>
-    <id>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</id>
-    <published>2016-02-03T01:25:55.000Z</published>
-    <updated>2016-02-11T12:50:44.000Z</updated>
-    <content type="html"><![CDATA[<p>Quick article on how to add auto completion in Webstorm 11 for all the core Node libraries.<br><a id="more"></a></p>
-<h2 id="The_problem">The problem</h2><p>Without Node coding assistance, you will get warnings on all the Node.js core functions like <code>require</code> or <code>__dirname</code>.</p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/node-code-completion-missing-webstorm.png" alt="Node Code Completion missing example" title="node code completion missing in webstorm"></p>
-<h2 id="The_solution">The solution</h2><p>In webstorm 11 you need to enable the Node.js assistance:</p>
-<p>Got to <strong>Preferences &gt; Languages &amp; Frameworks &gt; Node.js and npm</strong> and click <strong>Enable</strong> under Code Assistance.</p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/enable-core-node-js-code-assistance-webstorm.png" alt="Enable Node.js code assistance" title="enable the Node.js assistance"></p>
-<p>Go back to your code and the errors will be gone !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Quick article on how to add auto completion in Webstorm 11 for all the core Node libraries.<br>]]>
-    
-    </summary>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
-    
-      <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
+      <category term="General Business" scheme="http://klugjo.github.io/tags/General-Business/"/>
     
   </entry>
   

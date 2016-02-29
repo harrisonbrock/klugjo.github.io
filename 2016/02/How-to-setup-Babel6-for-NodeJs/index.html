@@ -75,7 +75,7 @@
 
 
 
-<body class="bg1">
+<body class="bg2">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,7 +132,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> doubles = numbers.map(num =&gt; num * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(doubles); <span class="comment">//  [2, 8, 18 ]</span></span><br></pre></td></tr></table></figure>
 <p>Run it with <code>node index.js</code> and check that everything is working.</p>
 <h2 id="Create_a_launcher">Create a launcher</h2><p>When using certain features of ES6, you might encounter an error of type:</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">SyntaxError</span>: <span class="string">Unexpected token</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">SyntaxError:</span> Unexpected token</span><br></pre></td></tr></table></figure>
 <p>This means you will need to create a launcher for your app that loads <code>&#39;babel-core/register&#39;</code> ahead of your code.</p>
 <p>Assuming your entry point is <code>index.js</code>, create the following launcher:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="comment">// launcher.js</span></span><br><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'babel-core/register'</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./index'</span>);</span><br></pre></td></tr></table></figure>
@@ -148,7 +148,7 @@
           
   
   <div class="tags">
-    <a href="/tags/Babel/">Babel</a>, <a href="/tags/ES2015/">ES2015</a>, <a href="/tags/ES6/">ES6</a>, <a href="/tags/Node/">Node</a>
+    <a href="/tags/Node/">Node</a>, <a href="/tags/Babel/">Babel</a>, <a href="/tags/ES2015/">ES2015</a>, <a href="/tags/ES6/">ES6</a>
   </div>
 
         

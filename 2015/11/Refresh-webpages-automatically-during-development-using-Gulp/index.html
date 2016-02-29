@@ -81,7 +81,7 @@ To get started we will need a basic website project with a gulpfile.js that can 
 
 
 
-<body class="bg8">
+<body class="bg4">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,7 +132,7 @@ To get started we will need a basic website project with a gulpfile.js that can 
 <h2 id="1)_Starting_a_webserver_with_gulp-connect">1) Starting a webserver with gulp-connect</h2><p>First install <a href="https://www.npmjs.com/package/gulp-connect" target="_blank" rel="external">gulp-connect</a> locally with <code>npm install --save-dev gulp-connect</code>,</p>
 <p>and add the dependency to the gulpfile.js with <code>var connect = require(&#39;gulp-connect&#39;);</code></p>
 <p>We are now ready to declare our connect task. (Check out <a href="/2015/11/Getting-started-with-Gulp-and-static-websites/">this tutorial</a> if you don’t know what a gulp task is)</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gulp</span><span class="class">.task</span>(<span class="string">'connect'</span>, function () &#123;</span><br><span class="line">    <span class="tag">connect</span><span class="class">.server</span>(&#123;</span><br><span class="line">        <span class="attribute">root</span>: <span class="string">'dist'</span>,</span><br><span class="line">        <span class="attribute">port</span>: <span class="number">8001</span>,</span><br><span class="line">        <span class="attribute">livereload</span>: true</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'connect'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    connect.server(&#123;</span><br><span class="line">        <span class="attribute">root</span>: <span class="string">'dist'</span>,</span><br><span class="line">        <span class="attribute">port</span>: <span class="number">8001</span>,</span><br><span class="line">        <span class="attribute">livereload</span>: <span class="literal">true</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>This will create a webserver running on <a href="http://localhost:8001" target="_blank" rel="external">http://localhost:8001</a> which uses our dist directory as the website root. For more configuration options, check out the <a href="https://github.com/avevlad/gulp-connect#api" target="_blank" rel="external">documentation</a>.</p>
 <p>Add the connect task to the default task: </p>
 <p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;]);</code></p>
@@ -140,7 +140,7 @@ To get started we will need a basic website project with a gulpfile.js that can 
 <h2 id="2)_Opening_a_web_browser_with_gulp-open">2) Opening a web browser with gulp-open</h2><p>Install <a href="https://github.com/stevelacy/gulp-open" target="_blank" rel="external">gulp-open</a> locally with <code>npm install --save-dev gulp-open</code> </p>
 <p>and add the dependency to the gulpfile.js with <code>var open = require(&#39;gulp-open&#39;);</code></p>
 <p>Declare the ‘open’ task:</p>
-<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">gulp</span><span class="class">.task</span>(<span class="string">'open'</span>, <span class="function">function</span>()&#123;</span><br><span class="line">    <span class="tag">gulp</span><span class="class">.src</span>(<span class="string">'dist/index.html'</span>)</span><br><span class="line">        <span class="class">.pipe</span>(<span class="function">open</span>(&#123;<span class="attribute">uri</span>: <span class="string">'http://localhost:8001/'</span>&#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'open'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    gulp.src(<span class="string">'dist/index.html'</span>)</span><br><span class="line">        .pipe(open(&#123;<span class="attribute">uri</span>: <span class="string">'http://localhost:8001/'</span>&#125;));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>and add it to the default task</p>
 <p><code>gulp.task(&#39;default&#39;, [&#39;html&#39;, &#39;css&#39;, &#39;connect&#39;, &#39;open&#39;]);</code></p>
 <p>run your gulp and your browser will open automatically, pointing to your local webserver URL.</p>
@@ -168,7 +168,7 @@ To get started we will need a basic website project with a gulpfile.js that can 
           
   
   <div class="tags">
-    <a href="/tags/Build/">Build</a>, <a href="/tags/Gulp/">Gulp</a>, <a href="/tags/LiveReload/">LiveReload</a>, <a href="/tags/Node/">Node</a>
+    <a href="/tags/Node/">Node</a>, <a href="/tags/Build/">Build</a>, <a href="/tags/Gulp/">Gulp</a>, <a href="/tags/LiveReload/">LiveReload</a>
   </div>
 
         

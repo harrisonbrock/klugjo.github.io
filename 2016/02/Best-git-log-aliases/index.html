@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Best git log aliases | CodeBlocQ</title>
+  <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.
+Please feel free to submit your own in the comments below.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Best git log aliases"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
+  
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-71082014-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="favicons/manifest.json">
+  <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+
+
+<body class="bg2">
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</div></header>
+  <div id="content" class="inner">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
+  
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
+  
+    <h1 class="title">Best git log aliases</h1>
+  
+
+        <div class="subtitle" datetime="2016-02-29T08:38:44.000Z">
+          2016-02-29
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-library_books"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.</p>
+<p>Please feel free to submit your own in the comments below.<br><a id="more"></a></p>
+<h2 id="Add_an_alias">Add an alias</h2><p>To add aliases, open your <code>.gitconfig</code> file and you will see an alias section:</p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">alias</span>]</span><br><span class="line">	ac = !git <span class="keyword">add </span>. &amp;&amp; git commit -am</span><br></pre></td></tr></table></figure>
+<p>If you are on OSX, open a new command prompt and type:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span> .gitconfig</span><br></pre></td></tr></table></figure>
+<p>To use the alias, simply type:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> aliasname</span><br></pre></td></tr></table></figure>
+<h2 id="Log_aliases">Log aliases</h2><p>In no particular order:</p>
+<h3 id="1_-_One_liner_with_colors">1 - One liner with colors</h3><p>Will log a list of commits, all on one line with customisable colours. Useful to know who has changed what on the repo recently.</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l1 = <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"</span> --decorate --date=short</span><br></pre></td></tr></table></figure>
+<p><a href="https://gist.github.com/mwhite/6887990" target="_blank" rel="external">Source</a></p>
+<h3 id="2_-_Graph_one_liner">2 - Graph one liner</h3><p>Will log a list of commits with only the commit name and SHA. Useful to have a quick overview of the branches on the repo. I usually use the web UI for this, but this can be quicker if all you need is to refresh your memory.</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">l2</span> <span class="comment">=</span> <span class="comment">log</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">graph</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">oneline</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">decorate</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">all</span></span><br></pre></td></tr></table></figure>
+<p><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/" target="_blank" rel="external">Source</a> (first comment)</p>
+<h3 id="3_-_Search_commit_name_history">3 - Search commit name history</h3><p>Will search previous commits for a specific term. Useful if you want to find a specific comment based on the comment.</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">l3</span> = !git log --<span class="literal">on</span>eline | grep</span><br></pre></td></tr></table></figure>
+<p>Use it like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> l3 JIRA <span class="comment"># Will display all commits with 'JIRA' in the description</span></span><br></pre></td></tr></table></figure>
+<h3 id="4_-_Details_about_the_last_commit">4 - Details about the last commit</h3><p>Will show all the differences introduced in the last commit.</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">l4</span> = log -p -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="5_-_Get_commits_for_n_days_before_today">5 - Get commits for n days before today</h3><p>Another one by myself. It makes use of functions and displays the list of commits made before X days ago.</p>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l5 = <span class="string">"!f() &#123; \</span><br><span class="line">        git log --after=\"</span>$(date -j -v-$1d +<span class="meta">%Y</span>-<span class="meta">%m</span>-<span class="meta">%d</span>)\<span class="string">" --oneline; \</span><br><span class="line">    &#125;; f"</span></span><br></pre></td></tr></table></figure>
+<p>Use it like this</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git l5 15 <span class="comment"># Get the commits made in the last 15 days</span></span><br></pre></td></tr></table></figure>
+<h2 id="Summary">Summary</h2><p>I hope you found these useful, I will add more as I go.</p>
+<p>Here is the list so far:</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">l1 = <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"</span> --decorate --date=short</span><br><span class="line">l2 = <span class="keyword">log</span> --graph --oneline --decorate --all</span><br><span class="line">l3 = !git <span class="keyword">log</span> --oneline | <span class="keyword">grep</span></span><br><span class="line">l4 = <span class="keyword">log</span> -p -<span class="number">1</span></span><br><span class="line">l5 = <span class="string">"!f() &#123; \</span><br><span class="line">        git log --after=\"$(date -j -v-$1d +%Y-%m-%d)\" --oneline; \</span><br><span class="line">    &#125;; f"</span></span><br></pre></td></tr></table></figure>
+<p>Thanks for reading !</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
+  
+  <div class="tags">
+    <a href="/tags/Git/">Git</a>, <a href="/tags/Log/">Log</a>, <a href="/tags/Alias/">Alias</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'klugjo';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

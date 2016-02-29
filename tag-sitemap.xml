@@ -9,35 +9,21 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/CSS3/</loc>
+        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/HTML5/</loc>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Promise/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/gitignore/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/OSX/</loc>
+        <loc>http://klugjo.github.io/tags/RSS/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -51,28 +37,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Gulp/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/LiveReload/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/OOP/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Startups/</loc>
+        <loc>http://klugjo.github.io/tags/Stylus/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -86,21 +51,21 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/GitHub/</loc>
+        <loc>http://klugjo.github.io/tags/Software-Practices/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/REST/</loc>
+        <loc>http://klugjo.github.io/tags/Single-Responsibility-Principle/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/cURL/</loc>
+        <loc>http://klugjo.github.io/tags/Favicon/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -128,49 +93,84 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Favicon/</loc>
+        <loc>http://klugjo.github.io/tags/Gulp/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Software-Practices/</loc>
+        <loc>http://klugjo.github.io/tags/REST/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Single-Responsibility-Principle/</loc>
+        <loc>http://klugjo.github.io/tags/cURL/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Stylus/</loc>
+        <loc>http://klugjo.github.io/tags/GitHub/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/RSS/</loc>
+        <loc>http://klugjo.github.io/tags/Startups/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
+        <loc>http://klugjo.github.io/tags/OOP/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <loc>http://klugjo.github.io/tags/LiveReload/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/OSX/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/gitignore/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Promise/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/CSS3/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/HTML5/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -198,14 +198,14 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/OS-X/</loc>
+        <loc>http://klugjo.github.io/tags/WebStorm/</loc>
         <lastmod>2016-02-11T12:50:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/WebStorm/</loc>
+        <loc>http://klugjo.github.io/tags/OS-X/</loc>
         <lastmod>2016-02-11T12:50:44.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -324,14 +324,14 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Git/</loc>
-        <lastmod>2016-02-23T13:58:31.000Z</lastmod>
+        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <loc>http://klugjo.github.io/tags/ES2015/</loc>
         <lastmod>2016-02-26T00:58:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -345,8 +345,22 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/ES2015/</loc>
-        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
+        <loc>http://klugjo.github.io/tags/Git/</loc>
+        <lastmod>2016-02-29T09:53:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Log/</loc>
+        <lastmod>2016-02-29T09:53:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Alias/</loc>
+        <lastmod>2016-02-29T09:53:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

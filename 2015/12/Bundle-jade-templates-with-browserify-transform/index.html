@@ -76,7 +76,7 @@ In this example we will look at how to require a jade template directly inside o
 
 
 
-<body class="bg3">
+<body class="bg4">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -119,10 +119,10 @@ In this example we will look at how to require a jade template directly inside o
           <p><a href="https://github.com/substack/node-browserify/wiki/list-of-transforms" target="_blank" rel="external">Browserify transforms</a> can be used to load non Javascript files using the <a href="http://requirejs.org/docs/commonjs.html" target="_blank" rel="external">Common JS</a> syntax. You could for example load <a href="https://github.com/jnordberg/coffeeify" target="_blank" rel="external">CoffeeScript</a>, <a href="https://github.com/guzart/browserify-typescriptifier" target="_blank" rel="external">TypeScript</a> or <a href="https://github.com/babel/babelify" target="_blank" rel="external">compile ES6 to ES5</a> when packaging your JavaScript.</p>
 <p>In this example we will look at how to require a jade template directly inside our JS code and have browserify bundle everything up nicely.</p>
 <a id="more"></a> 
-<h2 id="1)_Project_setup">1) Project setup</h2><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-- dist // Build will end up here</span><br><span class="line">|-- src // All source code <span class="keyword">is</span> <span class="keyword">inside</span> this folder</span><br><span class="line">    |-- templates</span><br><span class="line">        |-- quote.jade // Our jade template</span><br><span class="line">    |-- js</span><br><span class="line">        |-- index.js // Our main JavaScript file</span><br><span class="line">|-- package.json</span><br></pre></td></tr></table></figure>
+<h2 id="1)_Project_setup">1) Project setup</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|<span class="comment">-- dist // Build will end up here</span></span><br><span class="line">|<span class="comment">-- src // All source code is inside this folder</span></span><br><span class="line">    |<span class="comment">-- templates</span></span><br><span class="line">        |<span class="comment">-- quote.jade // Our jade template</span></span><br><span class="line">    |<span class="comment">-- js</span></span><br><span class="line">        |<span class="comment">-- index.js // Our main JavaScript file</span></span><br><span class="line">|<span class="comment">-- package.json</span></span><br></pre></td></tr></table></figure>
 <p>We have an <code>index.js</code> file in which we will require and render our jade template.</p>
 <h2 id="2)_Jade_template">2) Jade template</h2><p>Let’s start by setting up a simple <code>quote.jade</code> <a href="http://jade-lang.com/" target="_blank" rel="external">Jade template</a>.</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">h3 #&#123;quote&#125;&#10;span - #&#123;author&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h3 #&#123;quote&#125;</span><br><span class="line">span - #&#123;author&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="3)_Javascript">3) Javascript</h2><p>We are now ready to include our template in our Javascript. Require your jade template the same way as you would for a JS file but <strong>add the file extension</strong>.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Require our jade template as we would require a Js file</span></span><br><span class="line"><span class="keyword">var</span> quoteTemplate = <span class="built_in">require</span>(<span class="string">'../templates/quote.jade'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Render the template</span></span><br><span class="line"><span class="keyword">var</span> output = quoteTemplate(&#123;</span><br><span class="line">    quote: <span class="string">"Be yourself; everyone else is already taken."</span>,</span><br><span class="line">    author: <span class="string">"Oscar Wilde"</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(output);</span><br></pre></td></tr></table></figure>
 <h2 id="4)_Bundle_up">4) Bundle up</h2><h3 id="Let’s_start_by_installing_everything_we_need:">Let’s start by installing everything we need:</h3><ul>
@@ -131,16 +131,16 @@ In this example we will look at how to require a jade template directly inside o
 <li><p>Install <a href="https://github.com/domenic/jadeify" target="_blank" rel="external">jadeify</a>, our jade browserify transform: </p>
 </li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> jadeify <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install </span><span class="keyword">jadeify </span>--save</span><br></pre></td></tr></table></figure>
 <ul>
 <li>You will also need to install jade locally even if you already have it installed globally. This is because browserify needs to access some of the jade code to include it in the output file.</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="operator"><span class="keyword">install</span> jade <span class="comment">--save</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install </span><span class="keyword">jade </span>--save</span><br></pre></td></tr></table></figure>
 <h3 id="We_are_now_ready_to_create_our_package:">We are now ready to create our package:</h3><p>To specify a transform when launching browserify, use <code>-transform</code> or <code>-t</code> followed by the plugin name.</p>
 <p>So in our case:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">browserify </span>-t jadeify <span class="string">"src/js/index.js"</span> -o <span class="string">"dist/bundle.js"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">browserify </span>-t <span class="keyword">jadeify </span><span class="string">"src/js/index.js"</span> -o <span class="string">"dist/bundle.js"</span></span><br></pre></td></tr></table></figure>
 <p>Your code is all packaged in one Js file. Include the bundle.js file in a simple HTML page and check the console. You should see:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">h3</span>&gt;</span> Be yourself; everyone else is already taken.<span class="tag">&lt;/<span class="title">h3</span>&gt;</span><span class="tag">&lt;<span class="title">span</span>&gt;</span>- Oscar Wilde<span class="tag">&lt;/<span class="title">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h3</span>&gt;</span> Be yourself; everyone else is already taken.<span class="tag">&lt;/<span class="name">h3</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>- Oscar Wilde<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>Have fun with browserify transforms !</p>
 
         </div>
@@ -152,7 +152,7 @@ In this example we will look at how to require a jade template directly inside o
           
   
   <div class="tags">
-    <a href="/tags/Browserify/">Browserify</a>, <a href="/tags/Jade/">Jade</a>, <a href="/tags/Node/">Node</a>
+    <a href="/tags/Node/">Node</a>, <a href="/tags/Browserify/">Browserify</a>, <a href="/tags/Jade/">Jade</a>
   </div>
 
         
