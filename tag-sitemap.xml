@@ -9,14 +9,14 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -93,13 +93,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Gulp/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/REST/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -108,6 +101,13 @@
 
     <url>
         <loc>http://klugjo.github.io/tags/cURL/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Gulp/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -346,21 +346,21 @@
 
     <url>
         <loc>http://klugjo.github.io/tags/Git/</loc>
-        <lastmod>2016-02-29T09:53:16.000Z</lastmod>
+        <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Log/</loc>
-        <lastmod>2016-02-29T09:53:16.000Z</lastmod>
+        <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Alias/</loc>
-        <lastmod>2016-02-29T09:53:16.000Z</lastmod>
+        <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

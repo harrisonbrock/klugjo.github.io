@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-02-29T09:53:16.000Z</updated>
+  <updated>2016-02-29T09:57:16.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://klugjo.github.io/2016/02/Best-git-log-aliases/"/>
     <id>http://klugjo.github.io/2016/02/Best-git-log-aliases/</id>
     <published>2016-02-29T08:38:44.000Z</published>
-    <updated>2016-02-29T09:53:16.000Z</updated>
+    <updated>2016-02-29T09:57:16.000Z</updated>
     <content type="html"><![CDATA[<p>This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.</p>
 <p>Please feel free to submit your own in the comments below.<br><a id="more"></a></p>
 <h2 id="Add_an_alias">Add an alias</h2><p>To add aliases, open your <code>.gitconfig</code> file and you will see an alias section:</p>
