@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/03/Unit-Test-React-Components/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/02/Best-git-log-aliases/</loc>
         <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -159,7 +167,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -167,7 +175,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -207,7 +215,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
+        <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -215,7 +223,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
+        <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -239,7 +247,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -247,7 +255,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+        <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -279,14 +287,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -304,6 +304,14 @@
 
     <url>
         <loc>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

@@ -9,14 +9,14 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -38,13 +38,6 @@
 
     <url>
         <loc>http://klugjo.github.io/tags/Stylus/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/React/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -86,7 +79,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/TDD/</loc>
+        <loc>http://klugjo.github.io/tags/Gulp/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -107,13 +100,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Gulp/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/GitHub/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -121,14 +107,14 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Startups/</loc>
+        <loc>http://klugjo.github.io/tags/OOP/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/OOP/</loc>
+        <loc>http://klugjo.github.io/tags/Startups/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -289,13 +275,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Babel/</loc>
-        <lastmod>2016-02-20T03:06:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Github/</loc>
         <lastmod>2016-02-22T11:29:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -324,27 +303,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/ES2015/</loc>
-        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/ES6/</loc>
-        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Git/</loc>
         <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -361,6 +319,55 @@
     <url>
         <loc>http://klugjo.github.io/tags/Alias/</loc>
         <lastmod>2016-02-29T09:57:16.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Babel/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ES2015/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ES6/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/React/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/TDD/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Webpack/</loc>
+        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
