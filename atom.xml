@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-03-03T03:46:46.000Z</updated>
+  <updated>2016-03-07T09:45:59.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Setup Gulp to compile ES6 ES2015 code]]></title>
+    <link href="http://klugjo.github.io/2016/03/Setup-Gulp-to-compile-ES6-ES2015-code/"/>
+    <id>http://klugjo.github.io/2016/03/Setup-Gulp-to-compile-ES6-ES2015-code/</id>
+    <published>2016-03-07T09:20:16.000Z</published>
+    <updated>2016-03-07T09:45:59.000Z</updated>
+    <content type="html"><![CDATA[<p>Basics of setting yourself up with Gulp and Babel. </p>
+<p>In this example I am going to look at compiling ES6 to ES5 using Babel, but this example will work with compiling your React jsx code as well. As long a you know how to configure Babel.</p>
+<a id="more"></a>
+<h2 id="Project_Structure">Project Structure</h2><p>This is what my project folder structure looks like:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|<span class="comment">-- dist // Build will end up here</span></span><br><span class="line">|<span class="comment">-- src // All source code should be inside this folder</span></span><br><span class="line">    |<span class="comment">-- index.js </span></span><br><span class="line">|<span class="comment">-- gulpfile.js</span></span><br></pre></td></tr></table></figure>
+<p>Our <code>src/index.js</code> contains the ES6 code and gulp will create a compiled version inside the <code>/dist</code> folder.</p>
+<p>The ES2015 code I am using to test is</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(() =&gt; &#123; <span class="built_in">console</span>.log(<span class="string">"ES2015 FTW"</span>); &#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="npm_install">npm install</h2><p>Let’s install everything we need</p>
+<h3 id="Babel">Babel</h3><p>We need the babel core, CLI and es2015 preset:</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install </span>--save-dev <span class="keyword">babel-cli </span><span class="keyword">babel-core </span><span class="keyword">babel-preset-es2015</span></span><br></pre></td></tr></table></figure>
+<h3 id="Gulp">Gulp</h3><p>We need gulp and the <a href="https://github.com/babel/gulp-babel" target="_blank" rel="external">babel module for gulp</a>.</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> gulp gulp-babel</span><br></pre></td></tr></table></figure>
+<p>Also make sure you have <code>gulp</code> installed globally.</p>
+<h2 id="Configuration">Configuration</h2><h3 id="Babel-1">Babel</h3><p>Configure babel to use the es2015 plugin in your package.json (or .babelrc if you prefer).</p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"babel"</span>: &#123;</span><br><span class="line">    <span class="string">"presets"</span>: [<span class="string">"es2015"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Gulp-1">Gulp</h3><p>Create your <code>gulpfile.js</code> and require the two gulp libs:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">var</span> babel = <span class="built_in">require</span>(<span class="string">'gulp-babel'</span>);</span><br></pre></td></tr></table></figure>
+<p>Then declare our default task:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Then for our task content: </p>
+<ul>
+<li>Pick up the js files in <code>/src</code></li>
+<li>Compile it with babel</li>
+<li>Put everything in <code>/dist</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(<span class="string">'default'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'src/**/*.js'</span>)</span><br><span class="line">        .pipe(babel())</span><br><span class="line">        .pipe(gulp.dest(<span class="string">'dist'</span>));</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="Run_the_build_script">Run the build script</h2><p>Run the build script using </p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>gulp</span><br></pre></td></tr></table></figure>
+<p>And your compiled files will be in the output folder.</p>
+<p>This is what my <code>index.js</code> looks like after being transpiled:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"ES6 FTW"</span>);</span><br><span class="line">&#125;, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Note">Note</h3><p>If you want to write your <code>gulpfile.js</code> in ES2015 and your version of node does not support it, <a href="https://markgoodyear.com/2015/06/using-es6-with-gulp/" target="_blank" rel="external">follow the instructions in this article</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Basics of setting yourself up with Gulp and Babel. </p>
+<p>In this example I am going to look at compiling ES6 to ES5 using Babel, but this example will work with compiling your React jsx code as well. As long a you know how to configure Babel.</p>]]>
+    
+    </summary>
+    
+      <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
+    
+      <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
+    
+      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
+    
+      <category term="Gulp" scheme="http://klugjo.github.io/tags/Gulp/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Unit Test React Components]]></title>
@@ -322,15 +378,14 @@
     <link href="http://klugjo.github.io/2016/02/Babel-and-Node-Module-Loader/"/>
     <id>http://klugjo.github.io/2016/02/Babel-and-Node-Module-Loader/</id>
     <published>2016-02-20T01:26:03.000Z</published>
-    <updated>2016-02-20T03:02:45.000Z</updated>
+    <updated>2016-03-03T07:36:30.000Z</updated>
     <content type="html"><![CDATA[<p>This article will show you how to get started with ES6 modules in node with Babel.<br><a id="more"></a><br>If you need to setup your environment, check out <a href="/2016/02/How-to-setup-Babel6-for-NodeJs/">this article</a>.</p>
 <h2 id="Exports">Exports</h2><p>In your library, export functions and classes this way:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------</span></span><br><span class="line"><span class="comment">// module1.js</span></span><br><span class="line"><span class="comment">// ----------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> life = <span class="string">"42"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(color) &#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCarColor() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Imports">Imports</h2><h3 id="Import_specific">Import specific</h3><p>You can specify which value you wish to import using the following syntax:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;life, add <span class="keyword">as</span> addition&#125; <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(life); <span class="comment">// 42</span></span><br><span class="line"><span class="built_in">console</span>.log(addition(<span class="number">1</span>,<span class="number">1</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 <p>Note how you can use <code>as</code> to change the name of some of the values.</p>
-<h3 id="Import_all">Import all</h3><p>You can use <code>*</code> to import all the values</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> myModule <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> car = <span class="keyword">new</span> myModule.Car(<span class="string">"blue"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(car.getCarColor()); <span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
+<h3 id="Import_all">Import all</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module1 <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> car = <span class="keyword">new</span> module1.Car(<span class="string">"blue"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(car.getCarColor()); <span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
 <h2 id="Default_export">Default export</h2><p>If your module only has one value to export, use <code>default</code> when exporting that value.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Export - myModule.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import</span></span><br><span class="line"><span class="keyword">import</span> myFunc <span class="keyword">from</span> <span class="string">'./myModule'</span>;</span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
 <p>This information should be enough for you to get started with ES6/ES2015 modules. If you need to know more, I would recommend <a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="external">this article</a>.</p>
@@ -512,98 +567,6 @@
     <summary type="html">
     <![CDATA[<p>Common everyday scenario: you are working on your feature branch fixing a bug and your boss asks you for a build. You need to switch back to your main dev branch. Before that happens, you have to take care of all your current changes. You can either commit if you are ready for it, or maybe you have only modified a few lines and can simply revert your changes. </p>
 <p>Well there is a better solution: git stash.<br>]]>
-    
-    </summary>
-    
-      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
-    
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Git add]]></title>
-    <link href="http://klugjo.github.io/2016/02/git-add/"/>
-    <id>http://klugjo.github.io/2016/02/git-add/</id>
-    <published>2016-02-09T07:48:25.000Z</published>
-    <updated>2016-02-11T12:36:48.000Z</updated>
-    <content type="html"><![CDATA[<p>This article is a description of all the basic git add commands.</p>
-<a id="more"></a> 
-<h2 id="Understanding">Understanding</h2><p>Git uses a notion of changes staged for the next commit where you set which change you wish to include in the next <code>git commit</code> command. This includes new files, deleted files and modifications.</p>
-<p>For those in a hurry, here is the conclusion of this article:</p>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th style="text-align:center">New Files</th>
-<th style="text-align:center">Modified Files</th>
-<th style="text-align:center">Deleted Files </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>git add -A</code></td>
-<td style="text-align:center">V</td>
-<td style="text-align:center">V</td>
-<td style="text-align:center">V</td>
-</tr>
-<tr>
-<td><code>git add .</code></td>
-<td style="text-align:center">V</td>
-<td style="text-align:center">V</td>
-<td style="text-align:center">V</td>
-</tr>
-<tr>
-<td><code>git add -u</code></td>
-<td style="text-align:center"><span style="color: red;">X</span></td>
-<td style="text-align:center">V</td>
-<td style="text-align:center">V</td>
-</tr>
-<tr>
-<td><code>git add --ignore-removal</code></td>
-<td style="text-align:center">V</td>
-<td style="text-align:center">V</td>
-<td style="text-align:center"><span style="color: red;">X</span></td>
-</tr>
-</tbody>
-</table>
-<p>Let’s start by initializing a new git repository:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line"><span class="comment"># Initialized empty Git repository in /.git/</span></span><br><span class="line">$ <span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file-delete.txt</span><br><span class="line">$ <span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file-modify.txt</span><br></pre></td></tr></table></figure>
-<h2 id="Add_by_filename">Add by filename</h2><p>Use <code>git add [&lt;pathspec&gt;…​]</code> to add file by their name.</p>
-<p>If we want to add our two files created above:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add file1.txt file2.txt</span><br></pre></td></tr></table></figure>
-<p>It is also possible to use wildcards</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add *.txt</span><br></pre></td></tr></table></figure>
-<p>After any of these two commands, both our files will be staged for the next commit. Let’s do our first commit before we continue.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m <span class="string">"Initial commit"</span></span><br></pre></td></tr></table></figure>
-<h2 id="Stage_all_changes">Stage all changes</h2><p>If you wish to add deletions, updates and file creations, you can use any of these 3 commands:</p>
-<ul>
-<li><code>git add -A</code></li>
-<li><code>git add .</code></li>
-<li><code>git add --all</code></li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">echo</span> change &gt; file-modify.txt <span class="comment"># modifiy a file</span></span><br><span class="line">$ rm file-delete.txt <span class="comment"># delete a file</span></span><br><span class="line">$ <span class="built_in">echo</span> new &gt; file-new.txt <span class="comment"># create a new file</span></span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># untracked:  file-new.txt</span></span><br></pre></td></tr></table></figure>
-<p>At this point, any of the command above will stage all these files:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ git add -A <span class="comment"># add all files to the next commit</span></span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># new file:   file-new.txt</span></span><br></pre></td></tr></table></figure>
-<p>At this point, let’s do a <code>git reset</code> to revert the staged changes and demonstrate the other commands.</p>
-<h2 id="Stage_modified_and_deleted_files_only">Stage modified and deleted files only</h2><p>If you don’t want to add the newly created files, but only the modifications and deletions, use any of the following:</p>
-<ul>
-<li><code>git add -u</code></li>
-<li><code>git add -update</code></li>
-</ul>
-<p>Example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ git add -u</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># untracked files:</span></span><br><span class="line"><span class="comment"># file-new.txt</span></span><br></pre></td></tr></table></figure>
-<p>Once again, a quick <code>git reset</code> will reset staged changes and allow us to look at the last option</p>
-<h2 id="Stage_modified_and_new_files_only">Stage modified and new files only</h2><p>If you want to stage everything except the files that have been deleted, use:</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">add</span> <span class="comment">--ignore-removal</span></span><br></pre></td></tr></table></figure>
-<p>Example:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git add --ignore-removal</span><br><span class="line"></span><br><span class="line">$ git status</span><br><span class="line"><span class="comment"># changes to be committed:</span></span><br><span class="line"><span class="comment"># modified:   file-modify.txt</span></span><br><span class="line"><span class="comment"># new file:   file-new.txt </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Changed but not updated:</span></span><br><span class="line"><span class="comment"># deleted:    file-delete.txt</span></span><br></pre></td></tr></table></figure>
-<h2 id="Try_it_yourself">Try it yourself</h2><p>Here is the full script if you want to see it with your own eyes :)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>1 &gt; file-delete.txt</span><br><span class="line"><span class="built_in">echo</span> <span class="built_in">test</span>2 &gt; file-modify.txt</span><br><span class="line">git add *.txt</span><br><span class="line">git commit -m <span class="string">"Initial commit"</span></span><br><span class="line"><span class="built_in">echo</span> change &gt; file-modify.txt </span><br><span class="line">rm file-delete.txt</span><br><span class="line"><span class="built_in">echo</span> new &gt; file-new.txt</span><br><span class="line">git add -A</span><br><span class="line">git status</span><br><span class="line">git reset</span><br><span class="line">git add -u</span><br><span class="line">git status</span><br><span class="line">git reset</span><br><span class="line">git add --ignore-removal</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-<p>Hope this gives you a clearer view of what is going on !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article is a description of all the basic git add commands.</p>]]>
     
     </summary>
     
