@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/</loc>
+        <lastmod>2016-03-08T14:20:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/03/Setup-Gulp-to-compile-ES6-ES2015-code/</loc>
         <lastmod>2016-03-07T09:45:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -167,7 +175,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -183,7 +191,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -255,7 +263,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -271,7 +279,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+        <loc>http://klugjo.github.io/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -287,7 +295,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
+        <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -295,7 +303,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+        <loc>http://klugjo.github.io/2016/01/Method-context-in-JavaScript/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -319,14 +327,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2015/12/Read-only-properties-in-JavaScript/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -335,7 +335,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
+        <loc>http://klugjo.github.io/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -344,6 +344,14 @@
 
     <url>
         <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
+        <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -391,7 +399,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/07/round-images-in-css/</loc>
+        <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
