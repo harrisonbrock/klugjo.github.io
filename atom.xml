@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-03-08T14:25:02.000Z</updated>
+  <updated>2016-03-13T09:41:51.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,19 +15,227 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Create an Hexo Theme - Part 3: Comments, Analytics and Widgets]]></title>
+    <link href="http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/"/>
+    <id>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/</id>
+    <published>2016-03-11T01:20:09.000Z</published>
+    <updated>2016-03-13T09:41:51.000Z</updated>
+    <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. </p>
+<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a> and <a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2</a>, we have created all the pages of the blog. In this last section, we are going to add <a href="https://disqus.com/" target="_blank" rel="external">Disqus comments</a> to our posts, implement <a href="https://www.google.com.sg/analytics/" target="_blank" rel="external">Google Analytics</a> and complete the sidebar’s widgets.</p>
+<a id="more"></a>
+<h2 id="Links_to_other_sections">Links to other sections</h2><ul>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1: Setting up the project and creating the blog’s main index page</a></li>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2: Finishing up the remaining pages</a></li>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/">Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</a></li>
+</ul>
+<h2 id="Disqus_Comments">Disqus Comments</h2><p>I have already written a blog post on <a href="/2015/12/Add-Disqus-comments-in-Hexo/">how to implement Disqus comments in Hexo</a>. Please refer to it if you need more information but here is how to do it:</p>
+<p>The first step is to get a Disqus UID to test the comments, you can get it from your Disqus account here:</p>
+<p><img src="https://s3.amazonaws.com/klugjo.github.io/add-disqus-comments-hexo-unique-name.jpg" alt="Disqus Unique Identifier"></p>
+<p>Then there are three things that need to be implemented, the theme config for disqus, the comments placeholder and the Disqus script. Let’s get going.</p>
+<h3 id="Theme_config">Theme config</h3><p>We want the Disqus UID to be configurable, let’s add an entry to the theme’s <code>_config.yml</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Disqus Comments Shortname</span><br><span class="line">disqus_shortname: klugjoTest</span><br></pre></td></tr></table></figure>
+<h3 id="Comments_placeholder">Comments placeholder</h3><p>We are going to add comments to our <code>page</code> and <code>post</code> details pages. As always, let’s create a new partial view <code>layout/_partial/comments.ejs</code> and insert it at the end of our <code>layout/_partial/article-full.ejs</code>.</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/comments.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   [...]</span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Comments --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">comments</span>') %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Disqus is exepecting a <code>div#disqus_thread</code> element, here is the official code from the documentation</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Let’s integrate this into our comments partial:</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/comments.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">page.comments</span> &amp;&amp; <span class="attr">theme.disqus_shortname</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post-comments"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Comments:<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>First we are checking that comments are ON and that our disqus UID has been set. Then we are placing the Disqus markup code inside a container.</p>
+<p>Here is the CSS code I have used for that container:</p>
+<figure class="highlight css"><figcaption><span>source/css/blog.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blog-post-comments</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Disqus_script">Disqus script</h3><p>Before we can test, we need to add the Disqus script which contains all the magic. Place it with all the other scripts at the end of <code>layout/_partial/after-footer.ejs</code></p>
+<figure class="highlight html"><figcaption><span>layout/_partial/after-footer.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Disqus Comments --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.disqus_shortname</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="xml"></span><br><span class="line">        var disqus_shortname = '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.disqus_shortname</span> %&gt;</span>';</span><br><span class="line"></span><br><span class="line">        (function()&#123;</span><br><span class="line">            var dsq = document.createElement('script');</span><br><span class="line">            dsq.type = 'text/javascript';</span><br><span class="line">            dsq.async = true;</span><br><span class="line">            dsq.src = '//' + disqus_shortname + '.disqus.com/<span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">page.comments</span>)&#123; %&gt;</span>embed.js<span class="tag">&lt;<span class="name">%</span> &#125; <span class="attr">else</span> &#123; %&gt;</span>count.js<span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span>';</span><br><span class="line">            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);</span><br><span class="line">        &#125;());</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>The script is taken from the <a href="https://help.disqus.com/customer/portal/articles/472097-universal-embed-code" target="_blank" rel="external">docs</a> and the Disqus UID was parameterized.</p>
+<p>Go ahead and test that everything is working as expected.</p>
+<h2 id="Google_Analytics">Google Analytics</h2><p>Google Analytics implementation follows the same principle as Disqus so I will move through it quickly. </p>
+<p>I have another <a href="/2015/12/Add-Google-Analytics-to-your-hexo-blog/">blog post on that subject</a>.</p>
+<h3 id="Setup_the_tracking_ID_in_the_theme’s_config">Setup the tracking ID in the theme’s config</h3><p>Get your google analytics tracking ID from your account and add a new entry to the config.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Google Analytics Tracking ID</span><br><span class="line">google_analytics: UA-83746351-2</span><br></pre></td></tr></table></figure>
+<h3 id="Create_a_new_partial">Create a new partial</h3><p>Create a new partial view <code>layout/_partial/google-analytic.ejs</code></p>
+<figure class="highlight html"><figcaption><span>layout/_partial/google-analytic.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.google_analytics</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="xml"></span><br><span class="line">        (function(i,s,o,g,r,a,m)&#123;i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()&#123;</span><br><span class="line">                    (i[r].q=i[r].q||[]).push(arguments)&#125;,i[r].l=1*new Date();a=s.createElement(o),</span><br><span class="line">                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)</span><br><span class="line">        &#125;)(window,document,'script','//www.google-analytics.com/analytics.js','ga');</span><br><span class="line"></span><br><span class="line">        ga('create', '<span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.google_analytics</span> %&gt;</span>', 'auto');</span><br><span class="line">        ga('send', 'pageview');</span><br><span class="line"></span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>This is a simple copy paste of <a href="https://support.google.com/analytics/answer/1008080?hl=en" target="_blank" rel="external">Google Analytics Tracking code</a> with a parameterized ID.</p>
+<h3 id="Integrate_the_partial">Integrate the partial</h3><p>We want our tracking code on all pages, and there is not best place to put it on a page. Let’s add it at the end of our <code>&lt;head&gt;&lt;/head&gt;</code>:</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/head.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    [...]</span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Google Analytics --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">google-analytics</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>And we are done !</p>
+<h2 id="Widgets">Widgets</h2><p>At the moment our widgets are just a bunch of hardcoded, static HTML inside <code>sidebar.ejs</code>. Let’s fix that.</p>
+<h3 id="Configuration">Configuration</h3><p>Let’s start with the configuration. </p>
+<p>We are going to create two widgets, one <strong>About</strong> widget and one <strong>Tags</strong> widget. I want the JavaScript object version of the config to look like</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    widgets: &#123;</span><br><span class="line">        about: <span class="string">"Here goes the about text"</span>,</span><br><span class="line">        tags: <span class="literal">true</span> <span class="comment">// Or any additional configuration the widget needs</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This is how it translates to <strong>YML</strong> inside our theme’s configuration file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Widgets List</span><br><span class="line">widgets:</span><br><span class="line">  about: This blog is based off the official bootstrap blog template. Checkout the corresponding tutorial at &lt;a href=&quot;http://www.codeblocq.com&quot;&gt;http://www.codeblocq.com&lt;/a</span><br><span class="line">  tags: true</span><br></pre></td></tr></table></figure>
+<h3 id="Sidebar_Code">Sidebar Code</h3><p>Our sidebar which is the placeholder of all our widgets, will need to iterate through all the widgets in the configuration and render them appropriately:</p>
+<p>This what the sidebar EJS template now looks like:</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/sidebar.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span>(<span class="attr">var</span> <span class="attr">widget</span> <span class="attr">in</span> <span class="attr">theme.widgets</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">widget</span>/' + <span class="attr">widget</span>) %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125;; %&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="First_Widget:_About">First Widget: About</h3><p>Let’s build our first widget inside a new partial called <code>layout/_partial/widget/about.ejs</code>. </p>
+<p>The code is copy pasted from the original bootstrap template and the text now comes from the configuration.</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/widget/about.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.widgets.about</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar-module sidebar-module-inset"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>About<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">theme.widgets.about</span> %&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Second_Widget:_Tags">Second Widget: Tags</h3><p>Let’s do something slighty more advanced for this widget. Display a paragraph with all the tags used in the blog, separated by whitespaces and with a font size proportional to the number of times the tag is used.</p>
+<p>Here is the code in <code>layout/_partial/widget/tags.ejs</code></p>
+<figure class="highlight html"><figcaption><span>layout/_partial/widget/tags.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.widgets.tags</span> &amp;&amp; <span class="attr">site.tags.length</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar-module"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>Tags<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> <span class="attr">site.tags.sort</span>('<span class="attr">name</span>')<span class="attr">.each</span>(<span class="attr">function</span>(<span class="attr">item</span>)&#123; %&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span> <span class="attr">style</span>=<span class="string">"font-size: &lt;%- Math.min(item.posts.length * 2 + 13, 30) %&gt;px"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">item.name</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> &#125;); %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>site.tags</code> gives us access to all the tags</li>
+<li><code>site.tags.sort(&#39;name&#39;)</code> sorts all the tags by alphabetical order</li>
+<li><code>item.path</code> correspond to the relative URL to the archive page for that tag</li>
+<li><code>item.posts.length</code> gives you the number of time a tag is used</li>
+<li><code>item.name</code> is the Tag label</li>
+</ul>
+<p>I chose <strong>13 + (tag occurence * 2)</strong> in pixels (capped at 30px) for the <code>font-size</code> but feel free to use what you want. </p>
+<h2 id="The_End">The End</h2><p>That’s the end of this tutorial, I hope you have learnt something interesting from it.</p>
+<p>Here are a few things you can do if you want to develop it further:</p>
+<ul>
+<li>Finish the implementation of the head by parameterizing the <code>&lt;title&gt;</code> and all the <a href="http://ogp.me/" target="_blank" rel="external">Open Graph</a> properties.</li>
+<li>Add more widgets, for example a <a href="https://github.com/hexojs/hexo-theme-light/blob/master/layout/_widget/search.ejs" target="_blank" rel="external">search widget</a> or a <a href="https://github.com/hexojs/hexo-theme-light/blob/master/layout/_widget/recent_posts.ejs" target="_blank" rel="external">recent posts widget</a>.</li>
+<li>Publish your theme on the <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo website’s theme gallery</a>.</li>
+<li>Check out my other <a href="/tags/Hexo/">Hexo tutorials</a> to improve your blog.</li>
+<li>Check out <a href="https://github.com/cgmartin/hexo-theme-bootstrap-blog" target="_blank" rel="external">hexo-theme-bootstrap-blog</a> which is an implementation of the same bootstrap template.</li>
+<li>Implement your own theme from scratch.</li>
+</ul>
+<p>Thanks for reading ! Really appreciate your comments, corrections, suggestions in the comments.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html">Hexo Theme</a> from scratch. </p>
+<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a> and <a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2</a>, we have created all the pages of the blog. In this last section, we are going to add <a href="https://disqus.com/">Disqus comments</a> to our posts, implement <a href="https://www.google.com.sg/analytics/">Google Analytics</a> and complete the sidebar’s widgets.</p>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Disqus" scheme="http://klugjo.github.io/tags/Disqus/"/>
+    
+      <category term="Analytics" scheme="http://klugjo.github.io/tags/Analytics/"/>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
+    
+      <category term="Bootstrap" scheme="http://klugjo.github.io/tags/Bootstrap/"/>
+    
+      <category term="Template" scheme="http://klugjo.github.io/tags/Template/"/>
+    
+      <category term="EJS" scheme="http://klugjo.github.io/tags/EJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Create an Hexo Theme - Part 2: Other Pages]]></title>
+    <link href="http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/"/>
+    <id>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/</id>
+    <published>2016-03-09T11:34:13.000Z</published>
+    <updated>2016-03-13T09:45:25.000Z</updated>
+    <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. </p>
+<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a>, we have setup the project and the Home Page. In this section, we are going to build on what we have learnt to finish up all the remaining pages.</p>
+<a id="more"></a>
+<h2 id="Links_to_other_sections">Links to other sections</h2><ul>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1: Setting up the project and creating the blog’s main index page</a></li>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2: Finishing up the remaining pages</a></li>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/">Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</a></li>
+</ul>
+<h2 id="The_Post_Detail_page">The Post Detail page</h2><p>Let’s continue where we left off in part 1 and create the post detail page.</p>
+<p>As we have seen, to render the detail page, Hexo will look for a <code>post.ejs</code> file in our <code>/layout/</code> folder.</p>
+<p>Here is my post.ejs:</p>
+<figure class="highlight html"><figcaption><span>layout/post.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">article-full</span>', &#123;<span class="attr">item:</span> <span class="attr">page</span>&#125;) %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>To keep the code organised, the actual code is deferred to a <code>_partial/article-full.ejs</code> that we are going to create now:</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/article-full.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Title --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"blog-post-title"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.title</span> || <span class="attr">item.link</span>%&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Date and Author --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"blog-post-meta"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%=</span> <span class="attr">item.date.format</span>(<span class="attr">config.date_format</span>) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.author</span>) &#123; %&gt;</span></span><br><span class="line">            by <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.author</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Content --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.content</span> %&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Tags and Categories links --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">article-tags</span>', &#123;<span class="attr">item:</span> <span class="attr">item</span>&#125;) %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">article-categories</span>', &#123;<span class="attr">item:</span> <span class="attr">item</span>&#125;) %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>This template is almost the same as <code>_partial/article-excerpt.ejs</code>, except that:</p>
+<ul>
+<li>We are displaying the full content with <code>&lt;%- item.content %&gt;</code> and not the excerpt.</li>
+<li>There are two additional partial views at the bottom, one for tags and one for categories. We will jump into these right now.</li>
+</ul>
+<h3 id="Post_Tags">Post Tags</h3><p>Let’s create the partial that will render the list of tags for a post: <code>layout/_partial/article-tags.ejs</code>. </p>
+<p>What we want is a list of #tags with links to the corresponding ‘tag page’ which will display all the posts with that tag. </p>
+<figure class="highlight"><figcaption><span>layout/_partial/article-tags.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (item.tags &amp;&amp; item.tags.length)&#123; %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    var tags = [];</span><br><span class="line">    item.tags.forEach(function(tag)&#123;</span><br><span class="line">        tags.push('&lt;a href="' + config.root + tag.path + '"&gt;#' + tag.name + '&lt;/a&gt;');</span><br><span class="line">    &#125;);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;div class="blog-tags-container"&gt;</span><br><span class="line">    &lt;span class="glyphicon glyphicon-tags"&gt;&lt;/span&gt;</span><br><span class="line">    &lt;%- tags.join(' ') %&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>Nothing complicated, we are enumerating through all the tags in <code>post.tags</code> and displaying them one after the other. I have added a hashtag before each tag and an icon before the list for good measure.</p>
+<h3 id="Post_Categories">Post Categories</h3><p>The <code>layout/_partial/article-categories.ejs</code> partial is very similar:</p>
+<figure class="highlight"><figcaption><span>layout/_partial/article-categories.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (item.categories &amp;&amp; item.categories.length)&#123; %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    var categories = [];</span><br><span class="line">    item.categories.forEach(function(category)&#123;</span><br><span class="line">        categories.push('&lt;a href="' + config.root + category.path + '"&gt;' + category.name + '&lt;/a&gt;');</span><br><span class="line">    &#125;);</span><br><span class="line">%&gt;</span><br><span class="line">&lt;div class="blog-categories-container"&gt;</span><br><span class="line">    &lt;span class="glyphicon glyphicon-folder-open"&gt;&lt;/span&gt;</span><br><span class="line">    &lt;%- categories.join(' / ') %&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>No explanation required.</p>
+<h3 id="Post_CSS">Post CSS</h3><p>As you may have noticed, there are 2 new CSS classes used for tags and categories styling. Here is the code for it, added to <code>blog.css</code>:</p>
+<figure class="highlight css"><figcaption><span>source/css/blog.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blog-tags-container</span>, <span class="selector-class">.blog-categories-container</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">30px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.blog-tags-container</span> <span class="selector-tag">span</span><span class="selector-class">.glyphicon</span>, <span class="selector-class">.blog-categories-container</span> <span class="selector-tag">span</span><span class="selector-class">.glyphicon</span> &#123;</span><br><span class="line">    <span class="attribute">margin-right</span>: <span class="number">20px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="The_detail_page_for_page_type_content">The detail page for page type content</h2><p>This is an easy one. The ‘page type’ pages will be the same as ‘post type’ pages. Feel free to customise it as an exercise, but here is mine:</p>
+<figure class="highlight html"><figcaption><span>layout/page.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">article-full</span>', &#123;<span class="attr">item:</span> <span class="attr">page</span>&#125;) %&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="The_Archive_page">The Archive page</h2><p>The archive page will display a list of posts in a more condensed way than the index page. The base will be the same as the index though:</p>
+<figure class="highlight html"><figcaption><span>layout/archive.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">page.posts.each</span>(<span class="attr">function</span>(<span class="attr">item</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">article-archive</span>', &#123;<span class="attr">item:</span> <span class="attr">item</span>&#125;) %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125;); %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">pagination</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="The_article-archive_partial_view">The article-archive partial view</h3><p>As always, the actual work is in the partial view. I used <code>article-excerpt</code> as the base and stripped it down to just the title, date and author:</p>
+<figure class="highlight html"><figcaption><span>layout/_partial/article-archive.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Title --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"blog-post-title-archive"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.title</span> || <span class="attr">item.link</span>%&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Date and Author --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"blog-post-meta"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%=</span> <span class="attr">item.date.format</span>(<span class="attr">config.date_format</span>) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.author</span>) &#123; %&gt;</span></span><br><span class="line">            by <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.author</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Careful eyes will have noticed the new CSS class that I have created for archive titles (they were too big for my liking):</p>
+<figure class="highlight css"><figcaption><span>source/css/blog.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blog-post-title-archive</span> &#123;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">25px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Tags_and_Categories_Pages">Tags and Categories Pages</h2><p>The last two pages we need to work are for the list of posts that correspond to a tag and a category. Now if you remember well:</p>
+<table>
+<thead>
+<tr>
+<th>Template</th>
+<th>Fallback</th>
+<th>Page Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>archive</code></td>
+<td><code>index</code></td>
+<td>This is the archive page. It will display a list of all the posts in our blog with just titles and links to the detail page.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>archive</code></td>
+<td>This is the category page. Similar to the archive page but filtered for one category.</td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td><code>archive</code></td>
+<td>This is the tag page. Similar to the archive page page but filtered for one tag.</td>
+</tr>
+</tbody>
+</table>
+<p>The fallback page for our <code>tag.ejs</code> and <code>category.ejs</code> is <code>archive.ejs</code>. Because I don’t see any major difference in between these 3 pages, we are just going to use the fallback to <code>archive.ejs</code>. Less code to write, less duplicate code, easier to maintain.</p>
+<p>But in order to differentiate our 3 pages, we are going to add a title to the archive page:</p>
+<figure class="highlight html"><figcaption><span>layout/archive.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span></span><br><span class="line">    <span class="attr">var</span> <span class="attr">title</span> = '';</span><br><span class="line">    <span class="attr">if</span> (<span class="attr">page.category</span>) <span class="attr">title</span> = <span class="attr">page.category</span>;</span><br><span class="line">    <span class="attr">if</span> (<span class="attr">page.tag</span>) <span class="attr">title</span> = <span class="attr">page.tag</span>;</span><br><span class="line">    <span class="attr">if</span> (<span class="attr">page.archive</span>)&#123;</span><br><span class="line">        <span class="attr">if</span> (<span class="attr">page.year</span>) <span class="attr">title</span> = <span class="attr">page.year</span> + (<span class="attr">page.month</span> ? '/' + <span class="attr">page.month</span> <span class="attr">:</span> '');</span><br><span class="line">        <span class="attr">else</span> <span class="attr">title</span> = "<span class="attr">Archives</span>";</span><br><span class="line">    &#125;</span><br><span class="line">%&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">title</span>) &#123; %&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"blog-archive-title"</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">title</span> %&gt;</span><span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">page.posts.each</span>(<span class="attr">function</span>(<span class="attr">item</span>)&#123; %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">article-archive</span>', &#123;<span class="attr">item:</span> <span class="attr">item</span>&#125;) %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125;); %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">_partial</span>/<span class="attr">pagination</span>') %&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Now we have a nice title that describes what our archive page is for.</p>
+<p>And here is the CSS that goes with it:</p>
+<figure class="highlight css"><figcaption><span>source/css/blog.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blog-archive-title</span> &#123;</span><br><span class="line">    <span class="attribute">margin-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>This section of the tutorial was pretty straightforward, simply building up on concepts defined in <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a>. I encourage to play around with the theme and hack it to your tastes.</p>
+<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/">Part 3</a>, we will add a comment section, analytics, widgets and polishing things up. See you there !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html">Hexo Theme</a> from scratch. </p>
+<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a>, we have setup the project and the Home Page. In this section, we are going to build on what we have learnt to finish up all the remaining pages.</p>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
+    
+      <category term="Bootstrap" scheme="http://klugjo.github.io/tags/Bootstrap/"/>
+    
+      <category term="Template" scheme="http://klugjo.github.io/tags/Template/"/>
+    
+      <category term="EJS" scheme="http://klugjo.github.io/tags/EJS/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Create an Hexo Theme - Part 1: Index]]></title>
     <link href="http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/"/>
     <id>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/</id>
     <published>2016-03-08T04:17:41.000Z</published>
-    <updated>2016-03-08T14:25:02.000Z</updated>
-    <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is seriously lacking. Here is my attempt at fixing that.</p>
+    <updated>2016-03-13T09:32:20.000Z</updated>
+    <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>
 <a id="more"></a>
 <h2 id="Links_to_other_sections">Links to other sections</h2><ul>
 <li><a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1: Setting up the project and creating the blog’s main index page</a></li>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2: Finishing up the remaining pages</a></li>
+<li><a href="/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/">Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</a></li>
+</ul>
+<h2 id="Prerequisites">Prerequisites</h2><ul>
+<li>The very basics of blogging with hexo. If you are completely new, <a href="https://hexo.io/docs/index.html" target="_blank" rel="external">check the getting started guide on hexo.io</a>.</li>
+<li>Some knowledge of Bootstrap</li>
+<li>Some knowledge of a JavaScript templating engine (we will use EJS)</li>
 </ul>
 <h2 id="Project_Description">Project Description</h2><p>This project will focus on how Hexo generates HTML files based on the theme’s template file. </p>
 <p>Since I don’t want to lose too much time on the HTML and CSS parts we are going to recreate the following theme in Hexo: <a href="http://getbootstrap.com/examples/blog/" target="_blank" rel="external">http://getbootstrap.com/examples/blog/</a>. It is one of the standard <a href="http://getbootstrap.com/getting-started/#examples-custom" target="_blank" rel="external">Getting Started Template Examples</a> in the Boostrap documentation.</p>
 <p>We are going to reuse the CSS and copy paste the HTML, piece by piece, until we have achieved what we want.</p>
+<p>If you get lost or are only interested in the code, <a href="https://github.com/klugjo/bootstrap-blog-hexo" target="_blank" rel="external">it is on github</a>.</p>
 <h2 id="Project_setup">Project setup</h2><h3 id="Create_a_new_hexo_blog">Create a new hexo blog</h3><p>Let’s get started with a brand new hexo installation.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new folder</span></span><br><span class="line">mkdir hexo-theme-creation </span><br><span class="line"><span class="built_in">cd</span> hexo-theme-creation</span><br><span class="line"></span><br><span class="line"><span class="comment"># Initialise Hexo</span></span><br><span class="line">hexo init</span><br></pre></td></tr></table></figure>
 <h3 id="Create_the_theme_folder">Create the theme folder</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Enter the theme folder</span></span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line"></span><br><span class="line"><span class="comment"># bootstrap-blog-hexo is also going to be the name of our theme</span></span><br><span class="line">mkdir bootstrap-blog-hexo</span><br></pre></td></tr></table></figure>
@@ -151,7 +359,7 @@
 <li>Pass an argument in a partial by using <code>&lt;%- partial(&#39;name&#39;, args) %&gt;</code></li>
 </ul>
 <h3 id="Article_layout">Article layout</h3><p>Let’s create the <code>article-excerpt.ejs</code> partial and adapt the code to our theme. Here is what I came up with:</p>
-<figure class="highlight html"><figcaption><span>layout/_partial/article-excerpt.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Title --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"blog-post-title"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.title</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Date and Author --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"blog-post-meta"</span>&gt;</span></span><br><span class="line">        January 1, 2014</span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.author</span>) &#123; %&gt;</span></span><br><span class="line">            by <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.author</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Content --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.excerpt</span> || <span class="attr">item.content</span> %&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Only display the Read More link if we are displaying an excerpt --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.excerpt</span>) &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.excerpt_link</span> %&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><figcaption><span>layout/_partial/article-excerpt.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Title --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h2</span> <span class="attr">class</span>=<span class="string">"blog-post-title"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.title</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Date and Author --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"blog-post-meta"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%=</span> <span class="attr">item.date.format</span>(<span class="attr">config.date_format</span>) %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.author</span>) &#123; %&gt;</span></span><br><span class="line">            by <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.author</span> %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Content --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">item.excerpt</span> || <span class="attr">item.content</span> %&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Only display the Read More link if we are displaying an excerpt --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">item.excerpt</span>) &#123; %&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">%=</span> <span class="attr">theme.excerpt_link</span> %&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="-_Link_to_the_full_post:">- Link to the full post:</h3><p>The link to the full post is created by concatenating <code>config.root</code> (config option which really shoud be equal to <code>/</code>) and <code>item.path</code> which is the relative path or link to the full post.</p>
 <h3 id="-_Post_author">- Post author</h3><p>By default, Hexo does not have any author property in it’s post variable. But we can add whatever variable we want to the <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">front matter</a>. </p>
 <p>If you want an author name to be displayed for a post, the front matter for your post should look something like</p>
@@ -172,10 +380,10 @@
 <li><code>page.next_link</code> and <code>page.prev_link</code> are self explanatory.</li>
 </ul>
 <p>You can adjust the post per page in the main config (<code>per_page</code> property) if you don’t have enough posts to see the pagination in action.</p>
-<p>That’s it for today, in the next section of this tutorial, we will finish the remaining pages of the blog.</p>
+<p>That’s it for today, in the <a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">next section of this tutorial</a>, we will finish all the remaining pages of the blog.</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html">Hexo Theme</a> from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is seriously lacking. Here is my attempt at fixing that.</p>]]>
+    <![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html">Hexo Theme</a> from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>]]>
     
     </summary>
     
@@ -581,130 +789,6 @@
       <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
     
       <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[How to setup Babel6 for NodeJs]]></title>
-    <link href="http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/"/>
-    <id>http://klugjo.github.io/2016/02/How-to-setup-Babel6-for-NodeJs/</id>
-    <published>2016-02-16T11:58:08.000Z</published>
-    <updated>2016-02-20T03:06:48.000Z</updated>
-    <content type="html"><![CDATA[<p>This article gives you a basic way of setting up your environment if you want to use ES2015 with Node (using v4.3.0 in this tutorial).<br><a id="more"></a> </p>
-<h2 id="Babel_libraries">Babel libraries</h2><p>You will first need:</p>
-<ul>
-<li><a href="https://babeljs.io/docs/usage/cli/" target="_blank" rel="external">babel-cli</a>: Used to compile files from the command line</li>
-<li><a href="http://babeljs.io/docs/usage/api/" target="_blank" rel="external">babel-core</a>: Core API</li>
-<li><a href="https://babeljs.io/docs/plugins/preset-es2015/" target="_blank" rel="external">babel-preset-es2015</a>: Collection of all the plugins needed to write ES2015 JavaScript.</li>
-</ul>
-<p>(Babel in itself does not do anything and it is the plugins that will define what it does.)</p>
-<h3 id="Installation">Installation</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli babel-core babel-preset-es2015</span><br></pre></td></tr></table></figure>
-<h2 id="Babel_configuration">Babel configuration</h2><p>The standard way of configuring Babel is to use a <a href="https://babeljs.io/docs/usage/babelrc/" target="_blank" rel="external">.babelrc</a> file:</p>
-<p>Put a <code>.babelrc</code> configuration file at the root of your project. I don’t like to have too much stuff in there and <a href="http://babeljs.io/docs/usage/babelrc/" target="_blank" rel="external">thankfully you can also put your config in <code>package.json</code></a>.</p>
-<p>Whichever way you choose, inside your configuration put:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"presets"</span>: [<span class="string">"es2015"</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Testing">Testing</h2><p>Create an <code>index.js</code> file with the following ES2015 code:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>];</span><br><span class="line"><span class="keyword">var</span> doubles = numbers.map(num =&gt; num * <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(doubles); <span class="comment">//  [2, 8, 18 ]</span></span><br></pre></td></tr></table></figure>
-<p>Run it with <code>node index.js</code> and check that everything is working.</p>
-<h2 id="Create_a_launcher">Create a launcher</h2><p>When using certain features of ES6, you might encounter an error of type:</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">SyntaxError:</span> Unexpected token</span><br></pre></td></tr></table></figure>
-<p>This means you will need to create a launcher for your app that loads <code>&#39;babel-core/register&#39;</code> ahead of your code.</p>
-<p>Assuming your entry point is <code>index.js</code>, create the following launcher:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="comment">// launcher.js</span></span><br><span class="line"><span class="comment">// -----------</span></span><br><span class="line"><span class="built_in">require</span>(<span class="string">'babel-core/register'</span>);</span><br><span class="line"><span class="built_in">require</span>(<span class="string">'./index'</span>);</span><br></pre></td></tr></table></figure>
-<p>Start your app with <code>node launcher.js</code></p>
-<p>This will clear the errors.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article gives you a basic way of setting up your environment if you want to use ES2015 with Node (using v4.3.0 in this tutorial).<br>]]>
-    
-    </summary>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-      <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
-    
-      <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
-    
-      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Further minify your CSS with CSSO]]></title>
-    <link href="http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/"/>
-    <id>http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/</id>
-    <published>2016-02-15T06:44:48.000Z</published>
-    <updated>2016-02-15T08:21:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso" target="_blank" rel="external">CSSO – CSS Optimizer</a> and I thought I would check out how it compares to other css minification tools like <a href="https://github.com/jbleuzen/node-cssmin" target="_blank" rel="external">cssmin</a> which is based on YUI compressor.</p>
-<a id="more"></a> 
-<h2 id="Installation">Installation</h2><p>Its a node package, installation is as straight forward as:</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> -g csso</span><br></pre></td></tr></table></figure>
-<h2 id="Usage">Usage</h2><p>You can minify your CSS by using <code>csso.minify(yourCss)</code>.</p>
-<p>Example:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> csso = <span class="built_in">require</span>(<span class="string">'csso'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> compressed = csso.minify(<span class="string">'.test &#123; color: #000000; &#125;'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(compressed); <span class="comment">// .test&#123;color:black&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="Basic_comparison_with_cssmin">Basic comparison with cssmin</h2><p>CSSO does more than just <a href="http://yui.github.io/yuicompressor/css.html" target="_blank" rel="external">remove whitespaces and line breaks</a> which is what cssmin based on YUI compressor does. In my opinion that’s already good enough of a reason to use it. </p>
-<p>Let’s look at how good of a job it does.</p>
-<h3 id="For_my_quick_test,_I_have_used_2_css_files-">For my quick test, I have used 2 css files.</h3><ul>
-<li>Simple CSS File: My blog’s CSS at time of writing is a pretty simple 900 lines css file.</li>
-<li>Complex CSS File: <a href="https://github.com/Dogfalo/materialize" target="_blank" rel="external">Materialize</a> main CSS which is a fairly complex 11256 lines stylesheet.</li>
-</ul>
-<h3 id="Here_are_the_results:">Here are the results:</h3><table>
-<thead>
-<tr>
-<th>Metric</th>
-<th style="text-align:center">Simple CSS File</th>
-<th style="text-align:center">Complex CSS File</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Lines</td>
-<td style="text-align:center">842</td>
-<td style="text-align:center">11256</td>
-</tr>
-<tr>
-<td>Length</td>
-<td style="text-align:center">19133</td>
-<td style="text-align:center">201025</td>
-</tr>
-<tr>
-<td>cssmin length (characters)</td>
-<td style="text-align:center">15431</td>
-<td style="text-align:center">147778</td>
-</tr>
-<tr>
-<td>csso length (characters)</td>
-<td style="text-align:center">15405</td>
-<td style="text-align:center">145423</td>
-</tr>
-<tr>
-<td>cssmin compression (%)</td>
-<td style="text-align:center">19.3%</td>
-<td style="text-align:center">26.5%</td>
-</tr>
-<tr>
-<td>csso compression (%)</td>
-<td style="text-align:center">19.5%</td>
-<td style="text-align:center">27.7%</td>
-</tr>
-</tbody>
-</table>
-<p>CSSO does a bit better than cssmin but the difference is negligible. I certainly wouldn’t go ahead and change my current projects over to CSSO but I will give CSSO a try for my next project.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hi there, I just discovered <a href="https://github.com/css/csso">CSSO – CSS Optimizer</a> and I thought I would check out how it compares to other css minification tools like <a href="https://github.com/jbleuzen/node-cssmin">cssmin</a> which is based on YUI compressor.</p>]]>
-    
-    </summary>
-    
-      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
-    
-      <category term="CSS" scheme="http://klugjo.github.io/tags/CSS/"/>
-    
-      <category term="node" scheme="http://klugjo.github.io/tags/node/"/>
-    
-      <category term="CssMin" scheme="http://klugjo.github.io/tags/CssMin/"/>
-    
-      <category term="CSSO" scheme="http://klugjo.github.io/tags/CSSO/"/>
     
   </entry>
   

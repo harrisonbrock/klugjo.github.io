@@ -2,20 +2,6 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://klugjo.github.io/tags/Disqus/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Sitemap/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -359,43 +345,57 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/tags/Disqus/</loc>
+        <lastmod>2016-03-13T09:41:51.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <lastmod>2016-03-13T09:41:51.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/tags/Hexo/</loc>
-        <lastmod>2016-03-08T14:25:02.000Z</lastmod>
+        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-03-08T14:25:02.000Z</lastmod>
+        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Theme/</loc>
-        <lastmod>2016-03-08T14:25:02.000Z</lastmod>
+        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Bootstrap/</loc>
-        <lastmod>2016-03-08T14:25:02.000Z</lastmod>
+        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Template/</loc>
-        <lastmod>2016-03-08T14:25:02.000Z</lastmod>
+        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/EJS/</loc>
-        <lastmod>2016-03-08T14:25:02.000Z</lastmod>
+        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
