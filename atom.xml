@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-03-13T09:41:51.000Z</updated>
+  <updated>2016-03-13T13:54:09.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/"/>
     <id>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/</id>
     <published>2016-03-11T01:20:09.000Z</published>
-    <updated>2016-03-13T09:41:51.000Z</updated>
+    <updated>2016-03-13T13:54:09.000Z</updated>
     <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. </p>
 <p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a> and <a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2</a>, we have created all the pages of the blog. In this last section, we are going to add <a href="https://disqus.com/" target="_blank" rel="external">Disqus comments</a> to our posts, implement <a href="https://www.google.com.sg/analytics/" target="_blank" rel="external">Google Analytics</a> and complete the sidebar’s widgets.</p>
 <a id="more"></a>
@@ -85,6 +85,7 @@
 <ul>
 <li>Finish the implementation of the head by parameterizing the <code>&lt;title&gt;</code> and all the <a href="http://ogp.me/" target="_blank" rel="external">Open Graph</a> properties.</li>
 <li>Add more widgets, for example a <a href="https://github.com/hexojs/hexo-theme-light/blob/master/layout/_widget/search.ejs" target="_blank" rel="external">search widget</a> or a <a href="https://github.com/hexojs/hexo-theme-light/blob/master/layout/_widget/recent_posts.ejs" target="_blank" rel="external">recent posts widget</a>.</li>
+<li>Run <a href="https://github.com/hexojs/hexo-theme-unit-test" target="_blank" rel="external">Hexo Theme Unit Tests</a> to make sure that everything is in order.</li>
 <li>Publish your theme on the <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo website’s theme gallery</a>.</li>
 <li>Check out my other <a href="/tags/Hexo/">Hexo tutorials</a> to improve your blog.</li>
 <li>Check out <a href="https://github.com/cgmartin/hexo-theme-bootstrap-blog" target="_blank" rel="external">hexo-theme-bootstrap-blog</a> which is an implementation of the same bootstrap template.</li>

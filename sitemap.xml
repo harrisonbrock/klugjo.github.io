@@ -3,7 +3,12 @@
 
     <sitemap>
         <loc>http://klugjo.github.io/post-sitemap.xml</loc>
-        <lastmod>2016-03-13T09:45:25.000Z</lastmod>
+        <lastmod>2016-03-13T13:54:09.000Z</lastmod>
+    </sitemap>
+
+    <sitemap>
+        <loc>http://klugjo.github.io/page-sitemap.xml</loc>
+        <lastmod>2016-03-14T09:29:03.000Z</lastmod>
     </sitemap>
 
     <sitemap>
