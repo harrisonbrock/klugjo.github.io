@@ -2,6 +2,13 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
+        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/tags/RSS/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -10,13 +17,6 @@
 
     <url>
         <loc>http://klugjo.github.io/tags/npm/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -65,13 +65,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/GitHub/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/REST/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -80,6 +73,13 @@
 
     <url>
         <loc>http://klugjo.github.io/tags/cURL/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/GitHub/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
