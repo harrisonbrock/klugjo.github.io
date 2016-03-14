@@ -7,11 +7,6 @@
     </sitemap>
 
     <sitemap>
-        <loc>http://klugjo.github.io/page-sitemap.xml</loc>
-        <lastmod>2016-03-14T09:51:38.000Z</lastmod>
-    </sitemap>
-
-    <sitemap>
         <loc>http://klugjo.github.io/tag-sitemap.xml</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     </sitemap>
