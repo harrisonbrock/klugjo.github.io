@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/</loc>
+        <lastmod>2016-03-14T15:26:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/</loc>
         <lastmod>2016-03-13T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -135,14 +143,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/02/Further-minify-your-CSS-with-CSSO/</loc>
-        <lastmod>2016-02-15T08:21:53.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2016/02/Notes-on-Never-Eat-Alone-by-Keith-Ferrazzi/</loc>
         <lastmod>2016-02-11T12:50:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -191,23 +191,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -223,7 +207,15 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Build-your-first-React-application/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -239,6 +231,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2015/12/Build-your-first-React-application/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -247,7 +247,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
+        <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -255,7 +255,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Code-snippets-in-Webstorm/</loc>
+        <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -319,7 +319,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+        <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -327,7 +327,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+        <loc>http://klugjo.github.io/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +383,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
+        <loc>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -391,7 +391,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+        <loc>http://klugjo.github.io/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
