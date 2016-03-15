@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-03-13T13:54:09.000Z</updated>
+  <updated>2016-03-15T07:37:04.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[New Hexo Theme - Clean Blog]]></title>
+    <link href="http://klugjo.github.io/2016/03/New-Hexo-Theme-Clean-Blog/"/>
+    <id>http://klugjo.github.io/2016/03/New-Hexo-Theme-Clean-Blog/</id>
+    <published>2016-03-15T07:23:21.000Z</published>
+    <updated>2016-03-15T07:37:04.000Z</updated>
+    <content type="html"><![CDATA[<p>I just finished developing an Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external">Clean Blog</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/" target="_blank" rel="external">live demo</a>.</p>
+<a id="more"></a>
+<p>This theme is an Hexo implementation of <a href="http://blackrockdigital.github.io/startbootstrap-clean-blog/index.html" target="_blank" rel="external">Clean Blog</a></p>
+<h2 id="Features">Features</h2><ul>
+<li>Disqus and Facebook comments</li>
+<li>Google Analytics</li>
+<li>Cover image for posts and pages</li>
+<li>Tags and Categories Support</li>
+<li>Responsive Images</li>
+<li>Image Gallery</li>
+<li>Code syntax highlighting</li>
+</ul>
+<h2 id="Installation">Installation</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> <span class="title">https</span>://github.com/klugjo/hexo-theme-clean-blog.git theme/clean-blog</span><br></pre></td></tr></table></figure>
+<p>Then update your blog’s main <code>_config.yml</code> to set the theme to <code>clean-blog</code>:</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">## Themes: http:<span class="comment">//hexo.io/themes/</span></span></span><br><span class="line"><span class="symbol">theme:</span> clean-blog</span><br></pre></td></tr></table></figure>
+<h2 id="Configuration">Configuration</h2><h3 id="Menu">Menu</h3><p>The menu is configured in the theme’s <code>_config.yml</code>.</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Header</span></span><br><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  Home:</span> /</span><br><span class="line"><span class="symbol">  Archives:</span> /archives</span><br></pre></td></tr></table></figure>
+<p>The object key is the label and the value is the path.</p>
+<h3 id="Top_Left_Label">Top Left Label</h3><p>The top left label is configured in the theme’s <code>_config.yml</code>. When clicked it will lead to the Home Page.</p>
+<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Title <span class="keyword">on</span> top left <span class="keyword">of</span> menu. Leave <span class="keyword">empty</span> <span class="keyword">to</span> use main blog title</span><br><span class="line">menu_title: Configurable Title</span><br></pre></td></tr></table></figure>
+<h3 id="Home_Page_cover_image">Home Page cover image</h3><p>The Home Page cover is configured in the theme’s <code>_config.yml</code>. It will be the same for all index type pages.</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># URL of the Home page image</span></span><br><span class="line"><span class="symbol">index_cover:</span> <span class="meta-keyword">/img/</span>home-bg.jpg</span><br></pre></td></tr></table></figure>
+<h3 id="Default_post_title">Default post title</h3><p>The default post title (used when no title is specified) is configured in the theme’s <code>_config.yml</code>.</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Default post title</span></span><br><span class="line"><span class="symbol">default_post_title:</span> Untitled</span><br></pre></td></tr></table></figure>
+<h3 id="Comments">Comments</h3><p>The comments provider is specified in the theme’s <code>_config.yml</code>. If you specify both a <code>disqus_shortname</code> and a <code>facebook.appid</code> there will be 2 sets of comment per post. So choose one.</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comments. Choose one by filling up the information</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Disqus comments</span></span><br><span class="line"><span class="attr">  disqus_shortname:</span> klugjotest</span><br><span class="line">  <span class="comment"># Facebook comments</span></span><br><span class="line"><span class="attr">  facebook:</span></span><br><span class="line"><span class="attr">    appid:</span> <span class="number">123456789012345</span></span><br><span class="line"><span class="attr">    comment_count:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    comment_colorscheme:</span> light</span><br></pre></td></tr></table></figure>
+<h3 id="Google_Analytics">Google Analytics</h3><p>The Google Analytics Tracking ID is configured in the theme’s <code>_config.yml</code>.</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Google Analytics Tracking ID</span></span><br><span class="line"><span class="symbol">google_analytics:</span></span><br></pre></td></tr></table></figure>
+<h3 id="Social_Account">Social Account</h3><p>Setup the links to your social pages in the theme’s <code>_config.yml</code>. Links are in the footer.</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Social Accounts</span></span><br><span class="line"><span class="symbol">twitter_url:</span></span><br><span class="line"><span class="symbol">facebook_url:</span></span><br><span class="line"><span class="symbol">github_url:</span> https:<span class="comment">//github.com/klugjo/hexo-theme-clean-blog</span></span><br></pre></td></tr></table></figure>
+<h3 id="Author">Author</h3><p>The post’s author is specified in the posts front-matter:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author:</span> Klug Jo</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
+<h3 id="Post’s_Cover_Image">Post’s Cover Image</h3><p>By default, posts will use the home page cover image. You can specify a custom cover in the front-matter:</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover:</span> <span class="meta-keyword">/assets/</span>contact-bg.jpg</span><br></pre></td></tr></table></figure>
+<h2 id="Creator">Creator</h2><p>This theme was created by <a href="https://github.com/BlackrockDigital" target="_blank" rel="external">Blackrock Digital</a> and adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank" rel="external">myself</a>.</p>
+<p>Hope you enjoy it, the theme should be easy enough to customize and modify to fit your needs. Checkout <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">my tutorial on building Hexo themes</a> if you need information on how themes are built.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I just finished developing an Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/">live demo</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Create an Hexo Theme - Part 3: Comments, Analytics and Widgets]]></title>
@@ -103,9 +157,9 @@
     
       <category term="Disqus" scheme="http://klugjo.github.io/tags/Disqus/"/>
     
-      <category term="Analytics" scheme="http://klugjo.github.io/tags/Analytics/"/>
-    
       <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="Analytics" scheme="http://klugjo.github.io/tags/Analytics/"/>
     
       <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
     
@@ -758,38 +812,6 @@
       <category term="Custom Domain" scheme="http://klugjo.github.io/tags/Custom-Domain/"/>
     
       <category term="DNS Provider" scheme="http://klugjo.github.io/tags/DNS-Provider/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Babel and Node Module Loader]]></title>
-    <link href="http://klugjo.github.io/2016/02/Babel-and-Node-Module-Loader/"/>
-    <id>http://klugjo.github.io/2016/02/Babel-and-Node-Module-Loader/</id>
-    <published>2016-02-20T01:26:03.000Z</published>
-    <updated>2016-03-03T07:36:30.000Z</updated>
-    <content type="html"><![CDATA[<p>This article will show you how to get started with ES6 modules in node with Babel.<br><a id="more"></a><br>If you need to setup your environment, check out <a href="/2016/02/How-to-setup-Babel6-for-NodeJs/">this article</a>.</p>
-<h2 id="Exports">Exports</h2><p>In your library, export functions and classes this way:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ----------</span></span><br><span class="line"><span class="comment">// module1.js</span></span><br><span class="line"><span class="comment">// ----------</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> life = <span class="string">"42"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">return</span> x * y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">constructor</span>(color) &#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    getCarColor() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Imports">Imports</h2><h3 id="Import_specific">Import specific</h3><p>You can specify which value you wish to import using the following syntax:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;life, add <span class="keyword">as</span> addition&#125; <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(life); <span class="comment">// 42</span></span><br><span class="line"><span class="built_in">console</span>.log(addition(<span class="number">1</span>,<span class="number">1</span>)); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<p>Note how you can use <code>as</code> to change the name of some of the values.</p>
-<h3 id="Import_all">Import all</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> module1 <span class="keyword">from</span> <span class="string">'./module1'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> car = <span class="keyword">new</span> module1.Car(<span class="string">"blue"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(car.getCarColor()); <span class="comment">// blue</span></span><br></pre></td></tr></table></figure>
-<h2 id="Default_export">Default export</h2><p>If your module only has one value to export, use <code>default</code> when exporting that value.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// Export - myModule.js</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Import</span></span><br><span class="line"><span class="keyword">import</span> myFunc <span class="keyword">from</span> <span class="string">'./myModule'</span>;</span><br><span class="line">myFunc();</span><br></pre></td></tr></table></figure>
-<p>This information should be enough for you to get started with ES6/ES2015 modules. If you need to know more, I would recommend <a href="http://exploringjs.com/es6/ch_modules.html" target="_blank" rel="external">this article</a>.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article will show you how to get started with ES6 modules in node with Babel.<br>]]>
-    
-    </summary>
-    
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
-    
-      <category term="Babel" scheme="http://klugjo.github.io/tags/Babel/"/>
-    
-      <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
-    
-      <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
     
   </entry>
   

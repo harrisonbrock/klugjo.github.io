@@ -303,21 +303,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Hexo/</loc>
-        <lastmod>2016-03-13T13:54:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Disqus/</loc>
-        <lastmod>2016-03-13T13:54:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
         <lastmod>2016-03-13T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -331,7 +317,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Theme/</loc>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
         <lastmod>2016-03-13T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -389,6 +375,20 @@
     <url>
         <loc>http://klugjo.github.io/tags/CSSO/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Hexo/</loc>
+        <lastmod>2016-03-15T07:37:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Theme/</loc>
+        <lastmod>2016-03-15T07:37:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
