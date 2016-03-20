@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-03-15T07:37:04.000Z</updated>
+  <updated>2016-03-20T04:46:41.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,94 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Setup ESLint in WebStorm]]></title>
+    <link href="http://klugjo.github.io/2016/03/Setup-ESLint-in-WebStorm/"/>
+    <id>http://klugjo.github.io/2016/03/Setup-ESLint-in-WebStorm/</id>
+    <published>2016-03-20T03:57:06.000Z</published>
+    <updated>2016-03-20T04:46:41.000Z</updated>
+    <content type="html"><![CDATA[<p>Setting up ESLint in WebStorm turned out to be a bit more complicated (hear time consuming) that I initially thought it would be.</p>
+<p>Here are the steps:</p>
+<a id="more"></a>
+<h2 id="Install_ESLint">Install ESLint</h2><p>Use npm to add ESLint to your project</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> eslint</span><br></pre></td></tr></table></figure>
+<h2 id="Choose_the_right_plugin">Choose the right plugin</h2><p>WebStorm ships with an <a href="https://www.jetbrains.com/help/webstorm/2016.1/using-javascript-code-quality-tools.html?origin=old_help#installESLint" target="_blank" rel="external">ESLint plugin built in</a>. I suggest you use it. I have tried to use a 3rd party plugin and ran into several issues I have not been to resolve.</p>
+<p>In OS X, the plugin is located in:</p>
+<p><strong>WebStorm &gt; Preferences &gt; Languages and Frameworks &gt; JavaScript &gt; Code Quality Tools &gt; ESLint</strong></p>
+<h2 id="ESLint_plugin_Configuration">ESLint plugin Configuration</h2><p>Go ahead and enable the plugin by clicking the checkbox</p>
+<h3 id="Path_to_Node_Interpreter">Path to Node Interpreter</h3><p>Fill in the node path. On OS X, the standard path is <code>/usr/local/bin/node</code>, if you are using <a href="https://github.com/creationix/nvm" target="_blank" rel="external">NVM</a>, it will be something like <code>~/.nvm/versions/node/v5.6.0/bin/node</code>.</p>
+<h3 id="Path_to_ESlint">Path to ESlint</h3><p>Fill in the path to ESlint by setting the path to <u>the eslint node package folder installed locally</u>. Do not set the path to the <code>/bin</code> subdirectory like we did with node. I also suggest you <strong>don’t use</strong> a globally installed ESLint package if you have one.</p>
+<p>The correct path should look something like <code>&lt;path to project&gt;/node_modules/eslint</code>.</p>
+<h3 id="-eslintrc">.eslintrc</h3><p>Use the defaults for the remaining options:</p>
+<ul>
+<li>let Webstorm search for the <code>.eslintrc</code> file</li>
+<li>Additional rules directory remains empty</li>
+<li>Extra eslint options remains empty as well</li>
+</ul>
+<h2 id="ESLint_configuration">ESLint configuration</h2><p>As it is, ESLint does not do much since we have not specified any rules.</p>
+<h3 id="Pick_a_Style_Guide">Pick a Style Guide</h3><p>For this example I will be using <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank" rel="external">Google’s JavaScript Style Guide</a> and the corresponding <a href="https://github.com/google/eslint-config-google" target="_blank" rel="external">ESLint plugin</a>. <a href="https://github.com/airbnb/javascript" target="_blank" rel="external">Airbnb’s Javascript Style Guide</a> is just as popular so check it out and choose one you like.</p>
+<h3 id="Install_the_ESLint_package_locally:">Install the ESLint package locally:</h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install </span>--save-dev eslint-<span class="built_in">config</span>-google</span><br></pre></td></tr></table></figure>
+<h3 id="Setup_the_-eslintrc">Setup the .eslintrc</h3><p>The ESLint configuration resides in a <code>.eslintrc</code> placed at the root of the project (alongside your <code>package.json</code>).</p>
+<p>In the config file, the only thing we need to do is to tell ESLint to use the Google’s style guide:</p>
+<figure class="highlight javascript"><figcaption><span>.eslintrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"extends"</span>: <span class="string">"eslint-config-google"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a href="http://eslint.org/docs/developer-guide/shareable-configs.html#using-a-shareable-config" target="_blank" rel="external">ESLint allows you to remove</a> the <code>eslint-config-</code> prefix so we can simply use:</p>
+<figure class="highlight javascript"><figcaption><span>.eslintrc</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"extends"</span>: <span class="string">"google"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Start_coding_:)">Start coding :)</h2><p>That’s it, you are set. You might have to restart WebStorm if it does not pick up the new configuration immediately but after that you are good to go.</p>
+<p>Any problem ? Let me know in the comments. Thanks for reading !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Setting up ESLint in WebStorm turned out to be a bit more complicated (hear time consuming) that I initially thought it would be.</p>
+<p>Here are the steps:</p>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="WebStorm" scheme="http://klugjo.github.io/tags/WebStorm/"/>
+    
+      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
+    
+      <category term="ESLint" scheme="http://klugjo.github.io/tags/ESLint/"/>
+    
+      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Pure and Impure Functions]]></title>
+    <link href="http://klugjo.github.io/2016/03/Pure-and-Impure-Functions/"/>
+    <id>http://klugjo.github.io/2016/03/Pure-and-Impure-Functions/</id>
+    <published>2016-03-15T08:24:00.000Z</published>
+    <updated>2016-03-20T04:51:14.000Z</updated>
+    <content type="html"><![CDATA[<p>Quick run through on what pure and impure functions are. </p>
+<p>I am looking at adapting one of my current old school MVC project to use Redux for state management. Since Redux makes use of the concept of pure functions, I thought I would lay it down here.<br><a id="more"></a></p>
+<h2 id="Pure_Function">Pure Function</h2><h3 id="Definition">Definition</h3><p>A function is <strong>considered pure</strong> if:</p>
+<p>a) It always returns the same value when given the same arguments<br>b) It does not modify anything (arguments, state, database, I/O, ..)</p>
+<h3 id="Examples_of_Pure_Functions_(in_JavaScript)">Examples of Pure Functions (in JavaScript)</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x, y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span><span class="params">(array)</span> &#123;</span></span><br><span class="line">    <span class="keyword">return</span> array.<span class="built_in">length</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Impure_Function">Impure Function</h2><h3 id="Definition-1">Definition</h3><p>A function is <strong>considered impure</strong> if it is not pure (!), typically because:</p>
+<p>a) it makes use of an external or random value. (It stops being entirely contained and predictable)<br>b) It performs an external operation, in other words it causes side effects</p>
+<h3 id="Examples">Examples</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addToX</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + x; <span class="comment">// Use of an external variable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); <span class="comment">// Use of a random/non consistent value</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x,y)</span> </span>&#123;</span><br><span class="line">    updateDatabase(); <span class="comment">// Side Effect</span></span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="The_Big_Deal">The Big Deal</h2><p>The reason why Pure Function are great:</p>
+<h3 id="Predictable">Predictable</h3><p>Yep, I know, it’s part of the definition, but using a function and knowing exactly what it does feels so good.</p>
+<h3 id="Portable">Portable</h3><p>Pure functions can be reused easily as they do not hold any form of state.</p>
+<h3 id="Cacheable">Cacheable</h3><p>Since the result will always be the same, it becomes easy to cache results.</p>
+<h3 id="Testable_!">Testable !</h3><p>Last but not least, pure functions are easy and a pleasure to test with automated tests.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Quick run through on what pure and impure functions are. </p>
+<p>I am looking at adapting one of my current old school MVC project to use Redux for state management. Since Redux makes use of the concept of pure functions, I thought I would lay it down here.<br>]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="Software Practices" scheme="http://klugjo.github.io/tags/Software-Practices/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[New Hexo Theme - Clean Blog]]></title>
@@ -274,7 +362,7 @@
     <link href="http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/"/>
     <id>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/</id>
     <published>2016-03-08T04:17:41.000Z</published>
-    <updated>2016-03-13T09:32:20.000Z</updated>
+    <updated>2016-03-17T07:50:55.000Z</updated>
     <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. I really love Hexo and use it everyday; unfortunately, as of today, the documentation for theme creation is pretty slim. Here is my attempt at fixing that.</p>
 <a id="more"></a>
 <h2 id="Links_to_other_sections">Links to other sections</h2><ul>
@@ -287,7 +375,7 @@
 <li>Some knowledge of Bootstrap</li>
 <li>Some knowledge of a JavaScript templating engine (we will use EJS)</li>
 </ul>
-<h2 id="Project_Description">Project Description</h2><p>This project will focus on how Hexo generates HTML files based on the theme’s template file. </p>
+<h2 id="Project_Description">Project Description</h2><p>This project is all about creating a theme for Hexo and understanding in details how the Hexo engine </p>
 <p>Since I don’t want to lose too much time on the HTML and CSS parts we are going to recreate the following theme in Hexo: <a href="http://getbootstrap.com/examples/blog/" target="_blank" rel="external">http://getbootstrap.com/examples/blog/</a>. It is one of the standard <a href="http://getbootstrap.com/getting-started/#examples-custom" target="_blank" rel="external">Getting Started Template Examples</a> in the Boostrap documentation.</p>
 <p>We are going to reuse the CSS and copy paste the HTML, piece by piece, until we have achieved what we want.</p>
 <p>If you get lost or are only interested in the code, <a href="https://github.com/klugjo/bootstrap-blog-hexo" target="_blank" rel="external">it is on github</a>.</p>
@@ -740,78 +828,6 @@
       <category term="ES2015" scheme="http://klugjo.github.io/tags/ES2015/"/>
     
       <category term="ES6" scheme="http://klugjo.github.io/tags/ES6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Basic git log commands]]></title>
-    <link href="http://klugjo.github.io/2016/02/Basic-git-log-commands/"/>
-    <id>http://klugjo.github.io/2016/02/Basic-git-log-commands/</id>
-    <published>2016-02-23T13:56:49.000Z</published>
-    <updated>2016-02-23T13:58:31.000Z</updated>
-    <content type="html"><![CDATA[<p>In this article you will learn a few useful commands to check the activity on your repo.</p>
-<a id="more"></a>
-<h2 id="git_log">git log</h2><p>Get your repo history by using </p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<h2 id="Get_more_commit_details">Get more commit details</h2><p>In certain circumstances, you might want to get more detail on some commits.</p>
-<p>Use the <code>-p</code> flag to see all the differences introduced in each commit</p>
-<p>Use the <code>-2</code> to see the last 2 commits only</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git log -<span class="selector-tag">p</span> -<span class="number">2</span></span><br></pre></td></tr></table></figure>
-<h2 id="Get_less_commit_details">Get less commit details</h2><p>In other situations, you want to have less commit details and more of an overview of what is going on in your repo.</p>
-<p>The <code>--oneline</code> flag will help you get a list of commits on one line</p>
-<p>The <code>--graph</code> flag will display a graph that shows to which branches the commits were made</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> <span class="comment">--oneline --graph</span></span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In this article you will learn a few useful commands to check the activity on your repo.</p>]]>
-    
-    </summary>
-    
-      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
-    
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[How to use a custom domain with your github pages site]]></title>
-    <link href="http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/"/>
-    <id>http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</id>
-    <published>2016-02-22T10:39:16.000Z</published>
-    <updated>2016-02-22T11:29:30.000Z</updated>
-    <content type="html"><![CDATA[<p>This article goes through the process of setting up a custom domain for a github pages website.</p>
-<a id="more"></a>
-<h2 id="Pre_requisites">Pre requisites</h2><p>This article assumes that you already have a github pages website up and running. Mine is <a href="https://github.com/klugjo/klugjo.github.io" target="_blank" rel="external">klugjo.github.io</a>.</p>
-<h2 id="Create_the_github_CNAME_file">Create the github CNAME file</h2><p>In order to use a custom domain, you need to let Github know about it with the help of a CNAME file:</p>
-<ul>
-<li>Create a file names <code>CNAME</code> at the root of your website. The file name has to be all Caps.</li>
-<li>Inside that file, input your custom domain name <u>without</u> <code>http(s)://</code>.<br><a href="https://github.com/klugjo/klugjo.github.io/blob/master/CNAME" target="_blank" rel="external">My CNAME file</a> contains: </li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Commit and push your changes</li>
-</ul>
-<p>That is it for the configuration on the github side.</p>
-<h2 id="Setup_the_DNS_provider">Setup the DNS provider</h2><p>You can contact your DNS provider for help on how to configure an A record but this is how I configured mine:</p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/github-pages-custom-domain.png" alt="DNS provider configuration github pages custom domain"></p>
-<p>The <code>CNAME</code> record for www is set to <strong>klugjo.github.io</strong>. The role of a CNAME record is to map a name to another name. Useful when the IP address of the host is not know or not stable.</p>
-<p>The URL record is set to <a href="http://www.codeblocq.com" target="_blank" rel="external">http://www.codeblocq.com</a> in order to redirect all traffic to the www site.</p>
-<h2 id="Notes">Notes</h2><ul>
-<li>You can only setup one custom domain in the CNAME file on github. <a href="https://help.github.com/articles/about-supported-custom-domains/" target="_blank" rel="external">See what are the supported custom domains</a>.</li>
-<li>Read <a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="external">this article</a> if you need to configure an A record with your DNS provider.</li>
-<li>If you still can’t get it right, check out <a href="https://help.github.com/articles/troubleshooting-custom-domains/" target="_blank" rel="external">this troubleshooting guide</a>.</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article goes through the process of setting up a custom domain for a github pages website.</p>]]>
-    
-    </summary>
-    
-      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
-    
-      <category term="Custom Domain" scheme="http://klugjo.github.io/tags/Custom-Domain/"/>
-    
-      <category term="DNS Provider" scheme="http://klugjo.github.io/tags/DNS-Provider/"/>
     
   </entry>
   

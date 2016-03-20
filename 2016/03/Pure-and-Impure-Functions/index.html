@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>How to use a custom domain with your github pages site | CodeBlocQ</title>
+  <title>Pure and Impure Functions | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
-  <meta name="description" content="This article goes through the process of setting up a custom domain for a github pages website.">
+  <meta name="description" content="Quick run through on what pure and impure functions are. 
+I am looking at adapting one of my current old school MVC project to use Redux for state management. Since Redux makes use of the concept of pure functions, I thought I would lay it down here.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="How to use a custom domain with your github pages site"/>
+  <meta property="og:title" content="Pure and Impure Functions"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -75,7 +76,7 @@
 
 
 
-<body class="bg0">
+<body class="bg9">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -100,43 +101,37 @@
       <div class="content-container">
         
   
-    <h1 class="title">How to use a custom domain with your github pages site</h1>
+    <h1 class="title">Pure and Impure Functions</h1>
   
 
-        <div class="subtitle" datetime="2016-02-22T10:39:16.000Z">
-          2016-02-22
+        <div class="subtitle" datetime="2016-03-15T08:24:00.000Z">
+          2016-03-15
           
         </div>
       </div>
       <div class="icon-container">
-        <span class="icon devicons-github_badge"></span>
+        <span class="icon devicons-cubes"></span>
       </div>
     </header>
 
       
         <div class="entry">
-          <p>This article goes through the process of setting up a custom domain for a github pages website.</p>
-<a id="more"></a>
-<h2 id="Pre_requisites">Pre requisites</h2><p>This article assumes that you already have a github pages website up and running. Mine is <a href="https://github.com/klugjo/klugjo.github.io" target="_blank" rel="external">klugjo.github.io</a>.</p>
-<h2 id="Create_the_github_CNAME_file">Create the github CNAME file</h2><p>In order to use a custom domain, you need to let Github know about it with the help of a CNAME file:</p>
-<ul>
-<li>Create a file names <code>CNAME</code> at the root of your website. The file name has to be all Caps.</li>
-<li>Inside that file, input your custom domain name <u>without</u> <code>http(s)://</code>.<br><a href="https://github.com/klugjo/klugjo.github.io/blob/master/CNAME" target="_blank" rel="external">My CNAME file</a> contains: </li>
-</ul>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>Commit and push your changes</li>
-</ul>
-<p>That is it for the configuration on the github side.</p>
-<h2 id="Setup_the_DNS_provider">Setup the DNS provider</h2><p>You can contact your DNS provider for help on how to configure an A record but this is how I configured mine:</p>
-<p><img src="https://s3.amazonaws.com/klugjo.github.io/github-pages-custom-domain.png" alt="DNS provider configuration github pages custom domain"></p>
-<p>The <code>CNAME</code> record for www is set to <strong>klugjo.github.io</strong>. The role of a CNAME record is to map a name to another name. Useful when the IP address of the host is not know or not stable.</p>
-<p>The URL record is set to <a href="http://www.codeblocq.com" target="_blank" rel="external">http://www.codeblocq.com</a> in order to redirect all traffic to the www site.</p>
-<h2 id="Notes">Notes</h2><ul>
-<li>You can only setup one custom domain in the CNAME file on github. <a href="https://help.github.com/articles/about-supported-custom-domains/" target="_blank" rel="external">See what are the supported custom domains</a>.</li>
-<li>Read <a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="external">this article</a> if you need to configure an A record with your DNS provider.</li>
-<li>If you still can’t get it right, check out <a href="https://help.github.com/articles/troubleshooting-custom-domains/" target="_blank" rel="external">this troubleshooting guide</a>.</li>
-</ul>
+          <p>Quick run through on what pure and impure functions are. </p>
+<p>I am looking at adapting one of my current old school MVC project to use Redux for state management. Since Redux makes use of the concept of pure functions, I thought I would lay it down here.<br><a id="more"></a></p>
+<h2 id="Pure_Function">Pure Function</h2><h3 id="Definition">Definition</h3><p>A function is <strong>considered pure</strong> if:</p>
+<p>a) It always returns the same value when given the same arguments<br>b) It does not modify anything (arguments, state, database, I/O, ..)</p>
+<h3 id="Examples_of_Pure_Functions_(in_JavaScript)">Examples of Pure Functions (in JavaScript)</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x, y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span><span class="params">(array)</span> &#123;</span></span><br><span class="line">    <span class="keyword">return</span> array.<span class="built_in">length</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Impure_Function">Impure Function</h2><h3 id="Definition-1">Definition</h3><p>A function is <strong>considered impure</strong> if it is not pure (!), typically because:</p>
+<p>a) it makes use of an external or random value. (It stops being entirely contained and predictable)<br>b) It performs an external operation, in other words it causes side effects</p>
+<h3 id="Examples">Examples</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addToX</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + x; <span class="comment">// Use of an external variable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); <span class="comment">// Use of a random/non consistent value</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x,y)</span> </span>&#123;</span><br><span class="line">    updateDatabase(); <span class="comment">// Side Effect</span></span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="The_Big_Deal">The Big Deal</h2><p>The reason why Pure Function are great:</p>
+<h3 id="Predictable">Predictable</h3><p>Yep, I know, it’s part of the definition, but using a function and knowing exactly what it does feels so good.</p>
+<h3 id="Portable">Portable</h3><p>Pure functions can be reused easily as they do not hold any form of state.</p>
+<h3 id="Cacheable">Cacheable</h3><p>Since the result will always be the same, it becomes easy to cache results.</p>
+<h3 id="Testable_!">Testable !</h3><p>Last but not least, pure functions are easy and a pleasure to test with automated tests.</p>
 
         </div>
       
@@ -147,7 +142,7 @@
           
   
   <div class="tags">
-    <a href="/tags/Github/">Github</a>, <a href="/tags/Custom-Domain/">Custom Domain</a>, <a href="/tags/DNS-Provider/">DNS Provider</a>
+    <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/Software-Practices/">Software Practices</a>
   </div>
 
         

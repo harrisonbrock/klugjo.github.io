@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/03/Pure-and-Impure-Functions/</loc>
+        <lastmod>2016-03-20T04:51:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/03/Setup-ESLint-in-WebStorm/</loc>
+        <lastmod>2016-03-20T04:46:41.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/</loc>
+        <lastmod>2016-03-17T07:50:55.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/03/New-Hexo-Theme-Clean-Blog/</loc>
         <lastmod>2016-03-15T07:37:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -33,14 +57,6 @@
     <url>
         <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/</loc>
         <lastmod>2016-03-13T09:45:25.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-1-Index/</loc>
-        <lastmod>2016-03-13T09:32:20.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -215,14 +231,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -231,7 +239,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -240,6 +248,14 @@
 
     <url>
         <loc>http://klugjo.github.io/2015/12/Build-your-first-React-application/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -279,7 +295,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+        <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -287,7 +303,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
+        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
