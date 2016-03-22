@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Notes on Never Eat Alone by Keith Ferrazzi | CodeBlocQ</title>
+  <title>Remote JavaScript debugging with JSConsole | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
   
-  <meta name="description" content="First impressionsI have just finished Never Eat Alone. It is a book about building a supportive network of business connections that will propel you to the highest spheres of the business world.">
+  <meta name="description" content="JSConsole is one of the easiest way to get your JavaScript logs when your app is executing on a remote platform (Mobile, SmartTV or any web browser based device really). It is free to use and open source.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Notes on Never Eat Alone by Keith Ferrazzi"/>
+  <meta property="og:title" content="Remote JavaScript debugging with JSConsole"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -75,7 +75,7 @@
 
 
 
-<body class="bg7">
+<body class="bg8">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -100,35 +100,52 @@
       <div class="content-container">
         
   
-    <h1 class="title">Notes on Never Eat Alone by Keith Ferrazzi</h1>
+    <h1 class="title">Remote JavaScript debugging with JSConsole</h1>
   
 
-        <div class="subtitle" datetime="2016-02-09T07:26:18.000Z">
-          2016-02-09
+        <div class="subtitle" datetime="2016-03-22T06:21:20.000Z">
+          2016-03-22
           
         </div>
       </div>
       <div class="icon-container">
-        <span class="icon devicons-book3"></span>
+        <span class="icon devicons-bug_report"></span>
       </div>
     </header>
 
       
         <div class="entry">
-          <h2 id="First_impressions">First impressions</h2><p>I have just finished <a href="http://keithferrazzi.com/products/never-eat-alone" target="_blank" rel="external">Never Eat Alone</a>. It is a book about building a supportive network of business connections that will propel you to the highest spheres of the business world.<br><a id="more"></a> </p>
-<p>The author goes through the story of his life and how he networked his way to the top. From his humble lower class beginnings, through golf sessions, wine dinners and republican rallies to being a top consultant and CEO. </p>
-<p>I have gone through the entire book and it is packed with excellent advices, some of which I have detailed below. It is hard not to appreciate the honesty, authenticity and candor of the author. It is an excellent reminder that in life or business you can’t make it alone. As a software developer, it is often too easy to think that your skills are enough to get ahead and this book serves as a powerful reminder that this is certainly not the case.</p>
-<p>I had one minor problem with the book though, it assumes that you are an extrovert looking to smooth talk your way up the American Dream. Probably Appealing to some, I often had difficulties identifying to the author’s behavior and real life situations.</p>
-<h2 id="Notes_and_Takeaways">Notes and Takeaways</h2><ul>
-<li>You can’t make it alone. People will always be the foundation of any human enterprise. Lone wolfs will inevitably crumble under their own weight.</li>
-<li>Fearing rejection is normal, just ignore it and power through.</li>
-<li>Not everyone is born with excellent communication skills but these can be learnt like any other skill.</li>
-<li>Always be generous and loyal. When meeting someone, think: how can I help and not how can this person help me.</li>
-<li>Be patient and meet as many people as you can. Build your network way before you need it.</li>
-<li>Ping people constantly to keep all your hard earned relatioship alive. But once again remain interesting and authentic.</li>
-<li>Set your goals straight and have a clear message, this will make people want to have you in their network and will help you hold intelligent conversations. Be your own brand and market yourself effectively.</li>
-<li>The pillars of your network should be super connectors, mentors and mentees.</li>
+          <p><a href="http://jsconsole.com/" target="_blank" rel="external">JSConsole</a> is one of the easiest way to get your JavaScript logs when your app is executing on a remote platform (Mobile, SmartTV or any web browser based device really). It is free to use and open source.</p>
+<a id="more"></a>
+<h2 id="Why_use_JSConsole">Why use JSConsole</h2><h3 id="JSConsole_is_really_useful_when:">JSConsole is really useful when:</h3><ul>
+<li>You don’t need a remote debugger but just the <code>console.log()</code> outputs</li>
+<li>You need a nicely presented console. The font is resizable which makes it really useful when doing a live coding presentation for example.</li>
+<li>You need to quickly remote debug something. You can use <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a> directly and you don’t have to setup a local server.</li>
+<li>You want to see real time log for an app that is being used the other side of the world. You don’t have to be in the same network, which makes it very easy to use with your QA team or client, thousands of kilometers away.</li>
 </ul>
+<h3 id="JSConsole_is_not_the_right_choice_when:">JSConsole is not the right choice when:</h3><ul>
+<li>You want to understand the DOM structure of the app and test some CSS changes.</li>
+<li>You want to observe network calls being made</li>
+<li>You want to debug JavaScript execution</li>
+</ul>
+<h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point, step by step guide, on how to get started.</p>
+<h3 id="Step_1:_Get_the_JSConsole_&lt;script&gt;_tag:">Step 1: Get the JSConsole <code>&lt;script&gt;</code> tag:</h3><p>Go to <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a>.<br>Type <code>:listen</code> in the textbox.<br>Press Enter.</p>
+<p>This will print out a <code>&lt;script&gt;</code> tag, something like</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://jsconsole.com/js/remote.js?dc69ca75-55bf-405c-aad8-cbd10262bb17"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Step_2:_Insert_the_script_in_your_code">Step 2: Insert the script in your code</h3><p>In the <code>&lt;head&gt;</code> of your code, add the JSConsole script tag.</p>
+<p>Reload or launch your app on the device under test (or simply in your browser).</p>
+<p>The logs will start showing on the <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a> virtual console</p>
+<h3 id="Step_3_(Optional):_Save_the_URL_for_future_use">Step 3 (Optional): Save the URL for future use</h3><p>In the JSConsole, type <code>:listen [Your GUID]</code>. In my example, that would be:</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">listen</span> dc69ca75<span class="number">-55</span>bf<span class="number">-405</span>c-aad8-cbd10262bb17</span><br></pre></td></tr></table></figure>
+<p>See how the URL of the page has changed ? Mine is:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http</span>://jsconsole.com/?<span class="number">%3</span>Alisten<span class="number">%20</span>dc69ca75-55bf-405c-aad8-cbd10262bb17</span><br></pre></td></tr></table></figure>
+<p>This URL will automatically launch JSConsole and start listening to your app’s logs.</p>
+<ul>
+<li>Share this URL with your colleagues or friends so that they can see the log as well.</li>
+<li>Save it for future use (for example tomorrow, when you want to continue development/debugging).</li>
+</ul>
+<h2 id="Conclusion">Conclusion</h2><p>Give it a try and see by yourself, JSConsole is really good at what it does. There are so many scenarios where it can be useful.</p>
+<p>Check out the <a href="https://github.com/remy/jsconsole" target="_blank" rel="external">Github Repo</a> for more info.</p>
 
         </div>
       
@@ -139,7 +156,7 @@
           
   
   <div class="tags">
-    <a href="/tags/Books/">Books</a>, <a href="/tags/Networking/">Networking</a>, <a href="/tags/General-Business/">General Business</a>
+    <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/Debugging/">Debugging</a>, <a href="/tags/JSConsole/">JSConsole</a>, <a href="/tags/Tools/">Tools</a>
   </div>
 
         
