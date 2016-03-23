@@ -7,8 +7,16 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/03/Remote-Web-Debugging-with-weinre/</loc>
+        <lastmod>2016-03-22T09:41:37.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/03/Remote-JavaScript-debugging-with-jsconsole/</loc>
-        <lastmod>2016-03-22T07:10:03.000Z</lastmod>
+        <lastmod>2016-03-22T09:28:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -239,7 +247,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -247,7 +255,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -303,7 +311,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+        <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -311,7 +319,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Easy-dynamic-classes-with-React/</loc>
+        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

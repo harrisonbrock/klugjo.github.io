@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-03-22T07:10:03.000Z</updated>
+  <updated>2016-03-22T09:41:37.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,15 +15,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Remote Web Debugging with weinre]]></title>
+    <link href="http://klugjo.github.io/2016/03/Remote-Web-Debugging-with-weinre/"/>
+    <id>http://klugjo.github.io/2016/03/Remote-Web-Debugging-with-weinre/</id>
+    <published>2016-03-22T08:41:13.000Z</published>
+    <updated>2016-03-22T09:41:37.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank" rel="external">Weinre</a> is a great remote web debugging tool. It allows to you to quickly setup a ‘chrome dev tools’-like interface for any of your app. It comes in really handy when debugging an app on a device that does not have advanced debugging tools, think mobile, smart TVs, wearables and so on ..</p>
+<p>Weinre is free, open source and runs on Node.</p>
+ <a id="more"></a>
+<h2 id="Why_use_weinre">Why use weinre</h2><h3 id="Weinre_is_really_useful_when:">Weinre is really useful when:</h3><ul>
+<li>You need to have access to the DOM on a remote device and do some CSS tweaks</li>
+<li>You want to access the JS log output</li>
+<li>You want to check the network connections and what is going through the network</li>
+<li>You want all of that in a tool that runs on Node.</li>
+</ul>
+<h3 id="Weinre_won’t_be_of_any_help_when:">Weinre won’t be of any help when:</h3><ul>
+<li>You want to debug a device that is not in the same local network as yours. Check out <a href="/2016/03/Remote-JavaScript-debugging-with-jsconsole/">JSConsole</a>.</li>
+<li>You can’t modify your app’s code</li>
+</ul>
+<h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point guide on how to get started.</p>
+<h3 id="Step_1:_Install_weinre">Step 1: Install weinre</h3><p>Easy with npm</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -g <span class="keyword">install</span> weinre</span><br></pre></td></tr></table></figure>
+<h3 id="Step_2:_Start_the_weinre_server">Step 2: Start the weinre server</h3><p>The weinre server will inject some JavaScript in your app through a script to allow the debugging to happen.</p>
+<p>Technically, using <code>weinre</code> is enough to start the server but here are 2 useful options that you might as well pick up straight away:</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">$</span> <span class="comment">weinre</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">boundHost</span> <span class="comment">192</span><span class="string">.</span><span class="comment">168</span><span class="string">.</span><span class="comment">123</span><span class="string">.</span><span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">httpPort</span> <span class="comment">8888</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>--boundHost</code> defaults to localhost -&gt; <strong>use your own IP instead</strong>. Localhost won’t mean [your machine] anymore when you are on your remote device.</li>
+<li><code>--httpPort</code> defaults to 8080 which is also commonly used so save yourself some issues down the line and change it to something else.</li>
+</ul>
+<h3 id="Step_3:_Insert_the_script_in_your_app">Step 3: Insert the script in your app</h3><p>In the <code>&lt;head&gt;</code> of your code, add the weinre script tag:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://192.168.123.1:8888/target/target-script-min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>(Replace the IP with your machine’s IP and the port with whatever port you are using)</p>
+<p>Reload or launch your app on the device under test (or simply in your browser).</p>
+<h3 id="Step_4:_Start_debugging">Step 4: Start debugging</h3><ul>
+<li>Open a browser (Chrome or Safari are supported) and go to: <code>http://192.168.123.1:8888</code> or the equivalent for your IP and Port.</li>
+<li>Click on the first link: Access points &gt; debug client user interface. (Something like <a href="http://192.168.123.1:8888/client/#anonymous" target="_blank" rel="external">http://192.168.123.1:8888/client/#anonymous</a>)</li>
+<li>Your device should appear under Targets. Click on the corresponding link and you are ready to go.</li>
+</ul>
+<p>The debugging tools are quite similar to browser’s dev tools so I am sure you can take it from there :)</p>
+<h2 id="Conclusion">Conclusion</h2><p>Give it a try and see if it fits your needs. Weinre is an excellent tool, I have used it a lot, keep it in mind and you will soon find tons of real life situations where this is useful.</p>
+<p>Check out <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Installing.html" target="_blank" rel="external">the docs</a> for more info.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html">Weinre</a> is a great remote web debugging tool. It allows to you to quickly setup a ‘chrome dev tools’-like interface for any of your app. It comes in really handy when debugging an app on a device that does not have advanced debugging tools, think mobile, smart TVs, wearables and so on ..</p>
+<p>Weinre is free, open source and runs on Node.</p>]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
+    
+      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
+    
+      <category term="Weinre" scheme="http://klugjo.github.io/tags/Weinre/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Remote JavaScript debugging with JSConsole]]></title>
     <link href="http://klugjo.github.io/2016/03/Remote-JavaScript-debugging-with-jsconsole/"/>
     <id>http://klugjo.github.io/2016/03/Remote-JavaScript-debugging-with-jsconsole/</id>
     <published>2016-03-22T06:21:20.000Z</published>
-    <updated>2016-03-22T07:10:03.000Z</updated>
+    <updated>2016-03-22T09:28:34.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://jsconsole.com/" target="_blank" rel="external">JSConsole</a> is one of the easiest way to get your JavaScript logs when your app is executing on a remote platform (Mobile, SmartTV or any web browser based device really). It is free to use and open source.</p>
 <a id="more"></a>
 <h2 id="Why_use_JSConsole">Why use JSConsole</h2><h3 id="JSConsole_is_really_useful_when:">JSConsole is really useful when:</h3><ul>
-<li>You don’t need a remote debugger but just the <code>console.log()</code> outputs</li>
+<li>You don’t need a complete remote dev tools but just the <code>console.log()</code> outputs</li>
 <li>You need a nicely presented console. The font is resizable which makes it really useful when doing a live coding presentation for example.</li>
 <li>You need to quickly remote debug something. You can use <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a> directly and you don’t have to setup a local server.</li>
 <li>You want to see real time log for an app that is being used the other side of the world. You don’t have to be in the same network, which makes it very easy to use with your QA team or client, thousands of kilometers away.</li>
@@ -33,6 +91,7 @@
 <li>You want to observe network calls being made</li>
 <li>You want to debug JavaScript execution</li>
 </ul>
+<p>(Note: if you are looking for full featured web debugging, checkout <a href="/2016/03/Remote-Web-Debugging-with-weinre/">weinre</a>)</p>
 <h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point, step by step guide, on how to get started.</p>
 <h3 id="Step_1:_Get_the_JSConsole_&lt;script&gt;_tag:">Step 1: Get the JSConsole <code>&lt;script&gt;</code> tag:</h3><p>Go to <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a>.<br>Type <code>:listen</code> in the textbox.<br>Press Enter.</p>
 <p>This will print out a <code>&lt;script&gt;</code> tag, something like</p>
@@ -795,56 +854,6 @@
       <category term="TDD" scheme="http://klugjo.github.io/tags/TDD/"/>
     
       <category term="Webpack" scheme="http://klugjo.github.io/tags/Webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Best git log aliases]]></title>
-    <link href="http://klugjo.github.io/2016/02/Best-git-log-aliases/"/>
-    <id>http://klugjo.github.io/2016/02/Best-git-log-aliases/</id>
-    <published>2016-02-29T08:38:44.000Z</published>
-    <updated>2016-02-29T09:57:16.000Z</updated>
-    <content type="html"><![CDATA[<p>This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.</p>
-<p>Please feel free to submit your own in the comments below.<br><a id="more"></a></p>
-<h2 id="Add_an_alias">Add an alias</h2><p>To add aliases, open your <code>.gitconfig</code> file and you will see an alias section:</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">alias</span>]</span><br><span class="line">	ac = !git <span class="keyword">add </span>. &amp;&amp; git commit -am</span><br></pre></td></tr></table></figure>
-<p>If you are on OSX, open a new command prompt and type:</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">open</span> .gitconfig</span><br></pre></td></tr></table></figure>
-<p>To use the alias, simply type:</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> aliasname</span><br></pre></td></tr></table></figure>
-<h2 id="Log_aliases">Log aliases</h2><p>In no particular order:</p>
-<h3 id="1_-_One_liner_with_colors">1 - One liner with colors</h3><p>Will log a list of commits, all on one line with customisable colours. Useful to know who has changed what on the repo recently.</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l1 = <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"</span> --decorate --date=short</span><br></pre></td></tr></table></figure>
-<p><a href="https://gist.github.com/mwhite/6887990" target="_blank" rel="external">Source</a></p>
-<h3 id="2_-_Graph_one_liner">2 - Graph one liner</h3><p>Will log a list of commits with only the commit name and SHA. Useful to have a quick overview of the branches on the repo. I usually use the web UI for this, but this can be quicker if all you need is to refresh your memory.</p>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">l2</span> <span class="comment">=</span> <span class="comment">log</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">graph</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">oneline</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">decorate</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">all</span></span><br></pre></td></tr></table></figure>
-<p><a href="http://durdn.com/blog/2012/11/22/must-have-git-aliases-advanced-examples/" target="_blank" rel="external">Source</a> (first comment)</p>
-<h3 id="3_-_Search_commit_name_history">3 - Search commit name history</h3><p>Will search previous commits for a specific term. Useful if you want to find a specific comment based on the comment.</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">l3</span> = !git log --<span class="literal">on</span>eline | grep</span><br></pre></td></tr></table></figure>
-<p>Use it like this</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">log</span> l3 JIRA <span class="comment"># Will display all commits with 'JIRA' in the description</span></span><br></pre></td></tr></table></figure>
-<h3 id="4_-_Details_about_the_last_commit">4 - Details about the last commit</h3><p>Will show all the differences introduced in the last commit.</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">l4</span> = log -p -<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h3 id="5_-_Get_commits_for_n_days_before_today">5 - Get commits for n days before today</h3><p>Another one by myself. It makes use of functions and displays the list of commits made before X days ago.</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l5 = <span class="string">"!f() &#123; \</span><br><span class="line">        git log --after=\"</span>$(date -j -v-$1d +<span class="meta">%Y</span>-<span class="meta">%m</span>-<span class="meta">%d</span>)\<span class="string">" --oneline; \</span><br><span class="line">    &#125;; f"</span></span><br></pre></td></tr></table></figure>
-<p>Use it like this</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git l5 15 <span class="comment"># Get the commits made in the last 15 days</span></span><br></pre></td></tr></table></figure>
-<h2 id="Summary">Summary</h2><p>I hope you found these useful, I will add more as I go.</p>
-<p>Here is the list so far:</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">l1 = <span class="keyword">log</span> --pretty=<span class="keyword">format</span>:<span class="string">"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]"</span> --decorate --date=short</span><br><span class="line">l2 = <span class="keyword">log</span> --graph --oneline --decorate --all</span><br><span class="line">l3 = !git <span class="keyword">log</span> --oneline | <span class="keyword">grep</span></span><br><span class="line">l4 = <span class="keyword">log</span> -p -<span class="number">1</span></span><br><span class="line">l5 = <span class="string">"!f() &#123; \</span><br><span class="line">        git log --after=\"$(date -j -v-$1d +%Y-%m-%d)\" --oneline; \</span><br><span class="line">    &#125;; f"</span></span><br></pre></td></tr></table></figure>
-<p>Thanks for reading !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article looks at the best log aliases I use. Some I have found, some I have created and after reading you should be able to create your own easily.</p>
-<p>Please feel free to submit your own in the comments below.<br>]]>
-    
-    </summary>
-    
-      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
-    
-      <category term="Log" scheme="http://klugjo.github.io/tags/Log/"/>
-    
-      <category term="Alias" scheme="http://klugjo.github.io/tags/Alias/"/>
     
   </entry>
   
