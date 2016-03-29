@@ -73,7 +73,7 @@
 
 
 
-<body class="bg7">
+<body class="bg4">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -91,6 +91,71 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
+  
+<article class="post detail-view" >
+  
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
+  
+    <h1 class="title"><a href="/2016/03/Remote-Web-debugging-with-Vorlon-js/">Remote Web debugging with Vorlon.js</a></h1>
+  
+
+        <div class="subtitle" datetime="2016-03-23T07:23:32.000Z">
+          2016-03-23
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-bug_report"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p><a href="http://vorlonjs.com/" target="_blank" rel="external">VorlonJS</a> is a newcomer in the remote web debugging tool. I have not used it a lot but after giving it a try here are my findings:</p>
+<ul>
+<li>It has pretty much the same features as <a href="/2016/03/Remote-Web-Debugging-with-weinre/">weinre</a></li>
+<li>Very neat UX and interface</li>
+<li>Built in Node</li>
+<li>Gives you the standard dev tools options (Console, DOM, Object Explorer)</li>
+<li>Possibility to add plugins to Run Unit Tests, capture network traffic</li>
+<li>They have desktop apps as well </li>
+<li>Free and Open Source</li>
+</ul>
+<p>Overall a very solid product that you should definitely checkout if you need a remote debugging tool</p>
+<h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point guide on how to get started.</p>
+<h3 id="Step_1:_Install_Vorlon">Step 1: Install Vorlon</h3><p>With npm</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> -g vorlon</span><br></pre></td></tr></table></figure>
+<h3 id="Step_2:_Start_the_Vorlon_server">Step 2: Start the Vorlon server</h3><p>One simple command</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vorlon</span><br></pre></td></tr></table></figure>
+<p>then open your browser at <code>http://localhost:1337/</code></p>
+<h3 id="Step_3:_Insert_the_script_in_your_app">Step 3: Insert the script in your app</h3><p>In the <code>&lt;head&gt;</code> of your app, insert the following:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://localhost:1337/vorlon.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>At this point, I highly recommend that you replace localhost with the IP of your app.</strong> Use something like <code>&lt;script src=&quot;http://192.168.83.100:1337/vorlon.js&quot;&gt;&lt;/script&gt;</code>.</p>
+<h3 id="Step_4:_Start_debugging">Step 4: Start debugging</h3><p>Reload your app and you can start debugging.</p>
+<p>Experiment with the features, I really like the DOM explorer and console which are available on app start. The Obj Explorer can be useful as well.</p>
+<p>I have had some difficulties with the other features but it might work out well for you.</p>
+<h2 id="Conclusion">Conclusion</h2><p>A tool I have not used much but will try to incorporate in my tool box. Will keep you guys posted.</p>
+<p>Check out the <a href="http://vorlonjs.com/#getting-started" target="_blank" rel="external">introduction video tutorial</a> on their website if you want to know more.</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+
+
   
 <article class="post list-view"  onclick="window.location.href = '/2016/03/Remote-Web-Debugging-with-weinre/'" >
   

@@ -394,29 +394,36 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/tags/Weinre/</loc>
+        <lastmod>2016-03-23T08:56:26.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-03-22T09:41:37.000Z</lastmod>
+        <lastmod>2016-03-23T09:03:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Debugging/</loc>
-        <lastmod>2016-03-22T09:41:37.000Z</lastmod>
+        <lastmod>2016-03-23T09:03:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Tools/</loc>
-        <lastmod>2016-03-22T09:41:37.000Z</lastmod>
+        <lastmod>2016-03-23T09:03:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Weinre/</loc>
-        <lastmod>2016-03-22T09:41:37.000Z</lastmod>
+        <loc>http://klugjo.github.io/tags/Vorlon/</loc>
+        <lastmod>2016-03-23T09:03:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
