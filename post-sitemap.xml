@@ -7,6 +7,70 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
+        <lastmod>2016-03-30T05:29:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
+        <lastmod>2016-03-30T05:28:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2015/08/Debug-Mocha-Unit-Tests-in-Webstorm/</loc>
+        <lastmod>2016-03-30T05:26:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/02/Copy-an-Array-into-itself-in-JavaScript-ES6-2015/</loc>
+        <lastmod>2016-03-30T05:25:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
+        <lastmod>2016-03-30T05:24:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/03/Setup-ESLint-in-Atom/</loc>
+        <lastmod>2016-03-30T05:21:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/03/New-Hexo-Theme-Magnetic/</loc>
+        <lastmod>2016-03-29T08:36:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/03/Remote-Web-debugging-with-Vorlon-js/</loc>
         <lastmod>2016-03-29T06:36:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -71,14 +135,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/</loc>
-        <lastmod>2016-03-13T13:54:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/</loc>
         <lastmod>2016-03-13T09:45:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -119,14 +175,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/02/Copy-an-Array-into-itself-in-JavaScript-ES6-2015/</loc>
-        <lastmod>2016-02-26T00:58:11.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2016/01/The-let-keyword-in-ES6-JavaScript/</loc>
         <lastmod>2016-02-24T09:42:53.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -137,14 +185,6 @@
     <url>
         <loc>http://klugjo.github.io/2016/02/Basic-git-log-commands/</loc>
         <lastmod>2016-02-23T13:58:31.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
-        <lastmod>2016-02-22T11:29:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -199,14 +239,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
-        <lastmod>2016-02-11T12:50:44.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/2016/02/Debug-hexo-blog-generation-in-webstorm/</loc>
         <lastmod>2016-02-11T12:50:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -233,14 +265,6 @@
     <url>
         <loc>http://klugjo.github.io/2016/02/git-add/</loc>
         <lastmod>2016-02-11T12:36:48.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2015/12/Add-Disqus-comments-in-Hexo/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -304,14 +328,6 @@
 
     <url>
         <loc>http://klugjo.github.io/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2015/08/Debug-Mocha-Unit-Tests-in-Webstorm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -407,7 +423,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
+        <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -415,7 +431,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Search-through-history-in-OSX-terminal/</loc>
+        <loc>http://klugjo.github.io/2015/12/Run-scripts-with-npm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -447,7 +463,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
+        <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -455,7 +471,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
+        <loc>http://klugjo.github.io/2016/01/Wildcards-in-bash/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

@@ -51,13 +51,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Mocha/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/REST/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -177,27 +170,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Github/</loc>
-        <lastmod>2016-02-22T11:29:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Custom-Domain/</loc>
-        <lastmod>2016-02-22T11:29:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/DNS-Provider/</loc>
-        <lastmod>2016-02-22T11:29:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Bash/</loc>
         <lastmod>2016-02-23T13:58:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -233,13 +205,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/TDD/</loc>
-        <lastmod>2016-03-03T03:46:46.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Webpack/</loc>
         <lastmod>2016-03-03T03:46:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -254,36 +219,8 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/ES2015/</loc>
-        <lastmod>2016-03-07T09:45:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/ES6/</loc>
-        <lastmod>2016-03-07T09:45:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Gulp/</loc>
         <lastmod>2016-03-07T09:45:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Disqus/</loc>
-        <lastmod>2016-03-13T13:54:09.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
-        <lastmod>2016-03-13T13:54:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -317,69 +254,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Hexo/</loc>
-        <lastmod>2016-03-17T07:50:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Theme/</loc>
-        <lastmod>2016-03-17T07:50:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Bootstrap/</loc>
-        <lastmod>2016-03-17T07:50:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Template/</loc>
-        <lastmod>2016-03-17T07:50:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/EJS/</loc>
-        <lastmod>2016-03-17T07:50:55.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Node/</loc>
-        <lastmod>2016-03-20T04:46:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/WebStorm/</loc>
-        <lastmod>2016-03-20T04:46:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/OS-X/</loc>
-        <lastmod>2016-03-20T04:46:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/ESLint/</loc>
-        <lastmod>2016-03-20T04:46:41.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Software-Practices/</loc>
         <lastmod>2016-03-20T04:51:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -401,21 +275,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
-        <lastmod>2016-03-29T06:36:13.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Debugging/</loc>
-        <lastmod>2016-03-29T06:36:13.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Tools/</loc>
         <lastmod>2016-03-29T06:36:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -424,6 +284,153 @@
     <url>
         <loc>http://klugjo.github.io/tags/Vorlon/</loc>
         <lastmod>2016-03-29T06:36:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Tools/</loc>
+        <lastmod>2016-03-30T05:21:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ESLint/</loc>
+        <lastmod>2016-03-30T05:21:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Atom/</loc>
+        <lastmod>2016-03-30T05:21:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ES2015/</loc>
+        <lastmod>2016-03-30T05:25:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/ES6/</loc>
+        <lastmod>2016-03-30T05:25:04.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Hexo/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Disqus/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Theme/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Bootstrap/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Template/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/EJS/</loc>
+        <lastmod>2016-03-30T05:25:22.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Mocha/</loc>
+        <lastmod>2016-03-30T05:26:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/TDD/</loc>
+        <lastmod>2016-03-30T05:26:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Github/</loc>
+        <lastmod>2016-03-30T05:28:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Custom-Domain/</loc>
+        <lastmod>2016-03-30T05:28:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/DNS-Provider/</loc>
+        <lastmod>2016-03-30T05:28:13.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Node/</loc>
+        <lastmod>2016-03-30T05:29:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/WebStorm/</loc>
+        <lastmod>2016-03-30T05:29:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/OS-X/</loc>
+        <lastmod>2016-03-30T05:29:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
