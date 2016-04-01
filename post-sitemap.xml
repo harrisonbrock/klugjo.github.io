@@ -7,6 +7,22 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/03/New-Hexo-Theme-Magnetic/</loc>
+        <lastmod>2016-04-01T01:32:29.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/04/New-Hexo-Theme-Phantom/</loc>
+        <lastmod>2016-04-01T01:27:21.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/02/Node-auto-completion-in-WebStorm-on-OSX/</loc>
         <lastmod>2016-03-30T05:29:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -57,14 +73,6 @@
     <url>
         <loc>http://klugjo.github.io/2016/03/Setup-ESLint-in-Atom/</loc>
         <lastmod>2016-03-30T05:21:30.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2016/03/New-Hexo-Theme-Magnetic/</loc>
-        <lastmod>2016-03-29T08:36:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -279,7 +287,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -287,7 +295,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
