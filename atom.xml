@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-04-01T01:27:21.000Z</updated>
+  <updated>2016-04-04T07:00:19.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Get the OS X command line to read files for you]]></title>
+    <link href="http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/"/>
+    <id>http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</id>
+    <published>2016-04-04T05:26:34.000Z</published>
+    <updated>2016-04-04T07:00:19.000Z</updated>
+    <content type="html"><![CDATA[<p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US" target="_blank" rel="external">speech command</a> with the command line.</p>
+<a id="more"></a>
+<h3 id="Speak">Speak</h3><p>You can have your system say a sentence by using:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> Hello World. My Name <span class="keyword">is</span> Jonathan.</span><br></pre></td></tr></table></figure>
+<h3 id="Specify_a_voice">Specify a voice</h3><p>Your mac ships with a few voices, use <code>-v</code> to specify a voice.</p>
+<p>Example:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> -v Karen Hello World</span><br></pre></td></tr></table></figure>
+<p><strong>List of voices:</strong> Alex, Bruce, Fred, Kathy, Vicky, Victoria, Daniel, Tessa, Fiona, Moira, Veena, Karen.</p>
+<h3 id="Specify_a_file">Specify a file</h3><p>You can use <code>-f</code> to specify the path to a file to read.</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> -f ~/testvoice.txt</span><br></pre></td></tr></table></figure>
+<p>You can also pipe the content of the file into the <code>say</code> command:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/testvoice.txt <span class="string">| say</span></span><br></pre></td></tr></table></figure>
+<p>If are looking for text to fill in your text file, checkout <a href="http://fucklorem.com/" target="_blank" rel="external">http://fucklorem.com/</a>.</p>
+<h3 id="Output_the_speech_to_a_file">Output the speech to a file</h3><p>Use the <code>-o</code> flag to output the </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say -o /Users/klugjo/outputvoice<span class="selector-class">.m4a</span> Hello World</span><br></pre></td></tr></table></figure>
+<h3 id="Combine_it_all_together">Combine it all together</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ say -v Fiona -f ~/testvoice<span class="selector-class">.txt</span> -o outputvoice.m4a</span><br></pre></td></tr></table></figure>
+<p>Hope you had fun, not the most useful command but I had quite a bit of fun with it.</p>
+<p>Check out more OS X commands <a href="https://github.com/herrbischoff/awesome-osx-command-line" target="_blank" rel="external">here</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US">speech command</a> with the command line.</p>]]>
+    
+    </summary>
+    
+      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+    
+      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
+    
+      <category term="Just For Fun" scheme="http://klugjo.github.io/tags/Just-For-Fun/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[New Hexo Theme Phantom]]></title>
@@ -496,109 +534,6 @@
       <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
     
       <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Create an Hexo Theme - Part 3: Comments, Analytics and Widgets]]></title>
-    <link href="http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/"/>
-    <id>http://klugjo.github.io/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/</id>
-    <published>2016-03-11T01:20:09.000Z</published>
-    <updated>2016-03-30T05:25:22.000Z</updated>
-    <content type="html"><![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html" target="_blank" rel="external">Hexo Theme</a> from scratch. </p>
-<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a> and <a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2</a>, we have created all the pages of the blog. In this last section, we are going to add <a href="https://disqus.com/" target="_blank" rel="external">Disqus comments</a> to our posts, implement <a href="https://www.google.com.sg/analytics/" target="_blank" rel="external">Google Analytics</a> and complete the sidebar’s widgets.</p>
-<a id="more"></a>
-<h2 id="Links_to_other_sections">Links to other sections</h2><ul>
-<li><a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1: Setting up the project and creating the blog’s main index page</a></li>
-<li><a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2: Finishing up the remaining pages</a></li>
-<li><a href="/2016/03/Create-an-Hexo-Theme-Part-3-Comments-Analytics-and-Widgets/">Part 3: Wrapping up with Disqus comments, Google Analytics and the widgets</a></li>
-</ul>
-<h2 id="Disqus_Comments">Disqus Comments</h2><p>I have already written a blog post on <a href="/2015/12/Add-Disqus-comments-in-Hexo/">how to implement Disqus comments in Hexo</a>. Please refer to it if you need more information but here is how to do it:</p>
-<p>The first step is to get a Disqus UID to test the comments, you can get it from your Disqus account here:</p>
-<p><img src="/img/add-disqus-comments-hexo-unique-name.jpg" alt="Disqus Unique Identifier"></p>
-<p>Then there are three things that need to be implemented, the theme config for disqus, the comments placeholder and the Disqus script. Let’s get going.</p>
-<h3 id="Theme_config">Theme config</h3><p>We want the Disqus UID to be configurable, let’s add an entry to the theme’s <code>_config.yml</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Disqus Comments Shortname</span><br><span class="line">disqus_shortname: klugjoTest</span><br></pre></td></tr></table></figure>
-<h3 id="Comments_placeholder">Comments placeholder</h3><p>We are going to add comments to our <code>page</code> and <code>post</code> details pages. As always, let’s create a new partial view <code>layout/_partial/comments.ejs</code> and insert it at the end of our <code>layout/_partial/article-full.ejs</code>.</p>
-<figure class="highlight html"><figcaption><span>layout/_partial/comments.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   [...]</span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Comments --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">comments</span>') %&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Disqus is exepecting a <code>div#disqus_thread</code> element, here is the official code from the documentation</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>Let’s integrate this into our comments partial:</p>
-<figure class="highlight html"><figcaption><span>layout/_partial/comments.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">page.comments</span> &amp;&amp; <span class="attr">theme.disqus_shortname</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"blog-post-comments"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>Comments:<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"disqus_thread"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">noscript</span>&gt;</span>Please enable JavaScript to view the <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"//disqus.com/?ref_noscript"</span>&gt;</span>comments powered by Disqus.<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">noscript</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<p>First we are checking that comments are ON and that our disqus UID has been set. Then we are placing the Disqus markup code inside a container.</p>
-<p>Here is the CSS code I have used for that container:</p>
-<figure class="highlight css"><figcaption><span>source/css/blog.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.blog-post-comments</span> &#123;</span><br><span class="line">    <span class="attribute">margin-top</span>: <span class="number">50px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Disqus_script">Disqus script</h3><p>Before we can test, we need to add the Disqus script which contains all the magic. Place it with all the other scripts at the end of <code>layout/_partial/after-footer.ejs</code></p>
-<figure class="highlight html"><figcaption><span>layout/_partial/after-footer.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- Disqus Comments --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.disqus_shortname</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">        <span class="keyword">var</span> disqus_shortname = <span class="string">'&lt;%= theme.disqus_shortname %&gt;'</span>;</span><br><span class="line"></span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> dsq = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">            dsq.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">            dsq.async = <span class="literal">true</span>;</span><br><span class="line">            dsq.src = <span class="string">'//'</span> + disqus_shortname + <span class="string">'.disqus.com/&lt;% if (page.comments)&#123; %&gt;embed.js&lt;% &#125; else &#123; %&gt;count.js&lt;% &#125; %&gt;'</span>;</span><br><span class="line">            (<span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>] || <span class="built_in">document</span>.getElementsByTagName(<span class="string">'body'</span>)[<span class="number">0</span>]).appendChild(dsq);</span><br><span class="line">        &#125;());</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<p>The script is taken from the <a href="https://help.disqus.com/customer/portal/articles/472097-universal-embed-code" target="_blank" rel="external">docs</a> and the Disqus UID was parameterized.</p>
-<p>Go ahead and test that everything is working as expected.</p>
-<h2 id="Google_Analytics">Google Analytics</h2><p>Google Analytics implementation follows the same principle as Disqus so I will move through it quickly. </p>
-<p>I have another <a href="/2015/12/Add-Google-Analytics-to-your-hexo-blog/">blog post on that subject</a>.</p>
-<h3 id="Setup_the_tracking_ID_in_the_theme’s_config">Setup the tracking ID in the theme’s config</h3><p>Get your google analytics tracking ID from your account and add a new entry to the config.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Google Analytics Tracking ID</span><br><span class="line">google_analytics: UA-83746351-2</span><br></pre></td></tr></table></figure>
-<h3 id="Create_a_new_partial">Create a new partial</h3><p>Create a new partial view <code>layout/_partial/google-analytic.ejs</code></p>
-<figure class="highlight html"><figcaption><span>layout/_partial/google-analytic.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.google_analytics</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">        (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">'GoogleAnalyticsObject'</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                    (i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),</span><br><span class="line">                m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;m.parentNode.insertBefore(a,m)</span><br><span class="line">        &#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">'script'</span>,<span class="string">'//www.google-analytics.com/analytics.js'</span>,<span class="string">'ga'</span>);</span><br><span class="line"></span><br><span class="line">        ga(<span class="string">'create'</span>, <span class="string">'&lt;%= theme.google_analytics %&gt;'</span>, <span class="string">'auto'</span>);</span><br><span class="line">        ga(<span class="string">'send'</span>, <span class="string">'pageview'</span>);</span><br><span class="line"></span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<p>This is a simple copy paste of <a href="https://support.google.com/analytics/answer/1008080?hl=en" target="_blank" rel="external">Google Analytics Tracking code</a> with a parameterized ID.</p>
-<h3 id="Integrate_the_partial">Integrate the partial</h3><p>We want our tracking code on all pages, and there is not best place to put it on a page. Let’s add it at the end of our <code>&lt;head&gt;&lt;/head&gt;</code>:</p>
-<figure class="highlight html"><figcaption><span>layout/_partial/head.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"IE=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    [...]</span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- Google Analytics --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">google-analytics</span>') %&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>And we are done !</p>
-<h2 id="Widgets">Widgets</h2><p>At the moment our widgets are just a bunch of hardcoded, static HTML inside <code>sidebar.ejs</code>. Let’s fix that.</p>
-<h3 id="Configuration">Configuration</h3><p>Let’s start with the configuration. </p>
-<p>We are going to create two widgets, one <strong>About</strong> widget and one <strong>Tags</strong> widget. I want the JavaScript object version of the config to look like</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    widgets: &#123;</span><br><span class="line">        about: <span class="string">"Here goes the about text"</span>,</span><br><span class="line">        tags: <span class="literal">true</span> <span class="comment">// Or any additional configuration the widget needs</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>This is how it translates to <strong>YML</strong> inside our theme’s configuration file:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Widgets List</span><br><span class="line">widgets:</span><br><span class="line">  about: This blog is based off the official bootstrap blog template. Checkout the corresponding tutorial at &lt;a href=&quot;http://www.codeblocq.com&quot;&gt;http://www.codeblocq.com&lt;/a</span><br><span class="line">  tags: true</span><br></pre></td></tr></table></figure>
-<h3 id="Sidebar_Code">Sidebar Code</h3><p>Our sidebar which is the placeholder of all our widgets, will need to iterate through all the widgets in the configuration and render them appropriately:</p>
-<p>This what the sidebar EJS template now looks like:</p>
-<figure class="highlight html"><figcaption><span>layout/_partial/sidebar.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">for</span>(<span class="attr">var</span> <span class="attr">widget</span> <span class="attr">in</span> <span class="attr">theme.widgets</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">%-</span> <span class="attr">partial</span>('<span class="attr">widget</span>/' + <span class="attr">widget</span>) %&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125;; %&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="First_Widget:_About">First Widget: About</h3><p>Let’s build our first widget inside a new partial called <code>layout/_partial/widget/about.ejs</code>. </p>
-<p>The code is copy pasted from the original bootstrap template and the text now comes from the configuration.</p>
-<figure class="highlight html"><figcaption><span>layout/_partial/widget/about.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span>(<span class="attr">theme.widgets.about</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar-module sidebar-module-inset"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>About<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">%-</span> <span class="attr">theme.widgets.about</span> %&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Second_Widget:_Tags">Second Widget: Tags</h3><p>Let’s do something slighty more advanced for this widget. Display a paragraph with all the tags used in the blog, separated by whitespaces and with a font size proportional to the number of times the tag is used.</p>
-<p>Here is the code in <code>layout/_partial/widget/tags.ejs</code></p>
-<figure class="highlight html"><figcaption><span>layout/_partial/widget/tags.ejs</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%</span> <span class="attr">if</span> (<span class="attr">theme.widgets.tags</span> &amp;&amp; <span class="attr">site.tags.length</span>)&#123; %&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"sidebar-module"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h4</span>&gt;</span>Tags<span class="tag">&lt;/<span class="name">h4</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> <span class="attr">site.tags.sort</span>('<span class="attr">name</span>')<span class="attr">.each</span>(<span class="attr">function</span>(<span class="attr">item</span>)&#123; %&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;"</span> <span class="attr">style</span>=<span class="string">"font-size: &lt;%- Math.min(item.posts.length * 2 + 13, 30) %&gt;px"</span>&gt;</span><span class="tag">&lt;<span class="name">%=</span> <span class="attr">item.name</span> %&gt;</span><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">%</span> &#125;); %&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">%</span> &#125; %&gt;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>site.tags</code> gives us access to all the tags</li>
-<li><code>site.tags.sort(&#39;name&#39;)</code> sorts all the tags by alphabetical order</li>
-<li><code>item.path</code> correspond to the relative URL to the archive page for that tag</li>
-<li><code>item.posts.length</code> gives you the number of time a tag is used</li>
-<li><code>item.name</code> is the Tag label</li>
-</ul>
-<p>I chose <strong>13 + (tag occurence * 2)</strong> in pixels (capped at 30px) for the <code>font-size</code> but feel free to use what you want. </p>
-<h2 id="The_End">The End</h2><p>That’s the end of this tutorial, I hope you have learnt something interesting from it.</p>
-<p>Here are a few things you can do if you want to develop it further:</p>
-<ul>
-<li>Finish the implementation of the head by parameterizing the <code>&lt;title&gt;</code> and all the <a href="http://ogp.me/" target="_blank" rel="external">Open Graph</a> properties.</li>
-<li>Add more widgets, for example a <a href="https://github.com/hexojs/hexo-theme-light/blob/master/layout/_widget/search.ejs" target="_blank" rel="external">search widget</a> or a <a href="https://github.com/hexojs/hexo-theme-light/blob/master/layout/_widget/recent_posts.ejs" target="_blank" rel="external">recent posts widget</a>.</li>
-<li>Run <a href="https://github.com/hexojs/hexo-theme-unit-test" target="_blank" rel="external">Hexo Theme Unit Tests</a> to make sure that everything is in order.</li>
-<li>Publish your theme on the <a href="https://hexo.io/themes/" target="_blank" rel="external">hexo website’s theme gallery</a>.</li>
-<li>Check out my other <a href="/tags/Hexo/">Hexo tutorials</a> to improve your blog.</li>
-<li>Check out <a href="https://github.com/cgmartin/hexo-theme-bootstrap-blog" target="_blank" rel="external">hexo-theme-bootstrap-blog</a> which is an implementation of the same bootstrap template.</li>
-<li>Implement your own theme from scratch.</li>
-</ul>
-<p>Thanks for reading ! Really appreciate your comments, corrections, suggestions in the comments.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>In this multi part tutorial, you will learn how to create an <a href="https://hexo.io/docs/themes.html">Hexo Theme</a> from scratch. </p>
-<p>In <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">Part 1</a> and <a href="/2016/03/Create-an-Hexo-Theme-Part-2-Other-Pages/">Part 2</a>, we have created all the pages of the blog. In this last section, we are going to add <a href="https://disqus.com/">Disqus comments</a> to our posts, implement <a href="https://www.google.com.sg/analytics/">Google Analytics</a> and complete the sidebar’s widgets.</p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="Disqus" scheme="http://klugjo.github.io/tags/Disqus/"/>
-    
-      <category term="Analytics" scheme="http://klugjo.github.io/tags/Analytics/"/>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
-    
-      <category term="Bootstrap" scheme="http://klugjo.github.io/tags/Bootstrap/"/>
-    
-      <category term="Template" scheme="http://klugjo.github.io/tags/Template/"/>
-    
-      <category term="EJS" scheme="http://klugjo.github.io/tags/EJS/"/>
     
   </entry>
   

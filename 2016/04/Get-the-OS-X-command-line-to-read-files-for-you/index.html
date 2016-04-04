@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/11 | CodeBlocQ</title>
+  <title>Get the OS X command line to read files for you | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="A fun article today on how to use OSX speech command with the command line.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Get the OS X command line to read files for you"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -73,7 +75,7 @@
 
 
 
-<body class="bg1">
+<body class="bg8">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -91,83 +93,78 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<div class="archive-title">2015/11</div>
-
-<div class="archive">
+<article class="post detail-view" >
   
-    <article class="post list-view" onclick="window.location.href = '/2015/11/Your-first-10-minutes-with-Browserify/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
   
-    <h1 class="title"><a href="/2015/11/Your-first-10-minutes-with-Browserify/">Your first 10 minutes with Browserify</a></h1>
+    <h1 class="title">Get the OS X command line to read files for you</h1>
   
 
-            <div class="subtitle" datetime="2015-11-27T07:13:16.000Z">
-              2015-11-27
-              
-  
-  <a class="tag-title" href="/tags/Node/">#Node</a> <a class="tag-title" href="/tags/Browserify/">#Browserify</a>
-
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-nodejs_small"></span>
-          </div>
-        </header>
+        <div class="subtitle" datetime="2016-04-04T05:26:34.000Z">
+          2016-04-04
+          
+        </div>
       </div>
-    </article>
-  
-    <article class="post list-view" onclick="window.location.href = '/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
-  
-    <h1 class="title"><a href="/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/">Refresh webpages automatically during development using Gulp</a></h1>
-  
-
-            <div class="subtitle" datetime="2015-11-25T03:39:43.000Z">
-              2015-11-25
-              
-  
-  <a class="tag-title" href="/tags/Node/">#Node</a> <a class="tag-title" href="/tags/Build/">#Build</a> <a class="tag-title" href="/tags/Gulp/">#Gulp</a> <a class="tag-title" href="/tags/LiveReload/">#LiveReload</a>
-
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-gulp"></span>
-          </div>
-        </header>
+      <div class="icon-container">
+        <span class="icon devicons-library_books"></span>
       </div>
-    </article>
-  
-    <article class="post list-view" onclick="window.location.href = '/2015/11/Getting-started-with-Gulp-and-static-websites/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
-  
-    <h1 class="title"><a href="/2015/11/Getting-started-with-Gulp-and-static-websites/">Getting started with Gulp and static websites</a></h1>
-  
+    </header>
 
-            <div class="subtitle" datetime="2015-11-24T03:21:06.000Z">
-              2015-11-24
-              
-  
-  <a class="tag-title" href="/tags/Node/">#Node</a> <a class="tag-title" href="/tags/Build/">#Build</a> <a class="tag-title" href="/tags/Gulp/">#Gulp</a>
+      
+        <div class="entry">
+          <p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US" target="_blank" rel="external">speech command</a> with the command line.</p>
+<a id="more"></a>
+<h3 id="Speak">Speak</h3><p>You can have your system say a sentence by using:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> Hello World. My Name <span class="keyword">is</span> Jonathan.</span><br></pre></td></tr></table></figure>
+<h3 id="Specify_a_voice">Specify a voice</h3><p>Your mac ships with a few voices, use <code>-v</code> to specify a voice.</p>
+<p>Example:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> -v Karen Hello World</span><br></pre></td></tr></table></figure>
+<p><strong>List of voices:</strong> Alex, Bruce, Fred, Kathy, Vicky, Victoria, Daniel, Tessa, Fiona, Moira, Veena, Karen.</p>
+<h3 id="Specify_a_file">Specify a file</h3><p>You can use <code>-f</code> to specify the path to a file to read.</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> -f ~/testvoice.txt</span><br></pre></td></tr></table></figure>
+<p>You can also pipe the content of the file into the <code>say</code> command:</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/testvoice.txt <span class="string">| say</span></span><br></pre></td></tr></table></figure>
+<p>If are looking for text to fill in your text file, checkout <a href="http://fucklorem.com/" target="_blank" rel="external">http://fucklorem.com/</a>.</p>
+<h3 id="Output_the_speech_to_a_file">Output the speech to a file</h3><p>Use the <code>-o</code> flag to output the </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say -o /Users/klugjo/outputvoice<span class="selector-class">.m4a</span> Hello World</span><br></pre></td></tr></table></figure>
+<h3 id="Combine_it_all_together">Combine it all together</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ say -v Fiona -f ~/testvoice<span class="selector-class">.txt</span> -o outputvoice.m4a</span><br></pre></td></tr></table></figure>
+<p>Hope you had fun, not the most useful command but I had quite a bit of fun with it.</p>
+<p>Check out more OS X commands <a href="https://github.com/herrbischoff/awesome-osx-command-line" target="_blank" rel="external">here</a>.</p>
 
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-gulp"></span>
-          </div>
-        </header>
-      </div>
-    </article>
+        </div>
+      
+    
+      <footer>
+        
+          
+          
   
-</div></div></div>
+  <div class="tags">
+    <a href="/tags/Bash/">Bash</a>, <a href="/tags/OS-X/">OS X</a>, <a href="/tags/Just-For-Fun/">Just For Fun</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -190,7 +187,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</loc>
+        <lastmod>2016-04-04T07:00:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2016/03/New-Hexo-Theme-Magnetic/</loc>
         <lastmod>2016-04-01T01:32:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -279,6 +287,14 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -288,14 +304,6 @@
 
     <url>
         <loc>http://klugjo.github.io/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -351,7 +359,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+        <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -359,7 +367,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+        <loc>http://klugjo.github.io/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
