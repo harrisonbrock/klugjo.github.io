@@ -324,14 +324,14 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <loc>http://klugjo.github.io/tags/Analytics/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -394,22 +394,8 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Node/</loc>
-        <lastmod>2016-03-30T05:29:29.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/WebStorm/</loc>
         <lastmod>2016-03-30T05:29:29.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Hexo/</loc>
-        <lastmod>2016-04-01T01:32:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -422,22 +408,43 @@
     </url>
 
     <url>
+        <loc>http://klugjo.github.io/tags/Hexo/</loc>
+        <lastmod>2016-04-05T07:49:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Node/</loc>
+        <lastmod>2016-04-05T07:49:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/MomentJS/</loc>
+        <lastmod>2016-04-05T07:49:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://klugjo.github.io/tags/Bash/</loc>
-        <lastmod>2016-04-04T07:00:19.000Z</lastmod>
+        <lastmod>2016-04-05T07:52:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/OS-X/</loc>
-        <lastmod>2016-04-04T07:00:19.000Z</lastmod>
+        <lastmod>2016-04-05T07:52:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://klugjo.github.io/tags/Just-For-Fun/</loc>
-        <lastmod>2016-04-04T07:00:19.000Z</lastmod>
+        <lastmod>2016-04-05T07:52:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

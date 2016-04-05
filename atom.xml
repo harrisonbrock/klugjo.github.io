@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-04-04T07:00:19.000Z</updated>
+  <updated>2016-04-05T07:49:52.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -15,11 +15,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Set Timezone in Hexo]]></title>
+    <link href="http://klugjo.github.io/2016/04/Set-Timezone-in-hexo/"/>
+    <id>http://klugjo.github.io/2016/04/Set-Timezone-in-hexo/</id>
+    <published>2016-04-05T07:38:33.000Z</published>
+    <updated>2016-04-05T07:49:52.000Z</updated>
+    <content type="html"><![CDATA[<p>I recently had some <a href="https://github.com/klugjo/hexo-theme-clean-blog/issues/5" target="_blank" rel="external">comments</a> made on one of <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external">my hexo theme</a>, saying the dates don’t generate properly. It turned out the timezone was not set properly.</p>
+<a id="more"></a>
+<p>If you are getting an error similar to:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">ERROR Process <span class="symbol">failed:</span> _posts/postname.md</span><br><span class="line"><span class="symbol">TypeError:</span> Cannot read property <span class="string">'offset'</span> <span class="keyword">of</span> null</span><br><span class="line">    at Object.exports.timezone (<span class="regexp">/home/user</span><span class="regexp">/project/node</span>_modules/hexo/<span class="class"><span class="keyword">lib</span>/<span class="title">plugins</span>/<span class="title">processor</span>/<span class="title">common</span>.<span class="title">js</span>:44:40)</span></span><br><span class="line">    at /home/user/project/node_modules/hexo/<span class="class"><span class="keyword">lib</span>/<span class="title">plugins</span>/<span class="title">processor</span>/<span class="title">post</span>.<span class="title">js</span>:83:42</span></span><br></pre></td></tr></table></figure>
+<p>it means that your timezone is not set properly.</p>
+<h3 id="Timezone_values">Timezone values</h3><p>In the background, Hexo uses <a href="http://momentjs.com/" target="_blank" rel="external">MomentJS</a> to compute the dates. You need to use <a href="http://momentjs.com/timezone/" target="_blank" rel="external">MomentJS Timezone values</a>.</p>
+<p>Something like:</p>
+<ul>
+<li><code>timezone: Europe/London</code></li>
+<li><code>timezone: America/Thule</code></li>
+</ul>
+<p>The full list of values is available <a href="http://momentjs.com/timezone/" target="_blank" rel="external">here</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I recently had some <a href="https://github.com/klugjo/hexo-theme-clean-blog/issues/5">comments</a> made on one of <a href="https://github.com/klugjo/hexo-theme-clean-blog">my hexo theme</a>, saying the dates don’t generate properly. It turned out the timezone was not set properly.</p>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="MomentJS" scheme="http://klugjo.github.io/tags/MomentJS/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Get the OS X command line to read files for you]]></title>
     <link href="http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/"/>
     <id>http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</id>
     <published>2016-04-04T05:26:34.000Z</published>
-    <updated>2016-04-04T07:00:19.000Z</updated>
+    <updated>2016-04-05T07:52:19.000Z</updated>
     <content type="html"><![CDATA[<p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US" target="_blank" rel="external">speech command</a> with the command line.</p>
 <a id="more"></a>
 <h3 id="Speak">Speak</h3><p>You can have your system say a sentence by using:</p>
@@ -480,60 +512,6 @@
       <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
     
       <category term="Software Practices" scheme="http://klugjo.github.io/tags/Software-Practices/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[New Hexo Theme - Clean Blog]]></title>
-    <link href="http://klugjo.github.io/2016/03/New-Hexo-Theme-Clean-Blog/"/>
-    <id>http://klugjo.github.io/2016/03/New-Hexo-Theme-Clean-Blog/</id>
-    <published>2016-03-15T07:23:21.000Z</published>
-    <updated>2016-03-15T07:37:04.000Z</updated>
-    <content type="html"><![CDATA[<p>I just finished developing an Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external">Clean Blog</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/" target="_blank" rel="external">live demo</a>.</p>
-<a id="more"></a>
-<p>This theme is an Hexo implementation of <a href="http://blackrockdigital.github.io/startbootstrap-clean-blog/index.html" target="_blank" rel="external">Clean Blog</a></p>
-<h2 id="Features">Features</h2><ul>
-<li>Disqus and Facebook comments</li>
-<li>Google Analytics</li>
-<li>Cover image for posts and pages</li>
-<li>Tags and Categories Support</li>
-<li>Responsive Images</li>
-<li>Image Gallery</li>
-<li>Code syntax highlighting</li>
-</ul>
-<h2 id="Installation">Installation</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> <span class="title">https</span>://github.com/klugjo/hexo-theme-clean-blog.git theme/clean-blog</span><br></pre></td></tr></table></figure>
-<p>Then update your blog’s main <code>_config.yml</code> to set the theme to <code>clean-blog</code>:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">## Themes: http:<span class="comment">//hexo.io/themes/</span></span></span><br><span class="line"><span class="symbol">theme:</span> clean-blog</span><br></pre></td></tr></table></figure>
-<h2 id="Configuration">Configuration</h2><h3 id="Menu">Menu</h3><p>The menu is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Header</span></span><br><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  Home:</span> /</span><br><span class="line"><span class="symbol">  Archives:</span> /archives</span><br></pre></td></tr></table></figure>
-<p>The object key is the label and the value is the path.</p>
-<h3 id="Top_Left_Label">Top Left Label</h3><p>The top left label is configured in the theme’s <code>_config.yml</code>. When clicked it will lead to the Home Page.</p>
-<figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Title <span class="keyword">on</span> top left <span class="keyword">of</span> menu. Leave <span class="keyword">empty</span> <span class="keyword">to</span> use main blog title</span><br><span class="line">menu_title: Configurable Title</span><br></pre></td></tr></table></figure>
-<h3 id="Home_Page_cover_image">Home Page cover image</h3><p>The Home Page cover is configured in the theme’s <code>_config.yml</code>. It will be the same for all index type pages.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># URL of the Home page image</span></span><br><span class="line"><span class="symbol">index_cover:</span> <span class="meta-keyword">/img/</span>home-bg.jpg</span><br></pre></td></tr></table></figure>
-<h3 id="Default_post_title">Default post title</h3><p>The default post title (used when no title is specified) is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Default post title</span></span><br><span class="line"><span class="symbol">default_post_title:</span> Untitled</span><br></pre></td></tr></table></figure>
-<h3 id="Comments">Comments</h3><p>The comments provider is specified in the theme’s <code>_config.yml</code>. If you specify both a <code>disqus_shortname</code> and a <code>facebook.appid</code> there will be 2 sets of comment per post. So choose one.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comments. Choose one by filling up the information</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Disqus comments</span></span><br><span class="line"><span class="attr">  disqus_shortname:</span> klugjotest</span><br><span class="line">  <span class="comment"># Facebook comments</span></span><br><span class="line"><span class="attr">  facebook:</span></span><br><span class="line"><span class="attr">    appid:</span> <span class="number">123456789012345</span></span><br><span class="line"><span class="attr">    comment_count:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    comment_colorscheme:</span> light</span><br></pre></td></tr></table></figure>
-<h3 id="Google_Analytics">Google Analytics</h3><p>The Google Analytics Tracking ID is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Google Analytics Tracking ID</span></span><br><span class="line"><span class="symbol">google_analytics:</span></span><br></pre></td></tr></table></figure>
-<h3 id="Social_Account">Social Account</h3><p>Setup the links to your social pages in the theme’s <code>_config.yml</code>. Links are in the footer.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Social Accounts</span></span><br><span class="line"><span class="symbol">twitter_url:</span></span><br><span class="line"><span class="symbol">facebook_url:</span></span><br><span class="line"><span class="symbol">github_url:</span> https:<span class="comment">//github.com/klugjo/hexo-theme-clean-blog</span></span><br></pre></td></tr></table></figure>
-<h3 id="Author">Author</h3><p>The post’s author is specified in the posts front-matter:</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">author:</span> Klug Jo</span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
-<h3 id="Post’s_Cover_Image">Post’s Cover Image</h3><p>By default, posts will use the home page cover image. You can specify a custom cover in the front-matter:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover:</span> <span class="meta-keyword">/assets/</span>contact-bg.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="Creator">Creator</h2><p>This theme was created by <a href="https://github.com/BlackrockDigital" target="_blank" rel="external">Blackrock Digital</a> and adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank" rel="external">myself</a>.</p>
-<p>Hope you enjoy it, the theme should be easy enough to customize and modify to fit your needs. Checkout <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">my tutorial on building Hexo themes</a> if you need information on how themes are built.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I just finished developing an Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/">live demo</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
     
   </entry>
   

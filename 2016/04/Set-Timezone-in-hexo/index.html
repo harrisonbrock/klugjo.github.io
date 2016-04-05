@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/7 | CodeBlocQ</title>
+  <title>Set Timezone in Hexo | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="I recently had some comments made on one of my hexo theme, saying the dates don’t generate properly. It turned out the timezone was not set properly.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Set Timezone in Hexo"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -73,7 +75,7 @@
 
 
 
-<body class="bg8">
+<body class="bg3">
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -91,35 +93,72 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<div class="archive-title">2015/7</div>
-
-<div class="archive">
+<article class="post detail-view" >
   
-    <article class="post list-view" onclick="window.location.href = '/2015/07/round-images-in-css/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
   
-    <h1 class="title"><a href="/2015/07/round-images-in-css/">Round Images in CSS</a></h1>
+    <h1 class="title">Set Timezone in Hexo</h1>
   
 
-            <div class="subtitle" datetime="2015-07-27T04:46:50.000Z">
-              2015-07-27
-              
-  
-  <a class="tag-title" href="/tags/CSS3/">#CSS3</a> <a class="tag-title" href="/tags/HTML5/">#HTML5</a>
-
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-html5"></span>
-          </div>
-        </header>
+        <div class="subtitle" datetime="2016-04-05T07:38:33.000Z">
+          2016-04-05
+          
+        </div>
       </div>
-    </article>
+      <div class="icon-container">
+        <span class="icon devicons-code_badge"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>I recently had some <a href="https://github.com/klugjo/hexo-theme-clean-blog/issues/5" target="_blank" rel="external">comments</a> made on one of <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external">my hexo theme</a>, saying the dates don’t generate properly. It turned out the timezone was not set properly.</p>
+<a id="more"></a>
+<p>If you are getting an error similar to:</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INFO  Start processing</span><br><span class="line">ERROR Process <span class="symbol">failed:</span> _posts/postname.md</span><br><span class="line"><span class="symbol">TypeError:</span> Cannot read property <span class="string">'offset'</span> <span class="keyword">of</span> null</span><br><span class="line">    at Object.exports.timezone (<span class="regexp">/home/user</span><span class="regexp">/project/node</span>_modules/hexo/<span class="class"><span class="keyword">lib</span>/<span class="title">plugins</span>/<span class="title">processor</span>/<span class="title">common</span>.<span class="title">js</span>:44:40)</span></span><br><span class="line">    at /home/user/project/node_modules/hexo/<span class="class"><span class="keyword">lib</span>/<span class="title">plugins</span>/<span class="title">processor</span>/<span class="title">post</span>.<span class="title">js</span>:83:42</span></span><br></pre></td></tr></table></figure>
+<p>it means that your timezone is not set properly.</p>
+<h3 id="Timezone_values">Timezone values</h3><p>In the background, Hexo uses <a href="http://momentjs.com/" target="_blank" rel="external">MomentJS</a> to compute the dates. You need to use <a href="http://momentjs.com/timezone/" target="_blank" rel="external">MomentJS Timezone values</a>.</p>
+<p>Something like:</p>
+<ul>
+<li><code>timezone: Europe/London</code></li>
+<li><code>timezone: America/Thule</code></li>
+</ul>
+<p>The full list of values is available <a href="http://momentjs.com/timezone/" target="_blank" rel="external">here</a>.</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
   
-</div></div></div>
+  <div class="tags">
+    <a href="/tags/Hexo/">Hexo</a>, <a href="/tags/Node/">Node</a>, <a href="/tags/MomentJS/">MomentJS</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -142,7 +181,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

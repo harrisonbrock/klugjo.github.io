@@ -8,7 +8,15 @@
 
     <url>
         <loc>http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</loc>
-        <lastmod>2016-04-04T07:00:19.000Z</lastmod>
+        <lastmod>2016-04-05T07:52:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/2016/04/Set-Timezone-in-hexo/</loc>
+        <lastmod>2016-04-05T07:49:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -287,7 +295,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -295,7 +303,7 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+        <loc>http://klugjo.github.io/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
