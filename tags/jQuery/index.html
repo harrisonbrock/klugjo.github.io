@@ -3,15 +3,13 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Wildcards in Bash | CodeBlocQ</title>
+  <title>jQuery | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
-  
-  <meta name="description" content="This article will walk you through some of the main wildcards available in Bash:">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Wildcards in Bash"/>
+  
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -76,7 +74,7 @@
 
 
 <body >
-<!--<body class="bg9">-->
+<!--<body class="bg5">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -94,188 +92,35 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<article class="post detail-view" >
+<div class="archive-title tag">jQuery</div>
+
+<div class="archive">
   
-  <div class="post-content">
-    <header>
-      <div class="content-container">
-        
+    <article class="post list-view" onclick="window.location.href = '/2016/04/Parse-a-webpage-with-Node/'">
+      <div class="post-content">
+        <header>
+          <div class="content-container">
+            
   
-    <h1 class="title">Wildcards in Bash</h1>
+    <h1 class="title"><a href="/2016/04/Parse-a-webpage-with-Node/">Parse a webpage with Node using jQuery</a></h1>
   
 
-        <div class="subtitle" datetime="2016-01-05T06:31:40.000Z">
-          2016-01-05
-          
-        </div>
+            <div class="subtitle" datetime="2016-04-10T03:03:47.000Z">
+              2016-04-10
+              
+  
+  <a class="tag-title" href="/tags/Node/">#Node</a> <a class="tag-title" href="/tags/jQuery/">#jQuery</a> <a class="tag-title" href="/tags/Parsing/">#Parsing</a>
+
+            </div>
+          </div>
+          <div class="icon-container">
+            <span class="icon devicons-nodejs_small"></span>
+          </div>
+        </header>
       </div>
-      <div class="icon-container">
-        <span class="icon devicons-terminal"></span>
-      </div>
-    </header>
-
-      
-        <div class="entry">
-          <p>This article will walk you through some of the main wildcards available in Bash:</p>
-<a id="more"></a> 
-<h2 id="Match_any_string_with_*">Match any string with *</h2><p>The <code>*</code> wildcard will match any number of characters including no characters.</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ls *.jpg</code></td>
-<td>lists all files ending with <strong>.jpg</strong></td>
-</tr>
-<tr>
-<td><code>ls pic*</code></td>
-<td>lists all files starting with <strong>pic</strong></td>
-</tr>
-<tr>
-<td><code>ls *abc*</code></td>
-<td>lists all files containing <strong>abc</strong> (including starting with and ending with <strong>abc</strong>)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Match_a_single_character_with_?">Match a single character with ?</h2><p>The <code>?</code> wildcard will match a single character. That single character can be anything but can not be empty.</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ls pic?.jpg</code></td>
-<td>lists all files like <strong>pic1.jpg</strong>, <strong>picA.jpg</strong> or <strong>picz.jpg</strong>. It will <u>not match</u> <strong>pic.jpg</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Match_a_set_of_characters_with_[xyz]">Match a set of characters with [xyz]</h2><p>Use <code>[ ]</code> to have one single character match a defined set of characters.<br>[123abc] means will match 1, 2, 3, a, b or c.</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>pic[123].jpg</code></td>
-<td>Will <u>only</u> match <strong>pic1.jpg</strong>, <strong>pic2.jpg</strong> and <strong>pic3.jpg</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="Match_a_range_of_characters_with_[a-z]">Match a range of characters with [a-z]</h2><p>Use <code>[-]</code> to have one character be within certain range.</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>[a-e]</code></td>
-<td>Will match a, b, c, d or e</td>
-</tr>
-<tr>
-<td><code>[a-z]</code></td>
-<td>Will match any lowercase letter</td>
-</tr>
-<tr>
-<td><code>[0-9]</code></td>
-<td>Will match any digit</td>
-</tr>
-<tr>
-<td><code>[A-Za-z]</code></td>
-<td>Will match any letter</td>
-</tr>
-<tr>
-<td><code>[a-e1-5]</code></td>
-<td>Will match any lowercase letter between a and e or any digit between 1 and 5</td>
-</tr>
-<tr>
-<td><code>[a-e123]</code></td>
-<td>Will match any lowercase letter between a and e or any digit equal to 1, 2 or 3</td>
-</tr>
-<tr>
-<td><code>[0-10]</code></td>
-<td>Will match 0 or 1 (0 to 1 range or 0)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Invert_a_selection_with_^">Invert a selection with ^</h2><p>Use <code>^</code> to invert a selection</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>[^78]</code></td>
-<td>Will match any character (including letters) different than 7 and 8</td>
-</tr>
-<tr>
-<td><code>[^a-z]</code></td>
-<td>Will match any character that is not a lowercase letter</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Match_several_expressions_with_{abc,xyz}">Match several expressions with {abc,xyz}</h2><p>Use <code>{expr1,expr2}</code> to match expr1 and expr2</p>
-<table>
-<thead>
-<tr>
-<th>Expression</th>
-<th>Result</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ls {*.jpg,*.gif}</code></td>
-<td>Will list any file with the jpg or gif extension</td>
-</tr>
-</tbody>
-</table>
-
-        </div>
-      
-    
-      <footer>
-        
-          
-          
+    </article>
   
-  <div class="tags">
-    <a href="/tags/Bash/">Bash</a>, <a href="/tags/OS-X/">OS X</a>
-  </div>
-
-        
-        <div class="clearfix"></div>
-      </footer>
-    
-  </div>
-</article>
-
-
-<section id="comment">
-  <h1 class="title">Comments</h1>
-
-  
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-  
-</section>
-
-</div></div>
+</div></div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -298,7 +143,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

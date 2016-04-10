@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-04-05T07:49:52.000Z</updated>
+  <updated>2016-04-10T03:36:45.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Parse a webpage with Node using jQuery]]></title>
+    <link href="http://klugjo.github.io/2016/04/Parse-a-webpage-with-Node/"/>
+    <id>http://klugjo.github.io/2016/04/Parse-a-webpage-with-Node/</id>
+    <published>2016-04-10T03:03:47.000Z</published>
+    <updated>2016-04-10T03:36:45.000Z</updated>
+    <content type="html"><![CDATA[<a id="more"></a>
+<p>If you want to use jQuery selectors on the server to parse a bunch of HTML, I would recommend you to check out <a href="">cheerio</a>.</p>
+<h2 id="Installation">Installation</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> cheerio</span><br></pre></td></tr></table></figure>
+<h2 id="Examples">Examples</h2><p>Given the following HTML:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ol <span class="class"><span class="keyword">class</span></span>=<span class="string">"breadcrumb"</span>&gt;</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/home"</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">  &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/library"</span>&gt;</span>Library<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">  &lt;li&gt;<span class="xml"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/data"</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span>Data<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br><span class="line">&lt;<span class="regexp">/ol&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Get_the_active_link">Get the active link</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var cheerio = <span class="keyword">require</span>(<span class="string">'cheerio'</span>);</span><br><span class="line">var $ = cheerio.load(htmlString);</span><br><span class="line"></span><br><span class="line">$(<span class="string">'ol .active'</span>).text(); <span class="regexp">//</span> <span class="string">'Data'</span></span><br></pre></td></tr></table></figure>
+<h3 id="Get_the_list_of_links">Get the list of links</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'[href]'</span>).each(<span class="function"><span class="keyword">function</span> <span class="title">getLink</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> attr = $(<span class="keyword">this</span>).attr(<span class="string">'href'</span>);</span><br><span class="line">    <span class="comment">// Do something with the link</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Get_the_ol_class">Get the ol class</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span><span class="string">'ol'</span>).attr(<span class="string">'class'</span>); <span class="regexp">//</span> <span class="string">'breadcrumb'</span></span><br></pre></td></tr></table></figure>
+<p><br><br>Check our more examples in <a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="external">the documentation</a><br><br></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<a id="more"></a>
+<p>If you want to use jQuery selectors on the server to parse a bunch of HTML, I would recommend you to check out <a href=]]>
+    </summary>
+    
+      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+    
+      <category term="jQuery" scheme="http://klugjo.github.io/tags/jQuery/"/>
+    
+      <category term="Parsing" scheme="http://klugjo.github.io/tags/Parsing/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Set Timezone in Hexo]]></title>
@@ -367,9 +396,9 @@
     
       <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
     
-      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
-    
       <category term="Weinre" scheme="http://klugjo.github.io/tags/Weinre/"/>
+    
+      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
     
   </entry>
   
@@ -421,9 +450,9 @@
     
       <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
     
-      <category term="JSConsole" scheme="http://klugjo.github.io/tags/JSConsole/"/>
-    
       <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
+    
+      <category term="JSConsole" scheme="http://klugjo.github.io/tags/JSConsole/"/>
     
   </entry>
   
@@ -477,41 +506,6 @@
       <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
     
       <category term="ESLint" scheme="http://klugjo.github.io/tags/ESLint/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Pure and Impure Functions]]></title>
-    <link href="http://klugjo.github.io/2016/03/Pure-and-Impure-Functions/"/>
-    <id>http://klugjo.github.io/2016/03/Pure-and-Impure-Functions/</id>
-    <published>2016-03-15T08:24:00.000Z</published>
-    <updated>2016-03-20T04:51:14.000Z</updated>
-    <content type="html"><![CDATA[<p>Quick run through on what pure and impure functions are. </p>
-<p>I am looking at adapting one of my current old school MVC project to use Redux for state management. Since Redux makes use of the concept of pure functions, I thought I would lay it down here.<br><a id="more"></a></p>
-<h2 id="Pure_Function">Pure Function</h2><h3 id="Definition">Definition</h3><p>A function is <strong>considered pure</strong> if:</p>
-<p>a) It always returns the same value when given the same arguments<br>b) It does not modify anything (arguments, state, database, I/O, ..)</p>
-<h3 id="Examples_of_Pure_Functions_(in_JavaScript)">Examples of Pure Functions (in JavaScript)</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x, y)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getLength</span><span class="params">(array)</span> &#123;</span></span><br><span class="line">    <span class="keyword">return</span> array.<span class="built_in">length</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Impure_Function">Impure Function</h2><h3 id="Definition-1">Definition</h3><p>A function is <strong>considered impure</strong> if it is not pure (!), typically because:</p>
-<p>a) it makes use of an external or random value. (It stops being entirely contained and predictable)<br>b) It performs an external operation, in other words it causes side effects</p>
-<h3 id="Examples">Examples</h3><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addToX</span><span class="params">(a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + x; <span class="comment">// Use of an external variable</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Date</span>().getTime(); <span class="comment">// Use of a random/non consistent value</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(x,y)</span> </span>&#123;</span><br><span class="line">    updateDatabase(); <span class="comment">// Side Effect</span></span><br><span class="line">    <span class="keyword">return</span> x + y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="The_Big_Deal">The Big Deal</h2><p>The reason why Pure Function are great:</p>
-<h3 id="Predictable">Predictable</h3><p>Yep, I know, it’s part of the definition, but using a function and knowing exactly what it does feels so good.</p>
-<h3 id="Portable">Portable</h3><p>Pure functions can be reused easily as they do not hold any form of state.</p>
-<h3 id="Cacheable">Cacheable</h3><p>Since the result will always be the same, it becomes easy to cache results.</p>
-<h3 id="Testable_!">Testable !</h3><p>Last but not least, pure functions are easy and a pleasure to test with automated tests.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Quick run through on what pure and impure functions are. </p>
-<p>I am looking at adapting one of my current old school MVC project to use Redux for state management. Since Redux makes use of the concept of pure functions, I thought I would lay it down here.<br>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Software Practices" scheme="http://klugjo.github.io/tags/Software-Practices/"/>
     
   </entry>
   
