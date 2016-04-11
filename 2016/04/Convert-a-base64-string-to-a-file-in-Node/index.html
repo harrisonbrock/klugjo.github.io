@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Custom Domain | CodeBlocQ</title>
+  <title>Convert a base64 string to a file in Node | CodeBlocQ</title>
   <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="There might be scenarios where you need to convert an base64 string back to a file. This article will show you how.
+The high level viewAs an example, ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Convert a base64 string to a file in Node"/>
   <meta property="og:site_name" content="CodeBlocQ"/>
 
   
@@ -74,7 +77,7 @@
 
 
 <body >
-<!--<body class="bg8">-->
+<!--<body class="bg5">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -92,35 +95,73 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<div class="archive-title tag">Custom Domain</div>
-
-<div class="archive">
+<article class="post detail-view" >
   
-    <article class="post list-view" onclick="window.location.href = '/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/'">
-      <div class="post-content">
-        <header>
-          <div class="content-container">
-            
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
   
-    <h1 class="title"><a href="/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/">How to use a custom domain with your github pages site</a></h1>
+    <h1 class="title">Convert a base64 string to a file in Node</h1>
   
 
-            <div class="subtitle" datetime="2016-02-22T10:39:16.000Z">
-              2016-02-22
-              
-  
-  <a class="tag-title" href="/tags/Github/">#Github</a> <a class="tag-title" href="/tags/Custom-Domain/">#Custom Domain</a> <a class="tag-title" href="/tags/DNS-Provider/">#DNS Provider</a>
-
-            </div>
-          </div>
-          <div class="icon-container">
-            <span class="icon devicons-github_badge"></span>
-          </div>
-        </header>
+        <div class="subtitle" datetime="2016-04-11T03:42:15.000Z">
+          2016-04-11
+          
+        </div>
       </div>
-    </article>
+      <div class="icon-container">
+        <span class="icon devicons-nodejs_small"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>There might be scenarios where you need to convert an base64 string back to a file. This article will show you how.</p>
+<h2 id="The_high_level_view">The high level view</h2><p>As an example, a base64 string representation of a png image looks like:</p>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span>:image/png;base64,iVBORw0KGgoAAAANSUhEUgA...</span></span><br></pre></td></tr></table></figure>
+<p>To convert it back to an image, we need to:</p>
+<ul>
+<li>Strip off the <code>data:image/png;base64,</code> part</li>
+<li>Write the remaining string to a file using a base64 encoding.</li>
+</ul>
+<h2 id="The_code">The code</h2><h3 id="To_strip_off_the_header">To strip off the header</h3><p>I am using:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> base64String = <span class="string">'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA'</span>; <span class="comment">// Not a real image</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove header</span></span><br><span class="line"><span class="keyword">let</span> base64Image = base64String.split(<span class="string">';base64,'</span>).pop();</span><br></pre></td></tr></table></figure>
+<h3 id="To_write_to_a_file">To write to a file</h3><p>I am using:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"></span><br><span class="line">fs.writeFile(<span class="string">'image.png'</span>, base64Image, &#123;encoding: <span class="string">'base64'</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'File created'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Don’t forget the <code>{encoding: &#39;base64&#39;}</code> here and you will be good to go.</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
   
-</div></div></div>
+  <div class="tags">
+    <a href="/tags/Node/">Node</a>, <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/base64/">base64</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -143,7 +184,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
