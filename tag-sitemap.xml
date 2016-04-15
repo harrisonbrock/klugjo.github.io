@@ -170,13 +170,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Git/</loc>
-        <lastmod>2016-02-29T09:57:16.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Log/</loc>
         <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -366,13 +359,6 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Github/</loc>
-        <lastmod>2016-03-30T05:28:13.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://klugjo.github.io/tags/Custom-Domain/</loc>
         <lastmod>2016-03-30T05:28:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -457,15 +443,50 @@
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <loc>http://klugjo.github.io/tags/base64/</loc>
         <lastmod>2016-04-11T04:36:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/base64/</loc>
-        <lastmod>2016-04-11T04:36:25.000Z</lastmod>
+        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <lastmod>2016-04-14T08:11:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/MIDI/</loc>
+        <lastmod>2016-04-14T08:11:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Zelda/</loc>
+        <lastmod>2016-04-14T08:11:11.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Git/</loc>
+        <lastmod>2016-04-15T08:50:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Github/</loc>
+        <lastmod>2016-04-15T08:50:47.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://klugjo.github.io/tags/Open-Source/</loc>
+        <lastmod>2016-04-15T08:50:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

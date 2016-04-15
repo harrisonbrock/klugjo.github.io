@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-04-11T04:36:25.000Z</updated>
+  <updated>2016-04-15T08:50:47.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,136 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Pull requests on github 101]]></title>
+    <link href="http://klugjo.github.io/2016/04/Pull-requests-on-github-101/"/>
+    <id>http://klugjo.github.io/2016/04/Pull-requests-on-github-101/</id>
+    <published>2016-04-15T08:18:23.000Z</published>
+    <updated>2016-04-15T08:50:47.000Z</updated>
+    <content type="html"><![CDATA[<p>Here are the steps to commit a change to an open source project on github.</p>
+<a id="more"></a>
+<h3 id="1-_Fork_it">1. Fork it</h3><p>Fork the repo by clicking the fork button on the github website</p>
+<h3 id="2-_Clone_it">2. Clone it</h3><p>Clone the repository to your machine</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/yourusername/project</span><br><span class="line">cd project</span><br></pre></td></tr></table></figure>
+<h3 id="3-_Add_the_upstream_remote">3. Add the upstream remote</h3><p>Add the original git repository as an upstream remote. </p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">add</span> upstream http<span class="variable">s:</span>//github.<span class="keyword">com</span>/originaluser/project</span><br></pre></td></tr></table></figure>
+<p>Now if you want to get the latest changes from the original repository, you can use:</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull upstream <span class="literal">master</span></span><br></pre></td></tr></table></figure>
+<h3 id="4-_Create_a_new_branch">4. Create a new branch</h3><p>Create a feature branch to do your changes</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> newbranch</span><br></pre></td></tr></table></figure>
+<h3 id="5-_Code_away">5. Code away</h3><p>Modify the code and commit to the feature branch. Try to keep your commits clear and concise.</p>
+<h3 id="6-_Push_to_your_github">6. Push to your github</h3><p>Push your modifications to your remote</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> newbranch</span><br></pre></td></tr></table></figure>
+<h3 id="7-_Issue_a_Pull_Request">7. Issue a Pull Request</h3><p>Back on github, click the Pull Request button</p>
+<p><img src="/img/github-pull-request-button.png" alt=""></p>
+<p>Select the commits you want to include, write a message and submit.</p>
+<p>That’s it !</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Here are the steps to commit a change to an open source project on github.</p>]]>
+    
+    </summary>
+    
+      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+    
+      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
+    
+      <category term="Open Source" scheme="http://klugjo.github.io/tags/Open-Source/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Zelda's theme in JavaScript]]></title>
+    <link href="http://klugjo.github.io/2016/04/Zelda-s-theme-in-JavaScript/"/>
+    <id>http://klugjo.github.io/2016/04/Zelda-s-theme-in-JavaScript/</id>
+    <published>2016-04-11T05:11:48.000Z</published>
+    <updated>2016-04-14T08:11:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Let’s celebrate Zelda’s 30th anniversary by generating a MIDI file of the <a href="https://www.flutetunes.com/tunes/the-legend-of-zelda-theme.pdf" target="_blank" rel="external">game’s main theme</a>.</p>
+<a id="more"></a>
+<p><a style="font-weight: bold;" href="#" onclick="console.log(this.p);if(!this.p){MIDIjs.play('/audio/zelda.mid');this.p=true;this.innerHTML='STOP DEMO';}else{MIDIjs.stop();this.p=false;this.innerHTML='PLAY DEMO';}">PLAY DEMO</a></p>
+<p>To generate MIDI files, we are going to use the <a href="https://github.com/grimmdude/MidiWriterJS" target="_blank" rel="external">MidiWriterJS</a>.</p>
+<h2 id="Installation">Installation</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> midi-writer-js</span><br></pre></td></tr></table></figure>
+<h2 id="Usage">Usage</h2><p>Here is how to get started with the library:</p>
+<p>A MIDI file is a collection of tracks which are collections of notes.</p>
+<h3 id="Create_a_track">Create a track</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MidiWriter = <span class="built_in">require</span>(<span class="string">'midi-writer-js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create Track</span></span><br><span class="line"><span class="keyword">var</span> track = <span class="keyword">new</span> MidiWriter.Track();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Assign an instrument to a track</span></span><br><span class="line">track.addEvent(<span class="keyword">new</span> MidiWriter.ProgramChangeEvent(&#123;instrument : <span class="number">1</span>&#125;));</span><br></pre></td></tr></table></figure>
+<h3 id="Add_a_note_to_a_track">Add a note to a track</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">track.addEvent(<span class="keyword">new</span> MidiWriter.NoteEvent(&#123;pitch: [<span class="string">'Bb4'</span>], duration: <span class="string">'2'</span>, velocity:<span class="number">100</span>&#125;));</span><br></pre></td></tr></table></figure>
+<h4 id="pitch">pitch</h4><p><code>pitch</code> represents the notes you want to add. </p>
+<p>Examples would be: <code>&#39;Bb4&#39;</code>, <code>&#39;F4&#39;</code>, <code>&#39;A#2&#39;</code></p>
+<p>The letter is the note, you can alter it with <code>b</code> or <code>#</code> and the letter corresponds to the octave (I would say that 4 corresponds to your treble clef pitch)</p>
+<h4 id="duration">duration</h4><p><code>duration</code> represents the duration of each note</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">duration</th>
+<th style="text-align:center">American Name</th>
+<th style="text-align:center">English Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">whole</td>
+<td style="text-align:center">semibreve</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">half</td>
+<td style="text-align:center">minim</td>
+</tr>
+<tr>
+<td style="text-align:center">d2</td>
+<td style="text-align:center">dotted half</td>
+<td style="text-align:center">dotted minim</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">quarter</td>
+<td style="text-align:center">crotchet</td>
+</tr>
+<tr>
+<td style="text-align:center">d4</td>
+<td style="text-align:center">dotted quarter</td>
+<td style="text-align:center">dotted crotchet</td>
+</tr>
+<tr>
+<td style="text-align:center">8</td>
+<td style="text-align:center">eighth</td>
+<td style="text-align:center">quaver</td>
+</tr>
+<tr>
+<td style="text-align:center">d8</td>
+<td style="text-align:center">dotted eighth</td>
+<td style="text-align:center">dotted quaver</td>
+</tr>
+<tr>
+<td style="text-align:center">16</td>
+<td style="text-align:center">sixteenth</td>
+<td style="text-align:center">semiquaver</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Velocity">Velocity</h4><p><code>velocity</code> represents the volume at which that note will play.</p>
+<h3 id="Generate_the_Midi_JavaScript_Object">Generate the Midi JavaScript Object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Generate MIDI</span></span><br><span class="line"><span class="keyword">var</span> write = <span class="keyword">new</span> MidiWriter.Writer([track]);</span><br></pre></td></tr></table></figure>
+<p>The argument must be an Array of tracks. It is of course possible to add several tracks if you want to have several instruments playing at the same time.</p>
+<h3 id="Generate_the_MIDI_file">Generate the MIDI file</h3><p>I have chosen to go the base64 string route. Here is the code:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Generate a base64 representation of the MIDI file</span></span><br><span class="line"><span class="keyword">var</span> base64String = write.base64();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Strip off the header</span></span><br><span class="line"><span class="keyword">var</span> data = base64String.split(<span class="string">"base64,"</span>).pop();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Write the file</span></span><br><span class="line">fs.writeFileSync(<span class="string">"zelda.mid"</span>, data, &#123;encoding: <span class="string">'base64'</span>&#125;);</span><br></pre></td></tr></table></figure>
+<p><a href="2016/04/Convert-a-base64-string-to-a-file-in-Node/">Click here</a> if you want to read more on how to strip off the base64 string header.</p>
+<h2 id="Zelda">Zelda</h2><p>You can check the git repo <a href="https://github.com/klugjo/zelda-theme-javascript-midi/blob/master/index.js" target="_blank" rel="external">here</a> to see the full sequence of notes.</p>
+<p>PS: I have submitted my code to the creator of the official library and he has now merged it and added it to <a href="https://github.com/grimmdude/MidiWriterJS/tree/master/examples" target="_blank" rel="external">the examples</a> :D</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Let’s celebrate Zelda’s 30th anniversary by generating a MIDI file of the <a href="https://www.flutetunes.com/tunes/the-legend-of-zelda-theme.pdf">game’s main theme</a>.</p>]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+    
+      <category term="MIDI" scheme="http://klugjo.github.io/tags/MIDI/"/>
+    
+      <category term="Zelda" scheme="http://klugjo.github.io/tags/Zelda/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Convert a base64 string to a file in Node]]></title>
@@ -374,118 +504,6 @@
       <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
     
       <category term="Vorlon" scheme="http://klugjo.github.io/tags/Vorlon/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Remote Web Debugging with weinre]]></title>
-    <link href="http://klugjo.github.io/2016/03/Remote-Web-Debugging-with-weinre/"/>
-    <id>http://klugjo.github.io/2016/03/Remote-Web-Debugging-with-weinre/</id>
-    <published>2016-03-22T08:41:13.000Z</published>
-    <updated>2016-03-23T08:56:26.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html" target="_blank" rel="external">Weinre</a> is a great remote web debugging tool. It allows to you to quickly setup a ‘chrome dev tools’-like interface for any of your app. It comes in really handy when debugging an app on a device that does not have advanced debugging tools, think mobile, smart TVs, wearables and so on ..</p>
-<p>Weinre is free, open source and runs on Node.</p>
- <a id="more"></a>
-<h2 id="Why_use_weinre">Why use weinre</h2><h3 id="Weinre_is_really_useful_when:">Weinre is really useful when:</h3><ul>
-<li>You need to have access to the DOM on a remote device and do some CSS tweaks</li>
-<li>You want to access the JS log output</li>
-<li>You want to check the network connections and what is going through the network</li>
-<li>You want all of that in a tool that runs on Node.</li>
-</ul>
-<h3 id="Weinre_won’t_be_of_any_help_when:">Weinre won’t be of any help when:</h3><ul>
-<li>You want to debug a device that is not in the same local network as yours. Check out <a href="/2016/03/Remote-JavaScript-debugging-with-jsconsole/">JSConsole</a>.</li>
-<li>You can’t modify your app’s code</li>
-</ul>
-<h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point guide on how to get started.</p>
-<h3 id="Step_1:_Install_weinre">Step 1: Install weinre</h3><p>Easy with npm</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -g <span class="keyword">install</span> weinre</span><br></pre></td></tr></table></figure>
-<h3 id="Step_2:_Start_the_weinre_server">Step 2: Start the weinre server</h3><p>The weinre server will inject some JavaScript in your app through a script to allow the debugging to happen.</p>
-<p>Technically, using <code>weinre</code> is enough to start the server but here are 2 useful options that you might as well pick up straight away:</p>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">$</span> <span class="comment">weinre</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">boundHost</span> <span class="comment">192</span><span class="string">.</span><span class="comment">168</span><span class="string">.</span><span class="comment">123</span><span class="string">.</span><span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">httpPort</span> <span class="comment">8888</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>--boundHost</code> defaults to localhost -&gt; <strong>use your own IP instead</strong>. Localhost won’t mean [your machine] anymore when you are on your remote device.</li>
-<li><code>--httpPort</code> defaults to 8080 which is also commonly used so save yourself some issues down the line and change it to something else.</li>
-</ul>
-<h3 id="Step_3:_Insert_the_script_in_your_app">Step 3: Insert the script in your app</h3><p>In the <code>&lt;head&gt;</code> of your code, add the weinre script tag:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://192.168.123.1:8888/target/target-script-min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>(Replace the IP with your machine’s IP and the port with whatever port you are using)</p>
-<p>Reload or launch your app on the device under test (or simply in your browser).</p>
-<h3 id="Step_4:_Start_debugging">Step 4: Start debugging</h3><ul>
-<li>Open a browser (Chrome or Safari are supported) and go to: <code>http://192.168.123.1:8888</code> or the equivalent for your IP and Port.</li>
-<li>Click on the first link: Access points &gt; debug client user interface. (Something like <a href="http://192.168.123.1:8888/client/#anonymous" target="_blank" rel="external">http://192.168.123.1:8888/client/#anonymous</a>)</li>
-<li>Your device should appear under Targets. Click on the corresponding link and you are ready to go.</li>
-</ul>
-<p>The debugging tools are quite similar to browser’s dev tools so I am sure you can take it from there :)</p>
-<h2 id="Conclusion">Conclusion</h2><p>Give it a try and see if it fits your needs. Weinre is an excellent tool, I have used it a lot, keep it in mind and you will soon find tons of real life situations where this is useful.</p>
-<p>Check out <a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Installing.html" target="_blank" rel="external">the docs</a> for more info.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://people.apache.org/~pmuellr/weinre/docs/latest/Home.html">Weinre</a> is a great remote web debugging tool. It allows to you to quickly setup a ‘chrome dev tools’-like interface for any of your app. It comes in really handy when debugging an app on a device that does not have advanced debugging tools, think mobile, smart TVs, wearables and so on ..</p>
-<p>Weinre is free, open source and runs on Node.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
-    
-      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
-    
-      <category term="Weinre" scheme="http://klugjo.github.io/tags/Weinre/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Remote JavaScript debugging with JSConsole]]></title>
-    <link href="http://klugjo.github.io/2016/03/Remote-JavaScript-debugging-with-jsconsole/"/>
-    <id>http://klugjo.github.io/2016/03/Remote-JavaScript-debugging-with-jsconsole/</id>
-    <published>2016-03-22T06:21:20.000Z</published>
-    <updated>2016-03-22T09:28:34.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://jsconsole.com/" target="_blank" rel="external">JSConsole</a> is one of the easiest way to get your JavaScript logs when your app is executing on a remote platform (Mobile, SmartTV or any web browser based device really). It is free to use and open source.</p>
-<a id="more"></a>
-<h2 id="Why_use_JSConsole">Why use JSConsole</h2><h3 id="JSConsole_is_really_useful_when:">JSConsole is really useful when:</h3><ul>
-<li>You don’t need a complete remote dev tools but just the <code>console.log()</code> outputs</li>
-<li>You need a nicely presented console. The font is resizable which makes it really useful when doing a live coding presentation for example.</li>
-<li>You need to quickly remote debug something. You can use <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a> directly and you don’t have to setup a local server.</li>
-<li>You want to see real time log for an app that is being used the other side of the world. You don’t have to be in the same network, which makes it very easy to use with your QA team or client, thousands of kilometers away.</li>
-</ul>
-<h3 id="JSConsole_is_not_the_right_choice_when:">JSConsole is not the right choice when:</h3><ul>
-<li>You want to understand the DOM structure of the app and test some CSS changes.</li>
-<li>You want to observe network calls being made</li>
-<li>You want to debug JavaScript execution</li>
-</ul>
-<p>(Note: if you are looking for full featured web debugging, checkout <a href="/2016/03/Remote-Web-Debugging-with-weinre/">weinre</a>)</p>
-<h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point, step by step guide, on how to get started.</p>
-<h3 id="Step_1:_Get_the_JSConsole_&lt;script&gt;_tag:">Step 1: Get the JSConsole <code>&lt;script&gt;</code> tag:</h3><p>Go to <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a>.<br>Type <code>:listen</code> in the textbox.<br>Press Enter.</p>
-<p>This will print out a <code>&lt;script&gt;</code> tag, something like</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://jsconsole.com/js/remote.js?dc69ca75-55bf-405c-aad8-cbd10262bb17"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="Step_2:_Insert_the_script_in_your_code">Step 2: Insert the script in your code</h3><p>In the <code>&lt;head&gt;</code> of your code, add the JSConsole script tag.</p>
-<p>Reload or launch your app on the device under test (or simply in your browser).</p>
-<p>The logs will start showing on the <a href="http://jsconsole.com/" target="_blank" rel="external">http://jsconsole.com/</a> virtual console</p>
-<h3 id="Step_3_(Optional):_Save_the_URL_for_future_use">Step 3 (Optional): Save the URL for future use</h3><p>In the JSConsole, type <code>:listen [Your GUID]</code>. In my example, that would be:</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="built_in">listen</span> dc69ca75<span class="number">-55</span>bf<span class="number">-405</span>c-aad8-cbd10262bb17</span><br></pre></td></tr></table></figure>
-<p>See how the URL of the page has changed ? Mine is:</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http</span>://jsconsole.com/?<span class="number">%3</span>Alisten<span class="number">%20</span>dc69ca75-55bf-405c-aad8-cbd10262bb17</span><br></pre></td></tr></table></figure>
-<p>This URL will automatically launch JSConsole and start listening to your app’s logs.</p>
-<ul>
-<li>Share this URL with your colleagues or friends so that they can see the log as well.</li>
-<li>Save it for future use (for example tomorrow, when you want to continue development/debugging).</li>
-</ul>
-<h2 id="Conclusion">Conclusion</h2><p>Give it a try and see by yourself, JSConsole is really good at what it does. There are so many scenarios where it can be useful.</p>
-<p>Check out the <a href="https://github.com/remy/jsconsole" target="_blank" rel="external">Github Repo</a> for more info.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://jsconsole.com/">JSConsole</a> is one of the easiest way to get your JavaScript logs when your app is executing on a remote platform (Mobile, SmartTV or any web browser based device really). It is free to use and open source.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
-    
-      <category term="JSConsole" scheme="http://klugjo.github.io/tags/JSConsole/"/>
-    
-      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
     
   </entry>
   

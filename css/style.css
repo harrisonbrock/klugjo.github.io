@@ -276,11 +276,16 @@ article .entry dl,
 article .entry table,
 article .entry iframe,
 article .entry h3,
-article .entry h4,
 article .entry h5,
 article .entry h6,
 article .entry .video-container {
   margin-top: 15px;
+}
+article .entry h4 {
+  margin-top: 25px;
+}
+article .entry a.fancybox {
+  border-bottom: none;
 }
 article .entry blockquote {
   border-top: 1px solid #ddd;
