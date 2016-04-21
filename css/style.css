@@ -226,7 +226,7 @@ article header .icon-container .icon {
   top: 20px;
   left: 20px;
   color: #999;
-  font-size: 32px;
+  font-size: 3em;
   text-align: center;
 }
 @media screen and (max-width: 600px) {

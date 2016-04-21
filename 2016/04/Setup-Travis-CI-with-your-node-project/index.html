@@ -1,0 +1,237 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Setup Travis CI with your node project | CodeBlocQ</title>
+  <meta name="author" content="Klughertz Jonathan">
+  
+  <meta name="description" content="Quick beginner’s guide on how to use Travis CI with Github and Node.">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Setup Travis CI with your node project"/>
+  <meta property="og:site_name" content="CodeBlocQ"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
+  
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-71082014-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+
+
+<body >
+<!--<body class="bg5">-->
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</div></header>
+  <div id="content" class="inner">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
+  
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
+  
+    <h1 class="title">Setup Travis CI with your node project</h1>
+  
+
+        <div class="subtitle" datetime="2016-04-19T02:28:59.000Z">
+          2016-04-19
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-github_badge"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>Quick beginner’s guide on how to use Travis CI with Github and Node.<br><a id="more"></a></p>
+<h2 id="Project_Setup">Project Setup</h2><p>Let’s setup a Node project with Unit tests:</p>
+<h3 id="NPM">NPM</h3><p>Initialize your project with</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure>
+<h3 id="Code">Code</h3><p>Here is the code of our app. Put it in an <code>index.js</code> file at the root of the project.</p>
+<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    add: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Mocha">Mocha</h3><p>Install Mocha with NPM:</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install mocha --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<h3 id="Unit_Tests">Unit Tests</h3><p>Let’s write basic unit tests for our code. </p>
+<p>Create a <code>test</code> folder and a <code>index-spec.js</code> file inside that folder.</p>
+<figure class="highlight javascript"><figcaption><span>test/index-spec.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line"><span class="keyword">var</span> calculator = <span class="built_in">require</span>(<span class="string">'../index'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'calculator'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    describe(<span class="string">'add function'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        it(<span class="string">'adds numbers'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = calculator.add(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">            assert.equal(result, <span class="number">2</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Npm_Script">Npm Script</h3><p><strong>By default, Travis will execute <code>npm test</code> when running tests</strong>. Let’s set the <code>test</code> command to <code>mocha</code>:</p>
+<figure class="highlight javascript"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[..]</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"mocha"</span></span><br><span class="line">&#125;,</span><br><span class="line">[..]</span><br></pre></td></tr></table></figure>
+<p>You can now run the tests with</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>Make sure the tests are running and passing.</p>
+<p>Check out the <a href="https://github.com/klugjo/travis-node-test" target="_blank" rel="external">full source</a> if you run into some issues.</p>
+<h2 id="Setup_Travis">Setup Travis</h2><h3 id="-travis-yml">.travis.yml</h3><p>Create a <code>.travis.yml</code> file at the root of the project.</p>
+<p>This file will hold the travis configuration:</p>
+<figure class="highlight yml"><figcaption><span>.travis.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> node_js</span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">"stable"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>language: node_js</code> indicates to Travis that it has to deal with a JavaScript project</li>
+<li><code>node_js: - &quot;stable&quot;</code> indicates that the project should be tested against the latest stable version of Node</li>
+</ul>
+<p><a href="https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Choosing-Node-versions-to-test-against" target="_blank" rel="external">You can add more Node versions to the list</a> if needed.</p>
+<h3 id="Integrate_Travis_with_GitHub">Integrate Travis with GitHub</h3><p>At this stage, push all your project code to your GitHub repository. Go to your project Settings then Webhooks and Services. Click on Add Service and choose Travis CI:</p>
+<p><img src="/img/add-travis-to-github.png" alt=""></p>
+<p>If it is the first time you are using Travis, you will be asked to login using your GitHub Credentials.</p>
+<p>Finish by pressing the Add Service button once more.</p>
+<h3 id="Add_the_repository_to_Travis">Add the repository to Travis</h3><p>Go to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> and on the left, click the <code>+</code> to add a new repository.</p>
+<p>Sync with Github if needed and turn the current repository on.</p>
+<p><img src="/img/travis-switch-on-repo.png" alt=""></p>
+<h3 id="Start_a_build">Start a build</h3><p>At this stage, a new build will be started each time changes are pushed to the repository.</p>
+<p>If you want to trigger a build manually:</p>
+<ol>
+<li>Go to your repository on github</li>
+<li>Settings &gt; Webhooks &amp; Services &gt; Travis CI</li>
+<li>Click the <strong>Test Service</strong> Button on the top right</li>
+</ol>
+<h3 id="Results">Results</h3><p>Go back to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> to observe the results. If the build failed you will also receive an email.</p>
+<p><img src="/img/travis-build-passed.png" alt=""></p>
+<h2 id="Note_on_Mocha_and_NPM_Scripts">Note on Mocha and NPM Scripts</h2><p>You may have noticed that we only installed <code>mocha</code> locally, yet our NPM test script is simply <code>mocha</code>.</p>
+<p>This is because when evaluating <code>scripts</code>, NPM will go an look for <code>.bin/</code> executables.</p>
+<p>In our case, NPM will effectively execute</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .<span class="regexp">/node_modules/</span>.bin/mocha</span><br></pre></td></tr></table></figure>
+<p>and not </p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>mocha</span><br></pre></td></tr></table></figure>
+<p>I hope this will prevent any confusion.</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
+  
+  <div class="tags">
+    <a href="/tags/Travis/">Travis</a>, <a href="/tags/Build/">Build</a>, <a href="/tags/GitHub/">GitHub</a>, <a href="/tags/Tools/">Tools</a>, <a href="/tags/CI/">CI</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Klughertz Jonathan
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'klugjo';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

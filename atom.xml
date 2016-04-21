@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://klugjo.github.io/"/>
-  <updated>2016-04-15T08:50:47.000Z</updated>
+  <updated>2016-04-21T08:24:33.000Z</updated>
   <id>http://klugjo.github.io/</id>
   
   <author>
@@ -13,6 +13,110 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Add a build passing badge to your github repository]]></title>
+    <link href="http://klugjo.github.io/2016/04/Add-a-build-passing-badge-to-your-github-repository/"/>
+    <id>http://klugjo.github.io/2016/04/Add-a-build-passing-badge-to-your-github-repository/</id>
+    <published>2016-04-21T08:10:38.000Z</published>
+    <updated>2016-04-21T08:24:33.000Z</updated>
+    <content type="html"><![CDATA[<p>This article is about how you can add a build passing badge to your github repository:<br><a id="more"></a><br><img src="https://travis-ci.org/klugjo/hexo-autolinker.svg?branch=master" alt=""></p>
+<h3 id="Steps">Steps</h3><ul>
+<li><p><a href="/2016/04/Setup-Travis-CI-with-your-node-project/">Setup your Travis CI automated build</a> and go <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a>.</p>
+</li>
+<li><p>Select the repository you are interested in and click the badge icon next to the title.</p>
+</li>
+<li><p>Select the branch you want to check the build status for.</p>
+</li>
+<li><p>Select Markdown, copy the text below and copy paste it in your README.md file<br><br></p>
+</li>
+</ul>
+<p>You are done !<br><br><br><a href="https://github.com/klugjo/hexo-autolinker" target="_blank" rel="external">Check this repository if you need an example</a>.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article is about how you can add a build passing badge to your github repository:<br>]]>
+    
+    </summary>
+    
+      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
+    
+      <category term="Travis" scheme="http://klugjo.github.io/tags/Travis/"/>
+    
+      <category term="Markdown" scheme="http://klugjo.github.io/tags/Markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Setup Travis CI with your node project]]></title>
+    <link href="http://klugjo.github.io/2016/04/Setup-Travis-CI-with-your-node-project/"/>
+    <id>http://klugjo.github.io/2016/04/Setup-Travis-CI-with-your-node-project/</id>
+    <published>2016-04-19T02:28:59.000Z</published>
+    <updated>2016-04-19T06:09:43.000Z</updated>
+    <content type="html"><![CDATA[<p>Quick beginner’s guide on how to use Travis CI with Github and Node.<br><a id="more"></a></p>
+<h2 id="Project_Setup">Project Setup</h2><p>Let’s setup a Node project with Unit tests:</p>
+<h3 id="NPM">NPM</h3><p>Initialize your project with</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure>
+<h3 id="Code">Code</h3><p>Here is the code of our app. Put it in an <code>index.js</code> file at the root of the project.</p>
+<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    add: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="Mocha">Mocha</h3><p>Install Mocha with NPM:</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install mocha --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+<h3 id="Unit_Tests">Unit Tests</h3><p>Let’s write basic unit tests for our code. </p>
+<p>Create a <code>test</code> folder and a <code>index-spec.js</code> file inside that folder.</p>
+<figure class="highlight javascript"><figcaption><span>test/index-spec.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line"><span class="keyword">var</span> calculator = <span class="built_in">require</span>(<span class="string">'../index'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'calculator'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    describe(<span class="string">'add function'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        it(<span class="string">'adds numbers'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = calculator.add(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">            assert.equal(result, <span class="number">2</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Npm_Script">Npm Script</h3><p><strong>By default, Travis will execute <code>npm test</code> when running tests</strong>. Let’s set the <code>test</code> command to <code>mocha</code>:</p>
+<figure class="highlight javascript"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[..]</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"mocha"</span></span><br><span class="line">&#125;,</span><br><span class="line">[..]</span><br></pre></td></tr></table></figure>
+<p>You can now run the tests with</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<p>Make sure the tests are running and passing.</p>
+<p>Check out the <a href="https://github.com/klugjo/travis-node-test" target="_blank" rel="external">full source</a> if you run into some issues.</p>
+<h2 id="Setup_Travis">Setup Travis</h2><h3 id="-travis-yml">.travis.yml</h3><p>Create a <code>.travis.yml</code> file at the root of the project.</p>
+<p>This file will hold the travis configuration:</p>
+<figure class="highlight yml"><figcaption><span>.travis.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> node_js</span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">"stable"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>language: node_js</code> indicates to Travis that it has to deal with a JavaScript project</li>
+<li><code>node_js: - &quot;stable&quot;</code> indicates that the project should be tested against the latest stable version of Node</li>
+</ul>
+<p><a href="https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Choosing-Node-versions-to-test-against" target="_blank" rel="external">You can add more Node versions to the list</a> if needed.</p>
+<h3 id="Integrate_Travis_with_GitHub">Integrate Travis with GitHub</h3><p>At this stage, push all your project code to your GitHub repository. Go to your project Settings then Webhooks and Services. Click on Add Service and choose Travis CI:</p>
+<p><img src="/img/add-travis-to-github.png" alt=""></p>
+<p>If it is the first time you are using Travis, you will be asked to login using your GitHub Credentials.</p>
+<p>Finish by pressing the Add Service button once more.</p>
+<h3 id="Add_the_repository_to_Travis">Add the repository to Travis</h3><p>Go to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> and on the left, click the <code>+</code> to add a new repository.</p>
+<p>Sync with Github if needed and turn the current repository on.</p>
+<p><img src="/img/travis-switch-on-repo.png" alt=""></p>
+<h3 id="Start_a_build">Start a build</h3><p>At this stage, a new build will be started each time changes are pushed to the repository.</p>
+<p>If you want to trigger a build manually:</p>
+<ol>
+<li>Go to your repository on github</li>
+<li>Settings &gt; Webhooks &amp; Services &gt; Travis CI</li>
+<li>Click the <strong>Test Service</strong> Button on the top right</li>
+</ol>
+<h3 id="Results">Results</h3><p>Go back to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> to observe the results. If the build failed you will also receive an email.</p>
+<p><img src="/img/travis-build-passed.png" alt=""></p>
+<h2 id="Note_on_Mocha_and_NPM_Scripts">Note on Mocha and NPM Scripts</h2><p>You may have noticed that we only installed <code>mocha</code> locally, yet our NPM test script is simply <code>mocha</code>.</p>
+<p>This is because when evaluating <code>scripts</code>, NPM will go an look for <code>.bin/</code> executables.</p>
+<p>In our case, NPM will effectively execute</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .<span class="regexp">/node_modules/</span>.bin/mocha</span><br></pre></td></tr></table></figure>
+<p>and not </p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>mocha</span><br></pre></td></tr></table></figure>
+<p>I hope this will prevent any confusion.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Quick beginner’s guide on how to use Travis CI with Github and Node.<br>]]>
+    
+    </summary>
+    
+      <category term="Travis" scheme="http://klugjo.github.io/tags/Travis/"/>
+    
+      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
+    
+      <category term="GitHub" scheme="http://klugjo.github.io/tags/GitHub/"/>
+    
+      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
+    
+      <category term="CI" scheme="http://klugjo.github.io/tags/CI/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Pull requests on github 101]]></title>
@@ -44,9 +148,9 @@
     
     </summary>
     
-      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
-    
       <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
+    
+      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
     
       <category term="Open Source" scheme="http://klugjo.github.io/tags/Open-Source/"/>
     
@@ -388,122 +492,6 @@
       <category term="ESLint" scheme="http://klugjo.github.io/tags/ESLint/"/>
     
       <category term="Atom" scheme="http://klugjo.github.io/tags/Atom/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[New Hexo Theme: Magnetic]]></title>
-    <link href="http://klugjo.github.io/2016/03/New-Hexo-Theme-Magnetic/"/>
-    <id>http://klugjo.github.io/2016/03/New-Hexo-Theme-Magnetic/</id>
-    <published>2016-03-29T08:34:13.000Z</published>
-    <updated>2016-04-01T01:32:29.000Z</updated>
-    <content type="html"><![CDATA[<p>I just finished developing a new Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-magnetic" target="_blank" rel="external">Magnetic</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-magnetic/" target="_blank" rel="external">live demo</a>.</p>
-<a id="more"></a>
-<p>Magnetic is an Hexo implementation of the free <a href="http://pixelhint.com/magnetic-free-html5-responsive-photography-website-template/" target="_blank" rel="external">HTML5 Magnetic Template</a></p>
-<h2 id="Features_Overview">Features Overview</h2><ul>
-<li>Disqus and Facebook comments</li>
-<li>Google Analytics</li>
-<li>Cover image for posts and pages</li>
-<li>Tags Support</li>
-<li>Responsive Images</li>
-<li>Image Gallery</li>
-<li>Social Accounts configuration</li>
-<li>Pagination</li>
-</ul>
-<h2 id="Not_Supported">Not Supported</h2><ul>
-<li>Post Categories will not be displayed</li>
-<li>Posts and Pages Dates not displayed anywhere </li>
-</ul>
-<h2 id="External_libraries_used">External libraries used</h2><ul>
-<li><a href="http://noelboss.github.io/featherlight/" target="_blank" rel="external">FeatherLight.js</a> (Gallery)</li>
-<li><a href="https://jquery.com/" target="_blank" rel="external">jQuery</a></li>
-</ul>
-<h2 id="Installation">Installation</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> <span class="title">https</span>://github.com/klugjo/hexo-theme-magnetic magnetic</span><br></pre></td></tr></table></figure>
-<p>Then update your blog’s main <code>_config.yml</code> to set the theme to <code>magnetic</code>:</p>
-<p>i.e:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">## Themes: http:<span class="comment">//hexo.io/themes/</span></span></span><br><span class="line"><span class="symbol">theme:</span> magnetic</span><br></pre></td></tr></table></figure>
-<h2 id="Theme_Configuration">Theme Configuration</h2><p>The theme’s global configuration is done in <code>/themes/hexo-theme-magnetic/_config.yml</code>.</p>
-<h3 id="Menu">Menu</h3><p>The menu is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Header</span></span><br><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  Home:</span> /</span><br><span class="line"><span class="symbol">  Archives:</span> /archives</span><br></pre></td></tr></table></figure>
-<p>The object key is the label and the value is the path.</p>
-<h3 id="Default_post_title">Default post title</h3><p>The default post title (used when no title is specified) is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Default post title</span></span><br><span class="line"><span class="symbol">default_post_title:</span> Untitled</span><br></pre></td></tr></table></figure>
-<h3 id="Default_index_page_cover_image">Default index page cover image</h3><p>You can specify a default thumbnail for posts on the index page (Home page). This image will be used if you forget to specify an image in the post’s front matter.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Default post cover index page</span></span><br><span class="line"><span class="symbol">default_cover_index:</span> <span class="string">"http://placehold.it/450x450"</span></span><br></pre></td></tr></table></figure>
-<h3 id="Default_post_page_cover_image">Default post page cover image</h3><p>You can specify a default thumbnail for posts/pages on the post/page page (Detail Page). This image will be used if you forget to specify an image in the post’s front matter.</p>
-<h1 id="Default_post_cover_index_page">Default post cover index page</h1><p>default_cover_detail: “<a href="http://placehold.it/1300x500" target="_blank" rel="external">http://placehold.it/1300x500</a>“</p>
-<h3 id="Comments">Comments</h3><p>The comments provider is specified in the theme’s <code>_config.yml</code>. If you specify both a <code>disqus_shortname</code> and a <code>facebook.appid</code> there will be 2 sets of comment per post. So choose one.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comments. Choose one by filling up the information</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Disqus comments</span></span><br><span class="line"><span class="attr">  disqus_shortname:</span> klugjotest</span><br><span class="line">  <span class="comment"># Facebook comments</span></span><br><span class="line"><span class="attr">  facebook:</span></span><br><span class="line"><span class="attr">    appid:</span> <span class="number">123456789012345</span></span><br><span class="line"><span class="attr">    comment_count:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    comment_colorscheme:</span> light</span><br></pre></td></tr></table></figure>
-<h3 id="Google_Analytics">Google Analytics</h3><p>The Google Analytics Tracking ID is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Google Analytics Tracking ID</span></span><br><span class="line"><span class="symbol">google_analytics:</span></span><br></pre></td></tr></table></figure>
-<h3 id="Social_Account">Social Account</h3><p>Setup the links to your social pages in the theme’s <code>_config.yml</code>. Links are in the footer.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Social Accounts</span></span><br><span class="line"><span class="symbol">twitter_url:</span></span><br><span class="line"><span class="symbol">facebook_url:</span></span><br><span class="line"><span class="symbol">behance_url:</span></span><br><span class="line"><span class="symbol">googleplus_url:</span></span><br><span class="line"><span class="symbol">dribble_url:</span> </span><br><span class="line"><span class="symbol">rss_url:</span></span><br></pre></td></tr></table></figure>
-<h2 id="Post_Custom_Configuration">Post Custom Configuration</h2><p>For each post, you can specify additional information in the <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">front matter</a></p>
-<h3 id="Post’s_Index_Thumbnail">Post’s Index Thumbnail</h3><p>Use <code>cover_index</code> to specify an image that will be used for that post on the Home page (also knows as index)</p>
-<p>Example:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover_index:</span> <span class="meta-keyword">/assets/</span>work1.jpg</span><br></pre></td></tr></table></figure>
-<h3 id="Post’s_Detail_Thumbnail">Post’s Detail Thumbnail</h3><p>Use <code>cover_detail</code> to specify an image that will be used for that post on the Detail page for that post.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover_detail:</span> <span class="meta-keyword">/assets/</span>hero_image.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="Creator">Creator</h2><p>This theme was created by <a href="http://pixelhint.com/" target="_blank" rel="external">Pixel Hint</a> and adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank" rel="external">Jonathan Klughertz</a>.</p>
-<h2 id="Bugs">Bugs</h2><p>If you have a question, feature request or a bug you need me to fix, please <a href="https://github.com/klugjo/hexo-theme-magnetic/issues/new" target="_blank" rel="external">click here</a> to file an issue.</p>
-<p>Hope you enjoy it, the theme should be easy enough to customize and modify to fit your needs. Checkout <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">my tutorial on building Hexo themes</a> if you need information on how themes are built.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I just finished developing a new Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-magnetic">Magnetic</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-magnetic/">live demo</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
-    
-      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Remote Web debugging with Vorlon.js]]></title>
-    <link href="http://klugjo.github.io/2016/03/Remote-Web-debugging-with-Vorlon-js/"/>
-    <id>http://klugjo.github.io/2016/03/Remote-Web-debugging-with-Vorlon-js/</id>
-    <published>2016-03-23T07:23:32.000Z</published>
-    <updated>2016-03-29T06:36:13.000Z</updated>
-    <content type="html"><![CDATA[<p><a href="http://vorlonjs.com/" target="_blank" rel="external">VorlonJS</a> is a newcomer in the remote web debugging tool. I have not used it a lot but after giving it a try here are my findings:</p>
-<a id="more"></a>
-<ul>
-<li>It has pretty much the same features as <a href="/2016/03/Remote-Web-Debugging-with-weinre/">weinre</a></li>
-<li>Very neat UX and interface</li>
-<li>Built in Node</li>
-<li>Gives you the standard dev tools options (Console, DOM, Object Explorer)</li>
-<li>Possibility to add plugins to Run Unit Tests, capture network traffic</li>
-<li>They have desktop apps as well </li>
-<li>Free and Open Source</li>
-</ul>
-<p>Overall a very solid product that you should definitely checkout if you need a remote debugging tool</p>
-<h2 id="How_to_get_started">How to get started</h2><p>Here is a straight to the point guide on how to get started.</p>
-<h3 id="Step_1:_Install_Vorlon">Step 1: Install Vorlon</h3><p>With npm</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> -g vorlon</span><br></pre></td></tr></table></figure>
-<h3 id="Step_2:_Start_the_Vorlon_server">Step 2: Start the Vorlon server</h3><p>One simple command</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>vorlon</span><br></pre></td></tr></table></figure>
-<p>then open your browser at <code>http://localhost:1337/</code></p>
-<h3 id="Step_3:_Insert_the_script_in_your_app">Step 3: Insert the script in your app</h3><p>In the <code>&lt;head&gt;</code> of your app, insert the following:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://localhost:1337/vorlon.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p><strong>At this point, I highly recommend that you replace localhost with the IP of your app.</strong> Use something like <code>&lt;script src=&quot;http://192.168.83.100:1337/vorlon.js&quot;&gt;&lt;/script&gt;</code>.</p>
-<h3 id="Step_4:_Start_debugging">Step 4: Start debugging</h3><p>Reload your app and you can start debugging.</p>
-<p>Experiment with the features, I really like the DOM explorer and console which are available on app start. The Obj Explorer can be useful as well.</p>
-<p>I have had some difficulties with the other features but it might work out well for you.</p>
-<h2 id="Conclusion">Conclusion</h2><p>A tool I have not used much but will try to incorporate in my tool box. Will keep you guys posted.</p>
-<p>Check out the <a href="http://vorlonjs.com/#getting-started" target="_blank" rel="external">introduction video tutorial</a> on their website if you want to know more.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><a href="http://vorlonjs.com/">VorlonJS</a> is a newcomer in the remote web debugging tool. I have not used it a lot but after giving it a try here are my findings:</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
-    
-      <category term="Debugging" scheme="http://klugjo.github.io/tags/Debugging/"/>
-    
-      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
-    
-      <category term="Vorlon" scheme="http://klugjo.github.io/tags/Vorlon/"/>
     
   </entry>
   
