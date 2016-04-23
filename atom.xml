@@ -3,23 +3,104 @@
   <title><![CDATA[CodeBlocQ]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="http://klugjo.github.io/"/>
-  <updated>2016-04-21T08:24:33.000Z</updated>
-  <id>http://klugjo.github.io/</id>
+  <link href="http://www.codeblocq.com/"/>
+  <updated>2016-04-23T01:11:31.000Z</updated>
+  <id>http://www.codeblocq.com/</id>
   
   <author>
-    <name><![CDATA[Klughertz Jonathan]]></name>
+    <name><![CDATA[Jonathan Klughertz]]></name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Create links automatically in your hexo posts]]></title>
+    <link href="http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/"/>
+    <id>http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/</id>
+    <published>2016-04-23T01:00:18.000Z</published>
+    <updated>2016-04-23T01:11:31.000Z</updated>
+    <content type="html"><![CDATA[<p>I have just finished an Hexo Plug-in that automatically transforms URLs into links. In the background it uses the <a href="https://github.com/gregjacobs/Autolinker.js" target="_blank" rel="external">Autolinker.js</a> library.</p>
+<a id="more"></a>
+<p><a href="https://github.com/klugjo/hexo-autolinker" target="_blank" rel="external">GitHub Repo</a></p>
+<h3 id="Example:">Example:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Visit www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span> when you have <span class="selector-tag">time</span>.</span><br></pre></td></tr></table></figure>
+<p>becomes</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Visit &lt;<span class="selector-tag">a</span> href=<span class="string">"http://www.codeblocq.com"</span> target=<span class="string">"_blank"</span>&gt;www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span>&lt;/a&gt; when you have <span class="selector-tag">time</span>.</span><br></pre></td></tr></table></figure>
+<h2 id="Installation">Installation</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-autolinker <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h2 id="Options">Options</h2><p>Configure the plugin in your blog’s main <code>_config.yml</code></p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">autolinker</span>:</span><br><span class="line">    <span class="attribute">enable</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">newWindow</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">urls</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">email</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">tel</span>: <span class="literal">false</span></span><br><span class="line">    <span class="attribute">twitter</span>: <span class="literal">false</span></span><br><span class="line">    <span class="attribute">hashtag</span>: instagram</span><br><span class="line">    <span class="attribute">className</span>: <span class="string">'test'</span></span><br></pre></td></tr></table></figure>
+<h3 id="Explanations:">Explanations:</h3><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Default Value</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable</code></td>
+<td>true</td>
+<td style="text-align:left">Enable the plugin</td>
+</tr>
+<tr>
+<td><code>newWindow</code></td>
+<td>true</td>
+<td style="text-align:left">Opens links in new tabs/windows &lt;-&gt; Add target=”_blank”</td>
+</tr>
+<tr>
+<td><code>urls</code></td>
+<td>true</td>
+<td style="text-align:left">converts urls to links</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>true</td>
+<td style="text-align:left">converts email addresses to mailto links</td>
+</tr>
+<tr>
+<td><code>tel</code></td>
+<td>false</td>
+<td style="text-align:left">converts telephone numbers to tel links</td>
+</tr>
+<tr>
+<td><code>twitter</code></td>
+<td>false</td>
+<td style="text-align:left">converts twitter handles to links</td>
+</tr>
+<tr>
+<td><code>hastag</code></td>
+<td>false</td>
+<td style="text-align:left">Use <code>twitter</code>, <code>facebook</code> or <code>instagram</code> to convert hashtags to the links</td>
+</tr>
+<tr>
+<td><code>className</code></td>
+<td>false</td>
+<td style="text-align:left">Adds a custom class to the links that were transformed</td>
+</tr>
+</tbody>
+</table>
+<p>Checkout <a href="https://github.com/gregjacobs/Autolinker.js" target="_blank" rel="external">Autolinker.js</a> and the <a href="http://gregjacobs.github.io/Autolinker.js/examples/live-example/" target="_blank" rel="external">Autolinker live examples</a> for more options and examples.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>I have just finished an Hexo Plug-in that automatically transforms URLs into links. In the background it uses the <a href="https://github.com/gregjacobs/Autolinker.js">Autolinker.js</a> library.</p>]]>
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
+    
+      <category term="Autolinker" scheme="http://www.codeblocq.com/tags/Autolinker/"/>
+    
+      <category term="PlugIn" scheme="http://www.codeblocq.com/tags/PlugIn/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Add a build passing badge to your github repository]]></title>
-    <link href="http://klugjo.github.io/2016/04/Add-a-build-passing-badge-to-your-github-repository/"/>
-    <id>http://klugjo.github.io/2016/04/Add-a-build-passing-badge-to-your-github-repository/</id>
+    <link href="http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/"/>
+    <id>http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/</id>
     <published>2016-04-21T08:10:38.000Z</published>
-    <updated>2016-04-21T08:24:33.000Z</updated>
+    <updated>2016-04-22T04:13:14.000Z</updated>
     <content type="html"><![CDATA[<p>This article is about how you can add a build passing badge to your github repository:<br><a id="more"></a><br><img src="https://travis-ci.org/klugjo/hexo-autolinker.svg?branch=master" alt=""></p>
 <h3 id="Steps">Steps</h3><ul>
 <li><p><a href="/2016/04/Setup-Travis-CI-with-your-node-project/">Setup your Travis CI automated build</a> and go <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a>.</p>
@@ -38,18 +119,18 @@
     
     </summary>
     
-      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
+      <category term="Github" scheme="http://www.codeblocq.com/tags/Github/"/>
     
-      <category term="Travis" scheme="http://klugjo.github.io/tags/Travis/"/>
+      <category term="Travis" scheme="http://www.codeblocq.com/tags/Travis/"/>
     
-      <category term="Markdown" scheme="http://klugjo.github.io/tags/Markdown/"/>
+      <category term="Markdown" scheme="http://www.codeblocq.com/tags/Markdown/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Setup Travis CI with your node project]]></title>
-    <link href="http://klugjo.github.io/2016/04/Setup-Travis-CI-with-your-node-project/"/>
-    <id>http://klugjo.github.io/2016/04/Setup-Travis-CI-with-your-node-project/</id>
+    <link href="http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/"/>
+    <id>http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/</id>
     <published>2016-04-19T02:28:59.000Z</published>
     <updated>2016-04-19T06:09:43.000Z</updated>
     <content type="html"><![CDATA[<p>Quick beginner’s guide on how to use Travis CI with Github and Node.<br><a id="more"></a></p>
@@ -106,22 +187,22 @@
     
     </summary>
     
-      <category term="Travis" scheme="http://klugjo.github.io/tags/Travis/"/>
+      <category term="Travis" scheme="http://www.codeblocq.com/tags/Travis/"/>
     
-      <category term="Build" scheme="http://klugjo.github.io/tags/Build/"/>
+      <category term="Build" scheme="http://www.codeblocq.com/tags/Build/"/>
     
-      <category term="GitHub" scheme="http://klugjo.github.io/tags/GitHub/"/>
+      <category term="GitHub" scheme="http://www.codeblocq.com/tags/GitHub/"/>
     
-      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
+      <category term="Tools" scheme="http://www.codeblocq.com/tags/Tools/"/>
     
-      <category term="CI" scheme="http://klugjo.github.io/tags/CI/"/>
+      <category term="CI" scheme="http://www.codeblocq.com/tags/CI/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Pull requests on github 101]]></title>
-    <link href="http://klugjo.github.io/2016/04/Pull-requests-on-github-101/"/>
-    <id>http://klugjo.github.io/2016/04/Pull-requests-on-github-101/</id>
+    <link href="http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/"/>
+    <id>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</id>
     <published>2016-04-15T08:18:23.000Z</published>
     <updated>2016-04-15T08:50:47.000Z</updated>
     <content type="html"><![CDATA[<p>Here are the steps to commit a change to an open source project on github.</p>
@@ -148,18 +229,18 @@
     
     </summary>
     
-      <category term="Github" scheme="http://klugjo.github.io/tags/Github/"/>
+      <category term="Github" scheme="http://www.codeblocq.com/tags/Github/"/>
     
-      <category term="Git" scheme="http://klugjo.github.io/tags/Git/"/>
+      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
     
-      <category term="Open Source" scheme="http://klugjo.github.io/tags/Open-Source/"/>
+      <category term="Open Source" scheme="http://www.codeblocq.com/tags/Open-Source/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Zelda's theme in JavaScript]]></title>
-    <link href="http://klugjo.github.io/2016/04/Zelda-s-theme-in-JavaScript/"/>
-    <id>http://klugjo.github.io/2016/04/Zelda-s-theme-in-JavaScript/</id>
+    <link href="http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/"/>
+    <id>http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/</id>
     <published>2016-04-11T05:11:48.000Z</published>
     <updated>2016-04-14T08:11:11.000Z</updated>
     <content type="html"><![CDATA[<p>Let’s celebrate Zelda’s 30th anniversary by generating a MIDI file of the <a href="https://www.flutetunes.com/tunes/the-legend-of-zelda-theme.pdf" target="_blank" rel="external">game’s main theme</a>.</p>
@@ -240,18 +321,18 @@
     
     </summary>
     
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
     
-      <category term="MIDI" scheme="http://klugjo.github.io/tags/MIDI/"/>
+      <category term="MIDI" scheme="http://www.codeblocq.com/tags/MIDI/"/>
     
-      <category term="Zelda" scheme="http://klugjo.github.io/tags/Zelda/"/>
+      <category term="Zelda" scheme="http://www.codeblocq.com/tags/Zelda/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Convert a base64 string to a file in Node]]></title>
-    <link href="http://klugjo.github.io/2016/04/Convert-a-base64-string-to-a-file-in-Node/"/>
-    <id>http://klugjo.github.io/2016/04/Convert-a-base64-string-to-a-file-in-Node/</id>
+    <link href="http://www.codeblocq.com/2016/04/Convert-a-base64-string-to-a-file-in-Node/"/>
+    <id>http://www.codeblocq.com/2016/04/Convert-a-base64-string-to-a-file-in-Node/</id>
     <published>2016-04-11T03:42:15.000Z</published>
     <updated>2016-04-11T04:36:25.000Z</updated>
     <content type="html"><![CDATA[<p>There might be scenarios where you need to convert an base64 string back to a file. This article will show you how.</p>
@@ -273,18 +354,18 @@
 <h2 id="The_high_]]>
     </summary>
     
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
     
-      <category term="JavaScript" scheme="http://klugjo.github.io/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
     
-      <category term="base64" scheme="http://klugjo.github.io/tags/base64/"/>
+      <category term="base64" scheme="http://www.codeblocq.com/tags/base64/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Parse a webpage with Node using jQuery]]></title>
-    <link href="http://klugjo.github.io/2016/04/Parse-a-webpage-with-Node/"/>
-    <id>http://klugjo.github.io/2016/04/Parse-a-webpage-with-Node/</id>
+    <link href="http://www.codeblocq.com/2016/04/Parse-a-webpage-with-Node/"/>
+    <id>http://www.codeblocq.com/2016/04/Parse-a-webpage-with-Node/</id>
     <published>2016-04-10T03:03:47.000Z</published>
     <updated>2016-04-10T03:36:45.000Z</updated>
     <content type="html"><![CDATA[<a id="more"></a>
@@ -302,18 +383,18 @@
 <p>If you want to use jQuery selectors on the server to parse a bunch of HTML, I would recommend you to check out <a href=]]>
     </summary>
     
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
     
-      <category term="jQuery" scheme="http://klugjo.github.io/tags/jQuery/"/>
+      <category term="jQuery" scheme="http://www.codeblocq.com/tags/jQuery/"/>
     
-      <category term="Parsing" scheme="http://klugjo.github.io/tags/Parsing/"/>
+      <category term="Parsing" scheme="http://www.codeblocq.com/tags/Parsing/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Set Timezone in Hexo]]></title>
-    <link href="http://klugjo.github.io/2016/04/Set-Timezone-in-hexo/"/>
-    <id>http://klugjo.github.io/2016/04/Set-Timezone-in-hexo/</id>
+    <link href="http://www.codeblocq.com/2016/04/Set-Timezone-in-hexo/"/>
+    <id>http://www.codeblocq.com/2016/04/Set-Timezone-in-hexo/</id>
     <published>2016-04-05T07:38:33.000Z</published>
     <updated>2016-04-05T07:49:52.000Z</updated>
     <content type="html"><![CDATA[<p>I recently had some <a href="https://github.com/klugjo/hexo-theme-clean-blog/issues/5" target="_blank" rel="external">comments</a> made on one of <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external">my hexo theme</a>, saying the dates don’t generate properly. It turned out the timezone was not set properly.</p>
@@ -334,18 +415,18 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
     
-      <category term="Node" scheme="http://klugjo.github.io/tags/Node/"/>
+      <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
     
-      <category term="MomentJS" scheme="http://klugjo.github.io/tags/MomentJS/"/>
+      <category term="MomentJS" scheme="http://www.codeblocq.com/tags/MomentJS/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Get the OS X command line to read files for you]]></title>
-    <link href="http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/"/>
-    <id>http://klugjo.github.io/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</id>
+    <link href="http://www.codeblocq.com/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/"/>
+    <id>http://www.codeblocq.com/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</id>
     <published>2016-04-04T05:26:34.000Z</published>
     <updated>2016-04-05T07:52:19.000Z</updated>
     <content type="html"><![CDATA[<p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US" target="_blank" rel="external">speech command</a> with the command line.</p>
@@ -372,21 +453,21 @@
     
     </summary>
     
-      <category term="Bash" scheme="http://klugjo.github.io/tags/Bash/"/>
+      <category term="Bash" scheme="http://www.codeblocq.com/tags/Bash/"/>
     
-      <category term="OS X" scheme="http://klugjo.github.io/tags/OS-X/"/>
+      <category term="OS X" scheme="http://www.codeblocq.com/tags/OS-X/"/>
     
-      <category term="Just For Fun" scheme="http://klugjo.github.io/tags/Just-For-Fun/"/>
+      <category term="Just For Fun" scheme="http://www.codeblocq.com/tags/Just-For-Fun/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[New Hexo Theme Phantom]]></title>
-    <link href="http://klugjo.github.io/2016/04/New-Hexo-Theme-Phantom/"/>
-    <id>http://klugjo.github.io/2016/04/New-Hexo-Theme-Phantom/</id>
+    <link href="http://www.codeblocq.com/2016/04/New-Hexo-Theme-Phantom/"/>
+    <id>http://www.codeblocq.com/2016/04/New-Hexo-Theme-Phantom/</id>
     <published>2016-04-01T01:02:30.000Z</published>
     <updated>2016-04-01T01:27:21.000Z</updated>
-    <content type="html"><![CDATA[<p>I just finished developing a new Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank" rel="external">Phantom</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/" target="_blank" rel="external">live demo</a>.</p>
+    <content type="html"><![CDATA[<p>I just finished developing a new Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank" rel="external">Phantom</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/">live demo</a>.</p>
 <a id="more"></a>
 <p>Phantom is an Hexo implementation of the free <a href="http://html5up.net/phantom" target="_blank" rel="external">HTML5Up Phantom Template</a>.</p>
 <h2 id="Features_Overview">Features Overview</h2><ul>
@@ -444,7 +525,7 @@
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover_index:</span> <span class="meta-keyword">/assets/</span>work1.jpg</span><br></pre></td></tr></table></figure>
 <h3 id="Post’s_Detail_Thumbnail">Post’s Detail Thumbnail</h3><p>Use <code>cover_detail</code> to specify an image that will be used for that post on the Detail page for that post.</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover_detail:</span> <span class="meta-keyword">/assets/</span>hero_image.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="Creator">Creator</h2><p>This theme was created by <a href="http://html5up.net/phantom/" target="_blank" rel="external">HTML5 Up</a> and adapted for Hexo by <a href="http://www.codeblocq.com/" target="_blank" rel="external">Jonathan Klughertz</a>.</p>
+<h2 id="Creator">Creator</h2><p>This theme was created by <a href="http://html5up.net/phantom/" target="_blank" rel="external">HTML5 Up</a> and adapted for Hexo by <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>.</p>
 <h2 id="Bugs">Bugs</h2><p>If you have a question, feature request or a bug you need me to fix, please <a href="https://github.com/klugjo/hexo-theme-phantom/issues/new" target="_blank" rel="external">click here</a> to file an issue.</p>
 <p>Hope you enjoy it, the theme should be easy enough to customize and modify to fit your needs. Checkout <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">my tutorial on building Hexo themes</a> if you need information on how themes are built.</p>
 ]]></content>
@@ -453,45 +534,9 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://klugjo.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
     
-      <category term="Theme" scheme="http://klugjo.github.io/tags/Theme/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Setup ESLint in Atom]]></title>
-    <link href="http://klugjo.github.io/2016/03/Setup-ESLint-in-Atom/"/>
-    <id>http://klugjo.github.io/2016/03/Setup-ESLint-in-Atom/</id>
-    <published>2016-03-30T02:39:07.000Z</published>
-    <updated>2016-03-30T05:21:30.000Z</updated>
-    <content type="html"><![CDATA[<p>This article will show you how to setup <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a> syntax highlighting (or in that case error highlighting) directly in <a href="https://atom.io/" target="_blank" rel="external">Atom</a>.</p>
-<a id="more"></a>
-<h2 id="Install_the_packages">Install the packages</h2><p>Start by going to Atom’s preferences and select the <strong>+ Install</strong> tab.</p>
-<p><img src="/img/atom-prefs-install-tab.png" alt=""></p>
-<p>Then install the <strong>linter</strong> package</p>
-<p><img src="/img/atom-linter-package.png" alt=""></p>
-<p>Then the <strong>linter-eslint</strong> package</p>
-<p><img src="/img/atom-linter-eslint-package.png" alt=""></p>
-<h2 id="Setup_ESLint">Setup ESLint</h2><p>All you need to setup ESLint is an <code>.eslintrc</code> file at the root of your project with your ESlint rules.</p>
-<p>If you want to get started quickly you can use Google’s JavaScript guide rules:</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install </span>--save-dev eslint eslint-<span class="built_in">config</span>-google</span><br></pre></td></tr></table></figure>
-<p>and in your <code>.eslintrc</code>, put:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"extends"</span>: <span class="string">"eslint-config-google"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Test_it_out">Test it out</h2><p>If Atom does not automatically pick up the errors, restart the application.</p>
-<p>This is what you should get once everything is setup properly:</p>
-<p><img src="/img/atom-eslint-error-highlighting.png" alt=""></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article will show you how to setup <a href="http://eslint.org/">ESLint</a> syntax highlighting (or in that case error highlighting) directly in <a href="https://atom.io/">Atom</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="Tools" scheme="http://klugjo.github.io/tags/Tools/"/>
-    
-      <category term="ESLint" scheme="http://klugjo.github.io/tags/ESLint/"/>
-    
-      <category term="Atom" scheme="http://klugjo.github.io/tags/Atom/"/>
+      <category term="Theme" scheme="http://www.codeblocq.com/tags/Theme/"/>
     
   </entry>
   

@@ -2,21 +2,33 @@
 <html>
 <head>
   <meta charset="utf-8">
-  
-  <title>How to use a custom domain with your github pages site | CodeBlocQ</title>
-  <meta name="author" content="Klughertz Jonathan">
-  
-  <meta name="description" content="This article goes through the process of setting up a custom domain for a github pages website.">
-  
-  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="How to use a custom domain with your github pages site"/>
-  <meta property="og:site_name" content="CodeBlocQ"/>
+  
+  <title>How to use a custom domain with your github pages site | CodeBlocQ</title>
+
+  <meta name="author" content="Jonathan Klughertz">
+
+  <meta name="description" content="This article goes through the process of setting up a custom domain for a github pages website.">
 
   
-    <meta property="og:image" content="undefined"/>
-  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="This article goes through the process of setting up a custom domain for a github pages website.">
+  <meta name="twitter:site" content="@klug_jo">
+  <meta name="twitter:title" content="How to use a custom domain with your github pages site">
+  <meta name="twitter:description" content="This article goes through the process of setting up a custom domain for a github pages website.">
+  <meta name="twitter:creator" content="@klug_jo">
+  <!-- Twitter Summary card images must be at least 120x120px -->
+  <meta name="twitter:image" content="http://www.codeblocq.com/img/general/codeblocq-twitter-cover.png">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="How to use a custom domain with your github pages site" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.codeblocq.com/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/" />
+  <meta property="og:image" content="http://www.codeblocq.com/img/general/codeblocq-og-cover.png" />
+  <meta property="og:description" content="This article goes through the process of setting up a custom domain for a github pages website." />
+  <meta property="og:site_name" content="CodeBlocQ" />
 
   <link href="/favicon.png" rel="icon">
   <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
@@ -76,7 +88,7 @@
 
 
 <body >
-<!--<body class="bg1">-->
+<!--<body class="bg9">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,7 +144,7 @@
 <h2 id="Setup_the_DNS_provider">Setup the DNS provider</h2><p>You can contact your DNS provider for help on how to configure an A record but this is how I configured mine:</p>
 <p><img src="/img/github-pages-custom-domain.png" alt="DNS provider configuration github pages custom domain"></p>
 <p>The <code>CNAME</code> record for www is set to <strong>klugjo.github.io</strong>. The role of a CNAME record is to map a name to another name. Useful when the IP address of the host is not know or not stable.</p>
-<p>The URL record is set to <a href="http://www.codeblocq.com" target="_blank" rel="external">http://www.codeblocq.com</a> in order to redirect all traffic to the www site.</p>
+<p>The URL record is set to <a href="http://www.codeblocq.com">http://www.codeblocq.com</a> in order to redirect all traffic to the www site.</p>
 <h2 id="Notes">Notes</h2><ul>
 <li>You can only setup one custom domain in the CNAME file on github. <a href="https://help.github.com/articles/about-supported-custom-domains/" target="_blank" rel="external">See what are the supported custom domains</a>.</li>
 <li>Read <a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="external">this article</a> if you need to configure an A record with your DNS provider.</li>
@@ -175,7 +187,7 @@
   <footer id="footer"><div class="inner-footer inner">
   <div class="alignleft">
     
-    &copy; 2016 Klughertz Jonathan
+    &copy; 2016 Jonathan Klughertz
     
   </div>
   <div class="clearfix"></div>

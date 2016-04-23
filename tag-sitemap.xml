@@ -2,512 +2,526 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>http://klugjo.github.io/tags/Sitemap/</loc>
+        <loc>http://www.codeblocq.com/tags/Sitemap/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/RSS/</loc>
+        <loc>http://www.codeblocq.com/tags/RSS/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/npm/</loc>
+        <loc>http://www.codeblocq.com/tags/npm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Stylus/</loc>
+        <loc>http://www.codeblocq.com/tags/Stylus/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Single-Responsibility-Principle/</loc>
+        <loc>http://www.codeblocq.com/tags/Single-Responsibility-Principle/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Favicon/</loc>
+        <loc>http://www.codeblocq.com/tags/Favicon/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/HTTPie/</loc>
+        <loc>http://www.codeblocq.com/tags/HTTPie/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/REST/</loc>
+        <loc>http://www.codeblocq.com/tags/REST/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/cURL/</loc>
+        <loc>http://www.codeblocq.com/tags/cURL/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Startups/</loc>
+        <loc>http://www.codeblocq.com/tags/Startups/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/OOP/</loc>
+        <loc>http://www.codeblocq.com/tags/OOP/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/LiveReload/</loc>
+        <loc>http://www.codeblocq.com/tags/LiveReload/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/OSX/</loc>
+        <loc>http://www.codeblocq.com/tags/OSX/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/gitignore/</loc>
+        <loc>http://www.codeblocq.com/tags/gitignore/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Promise/</loc>
+        <loc>http://www.codeblocq.com/tags/Promise/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/CSS3/</loc>
+        <loc>http://www.codeblocq.com/tags/CSS3/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/HTML5/</loc>
+        <loc>http://www.codeblocq.com/tags/HTML5/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/HTML/</loc>
+        <loc>http://www.codeblocq.com/tags/HTML/</loc>
         <lastmod>2016-02-11T12:37:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Books/</loc>
+        <loc>http://www.codeblocq.com/tags/Books/</loc>
         <lastmod>2016-02-11T12:50:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Networking/</loc>
+        <loc>http://www.codeblocq.com/tags/Networking/</loc>
         <lastmod>2016-02-11T12:50:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/General-Business/</loc>
+        <loc>http://www.codeblocq.com/tags/General-Business/</loc>
         <lastmod>2016-02-11T12:50:58.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Jade/</loc>
+        <loc>http://www.codeblocq.com/tags/Jade/</loc>
         <lastmod>2016-02-16T12:51:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Browserify/</loc>
+        <loc>http://www.codeblocq.com/tags/Browserify/</loc>
         <lastmod>2016-02-16T12:51:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Log/</loc>
+        <loc>http://www.codeblocq.com/tags/Log/</loc>
         <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Alias/</loc>
+        <loc>http://www.codeblocq.com/tags/Alias/</loc>
         <lastmod>2016-02-29T09:57:16.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/React/</loc>
+        <loc>http://www.codeblocq.com/tags/React/</loc>
         <lastmod>2016-03-03T03:46:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Webpack/</loc>
+        <loc>http://www.codeblocq.com/tags/Webpack/</loc>
         <lastmod>2016-03-03T03:46:46.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Babel/</loc>
+        <loc>http://www.codeblocq.com/tags/Babel/</loc>
         <lastmod>2016-03-07T09:45:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Gulp/</loc>
+        <loc>http://www.codeblocq.com/tags/Gulp/</loc>
         <lastmod>2016-03-07T09:45:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/CSS/</loc>
+        <loc>http://www.codeblocq.com/tags/CSS/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/CssMin/</loc>
+        <loc>http://www.codeblocq.com/tags/CssMin/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/CSSO/</loc>
+        <loc>http://www.codeblocq.com/tags/CSSO/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Software-Practices/</loc>
+        <loc>http://www.codeblocq.com/tags/Software-Practices/</loc>
         <lastmod>2016-03-20T04:51:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JSConsole/</loc>
+        <loc>http://www.codeblocq.com/tags/JSConsole/</loc>
         <lastmod>2016-03-22T09:28:34.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Weinre/</loc>
+        <loc>http://www.codeblocq.com/tags/Weinre/</loc>
         <lastmod>2016-03-23T08:56:26.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Debugging/</loc>
+        <loc>http://www.codeblocq.com/tags/Debugging/</loc>
         <lastmod>2016-03-29T06:36:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Vorlon/</loc>
+        <loc>http://www.codeblocq.com/tags/Vorlon/</loc>
         <lastmod>2016-03-29T06:36:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/ESLint/</loc>
+        <loc>http://www.codeblocq.com/tags/ESLint/</loc>
         <lastmod>2016-03-30T05:21:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Atom/</loc>
+        <loc>http://www.codeblocq.com/tags/Atom/</loc>
         <lastmod>2016-03-30T05:21:30.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/ES2015/</loc>
+        <loc>http://www.codeblocq.com/tags/ES2015/</loc>
         <lastmod>2016-03-30T05:25:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/ES6/</loc>
+        <loc>http://www.codeblocq.com/tags/ES6/</loc>
         <lastmod>2016-03-30T05:25:04.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Disqus/</loc>
+        <loc>http://www.codeblocq.com/tags/Analytics/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Analytics/</loc>
+        <loc>http://www.codeblocq.com/tags/Disqus/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Bootstrap/</loc>
+        <loc>http://www.codeblocq.com/tags/Bootstrap/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Template/</loc>
+        <loc>http://www.codeblocq.com/tags/Template/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/EJS/</loc>
+        <loc>http://www.codeblocq.com/tags/EJS/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Mocha/</loc>
+        <loc>http://www.codeblocq.com/tags/Mocha/</loc>
         <lastmod>2016-03-30T05:26:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/TDD/</loc>
+        <loc>http://www.codeblocq.com/tags/TDD/</loc>
         <lastmod>2016-03-30T05:26:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Custom-Domain/</loc>
+        <loc>http://www.codeblocq.com/tags/Custom-Domain/</loc>
         <lastmod>2016-03-30T05:28:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/DNS-Provider/</loc>
+        <loc>http://www.codeblocq.com/tags/DNS-Provider/</loc>
         <lastmod>2016-03-30T05:28:13.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/WebStorm/</loc>
+        <loc>http://www.codeblocq.com/tags/WebStorm/</loc>
         <lastmod>2016-03-30T05:29:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Theme/</loc>
+        <loc>http://www.codeblocq.com/tags/Theme/</loc>
         <lastmod>2016-04-01T01:32:29.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Hexo/</loc>
+        <loc>http://www.codeblocq.com/tags/MomentJS/</loc>
         <lastmod>2016-04-05T07:49:52.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/MomentJS/</loc>
-        <lastmod>2016-04-05T07:49:52.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://klugjo.github.io/tags/Bash/</loc>
+        <loc>http://www.codeblocq.com/tags/Bash/</loc>
         <lastmod>2016-04-05T07:52:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/OS-X/</loc>
+        <loc>http://www.codeblocq.com/tags/OS-X/</loc>
         <lastmod>2016-04-05T07:52:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Just-For-Fun/</loc>
+        <loc>http://www.codeblocq.com/tags/Just-For-Fun/</loc>
         <lastmod>2016-04-05T07:52:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/jQuery/</loc>
+        <loc>http://www.codeblocq.com/tags/jQuery/</loc>
         <lastmod>2016-04-10T03:36:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Parsing/</loc>
+        <loc>http://www.codeblocq.com/tags/Parsing/</loc>
         <lastmod>2016-04-10T03:36:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Node/</loc>
+        <loc>http://www.codeblocq.com/tags/Node/</loc>
         <lastmod>2016-04-11T04:36:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/base64/</loc>
+        <loc>http://www.codeblocq.com/tags/base64/</loc>
         <lastmod>2016-04-11T04:36:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/JavaScript/</loc>
+        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
         <lastmod>2016-04-14T08:11:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/MIDI/</loc>
+        <loc>http://www.codeblocq.com/tags/MIDI/</loc>
         <lastmod>2016-04-14T08:11:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Zelda/</loc>
+        <loc>http://www.codeblocq.com/tags/Zelda/</loc>
         <lastmod>2016-04-14T08:11:11.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Git/</loc>
+        <loc>http://www.codeblocq.com/tags/Git/</loc>
         <lastmod>2016-04-15T08:50:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Open-Source/</loc>
+        <loc>http://www.codeblocq.com/tags/Open-Source/</loc>
         <lastmod>2016-04-15T08:50:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Build/</loc>
+        <loc>http://www.codeblocq.com/tags/Build/</loc>
         <lastmod>2016-04-19T06:09:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/GitHub/</loc>
+        <loc>http://www.codeblocq.com/tags/GitHub/</loc>
         <lastmod>2016-04-19T06:09:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Tools/</loc>
+        <loc>http://www.codeblocq.com/tags/Tools/</loc>
         <lastmod>2016-04-19T06:09:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/CI/</loc>
+        <loc>http://www.codeblocq.com/tags/CI/</loc>
         <lastmod>2016-04-19T06:09:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Github/</loc>
-        <lastmod>2016-04-21T08:24:33.000Z</lastmod>
+        <loc>http://www.codeblocq.com/tags/Github/</loc>
+        <lastmod>2016-04-22T04:13:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Travis/</loc>
-        <lastmod>2016-04-21T08:24:33.000Z</lastmod>
+        <loc>http://www.codeblocq.com/tags/Travis/</loc>
+        <lastmod>2016-04-22T04:13:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://klugjo.github.io/tags/Markdown/</loc>
-        <lastmod>2016-04-21T08:24:33.000Z</lastmod>
+        <loc>http://www.codeblocq.com/tags/Markdown/</loc>
+        <lastmod>2016-04-22T04:13:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Hexo/</loc>
+        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Autolinker/</loc>
+        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/PlugIn/</loc>
+        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

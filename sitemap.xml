@@ -2,12 +2,12 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <sitemap>
-        <loc>http://klugjo.github.io/post-sitemap.xml</loc>
-        <lastmod>2016-04-21T08:24:33.000Z</lastmod>
+        <loc>http://www.codeblocq.com/post-sitemap.xml</loc>
+        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://klugjo.github.io/tag-sitemap.xml</loc>
+        <loc>http://www.codeblocq.com/tag-sitemap.xml</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     </sitemap>
 
