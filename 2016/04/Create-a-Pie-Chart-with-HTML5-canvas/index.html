@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <title>Create a Pie Chart with HTML5 canvas | CodeBlocQ</title>
+
+  <meta name="author" content="Jonathan Klughertz">
+
+  <meta name="description" content="This article will show you how to build a Pie Chart using the HTML5 canvas">
+
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="This article will show you how to build a Pie Chart using the HTML5 canvas">
+  <meta name="twitter:site" content="@klug_jo">
+  <meta name="twitter:title" content="Create a Pie Chart with HTML5 canvas">
+  <meta name="twitter:description" content="This article will show you how to build a Pie Chart using the HTML5 canvas">
+  <meta name="twitter:creator" content="@klug_jo">
+  <!-- Twitter Summary card images must be at least 120x120px -->
+  <meta name="twitter:image" content="http://www.codeblocq.com/img/general/codeblocq-twitter-cover.png">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Create a Pie Chart with HTML5 canvas" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.codeblocq.com/2016/04/Create-a-Pie-Chart-with-HTML5-canvas/" />
+  <meta property="og:image" content="http://www.codeblocq.com/img/general/codeblocq-og-cover.png" />
+  <meta property="og:description" content="This article will show you how to build a Pie Chart using the HTML5 canvas" />
+  <meta property="og:site_name" content="CodeBlocQ" />
+
+  <meta property="fb:app_id" content="607597709387231" />
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
+  
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-71082014-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+
+
+<body >
+<!--<body class="bg2">-->
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</div></header>
+  <div id="content" class="inner">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
+  
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
+  
+    <h1 class="title">Create a Pie Chart with HTML5 canvas</h1>
+  
+
+        <div class="subtitle" datetime="2016-04-25T03:37:56.000Z">
+          2016-04-25
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-html5"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>This article will show you how to build a Pie Chart using the HTML5 canvas</p>
+<a id="more"></a>
+<h3 id="Final_Result">Final Result</h3><p></p><p data-height="425" data-theme-id="dark" data-slug-hash="yOxBdm" data-default-tab="js,result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/yOxBdm/" target="_blank" rel="external">Pie Chart Canvas HTML5</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="Project_Description">Project Description</h2><p>This mini project / tutorial will give you an introduction on how to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" target="_blank" rel="external">draw shapes</a> in the canvas.</p>
+<h2 id="HTML">HTML</h2><p>In our HTML file, we will simply insert a <code>&lt;canvas&gt;</code> element and specify a width and height.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Draw_a_pie_slice">Draw a pie slice</h2><p>Let’s start by drawing a single Pie slice.</p>
+<h3 id="Canvas_initialization">Canvas initialization</h3><p>Let’s create a <code>draw()</code> function that will be executed on a <code>window.onload</code>. We can then retrieve our canvas by it’s <code>id</code> and create our context. The context objet is what will be used to draw our lines.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// code goes here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = draw;</span><br></pre></td></tr></table></figure>
+<h3 id="Draw_a_Pie_Slice">Draw a Pie Slice</h3><p>To draw a Pie slice, we will:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo" target="_blank" rel="external">Move to</a> the (200, 200) coordinates</li>
+<li>Start <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc" target="_blank" rel="external">drawing an Arc</a> with 120 radius and the center at (200, 200) and an angle of 0.3 PI</li>
+<li>Continue <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo" target="_blank" rel="external">tracing a line</a> all the way back to the center</li>
+</ul>
+<p>Here is the code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Our angle</span></span><br><span class="line">  <span class="keyword">var</span> angle = <span class="built_in">Math</span>.PI * <span class="number">0.3</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Start a new path</span></span><br><span class="line">  ctx.beginPath();</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Go to center of the Chart</span></span><br><span class="line">  ctx.moveTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Draw an Arc</span></span><br><span class="line">  <span class="comment">// arc(centerX, centerY, radius, angleStart, angleEnd)</span></span><br><span class="line">  ctx.arc(<span class="number">200</span>, <span class="number">200</span>, <span class="number">120</span>, <span class="number">0</span>, angle);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Draw a line to close the pie slice</span></span><br><span class="line">  ctx.lineTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Print the path</span></span><br><span class="line">  ctx.stroke();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>You might have realised that the initial line is drawn automatically: when we start drawing the arc, the path will automatically be linked from the initial position.</p>
+<p>Here is what we have so far:</p>
+<p><img src="/img/html5-canvas-slice.png" alt=""></p>
+<h2 id="Draw_the_entire_Pie">Draw the entire Pie</h2><p>We will start with an array of angles which sum equals 2 PI and draw the all the slices.</p>
+<p>We will also add a list of colours and for each slice, pick one and <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill" target="_blank" rel="external">fill the slice</a> with that color.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Colors</span></span><br><span class="line">  <span class="keyword">var</span> colors = [<span class="string">'#4CAF50'</span>, <span class="string">'#00BCD4'</span>, <span class="string">'#E91E63'</span>, <span class="string">'#FFC107'</span>, <span class="string">'#9E9E9E'</span>, <span class="string">'#CDDC39'</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// List of Angles</span></span><br><span class="line">  <span class="keyword">var</span> angles = [<span class="built_in">Math</span>.PI * <span class="number">0.3</span>, <span class="built_in">Math</span>.PI * <span class="number">0.7</span>, <span class="built_in">Math</span>.PI * <span class="number">0.2</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Temporary variables, to store each arc angles</span></span><br><span class="line">  <span class="keyword">var</span> beginAngle = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> endAngle = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Iterate through the angles</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; angles.length; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Begin where we left off</span></span><br><span class="line">    beginAngle = endAngle;</span><br><span class="line">    <span class="comment">// End Angle</span></span><br><span class="line">    endAngle = endAngle + angles[i];</span><br><span class="line">    </span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    <span class="comment">// Fill color</span></span><br><span class="line">    ctx.fillStyle = colors[i % colors.length];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Same code as before</span></span><br><span class="line">    ctx.moveTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">    ctx.arc(<span class="number">200</span>, <span class="number">200</span>, <span class="number">120</span>, beginAngle, endAngle);</span><br><span class="line">    ctx.lineTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">    ctx.stroke();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Fill</span></span><br><span class="line">    ctx.fill();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = draw;</span><br></pre></td></tr></table></figure>
+<p>And this is where we are at:</p>
+<p><img src="/img/html5-canvas-pie-chart1.png" alt=""></p>
+<h2 id="Separate_the_slices">Separate the slices</h2><p>The last step consists of creating space in between the pie slices.</p>
+<p>For each slice, the center has to be offset by <code>(cos(mediumAngle) * offset, sin(mediumAngle) * offset)</code> where:</p>
+<ul>
+<li><code>mediumAngle</code> is the angle formed by the origin and the slice bisector</li>
+<li><code>offset</code> is the base offset</li>
+</ul>
+<p>All that is left to do is to implement that change:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> colors = [<span class="string">'#4CAF50'</span>, <span class="string">'#00BCD4'</span>, <span class="string">'#E91E63'</span>, <span class="string">'#FFC107'</span>, <span class="string">'#9E9E9E'</span>, <span class="string">'#CDDC39'</span>, <span class="string">'#18FFFF'</span>, <span class="string">'#F44336'</span>, <span class="string">'#FFF59D'</span>, <span class="string">'#6D4C41'</span>];</span><br><span class="line">  <span class="keyword">var</span> angles = [<span class="built_in">Math</span>.PI * <span class="number">0.3</span>, <span class="built_in">Math</span>.PI * <span class="number">0.7</span>, <span class="built_in">Math</span>.PI * <span class="number">0.2</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Base offset distance of 10</span></span><br><span class="line">  <span class="keyword">var</span> offset = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">var</span> beginAngle = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> endAngle = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Used to calculate the X and Y offset</span></span><br><span class="line">  <span class="keyword">var</span> offsetX, offsetY, medianAngle;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; angles.length; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    beginAngle = endAngle;</span><br><span class="line">    endAngle = endAngle + angles[i];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The medium angle is the average of two consecutive angles</span></span><br><span class="line">    medianAngle = (endAngle + beginAngle) / <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// X and Y calculations</span></span><br><span class="line">    offsetX = <span class="built_in">Math</span>.cos(medianAngle) * offset;</span><br><span class="line">    offsetY = <span class="built_in">Math</span>.sin(medianAngle) * offset;</span><br><span class="line">    </span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.fillStyle = colors[i % colors.length];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Adding the offsetX and offsetY to the center of the arc</span></span><br><span class="line">    ctx.moveTo(<span class="number">200</span> + offsetX, <span class="number">200</span> + offsetY);</span><br><span class="line">    ctx.arc(<span class="number">200</span> + offsetX, <span class="number">200</span> + offsetY, <span class="number">120</span>, beginAngle, endAngle);</span><br><span class="line">    ctx.lineTo(<span class="number">200</span> + offsetX, <span class="number">200</span> + offsetY);</span><br><span class="line">    ctx.stroke();</span><br><span class="line">    ctx.fill();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = draw;</span><br></pre></td></tr></table></figure>
+<p>And this is the final result:</p>
+<p></p><p data-height="425" data-theme-id="dark" data-slug-hash="yOxBdm" data-default-tab="js,result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/yOxBdm/" target="_blank" rel="external">Pie Chart Canvas HTML5</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Hope you have enjoyed this. Leave your questions in the comments below.</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
+  
+  <div class="tags">
+    <a href="/tags/HTML5/">HTML5</a>, <a href="/tags/Chart/">Chart</a>, <a href="/tags/Canvas/">Canvas</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Jonathan Klughertz
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'klugjo';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

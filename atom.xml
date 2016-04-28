@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-04-23T01:11:31.000Z</updated>
+  <updated>2016-04-26T07:03:07.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -15,11 +15,162 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Big O Notation for algorithms]]></title>
+    <link href="http://www.codeblocq.com/2016/04/Big-O-Notation-for-algorithms/"/>
+    <id>http://www.codeblocq.com/2016/04/Big-O-Notation-for-algorithms/</id>
+    <published>2016-04-26T01:59:51.000Z</published>
+    <updated>2016-04-26T07:03:07.000Z</updated>
+    <content type="html"><![CDATA[<p>This article will give you a brief and simple explanation of what the Big-O Notation does.</p>
+<a id="more"></a>
+<h2 id="Introduction">Introduction</h2><p>The Big-O notation is a way to describe how efficient a piece of code is. More precisely, it defines how the execution time is affected by a growth of the input.</p>
+<p><strong>For Example:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Code</th>
+<th style="text-align:center">Input Size</th>
+<th style="text-align:center">Execution time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1 sec</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3 sec</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">6 sec</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1 sec</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">9 sec</td>
+</tr>
+<tr>
+<td style="text-align:center">B</td>
+<td style="text-align:center">6</td>
+<td style="text-align:center">36 sec</td>
+</tr>
+</tbody>
+</table>
+<p>In this example, code A is more efficient. When the input size increases, the time increases in a linear fashion. For code B, the time increases in a quadratic fashion.</p>
+<p>In that example, we can say that if <code>N</code> is the size of the input: </p>
+<ul>
+<li>code A is a big-O of N: <code>O(N)</code></li>
+<li>code B is a big-O of N<sup>2</sup>: <code>O(N^2)</code></li>
+</ul>
+<h2 id="More_examples">More examples</h2><p>In JavaScript.</p>
+<h3 id="Constant_complexity">Constant complexity</h3><p>If the time complexity for an algorithm is <code>O(1)</code>, it is said to be constant. No matter how big the input, the execution time will always be the same.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFirstElement</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> array[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>No matter how big the array, the execution time remains the same as we are simply return the first element.</p>
+<h3 id="Linear_complexity">Linear complexity</h3><p>If the time complexity for an algorithm is <code>O(N)</code>, it is said to be linear. The execution times increases linearly with the input size.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMax</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length = array.length;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (++index &lt; length) &#123;</span><br><span class="line">        <span class="keyword">var</span> currentValue = array[index];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(currentValue != <span class="literal">null</span> &amp;&amp; (currentMax === <span class="literal">undefined</span> || currentValue &gt; currentMax)) &#123;</span><br><span class="line">            <span class="keyword">var</span> currentMax = currentValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> currentMax;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this code, we iterate through the array only once, so the time needed to complete the operation is directly proportional to the array length.</p>
+<h3 id="Quadratic_complexity">Quadratic complexity</h3><p>If the time complexity for an algorithm is <code>O(N^2)</code>, it is said to be of quadratic growth. The execution time increases linearly with the square of the input size.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="string">'M'</span>, <span class="string">'a'</span>, <span class="string">'r'</span>, <span class="string">'y'</span>];</span><br><span class="line"><span class="keyword">var</span> array2 = [<span class="string">'J'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'k'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array1.length; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; array2.length; j = j + <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(array1[i] + array2[j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>In this, for each element in array1, we go through all the elements of array2. The time needed to complete the operation is proportional to the square of the arrays’s length.</p>
+<p>Note:</p>
+<ul>
+<li>If both array have the same size, the time complexity is <code>O(N^2)</code></li>
+<li>If both array have a different size, the time complexity is <code>O(N.M)</code> (as in N times M, where N and M are the array sizes)</li>
+</ul>
+<h2 id="Conclusion">Conclusion</h2><p>I hope this gives you an idea of what the big-O notation means and is used for. </p>
+<p>In our example, we have used it to measure the time complexity, in some cases in can also be used to measure the space complexity (the space used in memory).</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article will give you a brief and simple explanation of what the Big-O Notation does.</p>]]>
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://www.codeblocq.com/tags/Algorithm/"/>
+    
+      <category term="Performance" scheme="http://www.codeblocq.com/tags/Performance/"/>
+    
+      <category term="Big-O" scheme="http://www.codeblocq.com/tags/Big-O/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Create a Pie Chart with HTML5 canvas]]></title>
+    <link href="http://www.codeblocq.com/2016/04/Create-a-Pie-Chart-with-HTML5-canvas/"/>
+    <id>http://www.codeblocq.com/2016/04/Create-a-Pie-Chart-with-HTML5-canvas/</id>
+    <published>2016-04-25T03:37:56.000Z</published>
+    <updated>2016-04-27T01:23:14.000Z</updated>
+    <content type="html"><![CDATA[<p>This article will show you how to build a Pie Chart using the HTML5 canvas</p>
+<a id="more"></a>
+<h3 id="Final_Result">Final Result</h3><p></p><p data-height="425" data-theme-id="dark" data-slug-hash="yOxBdm" data-default-tab="js,result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/yOxBdm/" target="_blank" rel="external">Pie Chart Canvas HTML5</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="Project_Description">Project Description</h2><p>This mini project / tutorial will give you an introduction on how to <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes" target="_blank" rel="external">draw shapes</a> in the canvas.</p>
+<h2 id="HTML">HTML</h2><p>In our HTML file, we will simply insert a <code>&lt;canvas&gt;</code> element and specify a width and height.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span> <span class="attr">width</span>=<span class="string">"600"</span> <span class="attr">height</span>=<span class="string">"600"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Draw_a_pie_slice">Draw a pie slice</h2><p>Let’s start by drawing a single Pie slice.</p>
+<h3 id="Canvas_initialization">Canvas initialization</h3><p>Let’s create a <code>draw()</code> function that will be executed on a <code>window.onload</code>. We can then retrieve our canvas by it’s <code>id</code> and create our context. The context objet is what will be used to draw our lines.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// code goes here</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = draw;</span><br></pre></td></tr></table></figure>
+<h3 id="Draw_a_Pie_Slice">Draw a Pie Slice</h3><p>To draw a Pie slice, we will:</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/moveTo" target="_blank" rel="external">Move to</a> the (200, 200) coordinates</li>
+<li>Start <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/arc" target="_blank" rel="external">drawing an Arc</a> with 120 radius and the center at (200, 200) and an angle of 0.3 PI</li>
+<li>Continue <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineTo" target="_blank" rel="external">tracing a line</a> all the way back to the center</li>
+</ul>
+<p>Here is the code</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Our angle</span></span><br><span class="line">  <span class="keyword">var</span> angle = <span class="built_in">Math</span>.PI * <span class="number">0.3</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Start a new path</span></span><br><span class="line">  ctx.beginPath();</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Go to center of the Chart</span></span><br><span class="line">  ctx.moveTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Draw an Arc</span></span><br><span class="line">  <span class="comment">// arc(centerX, centerY, radius, angleStart, angleEnd)</span></span><br><span class="line">  ctx.arc(<span class="number">200</span>, <span class="number">200</span>, <span class="number">120</span>, <span class="number">0</span>, angle);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Draw a line to close the pie slice</span></span><br><span class="line">  ctx.lineTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Print the path</span></span><br><span class="line">  ctx.stroke();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>You might have realised that the initial line is drawn automatically: when we start drawing the arc, the path will automatically be linked from the initial position.</p>
+<p>Here is what we have so far:</p>
+<p><img src="/img/html5-canvas-slice.png" alt=""></p>
+<h2 id="Draw_the_entire_Pie">Draw the entire Pie</h2><p>We will start with an array of angles which sum equals 2 PI and draw the all the slices.</p>
+<p>We will also add a list of colours and for each slice, pick one and <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill" target="_blank" rel="external">fill the slice</a> with that color.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Colors</span></span><br><span class="line">  <span class="keyword">var</span> colors = [<span class="string">'#4CAF50'</span>, <span class="string">'#00BCD4'</span>, <span class="string">'#E91E63'</span>, <span class="string">'#FFC107'</span>, <span class="string">'#9E9E9E'</span>, <span class="string">'#CDDC39'</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// List of Angles</span></span><br><span class="line">  <span class="keyword">var</span> angles = [<span class="built_in">Math</span>.PI * <span class="number">0.3</span>, <span class="built_in">Math</span>.PI * <span class="number">0.7</span>, <span class="built_in">Math</span>.PI * <span class="number">0.2</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Temporary variables, to store each arc angles</span></span><br><span class="line">  <span class="keyword">var</span> beginAngle = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> endAngle = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Iterate through the angles</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; angles.length; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// Begin where we left off</span></span><br><span class="line">    beginAngle = endAngle;</span><br><span class="line">    <span class="comment">// End Angle</span></span><br><span class="line">    endAngle = endAngle + angles[i];</span><br><span class="line">    </span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    <span class="comment">// Fill color</span></span><br><span class="line">    ctx.fillStyle = colors[i % colors.length];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Same code as before</span></span><br><span class="line">    ctx.moveTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">    ctx.arc(<span class="number">200</span>, <span class="number">200</span>, <span class="number">120</span>, beginAngle, endAngle);</span><br><span class="line">    ctx.lineTo(<span class="number">200</span>, <span class="number">200</span>);</span><br><span class="line">    ctx.stroke();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Fill</span></span><br><span class="line">    ctx.fill();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = draw;</span><br></pre></td></tr></table></figure>
+<p>And this is where we are at:</p>
+<p><img src="/img/html5-canvas-pie-chart1.png" alt=""></p>
+<h2 id="Separate_the_slices">Separate the slices</h2><p>The last step consists of creating space in between the pie slices.</p>
+<p>For each slice, the center has to be offset by <code>(cos(mediumAngle) * offset, sin(mediumAngle) * offset)</code> where:</p>
+<ul>
+<li><code>mediumAngle</code> is the angle formed by the origin and the slice bisector</li>
+<li><code>offset</code> is the base offset</li>
+</ul>
+<p>All that is left to do is to implement that change:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">draw</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> canvas = <span class="built_in">document</span>.getElementById(<span class="string">"canvas"</span>);</span><br><span class="line">  <span class="keyword">var</span> ctx = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">var</span> colors = [<span class="string">'#4CAF50'</span>, <span class="string">'#00BCD4'</span>, <span class="string">'#E91E63'</span>, <span class="string">'#FFC107'</span>, <span class="string">'#9E9E9E'</span>, <span class="string">'#CDDC39'</span>, <span class="string">'#18FFFF'</span>, <span class="string">'#F44336'</span>, <span class="string">'#FFF59D'</span>, <span class="string">'#6D4C41'</span>];</span><br><span class="line">  <span class="keyword">var</span> angles = [<span class="built_in">Math</span>.PI * <span class="number">0.3</span>, <span class="built_in">Math</span>.PI * <span class="number">0.7</span>, <span class="built_in">Math</span>.PI * <span class="number">0.2</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>, <span class="built_in">Math</span>.PI * <span class="number">0.4</span>];</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Base offset distance of 10</span></span><br><span class="line">  <span class="keyword">var</span> offset = <span class="number">10</span>;</span><br><span class="line">  <span class="keyword">var</span> beginAngle = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">var</span> endAngle = <span class="number">0</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Used to calculate the X and Y offset</span></span><br><span class="line">  <span class="keyword">var</span> offsetX, offsetY, medianAngle;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; angles.length; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    beginAngle = endAngle;</span><br><span class="line">    endAngle = endAngle + angles[i];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// The medium angle is the average of two consecutive angles</span></span><br><span class="line">    medianAngle = (endAngle + beginAngle) / <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// X and Y calculations</span></span><br><span class="line">    offsetX = <span class="built_in">Math</span>.cos(medianAngle) * offset;</span><br><span class="line">    offsetY = <span class="built_in">Math</span>.sin(medianAngle) * offset;</span><br><span class="line">    </span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.fillStyle = colors[i % colors.length];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// Adding the offsetX and offsetY to the center of the arc</span></span><br><span class="line">    ctx.moveTo(<span class="number">200</span> + offsetX, <span class="number">200</span> + offsetY);</span><br><span class="line">    ctx.arc(<span class="number">200</span> + offsetX, <span class="number">200</span> + offsetY, <span class="number">120</span>, beginAngle, endAngle);</span><br><span class="line">    ctx.lineTo(<span class="number">200</span> + offsetX, <span class="number">200</span> + offsetY);</span><br><span class="line">    ctx.stroke();</span><br><span class="line">    ctx.fill();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.onload = draw;</span><br></pre></td></tr></table></figure>
+<p>And this is the final result:</p>
+<p></p><p data-height="425" data-theme-id="dark" data-slug-hash="yOxBdm" data-default-tab="js,result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/yOxBdm/" target="_blank" rel="external">Pie Chart Canvas HTML5</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Hope you have enjoyed this. Leave your questions in the comments below.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article will show you how to build a Pie Chart using the HTML5 canvas</p>]]>
+    
+    </summary>
+    
+      <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
+    
+      <category term="Chart" scheme="http://www.codeblocq.com/tags/Chart/"/>
+    
+      <category term="Canvas" scheme="http://www.codeblocq.com/tags/Canvas/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Create links automatically in your hexo posts]]></title>
     <link href="http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/"/>
     <id>http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/</id>
     <published>2016-04-23T01:00:18.000Z</published>
-    <updated>2016-04-23T01:11:31.000Z</updated>
+    <updated>2016-04-23T02:20:50.000Z</updated>
     <content type="html"><![CDATA[<p>I have just finished an Hexo Plug-in that automatically transforms URLs into links. In the background it uses the <a href="https://github.com/gregjacobs/Autolinker.js" target="_blank" rel="external">Autolinker.js</a> library.</p>
 <a id="more"></a>
 <p><a href="https://github.com/klugjo/hexo-autolinker" target="_blank" rel="external">GitHub Repo</a></p>
@@ -415,128 +566,11 @@
     
     </summary>
     
-      <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
-    
       <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
     
-      <category term="MomentJS" scheme="http://www.codeblocq.com/tags/MomentJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Get the OS X command line to read files for you]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/"/>
-    <id>http://www.codeblocq.com/2016/04/Get-the-OS-X-command-line-to-read-files-for-you/</id>
-    <published>2016-04-04T05:26:34.000Z</published>
-    <updated>2016-04-05T07:52:19.000Z</updated>
-    <content type="html"><![CDATA[<p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US" target="_blank" rel="external">speech command</a> with the command line.</p>
-<a id="more"></a>
-<h3 id="Speak">Speak</h3><p>You can have your system say a sentence by using:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> Hello World. My Name <span class="keyword">is</span> Jonathan.</span><br></pre></td></tr></table></figure>
-<h3 id="Specify_a_voice">Specify a voice</h3><p>Your mac ships with a few voices, use <code>-v</code> to specify a voice.</p>
-<p>Example:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> -v Karen Hello World</span><br></pre></td></tr></table></figure>
-<p><strong>List of voices:</strong> Alex, Bruce, Fred, Kathy, Vicky, Victoria, Daniel, Tessa, Fiona, Moira, Veena, Karen.</p>
-<h3 id="Specify_a_file">Specify a file</h3><p>You can use <code>-f</code> to specify the path to a file to read.</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">say</span> -f ~/testvoice.txt</span><br></pre></td></tr></table></figure>
-<p>You can also pipe the content of the file into the <code>say</code> command:</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/testvoice.txt <span class="string">| say</span></span><br></pre></td></tr></table></figure>
-<p>If are looking for text to fill in your text file, checkout <a href="http://fucklorem.com/" target="_blank" rel="external">http://fucklorem.com/</a>.</p>
-<h3 id="Output_the_speech_to_a_file">Output the speech to a file</h3><p>Use the <code>-o</code> flag to output the </p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">say -o /Users/klugjo/outputvoice<span class="selector-class">.m4a</span> Hello World</span><br></pre></td></tr></table></figure>
-<h3 id="Combine_it_all_together">Combine it all together</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ say -v Fiona -f ~/testvoice<span class="selector-class">.txt</span> -o outputvoice.m4a</span><br></pre></td></tr></table></figure>
-<p>Hope you had fun, not the most useful command but I had quite a bit of fun with it.</p>
-<p>Check out more OS X commands <a href="https://github.com/herrbischoff/awesome-osx-command-line" target="_blank" rel="external">here</a>.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>A fun article today on how to use OSX <a href="https://support.apple.com/kb/PH14230?locale=en_US">speech command</a> with the command line.</p>]]>
-    
-    </summary>
-    
-      <category term="Bash" scheme="http://www.codeblocq.com/tags/Bash/"/>
-    
-      <category term="OS X" scheme="http://www.codeblocq.com/tags/OS-X/"/>
-    
-      <category term="Just For Fun" scheme="http://www.codeblocq.com/tags/Just-For-Fun/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[New Hexo Theme Phantom]]></title>
-    <link href="http://www.codeblocq.com/2016/04/New-Hexo-Theme-Phantom/"/>
-    <id>http://www.codeblocq.com/2016/04/New-Hexo-Theme-Phantom/</id>
-    <published>2016-04-01T01:02:30.000Z</published>
-    <updated>2016-04-01T01:27:21.000Z</updated>
-    <content type="html"><![CDATA[<p>I just finished developing a new Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-phantom" target="_blank" rel="external">Phantom</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/">live demo</a>.</p>
-<a id="more"></a>
-<p>Phantom is an Hexo implementation of the free <a href="http://html5up.net/phantom" target="_blank" rel="external">HTML5Up Phantom Template</a>.</p>
-<h2 id="Features_Overview">Features Overview</h2><ul>
-<li>Disqus and Facebook comments</li>
-<li>Google Analytics</li>
-<li>Cover image for posts and pages</li>
-<li>Tags Support</li>
-<li>Responsive Images</li>
-<li>Image Gallery</li>
-<li>Social Accounts configuration</li>
-<li>Pagination</li>
-</ul>
-<h2 id="Not_Supported">Not Supported</h2><ul>
-<li>Post Categories will not be displayed</li>
-<li>Posts and Pages Dates will not be displayed</li>
-</ul>
-<h2 id="External_libraries_used">External libraries used</h2><ul>
-<li><a href="http://noelboss.github.io/featherlight/" target="_blank" rel="external">FeatherLight.js</a> (Gallery)</li>
-<li><a href="https://jquery.com/" target="_blank" rel="external">jQuery</a></li>
-<li><a href="https://github.com/n33/skel" target="_blank" rel="external">Skel</a></li>
-</ul>
-<h2 id="Installation">Installation</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">clone</span> <span class="title">https</span>://github.com/klugjo/hexo-theme-phantom phantom</span><br></pre></td></tr></table></figure>
-<p>Then update your blog’s main <code>_config.yml</code> to set the theme to <code>phantom</code>:</p>
-<p>i.e:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Extensions</span></span><br><span class="line"><span class="meta">## Plugins: http:<span class="comment">//hexo.io/plugins/</span></span></span><br><span class="line"><span class="meta">## Themes: http:<span class="comment">//hexo.io/themes/</span></span></span><br><span class="line"><span class="symbol">theme:</span> phantom</span><br></pre></td></tr></table></figure>
-<h2 id="Theme_Configuration">Theme Configuration</h2><p>The theme’s global configuration is done in <code>/themes/hexo-theme-phantom/_config.yml</code>.</p>
-<h3 id="Menu">Menu</h3><p>The menu is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Header</span></span><br><span class="line"><span class="symbol">menu:</span></span><br><span class="line"><span class="symbol">  Home:</span> /</span><br><span class="line"><span class="symbol">  Archives:</span> /archives</span><br><span class="line"><span class="symbol">  About:</span> /about.html</span><br></pre></td></tr></table></figure>
-<p>The object key is the label and the value is the path.</p>
-<h3 id="Blog’s_Logo_Image_Source">Blog’s Logo Image Source</h3><p>The blog’s logo (next to blog title) is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Logo Image Source</span></span><br><span class="line"><span class="symbol">logo_src:</span> <span class="meta-keyword">/images/</span>logo.svg</span><br></pre></td></tr></table></figure>
-<h3 id="Blog’s_Main_Subtitle">Blog’s Main Subtitle</h3><p>The blog’s main subtitle (text just below the logo) is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Theme Main Subtitle</span></span><br><span class="line">subtitle_main: This is Phantom, <span class="keyword">a</span> free, fully responsive site&lt;br /&gt;template designed <span class="keyword">by</span> &lt;<span class="keyword">a</span> href=<span class="string">"http://html5up.net"</span>&gt;HTML5 UP&lt;/<span class="keyword">a</span>&gt;.</span><br></pre></td></tr></table></figure>
-<h3 id="Blog’s_Second_Subtitle">Blog’s Second Subtitle</h3><p>The blog’s second subtitle (smaller text below the logo) is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Theme Secondary subtitle</span></span><br><span class="line"><span class="symbol">susbtitle_secondary:</span> Etiam quis viverra lorem, <span class="keyword">in</span> semper lorem. Sed nisl arcu euismod sit amet nisi euismod.</span><br></pre></td></tr></table></figure>
-<h3 id="Footer_About_Section_Text">Footer About Section Text</h3><p>The About section’s text in the footer is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Footer About Section</span></span><br><span class="line">about_footer: This theme was initially developed <span class="keyword">by</span> HTML5 Templates <span class="keyword">and</span> adapted <span class="keyword">for</span> Hexo <span class="keyword">by</span> Jonathan Klughertz.</span><br></pre></td></tr></table></figure>
-<h3 id="Default_post_title">Default post title</h3><p>The default post title (used when no title is specified) is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Default post title</span></span><br><span class="line"><span class="symbol">default_post_title:</span> Untitled</span><br></pre></td></tr></table></figure>
-<h3 id="Default_index_page_cover_image">Default index page cover image</h3><p>You can specify a default thumbnail for posts on the index page (Home page). This image will be used if you forget to specify an image in the post’s front matter.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Default post cover index page</span></span><br><span class="line"><span class="symbol">default_cover_index:</span> <span class="string">"http://placehold.it/450x450"</span></span><br></pre></td></tr></table></figure>
-<h3 id="Default_post_page_cover_image">Default post page cover image</h3><p>You can specify a default thumbnail for posts/pages on the post/page page (Detail Page). This image will be used if you forget to specify an image in the post’s front matter. If you don’t specify a default and you don’t specify an image in your post, no image will be displayed</p>
-<h1 id="Default_post_cover_index_page">Default post cover index page</h1><p>default_cover_detail: “<a href="http://placehold.it/1300x500" target="_blank" rel="external">http://placehold.it/1300x500</a>“</p>
-<h3 id="Comments">Comments</h3><p>The comments provider is specified in the theme’s <code>_config.yml</code>. If you specify both a <code>disqus_shortname</code> and a <code>facebook.appid</code> there will be 2 sets of comment per post. So choose one.</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Comments. Choose one by filling up the information</span></span><br><span class="line"><span class="attr">comments:</span></span><br><span class="line">  <span class="comment"># Disqus comments</span></span><br><span class="line"><span class="attr">  disqus_shortname:</span> klugjotest</span><br><span class="line">  <span class="comment"># Facebook comments</span></span><br><span class="line"><span class="attr">  facebook:</span></span><br><span class="line"><span class="attr">    appid:</span> <span class="number">123456789012345</span></span><br><span class="line"><span class="attr">    comment_count:</span> <span class="number">5</span></span><br><span class="line"><span class="attr">    comment_colorscheme:</span> light</span><br></pre></td></tr></table></figure>
-<h3 id="Google_Analytics">Google Analytics</h3><p>The Google Analytics Tracking ID is configured in the theme’s <code>_config.yml</code>.</p>
-<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># Google Analytics Tracking ID</span></span><br><span class="line"><span class="symbol">google_analytics:</span></span><br></pre></td></tr></table></figure>
-<h3 id="Social_Account">Social Account</h3><p>Setup the links to your social pages in the theme’s <code>_config.yml</code>. Links are in the footer.</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Social Accounts</span><br><span class="line">twitter_ur<span class="variable">l:</span> </span><br><span class="line">facebook_ur<span class="variable">l:</span> http<span class="variable">s:</span>//www.facebook.<span class="keyword">com</span>/</span><br><span class="line">instagram_ur<span class="variable">l:</span> </span><br><span class="line">dribble_ur<span class="variable">l:</span> http<span class="variable">s:</span>//dribbble.<span class="keyword">com</span>/pixelhint</span><br><span class="line">github_ur<span class="variable">l:</span> </span><br><span class="line">googleplus_ur<span class="variable">l:</span> http<span class="variable">s:</span>//plus.google.<span class="keyword">com</span>/+Pixelhint/posts</span><br><span class="line">behance_ur<span class="variable">l:</span> http<span class="variable">s:</span>//www.behance.net/</span><br><span class="line">fivehundredpx_ur<span class="variable">l:</span> </span><br><span class="line">email_ur<span class="variable">l:</span> </span><br><span class="line">rss_ur<span class="variable">l:</span></span><br></pre></td></tr></table></figure>
-<h2 id="Post_Custom_Configuration">Post Custom Configuration</h2><p>For each post, you can specify additional information in the <a href="https://hexo.io/docs/front-matter.html" target="_blank" rel="external">front matter</a>.</p>
-<h3 id="Post’s_Subtitle">Post’s Subtitle</h3><p>Use <code>subtitle</code> to specify the text that will be displayed below the title on the Home Page.</p>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">subtitle: </span>Lorem Ipsum</span><br></pre></td></tr></table></figure>
-<h3 id="Post’s_Index_Thumbnail">Post’s Index Thumbnail</h3><p>Use <code>cover_index</code> to specify an image that will be used for that post on the Home page (also knows as index)</p>
-<p>Example:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover_index:</span> <span class="meta-keyword">/assets/</span>work1.jpg</span><br></pre></td></tr></table></figure>
-<h3 id="Post’s_Detail_Thumbnail">Post’s Detail Thumbnail</h3><p>Use <code>cover_detail</code> to specify an image that will be used for that post on the Detail page for that post.</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">cover_detail:</span> <span class="meta-keyword">/assets/</span>hero_image.jpg</span><br></pre></td></tr></table></figure>
-<h2 id="Creator">Creator</h2><p>This theme was created by <a href="http://html5up.net/phantom/" target="_blank" rel="external">HTML5 Up</a> and adapted for Hexo by <a href="http://www.codeblocq.com/">Jonathan Klughertz</a>.</p>
-<h2 id="Bugs">Bugs</h2><p>If you have a question, feature request or a bug you need me to fix, please <a href="https://github.com/klugjo/hexo-theme-phantom/issues/new" target="_blank" rel="external">click here</a> to file an issue.</p>
-<p>Hope you enjoy it, the theme should be easy enough to customize and modify to fit your needs. Checkout <a href="/2016/03/Create-an-Hexo-Theme-Part-1-Index/">my tutorial on building Hexo themes</a> if you need information on how themes are built.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I just finished developing a new Hexo Theme: <a href="https://github.com/klugjo/hexo-theme-phantom">Phantom</a>. Check out the <a href="http://www.codeblocq.com/assets/projects/hexo-theme-phantom/">live demo</a>.</p>]]>
-    
-    </summary>
-    
       <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
     
-      <category term="Theme" scheme="http://www.codeblocq.com/tags/Theme/"/>
+      <category term="MomentJS" scheme="http://www.codeblocq.com/tags/MomentJS/"/>
     
   </entry>
   

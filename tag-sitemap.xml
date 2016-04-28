@@ -114,13 +114,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/HTML5/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/HTML/</loc>
         <lastmod>2016-02-11T12:37:43.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -289,14 +282,14 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/Disqus/</loc>
+        <loc>http://www.codeblocq.com/tags/Analytics/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/Analytics/</loc>
+        <loc>http://www.codeblocq.com/tags/Disqus/</loc>
         <lastmod>2016-03-30T05:25:22.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -507,21 +500,63 @@
 
     <url>
         <loc>http://www.codeblocq.com/tags/Hexo/</loc>
-        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
+        <lastmod>2016-04-23T02:20:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.codeblocq.com/tags/Autolinker/</loc>
-        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
+        <lastmod>2016-04-23T02:20:50.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://www.codeblocq.com/tags/PlugIn/</loc>
-        <lastmod>2016-04-23T01:11:31.000Z</lastmod>
+        <lastmod>2016-04-23T02:20:50.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Algorithm/</loc>
+        <lastmod>2016-04-26T07:03:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Performance/</loc>
+        <lastmod>2016-04-26T07:03:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Big-O/</loc>
+        <lastmod>2016-04-26T07:03:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/HTML5/</loc>
+        <lastmod>2016-04-27T01:23:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Chart/</loc>
+        <lastmod>2016-04-27T01:23:14.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Canvas/</loc>
+        <lastmod>2016-04-27T01:23:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
