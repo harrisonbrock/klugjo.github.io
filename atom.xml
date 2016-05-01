@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-05-01T10:10:10.000Z</updated>
+  <updated>2016-05-01T10:14:10.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/"/>
     <id>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</id>
     <published>2016-05-01T08:31:45.000Z</published>
-    <updated>2016-05-01T10:10:10.000Z</updated>
+    <updated>2016-05-01T10:14:10.000Z</updated>
     <content type="html"><![CDATA[<p>JavaScript ES6/ES2015 Implementation of a LinkedList.</p>
 <a id="more"></a>
 <h2 id="Definition">Definition</h2><p>A LinkedList is a list of Node. A Node is the most basic building block for many Data Structures.</p>
@@ -63,6 +63,16 @@
     <![CDATA[<p>JavaScript ES6/ES2015 Implementation of a LinkedList.</p>]]>
     
     </summary>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="ES2015" scheme="http://www.codeblocq.com/tags/ES2015/"/>
+    
+      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
+    
+      <category term="Algorithm" scheme="http://www.codeblocq.com/tags/Algorithm/"/>
+    
+      <category term="Data Structure" scheme="http://www.codeblocq.com/tags/Data-Structure/"/>
     
   </entry>
   

@@ -8,7 +8,7 @@
 
     <url>
         <loc>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</loc>
-        <lastmod>2016-05-01T10:10:10.000Z</lastmod>
+        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -375,6 +375,14 @@
     </url>
 
     <url>
+        <loc>http://www.codeblocq.com/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -384,14 +392,6 @@
 
     <url>
         <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
