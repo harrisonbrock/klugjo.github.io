@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.codeblocq.com/2016/03/New-Hexo-Theme-Clean-Blog/</loc>
+        <lastmod>2016-05-05T05:38:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</loc>
         <lastmod>2016-05-01T10:14:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -223,14 +231,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/03/New-Hexo-Theme-Clean-Blog/</loc>
-        <lastmod>2016-03-15T07:37:04.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/2016/02/Further-minify-your-CSS-with-CSSO/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -375,7 +375,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
+        <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -383,7 +383,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+        <loc>http://www.codeblocq.com/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -415,7 +415,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+        <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -423,7 +423,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
+        <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

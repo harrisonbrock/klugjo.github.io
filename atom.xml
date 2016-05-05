@@ -18,7 +18,7 @@
     <title><![CDATA[ES6/ES2015 LinkedList Implementation]]></title>
     <link href="http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/"/>
     <id>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</id>
-    <published>2016-05-01T08:31:45.000Z</published>
+    <published>2016-05-01T07:31:45.000Z</published>
     <updated>2016-05-01T10:14:10.000Z</updated>
     <content type="html"><![CDATA[<p>JavaScript ES6/ES2015 Implementation of a LinkedList.</p>
 <a id="more"></a>
@@ -80,7 +80,7 @@
     <title><![CDATA[Big O Notation for algorithms]]></title>
     <link href="http://www.codeblocq.com/2016/04/Big-O-Notation-for-algorithms/"/>
     <id>http://www.codeblocq.com/2016/04/Big-O-Notation-for-algorithms/</id>
-    <published>2016-04-26T02:59:51.000Z</published>
+    <published>2016-04-26T01:59:51.000Z</published>
     <updated>2016-04-26T07:03:07.000Z</updated>
     <content type="html"><![CDATA[<p>This article will give you a brief and simple explanation of what the Big-O Notation does.</p>
 <a id="more"></a>
@@ -171,7 +171,7 @@
     <title><![CDATA[Create a Pie Chart with HTML5 canvas]]></title>
     <link href="http://www.codeblocq.com/2016/04/Create-a-Pie-Chart-with-HTML5-canvas/"/>
     <id>http://www.codeblocq.com/2016/04/Create-a-Pie-Chart-with-HTML5-canvas/</id>
-    <published>2016-04-25T04:37:56.000Z</published>
+    <published>2016-04-25T03:37:56.000Z</published>
     <updated>2016-04-27T01:23:14.000Z</updated>
     <content type="html"><![CDATA[<p>This article will show you how to build a Pie Chart using the HTML5 canvas</p>
 <a id="more"></a>
@@ -231,7 +231,7 @@
     <title><![CDATA[Create links automatically in your hexo posts]]></title>
     <link href="http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/"/>
     <id>http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/</id>
-    <published>2016-04-23T02:00:18.000Z</published>
+    <published>2016-04-23T01:00:18.000Z</published>
     <updated>2016-04-23T02:20:50.000Z</updated>
     <content type="html"><![CDATA[<p>I have just finished an Hexo Plug-in that automatically transforms URLs into links. In the background it uses the <a href="https://github.com/gregjacobs/Autolinker.js" target="_blank" rel="external">Autolinker.js</a> library.</p>
 <a id="more"></a>
@@ -312,7 +312,7 @@
     <title><![CDATA[Add a build passing badge to your github repository]]></title>
     <link href="http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/"/>
     <id>http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/</id>
-    <published>2016-04-21T09:10:38.000Z</published>
+    <published>2016-04-21T08:10:38.000Z</published>
     <updated>2016-04-22T04:13:14.000Z</updated>
     <content type="html"><![CDATA[<p>This article is about how you can add a build passing badge to your github repository:<br><a id="more"></a><br><img src="https://travis-ci.org/klugjo/hexo-autolinker.svg?branch=master" alt=""></p>
 <h3 id="Steps">Steps</h3><ul>
@@ -344,7 +344,7 @@
     <title><![CDATA[Setup Travis CI with your node project]]></title>
     <link href="http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/"/>
     <id>http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/</id>
-    <published>2016-04-19T03:28:59.000Z</published>
+    <published>2016-04-19T02:28:59.000Z</published>
     <updated>2016-04-19T06:09:43.000Z</updated>
     <content type="html"><![CDATA[<p>Quick beginner’s guide on how to use Travis CI with Github and Node.<br><a id="more"></a></p>
 <h2 id="Project_Setup">Project Setup</h2><p>Let’s setup a Node project with Unit tests:</p>
@@ -416,7 +416,7 @@
     <title><![CDATA[Pull requests on github 101]]></title>
     <link href="http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/"/>
     <id>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</id>
-    <published>2016-04-15T09:18:23.000Z</published>
+    <published>2016-04-15T08:18:23.000Z</published>
     <updated>2016-04-15T08:50:47.000Z</updated>
     <content type="html"><![CDATA[<p>Here are the steps to commit a change to an open source project on github.</p>
 <a id="more"></a>
@@ -454,7 +454,7 @@
     <title><![CDATA[Zelda's theme in JavaScript]]></title>
     <link href="http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/"/>
     <id>http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/</id>
-    <published>2016-04-11T06:11:48.000Z</published>
+    <published>2016-04-11T05:11:48.000Z</published>
     <updated>2016-04-14T08:11:11.000Z</updated>
     <content type="html"><![CDATA[<p>Let’s celebrate Zelda’s 30th anniversary by generating a MIDI file of the <a href="https://www.flutetunes.com/tunes/the-legend-of-zelda-theme.pdf" target="_blank" rel="external">game’s main theme</a>.</p>
 <a id="more"></a>
@@ -546,7 +546,7 @@
     <title><![CDATA[Convert a base64 string to a file in Node]]></title>
     <link href="http://www.codeblocq.com/2016/04/Convert-a-base64-string-to-a-file-in-Node/"/>
     <id>http://www.codeblocq.com/2016/04/Convert-a-base64-string-to-a-file-in-Node/</id>
-    <published>2016-04-11T04:42:15.000Z</published>
+    <published>2016-04-11T03:42:15.000Z</published>
     <updated>2016-04-11T04:36:25.000Z</updated>
     <content type="html"><![CDATA[<p>There might be scenarios where you need to convert an base64 string back to a file. This article will show you how.</p>
 <h2 id="The_high_level_view">The high level view</h2><p>As an example, a base64 string representation of a png image looks like:</p>
@@ -579,7 +579,7 @@
     <title><![CDATA[Parse a webpage with Node using jQuery]]></title>
     <link href="http://www.codeblocq.com/2016/04/Parse-a-webpage-with-Node/"/>
     <id>http://www.codeblocq.com/2016/04/Parse-a-webpage-with-Node/</id>
-    <published>2016-04-10T04:03:47.000Z</published>
+    <published>2016-04-10T03:03:47.000Z</published>
     <updated>2016-04-10T03:36:45.000Z</updated>
     <content type="html"><![CDATA[<a id="more"></a>
 <p>If you want to use jQuery selectors on the server to parse a bunch of HTML, I would recommend you to check out <a href="">cheerio</a>.</p>
