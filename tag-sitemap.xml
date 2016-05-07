@@ -72,14 +72,14 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/OOP/</loc>
+        <loc>http://www.codeblocq.com/tags/LiveReload/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/LiveReload/</loc>
+        <loc>http://www.codeblocq.com/tags/OOP/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -520,13 +520,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
-        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/ES2015/</loc>
         <lastmod>2016-05-01T10:14:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -564,6 +557,13 @@
     <url>
         <loc>http://www.codeblocq.com/tags/Theme/</loc>
         <lastmod>2016-05-05T05:38:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
+        <lastmod>2016-05-07T03:42:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
