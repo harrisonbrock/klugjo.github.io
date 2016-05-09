@@ -7,6 +7,38 @@
     </url>
 
     <url>
+        <loc>http://www.codeblocq.com/2016/05/Craft-meaningful-git-commits/</loc>
+        <lastmod>2016-05-09T05:35:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/2016/05/Convert-a-putty-ppk-key-to-a-pem-file-on-OSX/</loc>
+        <lastmod>2016-05-09T04:35:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</loc>
+        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/2016/05/ES6-ES2015-Stack-Implementation/</loc>
+        <lastmod>2016-05-09T03:00:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.codeblocq.com/2016/05/Get-the-last-element-of-an-Array-in-JavaScript/</loc>
         <lastmod>2016-05-07T03:42:41.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +49,6 @@
     <url>
         <loc>http://www.codeblocq.com/2016/03/New-Hexo-Theme-Clean-Blog/</loc>
         <lastmod>2016-05-05T05:38:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</loc>
-        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -463,6 +487,22 @@
     </url>
 
     <url>
+        <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.codeblocq.com/2015/12/Loops-and-callbacks-in-React/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -479,15 +519,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+        <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -503,14 +535,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
-        <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -519,7 +543,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+        <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -527,7 +551,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
+        <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -583,7 +607,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
+        <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -591,7 +615,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
+        <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

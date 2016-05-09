@@ -72,14 +72,14 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/LiveReload/</loc>
+        <loc>http://www.codeblocq.com/tags/OOP/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/OOP/</loc>
+        <loc>http://www.codeblocq.com/tags/LiveReload/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -214,13 +214,6 @@
     <url>
         <loc>http://www.codeblocq.com/tags/CSSO/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/tags/Software-Practices/</loc>
-        <lastmod>2016-03-20T04:51:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -408,13 +401,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/Git/</loc>
-        <lastmod>2016-04-15T08:50:47.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/Open-Source/</loc>
         <lastmod>2016-04-15T08:50:47.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -520,34 +506,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/ES2015/</loc>
-        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/tags/ES6/</loc>
-        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/tags/Algorithm/</loc>
-        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/tags/Data-Structure/</loc>
-        <lastmod>2016-05-01T10:14:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/Hexo/</loc>
         <lastmod>2016-05-05T05:38:59.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -562,8 +520,85 @@
     </url>
 
     <url>
+        <loc>http://www.codeblocq.com/tags/Stack/</loc>
+        <lastmod>2016-05-09T03:00:38.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
-        <lastmod>2016-05-07T03:42:41.000Z</lastmod>
+        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/ES2015/</loc>
+        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/ES6/</loc>
+        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Algorithm/</loc>
+        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Data-Structure/</loc>
+        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/EC2/</loc>
+        <lastmod>2016-05-09T04:35:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/ppk/</loc>
+        <lastmod>2016-05-09T04:35:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/pem/</loc>
+        <lastmod>2016-05-09T04:35:45.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Git/</loc>
+        <lastmod>2016-05-09T05:35:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Software-Practices/</loc>
+        <lastmod>2016-05-09T05:35:48.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/ACID/</loc>
+        <lastmod>2016-05-09T05:35:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

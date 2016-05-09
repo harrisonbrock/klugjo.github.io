@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-05-07T03:42:41.000Z</updated>
+  <updated>2016-05-09T05:35:48.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -13,6 +13,112 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Craft meaningful git commits]]></title>
+    <link href="http://www.codeblocq.com/2016/05/Craft-meaningful-git-commits/"/>
+    <id>http://www.codeblocq.com/2016/05/Craft-meaningful-git-commits/</id>
+    <published>2016-05-09T05:11:03.000Z</published>
+    <updated>2016-05-09T05:35:48.000Z</updated>
+    <content type="html"><![CDATA[<p>Here are a few rules to follow in order to craft meaningful git commits.</p>
+<a id="more"></a>
+<h3 id="1-_Coherence">1. Coherence</h3><p>Each commit should encapsulate all the code modifications necessary to produce a feature or fix a bug. This means that the code fix for a bug for example, should not be spread over multiple commits.</p>
+<h3 id="2-_Small">2. Small</h3><p>Try to keep all your commits as small as possible. If you try to do too much in a single commit, split it up.</p>
+<p>You could say this contradicts <strong>1.</strong> but the idea here is to find the right balance. You want to produce commits that encapsulate as small as possible units of business logic.</p>
+<h3 id="3-_Consistent">3. Consistent</h3><p>Each commit should leave the system in a stable state (no broken build, compilation errors or broken Unit tests).</p>
+<h3 id="4-_Ordered">4. Ordered</h3><p>Commits should be done in order. When looking at the history, the comments should tell a story. As a result, pay attention to the commits order.</p>
+<h3 id="5-_Documented">5. Documented</h3><p>The message should make sense and be detailed enough.<br>Write it in imperative form (fix bug and not fixes bug or fixed bug).<br>Provide a link to a user story or bug when possible.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Here are a few rules to follow in order to craft meaningful git commits.</p>]]>
+    
+    </summary>
+    
+      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
+    
+      <category term="Software Practices" scheme="http://www.codeblocq.com/tags/Software-Practices/"/>
+    
+      <category term="ACID" scheme="http://www.codeblocq.com/tags/ACID/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Convert a putty .ppk key to an Amazon .pem file on OSX]]></title>
+    <link href="http://www.codeblocq.com/2016/05/Convert-a-putty-ppk-key-to-a-pem-file-on-OSX/"/>
+    <id>http://www.codeblocq.com/2016/05/Convert-a-putty-ppk-key-to-a-pem-file-on-OSX/</id>
+    <published>2016-05-09T03:28:51.000Z</published>
+    <updated>2016-05-09T04:35:45.000Z</updated>
+    <content type="html"><![CDATA[<p>This article will show you how to generate a <code>.pem</code> file from an existing <code>.ppk</code> key.</p>
+<a id="more"></a>
+<h3 id="1-_Install_putty_on_your_mac">1. Install putty on your mac</h3><p>Done easily with <a href="http://brew.sh/" target="_blank" rel="external">homebrew</a>.</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span><span class="keyword">install </span>putty</span><br></pre></td></tr></table></figure>
+<h3 id="2-_Generate_the_key">2. Generate the key</h3><p>We will use <a href="http://linux.die.net/man/1/puttygen" target="_blank" rel="external">puttygen</a> to generate the key.</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ puttygen <span class="built_in">key</span>.ppk -O <span class="keyword">private</span>-openssh -o <span class="built_in">key</span>.pem</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>key.ppk</code>: the original file name/path.</li>
+<li><code>-O private-openssh</code>: the output type. <code>private-openssh</code> is used to save an SSH-2 private key in OpenSSH’s format.</li>
+<li><code>-o key.pem</code>: the output file name/path.</li>
+</ul>
+<h3 id="3-_Install_the_key">3. Install the key</h3><p>Installing the key is equivalent to copying it in your <code>~/.ssh</code> directory.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article will show you how to generate a <code>.pem</code> file from an existing <code>.ppk</code> key.</p>]]>
+    
+    </summary>
+    
+      <category term="EC2" scheme="http://www.codeblocq.com/tags/EC2/"/>
+    
+      <category term="ppk" scheme="http://www.codeblocq.com/tags/ppk/"/>
+    
+      <category term="pem" scheme="http://www.codeblocq.com/tags/pem/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ES6/ES2015 Stack Implementation]]></title>
+    <link href="http://www.codeblocq.com/2016/05/ES6-ES2015-Stack-Implementation/"/>
+    <id>http://www.codeblocq.com/2016/05/ES6-ES2015-Stack-Implementation/</id>
+    <published>2016-05-04T00:57:03.000Z</published>
+    <updated>2016-05-09T03:00:38.000Z</updated>
+    <content type="html"><![CDATA[<p>JavaScript ES6/ES2015 Implementation of a Stack.</p>
+<a id="more"></a>
+<h2 id="Definition">Definition</h2><p>A stack is a data structure in which items are retrieved in the reverse order that they were added. If you add an item, this item will also be the first one to be removed. This is sometimes abbreviated as LIFO – Last In First Out.</p>
+<p>This stack implementation will have 3 methods:</p>
+<ul>
+<li><strong>push</strong>: Add a new item on top of the stack</li>
+<li><strong>pop</strong>: Remove the item on top of the stack</li>
+<li><strong>peek</strong>: Get the value of the item on top of the stack</li>
+</ul>
+<h2 id="Array_Implementation">Array Implementation</h2><p>Let’s start with using an Array as the underlying structure for our Stack. Since the Array in JavaScript already behaves like a stack, the implementation is trivial.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.items = [];</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  getLength() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  push(item) &#123;</span><br><span class="line">    <span class="keyword">this</span>.items.push(item);</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="keyword">this</span>.count + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  pop() &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.count = <span class="keyword">this</span>.count - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  peek() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.slice(<span class="number">-1</span>)[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See it in action <a href="https://jsbin.com/toyore/edit?js,console" target="_blank" rel="external">here</a>;</p>
+<h3 id="LinkedList_Implementation">LinkedList Implementation</h3><p>Another way of implementing the stack is by using a LinkedList. I am going to be using <a href="/2016/05/ES6-ES2015-LinkedList-Implementation/">my LinkedList implementation</a> for this.</p>
+<p>Although not as trivial as with using an Array, it is pretty straightforward with the LinkedList:</p>
+<ul>
+<li>Push adds the element at the beginning of the list</li>
+<li>Pop returns the first element of the list and removes it at the same time.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.list = <span class="keyword">new</span> LinkedList();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  push(item) &#123;</span><br><span class="line">    <span class="keyword">this</span>.list.addFirst(item);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  pop() &#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.list.length) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> val = <span class="keyword">this</span>.list.head.data;</span><br><span class="line">    <span class="keyword">this</span>.list.removeFirst();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  peek() &#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.list.head) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.list.head.data;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  get length() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.list.length;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>See it in Action <a href="https://jsbin.com/gohuha/edit?js,console" target="_blank" rel="external">here</a>;</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>JavaScript ES6/ES2015 Implementation of a Stack.</p>]]>
+    
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="ES2015" scheme="http://www.codeblocq.com/tags/ES2015/"/>
+    
+      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
+    
+      <category term="Algorithm" scheme="http://www.codeblocq.com/tags/Algorithm/"/>
+    
+      <category term="Data Structure" scheme="http://www.codeblocq.com/tags/Data-Structure/"/>
+    
+      <category term="Stack" scheme="http://www.codeblocq.com/tags/Stack/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Get the last element of an Array in JavaScript]]></title>
@@ -51,7 +157,7 @@
     <link href="http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/"/>
     <id>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</id>
     <published>2016-05-01T07:31:45.000Z</published>
-    <updated>2016-05-01T10:14:10.000Z</updated>
+    <updated>2016-05-09T03:01:02.000Z</updated>
     <content type="html"><![CDATA[<p>JavaScript ES6/ES2015 Implementation of a LinkedList.</p>
 <a id="more"></a>
 <h2 id="Definition">Definition</h2><p>A LinkedList is a list of Node. A Node is the most basic building block for many Data Structures.</p>
@@ -441,169 +547,6 @@
       <category term="Tools" scheme="http://www.codeblocq.com/tags/Tools/"/>
     
       <category term="CI" scheme="http://www.codeblocq.com/tags/CI/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Pull requests on github 101]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/"/>
-    <id>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</id>
-    <published>2016-04-15T08:18:23.000Z</published>
-    <updated>2016-04-15T08:50:47.000Z</updated>
-    <content type="html"><![CDATA[<p>Here are the steps to commit a change to an open source project on github.</p>
-<a id="more"></a>
-<h3 id="1-_Fork_it">1. Fork it</h3><p>Fork the repo by clicking the fork button on the github website</p>
-<h3 id="2-_Clone_it">2. Clone it</h3><p>Clone the repository to your machine</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/yourusername/project</span><br><span class="line">cd project</span><br></pre></td></tr></table></figure>
-<h3 id="3-_Add_the_upstream_remote">3. Add the upstream remote</h3><p>Add the original git repository as an upstream remote. </p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote <span class="built_in">add</span> upstream http<span class="variable">s:</span>//github.<span class="keyword">com</span>/originaluser/project</span><br></pre></td></tr></table></figure>
-<p>Now if you want to get the latest changes from the original repository, you can use:</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull upstream <span class="literal">master</span></span><br></pre></td></tr></table></figure>
-<h3 id="4-_Create_a_new_branch">4. Create a new branch</h3><p>Create a feature branch to do your changes</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> newbranch</span><br></pre></td></tr></table></figure>
-<h3 id="5-_Code_away">5. Code away</h3><p>Modify the code and commit to the feature branch. Try to keep your commits clear and concise.</p>
-<h3 id="6-_Push_to_your_github">6. Push to your github</h3><p>Push your modifications to your remote</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> newbranch</span><br></pre></td></tr></table></figure>
-<h3 id="7-_Issue_a_Pull_Request">7. Issue a Pull Request</h3><p>Back on github, click the Pull Request button</p>
-<p><img src="/img/github-pull-request-button.png" alt=""></p>
-<p>Select the commits you want to include, write a message and submit.</p>
-<p>That’s it !</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Here are the steps to commit a change to an open source project on github.</p>]]>
-    
-    </summary>
-    
-      <category term="Github" scheme="http://www.codeblocq.com/tags/Github/"/>
-    
-      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
-    
-      <category term="Open Source" scheme="http://www.codeblocq.com/tags/Open-Source/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Zelda's theme in JavaScript]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/"/>
-    <id>http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/</id>
-    <published>2016-04-11T05:11:48.000Z</published>
-    <updated>2016-04-14T08:11:11.000Z</updated>
-    <content type="html"><![CDATA[<p>Let’s celebrate Zelda’s 30th anniversary by generating a MIDI file of the <a href="https://www.flutetunes.com/tunes/the-legend-of-zelda-theme.pdf" target="_blank" rel="external">game’s main theme</a>.</p>
-<a id="more"></a>
-<p><a style="font-weight: bold;" href="#" onclick="console.log(this.p);if(!this.p){MIDIjs.play('/audio/zelda.mid');this.p=true;this.innerHTML='STOP DEMO';}else{MIDIjs.stop();this.p=false;this.innerHTML='PLAY DEMO';}">PLAY DEMO</a></p>
-<p>To generate MIDI files, we are going to use the <a href="https://github.com/grimmdude/MidiWriterJS" target="_blank" rel="external">MidiWriterJS</a>.</p>
-<h2 id="Installation">Installation</h2><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> midi-writer-js</span><br></pre></td></tr></table></figure>
-<h2 id="Usage">Usage</h2><p>Here is how to get started with the library:</p>
-<p>A MIDI file is a collection of tracks which are collections of notes.</p>
-<h3 id="Create_a_track">Create a track</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MidiWriter = <span class="built_in">require</span>(<span class="string">'midi-writer-js'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create Track</span></span><br><span class="line"><span class="keyword">var</span> track = <span class="keyword">new</span> MidiWriter.Track();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Assign an instrument to a track</span></span><br><span class="line">track.addEvent(<span class="keyword">new</span> MidiWriter.ProgramChangeEvent(&#123;instrument : <span class="number">1</span>&#125;));</span><br></pre></td></tr></table></figure>
-<h3 id="Add_a_note_to_a_track">Add a note to a track</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">track.addEvent(<span class="keyword">new</span> MidiWriter.NoteEvent(&#123;pitch: [<span class="string">'Bb4'</span>], duration: <span class="string">'2'</span>, velocity:<span class="number">100</span>&#125;));</span><br></pre></td></tr></table></figure>
-<h4 id="pitch">pitch</h4><p><code>pitch</code> represents the notes you want to add. </p>
-<p>Examples would be: <code>&#39;Bb4&#39;</code>, <code>&#39;F4&#39;</code>, <code>&#39;A#2&#39;</code></p>
-<p>The letter is the note, you can alter it with <code>b</code> or <code>#</code> and the letter corresponds to the octave (I would say that 4 corresponds to your treble clef pitch)</p>
-<h4 id="duration">duration</h4><p><code>duration</code> represents the duration of each note</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">duration</th>
-<th style="text-align:center">American Name</th>
-<th style="text-align:center">English Name</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">whole</td>
-<td style="text-align:center">semibreve</td>
-</tr>
-<tr>
-<td style="text-align:center">2</td>
-<td style="text-align:center">half</td>
-<td style="text-align:center">minim</td>
-</tr>
-<tr>
-<td style="text-align:center">d2</td>
-<td style="text-align:center">dotted half</td>
-<td style="text-align:center">dotted minim</td>
-</tr>
-<tr>
-<td style="text-align:center">4</td>
-<td style="text-align:center">quarter</td>
-<td style="text-align:center">crotchet</td>
-</tr>
-<tr>
-<td style="text-align:center">d4</td>
-<td style="text-align:center">dotted quarter</td>
-<td style="text-align:center">dotted crotchet</td>
-</tr>
-<tr>
-<td style="text-align:center">8</td>
-<td style="text-align:center">eighth</td>
-<td style="text-align:center">quaver</td>
-</tr>
-<tr>
-<td style="text-align:center">d8</td>
-<td style="text-align:center">dotted eighth</td>
-<td style="text-align:center">dotted quaver</td>
-</tr>
-<tr>
-<td style="text-align:center">16</td>
-<td style="text-align:center">sixteenth</td>
-<td style="text-align:center">semiquaver</td>
-</tr>
-</tbody>
-</table>
-<h4 id="Velocity">Velocity</h4><p><code>velocity</code> represents the volume at which that note will play.</p>
-<h3 id="Generate_the_Midi_JavaScript_Object">Generate the Midi JavaScript Object</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Generate MIDI</span></span><br><span class="line"><span class="keyword">var</span> write = <span class="keyword">new</span> MidiWriter.Writer([track]);</span><br></pre></td></tr></table></figure>
-<p>The argument must be an Array of tracks. It is of course possible to add several tracks if you want to have several instruments playing at the same time.</p>
-<h3 id="Generate_the_MIDI_file">Generate the MIDI file</h3><p>I have chosen to go the base64 string route. Here is the code:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Generate a base64 representation of the MIDI file</span></span><br><span class="line"><span class="keyword">var</span> base64String = write.base64();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Strip off the header</span></span><br><span class="line"><span class="keyword">var</span> data = base64String.split(<span class="string">"base64,"</span>).pop();</span><br><span class="line"></span><br><span class="line"><span class="comment">// Write the file</span></span><br><span class="line">fs.writeFileSync(<span class="string">"zelda.mid"</span>, data, &#123;encoding: <span class="string">'base64'</span>&#125;);</span><br></pre></td></tr></table></figure>
-<p><a href="2016/04/Convert-a-base64-string-to-a-file-in-Node/">Click here</a> if you want to read more on how to strip off the base64 string header.</p>
-<h2 id="Zelda">Zelda</h2><p>You can check the git repo <a href="https://github.com/klugjo/zelda-theme-javascript-midi/blob/master/index.js" target="_blank" rel="external">here</a> to see the full sequence of notes.</p>
-<p>PS: I have submitted my code to the creator of the official library and he has now merged it and added it to <a href="https://github.com/grimmdude/MidiWriterJS/tree/master/examples" target="_blank" rel="external">the examples</a> :D</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Let’s celebrate Zelda’s 30th anniversary by generating a MIDI file of the <a href="https://www.flutetunes.com/tunes/the-legend-of-zelda-theme.pdf">game’s main theme</a>.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="MIDI" scheme="http://www.codeblocq.com/tags/MIDI/"/>
-    
-      <category term="Zelda" scheme="http://www.codeblocq.com/tags/Zelda/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Convert a base64 string to a file in Node]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Convert-a-base64-string-to-a-file-in-Node/"/>
-    <id>http://www.codeblocq.com/2016/04/Convert-a-base64-string-to-a-file-in-Node/</id>
-    <published>2016-04-11T03:42:15.000Z</published>
-    <updated>2016-04-11T04:36:25.000Z</updated>
-    <content type="html"><![CDATA[<p>There might be scenarios where you need to convert an base64 string back to a file. This article will show you how.</p>
-<h2 id="The_high_level_view">The high level view</h2><p>As an example, a base64 string representation of a png image looks like:</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">data</span>:image/png;base64,iVBORw0KGgoAAAANSUhEUgA...</span></span><br></pre></td></tr></table></figure>
-<p>To convert it back to an image, we need to:</p>
-<ul>
-<li>Strip off the <code>data:image/png;base64,</code> part</li>
-<li>Write the remaining string to a file using a base64 encoding.</li>
-</ul>
-<h2 id="The_code">The code</h2><h3 id="To_strip_off_the_header">To strip off the header</h3><p>I am using:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> base64String = <span class="string">'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgA'</span>; <span class="comment">// Not a real image</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove header</span></span><br><span class="line"><span class="keyword">let</span> base64Image = base64String.split(<span class="string">';base64,'</span>).pop();</span><br></pre></td></tr></table></figure>
-<h3 id="To_write_to_a_file">To write to a file</h3><p>I am using:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"></span><br><span class="line">fs.writeFile(<span class="string">'image.png'</span>, base64Image, &#123;encoding: <span class="string">'base64'</span>&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'File created'</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>Don’t forget the <code>{encoding: &#39;base64&#39;}</code> here and you will be good to go.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>There might be scenarios where you need to convert an base64 string back to a file. This article will show you how.</p>
-<h2 id="The_high_]]>
-    </summary>
-    
-      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="base64" scheme="http://www.codeblocq.com/tags/base64/"/>
     
   </entry>
   
