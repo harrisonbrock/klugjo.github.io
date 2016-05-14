@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://www.codeblocq.com/2016/05/Factory-Pattern-in-JavaScript/</loc>
+        <lastmod>2016-05-12T09:10:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://www.codeblocq.com/2016/05/Craft-meaningful-git-commits/</loc>
         <lastmod>2016-05-09T05:35:48.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -431,7 +439,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+        <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -439,7 +447,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
+        <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -519,7 +527,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+        <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -527,7 +535,7 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+        <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
         <lastmod>2016-02-11T12:04:32.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
