@@ -373,13 +373,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/Node/</loc>
-        <lastmod>2016-04-11T04:36:25.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/base64/</loc>
         <lastmod>2016-04-11T04:36:25.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -597,13 +590,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
-        <lastmod>2016-05-12T09:10:39.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/Design-Pattern/</loc>
         <lastmod>2016-05-12T09:10:39.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -613,6 +599,48 @@
     <url>
         <loc>http://www.codeblocq.com/tags/Factory/</loc>
         <lastmod>2016-05-12T09:10:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Cryptography/</loc>
+        <lastmod>2016-05-14T08:03:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/SHA256/</loc>
+        <lastmod>2016-05-14T08:03:09.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Node/</loc>
+        <lastmod>2016-05-17T09:35:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
+        <lastmod>2016-05-17T09:35:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/PDF/</loc>
+        <lastmod>2016-05-17T09:35:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/PDFKit/</loc>
+        <lastmod>2016-05-17T09:35:06.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-05-12T09:10:39.000Z</updated>
+  <updated>2016-05-17T09:35:06.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -13,6 +13,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[PDF Generation with Node JS]]></title>
+    <link href="http://www.codeblocq.com/2016/05/PDF-Generation-with-Node-JS/"/>
+    <id>http://www.codeblocq.com/2016/05/PDF-Generation-with-Node-JS/</id>
+    <published>2016-05-17T09:03:59.000Z</published>
+    <updated>2016-05-17T09:35:06.000Z</updated>
+    <content type="html"><![CDATA[<p>Get started creating PDF file with Node and <a href="http://pdfkit.org/" target="_blank" rel="external">PDFKit</a>.<br><a id="more"></a></p>
+<h2 id="Installation">Installation</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> pdfkit <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<h2 id="PDF_Creation">PDF Creation</h2><h3 id="Setup">Setup</h3><p>Import the library and create the pdfKit document</p>
+<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> PDFDocument, doc;</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line">PDFDocument = <span class="built_in">require</span>(<span class="string">'pdfkit'</span>);</span><br><span class="line"></span><br><span class="line">doc = <span class="keyword">new</span> PDFDocument;</span><br><span class="line"></span><br><span class="line">doc.pipe(fs.createWriteStream(<span class="string">'output.pdf'</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// PDF Creation logic goes here</span></span><br><span class="line"></span><br><span class="line">doc.end();</span><br></pre></td></tr></table></figure>
+<h3 id="Insert_some_text">Insert some text</h3><figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Set a title and pass the X and Y coordinates</span></span><br><span class="line">doc.fontSize(<span class="number">15</span>).text(<span class="string">'Wally Gator !'</span>, <span class="number">50</span>, <span class="number">50</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the paragraph width and align direction</span></span><br><span class="line">doc.text(<span class="string">'Wally Gator is a swinging alligator in the swamp. He\'s the greatest percolator when he really starts to romp. There has never been a greater operator in the swamp. See ya later, Wally Gator.'</span>, &#123;</span><br><span class="line">    width: <span class="number">410</span>,</span><br><span class="line">    align: <span class="string">'left'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Check out the <a href="http://pdfkit.org/docs/text.html" target="_blank" rel="external">documentation</a> for more options, including fonts, colors, text decorations and more !</p>
+<h3 id="Insert_an_image">Insert an image</h3><figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doc.image(<span class="string">'wally.jpg'</span>, <span class="number">50</span>, <span class="number">150</span>, &#123;width: <span class="number">300</span>&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Result">Result</h3><p>Run the script as usual with</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">index</span>.js</span><br></pre></td></tr></table></figure>
+<p>And open the output.pdf file. You can check my <a href="/img/output.pdf">result here</a>. Once again, don’t forget to check out the <a href="http://pdfkit.org/index.html" target="_blank" rel="external">official documentation</a> for more examples and information.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Get started creating PDF file with Node and <a href="http://pdfkit.org/">PDFKit</a>.<br>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="PDF" scheme="http://www.codeblocq.com/tags/PDF/"/>
+    
+      <category term="PDFKit" scheme="http://www.codeblocq.com/tags/PDFKit/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SHA-256 in Node]]></title>
+    <link href="http://www.codeblocq.com/2016/05/SHA-256-in-Node/"/>
+    <id>http://www.codeblocq.com/2016/05/SHA-256-in-Node/</id>
+    <published>2016-05-14T07:25:59.000Z</published>
+    <updated>2016-05-14T08:03:09.000Z</updated>
+    <content type="html"><![CDATA[<p>Useful piece of code to produce a 256-bit hash value with SHA-256:<br><a id="more"></a></p>
+<p>There a few JavaScript implementation of the SHA-256 hash function out there. But the easiest is usually to use Node’s built in <a href="https://nodejs.org/api/crypto.html#crypto_class_hash" target="_blank" rel="external">cryptography</a> module.</p>
+<h2 id="The_Code">The Code</h2><p>If you just need the code, here it is:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hash = crypto.createHash(<span class="string">'sha256'</span>)</span><br><span class="line">   .update(inputString)</span><br><span class="line">   .digest(<span class="string">'hex'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="Details">Details</h2><h3 id="Generate_the_hash">Generate the hash</h3><p>Import the <code>crypto</code> module and use the <code>createHash</code> function to generate the hash.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hash = crypto.createHash(<span class="string">'sha256'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Hash_your_value">Hash your value</h3><p>Use the <code>update</code> function on the <code>hash</code> object instance to process your input.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hash.update(<span class="string">'CodeBlocQ'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Output">Output</h3><p>Use the <code>digest</code> function on the <code>hash</code> to ouput the value. You can pass ‘hex’, ‘binary’ or ‘base64’ to get the result in the desired encoding.</p>
+<p><strong>Hex</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hex = hash.digest(<span class="string">'hex'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(hex); <span class="comment">// c5d44424ef47ab9e1806d9c1a3045942cfd06e0ec5e798449c02e44e9ae38292</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Binary</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bin = hash.digest(<span class="string">'binary'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(bin); <span class="comment">// ÅÔD$ïG«ÙÁ£YBÏÐnÅçDäNã</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Base64</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> base64 = hash.digest(<span class="string">'base64'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(base64); <span class="comment">// xdREJO9Hq54YBtnBowRZQs/Qbg7F55hEnALkTprjgpI=</span></span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Useful piece of code to produce a 256-bit hash value with SHA-256:<br>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="Cryptography" scheme="http://www.codeblocq.com/tags/Cryptography/"/>
+    
+      <category term="SHA256" scheme="http://www.codeblocq.com/tags/SHA256/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Factory Pattern in JavaScript]]></title>
@@ -393,119 +459,6 @@
       <category term="Chart" scheme="http://www.codeblocq.com/tags/Chart/"/>
     
       <category term="Canvas" scheme="http://www.codeblocq.com/tags/Canvas/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Create links automatically in your hexo posts]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/"/>
-    <id>http://www.codeblocq.com/2016/04/Create-links-automatically-in-your-hexo-posts/</id>
-    <published>2016-04-23T01:00:18.000Z</published>
-    <updated>2016-04-23T02:20:50.000Z</updated>
-    <content type="html"><![CDATA[<p>I have just finished an Hexo Plug-in that automatically transforms URLs into links. In the background it uses the <a href="https://github.com/gregjacobs/Autolinker.js" target="_blank" rel="external">Autolinker.js</a> library.</p>
-<a id="more"></a>
-<p><a href="https://github.com/klugjo/hexo-autolinker" target="_blank" rel="external">GitHub Repo</a></p>
-<h3 id="Example:">Example:</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Visit www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span> when you have <span class="selector-tag">time</span>.</span><br></pre></td></tr></table></figure>
-<p>becomes</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Visit &lt;<span class="selector-tag">a</span> href=<span class="string">"http://www.codeblocq.com"</span> target=<span class="string">"_blank"</span>&gt;www<span class="selector-class">.codeblocq</span><span class="selector-class">.com</span>&lt;/a&gt; when you have <span class="selector-tag">time</span>.</span><br></pre></td></tr></table></figure>
-<h2 id="Installation">Installation</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-autolinker <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
-<h2 id="Options">Options</h2><p>Configure the plugin in your blog’s main <code>_config.yml</code></p>
-<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">autolinker</span>:</span><br><span class="line">    <span class="attribute">enable</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">newWindow</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">urls</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">email</span>: <span class="literal">true</span></span><br><span class="line">    <span class="attribute">tel</span>: <span class="literal">false</span></span><br><span class="line">    <span class="attribute">twitter</span>: <span class="literal">false</span></span><br><span class="line">    <span class="attribute">hashtag</span>: instagram</span><br><span class="line">    <span class="attribute">className</span>: <span class="string">'test'</span></span><br></pre></td></tr></table></figure>
-<h3 id="Explanations:">Explanations:</h3><table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Default Value</th>
-<th style="text-align:left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>enable</code></td>
-<td>true</td>
-<td style="text-align:left">Enable the plugin</td>
-</tr>
-<tr>
-<td><code>newWindow</code></td>
-<td>true</td>
-<td style="text-align:left">Opens links in new tabs/windows &lt;-&gt; Add target=”_blank”</td>
-</tr>
-<tr>
-<td><code>urls</code></td>
-<td>true</td>
-<td style="text-align:left">converts urls to links</td>
-</tr>
-<tr>
-<td><code>email</code></td>
-<td>true</td>
-<td style="text-align:left">converts email addresses to mailto links</td>
-</tr>
-<tr>
-<td><code>tel</code></td>
-<td>false</td>
-<td style="text-align:left">converts telephone numbers to tel links</td>
-</tr>
-<tr>
-<td><code>twitter</code></td>
-<td>false</td>
-<td style="text-align:left">converts twitter handles to links</td>
-</tr>
-<tr>
-<td><code>hastag</code></td>
-<td>false</td>
-<td style="text-align:left">Use <code>twitter</code>, <code>facebook</code> or <code>instagram</code> to convert hashtags to the links</td>
-</tr>
-<tr>
-<td><code>className</code></td>
-<td>false</td>
-<td style="text-align:left">Adds a custom class to the links that were transformed</td>
-</tr>
-</tbody>
-</table>
-<p>Checkout <a href="https://github.com/gregjacobs/Autolinker.js" target="_blank" rel="external">Autolinker.js</a> and the <a href="http://gregjacobs.github.io/Autolinker.js/examples/live-example/" target="_blank" rel="external">Autolinker live examples</a> for more options and examples.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>I have just finished an Hexo Plug-in that automatically transforms URLs into links. In the background it uses the <a href="https://github.com/gregjacobs/Autolinker.js">Autolinker.js</a> library.</p>]]>
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
-    
-      <category term="Autolinker" scheme="http://www.codeblocq.com/tags/Autolinker/"/>
-    
-      <category term="PlugIn" scheme="http://www.codeblocq.com/tags/PlugIn/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Add a build passing badge to your github repository]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/"/>
-    <id>http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/</id>
-    <published>2016-04-21T08:10:38.000Z</published>
-    <updated>2016-04-22T04:13:14.000Z</updated>
-    <content type="html"><![CDATA[<p>This article is about how you can add a build passing badge to your github repository:<br><a id="more"></a><br><img src="https://travis-ci.org/klugjo/hexo-autolinker.svg?branch=master" alt=""></p>
-<h3 id="Steps">Steps</h3><ul>
-<li><p><a href="/2016/04/Setup-Travis-CI-with-your-node-project/">Setup your Travis CI automated build</a> and go <a href="https://travis-ci.org/" target="_blank" rel="external">https://travis-ci.org/</a>.</p>
-</li>
-<li><p>Select the repository you are interested in and click the badge icon next to the title.</p>
-</li>
-<li><p>Select the branch you want to check the build status for.</p>
-</li>
-<li><p>Select Markdown, copy the text below and copy paste it in your README.md file<br><br></p>
-</li>
-</ul>
-<p>You are done !<br><br><br><a href="https://github.com/klugjo/hexo-autolinker" target="_blank" rel="external">Check this repository if you need an example</a>.</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article is about how you can add a build passing badge to your github repository:<br>]]>
-    
-    </summary>
-    
-      <category term="Github" scheme="http://www.codeblocq.com/tags/Github/"/>
-    
-      <category term="Travis" scheme="http://www.codeblocq.com/tags/Travis/"/>
-    
-      <category term="Markdown" scheme="http://www.codeblocq.com/tags/Markdown/"/>
     
   </entry>
   
