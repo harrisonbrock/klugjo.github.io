@@ -618,20 +618,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/Node/</loc>
-        <lastmod>2016-05-17T09:35:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
-        <lastmod>2016-05-17T09:35:06.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/PDF/</loc>
         <lastmod>2016-05-17T09:35:06.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -641,6 +627,34 @@
     <url>
         <loc>http://www.codeblocq.com/tags/PDFKit/</loc>
         <lastmod>2016-05-17T09:35:06.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Node/</loc>
+        <lastmod>2016-05-18T03:14:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
+        <lastmod>2016-05-18T03:14:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Wifi/</loc>
+        <lastmod>2016-05-18T03:14:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Password/</loc>
+        <lastmod>2016-05-18T03:14:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
