@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-05-18T03:14:28.000Z</updated>
+  <updated>2016-05-27T06:47:56.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -13,6 +13,135 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Performance Comparison: ES6 Template Literals vs HandleBars in Node]]></title>
+    <link href="http://www.codeblocq.com/2016/05/Performance-Comparison-ES6-Template-Literals-vs-HandleBars-in-Node/"/>
+    <id>http://www.codeblocq.com/2016/05/Performance-Comparison-ES6-Template-Literals-vs-HandleBars-in-Node/</id>
+    <published>2016-05-27T06:11:31.000Z</published>
+    <updated>2016-05-27T06:47:56.000Z</updated>
+    <content type="html"><![CDATA[<p>This article looks at which is the fastest in between <a href="http://handlebarsjs.com/" target="_blank" rel="external">Handlebars</a> and <a href="http://exploringjs.com/es6/ch_template-literals.html#_text-templating-via-untagged-template-literals" target="_blank" rel="external">ES6 Template Literals</a>.</p>
+<h2 id="TL;DR">TL;DR</h2><p>For my simple example and with node v5.6.0, I have found that <strong>ES6 Template literals are up to 4 times faster than Handlebars</strong>.</p>
+<h2 id="Code">Code</h2><h3 id="Test_Template">Test Template</h3><p>For these tests, I have chosen to use the basic example from the <a href="http://handlebarsjs.com/" target="_blank" rel="external">Handlebars</a> website.</p>
+<p>The aim is to compile:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"entry"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;title&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"body"</span>&gt;</span></span><br><span class="line">    &#123;&#123;body&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>With the data being:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attribute">title</span>: <span class="string">"My New Post"</span>, body: <span class="string">"This is my first post!"</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>We will then compare the execution time when compiling this template 10000 times.</p>
+<h3 id="Handlebars_code">Handlebars code</h3><p>Install Handlebars with npm:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> <span class="comment">--save handlebars</span></span><br></pre></td></tr></table></figure>
+<p>Full test code:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Handlebars = <span class="built_in">require</span>(<span class="string">'handlebars'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a string with the Template</span></span><br><span class="line"><span class="keyword">const</span> handlebarsTemplateSource = <span class="string">"&lt;div class=\"entry\"&gt;/n&lt;h1&gt;&#123;&#123;title&#125;&#125;&lt;/h1&gt;/n&lt;div class=\"body\"&gt;/n&#123;&#123;&#123;body&#125;&#125;&#125;/n&lt;/div&gt;/n&lt;/div&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Compile the template source to create the template function</span></span><br><span class="line"><span class="keyword">const</span> handlebarsTemplate = Handlebars.compile(handlebarsTemplateSource);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Initialize the data</span></span><br><span class="line"><span class="keyword">const</span> data = &#123;title: <span class="string">"My New Post"</span>, body: <span class="string">"This is my first post!"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> results = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Perf test start</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">"Handlebars"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="comment">// Evaluate the template</span></span><br><span class="line">  results.push(handlebarsTemplate(data));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Perf test end</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">"Handlebars"</span>);</span><br></pre></td></tr></table></figure>
+<p>On my machine the code executes at an average speed of <strong>20.113ms</strong>.</p>
+<h3 id="ES6_Template_Literals">ES6 Template Literals</h3><p>The idea of a literal template is to use an arrow function with ES6’s string interpolation capabilities.</p>
+<p>Here is an example of a simple ES6 template literal</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> template = data =&gt; <span class="string">`&lt;div&gt;<span class="subst">$&#123;data&#125;</span>&lt;/div&gt;`</span>;</span><br></pre></td></tr></table></figure>
+<p>The Handlebars equivalent would be:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> source = <span class="string">"&lt;div&gt;&#123;&#123;data&#125;&#125;&lt;/div&gt;"</span>;</span><br><span class="line"><span class="keyword">var</span> template = Handlebars.compile(source);</span><br></pre></td></tr></table></figure>
+<p>You can read more about ES6 Template literals <a href="http://exploringjs.com/es6/ch_template-literals.html#_text-templating-via-untagged-template-literals" target="_blank" rel="external">here</a>. But in the meantime here is the full performance test code:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ES6 Template Literal Definition</span></span><br><span class="line"><span class="keyword">const</span> template = data =&gt; <span class="string">`&lt;div class="entry"&gt;</span><br><span class="line">  &lt;h1&gt;<span class="subst">$&#123;data.title&#125;</span>&lt;/h1&gt;</span><br><span class="line">  &lt;div class="body"&gt;</span><br><span class="line">    <span class="subst">$&#123;data.body&#125;</span></span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Initialize the data</span></span><br><span class="line"><span class="keyword">const</span> data = &#123;title: <span class="string">"My New Post"</span>, body: <span class="string">"This is my first post!"</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> results = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// Perf test start</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">"Handlebars"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="comment">// Evaluate the template</span></span><br><span class="line">  results.push(template(data));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Perf test end</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">"Handlebars"</span>);</span><br></pre></td></tr></table></figure>
+<p>On my machine the code executes at an average speed of <strong>5.007ms</strong>. That is <strong>4 time faster</strong> than Handlebars. </p>
+<p>This is quite good news I think as it means I will now start using this native ES6 feature instead of an external library. Have you experienced something similar ? Let me know in the comments.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article looks at which is the fastest in between <a href="http://handlebarsjs.com/" target="_blank" rel="external">Handlebars</a> an]]>
+    </summary>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
+    
+      <category term="Templating" scheme="http://www.codeblocq.com/tags/Templating/"/>
+    
+      <category term="Handlebars" scheme="http://www.codeblocq.com/tags/Handlebars/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Blur Image on Hover with CSS]]></title>
+    <link href="http://www.codeblocq.com/2016/05/Blur-Image-on-Hover-with-CSS/"/>
+    <id>http://www.codeblocq.com/2016/05/Blur-Image-on-Hover-with-CSS/</id>
+    <published>2016-05-25T08:02:47.000Z</published>
+    <updated>2016-05-25T08:18:19.000Z</updated>
+    <content type="html"><![CDATA[<p>Quick little trick to blur an image on mouse hover.<br><a id="more"></a></p>
+<h2 id="Demo">Demo</h2><p></p><p data-height="265" data-theme-id="light" data-slug-hash="vKBGBY" data-default-tab="result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/vKBGBY/" target="_blank" rel="external">Hover Image Blur</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="Gist">Gist</h2><p>To add blur to an image on mouse, use the following CSS properties:</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span><span class="selector-pseudo">:hover</span> &#123;</span><br><span class="line">    <span class="attribute">webkit-filter</span>: <span class="built_in">blur</span>(4px); <span class="comment">/* Chrome, Safari, Opera */</span></span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">blur</span>(4px);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The <code>webkit-filter</code> and <code>filter</code> CSS properties can be used with the blur <a href="https://developer.mozilla.org/en/docs/Web/CSS/filter" target="_blank" rel="external">filter function</a><br>The <code>:hover</code> pseudo class is used to apply the filter on mouse over</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Quick little trick to blur an image on mouse hover.<br>]]>
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://www.codeblocq.com/tags/CSS/"/>
+    
+      <category term="Hover" scheme="http://www.codeblocq.com/tags/Hover/"/>
+    
+      <category term="Blur" scheme="http://www.codeblocq.com/tags/Blur/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Expose your local website to the world with ngrok]]></title>
+    <link href="http://www.codeblocq.com/2016/05/Expose-your-local-website-to-the-world-with-ngrok/"/>
+    <id>http://www.codeblocq.com/2016/05/Expose-your-local-website-to-the-world-with-ngrok/</id>
+    <published>2016-05-24T08:13:18.000Z</published>
+    <updated>2016-05-24T08:52:40.000Z</updated>
+    <content type="html"><![CDATA[<p>This article will show you how to tunnel your locally running website out to the world using <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>.<br><a id="more"></a></p>
+<h2 id="Introduction">Introduction</h2><p>You have been working on a local version of your express app that runs smoothly on your <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>. Your client is asking to see what progress has been made to the website and you don’t necessarily have hours to set it up on a cloud service provider.</p>
+<p>This is one of the cases where ngrok comes in handy. It allows you to redirect your local traffic to a public URL accesible anywhere in the world. Let’s get started.</p>
+<h2 id="Installation">Installation</h2><p>I have tried to install <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> with brew, but it didn’t work (I ended up with an old version). <a href="https://ngrok.com/download" target="_blank" rel="external">Download it from the website</a>.<br><br><br>Unzip the package and put it somewhere where ou can easily access it. I am on OS X and I have put it in my <code>Applications</code> folder so I can access it with:</p>
+<figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /Applications/ngrok -<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="Sign_up_and_get_a_authentication_token">Sign up and get a authentication token</h2><p><a href="https://dashboard.ngrok.com/user/signup" target="_blank" rel="external">Sign up</a> for a free account with ngrok and get your auth token. Install the token with <code>authtoken</code>:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>./ngrok authtoken abcde1234</span><br></pre></td></tr></table></figure>
+<h2 id="Create_your_first_tunnel">Create your first tunnel</h2><p>I am testing mine with my hexo blog running on <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> but you can use whichever port you want, even your standard port 80.</p>
+<p>Run this command (replace the port number with yours)</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>/Applications/ngrok http <span class="number">4000</span></span><br></pre></td></tr></table></figure>
+<p><img src="/img/ngrok-status-online.png" alt=""></p>
+<p>The <code>Tunnel Status</code> should say <code>online</code> and you will get a <code>Forwarding</code> URL that looks something like <a href="http://c9de2896.ngrok.io" target="_blank" rel="external">http://c9de2896.ngrok.io</a>.</p>
+<p>Open that URL in your browser and look at all your website’s ressources being redirected from your local through ngrok.io.</p>
+<p>You can now use that URL and share it with you friends and clients.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>This article will show you how to tunnel your locally running website out to the world using <a href="https://ngrok.com/">ngrok</a>.<br>]]>
+    
+    </summary>
+    
+      <category term="ngrok" scheme="http://www.codeblocq.com/tags/ngrok/"/>
+    
+      <category term="localhost" scheme="http://www.codeblocq.com/tags/localhost/"/>
+    
+      <category term="http" scheme="http://www.codeblocq.com/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Automatically extract interesting quotes from a text with Node JS]]></title>
+    <link href="http://www.codeblocq.com/2016/05/Automatically-extract-interesting-quotes-from-a-text-with-Node-JS/"/>
+    <id>http://www.codeblocq.com/2016/05/Automatically-extract-interesting-quotes-from-a-text-with-Node-JS/</id>
+    <published>2016-05-19T22:36:31.000Z</published>
+    <updated>2016-05-24T08:11:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Getting start with pull-quoter and quote extraction in Node.<br><a id="more"></a><br>The pull-quoter library allows you to extract interesting quotes from a text.</p>
+<h3 id="Installation">Installation</h3><p>Easy with npm:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> <span class="comment">--save pull-quoter</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Usage">Usage</h3><p>Load the module and simply use it as a function.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> pullquoter = <span class="built_in">require</span>(<span class="string">'pullquoter'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> text = <span class="string">"Something I notice every time I get really [...] higher quality sleep every night."</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(pullquoter(text)); <span class="comment">// [ 'It’s not just our thinking that’s affected by being tired.' ]</span></span><br></pre></td></tr></table></figure>
+<p><code>pull-quoter</code> will return an Array of Strings.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Getting start with pull-quoter and quote extraction in Node.<br>]]>
+    
+    </summary>
+    
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="Quotes" scheme="http://www.codeblocq.com/tags/Quotes/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Get the Current Wifi Password with Node]]></title>
@@ -197,237 +326,6 @@
       <category term="ppk" scheme="http://www.codeblocq.com/tags/ppk/"/>
     
       <category term="pem" scheme="http://www.codeblocq.com/tags/pem/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ES6/ES2015 Stack Implementation]]></title>
-    <link href="http://www.codeblocq.com/2016/05/ES6-ES2015-Stack-Implementation/"/>
-    <id>http://www.codeblocq.com/2016/05/ES6-ES2015-Stack-Implementation/</id>
-    <published>2016-05-04T00:57:03.000Z</published>
-    <updated>2016-05-09T03:00:38.000Z</updated>
-    <content type="html"><![CDATA[<p>JavaScript ES6/ES2015 Implementation of a Stack.</p>
-<a id="more"></a>
-<h2 id="Definition">Definition</h2><p>A stack is a data structure in which items are retrieved in the reverse order that they were added. If you add an item, this item will also be the first one to be removed. This is sometimes abbreviated as LIFO – Last In First Out.</p>
-<p>This stack implementation will have 3 methods:</p>
-<ul>
-<li><strong>push</strong>: Add a new item on top of the stack</li>
-<li><strong>pop</strong>: Remove the item on top of the stack</li>
-<li><strong>peek</strong>: Get the value of the item on top of the stack</li>
-</ul>
-<h2 id="Array_Implementation">Array Implementation</h2><p>Let’s start with using an Array as the underlying structure for our Stack. Since the Array in JavaScript already behaves like a stack, the implementation is trivial.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.items = [];</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  getLength() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  push(item) &#123;</span><br><span class="line">    <span class="keyword">this</span>.items.push(item);</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="keyword">this</span>.count + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  pop() &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.count = <span class="keyword">this</span>.count - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  peek() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.slice(<span class="number">-1</span>)[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>See it in action <a href="https://jsbin.com/toyore/edit?js,console" target="_blank" rel="external">here</a>;</p>
-<h3 id="LinkedList_Implementation">LinkedList Implementation</h3><p>Another way of implementing the stack is by using a LinkedList. I am going to be using <a href="/2016/05/ES6-ES2015-LinkedList-Implementation/">my LinkedList implementation</a> for this.</p>
-<p>Although not as trivial as with using an Array, it is pretty straightforward with the LinkedList:</p>
-<ul>
-<li>Push adds the element at the beginning of the list</li>
-<li>Pop returns the first element of the list and removes it at the same time.</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.list = <span class="keyword">new</span> LinkedList();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  push(item) &#123;</span><br><span class="line">    <span class="keyword">this</span>.list.addFirst(item);</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  pop() &#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.list.length) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> val = <span class="keyword">this</span>.list.head.data;</span><br><span class="line">    <span class="keyword">this</span>.list.removeFirst();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> val;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  peek() &#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>.list.head) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.list.head.data;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  get length() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.list.length;</span><br><span class="line">  &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>See it in Action <a href="https://jsbin.com/gohuha/edit?js,console" target="_blank" rel="external">here</a>;</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>JavaScript ES6/ES2015 Implementation of a Stack.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="ES2015" scheme="http://www.codeblocq.com/tags/ES2015/"/>
-    
-      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
-    
-      <category term="Algorithm" scheme="http://www.codeblocq.com/tags/Algorithm/"/>
-    
-      <category term="Data Structure" scheme="http://www.codeblocq.com/tags/Data-Structure/"/>
-    
-      <category term="Stack" scheme="http://www.codeblocq.com/tags/Stack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Get the last element of an Array in JavaScript]]></title>
-    <link href="http://www.codeblocq.com/2016/05/Get-the-last-element-of-an-Array-in-JavaScript/"/>
-    <id>http://www.codeblocq.com/2016/05/Get-the-last-element-of-an-Array-in-JavaScript/</id>
-    <published>2016-05-03T03:17:45.000Z</published>
-    <updated>2016-05-07T03:42:41.000Z</updated>
-    <content type="html"><![CDATA[<p>This article discusses the preferred way to retrieve the last element of an Array in JavaScript.</p>
-<a id="more"></a>
-<p><strong>Tip 7</strong> in this <a href="https://blog.jscrambler.com/12-extremely-useful-hacks-for-javascript/" target="_blank" rel="external">Useful JavaScript Hacks Article</a> proposes the following method to get the last item in an array.</p>
-<figure class="highlight javascript"><figcaption><span>syntax1.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array.slice(<span class="number">-1</span>)[<span class="number">0</span>]); <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-<p>It is a very neat and readable alternative to the often seen:</p>
-<figure class="highlight javascript"><figcaption><span>syntax2.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="keyword">var</span> val = array[array.length - <span class="number">1</span>]; <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-<h2 id="Performance">Performance</h2><p>I created the following quick performance test in Node (v5.6.0) to see how this syntax (<code>syntax1.js</code>) compares to the more traditional one (<code>syntax2.js</code>):</p>
-<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.time(<span class="string">'array slice'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000</span>; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">  <span class="keyword">var</span> val = array.slice(<span class="number">-1</span>)[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'array slice'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'array index'</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000000</span>; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line">  <span class="keyword">var</span> val = array[array.length - <span class="number">1</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'array index'</span>);</span><br></pre></td></tr></table></figure>
-<p>Here are the results:</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ node index.js</span><br><span class="line">&gt;<span class="built_in"> array </span>slice: 92.430ms</span><br><span class="line">&gt;<span class="built_in"> array </span>index: 4.820ms</span><br></pre></td></tr></table></figure>
-<p>Slicing the array is 20 times more taxing than accessing the last item directly.</p>
-<h2 id="Simplicity">Simplicity</h2><p>The syntax1 is a lot simpler to write and read and I will certainly start using it when performance is not a concern:</p>
-<h3 id="Empty_array">Empty array</h3><p>It works well when the array is empty:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [];</span><br><span class="line"><span class="built_in">console</span>.log(array.slice(<span class="number">-1</span>)); <span class="comment">// return []</span></span><br><span class="line"><span class="built_in">console</span>.log(array.slice(<span class="number">-1</span>)[<span class="number">0</span>]); <span class="comment">// returns undefined</span></span><br></pre></td></tr></table></figure>
-<h3 id="Get_the_last_few_elements_in_the_array">Get the last few elements in the array</h3><p>You can use the same technique to slice the array starting from the end of it. Pretty cool.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="built_in">console</span>.log(array.slice(<span class="number">-1</span>)); <span class="comment">// [6]</span></span><br><span class="line"><span class="built_in">console</span>.log(array.slice(<span class="number">-2</span>)); <span class="comment">// [5,6]</span></span><br><span class="line"><span class="built_in">console</span>.log(array.slice(<span class="number">-3</span>)); <span class="comment">// [4,5,6]</span></span><br></pre></td></tr></table></figure>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article discusses the preferred way to retrieve the last element of an Array in JavaScript.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ES6/ES2015 LinkedList Implementation]]></title>
-    <link href="http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/"/>
-    <id>http://www.codeblocq.com/2016/05/ES6-ES2015-LinkedList-Implementation/</id>
-    <published>2016-05-01T07:31:45.000Z</published>
-    <updated>2016-05-09T03:01:02.000Z</updated>
-    <content type="html"><![CDATA[<p>JavaScript ES6/ES2015 Implementation of a LinkedList.</p>
-<a id="more"></a>
-<h2 id="Definition">Definition</h2><p>A LinkedList is a list of Node. A Node is the most basic building block for many Data Structures.</p>
-<p>A Node does two things:</p>
-<ul>
-<li>Contain a Value</li>
-<li>Connect itself to other Nodes via an object reference pointer</li>
-</ul>
-<p>In a LinkedList, all Nodes can only have one Child Node.</p>
-<p><img src="/img/linkedlist-nodes.png" alt=""></p>
-<h2 id="Implementation">Implementation</h2><h3 id="Nodes">Nodes</h3><p>For our Node, we will use a simple JavaScript Object</p>
-<p>Example</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> node1 = &#123;</span><br><span class="line">    data: <span class="number">5</span>,</span><br><span class="line">    next <span class="literal">null</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>This node does not point to anything at the moment. Let’s create a second Node and have it point to the first Node:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> node2 = &#123;</span><br><span class="line">    data: <span class="number">7</span>,</span><br><span class="line">    next: node1</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="LinkedList">LinkedList</h3><p><strong>A LinkedList is a class that encapsulated the Nodes</strong>. It will contain </p>
-<ul>
-<li>a <code>head</code> property that is a pointer to the first Node.</li>
-<li>a <code>tail</code> property that is a pointer to the last Node.</li>
-<li>a <code>count</code> property that keeps track of node count.</li>
-<li>Add and Remove methods to manipulate the nodes in the list.</li>
-</ul>
-<h3 id="1)_Base">1) Base</h3><p>For the LinkedList, we will use a <code>class</code> and store the head Node and Tail Node as class property as well as a count variable that stores the number of Nodes.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  get length() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2)_Add_functions">2) Add functions</h3><p>We will now create two <code>add</code> functions. A <code>addFirst</code> to add at the start of the list and <code>addLast</code> to add at the end of the list.</p>
-<p>Here is the <code>addLast</code> method:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">addLast(data) &#123;</span><br><span class="line">  <span class="comment">// Create a new Node</span></span><br><span class="line">  <span class="keyword">const</span> node = &#123;</span><br><span class="line">    data: data,</span><br><span class="line">    next: <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.count === <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// If this is the first Node, assign it to head</span></span><br><span class="line">    <span class="keyword">this</span>.head = node;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// If not the first node, link it to the last node</span></span><br><span class="line">    <span class="keyword">this</span>.tail.next = node;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.tail = node;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.count++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Here is the <code>addFirst</code> method:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">addFirst(data) &#123;</span><br><span class="line">  <span class="comment">// Create a new Node</span></span><br><span class="line">  <span class="keyword">const</span> node = &#123;</span><br><span class="line">    data: data,</span><br><span class="line">    next: <span class="literal">null</span></span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Save the first Node</span></span><br><span class="line">  <span class="keyword">const</span> temp = <span class="keyword">this</span>.head;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Point head to the new Node</span></span><br><span class="line">  <span class="keyword">this</span>.head = node;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">// Add the rest of node behind the new first Node</span></span><br><span class="line">  <span class="keyword">this</span>.head.next = temp;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">this</span>.count++;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.count === <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">// If first node, </span></span><br><span class="line">    <span class="comment">// point tail to it as well</span></span><br><span class="line">    <span class="keyword">this</span>.tail = <span class="keyword">this</span>.head;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3)_Remove_functions">3) Remove functions</h3><p>Likewise, we will create a <code>removeFirst</code> and <code>removeLast</code> functions.</p>
-<p>Here is the <code>removeFirst</code> method:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">removeFirst(data) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">// The head should point to the second element</span></span><br><span class="line">    <span class="keyword">this</span>.head = <span class="keyword">this</span>.head.next;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">this</span>.count--;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.count === <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="comment">// If list empty, set tail to null</span></span><br><span class="line">      <span class="keyword">this</span>.tail = <span class="literal">null</span>;  </span><br><span class="line">    &#125; </span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Here is the <code>removeLast</code> method:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">removeLast(data) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="keyword">this</span>.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.count === <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.head = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">this</span>.tail = <span class="literal">null</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// Find the Node right before the last Node</span></span><br><span class="line">      <span class="keyword">let</span> current = <span class="keyword">this</span>.head;</span><br><span class="line">      <span class="keyword">while</span>(current.next !== <span class="keyword">this</span>.tail) &#123;</span><br><span class="line">        current = current.next;</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      current.next = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">this</span>.tail = current;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.count--;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>And that’s it, our LinkedList is ready.</p>
-<p>See it in action <a href="https://jsbin.com/letita/edit?js,console" target="_blank" rel="external">here</a>.</p>
-<p>Here is the full code</p>
-<script src="https://gist.github.com/klugjo/a9e9ef98fe879bc2b19b5a2e5947204c.js"></script>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>JavaScript ES6/ES2015 Implementation of a LinkedList.</p>]]>
-    
-    </summary>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="ES2015" scheme="http://www.codeblocq.com/tags/ES2015/"/>
-    
-      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
-    
-      <category term="Algorithm" scheme="http://www.codeblocq.com/tags/Algorithm/"/>
-    
-      <category term="Data Structure" scheme="http://www.codeblocq.com/tags/Data-Structure/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Big O Notation for algorithms]]></title>
-    <link href="http://www.codeblocq.com/2016/04/Big-O-Notation-for-algorithms/"/>
-    <id>http://www.codeblocq.com/2016/04/Big-O-Notation-for-algorithms/</id>
-    <published>2016-04-26T01:59:51.000Z</published>
-    <updated>2016-04-26T07:03:07.000Z</updated>
-    <content type="html"><![CDATA[<p>This article will give you a brief and simple explanation of what the Big-O Notation does.</p>
-<a id="more"></a>
-<h2 id="Introduction">Introduction</h2><p>The Big-O notation is a way to describe how efficient a piece of code is. More precisely, it defines how the execution time is affected by a growth of the input.</p>
-<p><strong>For Example:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">Code</th>
-<th style="text-align:center">Input Size</th>
-<th style="text-align:center">Execution time</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1 sec</td>
-</tr>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">3 sec</td>
-</tr>
-<tr>
-<td style="text-align:center">A</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">6 sec</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">1</td>
-<td style="text-align:center">1 sec</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">3</td>
-<td style="text-align:center">9 sec</td>
-</tr>
-<tr>
-<td style="text-align:center">B</td>
-<td style="text-align:center">6</td>
-<td style="text-align:center">36 sec</td>
-</tr>
-</tbody>
-</table>
-<p>In this example, code A is more efficient. When the input size increases, the time increases in a linear fashion. For code B, the time increases in a quadratic fashion.</p>
-<p>In that example, we can say that if <code>N</code> is the size of the input: </p>
-<ul>
-<li>code A is a big-O of N: <code>O(N)</code></li>
-<li>code B is a big-O of N<sup>2</sup>: <code>O(N^2)</code></li>
-</ul>
-<h2 id="More_examples">More examples</h2><p>In JavaScript.</p>
-<h3 id="Constant_complexity">Constant complexity</h3><p>If the time complexity for an algorithm is <code>O(1)</code>, it is said to be constant. No matter how big the input, the execution time will always be the same.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getFirstElement</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> array[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>No matter how big the array, the execution time remains the same as we are simply return the first element.</p>
-<h3 id="Linear_complexity">Linear complexity</h3><p>If the time complexity for an algorithm is <code>O(N)</code>, it is said to be linear. The execution times increases linearly with the input size.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMax</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> length = array.length;</span><br><span class="line">    <span class="keyword">var</span> index = <span class="number">-1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (++index &lt; length) &#123;</span><br><span class="line">        <span class="keyword">var</span> currentValue = array[index];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(currentValue != <span class="literal">null</span> &amp;&amp; (currentMax === <span class="literal">undefined</span> || currentValue &gt; currentMax)) &#123;</span><br><span class="line">            <span class="keyword">var</span> currentMax = currentValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> currentMax;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>In this code, we iterate through the array only once, so the time needed to complete the operation is directly proportional to the array length.</p>
-<h3 id="Quadratic_complexity">Quadratic complexity</h3><p>If the time complexity for an algorithm is <code>O(N^2)</code>, it is said to be of quadratic growth. The execution time increases linearly with the square of the input size.</p>
-<p><strong>Example:</strong></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> array1 = [<span class="string">'M'</span>, <span class="string">'a'</span>, <span class="string">'r'</span>, <span class="string">'y'</span>];</span><br><span class="line"><span class="keyword">var</span> array2 = [<span class="string">'J'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>, <span class="string">'k'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array1.length; i = i + <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; array2.length; j = j + <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(array1[i] + array2[j]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>In this, for each element in array1, we go through all the elements of array2. The time needed to complete the operation is proportional to the square of the arrays’s length.</p>
-<p>Note:</p>
-<ul>
-<li>If both array have the same size, the time complexity is <code>O(N^2)</code></li>
-<li>If both array have a different size, the time complexity is <code>O(N.M)</code> (as in N times M, where N and M are the array sizes)</li>
-</ul>
-<h2 id="Conclusion">Conclusion</h2><p>I hope this gives you an idea of what the big-O notation means and is used for. </p>
-<p>In our example, we have used it to measure the time complexity, in some cases in can also be used to measure the space complexity (the space used in memory).</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>This article will give you a brief and simple explanation of what the Big-O Notation does.</p>]]>
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://www.codeblocq.com/tags/Algorithm/"/>
-    
-      <category term="Performance" scheme="http://www.codeblocq.com/tags/Performance/"/>
-    
-      <category term="Big-O" scheme="http://www.codeblocq.com/tags/Big-O/"/>
     
   </entry>
   

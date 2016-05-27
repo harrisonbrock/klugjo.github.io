@@ -198,13 +198,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/CSS/</loc>
-        <lastmod>2016-03-14T15:26:19.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/CssMin/</loc>
         <lastmod>2016-03-14T15:26:19.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -527,13 +520,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/ES6/</loc>
-        <lastmod>2016-05-09T03:01:02.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/Algorithm/</loc>
         <lastmod>2016-05-09T03:01:02.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -632,20 +618,6 @@
     </url>
 
     <url>
-        <loc>http://www.codeblocq.com/tags/Node/</loc>
-        <lastmod>2016-05-18T03:14:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
-        <lastmod>2016-05-18T03:14:28.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://www.codeblocq.com/tags/Wifi/</loc>
         <lastmod>2016-05-18T03:14:28.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -655,6 +627,90 @@
     <url>
         <loc>http://www.codeblocq.com/tags/Password/</loc>
         <lastmod>2016-05-18T03:14:28.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Node/</loc>
+        <lastmod>2016-05-24T08:11:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Quotes/</loc>
+        <lastmod>2016-05-24T08:11:30.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/ngrok/</loc>
+        <lastmod>2016-05-24T08:52:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/localhost/</loc>
+        <lastmod>2016-05-24T08:52:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/http/</loc>
+        <lastmod>2016-05-24T08:52:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/CSS/</loc>
+        <lastmod>2016-05-25T08:18:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Hover/</loc>
+        <lastmod>2016-05-25T08:18:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Blur/</loc>
+        <lastmod>2016-05-25T08:18:19.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/JavaScript/</loc>
+        <lastmod>2016-05-27T06:47:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/ES6/</loc>
+        <lastmod>2016-05-27T06:47:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Templating/</loc>
+        <lastmod>2016-05-27T06:47:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://www.codeblocq.com/tags/Handlebars/</loc>
+        <lastmod>2016-05-27T06:47:56.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
