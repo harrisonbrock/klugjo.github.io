@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg1">-->
+<!--<body class="bg8">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -140,10 +140,10 @@
 </ul>
 <p>We will look into all these and see how to create custom commands.</p>
 <a id="more"></a> 
-<h2 id="1)_Getting_started:">1) Getting started:</h2><p>Let’s start with an empty project folder, cd into it and run <code>npm init</code>. Pick a name for your project and use the defaults for the remaining fields.</p>
+<h2 id="1-Getting-started"><a href="#1-Getting-started" class="headerlink" title="1) Getting started:"></a>1) Getting started:</h2><p>Let’s start with an empty project folder, cd into it and run <code>npm init</code>. Pick a name for your project and use the defaults for the remaining fields.</p>
 <p>Your <code>package.json</code> should look something like:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"npm-scripts"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"test"</span>: <span class="string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"Klughertz Jonathan (http://klugjo.github.io/)"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"ISC"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2)_npm_test:">2) npm test:</h2><p>The default <code>package.json</code> comes with a <code>scripts</code> object and a <code>test</code> command:</p>
+<h2 id="2-npm-test"><a href="#2-npm-test" class="headerlink" title="2) npm test:"></a>2) npm test:</h2><p>The default <code>package.json</code> comes with a <code>scripts</code> object and a <code>test</code> command:</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">" &amp;&amp; exit 1"</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
 <p>Our <a href="https://docs.npmjs.com/cli/test" target="_blank" rel="external">npm-test</a> command is already good to go.</p>
 <p>To run an npm script:</p>
@@ -151,7 +151,7 @@
 <p>Back to your terminal, type <code>npm run-script test</code> or <code>npm run test</code> to run the test command.</p>
 <p>At the moment it will return an error so remove the <code>exit 1</code> portion of the script to make it work:</p>
 <p><code>&quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot;&quot;</code></p>
-<h3 id="Hint:">Hint:</h3><p>Typing <code>npm run-script test</code> is a bit lengthy. Fortunately, there are shortcuts built into NPM.</p>
+<h3 id="Hint"><a href="#Hint" class="headerlink" title="Hint:"></a>Hint:</h3><p>Typing <code>npm run-script test</code> is a bit lengthy. Fortunately, there are shortcuts built into NPM.</p>
 <p>You can use any of the following commands, they are all equivalent:</p>
 <ul>
 <li><code>npm run-script test</code></li>
@@ -161,7 +161,7 @@
 <li><code>npm t</code></li>
 </ul>
 <p>In a real world project, you would use that command to run your unit test script command. By setting the test command to <code>mocha test</code> for example.</p>
-<h2 id="3)_npm_start_and_stop:">3) npm start and stop:</h2><p>The <a href="https://docs.npmjs.com/cli/start" target="_blank" rel="external">npm-start</a> and <a href="https://docs.npmjs.com/cli/stop" target="_blank" rel="external">npm-stop</a> commands work the same way as the npm-test command. They are typically used to start and stop the application.</p>
+<h2 id="3-npm-start-and-stop"><a href="#3-npm-start-and-stop" class="headerlink" title="3) npm start and stop:"></a>3) npm start and stop:</h2><p>The <a href="https://docs.npmjs.com/cli/start" target="_blank" rel="external">npm-start</a> and <a href="https://docs.npmjs.com/cli/stop" target="_blank" rel="external">npm-stop</a> commands work the same way as the npm-test command. They are typically used to start and stop the application.</p>
 <p>Edit your package.json to include the start and stop commands:</p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> <span class="keyword">test</span> specified\<span class="string">""</span>,</span><br><span class="line">    <span class="string">"start"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> start command specified\<span class="string">""</span>,</span><br><span class="line">    <span class="string">"stop"</span>: <span class="string">"echo \"</span><span class="keyword">Error</span>: <span class="keyword">no</span> stop command specified\<span class="string">""</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>As before, you can use <code>npm run start</code> or the shorter versions:</p>
@@ -169,12 +169,12 @@
 <li><code>npm start</code></li>
 <li><code>npm stop</code></li>
 </ul>
-<h2 id="4)_npm_restart:">4) npm restart:</h2><p>If no <code>restart command is specified</code>, <strong>the <a href="https://docs.npmjs.com/cli/restart" target="_blank" rel="external">npm-restart</a> runs a package’s “stop” and “start” consecutively.</strong></p>
+<h2 id="4-npm-restart"><a href="#4-npm-restart" class="headerlink" title="4) npm restart:"></a>4) npm restart:</h2><p>If no <code>restart command is specified</code>, <strong>the <a href="https://docs.npmjs.com/cli/restart" target="_blank" rel="external">npm-restart</a> runs a package’s “stop” and “start” consecutively.</strong></p>
 <p>At the moment if you run <code>npm restart</code>, you will get:</p>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm scripts jonathan$ npm restart</span><br><span class="line"></span><br><span class="line">Error: no <span class="built_in">stop</span> <span class="keyword">command</span> <span class="title">specified</span></span><br><span class="line"></span><br><span class="line">Error: no <span class="built_in">start</span> <span class="keyword">command</span> <span class="title">specified</span></span><br></pre></td></tr></table></figure>
 <p>If you add the following <code>restart</code> command in your package: <code>&quot;restart&quot;: &quot;echo \&quot;Error: no restart command specified\&quot;&quot;</code> and run <code>npm restart</code>, you will get:</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">npm</span> scripts jonathan$ <span class="built_in">npm</span> restart</span><br><span class="line"></span><br><span class="line">Error: <span class="literal">no</span> restart command specified</span><br></pre></td></tr></table></figure>
-<h2 id="5)_Custom_scripts">5) Custom scripts</h2><p>On top of these defaults, you can of course add your own commands.</p>
+<h2 id="5-Custom-scripts"><a href="#5-Custom-scripts" class="headerlink" title="5) Custom scripts"></a>5) Custom scripts</h2><p>On top of these defaults, you can of course add your own commands.</p>
 <p>For example, add <code>&quot;custom&quot;: &quot;echo \&quot;Running custom command\&quot;&quot;</code> to your package.</p>
 <p>And run it using <code>npm run custom</code>.</p>
 <p>All custom commands have to be run using the <code>npm run &lt;command&gt;</code> or <code>npm run-script &lt;command&gt;</code> syntax.</p>

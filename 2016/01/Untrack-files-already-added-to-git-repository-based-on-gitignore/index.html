@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg4">-->
+<!--<body class="bg2">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,17 +132,17 @@
         <div class="entry">
           <p>Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.</p>
 <a id="more"></a> 
-<h2 id="Step_1:_Commit_all_your_changes">Step 1: Commit all your changes</h2><p>Before proceeding, make sure all your changes are committed, including your .gitignore file.</p>
-<h2 id="Step_2:_Remove_everything_from_the_repository">Step 2: Remove everything from the repository</h2><p>To clear your repo, use:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r <span class="comment">--cached .</span></span><br></pre></td></tr></table></figure>
+<h2 id="Step-1-Commit-all-your-changes"><a href="#Step-1-Commit-all-your-changes" class="headerlink" title="Step 1: Commit all your changes"></a>Step 1: Commit all your changes</h2><p>Before proceeding, make sure all your changes are committed, including your .gitignore file.</p>
+<h2 id="Step-2-Remove-everything-from-the-repository"><a href="#Step-2-Remove-everything-from-the-repository" class="headerlink" title="Step 2: Remove everything from the repository"></a>Step 2: Remove everything from the repository</h2><p>To clear your repo, use:</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r <span class="comment">--cached .</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><a href="https://git-scm.com/docs/git-rm" target="_blank" rel="external">rm</a> is the remove command</li>
 <li><strong>-r</strong> will allow recursive removal</li>
-<li><strong>—cached</strong> will only remove files from the index. Your files will still be there.</li>
+<li><strong>–cached</strong> will only remove files from the index. Your files will still be there.</li>
 </ul>
 <p>The <code>rm</code> command can be unforgiving. If you wish to try what it does beforehand, add the <code>-n</code> or <code>--dry-run</code> flag to test things out.</p>
-<h2 id="Step_3:_Re_add_everything">Step 3: Re add everything</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">add </span>.</span><br></pre></td></tr></table></figure>
-<h2 id="Step_4:_Commit">Step 4: Commit</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">".gitignore fix"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Step-3-Re-add-everything"><a href="#Step-3-Re-add-everything" class="headerlink" title="Step 3: Re add everything"></a>Step 3: Re add everything</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">add </span>.</span><br></pre></td></tr></table></figure>
+<h2 id="Step-4-Commit"><a href="#Step-4-Commit" class="headerlink" title="Step 4: Commit"></a>Step 4: Commit</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">".gitignore fix"</span></span><br></pre></td></tr></table></figure>
 <p>Your repository is clean :)</p>
 <p>Push the changes to your remote to see the changes effective there as well.</p>
 

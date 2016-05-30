@@ -131,8 +131,8 @@
       
         <div class="entry">
           <p>In this article I will detail how I setup a debug configuration in webstorm in order to debug hexo. The information contained here can easily be applied to debugging any node app that is executed with a command lined command (<code>hexo generate</code>) instead of the more standard <code>node index.js</code>.<br><a id="more"></a> </p>
-<h2 id="The_problem">The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
-<h2 id="The_trick">The trick</h2><p>The trick here is to specify the path to the hexo executable located in <code>node_modules/.bin/hexo</code>.</p>
+<h2 id="The-problem"><a href="#The-problem" class="headerlink" title="The problem"></a>The problem</h2><p>When setting up a <a href="https://www.jetbrains.com/webstorm/help/run-debug-configuration-node-js.html" target="_blank" rel="external">node debug configuration in Webstorm</a> you have to specify a file path. Since we are trying to debug <code>hexo generate</code>, we don’t have any JavaScript file to specify.</p>
+<h2 id="The-trick"><a href="#The-trick" class="headerlink" title="The trick"></a>The trick</h2><p>The trick here is to specify the path to the hexo executable located in <code>node_modules/.bin/hexo</code>.</p>
 <p>When adding your configuration, use the following:</p>
 <table>
 <thead>

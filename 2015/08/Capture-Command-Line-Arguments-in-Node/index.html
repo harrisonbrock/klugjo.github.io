@@ -94,7 +94,7 @@
 
 
 <body >
-<!--<body class="bg6">-->
+<!--<body class="bg1">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -134,12 +134,12 @@
 
       
         <div class="entry">
-          <h2 id="Retrieve_command-line_arguments">Retrieve command-line arguments</h2><p>If you run <code>node index.js arg1 arg2</code>, you can retrieve these incoming command line arguments using</p>
+          <h2 id="Retrieve-command-line-arguments"><a href="#Retrieve-command-line-arguments" class="headerlink" title="Retrieve command-line arguments"></a>Retrieve command-line arguments</h2><p>If you run <code>node index.js arg1 arg2</code>, you can retrieve these incoming command line arguments using</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arg1 = process.argv[<span class="number">2</span>],</span><br><span class="line">    arg2 = process.argv[<span class="number">3</span>];</span><br></pre></td></tr></table></figure>
 <a id="more"></a> 
 <p>The list of commands executed is accessible from the <a href="https://nodejs.org/api/process.html#process_process" target="_blank" rel="external">process global object</a>.</p>
 <p><code>argv</code> stands for arguments vector and is an array. It contains <code>node</code> and <code>index.js</code> (or your entry file path equivalent) as its first two values.</p>
-<h2 id="Retrieve_node-specific_command_line_options">Retrieve node-specific command line options</h2><p>If you run <code>node --harmony index.js arg1</code>, the <code>--harmony</code> flag will no be included in <code>process.argv</code></p>
+<h2 id="Retrieve-node-specific-command-line-options"><a href="#Retrieve-node-specific-command-line-options" class="headerlink" title="Retrieve node-specific command line options"></a>Retrieve node-specific command line options</h2><p>If you run <code>node --harmony index.js arg1</code>, the <code>--harmony</code> flag will no be included in <code>process.argv</code></p>
 <p>If you wish to retrieve it, use <code>process.execArgv</code>. The <a href="https://nodejs.org/api/process.html#process_process_execargv" target="_blank" rel="external">execArgv</a> array will not include the values already included in <code>process.argv</code>.</p>
 <p>So based on the above command:</p>
 <p><strong>process.execArgv</strong> will be equal to</p>

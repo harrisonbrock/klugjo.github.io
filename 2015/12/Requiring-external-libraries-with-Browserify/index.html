@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg9">-->
+<!--<body class="bg3">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,16 +132,16 @@
         <div class="entry">
           <p>This post will show you how to easily download and include 3rd party libraries in your Browserify bundle.</p>
 <a id="more"></a> 
-<h2 id="1)_Project_Structure">1) Project Structure</h2><p>Let’s start by assuming the following project structure</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|<span class="comment">-- dist // Build will end up here</span></span><br><span class="line">|<span class="comment">-- src </span></span><br><span class="line">    |<span class="comment">-- js</span></span><br><span class="line">        |<span class="comment">-- main.js // Our main JavaScript file</span></span><br><span class="line">        |<span class="comment">-- module.js // Local module</span></span><br><span class="line">|<span class="comment">-- package.json</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-Project-Structure"><a href="#1-Project-Structure" class="headerlink" title="1) Project Structure"></a>1) Project Structure</h2><p>Let’s start by assuming the following project structure</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|<span class="comment">-- dist // Build will end up here</span></span><br><span class="line">|<span class="comment">-- src </span></span><br><span class="line">    |<span class="comment">-- js</span></span><br><span class="line">        |<span class="comment">-- main.js // Our main JavaScript file</span></span><br><span class="line">        |<span class="comment">-- module.js // Local module</span></span><br><span class="line">|<span class="comment">-- package.json</span></span><br></pre></td></tr></table></figure>
 <p>We have our <code>main.js</code> file where we will require our local module (<code>module.js</code>) and our jQuery library</p>
-<h2 id="2)_Requiring_the_jQuery_library">2) Requiring the jQuery library</h2><h3 id="Installing_jQuery">Installing jQuery</h3><p>One of the advantages of using Browserify is that you don’t have to use bower or download your dependencies manually. You can just install everything with npm.</p>
+<h2 id="2-Requiring-the-jQuery-library"><a href="#2-Requiring-the-jQuery-library" class="headerlink" title="2) Requiring the jQuery library"></a>2) Requiring the jQuery library</h2><h3 id="Installing-jQuery"><a href="#Installing-jQuery" class="headerlink" title="Installing jQuery"></a>Installing jQuery</h3><p>One of the advantages of using Browserify is that you don’t have to use bower or download your dependencies manually. You can just install everything with npm.</p>
 <p>To install jquery:</p>
 <p><code>npm install jquery</code></p>
-<h3 id="Requiring_jQuery">Requiring jQuery</h3><p>Since jQuery has been installed with npm, we can require it in our client code like we would do in Node: by simply using the name of the library.</p>
+<h3 id="Requiring-jQuery"><a href="#Requiring-jQuery" class="headerlink" title="Requiring jQuery"></a>Requiring jQuery</h3><p>Since jQuery has been installed with npm, we can require it in our client code like we would do in Node: by simply using the name of the library.</p>
 <p><code>var $ = require(&#39;jquery&#39;);</code></p>
 <p>Browserify makes it easy to reuse server side libraries if you use node and to centralize all your JavaScript libraries in one place. Not to mention that npm is now a mature and solid packet manager.</p>
-<h2 id="3)_Requiring_local_modules">3) Requiring local modules</h2><p>As a bonus here is the correct way to require local modules.</p>
+<h2 id="3-Requiring-local-modules"><a href="#3-Requiring-local-modules" class="headerlink" title="3) Requiring local modules"></a>3) Requiring local modules</h2><p>As a bonus here is the correct way to require local modules.</p>
 <p>When requiring a local module, the path should always start with:</p>
 <ul>
 <li><code>./</code> representing the current directory</li>

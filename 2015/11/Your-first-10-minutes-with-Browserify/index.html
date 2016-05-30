@@ -94,7 +94,7 @@
 
 
 <body >
-<!--<body class="bg0">-->
+<!--<body class="bg8">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -135,13 +135,13 @@
       
         <div class="entry">
           <p>Follow these instructions and in less than 10 minutes you will have <a href="http://browserify.org/index.html" target="_blank" rel="external">Browserify</a> installed and ready to go.</p>
-<h2 id="1)_Install_Browserify_globally">1) Install Browserify globally</h2><p><code>npm install -g browserify</code></p>
+<h2 id="1-Install-Browserify-globally"><a href="#1-Install-Browserify-globally" class="headerlink" title="1) Install Browserify globally"></a>1) Install Browserify globally</h2><p><code>npm install -g browserify</code></p>
 <a id="more"></a> 
-<h2 id="2)_Create_a_main-js_file_and_start_writing_your_code">2) Create a main.js file and start writing your code</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chunked = _.chunk([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>], <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(chunked); <span class="comment">// → [['a', 'b'], ['c', 'd']]</span></span><br></pre></td></tr></table></figure>
-<h2 id="3)_Use_npm_to_install_your_dependencies">3) Use npm to install your dependencies</h2><p><code>npm install --save lodash</code></p>
-<h2 id="4)_Use_browserify_to_package_your_code">4) Use browserify to package your code</h2><p><code>browserify main.js -o bundle.js</code></p>
-<h2 id="5)_Drop_bundle-js_in_your_html_code_and_you_are_ready_to_go_!">5) Drop bundle.js in your html code and you are ready to go !</h2><p>Browserify automatically found and included all the required dependencies in bundle.js.</p>
-<h2 id="6)_Advantages">6) Advantages</h2><ul>
+<h2 id="2-Create-a-main-js-file-and-start-writing-your-code"><a href="#2-Create-a-main-js-file-and-start-writing-your-code" class="headerlink" title="2) Create a main.js file and start writing your code"></a>2) Create a main.js file and start writing your code</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> _ = <span class="built_in">require</span>(<span class="string">'lodash'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> chunked = _.chunk([<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>], <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(chunked); <span class="comment">// → [['a', 'b'], ['c', 'd']]</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-Use-npm-to-install-your-dependencies"><a href="#3-Use-npm-to-install-your-dependencies" class="headerlink" title="3) Use npm to install your dependencies"></a>3) Use npm to install your dependencies</h2><p><code>npm install --save lodash</code></p>
+<h2 id="4-Use-browserify-to-package-your-code"><a href="#4-Use-browserify-to-package-your-code" class="headerlink" title="4) Use browserify to package your code"></a>4) Use browserify to package your code</h2><p><code>browserify main.js -o bundle.js</code></p>
+<h2 id="5-Drop-bundle-js-in-your-html-code-and-you-are-ready-to-go"><a href="#5-Drop-bundle-js-in-your-html-code-and-you-are-ready-to-go" class="headerlink" title="5) Drop bundle.js in your html code and you are ready to go !"></a>5) Drop bundle.js in your html code and you are ready to go !</h2><p>Browserify automatically found and included all the required dependencies in bundle.js.</p>
+<h2 id="6-Advantages"><a href="#6-Advantages" class="headerlink" title="6) Advantages"></a>6) Advantages</h2><ul>
 <li>You only need to require one JavaScript file in your code</li>
 <li>You can manage your client side dependencies with npm</li>
 <li>You can manage your dependencies easily like you would in Node.</li>

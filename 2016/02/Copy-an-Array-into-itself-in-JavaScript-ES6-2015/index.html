@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg6">-->
+<!--<body class="bg8">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -138,10 +138,10 @@
 <li><code>start</code>: beginning of section to copy</li>
 <li><code>end</code>: end of section to copy. Optional, if not specified the section will go to the end of the array</li>
 </ul>
-<h3 id="Example">Example</h3><p>m<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// Result: [0, 1, 2, 3, 1, 2]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>m<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// Result: [0, 1, 2, 3, 1, 2]</span></span><br></pre></td></tr></table></figure></p>
 <p>Here is a visual representation of what happens:</p>
 <p><img src="/img/array-copywithin-es6-explanation.png" alt="Array copyWithin visual explanation"></p>
-<h3 id="Remarks">Remarks</h3><ul>
+<h3 id="Remarks"><a href="#Remarks" class="headerlink" title="Remarks"></a>Remarks</h3><ul>
 <li>As expected parameters are 0 based indexes.</li>
 <li>The <code>copyWithin</code> modifies the array itself, it does not return a copy of it.</li>
 <li>The array size if not modified, <code>copyWithin</code> only copies what fits.</li>

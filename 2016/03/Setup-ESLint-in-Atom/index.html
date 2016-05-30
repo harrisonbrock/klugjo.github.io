@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg3">-->
+<!--<body class="bg1">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,18 +132,18 @@
         <div class="entry">
           <p>This article will show you how to setup <a href="http://eslint.org/" target="_blank" rel="external">ESLint</a> syntax highlighting (or in that case error highlighting) directly in <a href="https://atom.io/" target="_blank" rel="external">Atom</a>.</p>
 <a id="more"></a>
-<h2 id="Install_the_packages">Install the packages</h2><p>Start by going to Atom’s preferences and select the <strong>+ Install</strong> tab.</p>
+<h2 id="Install-the-packages"><a href="#Install-the-packages" class="headerlink" title="Install the packages"></a>Install the packages</h2><p>Start by going to Atom’s preferences and select the <strong>+ Install</strong> tab.</p>
 <p><img src="/img/atom-prefs-install-tab.png" alt=""></p>
 <p>Then install the <strong>linter</strong> package</p>
 <p><img src="/img/atom-linter-package.png" alt=""></p>
 <p>Then the <strong>linter-eslint</strong> package</p>
 <p><img src="/img/atom-linter-eslint-package.png" alt=""></p>
-<h2 id="Setup_ESLint">Setup ESLint</h2><p>All you need to setup ESLint is an <code>.eslintrc</code> file at the root of your project with your ESlint rules.</p>
+<h2 id="Setup-ESLint"><a href="#Setup-ESLint" class="headerlink" title="Setup ESLint"></a>Setup ESLint</h2><p>All you need to setup ESLint is an <code>.eslintrc</code> file at the root of your project with your ESlint rules.</p>
 <p>If you want to get started quickly you can use Google’s JavaScript guide rules:</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="keyword">install </span>--save-dev eslint eslint-<span class="built_in">config</span>-google</span><br></pre></td></tr></table></figure>
 <p>and in your <code>.eslintrc</code>, put:</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"extends"</span>: <span class="string">"eslint-config-google"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Test_it_out">Test it out</h2><p>If Atom does not automatically pick up the errors, restart the application.</p>
+<h2 id="Test-it-out"><a href="#Test-it-out" class="headerlink" title="Test it out"></a>Test it out</h2><p>If Atom does not automatically pick up the errors, restart the application.</p>
 <p>This is what you should get once everything is setup properly:</p>
 <p><img src="/img/atom-eslint-error-highlighting.png" alt=""></p>
 

@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg0">-->
+<!--<body class="bg4">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,15 +132,15 @@
         <div class="entry">
           <p>In this tutorial we will see how to pass arguments to a command when combining <a href="/2015/12/Run-scripts-with-npm/" target="_blank">npm scripts</a>.</p>
 <a id="more"></a> 
-<h2 id="Project_setup">Project setup</h2><p>Let’s assume we have the current script defined in our npm scripts:</p>
+<h2 id="Project-setup"><a href="#Project-setup" class="headerlink" title="Project setup"></a>Project setup</h2><p>Let’s assume we have the current script defined in our npm scripts:</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<h2 id="Watching_for_changes">Watching for changes</h2><p>Now let’s say we want to create a new task that will not only compile our stylus files to css but also watch for changes and recompile when necessary.</p>
+<h2 id="Watching-for-changes"><a href="#Watching-for-changes" class="headerlink" title="Watching for changes"></a>Watching for changes</h2><p>Now let’s say we want to create a new task that will not only compile our stylus files to css but also watch for changes and recompile when necessary.</p>
 <p>Using the command line this can be done with the <code>-w</code> flag:</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stylus src/stylus/site<span class="selector-class">.styl</span> -w</span><br></pre></td></tr></table></figure>
 <p>We now want to create a new script that watches for stylus changes. We can do:</p>
 <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/"</span>,</span><br><span class="line">    <span class="string">"watch:stylus"</span>: <span class="string">"stylus src/stylus/site.styl --out dist/ -w"</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <p>See anything ugly ?</p>
-<h2 id="Reusing_existing_code">Reusing existing code</h2><p>In order to avoid duplicated code, we want to reuse our first command and add the <code>-w</code> flag.</p>
+<h2 id="Reusing-existing-code"><a href="#Reusing-existing-code" class="headerlink" title="Reusing existing code"></a>Reusing existing code</h2><p>In order to avoid duplicated code, we want to reuse our first command and add the <code>-w</code> flag.</p>
 <p>The general syntax is</p>
 <figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run <span class="string">[command]</span> <span class="string">[-- &lt;args&gt;]</span></span><br></pre></td></tr></table></figure>
 <p>With our example it would be:</p>

@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg8">-->
+<!--<body class="bg0">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,17 +132,17 @@
         <div class="entry">
           <p>JavaScript ES6/ES2015 Implementation of a Stack.</p>
 <a id="more"></a>
-<h2 id="Definition">Definition</h2><p>A stack is a data structure in which items are retrieved in the reverse order that they were added. If you add an item, this item will also be the first one to be removed. This is sometimes abbreviated as LIFO – Last In First Out.</p>
+<h2 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h2><p>A stack is a data structure in which items are retrieved in the reverse order that they were added. If you add an item, this item will also be the first one to be removed. This is sometimes abbreviated as LIFO – Last In First Out.</p>
 <p>This stack implementation will have 3 methods:</p>
 <ul>
 <li><strong>push</strong>: Add a new item on top of the stack</li>
 <li><strong>pop</strong>: Remove the item on top of the stack</li>
 <li><strong>peek</strong>: Get the value of the item on top of the stack</li>
 </ul>
-<h2 id="Array_Implementation">Array Implementation</h2><p>Let’s start with using an Array as the underlying structure for our Stack. Since the Array in JavaScript already behaves like a stack, the implementation is trivial.</p>
+<h2 id="Array-Implementation"><a href="#Array-Implementation" class="headerlink" title="Array Implementation"></a>Array Implementation</h2><p>Let’s start with using an Array as the underlying structure for our Stack. Since the Array in JavaScript already behaves like a stack, the implementation is trivial.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Stack</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>() &#123;</span><br><span class="line">    <span class="keyword">this</span>.items = [];</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  getLength() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.count;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  push(item) &#123;</span><br><span class="line">    <span class="keyword">this</span>.items.push(item);</span><br><span class="line">    <span class="keyword">this</span>.count = <span class="keyword">this</span>.count + <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  pop() &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.count &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">this</span>.count = <span class="keyword">this</span>.count - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.pop();</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  peek() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.items.slice(<span class="number">-1</span>)[<span class="number">0</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>See it in action <a href="https://jsbin.com/toyore/edit?js,console" target="_blank" rel="external">here</a>;</p>
-<h3 id="LinkedList_Implementation">LinkedList Implementation</h3><p>Another way of implementing the stack is by using a LinkedList. I am going to be using <a href="/2016/05/ES6-ES2015-LinkedList-Implementation/">my LinkedList implementation</a> for this.</p>
+<h3 id="LinkedList-Implementation"><a href="#LinkedList-Implementation" class="headerlink" title="LinkedList Implementation"></a>LinkedList Implementation</h3><p>Another way of implementing the stack is by using a LinkedList. I am going to be using <a href="/2016/05/ES6-ES2015-LinkedList-Implementation/">my LinkedList implementation</a> for this.</p>
 <p>Although not as trivial as with using an Array, it is pretty straightforward with the LinkedList:</p>
 <ul>
 <li>Push adds the element at the beginning of the list</li>

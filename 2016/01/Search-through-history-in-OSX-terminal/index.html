@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg1">-->
+<!--<body class="bg2">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,18 +132,18 @@
         <div class="entry">
           <p>Quick article on how to search the OSX terminal history</p>
 <a id="more"></a> 
-<h2 id="Interactive_Search">Interactive Search</h2><h3 id="Start_search">Start search</h3><p>Use <code>ctrl</code>+<code>r</code> to start the history search and start typing your search term (in my example <code>git</code>)</p>
+<h2 id="Interactive-Search"><a href="#Interactive-Search" class="headerlink" title="Interactive Search"></a>Interactive Search</h2><h3 id="Start-search"><a href="#Start-search" class="headerlink" title="Start search"></a>Start search</h3><p>Use <code>ctrl</code>+<code>r</code> to start the history search and start typing your search term (in my example <code>git</code>)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(reverse-i-search)`git<span class="string">': git push origin develop</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>(reverse-i-search)</code> indicates that the search mode is activated</li>
 <li><code>git</code> is the search term</li>
 <li><code>git push origin develop</code> is the result</li>
 </ul>
-<h3 id="Circle_through_results">Circle through results</h3><p>If the first result is not the one you are looking for, continuously press <code>ctrl</code>+<code>r</code></p>
-<h3 id="Execute_the_command">Execute the command</h3><p>Press <code>Enter</code> to execute the command</p>
+<h3 id="Circle-through-results"><a href="#Circle-through-results" class="headerlink" title="Circle through results"></a>Circle through results</h3><p>If the first result is not the one you are looking for, continuously press <code>ctrl</code>+<code>r</code></p>
+<h3 id="Execute-the-command"><a href="#Execute-the-command" class="headerlink" title="Execute the command"></a>Execute the command</h3><p>Press <code>Enter</code> to execute the command</p>
 <p>or</p>
 <p>Press <code>right arrow</code> to insert the command in the current line</p>
-<h2 id="Display_search_history">Display search history</h2><p>In some cases, you might want to display an history of commands containing your search term</p>
+<h2 id="Display-search-history"><a href="#Display-search-history" class="headerlink" title="Display search history"></a>Display search history</h2><p>In some cases, you might want to display an history of commands containing your search term</p>
 <p>You can do this with the following command</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">history</span> | <span class="keyword">grep</span> <span class="string">'git'</span></span><br></pre></td></tr></table></figure>
 <p>Will display of all the previous commands that contain <code>git</code>.</p>

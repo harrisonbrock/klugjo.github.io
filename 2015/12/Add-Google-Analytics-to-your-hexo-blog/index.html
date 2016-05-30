@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg0">-->
+<!--<body class="bg2">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -132,12 +132,12 @@
         <div class="entry">
           <p>This post will show you how to integrate <a href="https://www.google.com/analytics/" target="_blank" rel="external">Google Analytics</a> to your <a href="https://hexo.io/" target="_blank" rel="external">Hexo blog</a>.</p>
 <a id="more"></a> 
-<h2 id="1)_The_easy_way-_When_your_theme_already_supports_Google_Analytics-">1) The easy way. When your theme already supports Google Analytics.</h2><p>If you are lucky, your theme already support Google Analytics. This is the case for the <a href="https://github.com/tommy351/hexo-theme-landscape" target="_blank" rel="external">default theme</a> and <a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="external">Light</a>, the theme I started with.</p>
+<h2 id="1-The-easy-way-When-your-theme-already-supports-Google-Analytics"><a href="#1-The-easy-way-When-your-theme-already-supports-Google-Analytics" class="headerlink" title="1) The easy way. When your theme already supports Google Analytics."></a>1) The easy way. When your theme already supports Google Analytics.</h2><p>If you are lucky, your theme already support Google Analytics. This is the case for the <a href="https://github.com/tommy351/hexo-theme-landscape" target="_blank" rel="external">default theme</a> and <a href="https://github.com/hexojs/hexo-theme-light" target="_blank" rel="external">Light</a>, the theme I started with.</p>
 <p>Grab your site’s Google Analytics tracking ID. It should look something like <strong>UA-83746351-2</strong></p>
 <p>Then go to your theme’s main <code>_config.yml</code> and look for a property called <code>google_analytics</code>. Fill in your tracking ID.</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">google_analytics:</span> UA<span class="number">-83746351</span><span class="number">-2</span></span><br></pre></td></tr></table></figure>
 <p>Google Analytics has been added to your site !</p>
-<h2 id="2)_The_not_so_difficult_way-_When_you_have_to_implement_the_tracking_code_yourself-">2) The not so difficult way. When you have to implement the tracking code yourself.</h2><p>Following 1), prepare your Google Analytics tracking ID and add the following property to your theme’s <code>_config.yml</code>:</p>
+<h2 id="2-The-not-so-difficult-way-When-you-have-to-implement-the-tracking-code-yourself"><a href="#2-The-not-so-difficult-way-When-you-have-to-implement-the-tracking-code-yourself" class="headerlink" title="2) The not so difficult way. When you have to implement the tracking code yourself."></a>2) The not so difficult way. When you have to implement the tracking code yourself.</h2><p>Following 1), prepare your Google Analytics tracking ID and add the following property to your theme’s <code>_config.yml</code>:</p>
 <figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">google_analytics:</span> UA<span class="number">-83746351</span><span class="number">-2</span></span><br></pre></td></tr></table></figure>
 <p>Once this is done, let’s add the Analytics code to each page. </p>
 <p>Create a new <code>google_analytics.ejs</code> file with the following code: (I am using EJS so adapt the code to the templating engine you are using)</p>

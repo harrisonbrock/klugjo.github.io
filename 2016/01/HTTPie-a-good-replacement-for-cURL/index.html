@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg4">-->
+<!--<body class="bg7">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -131,16 +131,16 @@
       
         <div class="entry">
           <p>If you find <a href="http://curl.haxx.se/docs/manpage.html" target="_blank" rel="external">cURL’s syntax</a> a bit too dry for your liking, you could give <a href="https://github.com/jkbrzt/httpie" target="_blank" rel="external">HTTPie</a> a try. In this article I will go through the basics of making HTTP requests to a REST API using HTTPie.<br><a id="more"></a> </p>
-<h2 id="Install_HTTPie">Install HTTPie</h2><p>I am on OSX and with brew, installation is a breeze.</p>
+<h2 id="Install-HTTPie"><a href="#Install-HTTPie" class="headerlink" title="Install HTTPie"></a>Install HTTPie</h2><p>I am on OSX and with brew, installation is a breeze.</p>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">brew </span><span class="keyword">install </span>httpie</span><br></pre></td></tr></table></figure>
 <p>If you are on a different system, check out the <a href="https://github.com/jkbrzt/httpie#installation" target="_blank" rel="external">installation options</a></p>
-<h2 id="Talk_to_a_REST_API">Talk to a REST API</h2><p>For these examples, I will use the test API @ <a href="http://jsonplaceholder.typicode.com/" target="_blank" rel="external">http://jsonplaceholder.typicode.com/</a></p>
-<h3 id="GET_Request">GET Request</h3><p>Use <code>http [url]</code> for a basic GET request </p>
+<h2 id="Talk-to-a-REST-API"><a href="#Talk-to-a-REST-API" class="headerlink" title="Talk to a REST API"></a>Talk to a REST API</h2><p>For these examples, I will use the test API @ <a href="http://jsonplaceholder.typicode.com/" target="_blank" rel="external">http://jsonplaceholder.typicode.com/</a></p>
+<h3 id="GET-Request"><a href="#GET-Request" class="headerlink" title="GET Request"></a>GET Request</h3><p>Use <code>http [url]</code> for a basic GET request </p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http jsonplaceholder<span class="selector-class">.typicode</span><span class="selector-class">.com</span>/posts/<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>A nice feature of HTTPie is the possibility to use a <code>name==value</code> syntax for your <strong>querystring parameters</strong>.</p>
 <p>Instead of the less readable:<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>http jsonplaceholder.typicode.com/comments?postId=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
 <p>Use the cleaner:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http jsonplaceholder<span class="selector-class">.typicode</span><span class="selector-class">.com</span>/comments postId==<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="POST_Request">POST Request</h3><p>For other verbs than the default GET, use <code>http [verb] [url] [data]</code>.</p>
+<h3 id="POST-Request"><a href="#POST-Request" class="headerlink" title="POST Request"></a>POST Request</h3><p>For other verbs than the default GET, use <code>http [verb] [url] [data]</code>.</p>
 <p>The <code>[data]</code> part of the command uses a white space separated list of key value pairs as defined below:</p>
 <ul>
 <li><code>name=value</code> for strings or text.</li>
@@ -154,13 +154,13 @@
 <p>With our test API, to create a new post, we need to send a POST request to <a href="http://jsonplaceholder.typicode.com/posts" target="_blank" rel="external">http://jsonplaceholder.typicode.com/posts</a>, with the following JSON data:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    title: <span class="string">'foo'</span>,</span><br><span class="line">    body: <span class="string">'bar'</span>,</span><br><span class="line">    userId: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>The HTTPie request will be<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http POST jsonplaceholder<span class="selector-class">.typicode</span><span class="selector-class">.com</span>/posts title=foo body=bar userId:=<span class="number">1</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="PUT_Request">PUT Request</h3><p>PUT Requests work the same way as POST Request:</p>
+<h3 id="PUT-Request"><a href="#PUT-Request" class="headerlink" title="PUT Request"></a>PUT Request</h3><p>PUT Requests work the same way as POST Request:</p>
 <p>A PUT Request to <a href="http://jsonplaceholder.typicode.com/posts/1" target="_blank" rel="external">http://jsonplaceholder.typicode.com/posts/1</a></p>
 <p>With the data</p>
-<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">id:</span><span class="emphasis"> 1,</span><br><span class="line">    title</span>: <span class="string">'foo'</span>,</span><br><span class="line">    <span class="attribute">body</span>: <span class="string">'bar'</span>,</span><br><span class="line">    <span class="attribute">userId</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attribute">id</span>: <span class="number">1</span>,</span><br><span class="line">    title: <span class="string">'foo'</span>,</span><br><span class="line">    body: <span class="string">'bar'</span>,</span><br><span class="line">    userId: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>becomes</p>
-<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http PUT jsonplaceholder.typicode.com/posts/<span class="number">1</span> <span class="attribute">id:</span><span class="emphasis">=1 title</span>=foo body=bar <span class="attribute">userId</span>:=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<h3 id="DELETE_Request">DELETE Request</h3><p>Our DELETE Request does not have any data sent:</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http PUT jsonplaceholder.typicode.com<span class="regexp">/posts/</span><span class="number">1</span> <span class="string">id:</span>=<span class="number">1</span> title=foo body=bar <span class="string">userId:</span>=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="DELETE-Request"><a href="#DELETE-Request" class="headerlink" title="DELETE Request"></a>DELETE Request</h3><p>Our DELETE Request does not have any data sent:</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ http DELETE jsonplaceholder<span class="selector-class">.typicode</span><span class="selector-class">.com</span>/posts/<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>Check out the <a href="https://github.com/jkbrzt/httpie#examples" target="_blank" rel="external">excellent documentation for more HTTPie examples</a>.</p>
 

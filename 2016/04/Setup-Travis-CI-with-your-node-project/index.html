@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg4">-->
+<!--<body class="bg3">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -131,23 +131,23 @@
       
         <div class="entry">
           <p>Quick beginner’s guide on how to use Travis CI with Github and Node.<br><a id="more"></a></p>
-<h2 id="Project_Setup">Project Setup</h2><p>Let’s setup a Node project with Unit tests:</p>
-<h3 id="NPM">NPM</h3><p>Initialize your project with</p>
+<h2 id="Project-Setup"><a href="#Project-Setup" class="headerlink" title="Project Setup"></a>Project Setup</h2><p>Let’s setup a Node project with Unit tests:</p>
+<h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><p>Initialize your project with</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> init</span><br></pre></td></tr></table></figure>
-<h3 id="Code">Code</h3><p>Here is the code of our app. Put it in an <code>index.js</code> file at the root of the project.</p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p>Here is the code of our app. Put it in an <code>index.js</code> file at the root of the project.</p>
 <figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    add: <span class="function"><span class="keyword">function</span> (<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a + b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="Mocha">Mocha</h3><p>Install Mocha with NPM:</p>
+<h3 id="Mocha"><a href="#Mocha" class="headerlink" title="Mocha"></a>Mocha</h3><p>Install Mocha with NPM:</p>
 <figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install mocha --<span class="built_in">save</span>-<span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
-<h3 id="Unit_Tests">Unit Tests</h3><p>Let’s write basic unit tests for our code. </p>
+<h3 id="Unit-Tests"><a href="#Unit-Tests" class="headerlink" title="Unit Tests"></a>Unit Tests</h3><p>Let’s write basic unit tests for our code. </p>
 <p>Create a <code>test</code> folder and a <code>index-spec.js</code> file inside that folder.</p>
 <figure class="highlight javascript"><figcaption><span>test/index-spec.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> assert = <span class="built_in">require</span>(<span class="string">'assert'</span>);</span><br><span class="line"><span class="keyword">var</span> calculator = <span class="built_in">require</span>(<span class="string">'../index'</span>);</span><br><span class="line"></span><br><span class="line">describe(<span class="string">'calculator'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    describe(<span class="string">'add function'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        it(<span class="string">'adds numbers'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> result = calculator.add(<span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">            assert.equal(result, <span class="number">2</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="Npm_Script">Npm Script</h3><p><strong>By default, Travis will execute <code>npm test</code> when running tests</strong>. Let’s set the <code>test</code> command to <code>mocha</code>:</p>
+<h3 id="Npm-Script"><a href="#Npm-Script" class="headerlink" title="Npm Script"></a>Npm Script</h3><p><strong>By default, Travis will execute <code>npm test</code> when running tests</strong>. Let’s set the <code>test</code> command to <code>mocha</code>:</p>
 <figure class="highlight javascript"><figcaption><span>package.json</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[..]</span><br><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"test"</span>: <span class="string">"mocha"</span></span><br><span class="line">&#125;,</span><br><span class="line">[..]</span><br></pre></td></tr></table></figure>
 <p>You can now run the tests with</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 <p>Make sure the tests are running and passing.</p>
 <p>Check out the <a href="https://github.com/klugjo/travis-node-test" target="_blank" rel="external">full source</a> if you run into some issues.</p>
-<h2 id="Setup_Travis">Setup Travis</h2><h3 id="-travis-yml">.travis.yml</h3><p>Create a <code>.travis.yml</code> file at the root of the project.</p>
+<h2 id="Setup-Travis"><a href="#Setup-Travis" class="headerlink" title="Setup Travis"></a>Setup Travis</h2><h3 id="travis-yml"><a href="#travis-yml" class="headerlink" title=".travis.yml"></a>.travis.yml</h3><p>Create a <code>.travis.yml</code> file at the root of the project.</p>
 <p>This file will hold the travis configuration:</p>
 <figure class="highlight yml"><figcaption><span>.travis.yml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> node_js</span><br><span class="line"><span class="attr">node_js:</span></span><br><span class="line"><span class="bullet">  -</span> <span class="string">"stable"</span></span><br></pre></td></tr></table></figure>
 <ul>
@@ -155,23 +155,23 @@
 <li><code>node_js: - &quot;stable&quot;</code> indicates that the project should be tested against the latest stable version of Node</li>
 </ul>
 <p><a href="https://docs.travis-ci.com/user/languages/javascript-with-nodejs#Choosing-Node-versions-to-test-against" target="_blank" rel="external">You can add more Node versions to the list</a> if needed.</p>
-<h3 id="Integrate_Travis_with_GitHub">Integrate Travis with GitHub</h3><p>At this stage, push all your project code to your GitHub repository. Go to your project Settings then Webhooks and Services. Click on Add Service and choose Travis CI:</p>
+<h3 id="Integrate-Travis-with-GitHub"><a href="#Integrate-Travis-with-GitHub" class="headerlink" title="Integrate Travis with GitHub"></a>Integrate Travis with GitHub</h3><p>At this stage, push all your project code to your GitHub repository. Go to your project Settings then Webhooks and Services. Click on Add Service and choose Travis CI:</p>
 <p><img src="/img/add-travis-to-github.png" alt=""></p>
 <p>If it is the first time you are using Travis, you will be asked to login using your GitHub Credentials.</p>
 <p>Finish by pressing the Add Service button once more.</p>
-<h3 id="Add_the_repository_to_Travis">Add the repository to Travis</h3><p>Go to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> and on the left, click the <code>+</code> to add a new repository.</p>
+<h3 id="Add-the-repository-to-Travis"><a href="#Add-the-repository-to-Travis" class="headerlink" title="Add the repository to Travis"></a>Add the repository to Travis</h3><p>Go to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> and on the left, click the <code>+</code> to add a new repository.</p>
 <p>Sync with Github if needed and turn the current repository on.</p>
 <p><img src="/img/travis-switch-on-repo.png" alt=""></p>
-<h3 id="Start_a_build">Start a build</h3><p>At this stage, a new build will be started each time changes are pushed to the repository.</p>
+<h3 id="Start-a-build"><a href="#Start-a-build" class="headerlink" title="Start a build"></a>Start a build</h3><p>At this stage, a new build will be started each time changes are pushed to the repository.</p>
 <p>If you want to trigger a build manually:</p>
 <ol>
 <li>Go to your repository on github</li>
 <li>Settings &gt; Webhooks &amp; Services &gt; Travis CI</li>
 <li>Click the <strong>Test Service</strong> Button on the top right</li>
 </ol>
-<h3 id="Results">Results</h3><p>Go back to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> to observe the results. If the build failed you will also receive an email.</p>
+<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>Go back to <a href="https://travis-ci.org/" target="_blank" rel="external">travis-ci.org</a> to observe the results. If the build failed you will also receive an email.</p>
 <p><img src="/img/travis-build-passed.png" alt=""></p>
-<h2 id="Note_on_Mocha_and_NPM_Scripts">Note on Mocha and NPM Scripts</h2><p>You may have noticed that we only installed <code>mocha</code> locally, yet our NPM test script is simply <code>mocha</code>.</p>
+<h2 id="Note-on-Mocha-and-NPM-Scripts"><a href="#Note-on-Mocha-and-NPM-Scripts" class="headerlink" title="Note on Mocha and NPM Scripts"></a>Note on Mocha and NPM Scripts</h2><p>You may have noticed that we only installed <code>mocha</code> locally, yet our NPM test script is simply <code>mocha</code>.</p>
 <p>This is because when evaluating <code>scripts</code>, NPM will go an look for <code>.bin/</code> executables.</p>
 <p>In our case, NPM will effectively execute</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ .<span class="regexp">/node_modules/</span>.bin/mocha</span><br></pre></td></tr></table></figure>

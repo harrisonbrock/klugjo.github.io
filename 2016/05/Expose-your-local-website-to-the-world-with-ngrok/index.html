@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg7">-->
+<!--<body class="bg5">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -131,13 +131,13 @@
       
         <div class="entry">
           <p>This article will show you how to tunnel your locally running website out to the world using <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a>.<br><a id="more"></a></p>
-<h2 id="Introduction">Introduction</h2><p>You have been working on a local version of your express app that runs smoothly on your <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>. Your client is asking to see what progress has been made to the website and you don’t necessarily have hours to set it up on a cloud service provider.</p>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>You have been working on a local version of your express app that runs smoothly on your <a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a>. Your client is asking to see what progress has been made to the website and you don’t necessarily have hours to set it up on a cloud service provider.</p>
 <p>This is one of the cases where ngrok comes in handy. It allows you to redirect your local traffic to a public URL accesible anywhere in the world. Let’s get started.</p>
-<h2 id="Installation">Installation</h2><p>I have tried to install <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> with brew, but it didn’t work (I ended up with an old version). <a href="https://ngrok.com/download" target="_blank" rel="external">Download it from the website</a>.<br><br><br>Unzip the package and put it somewhere where ou can easily access it. I am on OS X and I have put it in my <code>Applications</code> folder so I can access it with:</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>I have tried to install <a href="https://ngrok.com/" target="_blank" rel="external">ngrok</a> with brew, but it didn’t work (I ended up with an old version). <a href="https://ngrok.com/download" target="_blank" rel="external">Download it from the website</a>.<br><br><br>Unzip the package and put it somewhere where ou can easily access it. I am on OS X and I have put it in my <code>Applications</code> folder so I can access it with:</p>
 <figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ /Applications/ngrok -<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<h2 id="Sign_up_and_get_a_authentication_token">Sign up and get a authentication token</h2><p><a href="https://dashboard.ngrok.com/user/signup" target="_blank" rel="external">Sign up</a> for a free account with ngrok and get your auth token. Install the token with <code>authtoken</code>:</p>
+<h2 id="Sign-up-and-get-a-authentication-token"><a href="#Sign-up-and-get-a-authentication-token" class="headerlink" title="Sign up and get a authentication token"></a>Sign up and get a authentication token</h2><p><a href="https://dashboard.ngrok.com/user/signup" target="_blank" rel="external">Sign up</a> for a free account with ngrok and get your auth token. Install the token with <code>authtoken</code>:</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>./ngrok authtoken abcde1234</span><br></pre></td></tr></table></figure>
-<h2 id="Create_your_first_tunnel">Create your first tunnel</h2><p>I am testing mine with my hexo blog running on <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> but you can use whichever port you want, even your standard port 80.</p>
+<h2 id="Create-your-first-tunnel"><a href="#Create-your-first-tunnel" class="headerlink" title="Create your first tunnel"></a>Create your first tunnel</h2><p>I am testing mine with my hexo blog running on <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> but you can use whichever port you want, even your standard port 80.</p>
 <p>Run this command (replace the port number with yours)</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>/Applications/ngrok http <span class="number">4000</span></span><br></pre></td></tr></table></figure>
 <p><img src="/img/ngrok-status-online.png" alt=""></p>
