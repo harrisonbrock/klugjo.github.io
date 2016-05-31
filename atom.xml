@@ -202,7 +202,7 @@
     <link href="http://www.codeblocq.com/2016/05/Two-Ways-of-Creating-an-Animation-Loop-in-JavaScript/"/>
     <id>http://www.codeblocq.com/2016/05/Two-Ways-of-Creating-an-Animation-Loop-in-JavaScript/</id>
     <published>2016-05-30T06:45:14.000Z</published>
-    <updated>2016-05-30T07:31:42.000Z</updated>
+    <updated>2016-05-31T07:58:33.000Z</updated>
     
     <content type="html">&lt;p&gt;This article looks at two basic ways to create a basic animation loop.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Example-Details&quot;&gt;&lt;a href=&quot;#Example-Details&quot; class=&quot;headerlink&quot; title=&quot;Example Details&quot;&gt;&lt;/a&gt;Example Details&lt;/h2&gt;&lt;p&gt;The example will look at moving a rectangle on a webpage from left to right.&lt;/p&gt;
