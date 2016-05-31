@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-05-30T07:31:42.000Z</updated>
+  <updated>2016-05-31T07:54:50.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,188 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Understand the SVG viewBox</title>
+    <link href="http://www.codeblocq.com/2016/05/Understand-the-SVG-viewBox/"/>
+    <id>http://www.codeblocq.com/2016/05/Understand-the-SVG-viewBox/</id>
+    <published>2016-05-31T02:48:32.000Z</published>
+    <updated>2016-05-31T07:54:50.000Z</updated>
+    
+    <content type="html">&lt;p&gt;This article is a full explanation on how and when to use the SVG &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;viewBox&lt;/a&gt;.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;The viewBox property is like a camera in a 2D scene&lt;/strong&gt;, it allows you to zoom in and out and focus only on certain part of the svg.&lt;/p&gt;
+&lt;h2 id=&quot;Definition&quot;&gt;&lt;a href=&quot;#Definition&quot; class=&quot;headerlink&quot; title=&quot;Definition&quot;&gt;&lt;/a&gt;Definition&lt;/h2&gt;&lt;p&gt;A viewBox value consists of 4 integers separated by whitespaces:&lt;/p&gt;
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;xPosition yPosition width height&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;xPosition&lt;/code&gt;: The X (horizontal axis) position of the top left corner of the viewBox&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;yPosition&lt;/code&gt;: The Y (vertical axis) position of the top left corner of the viewBox&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;width&lt;/code&gt;: The width of the portion of the entire SVG we want to capture&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;height&lt;/code&gt;: The height of the portion of the entire SVG we want to capture&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Let’s look at examples.&lt;/p&gt;
+&lt;h2 id=&quot;Examples&quot;&gt;&lt;a href=&quot;#Examples&quot; class=&quot;headerlink&quot; title=&quot;Examples&quot;&gt;&lt;/a&gt;Examples&lt;/h2&gt;&lt;h3 id=&quot;Base-example&quot;&gt;&lt;a href=&quot;#Base-example&quot; class=&quot;headerlink&quot; title=&quot;Base example&quot;&gt;&lt;/a&gt;Base example&lt;/h3&gt;&lt;p&gt;This is the base SVG we are going to use throughout this course.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;p&gt;And here is the corresponding SVG code:&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;svg&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns:xlink&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/1999/xlink&quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;border: solid 1px grey&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;defs&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;radialGradient&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;grad&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;offset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;10%&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;stop-color&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;gold&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;stop&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;offset&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;95%&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;stop-color&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;green&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;radialGradient&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;defs&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;circle&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;fill&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;url(#grad)&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cx&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cy&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;r&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;svg&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;We have a 100px by 100px svg canvas which contains a 100px diameter disc centered in (50, 50).&lt;/p&gt;
+&lt;h3 id=&quot;Identity&quot;&gt;&lt;a href=&quot;#Identity&quot; class=&quot;headerlink&quot; title=&quot;Identity&quot;&gt;&lt;/a&gt;Identity&lt;/h3&gt;&lt;p&gt;In our first example, let’s create a viewBox that is placed at (0, 0) (top left corner) and looks at a 100px by 100px portion of our SVG. In other words, it does not do anything since it is the same as the SVG Element size… (for now)&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 100&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;svg&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/2000/svg&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns:xlink&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/1999/xlink&quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attr&quot;&gt;width&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;height&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;100&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 100&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;style&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;border: solid 1px grey&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    [...]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;circle&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;fill&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;url(#grad)&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cx&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;cy&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;r&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50&quot;&lt;/span&gt;/&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;svg&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Zoom-In&quot;&gt;&lt;a href=&quot;#Zoom-In&quot; class=&quot;headerlink&quot; title=&quot;Zoom In&quot;&gt;&lt;/a&gt;Zoom In&lt;/h3&gt;&lt;p&gt;We leave the viewBox at (0, 0) but only look at the first 50px by 50px part of the SVG.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 50 50&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 50 50&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Imagine the camera zooming at the first quarter and displaying that in a 100x100 SVG Element.&lt;/p&gt;
+&lt;h3 id=&quot;Zoom-Out&quot;&gt;&lt;a href=&quot;#Zoom-Out&quot; class=&quot;headerlink&quot; title=&quot;Zoom Out&quot;&gt;&lt;/a&gt;Zoom Out&lt;/h3&gt;&lt;p&gt;We leave the viewBox at (0, 0) but look at a bigger area of the SVG (200px by 200px).&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 200 200&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 200 200&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Translation&quot;&gt;&lt;a href=&quot;#Translation&quot; class=&quot;headerlink&quot; title=&quot;Translation&quot;&gt;&lt;/a&gt;Translation&lt;/h3&gt;&lt;p&gt;This time around, we won’t modify the size of the area we want to look at (100px by 100px) but we will move the top left corner of the viewBox to the middle of the disc which is located at (50, 50).&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;50 50 100 100&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;50 50 100 100&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;It is possible to use negative values for the the X and Y position of the viewBox (it is not possible to use negative values for the width and height though).&lt;/p&gt;
+&lt;h3 id=&quot;Aspect-Ratio&quot;&gt;&lt;a href=&quot;#Aspect-Ratio&quot; class=&quot;headerlink&quot; title=&quot;Aspect Ratio&quot;&gt;&lt;/a&gt;Aspect Ratio&lt;/h3&gt;&lt;p&gt;In all the examples so far, we have kept the aspect ratio. Let’s see what happens if we zoom out more on one dimension.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 200 100&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 200 100&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;So what happened here, is we took a 200px by 100px viewBox (in &lt;span style=&quot;color: red;&quot;&gt;red&lt;/span&gt; below) out of our initial SVG and resized it to fit in our 100px by 100px SVG HTML element:&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;400&quot; height=&quot;100&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;rect width=&quot;200&quot; height=&quot;100&quot; fill=&quot;transparent&quot; stroke=&quot;red&quot;/&gt;&lt;polyline points=&quot;240 25 260 50 240 75&quot; stroke=&quot;black&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;butt&quot; fill=&quot;none&quot; stroke-linejoin=&quot;miter&quot;/&gt;&lt;rect x=&quot;300&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;transparent&quot; stroke=&quot;grey&quot;/&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;325&quot; cy=&quot;50&quot; r=&quot;25&quot;/&gt;&lt;rect x=&quot;300&quot; y=&quot;25&quot; width=&quot;100&quot; height=&quot;50&quot; fill=&quot;transparent&quot; stroke=&quot;red&quot;/&gt;&lt;/svg&gt;
+
+&lt;p&gt;&lt;strong&gt;By default, the aspect ration is preserved&lt;/strong&gt;, which is why the disc and viewBox height is also divided by half. You should also note that when auto resizing to preserve the aspect ratio, the browser centers the figure. &lt;/p&gt;
+&lt;h3 id=&quot;Stretch&quot;&gt;&lt;a href=&quot;#Stretch&quot; class=&quot;headerlink&quot; title=&quot;Stretch&quot;&gt;&lt;/a&gt;Stretch&lt;/h3&gt;&lt;p&gt;The next logical question would be: why if do not want to preserve the aspect ratio but stretch the disc into an ellipse instead.&lt;/p&gt;
+&lt;p&gt;Reusing the example above, this is done by adding an extra element to the &lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt; HTML element: &lt;code&gt;preserveAspectRatio=&amp;quot;none&amp;quot;&lt;/code&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 200 100&quot; preserveaspectratio=&quot;none&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 200 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;none&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The Aspect Ration is not preserved here, as a result, the circle is compressed at the width is reduced by half but the height remains the same.&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;400&quot; height=&quot;100&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;rect width=&quot;200&quot; height=&quot;100&quot; fill=&quot;transparent&quot; stroke=&quot;red&quot;/&gt;&lt;polyline points=&quot;240 25 260 50 240 75&quot; stroke=&quot;black&quot; stroke-width=&quot;5&quot; stroke-linecap=&quot;butt&quot; fill=&quot;none&quot; stroke-linejoin=&quot;miter&quot;/&gt;&lt;rect x=&quot;300&quot; y=&quot;0&quot; width=&quot;100&quot; height=&quot;100&quot; fill=&quot;transparent&quot; stroke=&quot;red&quot;/&gt;&lt;ellipse fill=&quot;url(#grad)&quot; cx=&quot;325&quot; cy=&quot;50&quot; rx=&quot;25&quot; ry=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;h3 id=&quot;“Meet”-Property&quot;&gt;&lt;a href=&quot;#“Meet”-Property&quot; class=&quot;headerlink&quot; title=&quot;“Meet” Property&quot;&gt;&lt;/a&gt;“Meet” Property&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;meet&lt;/code&gt; property is another possible value for &lt;code&gt;preserveAspectRatio&lt;/code&gt;. It indicates that the aspect ration should be preserved and that all edges should remain contained within the viewBox.&lt;/p&gt;
+&lt;p&gt;In the situation where you want to keep the aspect ratio, you might also want to control the position where the final vector is placed (centred by default). This is why the &lt;code&gt;meet&lt;/code&gt; property should be paired with another list of keywords to specify the final placement of the vector.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Property&lt;/th&gt;
+&lt;th style=&quot;text-align:left&quot;&gt;Place &lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMinYMin&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Top Left&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMidYMin&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Center Left&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMaxYMin&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bottom Left&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMinYMid&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Top Center&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMidYMid&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Middle&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMaxYMid&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bottom Center&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMinYMax&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Top Right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMidYMax&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Center Right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;&lt;code&gt;xMaxYMax&lt;/code&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align:left&quot;&gt;Bottom Right&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;With an horizontal viewBox: (xMin, xMid and xMax are equivalent)&lt;/p&gt;
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 200 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMin meet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 200 100&quot; preserveaspectratio=&quot;xMidYMin meet&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 200 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMid meet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 200 100&quot; preserveaspectratio=&quot;xMidYMid meet&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 200 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMax meet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 200 100&quot; preserveaspectratio=&quot;xMidYMax meet&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;p&gt;With a vertical viewBox: (yMin, yMid and yMax are equivalent)&lt;/p&gt;
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 200&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMinYMid meet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 200&quot; preserveaspectratio=&quot;xMinYMid meet&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 200&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMid meet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 200&quot; preserveaspectratio=&quot;xMidYMid meet&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 200&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMid meet&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 200&quot; preserveaspectratio=&quot;xMaxYMid meet&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;h3 id=&quot;“Slice”-Property&quot;&gt;&lt;a href=&quot;#“Slice”-Property&quot; class=&quot;headerlink&quot; title=&quot;“Slice” Property&quot;&gt;&lt;/a&gt;“Slice” Property&lt;/h3&gt;&lt;p&gt;The &lt;code&gt;meet&lt;/code&gt; value can be replace with &lt;code&gt;slice&lt;/code&gt;. Instead of resizing and containing the edges of the viewBox within the SVG element, the vector is sliced.&lt;/p&gt;
+&lt;p&gt;I believe that at this point, the examples should speak for themselves.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Examples:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;With an horizontal viewBox: (yMin, yMid and yMax are equivalent)&lt;/p&gt;
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 166 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMinYMid slice&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 166 100&quot; preserveaspectratio=&quot;xMinYMid slice&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 166 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMid slice&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 166 100&quot; preserveaspectratio=&quot;xMidYMid slice&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 166 100&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMaxYMid slice&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 166 100&quot; preserveaspectratio=&quot;xMaxYMid slice&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;p&gt;With a vertical viewBox: (xMin, xMid and xMax are equivalent)&lt;/p&gt;
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 166&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMin slice&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 166&quot; preserveaspectratio=&quot;xMidYMin slice&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 166&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMid slice&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 166&quot; preserveaspectratio=&quot;xMidYMid slice&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;figure class=&quot;highlight ini&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;viewBox&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;0 0 100 166&quot;&lt;/span&gt; preserveAspectRatio=&lt;span class=&quot;string&quot;&gt;&quot;xMidYMax slice&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot; width=&quot;100&quot; height=&quot;100&quot; viewbox=&quot;0 0 100 166&quot; preserveaspectratio=&quot;xMidYMax slice&quot; style=&quot;border: solid 1px grey&quot;&gt;&lt;defs&gt;&lt;radialgradient id=&quot;grad&quot;&gt;&lt;stop offset=&quot;10%&quot; stop-color=&quot;gold&quot;/&gt;&lt;stop offset=&quot;95%&quot; stop-color=&quot;green&quot;/&gt;&lt;/radialgradient&gt;&lt;/defs&gt;&lt;circle fill=&quot;url(#grad)&quot; cx=&quot;50&quot; cy=&quot;50&quot; r=&quot;50&quot;/&gt;&lt;/svg&gt;
+
+&lt;h2 id=&quot;The-End&quot;&gt;&lt;a href=&quot;#The-End&quot; class=&quot;headerlink&quot; title=&quot;The End&quot;&gt;&lt;/a&gt;The End&lt;/h2&gt;&lt;p&gt;That’s it for my explanations on the SVG viewBox, please let me know if you have any questions, corrections or if I have missed anything.&lt;/p&gt;
+&lt;p&gt;The code for all the examples above is available on &lt;a href=&quot;http://codepen.io/klugjo/pen/gMONQv&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;gMONQv&quot; data-default-tab=&quot;result&quot; data-user=&quot;klugjo&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/klugjo/pen/gMONQv/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SVG viewBox examples&lt;/a&gt; by Jonathan klughertz (&lt;a href=&quot;http://codepen.io/klugjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@klugjo&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article is a full explanation on how and when to use the SVG &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox&quot;&gt;viewBox&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
+    
+      <category term="SVG" scheme="http://www.codeblocq.com/tags/SVG/"/>
+    
+      <category term="viewBox" scheme="http://www.codeblocq.com/tags/viewBox/"/>
+    
+  </entry>
   
   <entry>
     <title>Two Ways of Creating an Animation Loop in JavaScript</title>
@@ -348,38 +530,6 @@
       <category term="Design Pattern" scheme="http://www.codeblocq.com/tags/Design-Pattern/"/>
     
       <category term="Factory" scheme="http://www.codeblocq.com/tags/Factory/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Craft meaningful git commits</title>
-    <link href="http://www.codeblocq.com/2016/05/Craft-meaningful-git-commits/"/>
-    <id>http://www.codeblocq.com/2016/05/Craft-meaningful-git-commits/</id>
-    <published>2016-05-09T05:11:03.000Z</published>
-    <updated>2016-05-09T05:35:48.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Here are a few rules to follow in order to craft meaningful git commits.&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h3 id=&quot;1-Coherence&quot;&gt;&lt;a href=&quot;#1-Coherence&quot; class=&quot;headerlink&quot; title=&quot;1. Coherence&quot;&gt;&lt;/a&gt;1. Coherence&lt;/h3&gt;&lt;p&gt;Each commit should encapsulate all the code modifications necessary to produce a feature or fix a bug. This means that the code fix for a bug for example, should not be spread over multiple commits.&lt;/p&gt;
-&lt;h3 id=&quot;2-Small&quot;&gt;&lt;a href=&quot;#2-Small&quot; class=&quot;headerlink&quot; title=&quot;2. Small&quot;&gt;&lt;/a&gt;2. Small&lt;/h3&gt;&lt;p&gt;Try to keep all your commits as small as possible. If you try to do too much in a single commit, split it up.&lt;/p&gt;
-&lt;p&gt;You could say this contradicts &lt;strong&gt;1.&lt;/strong&gt; but the idea here is to find the right balance. You want to produce commits that encapsulate as small as possible units of business logic.&lt;/p&gt;
-&lt;h3 id=&quot;3-Consistent&quot;&gt;&lt;a href=&quot;#3-Consistent&quot; class=&quot;headerlink&quot; title=&quot;3. Consistent&quot;&gt;&lt;/a&gt;3. Consistent&lt;/h3&gt;&lt;p&gt;Each commit should leave the system in a stable state (no broken build, compilation errors or broken Unit tests).&lt;/p&gt;
-&lt;h3 id=&quot;4-Ordered&quot;&gt;&lt;a href=&quot;#4-Ordered&quot; class=&quot;headerlink&quot; title=&quot;4. Ordered&quot;&gt;&lt;/a&gt;4. Ordered&lt;/h3&gt;&lt;p&gt;Commits should be done in order. When looking at the history, the comments should tell a story. As a result, pay attention to the commits order.&lt;/p&gt;
-&lt;h3 id=&quot;5-Documented&quot;&gt;&lt;a href=&quot;#5-Documented&quot; class=&quot;headerlink&quot; title=&quot;5. Documented&quot;&gt;&lt;/a&gt;5. Documented&lt;/h3&gt;&lt;p&gt;The message should make sense and be detailed enough.&lt;br&gt;Write it in imperative form (fix bug and not fixes bug or fixed bug).&lt;br&gt;Provide a link to a user story or bug when possible.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Here are a few rules to follow in order to craft meaningful git commits.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
-    
-      <category term="Software Practices" scheme="http://www.codeblocq.com/tags/Software-Practices/"/>
-    
-      <category term="ACID" scheme="http://www.codeblocq.com/tags/ACID/"/>
     
   </entry>
   
