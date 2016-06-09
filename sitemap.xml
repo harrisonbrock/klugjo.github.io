@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codeblocq.com/2016/06/Build-your-First-Electron-App/</loc>
+    
+    <lastmod>2016-06-09T06:44:41.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/06/Speed-up-Web-Development-with-Live-Edit-in-Webstorm/</loc>
     
     <lastmod>2016-06-09T02:27:31.000Z</lastmod>
@@ -436,14 +443,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Easy-dynamic-classes-with-React/</loc>
+    <loc>http://www.codeblocq.com/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -451,6 +451,13 @@
   
   <url>
     <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -471,77 +478,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Loops-and-callbacks-in-React/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/01/Search-through-history-in-OSX-terminal/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -555,7 +492,63 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Easy-dynamic-classes-with-React/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -563,6 +556,20 @@
   
   <url>
     <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Loops-and-callbacks-in-React/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -583,14 +590,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -604,7 +611,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     

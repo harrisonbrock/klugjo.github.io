@@ -5,29 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-  <title>Untrack files already added to git repository based on .gitignore | CodeBlocQ</title>
+  <title>Electron | CodeBlocQ</title>
 
   <meta name="author" content="Jonathan Klughertz">
 
-  <meta name="description" content="Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be prese">
+  <meta name="description" content="">
 
   
 
   <!-- Twitter Card data -->
-  <meta name="twitter:card" content="Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be prese">
+  <meta name="twitter:card" content="Electron">
   <meta name="twitter:site" content="@klug_jo">
-  <meta name="twitter:title" content="Untrack files already added to git repository based on .gitignore">
-  <meta name="twitter:description" content="Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be prese">
+  <meta name="twitter:title" content="Electron">
+  <meta name="twitter:description" content="Electron">
   <meta name="twitter:creator" content="@klug_jo">
   <!-- Twitter Summary card images must be at least 120x120px -->
   <meta name="twitter:image" content="http://www.codeblocq.com/img/general/codeblocq-twitter-cover.png">
 
   <!-- Open Graph data -->
-  <meta property="og:title" content="Untrack files already added to git repository based on .gitignore" />
+  <meta property="og:title" content="Electron" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/" />
+  <meta property="og:url" content="http://www.codeblocq.com/tags/Electron/index.html" />
   <meta property="og:image" content="http://www.codeblocq.com/img/general/codeblocq-og-cover.png" />
-  <meta property="og:description" content="Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be prese" />
+  <meta property="og:description" content="Electron" />
   <meta property="og:site_name" content="CodeBlocQ" />
 
   <meta property="fb:app_id" content="607597709387231" />
@@ -90,7 +90,7 @@
 
 
 <body >
-<!--<body class="bg3">-->
+<!--<body class="bg9">-->
   <header id="header"><div class="inner-header inner">
   <div class="alignleft header-title">
     <h1><a href="/">CodeBlocQ</a></h1>
@@ -108,75 +108,35 @@
 </div></header>
   <div id="content" class="inner">
     <div id="main-col" ><div id="wrapper">
-<article class="post detail-view" >
+<div class="archive-title tag">Electron</div>
+
+<div class="archive">
   
-  <div class="post-content">
-    <header>
-      <div class="content-container">
-        
+    <article class="post list-view" onclick="window.location.href = '/2016/06/Build-your-First-Electron-App/'">
+      <div class="post-content">
+        <header>
+          <div class="content-container">
+            
   
-    <h1 class="title">Untrack files already added to git repository based on .gitignore</h1>
+    <h1 class="title"><a href="/2016/06/Build-your-First-Electron-App/">Build your First Electron App</a></h1>
   
 
-        <div class="subtitle" datetime="2016-01-20T08:16:34.000Z">
-          2016-01-20
-          
-        </div>
+            <div class="subtitle" datetime="2016-06-09T03:11:53.000Z">
+              2016-06-09
+              
+  
+  <a class="tag-title" href="/tags/Node/">#Node</a> <a class="tag-title" href="/tags/JavaScript/">#JavaScript</a> <a class="tag-title" href="/tags/Electron/">#Electron</a>
+
+            </div>
+          </div>
+          <div class="icon-container">
+            <span class="icon devicons-clock"></span>
+          </div>
+        </header>
       </div>
-      <div class="icon-container">
-        <span class="icon devicons-git"></span>
-      </div>
-    </header>
-
-      
-        <div class="entry">
-          <p>Let’s say you have already added/committed some files to your git repository and you then add them to your .gitignore; these files will still be present in your repository index. This article we will see how to get rid of them.</p>
-<a id="more"></a> 
-<h2 id="Step-1-Commit-all-your-changes"><a href="#Step-1-Commit-all-your-changes" class="headerlink" title="Step 1: Commit all your changes"></a>Step 1: Commit all your changes</h2><p>Before proceeding, make sure all your changes are committed, including your .gitignore file.</p>
-<h2 id="Step-2-Remove-everything-from-the-repository"><a href="#Step-2-Remove-everything-from-the-repository" class="headerlink" title="Step 2: Remove everything from the repository"></a>Step 2: Remove everything from the repository</h2><p>To clear your repo, use:</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r <span class="comment">--cached .</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><a href="https://git-scm.com/docs/git-rm" target="_blank" rel="external">rm</a> is the remove command</li>
-<li><strong>-r</strong> will allow recursive removal</li>
-<li><strong>–cached</strong> will only remove files from the index. Your files will still be there.</li>
-</ul>
-<p>The <code>rm</code> command can be unforgiving. If you wish to try what it does beforehand, add the <code>-n</code> or <code>--dry-run</code> flag to test things out.</p>
-<h2 id="Step-3-Re-add-everything"><a href="#Step-3-Re-add-everything" class="headerlink" title="Step 3: Re add everything"></a>Step 3: Re add everything</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">add </span>.</span><br></pre></td></tr></table></figure>
-<h2 id="Step-4-Commit"><a href="#Step-4-Commit" class="headerlink" title="Step 4: Commit"></a>Step 4: Commit</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> commit -m <span class="string">".gitignore fix"</span></span><br></pre></td></tr></table></figure>
-<p>Your repository is clean :)</p>
-<p>Push the changes to your remote to see the changes effective there as well.</p>
-
-        </div>
-      
-    
-      <footer>
-        
-          
-          
+    </article>
   
-  <div class="tags">
-    <a href="/tags/Git/">Git</a>, <a href="/tags/gitignore/">gitignore</a>
-  </div>
-
-        
-        <div class="clearfix"></div>
-      </footer>
-    
-  </div>
-</article>
-
-
-<section id="comment">
-  <h1 class="title">Comments</h1>
-
-  
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-  
-</section>
-
-</div></div>
+</div></div></div>
     <div class="clearfix"></div>
   </div>
   <footer id="footer"><div class="inner-footer inner">
@@ -199,7 +159,7 @@ var disqus_shortname = 'klugjo';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
