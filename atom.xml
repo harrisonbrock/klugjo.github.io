@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-06-06T02:04:55.000Z</updated>
+  <updated>2016-06-09T02:27:31.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,66 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Speed up Web Development with Live Edit in Webstorm</title>
+    <link href="http://www.codeblocq.com/2016/06/Speed-up-Web-Development-with-Live-Edit-in-Webstorm/"/>
+    <id>http://www.codeblocq.com/2016/06/Speed-up-Web-Development-with-Live-Edit-in-Webstorm/</id>
+    <published>2016-06-07T01:29:58.000Z</published>
+    <updated>2016-06-09T02:27:31.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Easy steps to setting up &lt;a href=&quot;https://www.jetbrains.com/help/webstorm/2016.1/live-edit.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Live Edit&lt;/a&gt; (Hot Reload) in Webstorm and making your web development experience much smoother.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-Create-a-new-project&quot;&gt;&lt;a href=&quot;#1-Create-a-new-project&quot; class=&quot;headerlink&quot; title=&quot;1. Create a new project&quot;&gt;&lt;/a&gt;1. Create a new project&lt;/h2&gt;&lt;p&gt;Create a new project in Webstorm and add an &lt;code&gt;index.html&lt;/code&gt; file we will use for our tests.&lt;/p&gt;
+&lt;p&gt;Insert some HTML code&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;!doctype html&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;lang&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;en&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello From Webstorm&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;title&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;head&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;Live Reload Goodness&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;h1&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;html&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;and launch the page in your browser with the Chrome button on the top right of the html editing area in Webstorm.&lt;/p&gt;
+&lt;h2 id=&quot;2-Live-Edit-Setup&quot;&gt;&lt;a href=&quot;#2-Live-Edit-Setup&quot; class=&quot;headerlink&quot; title=&quot;2. Live Edit Setup&quot;&gt;&lt;/a&gt;2. Live Edit Setup&lt;/h2&gt;&lt;p&gt;Good start ! Now let’s setup &lt;strong&gt;Live Edit&lt;/strong&gt; in Webstorm so that anytime a change is made in Webstorm, the changes are automatically picked up by the browser.&lt;/p&gt;
+&lt;h3 id=&quot;a-Create-a-debug-configuration&quot;&gt;&lt;a href=&quot;#a-Create-a-debug-configuration&quot; class=&quot;headerlink&quot; title=&quot;a. Create a debug configuration&quot;&gt;&lt;/a&gt;a. Create a debug configuration&lt;/h3&gt;&lt;p&gt;In the top right, click Edit Configurations to add a new configuration:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/Webstorm-edit-configurations.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;In the next screen:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/webstorm-add-live-edit-config.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Click the &lt;code&gt;+&lt;/code&gt; button to add a new Config and choose ‘JavaScript Debug’ &lt;strong&gt;[1]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Choose a name for your configuration, for examples &lt;em&gt;Live Edit&lt;/em&gt; &lt;strong&gt;[2]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click on the &lt;code&gt;...&lt;/code&gt; next to URL and select your &lt;code&gt;index.html&lt;/code&gt; file &lt;strong&gt;[3]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Select &lt;em&gt;Chrome&lt;/em&gt; in the Browser Dropdown &lt;strong&gt;[4]&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click Apply &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;b-Launch-the-debug-session&quot;&gt;&lt;a href=&quot;#b-Launch-the-debug-session&quot; class=&quot;headerlink&quot; title=&quot;b. Launch the debug session&quot;&gt;&lt;/a&gt;b. Launch the debug session&lt;/h3&gt;&lt;p&gt;Click on little Bug icon next to your configuration on the top right, next to your configuration name.&lt;/p&gt;
+&lt;p&gt;If this your first time using Live Edit, Webstorm will ask you to install a Chrome Plugin&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/install-live-edit-plugin-chrome.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Click the link a proceed to install that plugin in Chrome.&lt;/p&gt;
+&lt;p&gt;Restart the debugging session from Webstorm and you are ready to go. Try to select elements in the .html file and see how any change has an immediate effect in Chrome.&lt;/p&gt;
+&lt;h3 id=&quot;c-Additional-Configuration&quot;&gt;&lt;a href=&quot;#c-Additional-Configuration&quot; class=&quot;headerlink&quot; title=&quot;c. Additional Configuration&quot;&gt;&lt;/a&gt;c. Additional Configuration&lt;/h3&gt;&lt;p&gt;At this point, everything is working great but you might find that sometimes some changes are not taken into account.&lt;/p&gt;
+&lt;p&gt;Go to Webstorm Settings and the Live Edit Section and use the following values:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/webstorm-live-edit-settings.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Update: auto - 15ms&lt;/li&gt;
+&lt;li&gt;Check the ‘Restart if hotswap fails’ box.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Enjoy :)&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Easy steps to setting up &lt;a href=&quot;https://www.jetbrains.com/help/webstorm/2016.1/live-edit.html&quot;&gt;Live Edit&lt;/a&gt; (Hot Reload) in Webstorm and making your web development experience much smoother.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
+    
+      <category term="CSS3" scheme="http://www.codeblocq.com/tags/CSS3/"/>
+    
+      <category term="Tools" scheme="http://www.codeblocq.com/tags/Tools/"/>
+    
+      <category term="Web" scheme="http://www.codeblocq.com/tags/Web/"/>
+    
+      <category term="Webstorm" scheme="http://www.codeblocq.com/tags/Webstorm/"/>
+    
+      <category term="Live Edit" scheme="http://www.codeblocq.com/tags/Live-Edit/"/>
+    
+  </entry>
   
   <entry>
     <title>Create a loading animation with SVG and CSS3</title>
@@ -95,9 +155,9 @@
     </summary>
     
     
-      <category term="SVG" scheme="http://www.codeblocq.com/tags/SVG/"/>
-    
       <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
+    
+      <category term="SVG" scheme="http://www.codeblocq.com/tags/SVG/"/>
     
       <category term="Animation" scheme="http://www.codeblocq.com/tags/Animation/"/>
     
@@ -281,9 +341,9 @@
     </summary>
     
     
-      <category term="SVG" scheme="http://www.codeblocq.com/tags/SVG/"/>
-    
       <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
+    
+      <category term="SVG" scheme="http://www.codeblocq.com/tags/SVG/"/>
     
       <category term="viewBox" scheme="http://www.codeblocq.com/tags/viewBox/"/>
     
@@ -549,44 +609,6 @@
       <category term="PDF" scheme="http://www.codeblocq.com/tags/PDF/"/>
     
       <category term="PDFKit" scheme="http://www.codeblocq.com/tags/PDFKit/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SHA-256 in Node</title>
-    <link href="http://www.codeblocq.com/2016/05/SHA-256-in-Node/"/>
-    <id>http://www.codeblocq.com/2016/05/SHA-256-in-Node/</id>
-    <published>2016-05-14T07:25:59.000Z</published>
-    <updated>2016-05-14T08:03:09.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Useful piece of code to produce a 256-bit hash value with SHA-256:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;There a few JavaScript implementation of the SHA-256 hash function out there. But the easiest is usually to use Node’s built in &lt;a href=&quot;https://nodejs.org/api/crypto.html#crypto_class_hash&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;cryptography&lt;/a&gt; module.&lt;/p&gt;
-&lt;h2 id=&quot;The-Code&quot;&gt;&lt;a href=&quot;#The-Code&quot; class=&quot;headerlink&quot; title=&quot;The Code&quot;&gt;&lt;/a&gt;The Code&lt;/h2&gt;&lt;p&gt;If you just need the code, here it is:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; crypto = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;crypto&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hash = crypto.createHash(&lt;span class=&quot;string&quot;&gt;&#39;sha256&#39;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   .update(inputString)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   .digest(&lt;span class=&quot;string&quot;&gt;&#39;hex&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Details&quot;&gt;&lt;a href=&quot;#Details&quot; class=&quot;headerlink&quot; title=&quot;Details&quot;&gt;&lt;/a&gt;Details&lt;/h2&gt;&lt;h3 id=&quot;Generate-the-hash&quot;&gt;&lt;a href=&quot;#Generate-the-hash&quot; class=&quot;headerlink&quot; title=&quot;Generate the hash&quot;&gt;&lt;/a&gt;Generate the hash&lt;/h3&gt;&lt;p&gt;Import the &lt;code&gt;crypto&lt;/code&gt; module and use the &lt;code&gt;createHash&lt;/code&gt; function to generate the hash.&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; crypto = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;crypto&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hash = crypto.createHash(&lt;span class=&quot;string&quot;&gt;&#39;sha256&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Hash-your-value&quot;&gt;&lt;a href=&quot;#Hash-your-value&quot; class=&quot;headerlink&quot; title=&quot;Hash your value&quot;&gt;&lt;/a&gt;Hash your value&lt;/h3&gt;&lt;p&gt;Use the &lt;code&gt;update&lt;/code&gt; function on the &lt;code&gt;hash&lt;/code&gt; object instance to process your input.&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;hash.update(&lt;span class=&quot;string&quot;&gt;&#39;CodeBlocQ&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Output&quot;&gt;&lt;a href=&quot;#Output&quot; class=&quot;headerlink&quot; title=&quot;Output&quot;&gt;&lt;/a&gt;Output&lt;/h3&gt;&lt;p&gt;Use the &lt;code&gt;digest&lt;/code&gt; function on the &lt;code&gt;hash&lt;/code&gt; to ouput the value. You can pass ‘hex’, ‘binary’ or ‘base64’ to get the result in the desired encoding.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Hex&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; hex = hash.digest(&lt;span class=&quot;string&quot;&gt;&#39;hex&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(hex); &lt;span class=&quot;comment&quot;&gt;// c5d44424ef47ab9e1806d9c1a3045942cfd06e0ec5e798449c02e44e9ae38292&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Binary&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; bin = hash.digest(&lt;span class=&quot;string&quot;&gt;&#39;binary&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(bin); &lt;span class=&quot;comment&quot;&gt;// ÅÔD$ïG«ÙÁ£YBÏÐnÅçDäNã&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Base64&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; base64 = hash.digest(&lt;span class=&quot;string&quot;&gt;&#39;base64&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(base64); &lt;span class=&quot;comment&quot;&gt;// xdREJO9Hq54YBtnBowRZQs/Qbg7F55hEnALkTprjgpI=&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Useful piece of code to produce a 256-bit hash value with SHA-256:&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="Cryptography" scheme="http://www.codeblocq.com/tags/Cryptography/"/>
-    
-      <category term="SHA256" scheme="http://www.codeblocq.com/tags/SHA256/"/>
     
   </entry>
   
