@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-06-09T06:44:41.000Z</updated>
+  <updated>2016-06-11T03:19:49.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -16,18 +16,55 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Same height columns with Flexbox</title>
+    <link href="http://www.codeblocq.com/2016/06/Same-height-columns-with-flexbox/"/>
+    <id>http://www.codeblocq.com/2016/06/Same-height-columns-with-flexbox/</id>
+    <published>2016-06-11T03:04:40.000Z</published>
+    <updated>2016-06-11T03:19:49.000Z</updated>
+    
+    <content type="html">&lt;p&gt;How to create columns with an equal height instead of having the height dictated by the column content.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;The-problem&quot;&gt;&lt;a href=&quot;#The-problem&quot; class=&quot;headerlink&quot; title=&quot;The problem&quot;&gt;&lt;/a&gt;The problem&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;BzjMaV&quot; data-default-tab=&quot;result&quot; data-user=&quot;klugjo&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/klugjo/pen/BzjMaV/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Height column issue&lt;/a&gt; by Jonathan klughertz (&lt;a href=&quot;http://codepen.io/klugjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@klugjo&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;We want all columns to be of the same height.&lt;/p&gt;
+&lt;p&gt;In this example, we have 3 divs with &lt;code&gt;float: left;&lt;/code&gt; and a fixed width.&lt;/p&gt;
+&lt;h2 id=&quot;Flexbox-to-the-rescue&quot;&gt;&lt;a href=&quot;#Flexbox-to-the-rescue&quot; class=&quot;headerlink&quot; title=&quot;Flexbox to the rescue&quot;&gt;&lt;/a&gt;Flexbox to the rescue&lt;/h2&gt;&lt;p&gt;Simply remove the &lt;code&gt;float: left;&lt;/code&gt; and put all the divs inside another div with &lt;code&gt;display: flex;&lt;/code&gt;. It is as simple as that.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;qNbgEq&quot; data-default-tab=&quot;result&quot; data-user=&quot;klugjo&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/klugjo/pen/qNbgEq/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Height Column Fix&lt;/a&gt; by Jonathan klughertz (&lt;a href=&quot;http://codepen.io/klugjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@klugjo&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
+&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;How to create columns with an equal height instead of having the height dictated by the column content.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
+    
+      <category term="CSS3" scheme="http://www.codeblocq.com/tags/CSS3/"/>
+    
+      <category term="Web" scheme="http://www.codeblocq.com/tags/Web/"/>
+    
+      <category term="Layout" scheme="http://www.codeblocq.com/tags/Layout/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Build your First Electron App</title>
     <link href="http://www.codeblocq.com/2016/06/Build-your-First-Electron-App/"/>
     <id>http://www.codeblocq.com/2016/06/Build-your-First-Electron-App/</id>
     <published>2016-06-09T03:11:53.000Z</published>
-    <updated>2016-06-09T06:44:41.000Z</updated>
+    <updated>2016-06-09T06:47:49.000Z</updated>
     
     <content type="html">&lt;p&gt;Getting started tutorial for &lt;a href=&quot;http://electron.atom.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Electron&lt;/a&gt;. In this tutorial you will learn how to:&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Install Electron&lt;/li&gt;
 &lt;li&gt;Configure the app window&lt;/li&gt;
 &lt;li&gt;Pass arguments from the command line to the UI&lt;/li&gt;
-&lt;li&gt;Use Node libraries in the app&lt;/li&gt;
+&lt;li&gt;Use Node libraries in an electron app&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You should have some basic understanding of Node and ES6 in order to understand this tutorial.&lt;/p&gt;
 &lt;p&gt;If you want to dive straight into the code, the github repo is &lt;a href=&quot;https://github.com/klugjo/electron-timer-app&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
@@ -638,39 +675,6 @@
       <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
     
       <category term="Quotes" scheme="http://www.codeblocq.com/tags/Quotes/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Get the Current Wifi Password with Node</title>
-    <link href="http://www.codeblocq.com/2016/05/Get-the-Current-Wifi-Password-with-Node/"/>
-    <id>http://www.codeblocq.com/2016/05/Get-the-Current-Wifi-Password-with-Node/</id>
-    <published>2016-05-18T01:44:55.000Z</published>
-    <updated>2016-05-18T03:14:28.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Here is a library to retrieve some of your known wifi passwords in Node.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;Install the &lt;a href=&quot;https://github.com/kevva/wifi-password&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wifi-password&lt;/a&gt; library like so:&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm &lt;span class=&quot;keyword&quot;&gt;install&lt;/span&gt; wifi-&lt;span class=&quot;keyword&quot;&gt;password&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;--save&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h2&gt;&lt;h3 id=&quot;Get-your-current-Wifi-password&quot;&gt;&lt;a href=&quot;#Get-your-current-Wifi-password&quot; class=&quot;headerlink&quot; title=&quot;Get your current Wifi password&quot;&gt;&lt;/a&gt;Get your current Wifi password&lt;/h3&gt;&lt;p&gt;Pretty straightforward:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; wifiPassword = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;wifi-password&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wifiPassword().then(password =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(password);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Get-another-known-Wifi-password&quot;&gt;&lt;a href=&quot;#Get-another-known-Wifi-password&quot; class=&quot;headerlink&quot; title=&quot;Get another known Wifi password&quot;&gt;&lt;/a&gt;Get another known Wifi password&lt;/h3&gt;&lt;p&gt;Simply pass the Wifi SSID as a parameter:&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; wifiPassword = &lt;span class=&quot;built_in&quot;&gt;require&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;wifi-password&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;wifiPassword(&lt;span class=&quot;string&quot;&gt;&#39;Wireless@CodeBlocQ&#39;&lt;/span&gt;).then(password =&amp;gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(password);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Here is a library to retrieve some of your known wifi passwords in Node.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="Wifi" scheme="http://www.codeblocq.com/tags/Wifi/"/>
-    
-      <category term="Password" scheme="http://www.codeblocq.com/tags/Password/"/>
     
   </entry>
   
