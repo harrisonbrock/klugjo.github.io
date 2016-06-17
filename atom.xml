@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-06-13T08:31:58.000Z</updated>
+  <updated>2016-06-17T08:09:21.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,73 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Boostrap 4 Stylus Media Queries</title>
+    <link href="http://www.codeblocq.com/2016/06/Boostrap-4-Stylus-Media-Queries/"/>
+    <id>http://www.codeblocq.com/2016/06/Boostrap-4-Stylus-Media-Queries/</id>
+    <published>2016-06-17T02:25:46.000Z</published>
+    <updated>2016-06-17T08:09:21.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Bootstrap 4 media queries if you want to reuse them in your stylus stylesheet.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Explanation&quot;&gt;&lt;a href=&quot;#Explanation&quot; class=&quot;headerlink&quot; title=&quot;Explanation&quot;&gt;&lt;/a&gt;Explanation&lt;/h3&gt;&lt;p&gt;Here is a visual representation of &lt;a href=&quot;http://v4-alpha.getbootstrap.com/layout/overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bootstrap 4 responsive breakpoints&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div style=&quot;width: 100%;&quot;&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 18%; text-align: right;height: 40px&quot;&gt;34em&lt;/div&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 16%; text-align: right;height: 40px&quot;&gt;48em&lt;/div&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 16%; text-align: right;height: 40px&quot;&gt;62em&lt;/div&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 16%; text-align: right;height: 40px&quot;&gt;75em&lt;/div&gt; &lt;/div&gt; &lt;div style=&quot;width: 100%;&quot;&gt; &lt;div style=&quot;width: 15.5%; background: #A65C3F; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;xs&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #89A58E; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;sm&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #CE8C4E; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;md&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #93C2BD; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;lg&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #3F3E1E; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;xl&lt;/div&gt; &lt;/div&gt;
+
+&lt;h3 id=&quot;Declaration&quot;&gt;&lt;a href=&quot;#Declaration&quot; class=&quot;headerlink&quot; title=&quot;Declaration&quot;&gt;&lt;/a&gt;Declaration&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$xs-and-smaller = &#39;(max-width: 33.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sm-and-smaller = &#39;(max-width: 47.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$md-and-smaller = &#39;(max-width: 61.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$lg-and-smaller = &#39;(max-width: 74.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sm-and-larger = &#39;(max-width: 34em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$md-and-larger = &#39;(max-width: 48em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$lg-and-larger = &#39;(max-width: 62em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$xl-and-larger = &#39;(max-width: 75em)&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h3&gt;&lt;p&gt;You can then use these variables like so:&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.yourClass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;width&lt;/span&gt; 50%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; $xs-and-smaller&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        width &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Or&lt;/p&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.yourClass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;width&lt;/span&gt; 100%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; $sm-and-larger&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        width &lt;span class=&quot;number&quot;&gt;50%&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;There are many other ways to do this, but that’s the one that feels the most comfortable and readable to me. Would be happy to read yours.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Bootstrap 4 media queries if you want to reuse them in your stylus stylesheet.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="CSS" scheme="http://www.codeblocq.com/tags/CSS/"/>
+    
+      <category term="Stylus" scheme="http://www.codeblocq.com/tags/Stylus/"/>
+    
+      <category term="Bootstrap" scheme="http://www.codeblocq.com/tags/Bootstrap/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DES encryption in Node and JavaScript</title>
+    <link href="http://www.codeblocq.com/2016/06/DES-encryption-in-Node-and-JavaScript/"/>
+    <id>http://www.codeblocq.com/2016/06/DES-encryption-in-Node-and-JavaScript/</id>
+    <published>2016-06-15T02:41:03.000Z</published>
+    <updated>2016-06-15T04:21:50.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Reusable pieces of code and docs pointers to get started with DES encryption in node.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;DES-ECB&quot;&gt;&lt;a href=&quot;#DES-ECB&quot; class=&quot;headerlink&quot; title=&quot;DES-ECB&quot;&gt;&lt;/a&gt;DES-ECB&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;encodeDesECB&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(textToEncode, keyString)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; key = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Buffer(keyString.substring(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;), &lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; cipher = crypto.createCipheriv(&lt;span class=&quot;string&quot;&gt;&#39;des-ecb&#39;&lt;/span&gt;, key, &lt;span class=&quot;string&quot;&gt;&#39;&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = cipher.update(textToEncode, &lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;base64&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  c += cipher.&lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;base64&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; c;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The key needs to be 8-bit, you can change the code to use &lt;code&gt;&amp;#39;ascii&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;utf8&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;utf16le&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;ucs2&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;base64&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;binary&amp;#39;&lt;/code&gt; or &lt;code&gt;&amp;#39;hex&amp;#39;&lt;/code&gt;. More info &lt;a href=&quot;https://nodejs.org/api/buffer.html#buffer_buffers_and_character_encodings&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For the input and output encodings in &lt;code&gt;cipher.update(data[, input_encoding][, output_encoding])&lt;/code&gt;, check the documentation &lt;a href=&quot;https://nodejs.org/api/crypto.html#crypto_cipher_update_data_input_encoding_output_encoding&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For the final encoding in &lt;code&gt;cipher.final([output_encoding])&lt;/code&gt;, check the documentation &lt;a href=&quot;https://nodejs.org/api/crypto.html#crypto_cipher_final_output_encoding&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;DES-CBC&quot;&gt;&lt;a href=&quot;#DES-CBC&quot; class=&quot;headerlink&quot; title=&quot;DES-CBC&quot;&gt;&lt;/a&gt;DES-CBC&lt;/h3&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;encodeDesCBC&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(textToEncode, keyString, ivString)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; key = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Buffer(keyString.substring(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;), &lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; iv = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; Buffer(ivString.substring(&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;8&lt;/span&gt;), &lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; cipher = crypto.createCipheriv(&lt;span class=&quot;string&quot;&gt;&#39;des-cbc&#39;&lt;/span&gt;, key, iv);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; c = cipher.update(textToEncode, &lt;span class=&quot;string&quot;&gt;&#39;utf8&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;base64&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  c += cipher.&lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt;(&lt;span class=&quot;string&quot;&gt;&#39;base64&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; c;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;The iv (Initialization Vector) needs to be 8-bit, same as the key.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Reusable pieces of code and docs pointers to get started with DES encryption in node.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Node" scheme="http://www.codeblocq.com/tags/Node/"/>
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="Cryptography" scheme="http://www.codeblocq.com/tags/Cryptography/"/>
+    
+      <category term="DES" scheme="http://www.codeblocq.com/tags/DES/"/>
+    
+  </entry>
   
   <entry>
     <title>Differentiate background and foreground div clicks</title>
@@ -46,9 +113,9 @@
     
       <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
     
-      <category term="HTML" scheme="http://www.codeblocq.com/tags/HTML/"/>
-    
       <category term="div" scheme="http://www.codeblocq.com/tags/div/"/>
+    
+      <category term="HTML" scheme="http://www.codeblocq.com/tags/HTML/"/>
     
       <category term="jQuery" scheme="http://www.codeblocq.com/tags/jQuery/"/>
     
@@ -616,75 +683,6 @@
       <category term="Templating" scheme="http://www.codeblocq.com/tags/Templating/"/>
     
       <category term="Handlebars" scheme="http://www.codeblocq.com/tags/Handlebars/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Blur Image on Hover with CSS</title>
-    <link href="http://www.codeblocq.com/2016/05/Blur-Image-on-Hover-with-CSS/"/>
-    <id>http://www.codeblocq.com/2016/05/Blur-Image-on-Hover-with-CSS/</id>
-    <published>2016-05-25T08:02:47.000Z</published>
-    <updated>2016-05-25T08:18:19.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Quick little trick to blur an image on mouse hover.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Demo&quot;&gt;&lt;a href=&quot;#Demo&quot; class=&quot;headerlink&quot; title=&quot;Demo&quot;&gt;&lt;/a&gt;Demo&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;light&quot; data-slug-hash=&quot;vKBGBY&quot; data-default-tab=&quot;result&quot; data-user=&quot;klugjo&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/klugjo/pen/vKBGBY/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hover Image Blur&lt;/a&gt; by Jonathan klughertz (&lt;a href=&quot;http://codepen.io/klugjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@klugjo&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
-&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;Gist&quot;&gt;&lt;a href=&quot;#Gist&quot; class=&quot;headerlink&quot; title=&quot;Gist&quot;&gt;&lt;/a&gt;Gist&lt;/h2&gt;&lt;p&gt;To add blur to an image on mouse, use the following CSS properties:&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;webkit-filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;blur&lt;/span&gt;(4px); &lt;span class=&quot;comment&quot;&gt;/* Chrome, Safari, Opera */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;blur&lt;/span&gt;(4px);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;The &lt;code&gt;webkit-filter&lt;/code&gt; and &lt;code&gt;filter&lt;/code&gt; CSS properties can be used with the blur &lt;a href=&quot;https://developer.mozilla.org/en/docs/Web/CSS/filter&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;filter function&lt;/a&gt;&lt;br&gt;The &lt;code&gt;:hover&lt;/code&gt; pseudo class is used to apply the filter on mouse over&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Quick little trick to blur an image on mouse hover.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="http://www.codeblocq.com/tags/CSS/"/>
-    
-      <category term="Hover" scheme="http://www.codeblocq.com/tags/Hover/"/>
-    
-      <category term="Blur" scheme="http://www.codeblocq.com/tags/Blur/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Expose your local website to the world with ngrok</title>
-    <link href="http://www.codeblocq.com/2016/05/Expose-your-local-website-to-the-world-with-ngrok/"/>
-    <id>http://www.codeblocq.com/2016/05/Expose-your-local-website-to-the-world-with-ngrok/</id>
-    <published>2016-05-24T08:13:18.000Z</published>
-    <updated>2016-05-24T08:52:40.000Z</updated>
-    
-    <content type="html">&lt;p&gt;This article will show you how to tunnel your locally running website out to the world using &lt;a href=&quot;https://ngrok.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ngrok&lt;/a&gt;.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Introduction&quot;&gt;&lt;a href=&quot;#Introduction&quot; class=&quot;headerlink&quot; title=&quot;Introduction&quot;&gt;&lt;/a&gt;Introduction&lt;/h2&gt;&lt;p&gt;You have been working on a local version of your express app that runs smoothly on your &lt;a href=&quot;http://localhost:8080&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:8080&lt;/a&gt;. Your client is asking to see what progress has been made to the website and you don’t necessarily have hours to set it up on a cloud service provider.&lt;/p&gt;
-&lt;p&gt;This is one of the cases where ngrok comes in handy. It allows you to redirect your local traffic to a public URL accesible anywhere in the world. Let’s get started.&lt;/p&gt;
-&lt;h2 id=&quot;Installation&quot;&gt;&lt;a href=&quot;#Installation&quot; class=&quot;headerlink&quot; title=&quot;Installation&quot;&gt;&lt;/a&gt;Installation&lt;/h2&gt;&lt;p&gt;I have tried to install &lt;a href=&quot;https://ngrok.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ngrok&lt;/a&gt; with brew, but it didn’t work (I ended up with an old version). &lt;a href=&quot;https://ngrok.com/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Download it from the website&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;br&gt;Unzip the package and put it somewhere where ou can easily access it. I am on OS X and I have put it in my &lt;code&gt;Applications&lt;/code&gt; folder so I can access it with:&lt;/p&gt;
-&lt;figure class=&quot;highlight dos&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ /Applications/ngrok -&lt;span class=&quot;built_in&quot;&gt;help&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Sign-up-and-get-a-authentication-token&quot;&gt;&lt;a href=&quot;#Sign-up-and-get-a-authentication-token&quot; class=&quot;headerlink&quot; title=&quot;Sign up and get a authentication token&quot;&gt;&lt;/a&gt;Sign up and get a authentication token&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://dashboard.ngrok.com/user/signup&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sign up&lt;/a&gt; for a free account with ngrok and get your auth token. Install the token with &lt;code&gt;authtoken&lt;/code&gt;:&lt;/p&gt;
-&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;./ngrok authtoken abcde1234&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Create-your-first-tunnel&quot;&gt;&lt;a href=&quot;#Create-your-first-tunnel&quot; class=&quot;headerlink&quot; title=&quot;Create your first tunnel&quot;&gt;&lt;/a&gt;Create your first tunnel&lt;/h2&gt;&lt;p&gt;I am testing mine with my hexo blog running on &lt;a href=&quot;http://localhost:4000/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://localhost:4000/&lt;/a&gt; but you can use whichever port you want, even your standard port 80.&lt;/p&gt;
-&lt;p&gt;Run this command (replace the port number with yours)&lt;/p&gt;
-&lt;figure class=&quot;highlight elixir&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;/Applications/ngrok http &lt;span class=&quot;number&quot;&gt;4000&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;img src=&quot;/img/ngrok-status-online.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;The &lt;code&gt;Tunnel Status&lt;/code&gt; should say &lt;code&gt;online&lt;/code&gt; and you will get a &lt;code&gt;Forwarding&lt;/code&gt; URL that looks something like &lt;a href=&quot;http://c9de2896.ngrok.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://c9de2896.ngrok.io&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Open that URL in your browser and look at all your website’s ressources being redirected from your local through ngrok.io.&lt;/p&gt;
-&lt;p&gt;You can now use that URL and share it with you friends and clients.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article will show you how to tunnel your locally running website out to the world using &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="ngrok" scheme="http://www.codeblocq.com/tags/ngrok/"/>
-    
-      <category term="localhost" scheme="http://www.codeblocq.com/tags/localhost/"/>
-    
-      <category term="http" scheme="http://www.codeblocq.com/tags/http/"/>
     
   </entry>
   
