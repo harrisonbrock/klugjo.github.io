@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codeblocq.com/2016/08/Bring-colors-and-life-to-your-console-outputs-in-Node/</loc>
+    
+    <lastmod>2016-08-09T14:33:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/07/Add-Disqus-Comment-Count-to-your-Static-Blog-Index-Page/</loc>
+    
+    <lastmod>2016-08-09T13:47:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
+    
+    <lastmod>2016-07-07T21:54:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/07/New-Hexo-Theme-Alpha-Dust/</loc>
     
     <lastmod>2016-07-07T10:19:49.000Z</lastmod>
@@ -499,14 +520,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Loops-and-callbacks-in-React/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -520,14 +534,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -541,35 +555,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Notes-on-Zero-to-One-by-Peter-Thiel/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+    <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -583,7 +569,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -597,6 +590,20 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -604,7 +611,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -618,14 +625,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -639,7 +639,28 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2015/12/Loops-and-callbacks-in-React/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -653,7 +674,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -668,13 +689,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
