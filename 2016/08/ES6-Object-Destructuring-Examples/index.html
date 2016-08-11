@@ -1,0 +1,232 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <title>ES6 Object Destructuring Examples | CodeBlocQ</title>
+
+  <meta name="author" content="Jonathan Klughertz">
+
+  <meta name="description" content="Object destructuring is a new way of extracting data into variables, available in ES6. It makes declaring and assigning variables based off an object ">
+
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="Object destructuring is a new way of extracting data into variables, available in ES6. It makes declaring and assigning variables based off an object ">
+  <meta name="twitter:site" content="@klug_jo">
+  <meta name="twitter:title" content="ES6 Object Destructuring Examples">
+  <meta name="twitter:description" content="Object destructuring is a new way of extracting data into variables, available in ES6. It makes declaring and assigning variables based off an object ">
+  <meta name="twitter:creator" content="@klug_jo">
+  <!-- Twitter Summary card images must be at least 120x120px -->
+  <meta name="twitter:image" content="http://www.codeblocq.com/img/general/codeblocq-twitter-cover.png">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="ES6 Object Destructuring Examples" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://www.codeblocq.com/2016/08/ES6-Object-Destructuring-Examples/" />
+  <meta property="og:image" content="http://www.codeblocq.com/img/general/codeblocq-og-cover.png" />
+  <meta property="og:description" content="Object destructuring is a new way of extracting data into variables, available in ES6. It makes declaring and assigning variables based off an object " />
+  <meta property="og:site_name" content="CodeBlocQ" />
+
+  <meta property="fb:app_id" content="607597709387231" />
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="CodeBlocQ" type="application/atom+xml">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font/style.css" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <!--[if lt IE 8]><!-->
+    <link rel="stylesheet" href="/css/font/ie7/ie7.css">
+  <!--<![endif]-->
+  
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-71082014-1', 'auto');
+	ga('send', 'pageview');
+
+</script>
+
+
+
+  
+
+  
+
+  <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/favicons/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/favicons/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/favicons/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/favicons/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="/favicons/favicon-194x194.png" sizes="194x194">
+  <link rel="icon" type="image/png" href="/favicons/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/favicons/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+  <link rel="manifest" href="/favicons/manifest.json">
+  <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-TileImage" content="favicons/mstile-144x144.png">
+  <meta name="msapplication-config" content="favicons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+</head>
+
+
+
+
+<body >
+<!--<body class="bg5">-->
+  <header id="header"><div class="inner-header inner">
+  <div class="alignleft header-title">
+    <h1><a href="/">CodeBlocQ</a></h1>
+    <h2><a href="/"></a></h2>
+  </div>
+  <nav id="main-nav" class="alignright">
+    <ul>
+      
+      <li><a target="_blank" href="https://github.com/klugjo"><span class="navbar-icon devicons-github_badge"></span></a></li>
+      <li><a target="_blank" href="https://sg.linkedin.com/in/jonathanklughertz"><span class="navbar-icon devicons-linkedin-square"></span></a></li>
+    </ul>
+    <div class="clearfix"></div>
+  </nav>
+  <div class="clearfix"></div>
+</div></header>
+  <div id="content" class="inner">
+    <div id="main-col" ><div id="wrapper">
+<article class="post detail-view" >
+  
+  <div class="post-content">
+    <header>
+      <div class="content-container">
+        
+  
+    <h1 class="title">ES6 Object Destructuring Examples</h1>
+  
+
+        <div class="subtitle" datetime="2016-08-10T11:28:53.000Z">
+          2016-08-10
+          
+        </div>
+      </div>
+      <div class="icon-container">
+        <span class="icon devicons-code_badge"></span>
+      </div>
+    </header>
+
+      
+        <div class="entry">
+          <p>Object destructuring is a new way of <strong>extracting data into variables</strong>, available in ES6. It makes declaring and assigning variables based off an object <strong>shorter and more readable</strong>.<br><a id="more"></a></p>
+<h2 id="The-basics"><a href="#The-basics" class="headerlink" title="The basics"></a>The basics</h2><p>In essence, this is what destructuring does:</p>
+<p><strong>In ES5:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> google = &#123;</span><br><span class="line">  founded: <span class="string">'04/10/1998'</span>,</span><br><span class="line">  ceo: <span class="string">'Sundar Pichai'</span>,</span><br><span class="line">  hq: <span class="string">'Mountain View'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> founded = google.founded;</span><br><span class="line"><span class="keyword">var</span> ceo = google.ceo;</span><br><span class="line"><span class="keyword">var</span> hq = google.hq;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ceo); <span class="comment">// 'Sundar Pichai'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>In ES6:</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> google = &#123;</span><br><span class="line">  founded: <span class="string">'04/10/1998'</span>,</span><br><span class="line">  ceo: <span class="string">'Sundar Pichai'</span>,</span><br><span class="line">  hq: <span class="string">'Mountain View'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123; founded, ceo, hq &#125; = google;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ceo); <span class="comment">// 'Sundar Pichai'</span></span><br></pre></td></tr></table></figure>
+<p>What used to take 3 lines now takes one. We can declare 3 variables and assign them to corresponding values of an object. The variable names and object properties names have to match.</p>
+<p>If you have used the <a href="/2016/02/Babel-and-Node-Module-Loader/">import statement in ES6</a>, you might have run into things like:</p>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import &#123; <span class="keyword">add </span>, <span class="keyword">substract </span>&#125; from <span class="string">"math-operations"</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p>This is one very common and useful way to use destructuring.</p>
+<h2 id="Advanced-usages"><a href="#Advanced-usages" class="headerlink" title="Advanced usages"></a>Advanced usages</h2><h3 id="Default-Values"><a href="#Default-Values" class="headerlink" title="Default Values"></a>Default Values</h3><p>You can use ES6 default parameters in conjunction with destructuring</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> google = &#123;</span><br><span class="line">  founded: <span class="string">'04/10/1998'</span>,</span><br><span class="line">  hq: <span class="string">'Mountain View'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;founded, ceo=<span class="string">'Sundar Pichai'</span>, hq=<span class="string">'California'</span>&#125; = google;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ceo); <span class="comment">// 'Sundar Pichai' </span></span><br><span class="line"><span class="built_in">console</span>.log(hq); <span class="comment">// 'Mountain View'</span></span><br></pre></td></tr></table></figure>
+<p>Here, we have assigned default values to <code>ceo</code> and <code>hq</code>. </p>
+<ul>
+<li>Since <code>ceo</code> does not have a value setup in the initial object, the default value is used.</li>
+<li>Since <code>hq</code> has a value setup in the base object, the default value is not used.</li>
+</ul>
+<h3 id="Changing-variables-names"><a href="#Changing-variables-names" class="headerlink" title="Changing variables names"></a>Changing variables names</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> google = &#123;</span><br><span class="line">  founded: <span class="string">'04/10/1998'</span>,</span><br><span class="line">  ceo: <span class="string">'Sundar Pichai'</span>,</span><br><span class="line">  hq: <span class="string">'Mountain View'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;ceo: daddy, hq: home&#125; = google;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(home); <span class="comment">// 'Mountain View'</span></span><br></pre></td></tr></table></figure>
+<p>In case using the object’s property names as variable names is not possible for you, it is possible to reassign them.</p>
+<p>Here, we have reassigned the <code>google.ceo</code> property to <code>daddy</code> and <code>google.hq</code> to <code>home</code>.</p>
+<h3 id="Assignment-without-declaration"><a href="#Assignment-without-declaration" class="headerlink" title="Assignment without declaration"></a>Assignment without declaration</h3><p>If you want to assign values to existing variables, <u>you need to use <code>(..)</code></u>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ceo, hq;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> google = &#123;</span><br><span class="line">  founded: <span class="string">'04/10/1998'</span>,</span><br><span class="line">  ceo: <span class="string">'Sundar Pichai'</span>,</span><br><span class="line">  hq: <span class="string">'Mountain View'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">(&#123;ceo, hq&#125; = google); <span class="comment">// Notice the parentheses</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(ceo); <span class="comment">// 'Sundar Pichai'</span></span><br></pre></td></tr></table></figure>
+<h3 id="Nested-Objects"><a href="#Nested-Objects" class="headerlink" title="Nested Objects"></a>Nested Objects</h3><p>It is possible to use destructuring with nested objects:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> google = &#123;</span><br><span class="line">  founded: <span class="string">'04/10/1998'</span>,</span><br><span class="line">  ceo: <span class="string">'Sundar Pichai'</span>,</span><br><span class="line">  hq: &#123;</span><br><span class="line">    city: <span class="string">'Mountain View'</span>,</span><br><span class="line">    state: <span class="string">'California'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> &#123;ceo, hq: &#123;city, state: s&#125;&#125; = google;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(city);</span><br><span class="line"><span class="built_in">console</span>.log(s);</span><br></pre></td></tr></table></figure>
+<p>Just replicate the structure of the initial object. As you can see in the example above, you can change the variable name at the same time.</p>
+<h3 id="Usage-in-for-loop"><a href="#Usage-in-for-loop" class="headerlink" title="Usage in for loop"></a>Usage in for loop</h3><p>One creative use of destructuring would be declaring a for loop:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> companies = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">'Google'</span>,</span><br><span class="line">    ceo: <span class="string">'Sundar'</span></span><br><span class="line">  &#125;, &#123;</span><br><span class="line">    name: <span class="string">'Facebook'</span>,</span><br><span class="line">    ceo: <span class="string">'Mark'</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> &#123;name, ceo&#125; <span class="keyword">of</span> companies) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(name); <span class="comment">// 'Google', 'Facebook'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The <code>name</code> and <code>ceo</code> values are extracted into new variables directly inside the loop declaration. Everybody will appreciate how clean and compact that looks like.</p>
+<p>There are many other ways this can be used. Checkout <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment" target="_blank" rel="external">MDN</a> for more.</p>
+<p>Thanks for reading !</p>
+
+        </div>
+      
+    
+      <footer>
+        
+          
+          
+  
+  <div class="tags">
+    <a href="/tags/JavaScript/">JavaScript</a>, <a href="/tags/ES2015/">ES2015</a>, <a href="/tags/ES6/">ES6</a>, <a href="/tags/Destructuring/">Destructuring</a>
+  </div>
+
+        
+        <div class="clearfix"></div>
+      </footer>
+    
+  </div>
+</article>
+
+
+<section id="comment">
+  <h1 class="title">Comments</h1>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer"><div class="inner-footer inner">
+  <div class="alignleft">
+    
+    &copy; 2016 Jonathan Klughertz
+    
+  </div>
+  <div class="clearfix"></div>
+</div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'klugjo';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
