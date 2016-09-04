@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-08-16T12:38:55.000Z</updated>
+  <updated>2016-09-04T13:22:04.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Undo last commit in git</title>
+    <link href="http://www.codeblocq.com/2016/09/Undo-last-commit-in-git/"/>
+    <id>http://www.codeblocq.com/2016/09/Undo-last-commit-in-git/</id>
+    <published>2016-09-04T13:04:55.000Z</published>
+    <updated>2016-09-04T13:22:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Three ways to undo the last commit in git.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Undo-last-commit-and-destroy-all-changes&quot;&gt;&lt;a href=&quot;#Undo-last-commit-and-destroy-all-changes&quot; class=&quot;headerlink&quot; title=&quot;Undo last commit and destroy all changes&quot;&gt;&lt;/a&gt;Undo last commit and destroy all changes&lt;/h3&gt;&lt;p&gt;Use this in case you wish to rewind your &lt;code&gt;HEAD&lt;/code&gt; to the previous commit and revert all the changes done in the last commit:&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git &lt;span class=&quot;keyword&quot;&gt;reset&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;--hard HEAD~1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;If you do a &lt;code&gt;git status&lt;/code&gt; after that, your branch will be clean and you changes gone. (CAUTION !)&lt;/li&gt;
+&lt;li&gt;You can rewind more than one commit. For example, you can go back 5 commits by using &lt;code&gt;HEAD~5&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Undo-last-commit-but-keep-the-files-unchanged&quot;&gt;&lt;a href=&quot;#Undo-last-commit-but-keep-the-files-unchanged&quot; class=&quot;headerlink&quot; title=&quot;Undo last commit but keep the files unchanged&quot;&gt;&lt;/a&gt;Undo last commit but keep the files unchanged&lt;/h3&gt;&lt;p&gt;Use this if you want to rewind your &lt;code&gt;HEAD&lt;/code&gt; to the previous commit but keep your changes, as in the files will be still contain your changes. This is what you will probably want to use in most cases.&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git &lt;span class=&quot;keyword&quot;&gt;reset&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;HEAD&lt;/span&gt;~&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;If you do a &lt;code&gt;git status&lt;/code&gt; after that, you will see the list of all your changes &lt;strong&gt;unstaged.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;You will have to readd your changes with &lt;code&gt;git add&lt;/code&gt;. Then commit again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Undo-the-last-commit-keep-the-files-unchanged-and-staged-changes&quot;&gt;&lt;a href=&quot;#Undo-the-last-commit-keep-the-files-unchanged-and-staged-changes&quot; class=&quot;headerlink&quot; title=&quot;Undo the last commit, keep the files unchanged and staged changes&quot;&gt;&lt;/a&gt;Undo the last commit, keep the files unchanged and staged changes&lt;/h3&gt;&lt;p&gt;Use this if on top of keeping the files unchanged you also want to keep your commit status.&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ git &lt;span class=&quot;keyword&quot;&gt;reset&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;--soft HEAD~1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;If you do a &lt;code&gt;git status&lt;/code&gt; after, you will that your changes are already staged and ready to be committed.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Three ways to undo the last commit in git.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
+    
+      <category term="Bash" scheme="http://www.codeblocq.com/tags/Bash/"/>
+    
+  </entry>
   
   <entry>
     <title>Turn an image to Black and White on hover with CSS</title>
@@ -397,40 +435,6 @@
       <category term="Weird" scheme="http://www.codeblocq.com/tags/Weird/"/>
     
       <category term="Use Strict" scheme="http://www.codeblocq.com/tags/Use-Strict/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Boostrap 4 Stylus Media Queries</title>
-    <link href="http://www.codeblocq.com/2016/06/Boostrap-4-Stylus-Media-Queries/"/>
-    <id>http://www.codeblocq.com/2016/06/Boostrap-4-Stylus-Media-Queries/</id>
-    <published>2016-06-17T02:25:46.000Z</published>
-    <updated>2016-06-17T08:09:21.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Bootstrap 4 media queries if you want to reuse them in your stylus stylesheet.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Explanation&quot;&gt;&lt;a href=&quot;#Explanation&quot; class=&quot;headerlink&quot; title=&quot;Explanation&quot;&gt;&lt;/a&gt;Explanation&lt;/h3&gt;&lt;p&gt;Here is a visual representation of &lt;a href=&quot;http://v4-alpha.getbootstrap.com/layout/overview/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Bootstrap 4 responsive breakpoints&lt;/a&gt;.&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;div style=&quot;width: 100%;&quot;&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 18%; text-align: right;height: 40px&quot;&gt;34em&lt;/div&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 16%; text-align: right;height: 40px&quot;&gt;48em&lt;/div&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 16%; text-align: right;height: 40px&quot;&gt;62em&lt;/div&gt; &lt;div style=&quot;display: inline-block; font-size: 25px; font-family: monospace; color: 08090A; width: 16%; text-align: right;height: 40px&quot;&gt;75em&lt;/div&gt; &lt;/div&gt; &lt;div style=&quot;width: 100%;&quot;&gt; &lt;div style=&quot;width: 15.5%; background: #A65C3F; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;xs&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #89A58E; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;sm&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #CE8C4E; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;md&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #93C2BD; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;lg&lt;/div&gt; &lt;div style=&quot;width: 15.5%; background: #3F3E1E; height: 40px; text-align: center; font-size: 25px; line-height: 35px; color: #EDE3CD; font-family: monospace; border-radius: 5px; margin: 0 0.5% 0 0; display: inline-block;&quot;&gt;xl&lt;/div&gt; &lt;/div&gt;
-
-&lt;h3 id=&quot;Declaration&quot;&gt;&lt;a href=&quot;#Declaration&quot; class=&quot;headerlink&quot; title=&quot;Declaration&quot;&gt;&lt;/a&gt;Declaration&lt;/h3&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$xs-and-smaller = &#39;(max-width: 33.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sm-and-smaller = &#39;(max-width: 47.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$md-and-smaller = &#39;(max-width: 61.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$lg-and-smaller = &#39;(max-width: 74.9em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$sm-and-larger = &#39;(max-width: 34em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$md-and-larger = &#39;(max-width: 48em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$lg-and-larger = &#39;(max-width: 62em)&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$xl-and-larger = &#39;(max-width: 75em)&#39;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;Usage&quot;&gt;&lt;a href=&quot;#Usage&quot; class=&quot;headerlink&quot; title=&quot;Usage&quot;&gt;&lt;/a&gt;Usage&lt;/h3&gt;&lt;p&gt;You can then use these variables like so:&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.yourClass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;width&lt;/span&gt; 50%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; $xs-and-smaller&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        width &lt;span class=&quot;number&quot;&gt;100%&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;Or&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.yourClass&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;selector-tag&quot;&gt;width&lt;/span&gt; 100%&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @&lt;span class=&quot;keyword&quot;&gt;media&lt;/span&gt; $sm-and-larger&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        width &lt;span class=&quot;number&quot;&gt;50%&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;There are many other ways to do this, but that’s the one that feels the most comfortable and readable to me. Would be happy to read yours.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Bootstrap 4 media queries if you want to reuse them in your stylus stylesheet.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="http://www.codeblocq.com/tags/CSS/"/>
-    
-      <category term="Stylus" scheme="http://www.codeblocq.com/tags/Stylus/"/>
-    
-      <category term="Bootstrap" scheme="http://www.codeblocq.com/tags/Bootstrap/"/>
     
   </entry>
   
