@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codeblocq.com/2016/07/Add-Disqus-Comment-Count-to-your-Static-Blog-Index-Page/</loc>
+    
+    <lastmod>2016-09-06T00:44:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/09/The-mysterious-4px-gap-in-between-images/</loc>
+    
+    <lastmod>2016-09-06T00:43:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/09/Undo-last-commit-in-git/</loc>
     
     <lastmod>2016-09-04T13:22:04.000Z</lastmod>
@@ -33,13 +47,6 @@
     <loc>http://www.codeblocq.com/2016/08/Bring-colors-and-life-to-your-console-outputs-in-Node/</loc>
     
     <lastmod>2016-08-09T14:33:12.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/07/Add-Disqus-Comment-Count-to-your-Static-Blog-Index-Page/</loc>
-    
-    <lastmod>2016-08-09T13:47:55.000Z</lastmod>
     
   </url>
   
@@ -548,13 +555,6 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/01/Add-a-sitemap-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -563,13 +563,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/01/Search-through-history-in-OSX-terminal/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -590,6 +583,13 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -604,14 +604,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -632,7 +632,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -646,14 +646,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -668,6 +668,13 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Easy-dynamic-classes-with-React/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -695,14 +702,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Easy-dynamic-classes-with-React/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -716,6 +716,13 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -723,7 +730,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
