@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-09-12T11:31:02.000Z</updated>
+  <updated>2016-09-19T10:27:28.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -16,11 +16,52 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Setup the latest React in JSBin</title>
+    <link href="http://www.codeblocq.com/2016/09/Setup-the-latest-React-in-JSBin/"/>
+    <id>http://www.codeblocq.com/2016/09/Setup-the-latest-React-in-JSBin/</id>
+    <published>2016-09-19T10:01:34.000Z</published>
+    <updated>2016-09-19T10:27:28.000Z</updated>
+    
+    <content type="html">&lt;p&gt;This article will demonstrate how to set up the latest version of React in JSBin. This is particularly useful if you want to test something out and share it quickly.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;TL-DR&quot;&gt;&lt;a href=&quot;#TL-DR&quot; class=&quot;headerlink&quot; title=&quot;TL;DR&quot;&gt;&lt;/a&gt;TL;DR&lt;/h2&gt;&lt;p&gt;If you are only interested in the code, go to &lt;a href=&quot;https://jsbin.com/vixuyu/25/edit?html,css,js,output&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://jsbin.com/vixuyu/25/edit?html,css,js,output&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;(Disable your Ad Blocks).&lt;/p&gt;
+&lt;h2 id=&quot;A-bit-of-background&quot;&gt;&lt;a href=&quot;#A-bit-of-background&quot; class=&quot;headerlink&quot; title=&quot;A bit of background&quot;&gt;&lt;/a&gt;A bit of background&lt;/h2&gt;&lt;h3 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h3&gt;&lt;p&gt;To make this work you are obviously going to need &lt;a href=&quot;https://facebook.github.io/react/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;React&lt;/a&gt;. You are also going to need &lt;a href=&quot;https://github.com/facebook/react/tree/master/packages/react-dom&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ReactDOM&lt;/a&gt; to render HTML.&lt;/p&gt;
+&lt;p&gt;Get these 2 scripts from&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://npmcdn.com/react@latest/dist/react-with-addons.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://npmcdn.com/react-dom@latest/dist/react-dom.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;I got these URLs from &lt;a href=&quot;https://jsfiddle.net/reactjs/69z2wepo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://jsfiddle.net/reactjs/69z2wepo/&lt;/a&gt; which seems to be the official React Fiddle.&lt;/p&gt;
+&lt;h3 id=&quot;Babel&quot;&gt;&lt;a href=&quot;#Babel&quot; class=&quot;headerlink&quot; title=&quot;Babel&quot;&gt;&lt;/a&gt;Babel&lt;/h3&gt;&lt;p&gt;This is where it get trickier. To be able to write JSX/ES6 directly in JSBin, you need to be able to transpile the code with Babel directly in the browser.&lt;/p&gt;
+&lt;p&gt;Unfortunately, &lt;a href=&quot;https://babeljs.io/docs/usage/browser/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;babel-browser&lt;/a&gt; has been discontinued. Well guess what; just use &lt;a href=&quot;https://github.com/Daniel15/babel-standalone&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;babel-standalone&lt;/a&gt; instead. It is a non official build of Babel for use in non-Node environments, mainly browsers.&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.15.0/babel.min.js&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;JSX-and-ES6&quot;&gt;&lt;a href=&quot;#JSX-and-ES6&quot; class=&quot;headerlink&quot; title=&quot;JSX and ES6&quot;&gt;&lt;/a&gt;JSX and ES6&lt;/h3&gt;&lt;p&gt;That is it, you are ready to start writting your React app.&lt;/p&gt;
+&lt;p&gt;In JSBin, change the type of the JS tab from &lt;code&gt;JavaScript&lt;/code&gt; to &lt;code&gt;ES6 / Babel&lt;/code&gt; and you are ready to go.&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;figcaption&gt;&lt;span&gt;index.html&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;app&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- This element&#39;s contents will be replaced with your component. --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;index.js&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Hello = React.createClass(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  render: &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;Hello &amp;#123;this.props.name&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ReactDOM.render(&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;Hello&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;World&quot;&lt;/span&gt; /&amp;gt;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  document.getElementById(&#39;app&#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;);&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Hope that helps !&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This article will demonstrate how to set up the latest version of React in JSBin. This is particularly useful if you want to test something out and share it quickly.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
+    
+      <category term="React" scheme="http://www.codeblocq.com/tags/React/"/>
+    
+      <category term="JSBin" scheme="http://www.codeblocq.com/tags/JSBin/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Set Menu Items in Electron</title>
     <link href="http://www.codeblocq.com/2016/09/Set-Menu-Items-in-Electron/"/>
     <id>http://www.codeblocq.com/2016/09/Set-Menu-Items-in-Electron/</id>
     <published>2016-09-13T10:37:38.000Z</published>
-    <updated>2016-09-12T11:31:02.000Z</updated>
+    <updated>2016-09-19T10:27:52.000Z</updated>
     
     <content type="html">&lt;p&gt;This post will show you how to set up menus in Electron and Mac OS X.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;Get-started&quot;&gt;&lt;a href=&quot;#Get-started&quot; class=&quot;headerlink&quot; title=&quot;Get started&quot;&gt;&lt;/a&gt;Get started&lt;/h2&gt;&lt;h3 id=&quot;npm-init&quot;&gt;&lt;a href=&quot;#npm-init&quot; class=&quot;headerlink&quot; title=&quot;npm init&quot;&gt;&lt;/a&gt;npm init&lt;/h3&gt;&lt;p&gt;Let’s set up a basic simple Electron app.&lt;/p&gt;
@@ -199,7 +240,7 @@
     <link href="http://www.codeblocq.com/2016/09/The-mysterious-4px-gap-in-between-images/"/>
     <id>http://www.codeblocq.com/2016/09/The-mysterious-4px-gap-in-between-images/</id>
     <published>2016-09-05T23:41:43.000Z</published>
-    <updated>2016-09-06T00:43:24.000Z</updated>
+    <updated>2016-10-04T12:04:14.000Z</updated>
     
     <content type="html">&lt;p&gt;You may have noticed a strange 4px gap in between images or other elements. You may have also tried to “&lt;code&gt;margin: 0; padding: 0;&lt;/code&gt;“ it out; without success. Here is all you need to know about this phenomenon.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&quot;The-Explanation&quot;&gt;&lt;a href=&quot;#The-Explanation&quot; class=&quot;headerlink&quot; title=&quot;The Explanation&quot;&gt;&lt;/a&gt;The Explanation&lt;/h2&gt;&lt;h3 id=&quot;Example&quot;&gt;&lt;a href=&quot;#Example&quot; class=&quot;headerlink&quot; title=&quot;Example&quot;&gt;&lt;/a&gt;Example&lt;/h3&gt;&lt;p&gt;Let’s set the stage and observe the problem:&lt;/p&gt;
@@ -232,7 +273,7 @@
 &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
 &lt;h3 id=&quot;Fight-the-gap-with-a-negative-margin&quot;&gt;&lt;a href=&quot;#Fight-the-gap-with-a-negative-margin&quot; class=&quot;headerlink&quot; title=&quot;Fight the gap with a negative margin&quot;&gt;&lt;/a&gt;Fight the gap with a negative margin&lt;/h3&gt;&lt;p&gt;This is another solution that does not force you to modify your HTML markup.&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.container&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin-right&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;4px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.container&lt;/span&gt; &lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;attribute&quot;&gt;margin-right&lt;/span&gt;: -&lt;span class=&quot;number&quot;&gt;4px&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;Kgwojr&quot; data-default-tab=&quot;result&quot; data-user=&quot;klugjo&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/klugjo/pen/Kgwojr/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Kgwojr&lt;/a&gt; by Jonathan klughertz (&lt;a href=&quot;http://codepen.io/klugjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@klugjo&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
 &lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
 
@@ -447,49 +488,6 @@
       <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
     
       <category term="Console" scheme="http://www.codeblocq.com/tags/Console/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Add Disqus Comment Count to your Static Blog Index Page</title>
-    <link href="http://www.codeblocq.com/2016/07/Add-Disqus-Comment-Count-to-your-Static-Blog-Index-Page/"/>
-    <id>http://www.codeblocq.com/2016/07/Add-Disqus-Comment-Count-to-your-Static-Blog-Index-Page/</id>
-    <published>2016-07-07T04:22:23.000Z</published>
-    <updated>2016-09-06T00:44:08.000Z</updated>
-    
-    <content type="html">&lt;p&gt;This shows you how to display the number of Disqus comments for you static blog posts on the home page or any other article extracts/list page.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;Get-the-count-js-script&quot;&gt;&lt;a href=&quot;#Get-the-count-js-script&quot; class=&quot;headerlink&quot; title=&quot;Get the count.js script&quot;&gt;&lt;/a&gt;Get the count.js script&lt;/h3&gt;&lt;p&gt;Insert the following script at the bottom of your page:&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;id&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;dsq-count-scr&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;src&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;//SHORTNAME.disqus.com/count.js&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;async&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;undefined&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;Where &lt;code&gt;SHORTNAME&lt;/code&gt; is your disqus Shortname/ID. It is different from the usual &lt;code&gt;embed.js&lt;/code&gt; file.&lt;/p&gt;
-&lt;h3 id=&quot;Set-up-your-links&quot;&gt;&lt;a href=&quot;#Set-up-your-links&quot; class=&quot;headerlink&quot; title=&quot;Set up your links&quot;&gt;&lt;/a&gt;Set up your links&lt;/h3&gt;&lt;p&gt;Simply add &lt;code&gt;#disqus_thread&lt;/code&gt; at the end of each URL in each &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tag that needs to display the list of comments. It is important that the URL before the anchor corresponds to a URL with comments ON.&lt;/p&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://codeblocq.com/post1.html#disqus_thread&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;# COMMENTS&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;In the markup above, the &lt;code&gt;# COMMENTS&lt;/code&gt; text will be replaced by the number of comments (0 comments, 1 comment, n comments..)&lt;/p&gt;
-&lt;p&gt;You can specify the strings to be used in your &lt;a href=&quot;http://disqus.com/admin/settings/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;admin page&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;Hexo-example&quot;&gt;&lt;a href=&quot;#Hexo-example&quot; class=&quot;headerlink&quot; title=&quot;Hexo example&quot;&gt;&lt;/a&gt;Hexo example&lt;/h3&gt;&lt;p&gt;Here is how I do it with Hexo (ejs template) but it can easily be adapted to anything else.&lt;/p&gt;
-&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- Disqus Comments --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;attr&quot;&gt;config.disqus_shortname&lt;/span&gt;)&amp;#123; %&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;type&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;javascript&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; disqus_shortname = &lt;span class=&quot;string&quot;&gt;&#39;&amp;lt;%= config.disqus_shortname %&amp;gt;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    (&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;)&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; dsq = &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.createElement(&lt;span class=&quot;string&quot;&gt;&#39;script&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        dsq.type = &lt;span class=&quot;string&quot;&gt;&#39;text/javascript&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        dsq.async = &lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        dsq.src = &lt;span class=&quot;string&quot;&gt;&#39;//&#39;&lt;/span&gt; + disqus_shortname + &lt;span class=&quot;string&quot;&gt;&#39;.disqus.com/&amp;lt;% if (page.comments)&amp;#123; %&amp;gt;embed.js&amp;lt;% &amp;#125; else &amp;#123; %&amp;gt;count.js&amp;lt;% &amp;#125; %&amp;gt;&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        (&lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&#39;head&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;] || &lt;span class=&quot;built_in&quot;&gt;document&lt;/span&gt;.getElementsByTagName(&lt;span class=&quot;string&quot;&gt;&#39;body&#39;&lt;/span&gt;)[&lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;]).appendChild(dsq);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;script&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;%&lt;/span&gt; &amp;#125; %&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;This will generate the correct script tag at the end of the &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;embed.js&lt;/code&gt; if it’s a ‘details’ page&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;count.js&lt;/code&gt; if it’s the home page&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Then use the following code to declare the link&lt;/p&gt;
-&lt;figure class=&quot;highlight erb&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;href&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;&amp;lt;%-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;ruby&quot;&gt; item.permalink &lt;/span&gt;&lt;span class=&quot;xml&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&lt;span class=&quot;string&quot;&gt;%&amp;gt;#disqus_thread&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;a&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;You can check out &lt;a href=&quot;https://github.com/hexojs/hexo-theme-landscape&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo’s default theme&lt;/a&gt; (at the time of writing) for more information.&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This shows you how to display the number of Disqus comments for you static blog posts on the home page or any other article extracts/list page.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://www.codeblocq.com/tags/Hexo/"/>
-    
-      <category term="Disqus" scheme="http://www.codeblocq.com/tags/Disqus/"/>
-    
-      <category term="Blog" scheme="http://www.codeblocq.com/tags/Blog/"/>
     
   </entry>
   
