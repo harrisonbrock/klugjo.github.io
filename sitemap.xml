@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codeblocq.com/2016/10/Github-Avatar-not-showing-on-list-of-commits/</loc>
+    
+    <lastmod>2016-10-10T14:25:38.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/09/The-mysterious-4px-gap-in-between-images/</loc>
     
     <lastmod>2016-10-04T12:04:14.000Z</lastmod>
@@ -646,7 +653,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -660,14 +667,21 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Search-through-history-in-OSX-terminal/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -681,28 +695,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -716,6 +709,13 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -723,14 +723,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -752,6 +752,13 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Search-through-history-in-OSX-terminal/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
