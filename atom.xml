@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-10-16T09:46:51.000Z</updated>
+  <updated>2016-10-26T12:33:08.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Setup Jest to use an external configuration file</title>
+    <link href="http://www.codeblocq.com/2016/10/Setup-Jest-to-use-an-external-configuration-file/"/>
+    <id>http://www.codeblocq.com/2016/10/Setup-Jest-to-use-an-external-configuration-file/</id>
+    <published>2016-10-26T12:30:36.000Z</published>
+    <updated>2016-10-26T12:33:08.000Z</updated>
+    
+    <content type="html">&lt;p&gt;The Jest configuration does not have to be in the &lt;code&gt;package.json&lt;/code&gt;, it can be put in an external file.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Create-a-jestrc-file&quot;&gt;&lt;a href=&quot;#Create-a-jestrc-file&quot; class=&quot;headerlink&quot; title=&quot;Create a .jestrc file&quot;&gt;&lt;/a&gt;Create a .jestrc file&lt;/h2&gt;&lt;p&gt;Create a &lt;code&gt;.jestrc&lt;/code&gt; file and put your configuration inside. The format is still JSON but the &lt;code&gt;”jest”: { … }”&lt;/code&gt; key at the root is omitted.&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;package.json&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  […],&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  “jest”: &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;testRegex&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;tests/.*\\.(js|jsx)$&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  […]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;becomes &lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;figcaption&gt;&lt;span&gt;.jestrc&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;string&quot;&gt;&quot;testRegex&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;tests/.*\\.(js|jsx)$&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;Link-configuration&quot;&gt;&lt;a href=&quot;#Link-configuration&quot; class=&quot;headerlink&quot; title=&quot;Link configuration&quot;&gt;&lt;/a&gt;Link configuration&lt;/h2&gt;&lt;p&gt;Use the &lt;code&gt;—config&lt;/code&gt; option when calling jest to use the &lt;code&gt;.jestrc&lt;/code&gt; file in lieu of the package.json section&lt;/p&gt;
+&lt;figure class=&quot;highlight mipsasm&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ &lt;span class=&quot;keyword&quot;&gt;jest &lt;/span&gt;—&lt;span class=&quot;built_in&quot;&gt;config&lt;/span&gt; .&lt;span class=&quot;keyword&quot;&gt;jestrc&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;Enjoy !&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;The Jest configuration does not have to be in the &lt;code&gt;package.json&lt;/code&gt;, it can be put in an external file.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="Jest" scheme="http://www.codeblocq.com/tags/Jest/"/>
+    
+      <category term="Unit Tests" scheme="http://www.codeblocq.com/tags/Unit-Tests/"/>
+    
+  </entry>
   
   <entry>
     <title>8 VSCode Configuration Options you need to know about</title>
@@ -453,38 +485,6 @@
       <category term="CSS" scheme="http://www.codeblocq.com/tags/CSS/"/>
     
       <category term="Image" scheme="http://www.codeblocq.com/tags/Image/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Change the code font size in Webstorm</title>
-    <link href="http://www.codeblocq.com/2016/08/Change-the-code-font-size-in-Webstorm/"/>
-    <id>http://www.codeblocq.com/2016/08/Change-the-code-font-size-in-Webstorm/</id>
-    <published>2016-08-11T13:38:18.000Z</published>
-    <updated>2016-08-11T13:57:22.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Two way of changing the code font size in Webstorm&lt;/p&gt;
-&lt;h2 id=&quot;Change-the-default-size&quot;&gt;&lt;a href=&quot;#Change-the-default-size&quot; class=&quot;headerlink&quot; title=&quot;Change the default size&quot;&gt;&lt;/a&gt;Change the default size&lt;/h2&gt;&lt;p&gt;Go to &lt;code&gt;Preference (Mac) / Settings (Win)&lt;/code&gt; | &lt;code&gt;Editor&lt;/code&gt; | &lt;code&gt;Font&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/webstorm-change-default-code-font.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Important:&lt;/strong&gt; If you have never done any change to the theme you are using you will have to use the &lt;code&gt;Save As...&lt;/code&gt; button to create a new custom theme.&lt;/p&gt;
-&lt;p&gt;Once done, you can change the font size to whatever you want.&lt;/p&gt;
-&lt;p&gt;This will affect all projects and files.&lt;/p&gt;
-&lt;h2 id=&quot;Change-the-font-dynamically&quot;&gt;&lt;a href=&quot;#Change-the-font-dynamically&quot; class=&quot;headerlink&quot; title=&quot;Change the font dynamically&quot;&gt;&lt;/a&gt;Change the font dynamically&lt;/h2&gt;&lt;p&gt;You can also change the font using &lt;code&gt;Command (Mac) / Ctrl (Win)&lt;/code&gt; + &lt;code&gt;mouse wheel&lt;/code&gt; like you would when using a web browser.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; This feature needs to be activated in &lt;code&gt;Preference (Mac) / Settings (Win) | Editor | General&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/img/webstorm-change-font-mouse-wheel.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Two way of changing the code font size in Webstorm&lt;/p&gt;
-&lt;h2 id=&quot;Change-the-default-size&quot;&gt;&lt;a href=&quot;#Change-the-default-size&quot; class=&quot;headerl
-    
-    </summary>
-    
-    
-      <category term="Tools" scheme="http://www.codeblocq.com/tags/Tools/"/>
-    
-      <category term="WebStorm" scheme="http://www.codeblocq.com/tags/WebStorm/"/>
     
   </entry>
   
