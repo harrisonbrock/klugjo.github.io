@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-10-26T12:34:01.000Z</updated>
+  <updated>2016-11-15T13:14:54.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes on Ego is the enemy by Ryan Holiday</title>
+    <link href="http://www.codeblocq.com/2016/11/Notes-on-Ego-is-the-enemy-by-Ryan-Holiday/"/>
+    <id>http://www.codeblocq.com/2016/11/Notes-on-Ego-is-the-enemy-by-Ryan-Holiday/</id>
+    <published>2016-11-15T13:12:02.000Z</published>
+    <updated>2016-11-15T13:14:54.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;First-Impressions&quot;&gt;&lt;a href=&quot;#First-Impressions&quot; class=&quot;headerlink&quot; title=&quot;First Impressions&quot;&gt;&lt;/a&gt;First Impressions&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;http://www.goodreads.com/book/show/27036528-ego-is-the-enemy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ego is the Enemy&lt;/a&gt; is a book that I first heard of while browsing &lt;a href=&quot;https://sivers.org/book/EgoEnemy&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Derek Sivers&lt;/a&gt; excellent blog. I just finished it and it is an awesome reminder (for some of it) and eye opener (for a lot of it) of how our ego gets in the way of our work and aspirations and can, if left unchecked, destroy us.&lt;/p&gt;
+&lt;p&gt;The book is divided in three parts: before, during, failure. Each part is divided in small and easy to digest chapters that give details on how ego can manifest itself. There is some repetition, and I thought the book became more and more predictable as chapters go by, but overall it was an excellent read and I would highly recommend it.&lt;/p&gt;
+&lt;p&gt;No matter who you are and whether you are currently at the peak of your career and success or at the bottom of the pit, this book will help you look at your life and art differently. It will help you become a happier, more balanced person. It will help you take a deep breath of humility and selflessness.&lt;/p&gt;
+&lt;h2 id=&quot;Notes-and-Takeaways&quot;&gt;&lt;a href=&quot;#Notes-and-Takeaways&quot; class=&quot;headerlink&quot; title=&quot;Notes and Takeaways&quot;&gt;&lt;/a&gt;Notes and Takeaways&lt;/h2&gt;&lt;p&gt;This is the one passage of the book that resonated the most with me and one that summarizes the book really well.&lt;/p&gt;
+&lt;p&gt;“Out of the right speaker in your inner ear will come the endless stream of self-aggrandizement, the recitation of one’s specialness, of how much more open and gifted and brilliant and knowing and misunderstood and humble one is. Out of the left speaker will be the rap songs of self-loathing, the lists of all the things one doesn’t do well, of all the mistakes one has made today and over an entire lifetime, the doubt, the assertion that everything that one touches turns to shit, that one doesn’t do relationships well, that one is in every way a fraud, incapable of selfless love, that one had no talent or insight, and on and on and on.”&lt;/p&gt;
+&lt;p&gt;Ego is that destructive force that exists within us and will force us to become obsessed with our own importance. It creates conflicting thoughts within our head and always tries to bring back the focus on us instead and away from the things we aim to accomplish. It will prevent us from getting started with our work, becoming truly masters of our crafts, working well with others and accepting failure and loss.&lt;/p&gt;
+&lt;p&gt;A few of the remedies&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Focus on learning new things&lt;/li&gt;
+&lt;li&gt;Focus on the ‘what’ and not the ‘who’ &amp;lt;-&amp;gt; Be less and do more.&lt;/li&gt;
+&lt;li&gt;Keep a healthy distance with your emotions and don’t be driven exclusively by passion&lt;/li&gt;
+&lt;li&gt;Don’t look down as it will prevent you from seeing what is above you&lt;/li&gt;
+&lt;li&gt;Stay focused and centered on what really matters&lt;/li&gt;
+&lt;li&gt;Live hidden&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;First-Impressions&quot;&gt;&lt;a href=&quot;#First-Impressions&quot; class=&quot;headerlink&quot; title=&quot;First Impressions&quot;&gt;&lt;/a&gt;First Impressions&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;h
+    
+    </summary>
+    
+    
+      <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
+    
+      <category term="Ego" scheme="http://www.codeblocq.com/tags/Ego/"/>
+    
+      <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
+    
+  </entry>
   
   <entry>
     <title>Setup Jest to use an external configuration file</title>
@@ -449,42 +488,6 @@
       <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
     
       <category term="Bash" scheme="http://www.codeblocq.com/tags/Bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Turn an image to Black and White on hover with CSS</title>
-    <link href="http://www.codeblocq.com/2016/08/Turn-an-image-to-Black-and-White-on-hover-with-CSS/"/>
-    <id>http://www.codeblocq.com/2016/08/Turn-an-image-to-Black-and-White-on-hover-with-CSS/</id>
-    <published>2016-08-16T12:06:00.000Z</published>
-    <updated>2016-08-16T12:38:55.000Z</updated>
-    
-    <content type="html">&lt;p&gt;Here is a CSS code snippet to help you transition an image to Black and White on mouse hover.&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Demo&quot;&gt;&lt;a href=&quot;#Demo&quot; class=&quot;headerlink&quot; title=&quot;Demo&quot;&gt;&lt;/a&gt;Demo&lt;/h2&gt;&lt;p&gt;&lt;/p&gt;&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;PzLkEr&quot; data-default-tab=&quot;css,result&quot; data-user=&quot;klugjo&quot; data-embed-version=&quot;2&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/klugjo/pen/PzLkEr/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;PzLkEr&lt;/a&gt; by Jonathan klughertz (&lt;a href=&quot;http://codepen.io/klugjo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@klugjo&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;
-&lt;script async src=&quot;//assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
-
-&lt;h2 id=&quot;Code&quot;&gt;&lt;a href=&quot;#Code&quot; class=&quot;headerlink&quot; title=&quot;Code&quot;&gt;&lt;/a&gt;Code&lt;/h2&gt;&lt;p&gt;Here is the full code&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;transition&lt;/span&gt;: filter .&lt;span class=&quot;number&quot;&gt;5s&lt;/span&gt; ease-in-out;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;-webkit-filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(0%); &lt;span class=&quot;comment&quot;&gt;/* Ch 23+, Saf 6.0+, BB 10.0+ */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(0%); &lt;span class=&quot;comment&quot;&gt;/* FF 35+ */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-tag&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;selector-pseudo&quot;&gt;:hover&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;-webkit-filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(100%); &lt;span class=&quot;comment&quot;&gt;/* Ch 23+, Saf 6.0+, BB 10.0+ */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;filter&lt;/span&gt;: &lt;span class=&quot;built_in&quot;&gt;grayscale&lt;/span&gt;(100%); &lt;span class=&quot;comment&quot;&gt;/* FF 35+ */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The Black and White effect is achieved with the &lt;code&gt;grayscale&lt;/code&gt; value for the &lt;a href=&quot;https://developer.mozilla.org/en/docs/Web/CSS/filter&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;filter&lt;/a&gt; property. &lt;code&gt;grayscale(100%)&lt;/code&gt; corresponds to Black and White and &lt;code&gt;grayscale(0%)&lt;/code&gt; corresponds to full colors.&lt;br&gt;The &lt;code&gt;-webkit-filter&lt;/code&gt; prefix is &lt;a href=&quot;http://shouldiprefix.com/#filters&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;necessary for that property&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The smooth animation is achieved with the &lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;transition&lt;/a&gt; property.&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Here is a CSS code snippet to help you transition an image to Black and White on mouse hover.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="CSS" scheme="http://www.codeblocq.com/tags/CSS/"/>
-    
-      <category term="Image" scheme="http://www.codeblocq.com/tags/Image/"/>
     
   </entry>
   
