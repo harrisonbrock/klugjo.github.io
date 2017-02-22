@@ -140,27 +140,27 @@
 
                     <!-- Main Post Content -->
                     <p>Learn how to create a git patch from a previous commit.<br><a id="more"></a></p>
-<h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## Create patch from commit a12a06c</span></span><br><span class="line"><span class="variable">$ </span>git show a12a06c &gt; temp.patch</span><br><span class="line"></span><br><span class="line"><span class="comment">## Apply patch</span></span><br><span class="line"><span class="variable">$ </span>git apply temp.patch</span><br></pre></td></tr></table></figure>
+<h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">## Create patch <span class="keyword">from</span> commit a12a06c</div><div class="line">$ git show a12a06c &gt; temp.patch</div><div class="line"></div><div class="line">## Apply patch</div><div class="line">$ git apply temp.patch</div></pre></td></tr></table></figure>
 <h2 id="Long-story"><a href="#Long-story" class="headerlink" title="Long story"></a>Long story</h2><p>Let’s look at the following scenario:</p>
 <p>You are working on a <code>feature1</code> branch and you realise your last commit should not have been committed here. You could stash it but you are not sure where you are going to need to it again; so you decide yo create a <a href="https://git-scm.com/docs/git-format-patch" target="_blank" rel="external">patch</a> with it.</p>
 <h3 id="Method-1-git-reset-git-diff-gt-patch"><a href="#Method-1-git-reset-git-diff-gt-patch" class="headerlink" title="Method 1: git reset + git diff &gt; patch"></a>Method 1: git reset + git diff &gt; patch</h3><p>Since that commit was our last commit, we can rewind our history 1 step and create a patch from the current <code>diff</code>.</p>
 <ul>
 <li>Rewind one step and keep changes staged</li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--soft HEAD~1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--soft HEAD~1</span></div></pre></td></tr></table></figure>
 <p>Using <code>--soft</code> will <a href="/2016/09/Undo-last-commit-in-git/">keep our changes staged</a>.</p>
 <ul>
 <li>Create the patch</li>
 </ul>
 <p>Create the patch from your stages changes by using</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">diff </span>--<span class="keyword">cached </span>&gt; patch1.patch</span><br></pre></td></tr></table></figure>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">diff </span>--<span class="keyword">cached </span>&gt; patch1.patch</div></pre></td></tr></table></figure>
 <p>And you have all your changes in that patch</p>
 <h3 id="Method-2-Create-patch-from-commit-directly"><a href="#Method-2-Create-patch-from-commit-directly" class="headerlink" title="Method 2: Create patch from commit directly"></a>Method 2: Create patch from commit directly</h3><p>In some cases, you want to create a patch from a commit that is not the previous one. You also might not be interested in rewinding your git history.</p>
 <p>Here is a one liner that can help you create a patch from any commit in your history.</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git show a12a06c &gt; patch2.patch</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>git show a12a06c &gt; patch2.patch</div></pre></td></tr></table></figure>
 <p>where <code>a12a06c</code> is the commit you want to create a patch from.</p>
 <h3 id="Apply-the-patch"><a href="#Apply-the-patch" class="headerlink" title="Apply the patch"></a>Apply the patch</h3><p>Reminder: To apply your patch somewhere else or later on.</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git apply patch1.patch</span><br></pre></td></tr></table></figure>
+<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">apply</span> patch1.patch</div></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->

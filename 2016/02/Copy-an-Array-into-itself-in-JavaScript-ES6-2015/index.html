@@ -140,14 +140,14 @@
 
                     <!-- Main Post Content -->
                     <p>Part of the additions to ES6 is an array method called <code>copyWithin</code>:<br><a id="more"></a></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.copyWithin(target, start[, end = <span class="keyword">this</span>.length])</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">arr.copyWithin(target, start[, end = <span class="keyword">this</span>.length])</div></pre></td></tr></table></figure>
 <p>The function takes a section of the array and copies it to another place within the array.</p>
 <ul>
 <li><code>target</code>: index where to copy the elements</li>
 <li><code>start</code>: beginning of section to copy</li>
 <li><code>end</code>: end of section to copy. Optional, if not specified the section will go to the end of the array</li>
 </ul>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>m<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)</span><br><span class="line"><span class="comment">// Result: [0, 1, 2, 3, 1, 2]</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>m<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>].copyWithin(<span class="number">4</span>, <span class="number">1</span>, <span class="number">3</span>)</div><div class="line"><span class="comment">// Result: [0, 1, 2, 3, 1, 2]</span></div></pre></td></tr></table></figure></p>
 <p>Here is a visual representation of what happens:</p>
 <p><img src="/img/array-copywithin-es6-explanation.png" alt="Array copyWithin visual explanation"></p>
 <h3 id="Remarks"><a href="#Remarks" class="headerlink" title="Remarks"></a>Remarks</h3><ul>
