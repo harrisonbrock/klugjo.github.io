@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2016-11-15T13:15:30.000Z</updated>
+  <updated>2017-02-23T15:05:58.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes on Turning Pro by Steven Pressfield</title>
+    <link href="http://www.codeblocq.com/2017/02/Notes-on-Turning-Pro-by-Steven-Pressfield/"/>
+    <id>http://www.codeblocq.com/2017/02/Notes-on-Turning-Pro-by-Steven-Pressfield/</id>
+    <published>2017-02-23T14:20:36.000Z</published>
+    <updated>2017-02-23T15:05:58.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="First-impressions"><a href="#First-impressions" class="headerlink" title="First impressions"></a>First impressions</h2><p>A while ago I read The <a href="http://www.goodreads.com/book/show/1319.The_War_of_Art" target="_blank" rel="external">War of Art</a> which seems to be Pressfield’s most famous book. It is highly recommended by <a href="https://simpleprogrammer.com/" target="_blank" rel="external">John Sonmez</a>.<br><a id="more"></a></p>
+<p>I thought the book was great although not life changing. It explains how to beat <em>Resistance</em>, this force that prevents us from accomplishing our goals. <a href="https://www.amazon.com/Turning-Pro-Inner-Power-Create/dp/1936891034" target="_blank" rel="external">Turning Pro</a> is a follow up on the War of Art and I am happy to say that I found it a lot clearer and motivational. This book details how amateur and pro behaviours differ in all sorts of situations and how both deal with life changing decisions. </p>
+<p>It is a quick and easy read but the book packs a huge punch. Worth it.</p>
+<blockquote>
+<p>The Amateur tweets. The Pro works.</p>
+</blockquote>
+<h2 id="Notes-and-Takeaways"><a href="#Notes-and-Takeaways" class="headerlink" title="Notes and Takeaways"></a>Notes and Takeaways</h2><h3 id="Don’t-be-a-shadow-of-yourself"><a href="#Don’t-be-a-shadow-of-yourself" class="headerlink" title="Don’t be a shadow of yourself"></a>Don’t be a shadow of yourself</h3><p>Simple yet powerful concept. We all have this image of our perfect self associated with a set of goals we need to achieve in order to reach that ideal.</p>
+<p>One way we end up not following that path is by behaving like <em>addicts</em>: we get high in order to fool ourselves in believing that we are amazing or in order to numb the pain.</p>
+<blockquote>
+<p>The addict seeks to escape the pain of being human in one of two ways–by transcending it or by anesthetizing it.</p>
+</blockquote>
+<p>Addiction (sex, money, getting in trouble, living in the future/past, ..) is simply a distraction and a materialization of <em>Resistance</em>.</p>
+<h3 id="We-are-all-scared"><a href="#We-are-all-scared" class="headerlink" title="We are all scared"></a>We are all scared</h3><p>Pressfield then explains how overcoming addiction is in fact overcoming the fear of becoming who we really are. </p>
+<p>It is indeed simpler to be a lesser version of ourselves. That way we can give ourselves (and others) the excuse of simply not being ourselves.</p>
+<p>It is typical for amateurs to let others define who they are. The key is to stop being afraid of being judged for who we really are.</p>
+<h3 id="There-are-many-ways-remedies-to-Amateurism"><a href="#There-are-many-ways-remedies-to-Amateurism" class="headerlink" title="There are many ways remedies to Amateurism"></a>There are many ways remedies to Amateurism</h3><p>Work everyday, focus on the long term and not the quick wins, be patient, make the complex simple, never show off, never be scared of asking for help … </p>
+<p>Many more in the book ;)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;First-impressions&quot;&gt;&lt;a href=&quot;#First-impressions&quot; class=&quot;headerlink&quot; title=&quot;First impressions&quot;&gt;&lt;/a&gt;First impressions&lt;/h2&gt;&lt;p&gt;A while ago I read The &lt;a href=&quot;http://www.goodreads.com/book/show/1319.The_War_of_Art&quot;&gt;War of Art&lt;/a&gt; which seems to be Pressfield’s most famous book. It is highly recommended by &lt;a href=&quot;https://simpleprogrammer.com/&quot;&gt;John Sonmez&lt;/a&gt;.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
+    
+      <category term="Procrastination" scheme="http://www.codeblocq.com/tags/Procrastination/"/>
+    
+      <category term="Productivity" scheme="http://www.codeblocq.com/tags/Productivity/"/>
+    
+  </entry>
   
   <entry>
     <title>Notes on Ego is the enemy by Ryan Holiday</title>
@@ -450,44 +491,6 @@
       <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
     
       <category term="CSS3" scheme="http://www.codeblocq.com/tags/CSS3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Undo last commit in git</title>
-    <link href="http://www.codeblocq.com/2016/09/Undo-last-commit-in-git/"/>
-    <id>http://www.codeblocq.com/2016/09/Undo-last-commit-in-git/</id>
-    <published>2016-09-04T13:04:55.000Z</published>
-    <updated>2016-09-04T13:22:04.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Three ways to undo the last commit in git.<br><a id="more"></a></p>
-<h3 id="Undo-last-commit-and-destroy-all-changes"><a href="#Undo-last-commit-and-destroy-all-changes" class="headerlink" title="Undo last commit and destroy all changes"></a>Undo last commit and destroy all changes</h3><p>Use this in case you wish to rewind your <code>HEAD</code> to the previous commit and revert all the changes done in the last commit:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard HEAD~1</span></div></pre></td></tr></table></figure>
-<ul>
-<li>If you do a <code>git status</code> after that, your branch will be clean and you changes gone. (CAUTION !)</li>
-<li>You can rewind more than one commit. For example, you can go back 5 commits by using <code>HEAD~5</code></li>
-</ul>
-<h3 id="Undo-last-commit-but-keep-the-files-unchanged"><a href="#Undo-last-commit-but-keep-the-files-unchanged" class="headerlink" title="Undo last commit but keep the files unchanged"></a>Undo last commit but keep the files unchanged</h3><p>Use this if you want to rewind your <code>HEAD</code> to the previous commit but keep your changes, as in the files will be still contain your changes. This is what you will probably want to use in most cases.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="keyword">HEAD</span>~<span class="number">1</span></div></pre></td></tr></table></figure>
-<ul>
-<li>If you do a <code>git status</code> after that, you will see the list of all your changes <strong>unstaged.</strong></li>
-<li>You will have to readd your changes with <code>git add</code>. Then commit again.</li>
-</ul>
-<h3 id="Undo-the-last-commit-keep-the-files-unchanged-and-staged-changes"><a href="#Undo-the-last-commit-keep-the-files-unchanged-and-staged-changes" class="headerlink" title="Undo the last commit, keep the files unchanged and staged changes"></a>Undo the last commit, keep the files unchanged and staged changes</h3><p>Use this if on top of keeping the files unchanged you also want to keep your commit status.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--soft HEAD~1</span></div></pre></td></tr></table></figure>
-<p>If you do a <code>git status</code> after, you will that your changes are already staged and ready to be committed.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Three ways to undo the last commit in git.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
-    
-      <category term="Bash" scheme="http://www.codeblocq.com/tags/Bash/"/>
     
   </entry>
   
