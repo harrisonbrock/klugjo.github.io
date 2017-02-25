@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2017-02-23T15:05:58.000Z</updated>
+  <updated>2017-02-25T15:48:02.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Configure Jest Test Location</title>
+    <link href="http://www.codeblocq.com/2017/02/Configure-Jest-Test-Location/"/>
+    <id>http://www.codeblocq.com/2017/02/Configure-Jest-Test-Location/</id>
+    <published>2017-02-25T15:44:03.000Z</published>
+    <updated>2017-02-25T15:48:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Quick article to help look at the right place when configuring your tests in Jest.</p>
+<h2 id="Default-test-files-location"><a href="#Default-test-files-location" class="headerlink" title="Default test files location"></a>Default test files location</h2><p>The first time I read through the configuration I thought that the paths to my tests were configured using <a href="https://facebook.github.io/jest/docs/configuration.html#testpathdirs-array-string" target="_blank" rel="external">testPathDirs
+</a>. It turns out that this property is only used to restraint the places Jest will look for tests to sub modules.</p>
+<p>The important thing to note is that by default:</p>
+<p><strong>Jest will look for <code>’js</code> and <code>.jsx</code> files inside of <code>__tests__</code> folders.</strong></p>
+<h2 id="Use-a-custom-location"><a href="#Use-a-custom-location" class="headerlink" title="Use a custom location"></a>Use a custom location</h2><p>This is the <em>default</em> that needs to change. To do so, use <a href="https://facebook.github.io/jest/docs/configuration.html#testregex-string" target="_blank" rel="external">testRegex</a>.</p>
+<p>For example, if you want to store all your test files inside a <code>./tests</code> folder, the only jest configuration option you are going to need is:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">“jest”: &#123;</div><div class="line">  <span class="string">"testRegex"</span>: <span class="string">"tests/.*\\.(js|jsx)$"</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Quick article to help look at the right place when configuring your tests in Jest.&lt;/p&gt;
+&lt;h2 id=&quot;Default-test-files-location&quot;&gt;&lt;a href=&quot;#Def
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
+    
+      <category term="React" scheme="http://www.codeblocq.com/tags/React/"/>
+    
+      <category term="Jest" scheme="http://www.codeblocq.com/tags/Jest/"/>
+    
+      <category term="Unit Tests" scheme="http://www.codeblocq.com/tags/Unit-Tests/"/>
+    
+  </entry>
   
   <entry>
     <title>Notes on Turning Pro by Steven Pressfield</title>
@@ -430,67 +465,6 @@
       <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
     
       <category term="Patch" scheme="http://www.codeblocq.com/tags/Patch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The mysterious 4px gap in between images</title>
-    <link href="http://www.codeblocq.com/2016/09/The-mysterious-4px-gap-in-between-images/"/>
-    <id>http://www.codeblocq.com/2016/09/The-mysterious-4px-gap-in-between-images/</id>
-    <published>2016-09-05T23:41:43.000Z</published>
-    <updated>2016-10-04T12:04:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>You may have noticed a strange 4px gap in between images or other elements. You may have also tried to “<code>margin: 0; padding: 0;</code>“ it out; without success. Here is all you need to know about this phenomenon.<br><a id="more"></a></p>
-<h2 id="The-Explanation"><a href="#The-Explanation" class="headerlink" title="The Explanation"></a>The Explanation</h2><h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>Let’s set the stage and observe the problem:</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="PGwRxg" data-default-tab="result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/PGwRxg/" target="_blank" rel="external">PGwRxg</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>As you can see in the code pen, the dreaded 4px gap is there.</p>
-<h3 id="Here-is-why"><a href="#Here-is-why" class="headerlink" title="Here is why"></a>Here is why</h3><p>The key to understanding what is going on is being aware of two things: </p>
-<ul>
-<li><code>&lt;img /&gt;</code> element behave like <code>display: inline-block;</code> by default.</li>
-<li><code>inline-block</code> behave like words in a sentence. That means that they are separated by white spaces.</li>
-</ul>
-<p>There are no <em>margins</em> or <em>paddings</em>, <strong>the gaps are simple whitespaces</strong>, just like in between the words of this sentence.</p>
-<p>It is the same as in :</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>Snoop<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">span</span>&gt;</span>Dog<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>You would expect your browser to separate the words <em>Snoop</em> and <em>Dog</em> with a space. The same thing happens with images, they are separated with a whitespace. </p>
-<p>Note that this will happen with all <code>display: inline-block</code> elements.</p>
-<h2 id="Fixes"><a href="#Fixes" class="headerlink" title="Fixes"></a>Fixes</h2><p>There are a few fixes you can apply if you want to get rid of that whitespace.</p>
-<h3 id="Put-the-HTML-in-one-line"><a href="#Put-the-HTML-in-one-line" class="headerlink" title="Put the HTML in one line"></a>Put the HTML in one line</h3><p>If you can, put all your HTML elements in one line, so as to remove the line breaks (interpreted as white spaces)</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="gwbZEy" data-default-tab="result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/gwbZEy/" target="_blank" rel="external">gwbZEy</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<h3 id="Set-the-parent’s-font-size-to-0"><a href="#Set-the-parent’s-font-size-to-0" class="headerlink" title="Set the parent’s font-size to 0"></a>Set the parent’s font-size to 0</h3><p>You can set the parent container to <code>font-size: 0</code>. The white space in between the images will then be 0.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"container"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"https://unsplash.it/200"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>And in your CSS:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">font-size</span>: <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="GjgxLL" data-default-tab="result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/GjgxLL/" target="_blank" rel="external">GjgxLL</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<h3 id="Fight-the-gap-with-a-negative-margin"><a href="#Fight-the-gap-with-a-negative-margin" class="headerlink" title="Fight the gap with a negative margin"></a>Fight the gap with a negative margin</h3><p>This is another solution that does not force you to modify your HTML markup.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">img</span> &#123;</div><div class="line">    <span class="attribute">margin-right</span>: -<span class="number">4px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="Kgwojr" data-default-tab="result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/Kgwojr/" target="_blank" rel="external">Kgwojr</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
-
-<h3 id="Use-float-left"><a href="#Use-float-left" class="headerlink" title="Use float: left;"></a>Use float: left;</h3><p>One last solution would be to set the images to <code>display: block</code>, then place them horizontally using <code>float: left;</code>.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> <span class="selector-tag">img</span> &#123;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">float</span>: left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p></p><p data-height="265" data-theme-id="0" data-slug-hash="VKYXJE" data-default-tab="result" data-user="klugjo" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/klugjo/pen/VKYXJE/" target="_blank" rel="external">VKYXJE</a> by Jonathan klughertz (<a href="http://codepen.io/klugjo" target="_blank" rel="external">@klugjo</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
-<p><script async src="//assets.codepen.io/assets/embed/ei.js"></script><br>There you go. I hope I was able to shine some light on this matter. Filling in that gap should now be a walk in the park.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;You may have noticed a strange 4px gap in between images or other elements. You may have also tried to “&lt;code&gt;margin: 0; padding: 0;&lt;/code&gt;“ it out; without success. Here is all you need to know about this phenomenon.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="HTML5" scheme="http://www.codeblocq.com/tags/HTML5/"/>
-    
-      <category term="CSS3" scheme="http://www.codeblocq.com/tags/CSS3/"/>
     
   </entry>
   

@@ -11,7 +11,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="Quick article to see how you can (and you should) add a google sitemap to your hexo blog.">
+        <meta name="description" content="Quick article to help look at the right place when configuring your tests in Jest.
+Default test files locationThe first time I read through the config">
     
 
     <!--Author-->
@@ -21,7 +22,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Add a sitemap to your hexo blog"/>
+        <meta property="og:title" content="Configure Jest Test Location"/>
     
 
     <!--Open Graph Description-->
@@ -43,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Add a sitemap to your hexo blog - CodeBlocQ</title>
+    <title>Configure Jest Test Location - CodeBlocQ</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -112,14 +113,14 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Add a sitemap to your hexo blog</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">18 January 2016</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Configure Jest Test Location</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">25 February 2017</p>
         </div>
     </div>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <span class="header-icon devicons-code_badge"></span>
+        <span class="header-icon devicon-react-original"></span>
     </div>
 </div>
 
@@ -133,24 +134,26 @@
                     
                         <div class="tags-container-vertical">
                             <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/Hexo/">#Hexo</a> <a class="fw3 ph1 dib" href="/tags/Sitemap/">#Sitemap</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                                <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/React/">#React</a> <a class="fw3 ph1 dib" href="/tags/Jest/">#Jest</a> <a class="fw3 ph1 dib" href="/tags/Unit-Tests/">#Unit Tests</a>
                             </div>
                         </div>
                     
 
                     <!-- Main Post Content -->
-                    <p>Quick article to see how you can (and you should) add a <a href="https://en.wikipedia.org/wiki/Sitemaps" target="_blank" rel="external">google sitemap</a> to your hexo blog.<br><a id="more"></a> </p>
-<h3 id="There-is-a-plugin-for-it-that-will-do-all-the-hard-work-for-you"><a href="#There-is-a-plugin-for-it-that-will-do-all-the-hard-work-for-you" class="headerlink" title="There is a plugin for it that will do all the hard work for you."></a>There is a plugin for it that will do all the hard work for you.</h3><p>Go ahead and install <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a> with:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></div></pre></td></tr></table></figure>
-<p><br><br>Then add the path to your <code>sitemap.xml</code> in the <code>_config.yml</code>:</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta"># Sitemap</span></div><div class="line"><span class="symbol">sitemap:</span></div><div class="line"><span class="symbol">  path:</span> sitemap.xml</div></pre></td></tr></table></figure>
-<p>Regenerate your blog and check that a sitemap.xml file has been created at the root of your blog.</p>
+                    <p>Quick article to help look at the right place when configuring your tests in Jest.</p>
+<h2 id="Default-test-files-location"><a href="#Default-test-files-location" class="headerlink" title="Default test files location"></a>Default test files location</h2><p>The first time I read through the configuration I thought that the paths to my tests were configured using <a href="https://facebook.github.io/jest/docs/configuration.html#testpathdirs-array-string" target="_blank" rel="external">testPathDirs
+</a>. It turns out that this property is only used to restraint the places Jest will look for tests to sub modules.</p>
+<p>The important thing to note is that by default:</p>
+<p><strong>Jest will look for <code>’js</code> and <code>.jsx</code> files inside of <code>__tests__</code> folders.</strong></p>
+<h2 id="Use-a-custom-location"><a href="#Use-a-custom-location" class="headerlink" title="Use a custom location"></a>Use a custom location</h2><p>This is the <em>default</em> that needs to change. To do so, use <a href="https://facebook.github.io/jest/docs/configuration.html#testregex-string" target="_blank" rel="external">testRegex</a>.</p>
+<p>For example, if you want to store all your test files inside a <code>./tests</code> folder, the only jest configuration option you are going to need is:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">“jest”: &#123;</div><div class="line">  <span class="string">"testRegex"</span>: <span class="string">"tests/.*\\.(js|jsx)$"</span></div><div class="line">&#125;,</div></pre></td></tr></table></figure>
 
                     
                     <!-- Tags Bottom -->
                     
                         <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/Hexo/">#Hexo</a> <a class="fw3 ph1 dib" href="/tags/Sitemap/">#Sitemap</a> <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a>
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/React/">#React</a> <a class="fw3 ph1 dib" href="/tags/Jest/">#Jest</a> <a class="fw3 ph1 dib" href="/tags/Unit-Tests/">#Unit Tests</a>
                         </div>
                     
 
