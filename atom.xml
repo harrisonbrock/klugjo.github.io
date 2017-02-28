@@ -362,9 +362,9 @@
     <link href="http://www.codeblocq.com/2016/09/Pimp-up-iTerm-with-Zsh-and-prezto-on-Mac-OS-X/"/>
     <id>http://www.codeblocq.com/2016/09/Pimp-up-iTerm-with-Zsh-and-prezto-on-Mac-OS-X/</id>
     <published>2016-09-12T03:52:16.000Z</published>
-    <updated>2016-09-12T06:11:35.000Z</updated>
+    <updated>2017-02-28T13:32:59.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Follow this simple steps to setup zsh and prezto on Mac OS X (El Capitan) and you command line will look like:<br><br><br><img src="/img/prezto-powerline-mac-os-x.png" alt=""><br><a id="more"></a></p>
+    <content type="html"><![CDATA[<p>Follow this simple steps to setup zsh and prezto on Mac OS X (El Capitan) and your command line will look like:<br><br><br><img src="/img/prezto-powerline-mac-os-x.png" alt=""><br><a id="more"></a></p>
 <h2 id="Install-Zsh"><a href="#Install-Zsh" class="headerlink" title="Install Zsh"></a>Install Zsh</h2><h3 id="Install-Zsh-and-Zsh-Completions"><a href="#Install-Zsh-and-Zsh-Completions" class="headerlink" title="Install Zsh and Zsh Completions"></a>Install <a href="">Zsh</a> and <a href="https://github.com/zsh-users/zsh-completions" target="_blank" rel="external">Zsh Completions</a></h3><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">brew </span><span class="keyword">install </span>zsh zsh-completions</div></pre></td></tr></table></figure>
 <p>Then try to run <code>zsh</code>:</p>
 <figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>zsh</div></pre></td></tr></table></figure>
@@ -381,7 +381,8 @@
 </ul>
 <figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="keyword">brew </span><span class="keyword">install </span>gdbm</div><div class="line">$ <span class="keyword">brew </span>reinstall pcre</div></pre></td></tr></table></figure>
 <p>And you should be ready to go</p>
-<h2 id="Install-Prezto"><a href="#Install-Prezto" class="headerlink" title="Install Prezto"></a>Install <a href="https://github.com/sorin-ionescu/prezto" target="_blank" rel="external">Prezto</a></h2><h3 id="Install-with"><a href="#Install-with" class="headerlink" title="Install with"></a>Install with</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">clone</span> <span class="title">--recursive</span> https://github.com/sorin-ionescu/prezto.git <span class="string">"$&#123;ZDOTDIR:-$HOME&#125;/.zprezto"</span></div></pre></td></tr></table></figure>
+<h2 id="Install-Prezto"><a href="#Install-Prezto" class="headerlink" title="Install Prezto"></a>Install <a href="https://github.com/sorin-ionescu/prezto" target="_blank" rel="external">Prezto</a></h2><h3 id="Before-install"><a href="#Before-install" class="headerlink" title="Before install"></a>Before install</h3><p>Check that you don’t already have a <code>.zshrc</code> file. If you do, delete it (if empty) or rename it, as this would fail the installation.</p>
+<h3 id="Install-with"><a href="#Install-with" class="headerlink" title="Install with"></a>Install with</h3><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">clone</span> <span class="title">--recursive</span> https://github.com/sorin-ionescu/prezto.git <span class="string">"$&#123;ZDOTDIR:-$HOME&#125;/.zprezto"</span></div></pre></td></tr></table></figure>
 <h3 id="Create-a-zsh-config-with-the-files-from-prezto"><a href="#Create-a-zsh-config-with-the-files-from-prezto" class="headerlink" title="Create a zsh config with the files from prezto"></a>Create a zsh config with the files from prezto</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">setopt</span> EXTENDED_GLOB</div><div class="line"><span class="keyword">for</span> rcfile <span class="keyword">in</span> <span class="string">"<span class="variable">$&#123;ZDOTDIR:-$HOME&#125;</span>"</span>/.zprezto/runcoms/^README.md(.N); <span class="keyword">do</span></div><div class="line">  ln <span class="_">-s</span> <span class="string">"<span class="variable">$rcfile</span>"</span> <span class="string">"<span class="variable">$&#123;ZDOTDIR:-$HOME&#125;</span>/.<span class="variable">$&#123;rcfile:t&#125;</span>"</span></div><div class="line"><span class="keyword">done</span></div></pre></td></tr></table></figure>
 <h3 id="Make-Zsh-the-default-shell"><a href="#Make-Zsh-the-default-shell" class="headerlink" title="Make Zsh the default shell"></a>Make Zsh the default shell</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ chsh <span class="_">-s</span> $(<span class="built_in">which</span> zsh)</div></pre></td></tr></table></figure>
 <p>If you are using iTerm, go to</p>
@@ -411,7 +412,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;Follow this simple steps to setup zsh and prezto on Mac OS X (El Capitan) and you command line will look like:&lt;br&gt;&lt;br /&gt;&lt;br&gt;&lt;img src=&quot;/img/prezto-powerline-mac-os-x.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
+      &lt;p&gt;Follow this simple steps to setup zsh and prezto on Mac OS X (El Capitan) and your command line will look like:&lt;br&gt;&lt;br /&gt;&lt;br&gt;&lt;img src=&quot;/img/prezto-powerline-mac-os-x.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
     
     </summary>
     
