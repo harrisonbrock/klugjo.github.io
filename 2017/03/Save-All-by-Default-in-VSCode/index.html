@@ -11,7 +11,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="Did you know that you could have a function with 2 parameters with the same name in JavaScript ? This is one of the latest weird part of JavaScript that I just discovered.">
+        <meta name="description" content="By Default VSCode only saves the current file when hitting Ctrl+S. Over time, I got used to Ctrl+S saving all the modified files in the project. Here ">
     
 
     <!--Author-->
@@ -21,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Duplicate Function Parameters in JavaScript"/>
+        <meta property="og:title" content="Save All by Default in VSCode"/>
     
 
     <!--Open Graph Description-->
@@ -43,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Duplicate Function Parameters in JavaScript - CodeBlocQ</title>
+    <title>Save All by Default in VSCode - CodeBlocQ</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -124,14 +124,14 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Duplicate Function Parameters in JavaScript</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">20 June 2016</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">Save All by Default in VSCode</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">27 March 2017</p>
         </div>
     </div>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <span class="header-icon devicons-javascript_badge"></span>
+        <span class="header-icon devicons-file-o"></span>
     </div>
 </div>
 
@@ -143,36 +143,18 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
-                        <div class="tags-container-vertical">
-                            <div class="tags-sub-container">
-                                <a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/Weird/">#Weird</a> <a class="fw3 ph1 dib" href="/tags/Use-Strict/">#Use Strict</a>
-                            </div>
-                        </div>
-                    
 
                     <!-- Main Post Content -->
-                    <p>Did you know that you could have a function with 2 parameters with the same name in JavaScript ? This is one of the latest weird part of JavaScript that I just discovered.<br><a id="more"></a></p>
-<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><p>The following code is legal and executes without any warning:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x,y,x</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line">log(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// Will print out 3</span></div></pre></td></tr></table></figure>
-<h3 id="Fix-It"><a href="#Fix-It" class="headerlink" title="Fix It"></a>Fix It</h3><p>There are several ways to avoid the issue:</p>
-<ul>
-<li><strong>use strict</strong></li>
-</ul>
-<p>By adding a <code>&#39;use strict&#39;;</code> statement at the beginning of the function, you will get an error thrown:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">log</span>(<span class="params">x,y,x</span>) </span>&#123;</div><div class="line"><span class="meta">  'use strict'</span>;</div><div class="line">  <span class="built_in">console</span>.log(x);</div><div class="line">&#125;</div><div class="line"></div><div class="line">log(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</div></pre></td></tr></table></figure>
-<p>Will throw</p>
-<figure class="highlight dos"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"SyntaxError: Duplicate parameter name <span class="keyword">not</span> allowed <span class="keyword">in</span> this context</div></pre></td></tr></table></figure>
-<ul>
-<li><strong>JSHINT and JSLINT</strong></li>
-</ul>
-<p>Both Linters will throw a warning and let you know that <code>x</code> is already defined.</p>
+                    <p>By Default VSCode only saves the current file when hitting Ctrl+S. Over time, I got used to Ctrl+S saving all the modified files in the project. Here is how to setup the same behavior in VSCode.</p>
+<p>Go to</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span> &gt; Preferences &gt; <span class="built_in">Keyboard</span> Shortcuts</div></pre></td></tr></table></figure>
+<p>In the <code>keybindings.json</code> where you can put your overrides, use the following:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123; <span class="attr">"key"</span>: <span class="string">"ctrl+k s"</span>, <span class="attr">"command"</span>: <span class="string">"workbench.action.files.save"</span> &#125;,</div><div class="line">    &#123; <span class="attr">"key"</span>: <span class="string">"ctrl+s"</span>, <span class="attr">"command"</span>: <span class="string">"workbench.action.files.saveAll"</span> &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>This will invert the shortcuts for the <code>Save</code> and <code>Save All</code> actions. From now on, <code>Ctrl+S</code> will save all the modified files.</p>
+<p>Such a time saver when refreshing your build only to realise you forgot to save one of the files ;)</p>
 
                     
                     <!-- Tags Bottom -->
-                    
-                        <div class="tags-container-bottom">
-                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/JavaScript/">#JavaScript</a> <a class="fw3 ph1 dib" href="/tags/Weird/">#Weird</a> <a class="fw3 ph1 dib" href="/tags/Use-Strict/">#Use Strict</a>
-                        </div>
                     
 
                     <!-- Comments -->

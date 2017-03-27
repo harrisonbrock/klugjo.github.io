@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2017-03-02T13:20:03.000Z</updated>
+  <updated>2017-03-27T14:10:16.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Save All by Default in VSCode</title>
+    <link href="http://www.codeblocq.com/2017/03/Save-All-by-Default-in-VSCode/"/>
+    <id>http://www.codeblocq.com/2017/03/Save-All-by-Default-in-VSCode/</id>
+    <published>2017-03-27T14:09:10.000Z</published>
+    <updated>2017-03-27T14:10:16.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>By Default VSCode only saves the current file when hitting Ctrl+S. Over time, I got used to Ctrl+S saving all the modified files in the project. Here is how to setup the same behavior in VSCode.</p>
+<p>Go to</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">File</span> &gt; Preferences &gt; <span class="built_in">Keyboard</span> Shortcuts</div></pre></td></tr></table></figure>
+<p>In the <code>keybindings.json</code> where you can put your overrides, use the following:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">    &#123; <span class="attr">"key"</span>: <span class="string">"ctrl+k s"</span>, <span class="attr">"command"</span>: <span class="string">"workbench.action.files.save"</span> &#125;,</div><div class="line">    &#123; <span class="attr">"key"</span>: <span class="string">"ctrl+s"</span>, <span class="attr">"command"</span>: <span class="string">"workbench.action.files.saveAll"</span> &#125;</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>This will invert the shortcuts for the <code>Save</code> and <code>Save All</code> actions. From now on, <code>Ctrl+S</code> will save all the modified files.</p>
+<p>Such a time saver when refreshing your build only to realise you forgot to save one of the files ;)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;By Default VSCode only saves the current file when hitting Ctrl+S. Over time, I got used to Ctrl+S saving all the modified files in the p
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Configure Jest Test Location</title>
@@ -422,50 +447,6 @@
       <category term="zsh" scheme="http://www.codeblocq.com/tags/zsh/"/>
     
       <category term="Prezto" scheme="http://www.codeblocq.com/tags/Prezto/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Create patch from commit with git</title>
-    <link href="http://www.codeblocq.com/2016/09/Create-patch-from-commit-with-git/"/>
-    <id>http://www.codeblocq.com/2016/09/Create-patch-from-commit-with-git/</id>
-    <published>2016-09-11T01:21:24.000Z</published>
-    <updated>2016-09-11T03:21:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Learn how to create a git patch from a previous commit.<br><a id="more"></a></p>
-<h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">## Create patch <span class="keyword">from</span> commit a12a06c</div><div class="line">$ git show a12a06c &gt; temp.patch</div><div class="line"></div><div class="line">## Apply patch</div><div class="line">$ git apply temp.patch</div></pre></td></tr></table></figure>
-<h2 id="Long-story"><a href="#Long-story" class="headerlink" title="Long story"></a>Long story</h2><p>Let’s look at the following scenario:</p>
-<p>You are working on a <code>feature1</code> branch and you realise your last commit should not have been committed here. You could stash it but you are not sure where you are going to need to it again; so you decide yo create a <a href="https://git-scm.com/docs/git-format-patch" target="_blank" rel="external">patch</a> with it.</p>
-<h3 id="Method-1-git-reset-git-diff-gt-patch"><a href="#Method-1-git-reset-git-diff-gt-patch" class="headerlink" title="Method 1: git reset + git diff &gt; patch"></a>Method 1: git reset + git diff &gt; patch</h3><p>Since that commit was our last commit, we can rewind our history 1 step and create a patch from the current <code>diff</code>.</p>
-<ul>
-<li>Rewind one step and keep changes staged</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">reset</span> <span class="comment">--soft HEAD~1</span></div></pre></td></tr></table></figure>
-<p>Using <code>--soft</code> will <a href="/2016/09/Undo-last-commit-in-git/">keep our changes staged</a>.</p>
-<ul>
-<li>Create the patch</li>
-</ul>
-<p>Create the patch from your stages changes by using</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="keyword">diff </span>--<span class="keyword">cached </span>&gt; patch1.patch</div></pre></td></tr></table></figure>
-<p>And you have all your changes in that patch</p>
-<h3 id="Method-2-Create-patch-from-commit-directly"><a href="#Method-2-Create-patch-from-commit-directly" class="headerlink" title="Method 2: Create patch from commit directly"></a>Method 2: Create patch from commit directly</h3><p>In some cases, you want to create a patch from a commit that is not the previous one. You also might not be interested in rewinding your git history.</p>
-<p>Here is a one liner that can help you create a patch from any commit in your history.</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$ </span>git show a12a06c &gt; patch2.patch</div></pre></td></tr></table></figure>
-<p>where <code>a12a06c</code> is the commit you want to create a patch from.</p>
-<h3 id="Apply-the-patch"><a href="#Apply-the-patch" class="headerlink" title="Apply the patch"></a>Apply the patch</h3><p>Reminder: To apply your patch somewhere else or later on.</p>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">apply</span> patch1.patch</div></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Learn how to create a git patch from a previous commit.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
-    
-      <category term="Patch" scheme="http://www.codeblocq.com/tags/Patch/"/>
     
   </entry>
   
