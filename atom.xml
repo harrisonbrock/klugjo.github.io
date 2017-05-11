@@ -282,7 +282,7 @@
     <link href="http://www.codeblocq.com/2016/09/Setup-the-latest-React-in-JSBin/"/>
     <id>http://www.codeblocq.com/2016/09/Setup-the-latest-React-in-JSBin/</id>
     <published>2016-09-19T10:01:34.000Z</published>
-    <updated>2016-09-19T10:27:28.000Z</updated>
+    <updated>2017-05-11T12:41:48.000Z</updated>
     
     <content type="html"><![CDATA[<p>This article will demonstrate how to set up the latest version of React in JSBin. This is particularly useful if you want to test something out and share it quickly.<br><a id="more"></a></p>
 <h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>If you are only interested in the code, go to <a href="https://jsbin.com/vixuyu/25/edit?html,css,js,output" target="_blank" rel="external">https://jsbin.com/vixuyu/25/edit?html,css,js,output</a>.</p>
