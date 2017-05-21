@@ -39,7 +39,8 @@ p {
   line-height: 1.5;
   margin: 30px 0;
 }
-p a {
+p a,
+li a {
   text-decoration: underline;
 }
 h1,
@@ -82,6 +83,7 @@ hr.small {
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 1px;
+  text-decoration: none;
 }
 @media only screen and (min-width: 768px) {
   .navbar-custom {
@@ -94,7 +96,7 @@ hr.small {
   }
   .navbar-custom .navbar-brand:hover,
   .navbar-custom .navbar-brand:focus {
-    color: fade(#fff, 80%);
+    color: rgba(255,255,255,0.8);
   }
   .navbar-custom .nav li a {
     color: #fff;
@@ -102,7 +104,7 @@ hr.small {
   }
   .navbar-custom .nav li a:hover,
   .navbar-custom .nav li a:focus {
-    color: fade(#fff, 80%);
+    color: rgba(255,255,255,0.8);
   }
 }
 @media only screen and (min-width: 1170px) {
@@ -153,7 +155,7 @@ hr.small {
 }
 .intro-header {
   background-color: #808080;
-  background: no-repeat center center;
+  background-position: center center;
   background-attachment: scroll;
   margin-bottom: 50px;
 }
