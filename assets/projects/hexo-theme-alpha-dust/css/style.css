@@ -344,6 +344,7 @@ section.main .post .content .pullquote.left {
 section.main .post .content img {
   display: block;
   margin: 0 auto;
+  max-width: 100%;
 }
 section.main .post .content .video-container {
   position: relative;
@@ -583,14 +584,15 @@ figure.highlight table tbody tr {
 }
 figure.highlight table tbody tr td {
   padding: 8px !important;
-  overflow-x: scroll !important;
 }
 figure.highlight table tbody tr td.gutter {
   width: 40px;
   text-align: right;
 }
+figure.highlight table tbody tr td .line {
+  height: 1.45em;
+}
 figure.highlight table tbody tr td pre {
-  overflow-x: scroll !important;
   margin-bottom: 0;
   color: #a9b7c6;
 }
