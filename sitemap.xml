@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codeblocq.com/2017/08/How-to-receive-messages-from-web-sockets-using-redux-saga/</loc>
+    
+    <lastmod>2017-08-08T13:21:16.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2015/12/Easy-dynamic-classes-with-React/</loc>
     
     <lastmod>2017-05-12T00:49:40.000Z</lastmod>
@@ -646,20 +653,6 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -674,42 +667,21 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -723,6 +695,34 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/Search-through-history-in-OSX-terminal/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -730,7 +730,21 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2016/01/OSX-Use-Spotlight-with-the-Command-Line/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -779,7 +793,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -793,13 +807,6 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -807,7 +814,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
