@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2017-10-24T14:18:02.000Z</updated>
+  <updated>2017-11-08T00:24:19.000Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Notes on Anything You Want by Derek Sivers</title>
+    <link href="http://www.codeblocq.com/2017/11/Notes-on-Anything-You-Want-by-Derek-Sivers/"/>
+    <id>http://www.codeblocq.com/2017/11/Notes-on-Anything-You-Want-by-Derek-Sivers/</id>
+    <published>2017-11-08T00:17:51.000Z</published>
+    <updated>2017-11-08T00:24:19.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Big fan of Derek Sivers as I have already mentionned, I really enjoyed this short and super easy to digest book.<br>It is the kind of book that you open to see what it looks like and 2 hours later (1 hours if you are not as slow as I am) you realise that you have finished it.</p>
+<p>Through 40 stories turned lessons, Derek puts down all his learnings from creating, running and selling his internet business CD Baby.</p>
+<p>The book is at the same time very easy to read and understand as well as packed to the brim with deep and original concepts. Derek exposes a very human, humble way to run a company, far away from the usual startup or corporate discourse. It shows that it is possible to do without investors, to respect your customers (really), and to enjoy the process of building a business (really although not always).</p>
+<p>All in all I really appreciated how honnest the book was. I never felt like that book was over analysing, exagerating or embellishing facts like some other ‘business books’ will, mostly to increase sales.</p>
+<p>Key Take aways</p>
+<p>The book is packed with gems but here are a few that resonated with me:</p>
+<ul>
+<li><p>Never build anything nobody asked you for. There was never a business plan (in someone’s head) that resisted the first contact with a customer. You can never know what will be useful to others until someone told you they need it. Get out of your own head and go ask people what they want before spending hours and thousands of dollars building anything.</p>
+</li>
+<li><p>You can be the boss without having to do bossy things. If you have built a company from scratch and suddenly end up with 50 employees, chances are your responsibilities have changed quite a bit. Maybe you are a maker type of guy and now you spend 100% of your time managing employees. Well if you don’t enjoy it, you don’t have to. If what you like is programming, put someone else in place and isolate yourself to do what you like and where you will be the most useful for the organisation.</p>
+</li>
+<li><p>Know your north star and what you want to be. Never follow other people’s dream or society’s idea of what’s acceptable. just follow your guts and be who you want to be.</p>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Big fan of Derek Sivers as I have already mentionned, I really enjoyed this short and super easy to digest book.&lt;br&gt;It is the kind of boo
+    
+    </summary>
+    
+    
+      <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
+    
+      <category term="Business" scheme="http://www.codeblocq.com/tags/Business/"/>
+    
+      <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
+    
+  </entry>
   
   <entry>
     <title>Quicksort JavaScript Implementation</title>
@@ -223,9 +261,9 @@
     
       <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
     
-      <category term="Ego" scheme="http://www.codeblocq.com/tags/Ego/"/>
-    
       <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
+    
+      <category term="Ego" scheme="http://www.codeblocq.com/tags/Ego/"/>
     
   </entry>
   
@@ -344,47 +382,6 @@
       <category term="Github" scheme="http://www.codeblocq.com/tags/Github/"/>
     
       <category term="Git" scheme="http://www.codeblocq.com/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Setup the latest React in JSBin</title>
-    <link href="http://www.codeblocq.com/2016/09/Setup-the-latest-React-in-JSBin/"/>
-    <id>http://www.codeblocq.com/2016/09/Setup-the-latest-React-in-JSBin/</id>
-    <published>2016-09-19T10:01:34.000Z</published>
-    <updated>2017-05-11T12:41:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>This article will demonstrate how to set up the latest version of React in JSBin. This is particularly useful if you want to test something out and share it quickly.<br><a id="more"></a></p>
-<h2 id="TL-DR"><a href="#TL-DR" class="headerlink" title="TL;DR"></a>TL;DR</h2><p>If you are only interested in the code, go to <a href="https://jsbin.com/vixuyu/25/edit?html,css,js,output" target="_blank" rel="external">https://jsbin.com/vixuyu/25/edit?html,css,js,output</a>.</p>
-<p>(Disable your Ad Blocks).</p>
-<h2 id="A-bit-of-background"><a href="#A-bit-of-background" class="headerlink" title="A bit of background"></a>A bit of background</h2><h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><p>To make this work you are obviously going to need <a href="https://facebook.github.io/react/" target="_blank" rel="external">React</a>. You are also going to need <a href="https://github.com/facebook/react/tree/master/packages/react-dom" target="_blank" rel="external">ReactDOM</a> to render HTML.</p>
-<p>Get these 2 scripts from</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/react@latest/dist/react-with-addons.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://npmcdn.com/react-dom@latest/dist/react-dom.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>I got these URLs from <a href="https://jsfiddle.net/reactjs/69z2wepo/" target="_blank" rel="external">https://jsfiddle.net/reactjs/69z2wepo/</a> which seems to be the official React Fiddle.</p>
-<h3 id="Babel"><a href="#Babel" class="headerlink" title="Babel"></a>Babel</h3><p>This is where it get trickier. To be able to write JSX/ES6 directly in JSBin, you need to be able to transpile the code with Babel directly in the browser.</p>
-<p>Unfortunately, <a href="https://babeljs.io/docs/usage/browser/" target="_blank" rel="external">babel-browser</a> has been discontinued. Well guess what; just use <a href="https://github.com/Daniel15/babel-standalone" target="_blank" rel="external">babel-standalone</a> instead. It is a non official build of Babel for use in non-Node environments, mainly browsers.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.15.0/babel.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="JSX-and-ES6"><a href="#JSX-and-ES6" class="headerlink" title="JSX and ES6"></a>JSX and ES6</h3><p>That is it, you are ready to start writting your React app.</p>
-<p>In JSBin, change the type of the JS tab from <code>JavaScript</code> to <code>ES6 / Babel</code> and you are ready to go.</p>
-<figure class="highlight html"><figcaption><span>index.html</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- This element's contents will be replaced with your component. --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight javascript"><figcaption><span>index.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> Hello = React.createClass(&#123;</div><div class="line">  <span class="attr">render</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>Hello &#123;this.props.name&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  <span class="xml"><span class="tag">&lt;<span class="name">Hello</span> <span class="attr">name</span>=<span class="string">"World"</span> /&gt;</span>,</span></div><div class="line">  document.getElementById('app')</div><div class="line">);</div></pre></td></tr></table></figure>
-<p>Hope that helps !</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This article will demonstrate how to set up the latest version of React in JSBin. This is particularly useful if you want to test something out and share it quickly.&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="http://www.codeblocq.com/tags/JavaScript/"/>
-    
-      <category term="ES6" scheme="http://www.codeblocq.com/tags/ES6/"/>
-    
-      <category term="React" scheme="http://www.codeblocq.com/tags/React/"/>
-    
-      <category term="JSBin" scheme="http://www.codeblocq.com/tags/JSBin/"/>
     
   </entry>
   
