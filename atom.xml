@@ -47,9 +47,9 @@
     
       <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
     
-      <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
-    
       <category term="Business" scheme="http://www.codeblocq.com/tags/Business/"/>
+    
+      <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
     
   </entry>
   
@@ -261,9 +261,9 @@
     
       <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
     
-      <category term="Ego" scheme="http://www.codeblocq.com/tags/Ego/"/>
-    
       <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
+    
+      <category term="Ego" scheme="http://www.codeblocq.com/tags/Ego/"/>
     
   </entry>
   
