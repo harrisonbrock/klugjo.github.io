@@ -2,30 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</loc>
+    
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
     
-    <lastmod>2018-05-13T01:34:43.000Z</lastmod>
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.codeblocq.com/2016/10/Github-Avatar-not-showing-on-list-of-commits/</loc>
     
-    <lastmod>2018-05-13T01:34:43.000Z</lastmod>
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/</loc>
     
-    <lastmod>2018-05-13T01:34:02.000Z</lastmod>
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
     
-    <lastmod>2018-05-13T01:34:02.000Z</lastmod>
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/</loc>
+    
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
   </url>
   
@@ -415,13 +429,6 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/</loc>
-    
-    <lastmod>2016-04-19T06:09:43.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/04/Zelda-s-theme-in-JavaScript/</loc>
     
     <lastmod>2016-04-14T08:11:11.000Z</lastmod>
@@ -667,7 +674,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -702,20 +709,6 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -730,35 +723,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-your-first-React-application/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -772,7 +737,42 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/Search-through-history-in-OSX-terminal/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -814,6 +814,13 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -821,14 +828,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/HTTPie-a-good-replacement-for-cURL/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Read-only-properties-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
