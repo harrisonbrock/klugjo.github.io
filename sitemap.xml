@@ -4,7 +4,7 @@
   <url>
     <loc>http://www.codeblocq.com/2018/05/Setup-gitment-on-your-Hexo-blog/</loc>
     
-    <lastmod>2018-05-27T03:03:45.000Z</lastmod>
+    <lastmod>2018-05-27T03:14:38.000Z</lastmod>
     
   </url>
   
@@ -23,7 +23,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
+    <loc>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</loc>
     
     <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
@@ -31,6 +31,20 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/</loc>
+    
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
+    
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
     
     <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
@@ -45,20 +59,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/04/Add-a-build-passing-badge-to-your-github-repository/</loc>
-    
-    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
-    
-    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/04/Pull-requests-on-github-101/</loc>
     
     <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
@@ -688,13 +688,6 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
@@ -709,14 +702,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Add-an-RSS-feed-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -724,6 +717,13 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/01/Sorting-files-using-the-ls-command/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -744,7 +744,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -752,13 +752,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Passing-arguments-to-the-underlying-command-in-npm-scripts/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -779,14 +772,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -800,7 +793,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Use-Q-to-create-a-promise-from-a-value/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -814,7 +807,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -828,7 +821,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
+    <loc>http://www.codeblocq.com/2015/11/Refresh-webpages-automatically-during-development-using-Gulp/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/open-the-current-terminal-directory-in-Finder-OS-X/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
