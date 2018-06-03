@@ -63,6 +63,20 @@ body {
 .footer .devicons-linkedin-square {
   font-size: 2rem;
 }
+.footer .devicons-stack-overflow {
+  font-size: 2rem;
+}
+@media screen and (max-width: 375px) {
+  #gitment-comments {
+    display: none;
+  }
+}
+#gitment-comments .gitment-header-issue-link {
+  display: none;
+}
+#gitment-comments .gitment-container.gitment-footer-container {
+  display: none;
+}
 .content {
   font-size: 16px;
 }
