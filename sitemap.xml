@@ -30,6 +30,13 @@
   </url>
   
   <url>
+    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
+    
+    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.codeblocq.com/2016/02/How-to-use-a-custom-domain-with-your-github-pages-site/</loc>
     
     <lastmod>2018-05-13T01:37:26.000Z</lastmod>
@@ -38,13 +45,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/04/Setup-Travis-CI-with-your-node-project/</loc>
-    
-    <lastmod>2018-05-13T01:37:26.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Hexo-deploy-your-blog-to-github-pages-in-one-command/</loc>
     
     <lastmod>2018-05-13T01:37:26.000Z</lastmod>
     
@@ -688,7 +688,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -696,13 +696,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2015/07/round-images-in-css/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -723,7 +716,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Create-a-Bash-Shell-script-to-download-a-site-s-favicon-with-HTTPie/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -737,14 +730,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -758,7 +744,21 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Code-snippets-in-Webstorm/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Run-scripts-with-npm/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2015/11/Getting-started-with-Gulp-and-static-websites/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Code-Bloat-Commandos-Do-not-let-your-functions-do-more-than-one-thing/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -786,7 +786,14 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
+    <loc>http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+    
+    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -800,7 +807,7 @@
   </url>
   
   <url>
-    <loc>http://www.codeblocq.com/2016/01/Untrack-files-already-added-to-git-repository-based-on-gitignore/</loc>
+    <loc>http://www.codeblocq.com/2015/12/Build-and-package-your-client-side-code-using-npm/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
@@ -808,13 +815,6 @@
   
   <url>
     <loc>http://www.codeblocq.com/2016/01/Wildcards-in-bash/</loc>
-    
-    <lastmod>2016-02-11T12:04:32.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.codeblocq.com/2016/01/Method-context-in-JavaScript/</loc>
     
     <lastmod>2016-02-11T12:04:32.000Z</lastmod>
     
