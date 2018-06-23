@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.codeblocq.com/"/>
-  <updated>2018-05-28T12:36:20.000Z</updated>
+  <updated>2018-06-23T02:57:10.477Z</updated>
   <id>http://www.codeblocq.com/</id>
   
   <author>
@@ -14,6 +14,81 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to start a tech company as a non technical individual</title>
+    <link href="http://www.codeblocq.com/2018/06/How-to-start-a-tech-compnay-as-a-non-technical-individual/"/>
+    <id>http://www.codeblocq.com/2018/06/How-to-start-a-tech-compnay-as-a-non-technical-individual/</id>
+    <published>2018-06-23T02:20:33.000Z</published>
+    <updated>2018-06-23T02:57:10.477Z</updated>
+    
+    <content type="html"><![CDATA[<p>As a software engineer, I have had countless coffees and meetings with non technical “co founders” that want to build an app, website or platform of some sort. Their budgets go from a few hundreds to more than 50K USD for some. They almost always have great ideas and execution plans, except when it comes to the tech.</p>
+<p>After spending hours discussing these things, here are my thoughts, conclusions and reflections. Hoping it might help some of you.</p>
+<blockquote><p>TLDR; if you don’t have any (signed, paying) customers and you only have a business idea, you don’t need an app or a website. An email, a phone and a Google spreadsheet is all you need. If an online presence is necessary, 50 bucks should be your maximum spend. Also software developers are difficult to deal with and once you own a system, you will have to pay constant maintenance fees.</p>
+</blockquote>
+<p>Let’s have a look at how you would start a ride sharing company (Uber, Grab, Lyft …) without even talking to a single software engineer.</p>
+<p>First thing you might think is that you need an app. Wrong, all you need are drivers and passengers. If it’s you and another co founder you can scale up to a few hundred rides a day with zero tech.</p>
+<h3 id="Here-is-what-you-need"><a href="#Here-is-what-you-need" class="headerlink" title="Here is what you need:"></a>Here is what you need:</h3><ul>
+<li>A big map of the city you are in</li>
+<li>Some pins</li>
+<li>Phones</li>
+<li>Google Forms</li>
+<li>Social Media and Forums</li>
+</ul>
+<h3 id="Here-is-your-setup"><a href="#Here-is-your-setup" class="headerlink" title="Here is your setup:"></a>Here is your setup:</h3><ul>
+<li>Start with whatever medium you think is best to build your audience and find your first customers (FB page, LinkedIn group, word of mouth, depending on what makes sense for you).</li>
+<li>Setup a <a href="https://www.google.com/forms/about/" target="_blank" rel="external">Google Form</a> with 4 fields: Name, Phone, Location, Destination.</li>
+<li>Link to that Google Form from your FB page.</li>
+<li>Advertise around and go talk to potential riders and ask them to try your service. Online, offline.</li>
+</ul>
+<h3 id="Here-is-your-execution-plan"><a href="#Here-is-your-execution-plan" class="headerlink" title="Here is your execution plan:"></a>Here is your execution plan:</h3><ul>
+<li>When your first customer posts his itinerary using the Google Form, pick up the phone and call him to know exactly where he is and brief him on the driver that will pick him up and how long until he is there. Obviously you will need a driver available or go drive there yourself.</li>
+<li>Whenever a driver drops a passenger, ask him to stay put and place a pin on the map at his location.</li>
+<li>Wait for another passenger and keep on going and growing this way.</li>
+<li>When you are running out of pins or your map is too small, time to look at scaling and adding in more tech. Until then, focus on hiring more drivers, getting more passengers. Learn as much as possible along the way. Learn about everyone’s motivations, difficulties, adjust your prices, develop your brand and make your first customers as happy as possible.</li>
+<li>Invest all that money you had saved up for an app in company swag, free rides, driver incentives, marketing and things that add value to your customers and will help them remember you.</li>
+</ul>
+<h3 id="Advantages"><a href="#Advantages" class="headerlink" title="Advantages:"></a>Advantages:</h3><ul>
+<li>You can get started NOW! You can probably achieve all this in a few weeks and get your first passenger in 24 hours. How amazing is that. If you were to develop an app, it might take you 6 months and more than 50,000 dollars to get there. Plus people don’t download apps, so you would have to go back to the Google Form solution anyways.</li>
+<li>You have done everything yourself and you understand everything that is going on. They say that there is not a single business plan that survived the first customer. That app idea you have in your head is probably not gonna work in the way you think it will. Focus on learning about your customers and developing a manual system. Once you have a well oiled process, progressively automate the most boring and repetitive tasks.</li>
+<li>The day you need a software engineer, instead of sheepishly asking them out for coffee and wasting your time talking about how apps, AI and bots are gonna change the world, show them what you have done. I can guarantee you they will love it and will get started the day itself.</li>
+</ul>
+<h3 id="How-to-start-introducing-some-tech"><a href="#How-to-start-introducing-some-tech" class="headerlink" title="How to start introducing some tech:"></a>How to start introducing some tech:</h3><p>(Once again, as tempting as it seems, don’t start here if you haven’t done the first steps, you’d just be procrastinating. Don’t optimize prematurely and until you have validated your assumptions IRL)</p>
+<ul>
+<li>Invest 20 bucks in a logo.</li>
+<li>Replace the Google Form with a landing page and custom form. Most 12 years olds of today should be able to do that for your. Ask your cousin. 50 bucks max.</li>
+<li>Get a domain name. 15 bucks a year.</li>
+<li>Get web hosting. 10-20 bucks a year.</li>
+<li>Scale where it hurts, if your map is too small get a bigger one or start using google maps and Excel. This should get you to a thousand rides a day.</li>
+<li>Only then should you start talking to devs. Get someone good. A senior engineer with ~10 yrs experience should only cost you double what a young grad would. But the outcome will be a different order of magnitude. Most important, find someone you trust because the tech will soon become a black box and you’ll have no clue what is going on.</li>
+</ul>
+<h3 id="Things-you-don’t-need-unless-you-are-already-an-expert-in-that-space-and-that’s-where-you-want-to-operate"><a href="#Things-you-don’t-need-unless-you-are-already-an-expert-in-that-space-and-that’s-where-you-want-to-operate" class="headerlink" title="Things you don’t need (unless you are already an expert in that space and that’s where you want to operate):"></a>Things you don’t need (unless you are already an expert in that space and that’s where you want to operate):</h3><ul>
+<li>AI</li>
+<li>Bots</li>
+<li>VR</li>
+<li>Apps and websites</li>
+<li>SMS Apis</li>
+<li>Image recognition</li>
+<li>Blockchain</li>
+</ul>
+<h3 id="If-you-are-technical-founder"><a href="#If-you-are-technical-founder" class="headerlink" title="If you are technical founder:"></a>If you are technical founder:</h3><p><strong>SAME RULES APPLY</strong>. If you are starting a consumer startup in a space you are not super familiar with, begin with helping your co founder do all these things that don’t scale. There is no need to start thinking about database engines and multi leader replication at this point. Learn the domain first.</p>
+<p>Hope that helps. This stuff isn’t new but in case you needed to hear it from me, here it is 😉</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;As a software engineer, I have had countless coffees and meetings with non technical “co founders” that want to build an app, website or 
+    
+    </summary>
+    
+    
+      <category term="Startups" scheme="http://www.codeblocq.com/tags/Startups/"/>
+    
+      <category term="Business" scheme="http://www.codeblocq.com/tags/Business/"/>
+    
+      <category term="General" scheme="http://www.codeblocq.com/tags/General/"/>
+    
+  </entry>
   
   <entry>
     <title>Setup gitment on your Hexo blog</title>
@@ -105,9 +180,9 @@
     </summary>
     
     
-      <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
-    
       <category term="Business" scheme="http://www.codeblocq.com/tags/Business/"/>
+    
+      <category term="Books" scheme="http://www.codeblocq.com/tags/Books/"/>
     
       <category term="Self-Help" scheme="http://www.codeblocq.com/tags/Self-Help/"/>
     
@@ -356,49 +431,6 @@
       <category term="Jest" scheme="http://www.codeblocq.com/tags/Jest/"/>
     
       <category term="Unit Tests" scheme="http://www.codeblocq.com/tags/Unit-Tests/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>8 VSCode Configuration Options you need to know about</title>
-    <link href="http://www.codeblocq.com/2016/10/8-VSCode-Configuration-Options-you-need-to-know-about/"/>
-    <id>http://www.codeblocq.com/2016/10/8-VSCode-Configuration-Options-you-need-to-know-about/</id>
-    <published>2016-10-16T09:40:50.000Z</published>
-    <updated>2016-10-16T09:46:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Improve your VSCode experience with these useful configuration options<br><a id="more"></a></p>
-<p>To open the configuration file use <code>Cmd + ,</code> on mac and <code>File -&gt; Preferences -&gt; User Settings</code> on Windows and Linux</p>
-<h2 id="Font-Family"><a href="#Font-Family" class="headerlink" title="Font Family"></a>Font Family</h2><p>Change the editor font to your favourite <a href="https://hail2u.github.io/mn/" target="_blank" rel="external">monospace font</a> with <code>editor.fontFamily</code></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"editor.fontFamily"</span>: <span class="string">"Inconsolata, 'Courier New', monospace"</span>,</div></pre></td></tr></table></figure>
-<h2 id="Font-Size"><a href="#Font-Size" class="headerlink" title="Font Size"></a>Font Size</h2><p>I am finding the default font size to be way to small for my liking (and tired programmer’s eyes). Use <code>editor.fontSize</code> to remedy this.</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"editor.fontSize"</span>: <span class="number">16</span>,</div></pre></td></tr></table></figure>
-<h2 id="Line-Wrapping"><a href="#Line-Wrapping" class="headerlink" title="Line Wrapping"></a>Line Wrapping</h2><p>By default lines do not wrap. If you are tired of doing so much horizontal scrolling, use <code>editor.wordWrap</code>.</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"editor.wordWrap"</span>: <span class="literal">true</span></div></pre></td></tr></table></figure>
-<h2 id="Line-wrap-indentation"><a href="#Line-wrap-indentation" class="headerlink" title="Line wrap indentation"></a>Line wrap indentation</h2><p>Related to the previous item. When doing line wraps, I like to have a small indent to make it more obvious. This can be achieved with <code>editor.wrappingIndent</code></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"editor.wrappingIndent"</span>: <span class="string">"indent"</span>,</div></pre></td></tr></table></figure>
-<h2 id="Cursor-blinking"><a href="#Cursor-blinking" class="headerlink" title="Cursor blinking"></a>Cursor blinking</h2><p>In the pimp my editor category, improve the way your cursor blinks. Totally useless, totally worth it !</p>
-<p>Possible values include <code>&#39;blink’</code>, <code>’smooth’</code>, <code>’phase’</code>, <code>’expand’</code> and <code>’solid’</code>. I am rolling with <code>’phase’</code></p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"editor.cursorBlinking"</span>: <span class="string">"phase"</span></div></pre></td></tr></table></figure>
-<h2 id="Automatic-formatting"><a href="#Automatic-formatting" class="headerlink" title="Automatic formatting"></a>Automatic formatting</h2><p>This one is a lot more useful. It formats your code automatically as you type. Use <code>editor.formatOnType</code> to enable (off by default).</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"editor.formatOnType"</span>: <span class="literal">true</span>,</div></pre></td></tr></table></figure>
-<h2 id="Terminal-Font"><a href="#Terminal-Font" class="headerlink" title="Terminal Font"></a>Terminal Font</h2><p>You know VSCode ships with an integrated Terminal you can open with <code>Ctrl + \</code>. </p>
-<p>If you are on a Mac and using a custom shell like <code>zsh</code> you will probably also have to update the Terminal font to a <a href="https://github.com/powerline/fonts" target="_blank" rel="external">Powerline font</a>. Use <code>terminal.integrated.fontFamily</code> to do so.</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"terminal.integrated.fontFamily"</span>: <span class="string">"Meslo LG M DZ for Powerline"</span>,</div></pre></td></tr></table></figure>
-<h2 id="Automated-Extensions-Update"><a href="#Automated-Extensions-Update" class="headerlink" title="Automated Extensions Update"></a>Automated Extensions Update</h2><p>I am sure you have quite a few extensions installed by now. Get them to update automatically with <code>extensions.autoUpdate</code> to avoid these pesky notifications.</p>
-<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="string">"extensions.autoUpdate"</span>: <span class="literal">true</span></div></pre></td></tr></table></figure>
-<p>Happy Coding !</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Improve your VSCode experience with these useful configuration options&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="VSCode" scheme="http://www.codeblocq.com/tags/VSCode/"/>
-    
-      <category term="Tools" scheme="http://www.codeblocq.com/tags/Tools/"/>
     
   </entry>
   
