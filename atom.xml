@@ -19,7 +19,7 @@
     <title>How to start a tech company as a non technical individual</title>
     <link href="http://www.codeblocq.com/2018/06/How-to-start-a-tech-compnay-as-a-non-technical-individual/"/>
     <id>http://www.codeblocq.com/2018/06/How-to-start-a-tech-compnay-as-a-non-technical-individual/</id>
-    <published>2018-06-23T02:20:33.000Z</published>
+    <published>2018-06-23T01:20:33.000Z</published>
     <updated>2018-06-23T02:57:10.477Z</updated>
     
     <content type="html"><![CDATA[<p>As a software engineer, I have had countless coffees and meetings with non technical “co founders” that want to build an app, website or platform of some sort. Their budgets go from a few hundreds to more than 50K USD for some. They almost always have great ideas and execution plans, except when it comes to the tech.</p>
@@ -94,7 +94,7 @@
     <title>Setup gitment on your Hexo blog</title>
     <link href="http://www.codeblocq.com/2018/05/Setup-gitment-on-your-Hexo-blog/"/>
     <id>http://www.codeblocq.com/2018/05/Setup-gitment-on-your-Hexo-blog/</id>
-    <published>2018-05-27T02:33:31.000Z</published>
+    <published>2018-05-27T01:33:31.000Z</published>
     <updated>2018-05-28T12:36:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>After 2 years running disqus on my blog, I have decided to switch over to <a href="https://github.com/imsun/gitment" target="_blank" rel="external">gitment</a>. The spam and slowness of Disqus is what drove me away from it. Plus no more ads for users.</p>
@@ -154,7 +154,7 @@
     <title>Notes on Anything You Want by Derek Sivers</title>
     <link href="http://www.codeblocq.com/2017/11/Notes-on-Anything-You-Want-by-Derek-Sivers/"/>
     <id>http://www.codeblocq.com/2017/11/Notes-on-Anything-You-Want-by-Derek-Sivers/</id>
-    <published>2017-11-08T00:17:51.000Z</published>
+    <published>2017-11-07T23:17:51.000Z</published>
     <updated>2018-05-06T08:49:32.000Z</updated>
     
     <content type="html"><![CDATA[<p>Big fan of Derek Sivers as I have already mentionned, I really enjoyed this short and super easy to digest <a href="https://amzn.to/2FO2Vom" target="_blank" rel="external">book</a>.<br>It is the kind of book that you open to see what it looks like and 2 hours later (1 hours if you are not as slow as I am) you realise that you have finished it.</p>
@@ -192,7 +192,7 @@
     <title>Quicksort JavaScript Implementation</title>
     <link href="http://www.codeblocq.com/2017/10/Quicksort-JavaScript-Implementation/"/>
     <id>http://www.codeblocq.com/2017/10/Quicksort-JavaScript-Implementation/</id>
-    <published>2017-10-24T14:11:32.000Z</published>
+    <published>2017-10-24T13:11:32.000Z</published>
     <updated>2017-10-24T14:18:02.000Z</updated>
     
     <content type="html"><![CDATA[<p>Here is my ES6 implementation of the QuickSort Algorithm.</p>
@@ -220,7 +220,7 @@
     <title>How to receive messages from web sockets using redux-saga</title>
     <link href="http://www.codeblocq.com/2017/08/How-to-receive-messages-from-web-sockets-using-redux-saga/"/>
     <id>http://www.codeblocq.com/2017/08/How-to-receive-messages-from-web-sockets-using-redux-saga/</id>
-    <published>2017-08-02T13:17:33.000Z</published>
+    <published>2017-08-02T12:17:33.000Z</published>
     <updated>2017-08-08T13:21:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>I have just had to implement this and found it hard to come across a simple working solution out there.</p>
@@ -262,7 +262,7 @@
     <title>Save All by Default in VSCode</title>
     <link href="http://www.codeblocq.com/2017/03/Save-All-by-Default-in-VSCode/"/>
     <id>http://www.codeblocq.com/2017/03/Save-All-by-Default-in-VSCode/</id>
-    <published>2017-03-27T14:09:10.000Z</published>
+    <published>2017-03-27T13:09:10.000Z</published>
     <updated>2017-03-27T14:14:14.000Z</updated>
     
     <content type="html"><![CDATA[<p>By Default VSCode only saves the current file when hitting Ctrl+S. Over time, I got used to Ctrl+S saving all the modified files in the project. Here is how to setup the same behavior in VSCode.</p>
@@ -291,7 +291,7 @@
     <title>Configure Jest Test Location</title>
     <link href="http://www.codeblocq.com/2017/02/Configure-Jest-Test-Location/"/>
     <id>http://www.codeblocq.com/2017/02/Configure-Jest-Test-Location/</id>
-    <published>2017-02-25T15:44:03.000Z</published>
+    <published>2017-02-25T14:44:03.000Z</published>
     <updated>2017-03-02T13:20:03.000Z</updated>
     
     <content type="html"><![CDATA[<p>Quick article to help look at the right place when configuring your tests in Jest.</p>
@@ -326,7 +326,7 @@
     <title>Notes on Turning Pro by Steven Pressfield</title>
     <link href="http://www.codeblocq.com/2017/02/Notes-on-Turning-Pro-by-Steven-Pressfield/"/>
     <id>http://www.codeblocq.com/2017/02/Notes-on-Turning-Pro-by-Steven-Pressfield/</id>
-    <published>2017-02-23T14:20:36.000Z</published>
+    <published>2017-02-23T13:20:36.000Z</published>
     <updated>2018-05-16T23:52:40.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="First-impressions"><a href="#First-impressions" class="headerlink" title="First impressions"></a>First impressions</h2><p>A while ago I read The <a href="https://amzn.to/2rLlh5o" target="_blank" rel="external">War of Art</a> which seems to be Pressfield’s most famous book. It is highly recommended by <a href="https://simpleprogrammer.com/" target="_blank" rel="external">John Sonmez</a>.<br><a id="more"></a></p>
@@ -367,7 +367,7 @@
     <title>Notes on Ego is the enemy by Ryan Holiday</title>
     <link href="http://www.codeblocq.com/2016/10/Notes-on-Ego-is-the-enemy-by-Ryan-Holiday/"/>
     <id>http://www.codeblocq.com/2016/10/Notes-on-Ego-is-the-enemy-by-Ryan-Holiday/</id>
-    <published>2016-10-30T13:12:02.000Z</published>
+    <published>2016-10-30T12:12:02.000Z</published>
     <updated>2018-05-07T11:14:29.000Z</updated>
     
     <content type="html"><![CDATA[<h2 id="First-Impressions"><a href="#First-Impressions" class="headerlink" title="First Impressions"></a>First Impressions</h2><p><a href="https://amzn.to/2ro9HNb" target="_blank" rel="external">Ego is the Enemy</a> is a book that I first heard of while browsing <a href="https://sivers.org/book/EgoEnemy" target="_blank" rel="external">Derek Sivers</a> excellent blog. I just finished it and it is an awesome reminder (for some of it) and eye opener (for a lot of it) of how our ego gets in the way of our work and aspirations and can, if left unchecked, destroy us.</p>
@@ -406,7 +406,7 @@
     <title>Setup Jest to use an external configuration file</title>
     <link href="http://www.codeblocq.com/2016/10/Setup-Jest-to-use-an-external-configuration-file/"/>
     <id>http://www.codeblocq.com/2016/10/Setup-Jest-to-use-an-external-configuration-file/</id>
-    <published>2016-10-26T12:30:36.000Z</published>
+    <published>2016-10-26T11:30:36.000Z</published>
     <updated>2016-10-26T12:34:01.000Z</updated>
     
     <content type="html"><![CDATA[<p>The Jest configuration does not have to be in the <code>package.json</code>, it can be put in an external file.<br><a id="more"></a></p>
